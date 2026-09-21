@@ -93,11 +93,22 @@ can re-check the claim against the same bytes.
 | `state/*.json` | Calibration, Elo ratings, loop state, last cycle summary | `loop.py` |
 | `reports/` | Run summary and the human-readable irregularity list | `loop.py`, `verify/audit.py` |
 | `docs/` | The published site, plus the hand-written documents in this folder | `publish/site.py` |
+| `index.html`, `.nojekyll` (repository root) | The GitHub Pages entry point that links into `docs/` | `publish/site.py::page_root_entry` |
 
 Every stream is a list of records with a stable id derived from a SHA-256 of the
 record's identity fields. Re-running the engine on unchanged inputs therefore appends
 nothing new, which is what makes the published site a reviewable diff rather than a
 moving target.
+
+## How the site is served
+
+GitHub Pages publishes this repository from the branch root, while the engine writes the
+site into `docs/`. Rather than move the site, `build_site(..., write_root_entry=True)`
+writes one small entry page and a `.nojekyll` file at the root, so
+`https://buffedlizard55-lab.github.io/SelfLearn/` is a doorway to `docs/index.html` and
+every asset is served exactly as generated. The entry page is generated from the same
+data as the site, so it cannot drift from it. Site directories are relative, so the whole
+site also works from a local file path.
 
 ## Guarantees the code is built to keep
 

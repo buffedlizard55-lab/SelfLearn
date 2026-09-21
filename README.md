@@ -12,7 +12,8 @@ experiments where a question allows one, derives the next questions, and publish
 everything - claims, sources, criticisms, contradictions, refusals and open
 irregularities - as a static site and as machine-readable JSON.
 
-**Live site:** <https://buffedlizard55-lab.github.io/SelfLearn/> ·
+**Live site:** <https://buffedlizard55-lab.github.io/SelfLearn/> (a one-page entry point at the
+repository root links into the generated site in `docs/`) ·
 **Design specification this was built to:** <https://chatgpt.com/share/6ab1612a-2f14-83e8-9de6-808d21a48e53>
 
 There is no language model anywhere in the pipeline. No model retrieves, extracts,

@@ -406,6 +406,36 @@ class PublishTests(unittest.TestCase):
             self.assertIn("no third-party scripts", index)
             self.assertIn("Test run", index, "fixture mode must be visibly labelled")
 
+    def test_root_entry_page_links_into_the_site(self) -> None:
+        from selflearn.publish.site import build_site
+
+        data = {
+            "generated_at": utcnow_iso(),
+            "run_id": "run-test",
+            "mode": "live",
+            "counts": {"topics": 1, "claims": 2, "documents": 3},
+            "topics": [
+                {
+                    "topic": {
+                        "topic_id": "topic-x",
+                        "title": "A question",
+                        "slug": "a-question",
+                        "status": "researching",
+                    }
+                }
+            ],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "repo"
+            out = root / "docs"
+            out.mkdir(parents=True)
+            build_site(data, out, write_root_entry=True)
+            entry = (root / "index.html").read_text(encoding="utf-8")
+            self.assertIn("docs/index.html", entry, "the entry page must link to the site")
+            self.assertIn("docs/review.html", entry)
+            self.assertIn("docs/topics/a-question.html", entry, "the topic slug must be used, not a title slug")
+            self.assertTrue((root / ".nojekyll").exists(), "Pages must serve files as-is")
+
     def test_topic_page_renders_claims_and_unknowns(self) -> None:
         from selflearn.publish.site import build_site
 

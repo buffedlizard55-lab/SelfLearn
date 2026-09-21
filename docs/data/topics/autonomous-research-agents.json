@@ -1012,7 +1012,7 @@
     "What experiment would resolve it?"
   ],
   "experiments": [],
-  "generated_at": "2026-09-21T23:14:00Z",
+  "generated_at": "2026-09-21T23:16:05Z",
   "questions": [
     {
       "id": "q-4de45dbb185f",
@@ -1039,7 +1039,7 @@
   "source_status": [],
   "statistics": {
     "claims": 23,
-    "computed_at": "2026-09-21T23:14:00Z",
+    "computed_at": "2026-09-21T23:16:05Z",
     "documents": 4,
     "evidence_classes": [
       "primary_source",

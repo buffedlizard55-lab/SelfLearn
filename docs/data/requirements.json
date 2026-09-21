@@ -567,10 +567,12 @@
     "evidence": [
       "selflearn/fetch/registry.py",
       "docs/SOURCES.md",
-      "docs/sources.html"
+      "docs/sources.html",
+      "index.html",
+      "docs/ARCHITECTURE.md"
     ],
     "gap": "Four sources need credentials and are registered but never polled in this environment.",
-    "how_to_verify": "All 36 registered sources carry their operator and the operator's own documentation URL; the four least certain links were re-checked against the live web and corrected, and the corrections are listed in the sources document. Every claim links to the document it was cut from.",
+    "how_to_verify": "All 36 registered sources carry their operator and the operator's own documentation URL; the four least certain links were re-checked against the live web and corrected, and the corrections are listed in the sources document. Every claim links to the document it was cut from. The GitHub Pages entry point at the repository root is generated from the same data as the site, so the published URL cannot drift from the pages it links to.",
     "id": "R-27",
     "requirement": "Provide links to official, verifiable sources for manual review.",
     "source": "user brief",

@@ -115,7 +115,7 @@ def cmd_site(args: argparse.Namespace) -> int:
         run_summary=load_json(ROOT / "reports" / "run_summary.json", {}) or {},
     )
     data["experiment_catalogue"] = catalogue()
-    written = build_site(data, SITE_DIR)
+    written = build_site(data, SITE_DIR, write_root_entry=True)
     print(f"wrote {len(written)} file(s) to {SITE_DIR}")
     return 0
 
