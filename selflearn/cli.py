@@ -92,8 +92,16 @@ def cmd_audit(args: argparse.Namespace) -> int:
 
 
 def cmd_site(args: argparse.Namespace) -> int:
-    """Rebuild the site from the stored library and the last calibration."""
-    library = Library.load(ROOT, run_id="site-rebuild")
+    """Rebuild the site from the stored library and the last calibration.
+
+    A rebuild is not a new retrieval, so the page says which run it is showing and
+    which mode that run used. The `--mode` flag is an override for the case where the
+    state file is missing; it is never used to relabel stored evidence silently.
+    """
+    last_cycle = load_json(STATE_DIR / "last_cycle.json", {}) or {}
+    run_id = last_cycle.get("run_id") or "site-rebuild"
+    mode = args.mode or last_cycle.get("mode") or "unknown"
+    library = Library.load(ROOT, run_id=run_id)
     calibration = run_calibration(FIXTURE_DIR / "verification_cases.jsonl", apply=False) if (FIXTURE_DIR / "verification_cases.jsonl").exists() else {}
     data = build_site_data(
         library,
@@ -111,9 +119,15 @@ def cmd_site(args: argparse.Namespace) -> int:
             ],
             "thresholds": thresholds_in_force(CALIBRATION_STATE),
         },
-        mode=args.mode,
+        mode=mode,
         run_summary=load_json(ROOT / "reports" / "run_summary.json", {}) or {},
     )
+    data["rebuilt_at"] = utcnow_iso()
+    data["rebuilt_from"] = {
+        "run_id": last_cycle.get("run_id"),
+        "mode": last_cycle.get("mode"),
+        "state_file": "state/last_cycle.json" if last_cycle else None,
+    }
     data["experiment_catalogue"] = catalogue()
     written = build_site(data, SITE_DIR, write_root_entry=True)
     print(f"wrote {len(written)} file(s) to {SITE_DIR}")
@@ -259,7 +273,12 @@ def build_parser() -> argparse.ArgumentParser:
     audit.set_defaults(func=cmd_audit)
 
     site = sub.add_parser("site", help="rebuild the published site from stored data")
-    site.add_argument("--mode", choices=("live", "snapshot", "fixture"), default="snapshot")
+    site.add_argument(
+        "--mode",
+        choices=("live", "snapshot", "fixture"),
+        default=None,
+        help="override the mode label; by default it is read from state/last_cycle.json",
+    )
     site.set_defaults(func=cmd_site)
 
     sources = sub.add_parser("sources", help="list the source register, optionally probing reachability")

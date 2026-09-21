@@ -109,6 +109,9 @@ def pct(value: float | None) -> str:
 
 def layout(title: str, body: str, *, active: str, data: dict[str, Any], depth: int = 0) -> str:
     prefix = "../" * depth
+    # A rebuild from stored data must not read as a fresh retrieval.
+    rebuilt = data.get("rebuilt_at")
+    rebuild_note = f" &middot; rebuilt from the stored library at {esc(rebuilt)}" if rebuilt else ""
     nav_parts = []
     for href, label in NAV:
         current = ' aria-current="page"' if href == active else ""
@@ -119,9 +122,10 @@ def layout(title: str, body: str, *, active: str, data: dict[str, Any], depth: i
     mode_banner = ""
     if mode == "fixture":
         mode_banner = (
-            '<div class="banner err wrap"><strong>Test run.</strong> This site was generated with synthetic fixture '
-            "evidence. Nothing on these pages is a real-world finding. Run the engine in live or snapshot mode before "
-            "reading anything here as research.</div>"
+            '<div class="banner err wrap"><strong>Test run.</strong> This site was generated in fixture mode, which '
+            "exists to test the pipeline: any fixture evidence in it is synthetic and is labelled as such on every "
+            "claim. Nothing here is presented as a real-world finding. Run the engine in live or snapshot mode before "
+            "reading anything on these pages as research.</div>"
         )
     elif mode == "snapshot":
         mode_banner = (
@@ -148,7 +152,7 @@ def layout(title: str, body: str, *, active: str, data: dict[str, Any], depth: i
   <div class="wrap">
     <div class="bar">
       <span class="brand">SelfLearn <small>autonomous evidence-verifying research engine v{esc(__version__)}</small></span>
-      <span class="muted small">run <span class="mono">{esc(data.get('run_id') or 'n/a')}</span> &middot; generated {esc(generated)} &middot; mode {esc(mode)}</span>
+      <span class="muted small">run <span class="mono">{esc(data.get('run_id') or 'n/a')}</span> &middot; generated {esc(generated)} &middot; mode {esc(mode)}{rebuild_note}</span>
     </div>
     <nav class="site" aria-label="Primary">{nav_items}</nav>
   </div>

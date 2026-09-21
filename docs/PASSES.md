@@ -59,11 +59,21 @@ exported to `docs/data/requirements.json`. Rows that are narrower than the desig
 marked `partial` with the gap stated; nothing was marked implemented without a file and
 a way to check it.
 
+Pass 3 also found and fixed four more defects, all of them cases where the published
+output would have misled a reader:
+
+| Defect | Evidence | Fix |
+| --- | --- | --- |
+| `selflearn site` labelled the whole site `mode snapshot`, run id `site-rebuild`, after a live cycle | the published `docs/data/index.json` | A rebuild now reads the run id and mode from `state/last_cycle.json`, says it was rebuilt from the stored library, and renders that note in the page header. `--mode` remains as an explicit override for the case where no state file exists |
+| GitHub Pages publishes this repository from the branch root, and the integration token cannot change that (`403 Resource not accessible by integration`) | `gh api -X PUT .../pages` | Instead of moving the site, `build_site(..., write_root_entry=True)` generates one entry page and a `.nojekyll` file at the repository root, so the published URL links into `docs/` and assets are served exactly as generated |
+| The fixture-mode banner said the site "was generated with synthetic fixture evidence" even when a fixture run had retrieved nothing | the fixture run's `index.html` | The banner now says what fixture mode is for and that fixture evidence is labelled wherever it appears, without asserting evidence that is not there |
+| The generated entry page used a CSS class it did not define | the rendered page | Fixed, and the entry page now has its own test |
+
 The commands used for the final check, and what they returned:
 
 | Command | Result |
 | --- | --- |
-| `python3 -m unittest discover -s tests -t . -p "test_*.py"` | 65 tests, all passing |
+| `python3 -m unittest discover -s tests -t . -p "test_*.py"` | 67 tests, all passing |
 | `python3 -m selflearn run --mode live` | one complete cycle, exit 0, run `run-538d83841b75` |
 | `python3 -m selflearn audit` | 141 claims re-checked against 32 stored documents, 0 findings |
 | `python3 -m selflearn calibrate` | 26 labelled cases, accuracy 1.00, macro F1 1.00, 0 false supports |
@@ -72,7 +82,7 @@ The commands used for the final check, and what they returned:
 | `python3 tools/check_claim.py` | a claim, its document, its stored hash and a fresh re-check, all agreeing |
 | `python3 tools/reproduce_experiment.py sorting-comparisons-v1` | re-run identical to the recorded result on every compared field |
 | `python3 -m selflearn run --mode fixture --offline`, `--mode snapshot` | both complete and label their evidence mode on every page |
-| `python3 -m selflearn site` | 27 files written, including all seven documents rendered into `documents.html` |
+| `python3 -m selflearn site` | 29 files written: the site, all seven documents rendered into `documents.html`, and the Pages entry point at the repository root |
 
 ## Known remaining defects and gaps
 

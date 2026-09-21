@@ -436,6 +436,23 @@ class PublishTests(unittest.TestCase):
             self.assertIn("docs/topics/a-question.html", entry, "the topic slug must be used, not a title slug")
             self.assertTrue((root / ".nojekyll").exists(), "Pages must serve files as-is")
 
+    def test_rebuild_is_labelled_as_a_rebuild(self) -> None:
+        from selflearn.publish.site import build_site
+
+        data = {
+            "generated_at": utcnow_iso(),
+            "run_id": "run-abc",
+            "mode": "live",
+            "rebuilt_at": "2026-01-01T00:00:00Z",
+            "counts": {},
+            "topics": [],
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            build_site(data, Path(tmp))
+            index = (Path(tmp) / "index.html").read_text(encoding="utf-8")
+            self.assertIn("run-abc", index)
+            self.assertIn("rebuilt from the stored library", index, "a rebuild must not read as a fresh run")
+
     def test_topic_page_renders_claims_and_unknowns(self) -> None:
         from selflearn.publish.site import build_site
 
