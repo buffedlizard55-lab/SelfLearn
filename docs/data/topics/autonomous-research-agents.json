@@ -1,0 +1,2189 @@
+{
+  "attacks": [
+    {
+      "attack_id": "atk-0e06c77ba87e",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-0fa6f5e2f5ff",
+        "cl-4411121e5862",
+        "cl-ed5670c17f2f"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-0b8803e17d5e"
+    },
+    {
+      "attack_id": "atk-44a352624a25",
+      "attack_type": "counterexample",
+      "claim_refs": [
+        "cl-6ac20344a641",
+        "cl-13cf26e4fba9"
+      ],
+      "critic": "C4: Another claim in the library pulls in the opposite direction.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The library holds cl-13cf26e4fba9 from GitHub REST API, which points the other way from cl-6ac20344a641 on the same subject. The brief does not address it.",
+      "strategy_id": "st-0b8803e17d5e"
+    },
+    {
+      "attack_id": "atk-22ebdba9a374",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-0b8803e17d5e"
+    },
+    {
+      "attack_id": "atk-46c62af36e87",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
+      "strategy_id": "st-0b8803e17d5e"
+    },
+    {
+      "attack_id": "atk-4a4010847583",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-0b8803e17d5e"
+    },
+    {
+      "attack_id": "atk-9f2df2f1b258",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-0b8803e17d5e"
+    },
+    {
+      "attack_id": "atk-b309f5ffdd08",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-3875d311770a",
+        "cl-35e1e49fdb01",
+        "cl-13cf26e4fba9"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-27b4a83d14c4"
+    },
+    {
+      "attack_id": "atk-303491436d0a",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-27b4a83d14c4"
+    },
+    {
+      "attack_id": "atk-6144f6d8862b",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-27b4a83d14c4"
+    },
+    {
+      "attack_id": "atk-acb15020ed41",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The quantities quoted are commensurable with each other after unit conversion.",
+      "strategy_id": "st-27b4a83d14c4"
+    },
+    {
+      "attack_id": "atk-d0a7ffcd46ee",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-27b4a83d14c4"
+    },
+    {
+      "attack_id": "atk-103ef445dd4e",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-0fa6f5e2f5ff",
+        "cl-4411121e5862",
+        "cl-ed5670c17f2f"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-37f46e5fe489"
+    },
+    {
+      "attack_id": "atk-473c639275ae",
+      "attack_type": "counterexample",
+      "claim_refs": [
+        "cl-6ac20344a641",
+        "cl-13cf26e4fba9"
+      ],
+      "critic": "C4: Another claim in the library pulls in the opposite direction.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The library holds cl-13cf26e4fba9 from GitHub REST API, which points the other way from cl-6ac20344a641 on the same subject. The brief does not address it.",
+      "strategy_id": "st-37f46e5fe489"
+    },
+    {
+      "attack_id": "atk-72501e5b14e1",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-37f46e5fe489"
+    },
+    {
+      "attack_id": "atk-af3900416471",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-37f46e5fe489"
+    },
+    {
+      "attack_id": "atk-b210ae7a2a4a",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-37f46e5fe489"
+    },
+    {
+      "attack_id": "atk-b982e94a5870",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The absence of a contradicting statement in the retrieved set is not evidence that none exists.",
+      "strategy_id": "st-37f46e5fe489"
+    },
+    {
+      "attack_id": "atk-079aebf31a81",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-0fa6f5e2f5ff",
+        "cl-4411121e5862",
+        "cl-ed5670c17f2f"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-850b67df4743"
+    },
+    {
+      "attack_id": "atk-cf152ac7b10c",
+      "attack_type": "counterexample",
+      "claim_refs": [
+        "cl-6ac20344a641",
+        "cl-13cf26e4fba9"
+      ],
+      "critic": "C4: Another claim in the library pulls in the opposite direction.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The library holds cl-13cf26e4fba9 from GitHub REST API, which points the other way from cl-6ac20344a641 on the same subject. The brief does not address it.",
+      "strategy_id": "st-850b67df4743"
+    },
+    {
+      "attack_id": "atk-3a3053582fe8",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-850b67df4743"
+    },
+    {
+      "attack_id": "atk-b0b8ca12bd51",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-850b67df4743"
+    },
+    {
+      "attack_id": "atk-bfb1426b63c5",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-850b67df4743"
+    },
+    {
+      "attack_id": "atk-c9e3ac6d9fa0",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The other field's mechanism transfers without an omitted domain-specific constraint.",
+      "strategy_id": "st-850b67df4743"
+    },
+    {
+      "attack_id": "atk-1891afca5028",
+      "attack_type": "counterexample",
+      "claim_refs": [
+        "cl-6ac20344a641",
+        "cl-13cf26e4fba9"
+      ],
+      "critic": "C4: Another claim in the library pulls in the opposite direction.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The library holds cl-13cf26e4fba9 from GitHub REST API, which points the other way from cl-6ac20344a641 on the same subject. The brief does not address it.",
+      "strategy_id": "st-9d1fdeb8edd5"
+    },
+    {
+      "attack_id": "atk-94302d82a3fa",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-0fa6f5e2f5ff",
+        "cl-4411121e5862",
+        "cl-ed5670c17f2f"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-9d1fdeb8edd5"
+    },
+    {
+      "attack_id": "atk-185726632742",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
+      "strategy_id": "st-9d1fdeb8edd5"
+    },
+    {
+      "attack_id": "atk-4e7049f5394b",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-9d1fdeb8edd5"
+    },
+    {
+      "attack_id": "atk-5e2491f93712",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-9d1fdeb8edd5"
+    },
+    {
+      "attack_id": "atk-ae681a2fd988",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-9d1fdeb8edd5"
+    },
+    {
+      "attack_id": "atk-425958491714",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-3875d311770a",
+        "cl-35e1e49fdb01",
+        "cl-13cf26e4fba9"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-c1d34cd47519"
+    },
+    {
+      "attack_id": "atk-24a614f7d190",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-c1d34cd47519"
+    },
+    {
+      "attack_id": "atk-30a1c8ef0706",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The measurement can be reproduced with the same method in this environment.",
+      "strategy_id": "st-c1d34cd47519"
+    },
+    {
+      "attack_id": "atk-9cb764633319",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-c1d34cd47519"
+    },
+    {
+      "attack_id": "atk-e4fcf1b44080",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-c1d34cd47519"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "cl-2f15bcca9881",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "SelfLearn library computation",
+      "text": "This question is currently supported by 18 verified claim(s) drawn from 1 independent source(s).",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-4d8022f5ac83",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "SelfLearn library computation",
+      "text": "Of the documents cited here, 18 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-cdf65e5e26f3",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 1 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "SelfLearn library computation",
+      "text": "18 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-d3c1971acb14",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 1 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "SelfLearn library computation",
+      "text": "The supporting documents span 1 evidence class(es) in the project hierarchy.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-b274cc7763f8",
+      "confidence": "unknown",
+      "coverage": 0.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [
+        "100%"
+      ],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "SelfLearn library computation",
+      "text": "Of the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.",
+      "url": "",
+      "verdict": "unsupported"
+    },
+    {
+      "claim_id": "cl-07fcb3e7f437",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-110bf12404d3",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for SamuelSchmidgall/AgentLaboratory states in its own description: Agent Laboratory is an end-to-end autonomous research workflow meant to assist you as the human researcher toward implementing your research ideas",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for SamuelSchmidgall/AgentLaboratory states in its own description: Agent Laboratory is an end-to-end autonomous research workflow meant to assist you as the human researcher toward implementing your research ideas",
+      "url": "https://github.com/SamuelSchmidgall/AgentLaboratory",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-0ccba4f941a7",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-110bf12404d3",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for SamuelSchmidgall/AgentLaboratory reports: pushed_at 2025-08-20T21:46:43Z, stargazers_count 5859, forks_count 800.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for SamuelSchmidgall/AgentLaboratory reports: pushed_at 2025-08-20T21:46:43Z, stargazers_count 5859, forks_count 800.",
+      "url": "https://github.com/SamuelSchmidgall/AgentLaboratory",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-0fa6f5e2f5ff",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-ebdb71978613",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for khoj-ai/khoj states in its own description: Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral).",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for khoj-ai/khoj states in its own description: Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral).",
+      "url": "https://github.com/khoj-ai/khoj",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-13cf26e4fba9",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4b8d9080afb3",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for assafelovic/gpt-researcher reports: open_issues_count 102.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for assafelovic/gpt-researcher reports: open_issues_count 102.",
+      "url": "https://github.com/assafelovic/gpt-researcher",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-1ec591c4bc9f",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-36dae1b5cada",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for virattt/dexter reports: pushed_at 2026-08-04T15:20:42Z, stargazers_count 27614, forks_count 3415.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for virattt/dexter reports: pushed_at 2026-08-04T15:20:42Z, stargazers_count 27614, forks_count 3415.",
+      "url": "https://github.com/virattt/dexter",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-20a725b8704c",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-36dae1b5cada",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for virattt/dexter states in its own description: An autonomous agent for deep financial research",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for virattt/dexter states in its own description: An autonomous agent for deep financial research",
+      "url": "https://github.com/virattt/dexter",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-2eadf8214c3b",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4b8d9080afb3",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for assafelovic/gpt-researcher states in its own description: An autonomous agent that conducts deep research on any data using any LLM providers",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for assafelovic/gpt-researcher states in its own description: An autonomous agent that conducts deep research on any data using any LLM providers",
+      "url": "https://github.com/assafelovic/gpt-researcher",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-35e1e49fdb01",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4b8d9080afb3",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for assafelovic/gpt-researcher reports: pushed_at 2026-08-27T19:34:56Z, stargazers_count 29558, forks_count 4025.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for assafelovic/gpt-researcher reports: pushed_at 2026-08-27T19:34:56Z, stargazers_count 29558, forks_count 4025.",
+      "url": "https://github.com/assafelovic/gpt-researcher",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-3875d311770a",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4b8d9080afb3",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for assafelovic/gpt-researcher reports: language Python, license Apache-2.0, topics agent; ai; automation; deepresearch; llms; mcp; mcp-server; python; research; search; webscraping.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for assafelovic/gpt-researcher reports: language Python, license Apache-2.0, topics agent; ai; automation; deepresearch; llms; mcp; mcp-server; python; research; search; webscraping.",
+      "url": "https://github.com/assafelovic/gpt-researcher",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-4411121e5862",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-ebdb71978613",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for khoj-ai/khoj states in its own description: Build custom agents, schedule automations, do deep research.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for khoj-ai/khoj states in its own description: Build custom agents, schedule automations, do deep research.",
+      "url": "https://github.com/khoj-ai/khoj",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-5d482d19855b",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-ebdb71978613",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.",
+      "url": "https://github.com/khoj-ai/khoj",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-6ac20344a641",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-ebdb71978613",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for khoj-ai/khoj reports: open_issues_count 150.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for khoj-ai/khoj reports: open_issues_count 150.",
+      "url": "https://github.com/khoj-ai/khoj",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-92760b2fb5bb",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-ebdb71978613",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.",
+      "url": "https://github.com/khoj-ai/khoj",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-d1bbedd7a137",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-ebdb71978613",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for khoj-ai/khoj states in its own description: Your AI second brain.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for khoj-ai/khoj states in its own description: Your AI second brain.",
+      "url": "https://github.com/khoj-ai/khoj",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-eb78009d144f",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-110bf12404d3",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for SamuelSchmidgall/AgentLaboratory reports: language Python, license MIT, open_issues_count 61.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for SamuelSchmidgall/AgentLaboratory reports: language Python, license MIT, open_issues_count 61.",
+      "url": "https://github.com/SamuelSchmidgall/AgentLaboratory",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-ec1bb46363eb",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-ebdb71978613",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for khoj-ai/khoj states in its own description: Get started - free.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for khoj-ai/khoj states in its own description: Get started - free.",
+      "url": "https://github.com/khoj-ai/khoj",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-ed5670c17f2f",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-ebdb71978613",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for khoj-ai/khoj states in its own description: Get answers from the web or your docs.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for khoj-ai/khoj states in its own description: Get answers from the web or your docs.",
+      "url": "https://github.com/khoj-ai/khoj",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-fbf303b1b5c7",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-36dae1b5cada",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for virattt/dexter reports: language TypeScript, open_issues_count 102.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for virattt/dexter reports: language TypeScript, open_issues_count 102.",
+      "url": "https://github.com/virattt/dexter",
+      "verdict": "supported"
+    }
+  ],
+  "contradictions": [
+    {
+      "claim_a": "cl-6ac20344a641",
+      "claim_b": "cl-13cf26e4fba9",
+      "contradiction_id": "con-c026367771df",
+      "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (150 vs 102). One of the two readings, the unit, or the time period differs.",
+      "kind": "numeric",
+      "resolution": "unresolved",
+      "severity": "medium",
+      "topic_id": "topic-autonomous-research-agents"
+    }
+  ],
+  "derived": [
+    {
+      "context_numbers": [
+        "23",
+        "2"
+      ],
+      "label": "library_volume",
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "text": "This question is currently supported by 23 verified claim(s) drawn from 2 independent source(s)."
+    },
+    {
+      "context_numbers": [
+        "95.7%",
+        "95.7",
+        "0",
+        "22"
+      ],
+      "label": "verification_rate",
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "text": "Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
+    },
+    {
+      "context_numbers": [
+        "2"
+      ],
+      "label": "evidence_spread",
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "text": "The supporting documents span 2 evidence class(es) in the project hierarchy."
+    },
+    {
+      "context_numbers": [
+        "4",
+        "0"
+      ],
+      "label": "retrieval_mode",
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "text": "Of the documents cited here, 4 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear."
+    },
+    {
+      "context_numbers": [
+        "18"
+      ],
+      "label": "quantified_support",
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "text": "18 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible."
+    }
+  ],
+  "documents": [
+    {
+      "bytes_read": 58968,
+      "content_hash": "sha256:5131b0532517975c23920e1cba21e5379c34ba173c7c957f72d826d018c78a78",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-110bf12404d3",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2025-08-20",
+      "retrieved_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "title": "SamuelSchmidgall/AgentLaboratory",
+      "url": "https://github.com/SamuelSchmidgall/AgentLaboratory"
+    },
+    {
+      "bytes_read": 58968,
+      "content_hash": "sha256:d1946cc1493c6579f27b1c3e7d1fbc07541aa719c6b8fc8524cd5a4335fe49a7",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-36dae1b5cada",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2026-08-04",
+      "retrieved_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "title": "virattt/dexter",
+      "url": "https://github.com/virattt/dexter"
+    },
+    {
+      "bytes_read": 58968,
+      "content_hash": "sha256:b8c7657bbb9b0356e6ae0966f2619a4508f0760e132740283945d35d20cc24d3",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4b8d9080afb3",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2026-08-27",
+      "retrieved_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "title": "assafelovic/gpt-researcher",
+      "url": "https://github.com/assafelovic/gpt-researcher"
+    },
+    {
+      "bytes_read": 58968,
+      "content_hash": "sha256:9cdabf59388246e31ca3666768d94d788a433bcb6dd27760bc560f24ed40dfcf",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-ebdb71978613",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2026-08-02",
+      "retrieved_at": "2026-09-21T23:13:28Z",
+      "source_name": "GitHub REST API",
+      "title": "khoj-ai/khoj",
+      "url": "https://github.com/khoj-ai/khoj"
+    }
+  ],
+  "epistemic_questions": [
+    "What do we know?",
+    "What do we think we know?",
+    "What are we assuming?",
+    "What do we not know?",
+    "What would change our conclusion?",
+    "What experiment would resolve it?"
+  ],
+  "experiments": [],
+  "generated_at": "2026-09-21T23:14:00Z",
+  "questions": [
+    {
+      "id": "q-4de45dbb185f",
+      "origin": "gap",
+      "priority": 0.65,
+      "status": "open",
+      "text": "The quantity reported in cl-5d482d19855b has no reference period in the quoted text. Over what period, and in what population, was it measured?"
+    },
+    {
+      "id": "q-22e1819081d3",
+      "origin": "discovery",
+      "priority": 0.55,
+      "status": "open",
+      "text": "The retrieved statements repeatedly introduce the term 'record', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it?"
+    },
+    {
+      "id": "q-c318ab4a0393",
+      "origin": "discovery",
+      "priority": 0.55,
+      "status": "open",
+      "text": "The retrieved statements repeatedly introduce the term 'reports', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it?"
+    }
+  ],
+  "source_status": [],
+  "statistics": {
+    "claims": 23,
+    "computed_at": "2026-09-21T23:14:00Z",
+    "documents": 4,
+    "evidence_classes": [
+      "primary_source",
+      "reproduced_experiment"
+    ],
+    "fixture_documents": 0,
+    "live_documents": 4,
+    "partially_supported": 0,
+    "sources": 2,
+    "supported": 22,
+    "unsupported": 1
+  },
+  "status_history": [
+    {
+      "last_updated": "2026-09-21T23:13:27Z",
+      "line": 1,
+      "status": "new",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-21T23:13:28Z",
+      "line": 5,
+      "status": "competing",
+      "topic_id": "topic-autonomous-research-agents"
+    }
+  ],
+  "strategies": [
+    {
+      "argument": "Experimental brief. The statements below carry a measurement, which makes them usable as the basis of a test.\n\n[cl-5d482d19855b] \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\" - GitHub REST API (primary_source)\n[cl-92760b2fb5bb] \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\" - GitHub REST API (primary_source)\n[cl-6ac20344a641] \"The record for khoj-ai/khoj reports: open_issues_count 150.\" - GitHub REST API (primary_source)\n[cl-3875d311770a] \"The record for assafelovic/gpt-researcher reports: language Python, license Apache-2.0, topics agent; ai; automation; deepresearch; llms; mcp; mcp-server; python; research; search; webscraping.\" - GitHub REST API (primary_source)\n[cl-35e1e49fdb01] \"The record for assafelovic/gpt-researcher reports: pushed_at 2026-08-27T19:34:56Z, stargazers_count 29558, forks_count 4025.\" - GitHub REST API (primary_source)\n[cl-13cf26e4fba9] \"The record for assafelovic/gpt-researcher reports: open_issues_count 102.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The measurement can be reproduced with the same method in this environment."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 102, 150, 2, 2026, 2490, 27 for the same quantity. The attached experiment is the intended test.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "F - Experimental",
+      "persona_brief": "Design a falsifiable test that could determine which idea is actually correct.",
+      "persona_code": "F",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: open_issues_count 150.\""
+      ],
+      "scorecard": {
+        "attacks": 5,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5833,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.1143,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.7371,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-c1d34cd47519",
+      "supporting_claim_ids": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-3875d311770a",
+        "cl-35e1e49fdb01",
+        "cl-13cf26e4fba9"
+      ],
+      "title": "Experimental brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-5d482d19855b] \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\" - GitHub REST API (primary_source)\n[cl-92760b2fb5bb] \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\" - GitHub REST API (primary_source)\n[cl-6ac20344a641] \"The record for khoj-ai/khoj reports: open_issues_count 150.\" - GitHub REST API (primary_source)\n[cl-3875d311770a] \"The record for assafelovic/gpt-researcher reports: language Python, license Apache-2.0, topics agent; ai; automation; deepresearch; llms; mcp; mcp-server; python; research; search; webscraping.\" - GitHub REST API (primary_source)\n[cl-35e1e49fdb01] \"The record for assafelovic/gpt-researcher reports: pushed_at 2026-08-27T19:34:56Z, stargazers_count 29558, forks_count 4025.\" - GitHub REST API (primary_source)\n[cl-13cf26e4fba9] \"The record for assafelovic/gpt-researcher reports: open_issues_count 102.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The quantities quoted are commensurable with each other after unit conversion."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 102, 150, 2, 2026, 2490, 27 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "C - First principles",
+      "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
+      "persona_code": "C",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: open_issues_count 150.\""
+      ],
+      "scorecard": {
+        "attacks": 5,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5833,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.106,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.7368,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-27b4a83d14c4",
+      "supporting_claim_ids": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-3875d311770a",
+        "cl-35e1e49fdb01",
+        "cl-13cf26e4fba9"
+      ],
+      "title": "First principles brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-5d482d19855b] \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\" - GitHub REST API (primary_source)\n[cl-92760b2fb5bb] \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\" - GitHub REST API (primary_source)\n[cl-6ac20344a641] \"The record for khoj-ai/khoj reports: open_issues_count 150.\" - GitHub REST API (primary_source)\n[cl-0fa6f5e2f5ff] \"The record for khoj-ai/khoj states in its own description: Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral).\" - GitHub REST API (primary_source)\n[cl-4411121e5862] \"The record for khoj-ai/khoj states in its own description: Build custom agents, schedule automations, do deep research.\" - GitHub REST API (primary_source)\n[cl-ed5670c17f2f] \"The record for khoj-ai/khoj states in its own description: Get answers from the web or your docs.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 150, 2, 2026, 2490, 3, 37458 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "A - Conventional",
+      "persona_brief": "Find the strongest solution using established, well-evidenced knowledge.",
+      "persona_code": "A",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: open_issues_count 150.\""
+      ],
+      "scorecard": {
+        "attacks": 6,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.4118,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.1157,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 0.5,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.6864,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-0b8803e17d5e",
+      "supporting_claim_ids": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-0fa6f5e2f5ff",
+        "cl-4411121e5862",
+        "cl-ed5670c17f2f"
+      ],
+      "title": "Conventional brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "argument": "Contrarian brief. The retrieved evidence is searched for findings that limit, qualify or contradict the conventional reading.\n\n[cl-5d482d19855b] \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\" - GitHub REST API (primary_source)\n[cl-92760b2fb5bb] \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\" - GitHub REST API (primary_source)\n[cl-6ac20344a641] \"The record for khoj-ai/khoj reports: open_issues_count 150.\" - GitHub REST API (primary_source)\n[cl-0fa6f5e2f5ff] \"The record for khoj-ai/khoj states in its own description: Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral).\" - GitHub REST API (primary_source)\n[cl-4411121e5862] \"The record for khoj-ai/khoj states in its own description: Build custom agents, schedule automations, do deep research.\" - GitHub REST API (primary_source)\n[cl-ed5670c17f2f] \"The record for khoj-ai/khoj states in its own description: Get answers from the web or your docs.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The absence of a contradicting statement in the retrieved set is not evidence that none exists."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 150, 2, 2026, 2490, 3, 37458 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "B - Contrarian",
+      "persona_brief": "Assume the conventional approach is wrong; find evidence-backed alternatives.",
+      "persona_code": "B",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: open_issues_count 150.\""
+      ],
+      "scorecard": {
+        "attacks": 6,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.4118,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.1117,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 0.5,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.6863,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-37f46e5fe489",
+      "supporting_claim_ids": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-0fa6f5e2f5ff",
+        "cl-4411121e5862",
+        "cl-ed5670c17f2f"
+      ],
+      "title": "Contrarian brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-5d482d19855b] \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\" - GitHub REST API (primary_source)\n[cl-92760b2fb5bb] \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\" - GitHub REST API (primary_source)\n[cl-6ac20344a641] \"The record for khoj-ai/khoj reports: open_issues_count 150.\" - GitHub REST API (primary_source)\n[cl-0fa6f5e2f5ff] \"The record for khoj-ai/khoj states in its own description: Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral).\" - GitHub REST API (primary_source)\n[cl-4411121e5862] \"The record for khoj-ai/khoj states in its own description: Build custom agents, schedule automations, do deep research.\" - GitHub REST API (primary_source)\n[cl-ed5670c17f2f] \"The record for khoj-ai/khoj states in its own description: Get answers from the web or your docs.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 150, 2, 2026, 2490, 3, 37458 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "E - Optimization",
+      "persona_brief": "Find the cheapest, fastest or most scalable option given the sourced numbers.",
+      "persona_code": "E",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: open_issues_count 150.\""
+      ],
+      "scorecard": {
+        "attacks": 6,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.4118,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.111,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 0.5,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.6862,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-9d1fdeb8edd5",
+      "supporting_claim_ids": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-0fa6f5e2f5ff",
+        "cl-4411121e5862",
+        "cl-ed5670c17f2f"
+      ],
+      "title": "Optimization brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "argument": "Cross-domain brief. The statements below were retrieved for other topics and share subject matter with this one; they are candidates for transfer.\n\n[cl-5d482d19855b] \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\" - GitHub REST API (primary_source)\n[cl-92760b2fb5bb] \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\" - GitHub REST API (primary_source)\n[cl-6ac20344a641] \"The record for khoj-ai/khoj reports: open_issues_count 150.\" - GitHub REST API (primary_source)\n[cl-0fa6f5e2f5ff] \"The record for khoj-ai/khoj states in its own description: Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral).\" - GitHub REST API (primary_source)\n[cl-4411121e5862] \"The record for khoj-ai/khoj states in its own description: Build custom agents, schedule automations, do deep research.\" - GitHub REST API (primary_source)\n[cl-ed5670c17f2f] \"The record for khoj-ai/khoj states in its own description: Get answers from the web or your docs.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The other field's mechanism transfers without an omitted domain-specific constraint."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 150, 2, 2026, 2490, 3, 37458 for the same quantity. For a transferred mechanism, falsification is a demonstration that the domain-specific constraint is missing.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "D - Cross-domain",
+      "persona_brief": "Look for solutions that worked in a completely different field.",
+      "persona_code": "D",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37458, forks_count 2490.\"",
+        "If the sourced statement holds, then: \"The record for khoj-ai/khoj reports: open_issues_count 150.\""
+      ],
+      "scorecard": {
+        "attacks": 6,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.4118,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.1047,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 0.5,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.686,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-850b67df4743",
+      "supporting_claim_ids": [
+        "cl-5d482d19855b",
+        "cl-92760b2fb5bb",
+        "cl-6ac20344a641",
+        "cl-0fa6f5e2f5ff",
+        "cl-4411121e5862",
+        "cl-ed5670c17f2f"
+      ],
+      "title": "Cross-domain brief: Autonomous research agents: which open implementations exist and how active are…"
+    }
+  ],
+  "topic": {
+    "first_seen": "2026-09-21T23:13:27Z",
+    "keywords": [
+      "autonomous agent",
+      "research automation",
+      "llm agent",
+      "agent framework",
+      "open source",
+      "repository activity"
+    ],
+    "last_updated": "2026-09-21T23:13:28Z",
+    "notes": "First seed question. Chosen because its evidence is repository metadata, which the engine can retrieve and quote verbatim.",
+    "origin": "seed",
+    "parent_topic_id": null,
+    "question": "What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?",
+    "signal": {
+      "queries": [
+        "autonomous research agent",
+        "llm research agent framework",
+        "agentic research automation"
+      ]
+    },
+    "slug": "autonomous-research-agents",
+    "source_ids": [
+      "github",
+      "hackernews",
+      "crossref",
+      "openalex",
+      "arxiv"
+    ],
+    "status": "competing",
+    "title": "Autonomous research agents: which open implementations exist and how active are they?",
+    "topic_id": "topic-autonomous-research-agents"
+  },
+  "tournament": {
+    "_line": 1,
+    "criterion_table": {
+      "st-0b8803e17d5e": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.4118,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.1157,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 0.5,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      },
+      "st-27b4a83d14c4": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.5833,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.106,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 1.0,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      },
+      "st-37f46e5fe489": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.4118,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.1117,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 0.5,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      },
+      "st-850b67df4743": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.4118,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.1047,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 0.5,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      },
+      "st-9d1fdeb8edd5": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.4118,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.111,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 0.5,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      },
+      "st-c1d34cd47519": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.5833,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.1143,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 1.0,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      }
+    },
+    "decided_at": "2026-09-21T23:13:28Z",
+    "notes": "The final was decided on the weighted criterion total; the margin is published below.",
+    "ranking": [
+      "st-c1d34cd47519",
+      "st-27b4a83d14c4",
+      "st-0b8803e17d5e",
+      "st-37f46e5fe489",
+      "st-9d1fdeb8edd5",
+      "st-850b67df4743"
+    ],
+    "round_name": "round-robin then final",
+    "scores": {
+      "st-0b8803e17d5e": 0.6864,
+      "st-27b4a83d14c4": 0.7368,
+      "st-37f46e5fe489": 0.6863,
+      "st-850b67df4743": 0.686,
+      "st-9d1fdeb8edd5": 0.6862,
+      "st-c1d34cd47519": 0.7371
+    },
+    "topic_id": "topic-autonomous-research-agents",
+    "tournament_id": "tour-5d5346841f62",
+    "winner": "st-c1d34cd47519"
+  },
+  "unknowns": [
+    {
+      "answer": "No experiment has been run for this question yet. The tournament's experimental criterion therefore contributes zero for every candidate, by construction.",
+      "question": "What experiment would resolve it?",
+      "resolve_with": "Add a runnable experiment to the catalogue whose keywords match this topic, or retrieve measured data from a registered source."
+    }
+  ],
+  "winner": {
+    "persona": "F - Experimental",
+    "score": 0.7371,
+    "strategy_id": "st-c1d34cd47519",
+    "title": "Experimental brief: Autonomous research agents: which open implementations exist and how active are…"
+  }
+}

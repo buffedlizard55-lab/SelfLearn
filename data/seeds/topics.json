@@ -1,0 +1,124 @@
+[
+  {
+    "topic_id": "topic-autonomous-research-agents",
+    "title": "Autonomous research agents: which open implementations exist and how active are they?",
+    "slug": "autonomous-research-agents",
+    "question": "What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?",
+    "status": "new",
+    "origin": "seed",
+    "keywords": [
+      "autonomous agent",
+      "research automation",
+      "llm agent",
+      "agent framework",
+      "open source",
+      "repository activity"
+    ],
+    "signal": {
+      "queries": [
+        "autonomous research agent",
+        "llm research agent framework",
+        "agentic research automation"
+      ]
+    },
+    "source_ids": [
+      "github",
+      "hackernews",
+      "crossref",
+      "openalex",
+      "arxiv"
+    ],
+    "notes": "First seed question. Chosen because its evidence is repository metadata, which the engine can retrieve and quote verbatim."
+  },
+  {
+    "topic_id": "topic-fabrication-detection",
+    "title": "Detecting fabricated statements in machine-generated text",
+    "slug": "fabrication-detection",
+    "question": "What open-source tooling exists for detecting unsupported or fabricated statements in machine-generated text, and what evidence supports its use?",
+    "status": "new",
+    "origin": "seed",
+    "keywords": [
+      "hallucination",
+      "factuality",
+      "grounding",
+      "verification",
+      "attribution",
+      "evidence"
+    ],
+    "signal": {
+      "queries": [
+        "hallucination detection open source",
+        "citation verification tool",
+        "factuality benchmark"
+      ]
+    },
+    "source_ids": [
+      "github",
+      "arxiv",
+      "crossref",
+      "semantic_scholar",
+      "openalex"
+    ],
+    "notes": "Directly relevant to this project's own central problem: deciding whether a sentence is supported by a source."
+  },
+  {
+    "topic_id": "topic-research-loop-scheduling",
+    "title": "How should a research loop schedule and prioritise its own work?",
+    "slug": "research-loop-scheduling",
+    "question": "Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?",
+    "status": "new",
+    "origin": "seed",
+    "keywords": [
+      "scheduling",
+      "prioritisation",
+      "active learning",
+      "exploration",
+      "research management",
+      "bandit"
+    ],
+    "signal": {
+      "queries": [
+        "active learning acquisition function",
+        "research prioritisation method",
+        "bandit exploration scheduling"
+      ]
+    },
+    "source_ids": [
+      "github",
+      "crossref",
+      "openalex",
+      "arxiv"
+    ],
+    "notes": "Tests whether the manager's scoring design matches published practice, or whether a published method is better."
+  },
+  {
+    "topic_id": "topic-search-and-sorting-strategy",
+    "title": "Sorting and search strategies: which is most efficient in practice, and how does the choice scale?",
+    "slug": "search-and-sorting-strategy",
+    "question": "For the sorting and search strategies in common use, how do measured comparison counts compare with the stated bounds, and where does the choice change the outcome?",
+    "status": "new",
+    "origin": "seed",
+    "keywords": [
+      "algorithm",
+      "sorting",
+      "search",
+      "complexity",
+      "benchmark",
+      "performance",
+      "data structures"
+    ],
+    "signal": {
+      "queries": [
+        "sorting algorithm comparison count",
+        "binary search complexity",
+        "hash collision birthday"
+      ]
+    },
+    "source_ids": [
+      "github",
+      "crossref",
+      "arxiv"
+    ],
+    "notes": "The one seed question that matches the computational experiment catalogue, so the tournament's experimental criterion can be non-zero here."
+  }
+]

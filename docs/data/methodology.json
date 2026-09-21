@@ -1,0 +1,63 @@
+{
+  "engine_version": "0.1.0",
+  "evidence_hierarchy": [
+    {
+      "description": "An experiment run by this engine with recorded inputs, outputs and hashes.",
+      "name": "direct_experiment",
+      "rank": 1
+    },
+    {
+      "description": "A previous experiment re-run and confirmed by this engine.",
+      "name": "reproduced_experiment",
+      "rank": 2
+    },
+    {
+      "description": "Original data, official API response, official document or dataset.",
+      "name": "primary_source",
+      "rank": 3
+    },
+    {
+      "description": "Peer-reviewed publication indexed by a DOI registry or PubMed.",
+      "name": "peer_reviewed",
+      "rank": 4
+    },
+    {
+      "description": "Data published by a government, standards body or international agency.",
+      "name": "official_data",
+      "rank": 5
+    },
+    {
+      "description": "Encyclopaedic or established secondary compilation.",
+      "name": "reputable_secondary",
+      "rank": 6
+    },
+    {
+      "description": "Expert commentary, editorial, blog post by a named practitioner.",
+      "name": "commentary",
+      "rank": 7
+    },
+    {
+      "description": "Assertion with no traceable provenance.",
+      "name": "unverified_claim",
+      "rank": 8
+    },
+    {
+      "description": "Machine-generated text that is not grounded in retrieved evidence.",
+      "name": "ai_speculation",
+      "rank": 9
+    }
+  ],
+  "thresholds": {
+    "cases": 26,
+    "changed": false,
+    "false_supports": 0,
+    "in_force": {
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.8
+    },
+    "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
+    "ran_at": "2026-09-21T23:14:00Z",
+    "source": "state/calibration.json"
+  }
+}

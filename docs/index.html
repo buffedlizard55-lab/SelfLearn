@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview - SelfLearn</title>
+<meta name="description" content="SelfLearn: an autonomous research engine that only publishes what it can quote from a retrieved source.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128218;</text></svg>">
+<script defer src="static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">SelfLearn <small>autonomous evidence-verifying research engine v0.1.0</small></span>
+      <span class="muted small">run <span class="mono">site-rebuild</span> &middot; generated 2026-09-21T23:14:00Z &middot; mode snapshot</span>
+    </div>
+    <nav class="site" aria-label="Primary"><a href="index.html" aria-current="page">Overview</a><a href="library.html">Library</a><a href="sources.html">Sources</a><a href="experiments.html">Experiments</a><a href="method.html">Method</a><a href="documents.html">Documents</a><a href="requirements.html">Requirements</a><a href="review.html">For review</a></nav>
+  </div>
+</header>
+<div class="banner info wrap"><strong>Snapshot mode.</strong> Live retrieval was unavailable for at least part of this run, so the claims verified here were checked against the stored documents in <span class='mono'>evidence/snapshots/</span>. Each claim shows whether it was retrieved live. The source status table on the <a href="sources.html">sources page</a> records which sources were reached.</div>
+<main id="main" class="wrap">
+
+<h1>An autonomous research library that shows its working</h1>
+
+<p class="lede">SelfLearn researches a question by retrieving documents from official APIs, quoting the exact spans it
+relies on, and refusing to publish a sentence it cannot trace back to a source. Competing candidate answers are
+generated from those verified claims, attacked by rule-based critics, ranked on published criteria, and the losers are
+kept.</p>
+<div class="banner info"><strong>The rule this project is built around:</strong> a claim is only promoted to
+&ldquo;verified&rdquo; when every number and date in it appears in the cited document, and either a verbatim quoted span
+is present or the document covers 80.0% of the claim's content words. Nothing on this
+site is asserted on the basis of a language model's memory.</div>
+<div class="grid four" style="margin-top:1rem"><div class="stat"><span class="n">4</span><span class="l">questions under study</span></div><div class="stat"><span class="n">141</span><span class="l">verified claims</span></div><div class="stat"><span class="n">97.2%</span><span class="l">fully supported claims</span></div><div class="stat"><span class="n">32</span><span class="l">documents cited</span></div><div class="stat"><span class="n">2</span><span class="l">experiments run</span></div><div class="stat"><span class="n">0</span><span class="l">errors flagged for review</span></div></div>
+
+
+<section class="anchor" id="library"><h2>What is being studied right now</h2><div class="table-scroll"><table><caption>Stages follow the idea lifecycle: new, researching, hypothesis, competing, testing, validated, rejected.</caption><thead><tr><th scope="col">Question</th><th scope="col">Stage</th><th scope="col">Claims</th><th scope="col">Verified</th><th scope="col">Open questions</th><th scope="col">Current best candidate</th></tr></thead><tbody><tr><td><a href="topics/search-and-sorting-strategy.html">Sorting and search strategies: which is most efficient in practice, and how does the choice scale?</a></td><td>testing</td><td><span class="num">49</span></td><td><span class="num">48</span></td><td><span class="num">3</span></td><td><span class="muted">none declared</span></td></tr><tr><td><a href="topics/fabrication-detection.html">Detecting fabricated statements in machine-generated text</a></td><td>testing</td><td><span class="num">44</span></td><td><span class="num">43</span></td><td><span class="num">4</span></td><td>F - Experimental</td></tr><tr><td><a href="topics/research-loop-scheduling.html">How should a research loop schedule and prioritise its own work?</a></td><td>competing</td><td><span class="num">25</span></td><td><span class="num">24</span></td><td><span class="num">6</span></td><td>F - Experimental</td></tr><tr><td><a href="topics/autonomous-research-agents.html">Autonomous research agents: which open implementations exist and how active are they?</a></td><td>competing</td><td><span class="num">23</span></td><td><span class="num">22</span></td><td><span class="num">3</span></td><td>F - Experimental</td></tr></tbody></table></div><p><a href="library.html">Open the full library</a> for the per-question pages, or <a href="sources.html">the source register</a> for what is being read.</p></section>
+
+<section class="anchor" id="cycle"><h2>This cycle</h2><ul><li>Library now holds 141 claim(s) across 4 question(s).</li><li>This cycle retrieved 30 document(s) from 1 of 6 polled source(s).</li><li>16 open question(s) have been derived from the retrieved evidence.</li><li>0 error(s) and 1 warning(s) are waiting for review.</li></ul><p class="small muted">Generation is idempotent: re-running the engine on unchanged inputs reproduces the same records and the same page, which is what makes the diffs reviewable.</p></section>
+
+<section class="anchor" id="standings"><h2>Competition standings</h2><p class="muted small">Ratings are bookkeeping, not truth. A brief that wins often is a brief that scores well on the published criteria, which do not include whether the underlying documents are right.</p><p>No tournament has been completed yet.</p></section>
+
+<section class="anchor" id="next"><h2>Where to look next</h2>
+<div class="grid two">
+  <div class="card"><h3>To check a fact</h3><p>Open a question from the library. Each fact shows the quoted span, the
+  source link, the evidence class, the verification score and the stored copy of what was retrieved.</p>
+  <p><a href="library.html">Library</a></p></div>
+  <div class="card"><h3>To check the reading list</h3><p>Every registered API with its operator, documentation link,
+  evidence class, credential requirement and last-run health.</p><p><a href="sources.html">Sources</a></p></div>
+  <div class="card"><h3>To check the reasoning rules</h3><p>The evidence hierarchy, the verification algorithm, the
+  thresholds in force, the tournament weights and which of them are heuristics.</p>
+  <p><a href="method.html">Method</a></p></div>
+  <div class="card"><h3>To find problems</h3><p>Everything the engine could not reconcile: failed sources, missing
+  evidence, contradictions, disagreements between its own labels and its own verifier.</p>
+  <p><a href="review.html">For review</a></p></div>
+  <div class="card"><h3>To check the requirements</h3><p>Each requirement from the project brief, line by line, with
+  what implements it, how to verify it, and what is not done yet.</p>
+  <p><a href="requirements.html">Requirements</a></p></div>
+  <div class="card"><h3>To re-run it</h3><p>Every experiment shows its command and script hash. The engine itself has
+  no dependencies beyond the Python standard library.</p><p><a href="experiments.html">Experiments</a></p></div>
+</div>
+</section>
+
+<section class="anchor" id="limits"><h2>What this site cannot tell you</h2><p class="muted small">These limits are part of the deliverable, not a disclaimer. Where a limit can be measured, it is measured; see the method page and the review page.</p><ul><li><strong>The engine does not read behind paywalls or logins</strong> &mdash; Only openly accessible APIs and documents are used. Evidence behind a subscription is absent, and the absence is recorded as a coverage gap rather than filled with a guess.</li><li><strong>Verification is lexical, not semantic</strong> &mdash; A claim is checked against a document with string and set operations. This blocks fabricated numbers and detects polarity flips, but it cannot detect a unit substitution (for example dollars written where the source says euros) and it cannot judge whether a quoted sentence is being used in the spirit the author intended. A labelled case in the calibration set documents the unit blind spot explicitly.</li><li><strong>Paraphrase detection is a token heuristic</strong> &mdash; Coverage is a Jaccard-style token measure. A well-disguised paraphrase that reuses vocabulary will score high; a faithful paraphrase that uses different vocabulary will score low and be downgraded. The threshold in force is published, and the calibration set is published with it so it can be re-labelled.</li><li><strong>Contradiction detection produces candidates, not verdicts</strong> &mdash; Two claims that share vocabulary but assert different numbers, or differ in polarity, are flagged for human review. The engine does not decide which is right.</li><li><strong>The experiment catalogue is computational</strong> &mdash; Runnable offline experiments can test statements about algorithms, numerics and the engine's own procedure. They cannot test statements about the physical world without measured data. Where a question needs physical measurement, the engine retrieves sources and stops at the boundary of what it can check, saying so.</li><li><strong>Attention and trend signals are weak</strong> &mdash; Forum and repository activity measures attention, not importance or truth. It is used only to prioritise what to look at next, and is labelled as a commentary-class signal wherever it appears.</li><li><strong>An autonomous loop needs a scheduler and a budget</strong> &mdash; The loop runs a bounded number of steps per invocation, within a request and time budget. Continuous operation therefore comes from an external scheduler: the workflow in <span class='mono'>.github/workflows/</span> starts a cycle on a timer. The engine itself is deterministic and needs no credential to run; sources that need a key are reported as <span class='mono'>credential_required</span> and are never called without one.</li><li><strong>There is no language model anywhere in the pipeline</strong> &mdash; No model is called at any stage: not to retrieve, not to extract, not to summarise, not to reason. Every published sentence about the world is a span copied out of a retrieved document, every other sentence is a count or comparison of the engine's own records, and the scaffolding around them is fixed template text. This is why the engine cannot synthesise across documents, and why it cannot paraphrase. Adding a model would require the same numeric and citation guards to be applied to its output before anything was published; that is on the roadmap and is not implemented.</li></ul></section>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><strong>How to check this site.</strong> Every factual statement is a quotation from a document listed on the
+    topic page, with a link and a stored copy. Every figure in the generated prose is traceable to a claim or an engine
+    computation. The full data behind every page is in <span class="mono">docs/data/</span>. Reproduction steps and
+    limitations are on the <a href="method.html">method page</a>, and every unresolved problem the engine found is
+    on the <a href="review.html">review page</a>.</p>
+    <p class="small">Engine and content licence: MIT (code). Retrieved documents keep their own licences, shown against
+    each source. Source code: <a href="https://github.com/buffedlizard55-lab/SelfLearn" target="_blank" rel="noopener noreferrer">github.com/buffedlizard55-lab/SelfLearn<span aria-hidden="true">&#8599;</span></a> &middot;
+    Published site: <a href="https://buffedlizard55-lab.github.io/SelfLearn/" target="_blank" rel="noopener noreferrer">https://buffedlizard55-lab.github.io/SelfLearn/<span aria-hidden="true">&#8599;</span></a> &middot;
+    Generated 2026-09-21T23:14:00Z. This page contains no third-party scripts, fonts or trackers.</p>
+  </div>
+</footer>
+</body>
+</html>

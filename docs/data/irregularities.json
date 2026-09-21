@@ -1,0 +1,14 @@
+[
+  {
+    "created_at": "2026-09-21T23:13:32Z",
+    "detail": "Unavailable sources: arxiv, crossref, hackernews, openalex, semantic_scholar",
+    "irregularity_id": "irr-7a8a2e69fe6e",
+    "resolved": false,
+    "severity": "warning",
+    "stage": "audit",
+    "suggested_action": "Confirm network egress from the runner, or accept snapshot replay for these sources.",
+    "summary": "5 source(s) were not reachable during this run",
+    "topic_id": null,
+    "url": null
+  }
+]

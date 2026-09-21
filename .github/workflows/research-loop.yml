@@ -1,0 +1,108 @@
+name: Research loop
+
+# The engine is a process, not a daemon: continuity comes from this schedule. Each
+# run does one bounded cycle, publishes the site, and commits the updated library and
+# pages back to the branch it ran on, so the published site is always the state of
+# the store it was built from.
+#
+# Sources that need a key are simply skipped when the secret is absent; the run
+# records a `credential_required` status rather than failing. Add the secrets below
+# in Settings -> Secrets and variables -> Actions to enable them.
+#
+#   EIA_API_KEY, FRED_API_KEY, NCEI_TOKEN, PATENTSVIEW_API_KEY   (optional)
+
+on:
+  schedule:
+    # Every six hours. GitHub may delay scheduled runs under load; the engine is
+    # idempotent, so a delayed or repeated run produces the same records.
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Evidence mode for this cycle
+        type: choice
+        options: [live, snapshot, fixture]
+        default: live
+
+permissions:
+  contents: write
+
+concurrency:
+  group: research-loop
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SELFLEARN_MODE: ${{ github.event.inputs.mode || 'live' }}
+      EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      NCEI_TOKEN: ${{ secrets.NCEI_TOKEN }}
+      PATENTSVIEW_API_KEY: ${{ secrets.PATENTSVIEW_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Environment
+        run: python3 --version
+
+      - name: Test suite
+        run: python3 -m unittest discover -s tests -t . -p "test_*.py"
+
+      - name: Source reachability
+        # Recorded in the log and on the sources page. A source that cannot be
+        # reached is a finding, not a failure.
+        run: python3 -m selflearn sources --probe
+
+      - name: Research cycle
+        run: python3 -m selflearn run --mode "$SELFLEARN_MODE"
+
+      - name: Audit the library
+        run: python3 -m selflearn audit
+
+      - name: Export the readable summary
+        run: python3 tools/export_summary.py
+
+      - name: Show the run summary
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          data = json.loads(pathlib.Path("reports/run_summary.json").read_text())
+          print("run:", data.get("run_id"), "mode:", data.get("mode"))
+          for key, value in sorted((data.get("figures") or {}).items()):
+              print(f"  {key}: {value}")
+          result = data.get("irregularities") or {}
+          print("irregularities:", (result.get("by_severity") or {}))
+          PY
+
+      - name: Commit the run
+        run: |
+          set -eu
+          git config user.name "selflearn-bot"
+          git config user.email "selflearn-bot@users.noreply.github.com"
+          git add -A library evidence reports state docs
+          if git diff --cached --quiet; then
+            echo "No changes to commit: the cycle reproduced the stored state exactly."
+            exit 0
+          fi
+          run_id=$(python3 -c "import json;print(json.load(open('state/last_cycle.json'))['run_id'])")
+          git commit -m "research cycle ${run_id}"
+          git push
+
+      - name: Upload the artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-artifacts
+          path: |
+            reports/
+            state/
+          if-no-files-found: warn
+          retention-days: 30

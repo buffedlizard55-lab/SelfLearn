@@ -1,0 +1,23 @@
+{
+  "bytes_read": 64220,
+  "content_hash": "sha256:4af6bd2a186ed09f3cbc02587e6d63ffb49a709cfcbc8d062201a2f7583e5beb",
+  "evidence_class": "primary_source",
+  "evidence_class_label": "Original data, official API response, official document or dataset.",
+  "evidence_id": "ev-497d893864cb",
+  "evidence_rank": 3,
+  "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: summarizebot/LLM-QualityGuard\nThe record for summarizebot/LLM-QualityGuard reports: pushed_at 2024-03-01T09:41:19Z, stargazers_count 1, forks_count 0.\nThe record f",
+  "http_status": 200,
+  "is_fixture": false,
+  "is_live": true,
+  "license": "Repository content carries each repository's own licence",
+  "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+  "published_at": "2024-03-01",
+  "publisher": "GitHub, Inc. (Microsoft)",
+  "response_sha256": "sha256:6e1e4c8a3bd2f5f6b916053871e1cffa268f9851debf1799c0fd407075e2bdf7",
+  "retrieved_at": "2026-09-21T23:13:29Z",
+  "source_id": "github",
+  "source_name": "GitHub REST API",
+  "text": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: summarizebot/LLM-QualityGuard\nThe record for summarizebot/LLM-QualityGuard reports: pushed_at 2024-03-01T09:41:19Z, stargazers_count 1, forks_count 0.\nThe record for summarizebot/LLM-QualityGuard reports: license MIT, open_issues_count 0.\nThe record for summarizebot/LLM-QualityGuard states in its own description: An open-source library for Large Language Models (LLMs) correctness testing, including hallucination detection and content moderation, to enhance the reliability and safety of AI-generated content across diverse languages.\nSource note: Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+  "title": "summarizebot/LLM-QualityGuard",
+  "url": "https://github.com/summarizebot/LLM-QualityGuard"
+}

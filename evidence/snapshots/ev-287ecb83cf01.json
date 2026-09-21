@@ -1,0 +1,23 @@
+{
+  "bytes_read": 64220,
+  "content_hash": "sha256:053e67a64e2e2e7af26da981f34e0373a079800f2ab021f5175bccbe0f0e07a2",
+  "evidence_class": "primary_source",
+  "evidence_class_label": "Original data, official API response, official document or dataset.",
+  "evidence_id": "ev-287ecb83cf01",
+  "evidence_rank": 3,
+  "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: 108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT\nThe record for 108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-",
+  "http_status": 200,
+  "is_fixture": false,
+  "is_live": true,
+  "license": "Repository content carries each repository's own licence",
+  "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+  "published_at": "2026-02-08",
+  "publisher": "GitHub, Inc. (Microsoft)",
+  "response_sha256": "sha256:6e1e4c8a3bd2f5f6b916053871e1cffa268f9851debf1799c0fd407075e2bdf7",
+  "retrieved_at": "2026-09-21T23:13:29Z",
+  "source_id": "github",
+  "source_name": "GitHub REST API",
+  "text": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: 108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT\nThe record for 108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT reports: pushed_at 2026-02-08T00:14:44Z, stargazers_count 1, forks_count 0.\nThe record for 108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT reports: language Jupyter Notebook, license NOASSERTION, open_issues_count 0.\nThe record for 108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT states in its own description: My final project for MIT's open-source Intro to Deep learning course\nSource note: Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+  "title": "108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT",
+  "url": "https://github.com/108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT"
+}

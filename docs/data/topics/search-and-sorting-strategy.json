@@ -1,0 +1,3061 @@
+{
+  "attacks": [
+    {
+      "attack_id": "atk-666d0fb6fb7d",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-157d2e17598d"
+    },
+    {
+      "attack_id": "atk-a2a2c7906631",
+      "attack_type": "assumption",
+      "claim_refs": [
+        "cl-d22d711e7580"
+      ],
+      "critic": "C9: The brief infers a mechanism from observational statements.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The quoted statements use causal language while every cited document is observational. Association in the sources does not establish the mechanism the brief implies.",
+      "strategy_id": "st-157d2e17598d"
+    },
+    {
+      "attack_id": "atk-4fa6178ae8d8",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-157d2e17598d"
+    },
+    {
+      "attack_id": "atk-5dc040ad44f4",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The measurement can be reproduced with the same method in this environment.",
+      "strategy_id": "st-157d2e17598d"
+    },
+    {
+      "attack_id": "atk-9b5c8f64b278",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-157d2e17598d"
+    },
+    {
+      "attack_id": "atk-fe47573361f9",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-157d2e17598d"
+    },
+    {
+      "attack_id": "atk-145f02823ba5",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "critic": "C8: The cited evidence is older than the staleness horizon.",
+      "outcome": "open",
+      "severity": "moderate",
+      "statement": "The freshest document cited by this brief is more than three years old at the time of the run, which is a risk for a question about current conditions.",
+      "strategy_id": "st-157d2e17598d"
+    },
+    {
+      "attack_id": "atk-5a07732a5fde",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-581df6082d26",
+        "cl-34c53c350fbf",
+        "cl-7b5d83737c5f",
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-38e954837349"
+    },
+    {
+      "attack_id": "atk-8813d32302bc",
+      "attack_type": "assumption",
+      "claim_refs": [
+        "cl-d22d711e7580"
+      ],
+      "critic": "C9: The brief infers a mechanism from observational statements.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The quoted statements use causal language while every cited document is observational. Association in the sources does not establish the mechanism the brief implies.",
+      "strategy_id": "st-38e954837349"
+    },
+    {
+      "attack_id": "atk-6345824e590b",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-38e954837349"
+    },
+    {
+      "attack_id": "atk-6493220495c1",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-38e954837349"
+    },
+    {
+      "attack_id": "atk-b780c558a26c",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The absence of a contradicting statement in the retrieved set is not evidence that none exists.",
+      "strategy_id": "st-38e954837349"
+    },
+    {
+      "attack_id": "atk-ec3281b78b67",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-38e954837349"
+    },
+    {
+      "attack_id": "atk-8ae509a58527",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-581df6082d26",
+        "cl-34c53c350fbf",
+        "cl-7b5d83737c5f",
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476"
+      ],
+      "critic": "C8: The cited evidence is older than the staleness horizon.",
+      "outcome": "open",
+      "severity": "moderate",
+      "statement": "The freshest document cited by this brief is more than three years old at the time of the run, which is a risk for a question about current conditions.",
+      "strategy_id": "st-38e954837349"
+    },
+    {
+      "attack_id": "atk-3db775b5d830",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-39db3127f51f"
+    },
+    {
+      "attack_id": "atk-505502d227c9",
+      "attack_type": "assumption",
+      "claim_refs": [
+        "cl-d22d711e7580"
+      ],
+      "critic": "C9: The brief infers a mechanism from observational statements.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The quoted statements use causal language while every cited document is observational. Association in the sources does not establish the mechanism the brief implies.",
+      "strategy_id": "st-39db3127f51f"
+    },
+    {
+      "attack_id": "atk-21bf1008f4b4",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-39db3127f51f"
+    },
+    {
+      "attack_id": "atk-5e0401aadf60",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-39db3127f51f"
+    },
+    {
+      "attack_id": "atk-9b34c8e09aac",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
+      "strategy_id": "st-39db3127f51f"
+    },
+    {
+      "attack_id": "atk-dfa84b8893d3",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-39db3127f51f"
+    },
+    {
+      "attack_id": "atk-0092ba645d45",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "critic": "C8: The cited evidence is older than the staleness horizon.",
+      "outcome": "open",
+      "severity": "moderate",
+      "statement": "The freshest document cited by this brief is more than three years old at the time of the run, which is a risk for a question about current conditions.",
+      "strategy_id": "st-39db3127f51f"
+    },
+    {
+      "attack_id": "atk-048df6468edb",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-78324205eba0"
+    },
+    {
+      "attack_id": "atk-cd07f5fa67f8",
+      "attack_type": "assumption",
+      "claim_refs": [
+        "cl-d22d711e7580"
+      ],
+      "critic": "C9: The brief infers a mechanism from observational statements.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The quoted statements use causal language while every cited document is observational. Association in the sources does not establish the mechanism the brief implies.",
+      "strategy_id": "st-78324205eba0"
+    },
+    {
+      "attack_id": "atk-02cb7efde21e",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
+      "strategy_id": "st-78324205eba0"
+    },
+    {
+      "attack_id": "atk-8aeb0e841988",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-78324205eba0"
+    },
+    {
+      "attack_id": "atk-9a08629a09e1",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-78324205eba0"
+    },
+    {
+      "attack_id": "atk-d3ab6e7adb05",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-78324205eba0"
+    },
+    {
+      "attack_id": "atk-4aac96f2193d",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "critic": "C8: The cited evidence is older than the staleness horizon.",
+      "outcome": "open",
+      "severity": "moderate",
+      "statement": "The freshest document cited by this brief is more than three years old at the time of the run, which is a risk for a question about current conditions.",
+      "strategy_id": "st-78324205eba0"
+    },
+    {
+      "attack_id": "atk-073218999aaf",
+      "attack_type": "assumption",
+      "claim_refs": [
+        "cl-d22d711e7580"
+      ],
+      "critic": "C9: The brief infers a mechanism from observational statements.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The quoted statements use causal language while every cited document is observational. Association in the sources does not establish the mechanism the brief implies.",
+      "strategy_id": "st-94ba61d62771"
+    },
+    {
+      "attack_id": "atk-f2a6153e8b21",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-94ba61d62771"
+    },
+    {
+      "attack_id": "atk-2efaad691b76",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The other field's mechanism transfers without an omitted domain-specific constraint.",
+      "strategy_id": "st-94ba61d62771"
+    },
+    {
+      "attack_id": "atk-58b93dc00fc1",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-94ba61d62771"
+    },
+    {
+      "attack_id": "atk-7f26e35bd068",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-94ba61d62771"
+    },
+    {
+      "attack_id": "atk-99f666c6c7f4",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-94ba61d62771"
+    },
+    {
+      "attack_id": "atk-4e04231e48bc",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "critic": "C8: The cited evidence is older than the staleness horizon.",
+      "outcome": "open",
+      "severity": "moderate",
+      "statement": "The freshest document cited by this brief is more than three years old at the time of the run, which is a risk for a question about current conditions.",
+      "strategy_id": "st-94ba61d62771"
+    },
+    {
+      "attack_id": "atk-3b3dc25ceba8",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (GitHub REST API). Independence has not been demonstrated.",
+      "strategy_id": "st-c3dc95b361f2"
+    },
+    {
+      "attack_id": "atk-9ec5b3f4ac19",
+      "attack_type": "assumption",
+      "claim_refs": [
+        "cl-d22d711e7580"
+      ],
+      "critic": "C9: The brief infers a mechanism from observational statements.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The quoted statements use causal language while every cited document is observational. Association in the sources does not establish the mechanism the brief implies.",
+      "strategy_id": "st-c3dc95b361f2"
+    },
+    {
+      "attack_id": "atk-c599f21695c3",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The quantities quoted are commensurable with each other after unit conversion.",
+      "strategy_id": "st-c3dc95b361f2"
+    },
+    {
+      "attack_id": "atk-caaaf280404c",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-c3dc95b361f2"
+    },
+    {
+      "attack_id": "atk-eac016263240",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-c3dc95b361f2"
+    },
+    {
+      "attack_id": "atk-ee001d39243a",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-c3dc95b361f2"
+    },
+    {
+      "attack_id": "atk-d4ba9eda9496",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "critic": "C8: The cited evidence is older than the staleness horizon.",
+      "outcome": "open",
+      "severity": "moderate",
+      "statement": "The freshest document cited by this brief is more than three years old at the time of the run, which is a risk for a question about current conditions.",
+      "strategy_id": "st-c3dc95b361f2"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "cl-226c5106e9cb",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-search-and-sorting-strategy",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "SelfLearn library computation",
+      "text": "This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-98b8b5ce690a",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-search-and-sorting-strategy",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 1 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "SelfLearn library computation",
+      "text": "The supporting documents span 1 evidence class(es) in the project hierarchy.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-a9621ea42680",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-search-and-sorting-strategy",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "SelfLearn library computation",
+      "text": "Of the documents cited here, 44 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-d738fd457549",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-search-and-sorting-strategy",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 1 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "SelfLearn library computation",
+      "text": "44 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-e11c78d29de7",
+      "confidence": "unknown",
+      "coverage": 0.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-search-and-sorting-strategy",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [
+        "100%"
+      ],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "SelfLearn library computation",
+      "text": "Of the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.",
+      "url": "",
+      "verdict": "unsupported"
+    },
+    {
+      "claim_id": "cl-0d4bd100b1d3",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-da503effaf90",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for onuryilmaz-wip/ComparisonOfSortingAlgorithms reports: language C++, open_issues_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for onuryilmaz-wip/ComparisonOfSortingAlgorithms reports: language C++, open_issues_count 0.",
+      "url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-17e31e8a0271",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-bad8fbd27d09",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for daley331/Sorting-Algorithms-Analysis reports: pushed_at 2024-08-01T14:34:21Z, stargazers_count 1, forks_count 1.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for daley331/Sorting-Algorithms-Analysis reports: pushed_at 2024-08-01T14:34:21Z, stargazers_count 1, forks_count 1.",
+      "url": "https://github.com/daley331/Sorting-Algorithms-Analysis",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-19244e6742c1",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-400b4543b2c2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for w32zhong/BTreeimplementation states in its own description: Two command line arguments will be specified: the name of the index file, and a B-tree order. assn_4 index-file order For example, executing your program as follows assn_4 index.bin 4 would open an index file called index.bin that holds integer keys stored in an order-4 B-tree.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for w32zhong/BTreeimplementation states in its own description: Two command line arguments will be specified: the name of the index file, and a B-tree order. assn_4 index-file order For example, executing your program as follows assn_4 index.bin 4 would open an index file called index.bin that holds integer keys stored in an order-4 B-tree.",
+      "url": "https://github.com/w32zhong/BTreeimplementation",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-1ab333b64ea2",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-400b4543b2c2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for w32zhong/BTreeimplementation states in its own description: CSC 541 Assignment 4 B-Trees Introduction The goals of this assignment are two-fold: To introduce you to searching data on disk using B-trees.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for w32zhong/BTreeimplementation states in its own description: CSC 541 Assignment 4 B-Trees Introduction The goals of this assignment are two-fold: To introduce you to searching data on disk using B-trees.",
+      "url": "https://github.com/w32zhong/BTreeimplementation",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-20283298712b",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-0d7951a7e307",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for sbtali/SortAlgorithmsComparison reports: language HTML, open_issues_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for sbtali/SortAlgorithmsComparison reports: language HTML, open_issues_count 0.",
+      "url": "https://github.com/sbtali/SortAlgorithmsComparison",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-295619da6666",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4f0ffabe2944",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This algorithm iteratively recomputes the location of k centroids (k is the number of clusters, defined beforehand), that aim to classify the data.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This algorithm iteratively recomputes the location of k centroids (k is the number of clusters, defined beforehand), that aim to classify the data.",
+      "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-31828a6e4dbc",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-9947603cb00f",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for Anshsing/sorting-visualizer reports: pushed_at 2026-06-24T07:45:25Z, stargazers_count 1, forks_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for Anshsing/sorting-visualizer reports: pushed_at 2026-06-24T07:45:25Z, stargazers_count 1, forks_count 0.",
+      "url": "https://github.com/Anshsing/sorting-visualizer",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-32ae2889dc47",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-bad8fbd27d09",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for daley331/Sorting-Algorithms-Analysis states in its own description: A comprehensive collection of sorting algorithms implemented in Java, featuring performance analysis on different data sets, including ordered, reversed, and random data.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for daley331/Sorting-Algorithms-Analysis states in its own description: A comprehensive collection of sorting algorithms implemented in Java, featuring performance analysis on different data sets, including ordered, reversed, and random data.",
+      "url": "https://github.com/daley331/Sorting-Algorithms-Analysis",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-34c53c350fbf",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-400b4543b2c2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for w32zhong/BTreeimplementation states in its own description: The arrays' contents and not pointers to their contents need to be written explicitly instead. fwrite( &node.n, sizeof( int ), 1, fp ); fwrite( node.key, sizeof( int ), order - 1, fp ); fwrite( node.child, sizeof( long ), order, fp ); Reading node structures from disk would use a similar strategy.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for w32zhong/BTreeimplementation states in its own description: The arrays' contents and not pointers to their contents need to be written explicitly instead. fwrite( &node.n, sizeof( int ), 1, fp ); fwrite( node.key, sizeof( int ), order - 1, fp ); fwrite( node.child, sizeof( long ), order, fp ); Reading node structures from disk would use a similar strategy.",
+      "url": "https://github.com/w32zhong/BTreeimplementation",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-37c1caeed83d",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-78b09be41447",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for picoders1/Sorting-Countable-Integers--DSA states in its own description: Sorting countable objects, that come from a discrete set of values, such as bounded integers.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for picoders1/Sorting-Countable-Integers--DSA states in its own description: Sorting countable objects, that come from a discrete set of values, such as bounded integers.",
+      "url": "https://github.com/picoders1/Sorting-Countable-Integers--DSA",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-3c29257be308",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-400b4543b2c2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for w32zhong/BTreeimplementation reports: pushed_at 2015-05-10T02:59:56Z, stargazers_count 11, forks_count 7.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for w32zhong/BTreeimplementation reports: pushed_at 2015-05-10T02:59:56Z, stargazers_count 11, forks_count 7.",
+      "url": "https://github.com/w32zhong/BTreeimplementation",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-3ebc66cc9362",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-de759b8b11ac",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for 0Kiprotich/SortingAlgorithms-Comparison-based-Sorting states in its own description: Sorting Algorithms Comparison-based Sorting Bubble sort Selection sort Insertion sort Merge sort Quick sort Heap sort Tim sort Intro sort Non-comparison-based Sorting Counting sort Radix sort Bucket sort--",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for 0Kiprotich/SortingAlgorithms-Comparison-based-Sorting states in its own description: Sorting Algorithms Comparison-based Sorting Bubble sort Selection sort Insertion sort Merge sort Quick sort Heap sort Tim sort Intro sort Non-comparison-based Sorting Counting sort Radix sort Bucket sort--",
+      "url": "https://github.com/0Kiprotich/SortingAlgorithms-Comparison-based-Sorting",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-4439bb25ba6c",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-de759b8b11ac",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for 0Kiprotich/SortingAlgorithms-Comparison-based-Sorting reports: pushed_at 2024-10-13T16:10:38Z, stargazers_count 2, forks_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for 0Kiprotich/SortingAlgorithms-Comparison-based-Sorting reports: pushed_at 2024-10-13T16:10:38Z, stargazers_count 2, forks_count 0.",
+      "url": "https://github.com/0Kiprotich/SortingAlgorithms-Comparison-based-Sorting",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-4bade2ba90ed",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4f0ffabe2944",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This project looks at one such algorithm, KMeans clustering, which searches for boundaries separating groups of points based on their differences in some features.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This project looks at one such algorithm, KMeans clustering, which searches for boundaries separating groups of points based on their differences in some features.",
+      "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-50973ea88762",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-9947603cb00f",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for Anshsing/sorting-visualizer states in its own description: Features real-time comparison counting, color-coded states (active, pivot, sorted), and adjustable speed/size controls for an interactive learning experience.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for Anshsing/sorting-visualizer states in its own description: Features real-time comparison counting, color-coded states (active, pivot, sorted), and adjustable speed/size controls for an interactive learning experience.",
+      "url": "https://github.com/Anshsing/sorting-visualizer",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-52e26b1eb4a2",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-da503effaf90",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for onuryilmaz-wip/ComparisonOfSortingAlgorithms states in its own description: Running time comparison for Sorting Algorithms (Counting, Shell, Quick, Radix)",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for onuryilmaz-wip/ComparisonOfSortingAlgorithms states in its own description: Running time comparison for Sorting Algorithms (Counting, Shell, Quick, Radix)",
+      "url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-538a326f671d",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-0d7951a7e307",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for sbtali/SortAlgorithmsComparison reports: pushed_at 2018-10-14T15:14:44Z, stargazers_count 0, forks_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for sbtali/SortAlgorithmsComparison reports: pushed_at 2018-10-14T15:14:44Z, stargazers_count 0, forks_count 0.",
+      "url": "https://github.com/sbtali/SortAlgorithmsComparison",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-567fb74f7476",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4f0ffabe2944",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.",
+      "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-581df6082d26",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4f0ffabe2944",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.",
+      "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-587bc77ee0dc",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-78b09be41447",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for picoders1/Sorting-Countable-Integers--DSA reports: pushed_at 2022-11-06T09:13:50Z, stargazers_count 3, forks_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for picoders1/Sorting-Countable-Integers--DSA reports: pushed_at 2022-11-06T09:13:50Z, stargazers_count 3, forks_count 0.",
+      "url": "https://github.com/picoders1/Sorting-Countable-Integers--DSA",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-5d79e6d3cf15",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-400b4543b2c2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for w32zhong/BTreeimplementation states in its own description: Your program must support four simple commands: add k Add a new integer key with value k to index.bin. find k Find an entry with a key value of k in index.bin, if it exists. print Print the contents and the structure of the B-tree on-screen. end Update the root node's offset at the front of the index.bin, and close the index file, and end the",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for w32zhong/BTreeimplementation states in its own description: Your program must support four simple commands: add k Add a new integer key with value k to index.bin. find k Find an entry with a key value of k in index.bin, if it exists. print Print the contents and the structure of the B-tree on-screen. end Update the root node's offset at the front of the index.bin, and close the index file, and end the program.",
+      "url": "https://github.com/w32zhong/BTreeimplementation",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-6019f32868dc",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-9947603cb00f",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for Anshsing/sorting-visualizer states in its own description: 🚀 A React-based Algorithm Visualizer that demonstrates how sorting algorithms work through step-by-step animations.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for Anshsing/sorting-visualizer states in its own description: 🚀 A React-based Algorithm Visualizer that demonstrates how sorting algorithms work through step-by-step animations.",
+      "url": "https://github.com/Anshsing/sorting-visualizer",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-61f5c737d798",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-78b09be41447",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for picoders1/Sorting-Countable-Integers--DSA states in its own description: Here, The problem can be solved using the Comparison Counting Sort or Distribution Counting Sort.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for picoders1/Sorting-Countable-Integers--DSA states in its own description: Here, The problem can be solved using the Comparison Counting Sort or Distribution Counting Sort.",
+      "url": "https://github.com/picoders1/Sorting-Countable-Integers--DSA",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-649ef2b67375",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-9947603cb00f",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for Anshsing/sorting-visualizer reports: language JavaScript, topics algorithm-visualizer; algorithms; async-javascript; computer-science; data-structures; frontend; javascript; learning-project; react; reactjs; sorting-algorithms; ui-ux; visualization; web-development, open_issues_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for Anshsing/sorting-visualizer reports: language JavaScript, topics algorithm-visualizer; algorithms; async-javascript; computer-science; data-structures; frontend; javascript; learning-project; react; reactjs; sorting-algorithms; ui-ux; visualization; web-development, open_issues_count 0.",
+      "url": "https://github.com/Anshsing/sorting-visualizer",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-69ae7eed4d60",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-da503effaf90",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for onuryilmaz-wip/ComparisonOfSortingAlgorithms reports: pushed_at 2013-02-04T22:30:36Z, stargazers_count 0, forks_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for onuryilmaz-wip/ComparisonOfSortingAlgorithms reports: pushed_at 2013-02-04T22:30:36Z, stargazers_count 0, forks_count 0.",
+      "url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-707a4ac5eced",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-d199a2a88f6b",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for thedonat/Sorting-Algorithms-Comparison reports: pushed_at 2020-05-18T10:59:40Z, stargazers_count 0, forks_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for thedonat/Sorting-Algorithms-Comparison reports: pushed_at 2020-05-18T10:59:40Z, stargazers_count 0, forks_count 0.",
+      "url": "https://github.com/thedonat/Sorting-Algorithms-Comparison",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-7765424281c9",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-d199a2a88f6b",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for thedonat/Sorting-Algorithms-Comparison reports: language Java, open_issues_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for thedonat/Sorting-Algorithms-Comparison reports: language Java, open_issues_count 0.",
+      "url": "https://github.com/thedonat/Sorting-Algorithms-Comparison",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-79f952e8dc74",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-5cdf09bc87b2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for allenvox/sorting-algorithms-comparison reports: pushed_at 2022-02-10T06:55:50Z, stargazers_count 1, forks_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for allenvox/sorting-algorithms-comparison reports: pushed_at 2022-02-10T06:55:50Z, stargazers_count 1, forks_count 0.",
+      "url": "https://github.com/allenvox/sorting-algorithms-comparison",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-7b5d83737c5f",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-400b4543b2c2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for w32zhong/BTreeimplementation states in its own description: For example, trying to write node like this fwrite( &node, sizeof( btree_node ), 1, fp ); will write node's key count, the pointer value for its key array, and the pointer value for its child offset array, but it will not write the contents of the key and child offset arrays.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for w32zhong/BTreeimplementation states in its own description: For example, trying to write node like this fwrite( &node, sizeof( btree_node ), 1, fp ); will write node's key count, the pointer value for its key array, and the pointer value for its child offset array, but it will not write the contents of the key and child offset arrays.",
+      "url": "https://github.com/w32zhong/BTreeimplementation",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-81651dedd944",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-bad8fbd27d09",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for daley331/Sorting-Algorithms-Analysis states in its own description: This repository includes detailed logging of comparison and swap counts for each algorithm to facilitate a deeper understanding of their efficiency.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for daley331/Sorting-Algorithms-Analysis states in its own description: This repository includes detailed logging of comparison and swap counts for each algorithm to facilitate a deeper understanding of their efficiency.",
+      "url": "https://github.com/daley331/Sorting-Algorithms-Analysis",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-81e7fb53d180",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-78b09be41447",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for picoders1/Sorting-Countable-Integers--DSA reports: language Python, license MIT, open_issues_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for picoders1/Sorting-Countable-Integers--DSA reports: language Python, license MIT, open_issues_count 0.",
+      "url": "https://github.com/picoders1/Sorting-Countable-Integers--DSA",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-8b227d37130a",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-5cdf09bc87b2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for allenvox/sorting-algorithms-comparison reports: language C, topics algorithms; c; counting-sort; dsa; insertion-sort; qsort; sort; sorting; sorting-algorithms; sorting-algorithms-implemented, open_issues_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for allenvox/sorting-algorithms-comparison reports: language C, topics algorithms; c; counting-sort; dsa; insertion-sort; qsort; sort; sorting; sorting-algorithms; sorting-algorithms-implemented, open_issues_count 0.",
+      "url": "https://github.com/allenvox/sorting-algorithms-comparison",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-91a0e539a726",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-de759b8b11ac",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for 0Kiprotich/SortingAlgorithms-Comparison-based-Sorting reports: language JavaScript, open_issues_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for 0Kiprotich/SortingAlgorithms-Comparison-based-Sorting reports: language JavaScript, open_issues_count 0.",
+      "url": "https://github.com/0Kiprotich/SortingAlgorithms-Comparison-based-Sorting",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-ab39c3f362d3",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-bad8fbd27d09",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for daley331/Sorting-Algorithms-Analysis reports: language Java, open_issues_count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for daley331/Sorting-Algorithms-Analysis reports: language Java, open_issues_count 0.",
+      "url": "https://github.com/daley331/Sorting-Algorithms-Analysis",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-b16b5db16bb1",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-d199a2a88f6b",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for thedonat/Sorting-Algorithms-Comparison states in its own description: Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort , Heap Sort, Counting Sort , Radix Sort",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for thedonat/Sorting-Algorithms-Comparison states in its own description: Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort , Heap Sort, Counting Sort , Radix Sort",
+      "url": "https://github.com/thedonat/Sorting-Algorithms-Comparison",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-c4a88aa55782",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-5cdf09bc87b2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for allenvox/sorting-algorithms-comparison states in its own description: Implementation of quick-sort, insertion sort & counting sort in pure C, comparison between them",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for allenvox/sorting-algorithms-comparison states in its own description: Implementation of quick-sort, insertion sort & counting sort in pure C, comparison between them",
+      "url": "https://github.com/allenvox/sorting-algorithms-comparison",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-c55b8a845354",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-78b09be41447",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for picoders1/Sorting-Countable-Integers--DSA states in its own description: The Both Algorithm use the Space and time trade-offs Design technique in this specifically input enhancement.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for picoders1/Sorting-Countable-Integers--DSA states in its own description: The Both Algorithm use the Space and time trade-offs Design technique in this specifically input enhancement.",
+      "url": "https://github.com/picoders1/Sorting-Countable-Integers--DSA",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-ccb33f2f4846",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-400b4543b2c2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for w32zhong/BTreeimplementation states in its own description: Your B-tree node should have a structure and usage similar to the following. #include int order = 4; /* B-tree order */ typedef struct { /* B-tree node */ int n; /* Number of keys in node */ int *key; /* Node's keys */ long *child; /* Node's child subtree offsets */ } btree_node; btree_node node; /* Single B-tree node */ node.n = 0; node.key =",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for w32zhong/BTreeimplementation states in its own description: Your B-tree node should have a structure and usage similar to the following. #include int order = 4; /* B-tree order */ typedef struct { /* B-tree node */ int n; /* Number of keys in node */ int *key; /* Node's keys */ long *child; /* Node's child subtree offsets */ } btree_node; btree_node node; /* Single B-tree node */ node.n = 0; node.key = (int *) calloc( order - 1, sizeof( int ) ); node.child = (long *) calloc( order, sizeof( long ) ); Note.",
+      "url": "https://github.com/w32zhong/BTreeimplementation",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-d22d711e7580",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4f0ffabe2944",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.",
+      "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-d94f53b607bd",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4f0ffabe2944",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: BDP 05: CLUSTERING OF LARGE UNLABELED DATASETS OVERVIEW Real world data is frequently unlabeled and can seem completely random.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: BDP 05: CLUSTERING OF LARGE UNLABELED DATASETS OVERVIEW Real world data is frequently unlabeled and can seem completely random.",
+      "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-ea90950f6fcb",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4f0ffabe2944",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.",
+      "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-f4eab05feecb",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-0d7951a7e307",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for sbtali/SortAlgorithmsComparison states in its own description: comparison between bubble sort, insertion sort, merge sort,heap sort,quick sort, counting sort, radix sort and bucket sort",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for sbtali/SortAlgorithmsComparison states in its own description: comparison between bubble sort, insertion sort, merge sort,heap sort,quick sort, counting sort, radix sort and bucket sort",
+      "url": "https://github.com/sbtali/SortAlgorithmsComparison",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-fb91eb14d4cc",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-400b4543b2c2",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for w32zhong/BTreeimplementation states in its own description: You can assume order will always be ≥ 3.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for w32zhong/BTreeimplementation states in its own description: You can assume order will always be ≥ 3.",
+      "url": "https://github.com/w32zhong/BTreeimplementation",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "cl-fe816a23a586",
+      "confidence": "medium",
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4f0ffabe2944",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: The clustering algorithm must be designed in a way that is appropriate for data intensive parallel computing frameworks.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "text": "The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: The clustering algorithm must be designed in a way that is appropriate for data intensive parallel computing frameworks.",
+      "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering",
+      "verdict": "supported"
+    }
+  ],
+  "contradictions": [],
+  "derived": [
+    {
+      "context_numbers": [
+        "49",
+        "2"
+      ],
+      "label": "library_volume",
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "text": "This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s)."
+    },
+    {
+      "context_numbers": [
+        "98.0%",
+        "98.0",
+        "0",
+        "48"
+      ],
+      "label": "verification_rate",
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "text": "Of the claims recorded for this question, 98.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
+    },
+    {
+      "context_numbers": [
+        "2"
+      ],
+      "label": "evidence_spread",
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "text": "The supporting documents span 2 evidence class(es) in the project hierarchy."
+    },
+    {
+      "context_numbers": [
+        "10",
+        "0"
+      ],
+      "label": "retrieval_mode",
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "text": "Of the documents cited here, 10 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear."
+    },
+    {
+      "context_numbers": [
+        "44"
+      ],
+      "label": "quantified_support",
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "text": "44 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible."
+    }
+  ],
+  "documents": [
+    {
+      "bytes_read": 78527,
+      "content_hash": "sha256:bb4cdf3432f1b56bf73f2e65ba9bd35cbec519d383747a6bb00983933318f653",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-0d7951a7e307",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2018-10-14",
+      "retrieved_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "title": "sbtali/SortAlgorithmsComparison",
+      "url": "https://github.com/sbtali/SortAlgorithmsComparison"
+    },
+    {
+      "bytes_read": 78527,
+      "content_hash": "sha256:633f3b55672948b7cfab24e6ca65f10392d86ed2e7106fd69ad51c22de724c39",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-400b4543b2c2",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2015-05-10",
+      "retrieved_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "title": "w32zhong/BTreeimplementation",
+      "url": "https://github.com/w32zhong/BTreeimplementation"
+    },
+    {
+      "bytes_read": 78527,
+      "content_hash": "sha256:be5a098c2885764f031e97b5db428eba259855f6c6e62abbf68c82bb00981b0d",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-4f0ffabe2944",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2018-01-06",
+      "retrieved_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "title": "GroupAYECS765P/BDP-05-Large-scale-Clustering",
+      "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering"
+    },
+    {
+      "bytes_read": 78527,
+      "content_hash": "sha256:a211bf39e87a534d7adcb1a7b384145d34a1cd44e9f859a294b488c80db2d433",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-5cdf09bc87b2",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2022-02-10",
+      "retrieved_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "title": "allenvox/sorting-algorithms-comparison",
+      "url": "https://github.com/allenvox/sorting-algorithms-comparison"
+    },
+    {
+      "bytes_read": 78527,
+      "content_hash": "sha256:3ac58195747e9b317e9598f09f2143270e13d4a522f48a28e2098e743d0bd876",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-78b09be41447",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2022-11-06",
+      "retrieved_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "title": "picoders1/Sorting-Countable-Integers--DSA",
+      "url": "https://github.com/picoders1/Sorting-Countable-Integers--DSA"
+    },
+    {
+      "bytes_read": 78527,
+      "content_hash": "sha256:b83c382b76334f8d91aee09ca2e464687f95c406c283c04f439e34efe5ea3a9b",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-9947603cb00f",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2026-06-24",
+      "retrieved_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "title": "Anshsing/sorting-visualizer",
+      "url": "https://github.com/Anshsing/sorting-visualizer"
+    },
+    {
+      "bytes_read": 78527,
+      "content_hash": "sha256:cb7fa207e29ce9249517a6a4ddfd50e18f056d0189abc038fa0898e9b657a32b",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-bad8fbd27d09",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2024-08-01",
+      "retrieved_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "title": "daley331/Sorting-Algorithms-Analysis",
+      "url": "https://github.com/daley331/Sorting-Algorithms-Analysis"
+    },
+    {
+      "bytes_read": 78527,
+      "content_hash": "sha256:5af4e67fc994696a874e6d069491d4772c86ca6b1afdbeeea5b1bb3eb77ce066",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-d199a2a88f6b",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2020-05-18",
+      "retrieved_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "title": "thedonat/Sorting-Algorithms-Comparison",
+      "url": "https://github.com/thedonat/Sorting-Algorithms-Comparison"
+    },
+    {
+      "bytes_read": 78527,
+      "content_hash": "sha256:d33ed811b4780f2b6c66cbb966d2b0bd1b274b278ae570ad29ee57ce2838cc96",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-da503effaf90",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2013-02-04",
+      "retrieved_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "title": "onuryilmaz-wip/ComparisonOfSortingAlgorithms",
+      "url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms"
+    },
+    {
+      "bytes_read": 78527,
+      "content_hash": "sha256:9cbc4c238a8764215d9074e09d943f58ec1731a917b680f8d12a1ae9223edade",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-de759b8b11ac",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2024-10-13",
+      "retrieved_at": "2026-09-21T23:13:32Z",
+      "source_name": "GitHub REST API",
+      "title": "0Kiprotich/SortingAlgorithms-Comparison-based-Sorting",
+      "url": "https://github.com/0Kiprotich/SortingAlgorithms-Comparison-based-Sorting"
+    }
+  ],
+  "epistemic_questions": [
+    "What do we know?",
+    "What do we think we know?",
+    "What are we assuming?",
+    "What do we not know?",
+    "What would change our conclusion?",
+    "What experiment would resolve it?"
+  ],
+  "experiments": [
+    {
+      "baseline": 16807.6,
+      "best_value": 1726.4,
+      "best_variant": "merge_sort",
+      "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-amz4e7vr/result.json",
+      "error": "",
+      "experiment_id": "sorting-comparisons-v1",
+      "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
+      "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
+      "metric": "mean element comparisons per run",
+      "ran_at": "2026-09-21T23:13:32Z",
+      "result_json": {
+        "baseline": 16807.6,
+        "baseline_name": "insertion_sort on shuffled input",
+        "best_value": 1726.4,
+        "best_variant": "merge_sort",
+        "checks": [
+          {
+            "check": "merge sort uses fewer comparisons than insertion sort on shuffled input",
+            "observed": "merge_sort=1726.4 insertion_sort=16807.6",
+            "outcome": true
+          },
+          {
+            "check": "heapsort uses fewer comparisons than insertion sort on shuffled input",
+            "observed": "heapsort=3298.07 insertion_sort=16807.6",
+            "outcome": true
+          },
+          {
+            "check": "insertion sort uses fewer comparisons than merge sort on sorted input",
+            "observed": "insertion_sort=255 merge_sort=1024",
+            "outcome": true
+          }
+        ],
+        "conclusion": "hypothesis supported by all stated checks",
+        "environment": {
+          "cpu_count": 2,
+          "machine": "x86_64",
+          "platform": "Linux-6.1.158+-x86_64-with-glibc2.36",
+          "python": "3.11.2"
+        },
+        "experiment_id": "sorting-comparisons-v1",
+        "falsifier": "Insertion sort uses fewer comparisons than merge sort on the shuffled input, or does not use fewer than merge sort on the sorted input.",
+        "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
+        "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
+        "metric": "mean element comparisons per run",
+        "profiles": {
+          "reversed": {
+            "max_comparisons": {
+              "heapsort": 3106,
+              "insertion_sort": 32640,
+              "merge_sort": 1024
+            },
+            "mean_comparisons": {
+              "heapsort": 3106,
+              "insertion_sort": 32640,
+              "merge_sort": 1024
+            },
+            "mean_seconds": {
+              "heapsort": 0.00041137,
+              "insertion_sort": 0.00312916,
+              "merge_sort": 0.00027953
+            },
+            "min_comparisons": {
+              "heapsort": 3106,
+              "insertion_sort": 32640,
+              "merge_sort": 1024
+            }
+          },
+          "shuffled": {
+            "max_comparisons": {
+              "heapsort": 3318,
+              "insertion_sort": 17744,
+              "merge_sort": 1746
+            },
+            "mean_comparisons": {
+              "heapsort": 3298.07,
+              "insertion_sort": 16807.6,
+              "merge_sort": 1726.4
+            },
+            "mean_seconds": {
+              "heapsort": 0.0005629,
+              "insertion_sort": 0.00197652,
+              "merge_sort": 0.00046728
+            },
+            "min_comparisons": {
+              "heapsort": 3278,
+              "insertion_sort": 15038,
+              "merge_sort": 1710
+            }
+          },
+          "sorted": {
+            "max_comparisons": {
+              "heapsort": 3452,
+              "insertion_sort": 255,
+              "merge_sort": 1024
+            },
+            "mean_comparisons": {
+              "heapsort": 3452,
+              "insertion_sort": 255,
+              "merge_sort": 1024
+            },
+            "mean_seconds": {
+              "heapsort": 0.00055312,
+              "insertion_sort": 3.018e-05,
+              "merge_sort": 0.00029784
+            },
+            "min_comparisons": {
+              "heapsort": 3452,
+              "insertion_sort": 255,
+              "merge_sort": 1024
+            }
+          }
+        },
+        "sample_size": 256,
+        "seed": 7,
+        "variants": [
+          {
+            "name": "heapsort",
+            "value": 3298.07
+          },
+          {
+            "name": "insertion_sort",
+            "value": 16807.6
+          },
+          {
+            "name": "merge_sort",
+            "value": 1726.4
+          }
+        ]
+      },
+      "script_path": "experiments/sorting_comparisons.py",
+      "script_sha256": "sha256:feb105c86f7e42a2e9db0f62fb6bb178b6283c885e2c1a183e1699320848b3f3",
+      "seed": 7,
+      "status": "completed",
+      "topic_id": "topic-search-and-sorting-strategy"
+    }
+  ],
+  "generated_at": "2026-09-21T23:14:00Z",
+  "questions": [
+    {
+      "id": "q-ec3fa4f74d8c",
+      "origin": "gap",
+      "priority": 0.65,
+      "status": "open",
+      "text": "The quantity reported in cl-d22d711e7580 has no reference period in the quoted text. Over what period, and in what population, was it measured?"
+    },
+    {
+      "id": "q-9e4932e29f17",
+      "origin": "discovery",
+      "priority": 0.55,
+      "status": "open",
+      "text": "The retrieved statements repeatedly introduce the term 'description', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it?"
+    },
+    {
+      "id": "q-f62aa062c153",
+      "origin": "discovery",
+      "priority": 0.55,
+      "status": "open",
+      "text": "The retrieved statements repeatedly introduce the term 'record', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it?"
+    }
+  ],
+  "source_status": [],
+  "statistics": {
+    "claims": 49,
+    "computed_at": "2026-09-21T23:14:00Z",
+    "documents": 10,
+    "evidence_classes": [
+      "primary_source",
+      "reproduced_experiment"
+    ],
+    "fixture_documents": 0,
+    "live_documents": 10,
+    "partially_supported": 0,
+    "sources": 2,
+    "supported": 48,
+    "unsupported": 1
+  },
+  "status_history": [
+    {
+      "last_updated": "2026-09-21T23:13:27Z",
+      "line": 4,
+      "status": "new",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "last_updated": "2026-09-21T23:13:32Z",
+      "line": 8,
+      "status": "testing",
+      "topic_id": "topic-search-and-sorting-strategy"
+    }
+  ],
+  "strategies": [
+    {
+      "argument": "Experimental brief. The statements below carry a measurement, which makes them usable as the basis of a test.\n\n[cl-d22d711e7580] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\" - GitHub REST API (primary_source)\n[cl-ea90950f6fcb] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\" - GitHub REST API (primary_source)\n[cl-567fb74f7476] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\" - GitHub REST API (primary_source)\n[cl-d94f53b607bd] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: BDP 05: CLUSTERING OF LARGE UNLABELED DATASETS OVERVIEW Real world data is frequently unlabeled and can seem completely random.\" - GitHub REST API (primary_source)\n[cl-4bade2ba90ed] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This project looks at one such algorithm, KMeans clustering, which searches for boundaries separating groups of points based on their differences in some features.\" - GitHub REST API (primary_source)\n[cl-581df6082d26] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The measurement can be reproduced with the same method in this environment."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 5 for the same quantity. The attached experiment is the intended test.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "F - Experimental",
+      "persona_brief": "Design a falsifiable test that could determine which idea is actually correct.",
+      "persona_code": "F",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\"",
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\"",
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\""
+      ],
+      "scorecard": {
+        "attacks": 7,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.3457,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.6969,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-157d2e17598d",
+      "supporting_claim_ids": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "title": "Experimental brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+    },
+    {
+      "argument": "Contrarian brief. The retrieved evidence is searched for findings that limit, qualify or contradict the conventional reading.\n\n[cl-581df6082d26] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\" - GitHub REST API (primary_source)\n[cl-34c53c350fbf] \"The record for w32zhong/BTreeimplementation states in its own description: The arrays' contents and not pointers to their contents need to be written explicitly instead. fwrite( &node.n, sizeof( int ), 1, fp ); fwrite( node.key, sizeof( int ), order - 1, fp ); fwrite( node.child, sizeof( long ), order, fp ); Reading node structures from disk would use a similar strategy.\" - GitHub REST API (primary_source)\n[cl-7b5d83737c5f] \"The record for w32zhong/BTreeimplementation states in its own description: For example, trying to write node like this fwrite( &node, sizeof( btree_node ), 1, fp ); will write node's key count, the pointer value for its key array, and the pointer value for its child offset array, but it will not write the contents of the key and child offset arrays.\" - GitHub REST API (primary_source)\n[cl-d22d711e7580] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\" - GitHub REST API (primary_source)\n[cl-ea90950f6fcb] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\" - GitHub REST API (primary_source)\n[cl-567fb74f7476] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The absence of a contradicting statement in the retrieved set is not evidence that none exists."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 1, 5 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "B - Contrarian",
+      "persona_brief": "Assume the conventional approach is wrong; find evidence-backed alternatives.",
+      "persona_code": "B",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\"",
+        "If the sourced statement holds, then: \"The record for w32zhong/BTreeimplementation states in its own description: The arrays' contents and not pointers to their contents need to be written explicitly instead. fwrite( &node.n, sizeof( int ), 1, fp ); fwrite( node.key, sizeof( int ), order - 1, fp ); fwrite( node.child, sizeof( long ), order, fp ); Reading node structures from disk would use a similar strategy.\"",
+        "If the sourced statement holds, then: \"The record for w32zhong/BTreeimplementation states in its own description: For example, trying to write node like this fwrite( &node, sizeof( btree_node ), 1, fp ); will write node's key count, the pointer value for its key array, and the pointer value for its child offset array, but it will not write the contents of the key and child offset arrays.\""
+      ],
+      "scorecard": {
+        "attacks": 7,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.3457,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.6969,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-38e954837349",
+      "supporting_claim_ids": [
+        "cl-581df6082d26",
+        "cl-34c53c350fbf",
+        "cl-7b5d83737c5f",
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476"
+      ],
+      "title": "Contrarian brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+    },
+    {
+      "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-d22d711e7580] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\" - GitHub REST API (primary_source)\n[cl-ea90950f6fcb] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\" - GitHub REST API (primary_source)\n[cl-567fb74f7476] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\" - GitHub REST API (primary_source)\n[cl-d94f53b607bd] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: BDP 05: CLUSTERING OF LARGE UNLABELED DATASETS OVERVIEW Real world data is frequently unlabeled and can seem completely random.\" - GitHub REST API (primary_source)\n[cl-4bade2ba90ed] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This project looks at one such algorithm, KMeans clustering, which searches for boundaries separating groups of points based on their differences in some features.\" - GitHub REST API (primary_source)\n[cl-581df6082d26] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 5 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "E - Optimization",
+      "persona_brief": "Find the cheapest, fastest or most scalable option given the sourced numbers.",
+      "persona_code": "E",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\"",
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\"",
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\""
+      ],
+      "scorecard": {
+        "attacks": 7,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.3457,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.6969,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-39db3127f51f",
+      "supporting_claim_ids": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "title": "Optimization brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+    },
+    {
+      "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-d22d711e7580] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\" - GitHub REST API (primary_source)\n[cl-ea90950f6fcb] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\" - GitHub REST API (primary_source)\n[cl-567fb74f7476] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\" - GitHub REST API (primary_source)\n[cl-d94f53b607bd] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: BDP 05: CLUSTERING OF LARGE UNLABELED DATASETS OVERVIEW Real world data is frequently unlabeled and can seem completely random.\" - GitHub REST API (primary_source)\n[cl-4bade2ba90ed] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This project looks at one such algorithm, KMeans clustering, which searches for boundaries separating groups of points based on their differences in some features.\" - GitHub REST API (primary_source)\n[cl-581df6082d26] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 5 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "A - Conventional",
+      "persona_brief": "Find the strongest solution using established, well-evidenced knowledge.",
+      "persona_code": "A",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\"",
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\"",
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\""
+      ],
+      "scorecard": {
+        "attacks": 7,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.3457,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.6969,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-78324205eba0",
+      "supporting_claim_ids": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "title": "Conventional brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+    },
+    {
+      "argument": "Cross-domain brief. The statements below were retrieved for other topics and share subject matter with this one; they are candidates for transfer.\n\n[cl-d22d711e7580] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\" - GitHub REST API (primary_source)\n[cl-ea90950f6fcb] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\" - GitHub REST API (primary_source)\n[cl-567fb74f7476] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\" - GitHub REST API (primary_source)\n[cl-d94f53b607bd] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: BDP 05: CLUSTERING OF LARGE UNLABELED DATASETS OVERVIEW Real world data is frequently unlabeled and can seem completely random.\" - GitHub REST API (primary_source)\n[cl-4bade2ba90ed] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This project looks at one such algorithm, KMeans clustering, which searches for boundaries separating groups of points based on their differences in some features.\" - GitHub REST API (primary_source)\n[cl-581df6082d26] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The other field's mechanism transfers without an omitted domain-specific constraint."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 5 for the same quantity. For a transferred mechanism, falsification is a demonstration that the domain-specific constraint is missing.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "D - Cross-domain",
+      "persona_brief": "Look for solutions that worked in a completely different field.",
+      "persona_code": "D",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\"",
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\"",
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\""
+      ],
+      "scorecard": {
+        "attacks": 7,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.3457,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.6969,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-94ba61d62771",
+      "supporting_claim_ids": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "title": "Cross-domain brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+    },
+    {
+      "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-d22d711e7580] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\" - GitHub REST API (primary_source)\n[cl-ea90950f6fcb] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\" - GitHub REST API (primary_source)\n[cl-567fb74f7476] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\" - GitHub REST API (primary_source)\n[cl-d94f53b607bd] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: BDP 05: CLUSTERING OF LARGE UNLABELED DATASETS OVERVIEW Real world data is frequently unlabeled and can seem completely random.\" - GitHub REST API (primary_source)\n[cl-4bade2ba90ed] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This project looks at one such algorithm, KMeans clustering, which searches for boundaries separating groups of points based on their differences in some features.\" - GitHub REST API (primary_source)\n[cl-581df6082d26] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The quantities quoted are commensurable with each other after unit conversion."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 5 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "C - First principles",
+      "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
+      "persona_code": "C",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: You will implement this algorithm on the stack overflow user base to find different ways the community can be divided, and investigate what causes these groupings.\"",
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: This dataset is located in HDFS at /data/stackoverflow The dataset for StackOverflow is a set of files containing Posts, Users, Votes, Comments, PostHistory and PostLinks.\"",
+        "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: For complete schema information: Click here In order to define the clustering use case, you must define what should be the features of each post that will be used to cluster the data.\""
+      ],
+      "scorecard": {
+        "attacks": 7,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.3457,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 6,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.6969,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-c3dc95b361f2",
+      "supporting_claim_ids": [
+        "cl-d22d711e7580",
+        "cl-ea90950f6fcb",
+        "cl-567fb74f7476",
+        "cl-d94f53b607bd",
+        "cl-4bade2ba90ed",
+        "cl-581df6082d26"
+      ],
+      "title": "First principles brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+    }
+  ],
+  "topic": {
+    "first_seen": "2026-09-21T23:13:27Z",
+    "keywords": [
+      "algorithm",
+      "sorting",
+      "search",
+      "complexity",
+      "benchmark",
+      "performance",
+      "data structures"
+    ],
+    "last_updated": "2026-09-21T23:13:32Z",
+    "notes": "The one seed question that matches the computational experiment catalogue, so the tournament's experimental criterion can be non-zero here.",
+    "origin": "seed",
+    "parent_topic_id": null,
+    "question": "For the sorting and search strategies in common use, how do measured comparison counts compare with the stated bounds, and where does the choice change the outcome?",
+    "signal": {
+      "queries": [
+        "sorting algorithm comparison count",
+        "binary search complexity",
+        "hash collision birthday"
+      ]
+    },
+    "slug": "search-and-sorting-strategy",
+    "source_ids": [
+      "github",
+      "crossref",
+      "arxiv"
+    ],
+    "status": "testing",
+    "title": "Sorting and search strategies: which is most efficient in practice, and how does the choice scale?",
+    "topic_id": "topic-search-and-sorting-strategy"
+  },
+  "tournament": {
+    "_line": 4,
+    "criterion_table": {
+      "st-157d2e17598d": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.3457,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.0,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 1.0,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      },
+      "st-38e954837349": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.3457,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.0,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 1.0,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      },
+      "st-39db3127f51f": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.3457,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.0,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 1.0,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      },
+      "st-78324205eba0": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.3457,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.0,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 1.0,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      },
+      "st-94ba61d62771": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.3457,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.0,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 1.0,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      },
+      "st-c3dc95b361f2": {
+        "adversarial_survival": {
+          "label": "Survives criticism",
+          "method": "measured",
+          "note": "Share of critic attacks the candidate survives.",
+          "value": 0.3457,
+          "weight": 0.15
+        },
+        "computational_cost": {
+          "label": "Computational cost",
+          "method": "measured",
+          "note": "Cheaper to run and verify is better.",
+          "value": 0.0,
+          "weight": 0.04
+        },
+        "correctness": {
+          "label": "Correctness",
+          "method": "measured",
+          "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+          "value": 1.0,
+          "weight": 0.18
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "method": "measured",
+          "note": "Mean evidence-hierarchy rank of the supporting claims.",
+          "value": 0.7778,
+          "weight": 0.16
+        },
+        "experimental_performance": {
+          "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+          "label": "Experimental performance",
+          "method": "measured",
+          "note": "Measured result relative to the recorded baseline, when a test exists.",
+          "value": 0.0,
+          "weight": 0.1
+        },
+        "reproducibility": {
+          "label": "Reproducibility",
+          "method": "measured",
+          "note": "A third party can re-derive the result from the cited sources and commands.",
+          "value": 1.0,
+          "weight": 0.13
+        },
+        "robustness": {
+          "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+          "label": "Robustness",
+          "method": "measured",
+          "note": "Stable when evidence order and weights are perturbed.",
+          "value": 0.9881,
+          "weight": 0.12
+        },
+        "scalability": {
+          "label": "Scalability",
+          "method": "heuristic",
+          "note": "Plausible to apply beyond the single case studied.",
+          "value": 1.0,
+          "weight": 0.05
+        },
+        "simplicity": {
+          "label": "Simplicity",
+          "method": "measured",
+          "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+          "value": 0.6,
+          "weight": 0.07
+        }
+      }
+    },
+    "decided_at": "2026-09-21T23:13:32Z",
+    "notes": "The final was a tie on the weighted total, so no winner is declared.",
+    "ranking": [
+      "st-157d2e17598d",
+      "st-38e954837349",
+      "st-39db3127f51f",
+      "st-78324205eba0",
+      "st-94ba61d62771",
+      "st-c3dc95b361f2"
+    ],
+    "round_name": "round-robin then final",
+    "scores": {
+      "st-157d2e17598d": 0.6969,
+      "st-38e954837349": 0.6969,
+      "st-39db3127f51f": 0.6969,
+      "st-78324205eba0": 0.6969,
+      "st-94ba61d62771": 0.6969,
+      "st-c3dc95b361f2": 0.6969
+    },
+    "topic_id": "topic-search-and-sorting-strategy",
+    "tournament_id": "tour-6a8f7586a307",
+    "winner": null
+  },
+  "unknowns": [],
+  "winner": null
+}

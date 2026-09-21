@@ -1,0 +1,60 @@
+name: Tests
+
+# Two jobs, because there are two things worth proving on every change:
+#   1. the suite passes on a clean checkout with no network and no credentials;
+#   2. a whole cycle runs end to end in fixture mode against a temporary root, so a
+#      broken pipeline is caught without writing into the repository's own library.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install (no dependencies by design)
+        run: python3 -m pip install --upgrade pip
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -t . -p "test_*.py"
+
+  cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: End-to-end cycle into a temporary root
+        # SELFLEARN_ROOT keeps the smoke run out of the repository's own library, so
+        # this can run a real cycle on a runner with real egress.
+        env:
+          SELFLEARN_ROOT: ${{ runner.temp }}/selflearn-root
+        run: |
+          set -eu
+          mkdir -p "$SELFLEARN_ROOT/docs"
+          cp -r data "$SELFLEARN_ROOT/data"
+          cp docs/*.md "$SELFLEARN_ROOT/docs/" 2>/dev/null || true
+          python3 -m selflearn run --mode live
+          python3 -m selflearn status
+          test -f "$SELFLEARN_ROOT/docs/index.html"
+          test -f "$SELFLEARN_ROOT/docs/documents.html"
+          test -f "$SELFLEARN_ROOT/reports/irregularities.md"
+          python3 tools/export_summary.py --out "$SELFLEARN_ROOT/reports/SUMMARY.md"
+      - name: Calibration sweep
+        env:
+          SELFLEARN_ROOT: ${{ runner.temp }}/selflearn-root
+        run: python3 -m selflearn calibrate
