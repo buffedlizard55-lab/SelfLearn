@@ -1,0 +1,43 @@
+{
+  "claim_ids": [
+    "cl-226c5106e9cb",
+    "cl-e11c78d29de7",
+    "cl-98b8b5ce690a",
+    "cl-a9621ea42680",
+    "cl-d738fd457549"
+  ],
+  "content_hash": "sha256:8e95b02ca4f555ff9d68429585af07b8650ffaf6bf9ec26bb07d548ff83b8e69",
+  "derived_contexts": {
+    "cl-226c5106e9cb": [
+      "44",
+      "1"
+    ],
+    "cl-98b8b5ce690a": [
+      "1"
+    ],
+    "cl-a9621ea42680": [
+      "44",
+      "0"
+    ],
+    "cl-d738fd457549": [
+      "44"
+    ],
+    "cl-e11c78d29de7": [
+      "100.0%",
+      "100.0",
+      "0",
+      "44"
+    ]
+  },
+  "evidence_class": "reproduced_experiment",
+  "evidence_id": "derived-topic-search-and-sorting-strategy",
+  "evidence_rank": 2,
+  "is_fixture": false,
+  "is_live": true,
+  "source_id": "selflearn_library",
+  "source_name": "SelfLearn library computation",
+  "text": "Source: SelfLearn library computation for topic-search-and-sorting-strategy\nQuestion: For the sorting and search strategies in common use, how do measured comparison counts compare with the stated bounds, and where does the choice change the outcome?\nThese statements are computed by the engine from its own records. They assert nothing about the world.\nStatements and the figures each was computed from:\nThis question is currently supported by 44 verified claim(s) drawn from 1 independent source(s). [figures: 44, 1]\nOf the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. [figures: 100.0%, 100.0, 0, 44]\nThe supporting documents span 1 evidence class(es) in the project hierarchy. [figures: 1]\nOf the documents cited here, 44 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear. [figures: 44, 0]\n44 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. [figures: 44]",
+  "title": "Library computation for Sorting and search strategies: which is most efficient in practice, and how does the choice scale?",
+  "url": "",
+  "written_at": "2026-09-21T23:13:32Z"
+}

@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "claims_without_link": 20,
+    "fixture_documents": 0,
+    "irregularity_counts": {
+      "error": 0,
+      "info": 0,
+      "warning": 1
+    },
+    "unresolved_contradictions": 8,
+    "unsupported_claims": 4
+  },
+  "counts": {
+    "attacks": 170,
+    "claims": 141,
+    "contradictions": 8,
+    "discoveries": 12,
+    "documents": 32,
+    "experiments": 2,
+    "failures": 5,
+    "irregularities": 1,
+    "questions": 16,
+    "strategies": 24,
+    "topics": 4
+  },
+  "generated_at": "2026-09-21T23:14:00Z",
+  "run_id": "site-rebuild"
+}

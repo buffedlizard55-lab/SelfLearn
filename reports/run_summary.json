@@ -1,0 +1,97 @@
+{
+  "evidence_rank_mix": {
+    "primary_source": 121,
+    "reproduced_experiment": 20
+  },
+  "figures": {
+    "claims": 141,
+    "documents_retrieved": 30,
+    "documents_total": 32,
+    "errors": 0,
+    "open_questions": 16,
+    "sources_polled": 6,
+    "sources_reached": 1,
+    "topics": 4,
+    "warnings": 1
+  },
+  "generated_at": "2026-09-21T23:13:32Z",
+  "irregularities": {
+    "by_severity": {
+      "error": 0,
+      "info": 0,
+      "warning": 1
+    },
+    "total": 1
+  },
+  "mode": "live",
+  "registry": {
+    "by_evidence_class": {
+      "commentary": 2,
+      "official_data": 18,
+      "peer_reviewed": 3,
+      "primary_source": 9,
+      "reputable_secondary": 4
+    },
+    "credential_required": [
+      "eia",
+      "fred",
+      "ncei",
+      "patentsview"
+    ],
+    "open_no_key": [
+      "arxiv",
+      "census_us",
+      "cisa_kev",
+      "clinicaltrials",
+      "crossref",
+      "datacite",
+      "doaj",
+      "eurostat",
+      "gbif",
+      "github",
+      "hackernews",
+      "imf",
+      "nasa_api",
+      "nvd",
+      "nws",
+      "oecd",
+      "openalex",
+      "openlibrary",
+      "osv",
+      "pubchem",
+      "pubmed",
+      "rcsb_pdb",
+      "sec_edgar",
+      "semantic_scholar",
+      "stackexchange",
+      "un_sdg",
+      "uniprot",
+      "usgs_earthquake",
+      "who_gho",
+      "wikimedia",
+      "worldbank",
+      "zenodo"
+    ],
+    "total": 36
+  },
+  "run_id": "run-538d83841b75",
+  "thresholds": {
+    "cases": 26,
+    "changed": false,
+    "false_supports": 0,
+    "in_force": {
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.8
+    },
+    "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
+    "ran_at": "2026-09-21T23:13:28Z",
+    "source": "state/calibration.json"
+  },
+  "what_changed": [
+    "Library now holds 141 claim(s) across 4 question(s).",
+    "This cycle retrieved 30 document(s) from 1 of 6 polled source(s).",
+    "16 open question(s) have been derived from the retrieved evidence.",
+    "0 error(s) and 1 warning(s) are waiting for review."
+  ]
+}

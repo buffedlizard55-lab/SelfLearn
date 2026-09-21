@@ -1,0 +1,1551 @@
+{
+  "applied": true,
+  "applied_thresholds": {
+    "partially_supported": 0.45,
+    "quote_min_chars": 24.0,
+    "supported": 0.8
+  },
+  "baseline": {
+    "accuracy": 0.96,
+    "all_cases": {
+      "accuracy": 0.9231,
+      "cases": 26,
+      "disagreements": [
+        {
+          "case_id": "c05",
+          "expected": "partially_supported",
+          "name": "partial overlap, defensible reading",
+          "predicted": "unsupported"
+        },
+        {
+          "case_id": "c23",
+          "expected": "partially_supported",
+          "name": "unit substitution not detected",
+          "predicted": "supported"
+        }
+      ],
+      "false_supports": 1,
+      "macro_f1": 0.8863,
+      "matrix": {
+        "partially_supported": {
+          "partially_supported": 3,
+          "supported": 1,
+          "unsupported": 1
+        },
+        "supported": {
+          "partially_supported": 0,
+          "supported": 10,
+          "unsupported": 0
+        },
+        "unsupported": {
+          "partially_supported": 0,
+          "supported": 0,
+          "unsupported": 11
+        }
+      },
+      "metrics": {
+        "partially_supported": {
+          "f1": 0.75,
+          "precision": 1.0,
+          "recall": 0.6
+        },
+        "supported": {
+          "f1": 0.9524,
+          "precision": 0.9091,
+          "recall": 1.0
+        },
+        "unsupported": {
+          "f1": 0.9565,
+          "precision": 0.9167,
+          "recall": 1.0
+        }
+      },
+      "thresholds": {
+        "partially_supported": 0.55,
+        "quote_min_chars": 24.0,
+        "supported": 0.8
+      }
+    },
+    "cases": 25,
+    "disagreements": [
+      {
+        "case_id": "c05",
+        "expected": "partially_supported",
+        "name": "partial overlap, defensible reading",
+        "predicted": "unsupported"
+      }
+    ],
+    "false_supports": 0,
+    "macro_f1": 0.9379,
+    "matrix": {
+      "partially_supported": {
+        "partially_supported": 3,
+        "supported": 0,
+        "unsupported": 1
+      },
+      "supported": {
+        "partially_supported": 0,
+        "supported": 10,
+        "unsupported": 0
+      },
+      "unsupported": {
+        "partially_supported": 0,
+        "supported": 0,
+        "unsupported": 11
+      }
+    },
+    "metrics": {
+      "partially_supported": {
+        "f1": 0.8571,
+        "precision": 1.0,
+        "recall": 0.75
+      },
+      "supported": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "unsupported": {
+        "f1": 0.9565,
+        "precision": 0.9167,
+        "recall": 1.0
+      }
+    },
+    "thresholds": {
+      "partially_supported": 0.55,
+      "quote_min_chars": 24.0,
+      "supported": 0.8
+    }
+  },
+  "case_count": 26,
+  "cases_path": "/home/user/SelfLearn/data/fixtures/verification_cases.jsonl",
+  "changed": false,
+  "disagreements": [],
+  "grid": [
+    {
+      "accuracy": 0.92,
+      "false_supports": 2,
+      "macro_f1": 0.8586,
+      "partially_supported": 0.25,
+      "quote_min_chars": 12.0,
+      "supported": 0.5,
+      "supported_precision": 0.8333,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 2,
+      "macro_f1": 0.8586,
+      "partially_supported": 0.25,
+      "quote_min_chars": 24.0,
+      "supported": 0.5,
+      "supported_precision": 0.8333,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 2,
+      "macro_f1": 0.8586,
+      "partially_supported": 0.25,
+      "quote_min_chars": 40.0,
+      "supported": 0.5,
+      "supported_precision": 0.8333,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 2,
+      "macro_f1": 0.8586,
+      "partially_supported": 0.35,
+      "quote_min_chars": 12.0,
+      "supported": 0.5,
+      "supported_precision": 0.8333,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 2,
+      "macro_f1": 0.8586,
+      "partially_supported": 0.35,
+      "quote_min_chars": 24.0,
+      "supported": 0.5,
+      "supported_precision": 0.8333,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 2,
+      "macro_f1": 0.8586,
+      "partially_supported": 0.35,
+      "quote_min_chars": 40.0,
+      "supported": 0.5,
+      "supported_precision": 0.8333,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 2,
+      "macro_f1": 0.8586,
+      "partially_supported": 0.45,
+      "quote_min_chars": 12.0,
+      "supported": 0.5,
+      "supported_precision": 0.8333,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 2,
+      "macro_f1": 0.8586,
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.5,
+      "supported_precision": 0.8333,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 2,
+      "macro_f1": 0.8586,
+      "partially_supported": 0.45,
+      "quote_min_chars": 40.0,
+      "supported": 0.5,
+      "supported_precision": 0.8333,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 1,
+      "macro_f1": 0.9365,
+      "partially_supported": 0.25,
+      "quote_min_chars": 12.0,
+      "supported": 0.55,
+      "supported_precision": 0.9091,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 1,
+      "macro_f1": 0.9365,
+      "partially_supported": 0.25,
+      "quote_min_chars": 24.0,
+      "supported": 0.55,
+      "supported_precision": 0.9091,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 1,
+      "macro_f1": 0.9365,
+      "partially_supported": 0.25,
+      "quote_min_chars": 40.0,
+      "supported": 0.55,
+      "supported_precision": 0.9091,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 1,
+      "macro_f1": 0.9365,
+      "partially_supported": 0.35,
+      "quote_min_chars": 12.0,
+      "supported": 0.55,
+      "supported_precision": 0.9091,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 1,
+      "macro_f1": 0.9365,
+      "partially_supported": 0.35,
+      "quote_min_chars": 24.0,
+      "supported": 0.55,
+      "supported_precision": 0.9091,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 1,
+      "macro_f1": 0.9365,
+      "partially_supported": 0.35,
+      "quote_min_chars": 40.0,
+      "supported": 0.55,
+      "supported_precision": 0.9091,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 1,
+      "macro_f1": 0.9365,
+      "partially_supported": 0.45,
+      "quote_min_chars": 12.0,
+      "supported": 0.55,
+      "supported_precision": 0.9091,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 1,
+      "macro_f1": 0.9365,
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.55,
+      "supported_precision": 0.9091,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 1,
+      "macro_f1": 0.9365,
+      "partially_supported": 0.45,
+      "quote_min_chars": 40.0,
+      "supported": 0.55,
+      "supported_precision": 0.9091,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 12.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 24.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 40.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 12.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 24.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 40.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 12.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 40.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 12.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 24.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 40.0,
+      "supported": 0.6,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 12.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 24.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 40.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 12.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 24.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 40.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 12.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 40.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 12.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 24.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 40.0,
+      "supported": 0.65,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 12.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 24.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 40.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 12.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 24.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 40.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 12.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 40.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 12.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 24.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 40.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 12.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 24.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 40.0,
+      "supported": 0.7,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 12.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 24.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 40.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 12.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 24.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 40.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 12.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 40.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 12.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 24.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 40.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 12.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 24.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 40.0,
+      "supported": 0.75,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 12.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 24.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 40.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 12.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 24.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 40.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 12.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 40.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 12.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 24.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 40.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 12.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 24.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 40.0,
+      "supported": 0.8,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 12.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 24.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.25,
+      "quote_min_chars": 40.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 12.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 24.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.35,
+      "quote_min_chars": 40.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 12.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 1.0,
+      "false_supports": 0,
+      "macro_f1": 1.0,
+      "partially_supported": 0.45,
+      "quote_min_chars": 40.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 12.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 24.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9379,
+      "partially_supported": 0.55,
+      "quote_min_chars": 40.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 12.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 24.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8611,
+      "partially_supported": 0.65,
+      "quote_min_chars": 40.0,
+      "supported": 0.85,
+      "supported_precision": 1.0,
+      "supported_recall": 1.0
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.25,
+      "quote_min_chars": 12.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.25,
+      "quote_min_chars": 24.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.25,
+      "quote_min_chars": 40.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.35,
+      "quote_min_chars": 12.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.35,
+      "quote_min_chars": 24.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.35,
+      "quote_min_chars": 40.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.45,
+      "quote_min_chars": 12.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.45,
+      "quote_min_chars": 40.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8846,
+      "partially_supported": 0.55,
+      "quote_min_chars": 12.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8846,
+      "partially_supported": 0.55,
+      "quote_min_chars": 24.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8846,
+      "partially_supported": 0.55,
+      "quote_min_chars": 40.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.88,
+      "false_supports": 0,
+      "macro_f1": 0.8118,
+      "partially_supported": 0.65,
+      "quote_min_chars": 12.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.88,
+      "false_supports": 0,
+      "macro_f1": 0.8118,
+      "partially_supported": 0.65,
+      "quote_min_chars": 24.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.88,
+      "false_supports": 0,
+      "macro_f1": 0.8118,
+      "partially_supported": 0.65,
+      "quote_min_chars": 40.0,
+      "supported": 0.9,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.25,
+      "quote_min_chars": 12.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.25,
+      "quote_min_chars": 24.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.25,
+      "quote_min_chars": 40.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.35,
+      "quote_min_chars": 12.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.35,
+      "quote_min_chars": 24.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.35,
+      "quote_min_chars": 40.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.45,
+      "quote_min_chars": 12.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.96,
+      "false_supports": 0,
+      "macro_f1": 0.9454,
+      "partially_supported": 0.45,
+      "quote_min_chars": 40.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8846,
+      "partially_supported": 0.55,
+      "quote_min_chars": 12.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8846,
+      "partially_supported": 0.55,
+      "quote_min_chars": 24.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.92,
+      "false_supports": 0,
+      "macro_f1": 0.8846,
+      "partially_supported": 0.55,
+      "quote_min_chars": 40.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.88,
+      "false_supports": 0,
+      "macro_f1": 0.8118,
+      "partially_supported": 0.65,
+      "quote_min_chars": 12.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.88,
+      "false_supports": 0,
+      "macro_f1": 0.8118,
+      "partially_supported": 0.65,
+      "quote_min_chars": 24.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    },
+    {
+      "accuracy": 0.88,
+      "false_supports": 0,
+      "macro_f1": 0.8118,
+      "partially_supported": 0.65,
+      "quote_min_chars": 40.0,
+      "supported": 0.95,
+      "supported_precision": 1.0,
+      "supported_recall": 0.9
+    }
+  ],
+  "notes": [
+    "This sweep did not change the thresholds in force; the previously applied set is carried over and shown above.",
+    "Selection used 26 labelled case(s); false supports at the selected point: 0."
+  ],
+  "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
+  "ran_at": "2026-09-21T23:14:00Z",
+  "selected": {
+    "accuracy": 1.0,
+    "all_cases": {
+      "accuracy": 0.9615,
+      "cases": 26,
+      "disagreements": [
+        {
+          "case_id": "c23",
+          "expected": "partially_supported",
+          "name": "unit substitution not detected",
+          "predicted": "supported"
+        }
+      ],
+      "false_supports": 1,
+      "macro_f1": 0.9471,
+      "matrix": {
+        "partially_supported": {
+          "partially_supported": 4,
+          "supported": 1,
+          "unsupported": 0
+        },
+        "supported": {
+          "partially_supported": 0,
+          "supported": 10,
+          "unsupported": 0
+        },
+        "unsupported": {
+          "partially_supported": 0,
+          "supported": 0,
+          "unsupported": 11
+        }
+      },
+      "metrics": {
+        "partially_supported": {
+          "f1": 0.8889,
+          "precision": 1.0,
+          "recall": 0.8
+        },
+        "supported": {
+          "f1": 0.9524,
+          "precision": 0.9091,
+          "recall": 1.0
+        },
+        "unsupported": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      },
+      "thresholds": {
+        "partially_supported": 0.45,
+        "quote_min_chars": 24.0,
+        "supported": 0.8
+      }
+    },
+    "cases": 25,
+    "disagreements": [],
+    "false_supports": 0,
+    "macro_f1": 1.0,
+    "matrix": {
+      "partially_supported": {
+        "partially_supported": 4,
+        "supported": 0,
+        "unsupported": 0
+      },
+      "supported": {
+        "partially_supported": 0,
+        "supported": 10,
+        "unsupported": 0
+      },
+      "unsupported": {
+        "partially_supported": 0,
+        "supported": 0,
+        "unsupported": 11
+      }
+    },
+    "metrics": {
+      "partially_supported": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "supported": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "unsupported": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "thresholds": {
+      "partially_supported": 0.45,
+      "quote_min_chars": 24.0,
+      "supported": 0.8
+    }
+  }
+}
