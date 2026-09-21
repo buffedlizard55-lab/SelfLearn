@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selflearn"
+version = "0.1.0"
+description = "SelfLearn - an autonomous, evidence-verifying research and idea-competition engine."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "SelfLearn contributors" }]
+keywords = ["research", "automation", "evidence", "verification", "reproducibility"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering",
+]
+# The engine deliberately has ZERO runtime dependencies outside the Python
+# standard library. That keeps the pipeline auditable, reproducible, and free
+# to run on any CI runner without a dependency-resolution step.
+dependencies = []
+
+[project.optional-dependencies]
+dev = []
+
+[project.urls]
+Homepage = "https://buffedlizard55-lab.github.io/SelfLearn/"
+Repository = "https://github.com/buffedlizard55-lab/SelfLearn"
+
+[project.scripts]
+selflearn = "selflearn.cli:main"
+
+[tool.setuptools]
+packages = [
+  "selflearn",
+  "selflearn.fetch",
+  "selflearn.verify",
+  "selflearn.think",
+  "selflearn.learn",
+  "selflearn.experiment",
+  "selflearn.publish",
+  "selflearn.tools",
+]
+
+[tool.setuptools.package-data]
+selflearn = ["data/*.json"]

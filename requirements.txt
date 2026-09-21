@@ -1,0 +1,9 @@
+# SelfLearn has NO third-party runtime dependencies.
+#
+# The engine is built entirely on the Python standard library so that:
+#   1. Every code path is auditable (no hidden behaviour in a dependency).
+#   2. CI can run without a network dependency-resolution step.
+#   3. The verification pipeline is fully reproducible from the repo alone.
+#
+# Python >= 3.10 is required (uses dataclasses kw_only, PEP 604 unions).
+# Nothing below is required; this file exists to make that explicit.
