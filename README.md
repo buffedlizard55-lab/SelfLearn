@@ -112,7 +112,7 @@ without one; each records a `credential_required` status naming the secret to se
 selflearn/        the engine (fetch, verify, think, learn, experiment, publish)
 data/             seed questions, the labelled calibration cases, the requirements matrix
 experiments/      seeded experiment scripts, each with a hypothesis and a falsifier
-tests/            65 tests, no network and no credentials required
+tests/            67 tests, no network and no credentials required
 tools/            reviewer tools: check a claim, reproduce an experiment, export a summary, serve the site
 docs/             the published site, plus the hand-written documents listed above
 library/          the append-only memory: 14 JSONL streams
