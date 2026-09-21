@@ -567,7 +567,11 @@ def run_cycle(
 
     published: list[Path] = []
     if publish:
-        published = build_site(data, SITE_DIR if root == Path(__file__).resolve().parent.parent else root / "docs")
+        published = build_site(
+            data,
+            SITE_DIR if root == Path(__file__).resolve().parent.parent else root / "docs",
+            write_root_entry=True,
+        )
         result.published = [str(path) for path in published]
     save_json(root / "reports" / "site_data.json", data)
 

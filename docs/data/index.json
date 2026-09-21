@@ -1449,7 +1449,7 @@
       "Selection used 26 labelled case(s); false supports at the selected point: 0."
     ],
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-21T23:14:00Z",
+    "ran_at": "2026-09-21T23:16:05Z",
     "selected": {
       "accuracy": 1.0,
       "all_cases": {
@@ -2687,7 +2687,7 @@
       "topic_id": "topic-autonomous-research-agents"
     }
   ],
-  "generated_at": "2026-09-21T23:14:00Z",
+  "generated_at": "2026-09-21T23:16:05Z",
   "irregularities": [
     {
       "created_at": "2026-09-21T23:13:32Z",
@@ -2718,7 +2718,7 @@
       "completed": 2,
       "total": 2
     },
-    "generated_at": "2026-09-21T23:14:00Z",
+    "generated_at": "2026-09-21T23:16:05Z",
     "notes": [],
     "personas": [],
     "rules": [
@@ -2877,7 +2877,7 @@
         "supported": 0.8
       },
       "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-      "ran_at": "2026-09-21T23:14:00Z",
+      "ran_at": "2026-09-21T23:16:05Z",
       "source": "state/calibration.json"
     }
   },
@@ -3451,10 +3451,12 @@
       "evidence": [
         "selflearn/fetch/registry.py",
         "docs/SOURCES.md",
-        "docs/sources.html"
+        "docs/sources.html",
+        "index.html",
+        "docs/ARCHITECTURE.md"
       ],
       "gap": "Four sources need credentials and are registered but never polled in this environment.",
-      "how_to_verify": "All 36 registered sources carry their operator and the operator's own documentation URL; the four least certain links were re-checked against the live web and corrected, and the corrections are listed in the sources document. Every claim links to the document it was cut from.",
+      "how_to_verify": "All 36 registered sources carry their operator and the operator's own documentation URL; the four least certain links were re-checked against the live web and corrected, and the corrections are listed in the sources document. Every claim links to the document it was cut from. The GitHub Pages entry point at the repository root is generated from the same data as the site, so the published URL cannot drift from the pages it links to.",
       "id": "R-27",
       "requirement": "Provide links to official, verifiable sources for manual review.",
       "source": "user brief",
@@ -5484,7 +5486,7 @@
         "What experiment would resolve it?"
       ],
       "experiments": [],
-      "generated_at": "2026-09-21T23:14:00Z",
+      "generated_at": "2026-09-21T23:16:05Z",
       "questions": [
         {
           "id": "q-4de45dbb185f",
@@ -5511,7 +5513,7 @@
       "source_status": [],
       "statistics": {
         "claims": 23,
-        "computed_at": "2026-09-21T23:14:00Z",
+        "computed_at": "2026-09-21T23:16:05Z",
         "documents": 4,
         "evidence_classes": [
           "primary_source",
@@ -8408,7 +8410,7 @@
           "topic_id": "topic-fabrication-detection"
         }
       ],
-      "generated_at": "2026-09-21T23:14:00Z",
+      "generated_at": "2026-09-21T23:16:05Z",
       "questions": [
         {
           "id": "q-9f8fe9d58156",
@@ -8442,7 +8444,7 @@
       "source_status": [],
       "statistics": {
         "claims": 44,
-        "computed_at": "2026-09-21T23:14:00Z",
+        "computed_at": "2026-09-21T23:16:05Z",
         "documents": 10,
         "evidence_classes": [
           "primary_source",
@@ -10957,7 +10959,7 @@
         "What experiment would resolve it?"
       ],
       "experiments": [],
-      "generated_at": "2026-09-21T23:14:00Z",
+      "generated_at": "2026-09-21T23:16:05Z",
       "questions": [
         {
           "id": "q-dd05e798300a",
@@ -11005,7 +11007,7 @@
       "source_status": [],
       "statistics": {
         "claims": 25,
-        "computed_at": "2026-09-21T23:14:00Z",
+        "computed_at": "2026-09-21T23:16:05Z",
         "documents": 6,
         "evidence_classes": [
           "primary_source",
@@ -14050,7 +14052,7 @@
           "topic_id": "topic-search-and-sorting-strategy"
         }
       ],
-      "generated_at": "2026-09-21T23:14:00Z",
+      "generated_at": "2026-09-21T23:16:05Z",
       "questions": [
         {
           "id": "q-ec3fa4f74d8c",
@@ -14077,7 +14079,7 @@
       "source_status": [],
       "statistics": {
         "claims": 49,
-        "computed_at": "2026-09-21T23:14:00Z",
+        "computed_at": "2026-09-21T23:16:05Z",
         "documents": 10,
         "evidence_classes": [
           "primary_source",

@@ -1050,6 +1050,94 @@ def page_not_found(data: dict[str, Any]) -> str:
 # ---------------------------------------------------------------------------
 
 
+def page_root_entry(data: dict[str, Any]) -> str:
+    """The repository-root landing page that GitHub Pages serves.
+
+    GitHub Pages publishes this repository from the branch root, while the engine
+    writes the site into ``docs/``. Rather than move the site, this single page is
+    written next to it: a reader arriving at the Pages URL gets one clear entry
+    point, and every link on it is relative so it works from any host.
+    """
+    counts = data.get("counts") or {}
+    topics = data.get("topics") or []
+    run_id = data.get("run_id") or "no run recorded"
+    mode = data.get("mode") or "unknown"
+    generated = data.get("generated_at") or ""
+    topic_items = "".join(
+        f'<li>{rel(topic_href(item["topic"], prefix="docs/"), item["topic"].get("title", "question"))} '
+        f'<span class="muted">- {esc((item.get("topic") or {}).get("status", ""))}</span></li>'
+        for item in topics[:6]
+    )
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SelfLearn - autonomous evidence-verifying research engine</title>
+<meta name="description" content="SelfLearn researches questions from public sources and publishes only what it can quote from a retrieved document.">
+<meta name="color-scheme" content="light dark">
+<style>
+:root {{ --ink:#10202c; --muted:#5b6b78; --line:#c9d3da; --bg:#f7f9fb; --card:#fff; --accent:#0b5d7a; }}
+@media (prefers-color-scheme: dark) {{ :root {{ --ink:#e8eef2; --muted:#9fb0bd; --line:#2b3a45; --bg:#121a20; --card:#18232b; --accent:#7cc4de; }} }}
+* {{ box-sizing:border-box; }}
+body {{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }}
+main {{ max-width:44rem; margin:0 auto; padding:3rem 1.25rem 4rem; }}
+h1 {{ font-size:1.9rem; margin:0 0 .25rem; }}
+h2 {{ font-size:1.15rem; margin:2rem 0 .5rem; }}
+p {{ margin:.6rem 0; }}
+.lede {{ font-size:1.05rem; }}
+.muted {{ color:var(--muted); }}
+.card {{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:1rem 1.25rem; margin:1.25rem 0; }}
+a {{ color:var(--accent); }}
+ul {{ padding-left:1.2rem; }}
+.cta {{ display:inline-block; background:var(--accent); color:#fff; padding:.6rem 1rem; border-radius:8px; text-decoration:none; font-weight:600; }}
+@media (prefers-color-scheme: dark) {{ .cta {{ color:#08131a; }} }}
+code {{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }}
+.small {{ font-size:.9rem; }}
+</style>
+</head>
+<body>
+<main>
+  <h1>SelfLearn</h1>
+  <p class="lede">An autonomous research engine that will not publish a sentence it cannot quote from a
+  document it actually retrieved. No language model is used at any stage: every claim is a span of a
+  stored source, and the accept/reject decision is a string comparison a reviewer can re-run.</p>
+
+  <p><a class="cta" href="docs/index.html">Open the research site &rarr;</a></p>
+  <p class="muted small">Last published run <code>{esc(run_id)}</code> ({esc(mode)} mode), generated {esc(generated)}:
+  {esc(counts.get("topics", 0))} questions, {esc(counts.get("claims", 0))} claims over
+  {esc(counts.get("documents", 0))} stored documents.</p>
+
+  <div class="card">
+    <h2 style="margin-top:0">Go straight to</h2>
+    <ul>
+      <li>{rel("docs/index.html", "Overview")} - what the engine is doing and what changed this cycle</li>
+      <li>{rel("docs/review.html", "For review")} - every unresolved irregularity, failure and contradiction</li>
+      <li>{rel("docs/sources.html", "Sources")} - what was read, what was reachable, what needs a credential</li>
+      <li>{rel("docs/method.html", "Method")} - evidence hierarchy, thresholds in force, criteria, refusals</li>
+      <li>{rel("docs/documents.html", "Documents")} - design source, architecture, verification, limits, roadmap</li>
+      <li>{rel("docs/requirements.html", "Requirements")} - the brief traced line by line</li>
+    </ul>
+    {f'<p class="muted">Questions currently under research:</p><ul>{topic_items}</ul>' if topic_items else ''}
+  </div>
+
+  <h2>Check it yourself</h2>
+  <p>Every figure on the site is traceable to a claim or to a count the engine recorded. The stored
+  bytes behind each claim, the calibration that set the verification thresholds, the experiment results
+  and the run summary are all committed to the repository.</p>
+  <ul class="muted">
+    <li><code>python3 tools/check_claim.py</code> - a claim, its document, its hash, a fresh re-check</li>
+    <li><code>python3 -m selflearn audit</code> - re-verify every claim from its snapshot</li>
+    <li><code>python3 -m selflearn selftest</code> - the test suite</li>
+  </ul>
+  <p class="muted small">Source code: {link(ENGINE_REPO_URL, "github.com/buffedlizard55-lab/SelfLearn")}.
+  No third-party scripts, fonts or trackers.</p>
+</main>
+</body>
+</html>
+"""
+
+
 def render_documents(source_dir: Path | None = None, *, repo_url: str = ENGINE_REPO_URL) -> list[dict[str, Any]]:
     """Read and render the hand-written documents that sit beside the site."""
     base = Path(source_dir) if source_dir is not None else SITE_DIR
@@ -1075,8 +1163,19 @@ def render_documents(source_dir: Path | None = None, *, repo_url: str = ENGINE_R
 
 
 
-def build_site(data: dict[str, Any], out_dir: Path, *, write_data: bool = True) -> list[Path]:
-    """Write the whole site. Returns the list of files written."""
+def build_site(
+    data: dict[str, Any],
+    out_dir: Path,
+    *,
+    write_data: bool = True,
+    write_root_entry: bool = False,
+) -> list[Path]:
+    """Write the whole site. Returns the list of files written.
+
+    ``write_root_entry`` also writes the GitHub Pages entry point next to the site
+    directory (the repository root), because Pages publishes this repository from
+    the branch root while the site itself lives in ``docs/``.
+    """
     out = Path(out_dir)
     static = out / "static"
     topics_dir = out / "topics"
@@ -1094,6 +1193,13 @@ def build_site(data: dict[str, Any], out_dir: Path, *, write_data: bool = True) 
     write(static / "style.css", STYLESHEET)
     write(static / "app.js", SCRIPT)
     write(out / ".nojekyll", "")
+    if write_root_entry:
+        # Pages serves the repository root; these two files make the URL a doorway to
+        # the site rather than a bare directory listing.
+        root = out.parent
+        (root / "index.html").write_text(page_root_entry(data), encoding="utf-8")
+        (root / ".nojekyll").write_text("", encoding="utf-8")
+        written.extend([root / "index.html", root / ".nojekyll"])
     write(out / "index.html", page_index(data))
     write(out / "library.html", page_library(data))
     write(out / "sources.html", page_sources(data))

@@ -1747,7 +1747,7 @@
       "topic_id": "topic-fabrication-detection"
     }
   ],
-  "generated_at": "2026-09-21T23:14:00Z",
+  "generated_at": "2026-09-21T23:16:05Z",
   "questions": [
     {
       "id": "q-9f8fe9d58156",
@@ -1781,7 +1781,7 @@
   "source_status": [],
   "statistics": {
     "claims": 44,
-    "computed_at": "2026-09-21T23:14:00Z",
+    "computed_at": "2026-09-21T23:16:05Z",
     "documents": 10,
     "evidence_classes": [
       "primary_source",
