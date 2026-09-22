@@ -119,7 +119,7 @@
       }
     },
     "case_count": 26,
-    "cases_path": "/home/runner/work/SelfLearn/SelfLearn/data/fixtures/verification_cases.jsonl",
+    "cases_path": "/home/user/SelfLearn/data/fixtures/verification_cases.jsonl",
     "changed": false,
     "disagreements": [],
     "grid": [
@@ -1445,10 +1445,11 @@
       }
     ],
     "notes": [
+      "This sweep did not change the thresholds in force; the previously applied set is carried over and shown above.",
       "Selection used 26 labelled case(s); false supports at the selected point: 0."
     ],
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-22T05:05:57Z",
+    "ran_at": "2026-09-22T07:20:46Z",
     "selected": {
       "accuracy": 1.0,
       "all_cases": {
@@ -1816,9 +1817,11 @@
     "fixture_documents": 0,
     "irregularity_counts": {
       "error": 0,
-      "info": 13,
+      "info": 5,
       "warning": 15
     },
+    "resolved_contradictions": 0,
+    "resolved_irregularities": 7,
     "unresolved_contradictions": 12,
     "unsupported_claims": 9
   },
@@ -1827,9 +1830,13 @@
       "claim_a": "cl-13cf26e4fba9",
       "claim_b": "cl-6ac20344a641",
       "contradiction_id": "con-4fb8033a159c",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (102 vs 150). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-autonomous-research-agents"
     },
@@ -1837,9 +1844,13 @@
       "claim_a": "cl-87c1d0345e0e",
       "claim_b": "cl-9d035d5ab642",
       "contradiction_id": "con-5ddfe0dad53e",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (0 vs 5). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-fabrication-detection"
     },
@@ -1847,9 +1858,13 @@
       "claim_a": "cl-5a86c56f889c",
       "claim_b": "cl-92ae15540483",
       "contradiction_id": "con-62b85df6338e",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (0, 19, 2, 2020, 25, 7 vs 14, 17, 2024, 39, 49, 6, 9). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-research-loop-scheduling"
     },
@@ -1857,9 +1872,13 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-34785ec24933",
       "contradiction_id": "con-704349b4aaa9",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-research-loop-scheduling"
     },
@@ -1867,9 +1886,13 @@
       "claim_a": "cl-8faf22d0289e",
       "claim_b": "cl-ef6f3d3a8a5d",
       "contradiction_id": "con-96485a969ff6",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (10, 2026, 21, 35, 4, 9 vs 0, 1, 20, 2025, 47, 52). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-fabrication-detection"
     },
@@ -1877,9 +1900,13 @@
       "claim_a": "cl-34785ec24933",
       "claim_b": "cl-aae22a8bf2b6",
       "contradiction_id": "con-9e27fade0728",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-research-loop-scheduling"
     },
@@ -1887,9 +1914,13 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-a39b827e786b",
       "contradiction_id": "con-ba498da15727",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 67% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-research-loop-scheduling"
     },
@@ -1897,9 +1928,13 @@
       "claim_a": "cl-6ac20344a641",
       "claim_b": "cl-13cf26e4fba9",
       "contradiction_id": "con-c026367771df",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (150 vs 102). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-autonomous-research-agents"
     },
@@ -1907,9 +1942,13 @@
       "claim_a": "cl-a39b827e786b",
       "claim_b": "cl-aae22a8bf2b6",
       "contradiction_id": "con-c3814afc1d32",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 67% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-research-loop-scheduling"
     },
@@ -1917,9 +1956,13 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-d3e7cd2b784b",
       "contradiction_id": "con-d3df6c302896",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 57% of their content tokens but contain disjoint numeric values (2 vs 0, 3). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-research-loop-scheduling"
     },
@@ -1927,9 +1970,13 @@
       "claim_a": "cl-92ae15540483",
       "claim_b": "cl-5a86c56f889c",
       "contradiction_id": "con-d448d769487d",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (14, 17, 2024, 39, 49, 6, 9 vs 0, 19, 2, 2020, 25, 7). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-research-loop-scheduling"
     },
@@ -1937,9 +1984,13 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-c6ff1cae91a9",
       "contradiction_id": "con-f8b061b192ec",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-research-loop-scheduling"
     }
@@ -2165,52 +2216,54 @@
   ],
   "elo": {
     "default_rating": 1500.0,
+    "history_truncated": true,
+    "history_window": 500,
     "k_factor": 16.0,
     "leaderboard": [
       {
         "key": "persona-F",
-        "matches": 206,
+        "matches": 182,
         "rank": 1,
         "rating": 1744.6,
-        "wins": 168
+        "wins": 150
       },
       {
         "key": "persona-B",
-        "matches": 187,
+        "matches": 167,
         "rank": 2,
         "rating": 1622.4,
         "wins": 72
       },
       {
         "key": "persona-E",
-        "matches": 189,
+        "matches": 167,
         "rank": 3,
         "rating": 1524.1,
-        "wins": 81
+        "wins": 69
       },
       {
         "key": "persona-D",
-        "matches": 193,
+        "matches": 171,
         "rank": 4,
         "rating": 1512.5,
-        "wins": 118
+        "wins": 104
       },
       {
         "key": "persona-A",
-        "matches": 176,
+        "matches": 158,
         "rank": 5,
         "rating": 1403.1,
-        "wins": 74
+        "wins": 65
       },
       {
         "key": "persona-C",
-        "matches": 177,
+        "matches": 155,
         "rank": 6,
         "rating": 1193.2,
-        "wins": 34
+        "wins": 24
       }
     ],
-    "matches": 564,
+    "matches": 500,
     "ratings": {
       "persona-A": 1403.14,
       "persona-B": 1622.37,
@@ -2316,6 +2369,30 @@
       ],
       "timeout_seconds": 300,
       "title": "Collision counts against the birthday law"
+    },
+    {
+      "experiment_id": "scheduling-policies-v1",
+      "falsifier": "Round-robin is not the worst of the three, or UCB1's second-half regret is not below its first-half regret, or epsilon-greedy's second-half regret falls below the analytic exploration floor.",
+      "hypothesis": "On a five-armed Bernoulli bandit with fixed means, UCB1 and epsilon-greedy both accumulate less pseudo-regret than round-robin; UCB1's regret grows sublinearly and a fixed exploration rate keeps paying a cost proportional to the horizon.",
+      "keywords": [
+        "scheduling",
+        "prioritisation",
+        "bandit",
+        "exploration",
+        "exploitation",
+        "regret",
+        "prioritise",
+        "schedule"
+      ],
+      "metric": "mean cumulative pseudo-regret",
+      "purpose": "capability",
+      "run_command": "python experiments/scheduling_policies.py --seed 5 --out result.json",
+      "script": "experiments/scheduling_policies.py",
+      "seeds": [
+        5
+      ],
+      "timeout_seconds": 300,
+      "title": "Scheduling policies on a stationary bandit: round-robin, epsilon-greedy, UCB1"
     }
   ],
   "experiments": [
@@ -2618,12 +2695,30 @@
       "topic_id": "topic-autonomous-research-agents"
     },
     {
+      "created_at": "2026-09-22T05:05:59Z",
+      "detail": "",
+      "failure_id": "fail-221837fa3652",
+      "remedy": "Check the API documentation for a changed endpoint or parameter.",
+      "stage": "fetch",
+      "summary": "arxiv returned HTTP 406",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
       "created_at": "2026-09-21T23:55:00Z",
       "detail": "earthquake.usgs.gov unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
       "failure_id": "fail-26b2a13e2e77",
       "remedy": "Confirm egress from the runner; the window will be re-polled on the next run.",
       "stage": "change_scan",
       "summary": "usgs_earthquake unreachable during the change scan",
+      "topic_id": null
+    },
+    {
+      "created_at": "2026-09-22T05:06:06Z",
+      "detail": "",
+      "failure_id": "fail-32d07b5042c8",
+      "remedy": "Check the documented filter name and value format; the operator may have changed it.",
+      "stage": "change_scan",
+      "summary": "nvd returned HTTP 404 during the change scan",
       "topic_id": null
     },
     {
@@ -2690,6 +2785,15 @@
       "topic_id": null
     },
     {
+      "created_at": "2026-09-22T05:06:05Z",
+      "detail": "",
+      "failure_id": "fail-c3be271d483c",
+      "remedy": "Check the documented filter name and value format; the operator may have changed it.",
+      "stage": "change_scan",
+      "summary": "arxiv returned HTTP 406 during the change scan",
+      "topic_id": null
+    },
+    {
       "created_at": "2026-09-22T00:03:46Z",
       "detail": "api.semanticscholar.org unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
       "failure_id": "fail-c518735438fd",
@@ -2724,36 +2828,9 @@
       "stage": "change_scan",
       "summary": "crossref unreachable during the change scan",
       "topic_id": null
-    },
-    {
-      "created_at": "2026-09-22T05:05:59Z",
-      "detail": "",
-      "failure_id": "fail-221837fa3652",
-      "remedy": "Check the API documentation for a changed endpoint or parameter.",
-      "stage": "fetch",
-      "summary": "arxiv returned HTTP 406",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "created_at": "2026-09-22T05:06:05Z",
-      "detail": "",
-      "failure_id": "fail-c3be271d483c",
-      "remedy": "Check the documented filter name and value format; the operator may have changed it.",
-      "stage": "change_scan",
-      "summary": "arxiv returned HTTP 406 during the change scan",
-      "topic_id": null
-    },
-    {
-      "created_at": "2026-09-22T05:06:06Z",
-      "detail": "",
-      "failure_id": "fail-32d07b5042c8",
-      "remedy": "Check the documented filter name and value format; the operator may have changed it.",
-      "stage": "change_scan",
-      "summary": "nvd returned HTTP 404 during the change scan",
-      "topic_id": null
     }
   ],
-  "generated_at": "2026-09-22T05:06:07Z",
+  "generated_at": "2026-09-22T07:20:46Z",
   "invention_rule": {
     "candidate_pool": "Phrases of two to four content words that recur in at least two retrieved documents. The pool is the engine's own retrieval, not an open crawl; 'novel' therefore means novel to this library.",
     "formula": "total = novelty x importance x potential, scaled by 2 and capped at 1",
@@ -2772,7 +2849,10 @@
       "created_at": "2026-09-21T23:55:57Z",
       "detail": "Proposed from the engine's own rendering scaffolding, not from subject matter: the phrase recurs in every retrieved document because the adapter writes it, so it is not novel. Fixed in selflearn/think/invention.py by stripping scaffolding before candidate extraction.",
       "irregularity_id": "irr-00276c63999a",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": true,
+      "resolved_at": "",
       "severity": "info",
       "stage": "review",
       "suggested_action": "The record stays in library/topics.jsonl; the topic is excluded from planning and from the site.",
@@ -2784,7 +2864,10 @@
       "created_at": "2026-09-21T23:55:00Z",
       "detail": "Either every source failed, or the retrieved documents did not contain quotable content.",
       "irregularity_id": "irr-073635cdbf14",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "audit",
       "suggested_action": "Check the source status table for this topic and add or repair sources.",
@@ -2796,7 +2879,10 @@
       "created_at": "2026-09-21T23:55:57Z",
       "detail": "Proposed from the engine's own rendering scaffolding, not from subject matter: the phrase recurs in every retrieved document because the adapter writes it, so it is not novel. Fixed in selflearn/think/invention.py by stripping scaffolding before candidate extraction.",
       "irregularity_id": "irr-0e75bba705aa",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": true,
+      "resolved_at": "",
       "severity": "info",
       "stage": "review",
       "suggested_action": "The record stays in library/topics.jsonl; the topic is excluded from planning and from the site.",
@@ -2808,7 +2894,10 @@
       "created_at": "2026-09-22T00:22:28Z",
       "detail": "services.nvd.nist.gov unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992). The window 2026-09-15..2026-09-22 was not polled, so items published in it will appear as new on a later run rather than being missed.",
       "irregularity_id": "irr-0f32c8d0a71f",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "change_scan",
       "suggested_action": "Re-run the scan from a host with egress to this source.",
@@ -2820,7 +2909,10 @@
       "created_at": "2026-09-21T23:55:57Z",
       "detail": "Proposed from the engine's own rendering scaffolding, not from subject matter: the phrase recurs in every retrieved document because the adapter writes it, so it is not novel. Fixed in selflearn/think/invention.py by stripping scaffolding before candidate extraction.",
       "irregularity_id": "irr-0fcd91bbd590",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": true,
+      "resolved_at": "",
       "severity": "info",
       "stage": "review",
       "suggested_action": "The record stays in library/topics.jsonl; the topic is excluded from planning and from the site.",
@@ -2832,7 +2924,10 @@
       "created_at": "2026-09-21T23:55:00Z",
       "detail": "Either every source failed, or the retrieved documents did not contain quotable content.",
       "irregularity_id": "irr-149c68aed9e5",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "audit",
       "suggested_action": "Check the source status table for this topic and add or repair sources.",
@@ -2844,7 +2939,10 @@
       "created_at": "2026-09-21T23:55:00Z",
       "detail": "Either every source failed, or the retrieved documents did not contain quotable content.",
       "irregularity_id": "irr-38ec6402d9cf",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "audit",
       "suggested_action": "Check the source status table for this topic and add or repair sources.",
@@ -2856,7 +2954,10 @@
       "created_at": "2026-09-22T00:22:28Z",
       "detail": "export.arxiv.org unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992). The window 2026-09-15..2026-09-22 was not polled, so items published in it will appear as new on a later run rather than being missed.",
       "irregularity_id": "irr-43ca699ef8b8",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "change_scan",
       "suggested_action": "Re-run the scan from a host with egress to this source.",
@@ -2868,7 +2969,10 @@
       "created_at": "2026-09-22T05:06:07Z",
       "detail": "A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.",
       "irregularity_id": "irr-569286381eaf",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "info",
       "stage": "audit",
       "suggested_action": "Nothing to do unless a reviewer believes a retired statement was correct.",
@@ -2880,7 +2984,10 @@
       "created_at": "2026-09-21T23:55:00Z",
       "detail": "Either every source failed, or the retrieved documents did not contain quotable content.",
       "irregularity_id": "irr-5e5c256f577a",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "audit",
       "suggested_action": "Check the source status table for this topic and add or repair sources.",
@@ -2892,7 +2999,10 @@
       "created_at": "2026-09-21T23:55:57Z",
       "detail": "Proposed from the engine's own rendering scaffolding, not from subject matter: the phrase recurs in every retrieved document because the adapter writes it, so it is not novel. Fixed in selflearn/think/invention.py by stripping scaffolding before candidate extraction.",
       "irregularity_id": "irr-64d0b7776639",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": true,
+      "resolved_at": "",
       "severity": "info",
       "stage": "review",
       "suggested_action": "The record stays in library/topics.jsonl; the topic is excluded from planning and from the site.",
@@ -2904,7 +3014,10 @@
       "created_at": "2026-09-22T00:08:02Z",
       "detail": "The synthesis rules no longer produce these statements, so they are marked superseded and are not published as current findings. The records remain in library/claims.jsonl with the reason stored on each.",
       "irregularity_id": "irr-6fed4ba31f00",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "info",
       "stage": "synthesis",
       "suggested_action": "No action needed unless a reviewer believes a retired statement was correct.",
@@ -2916,7 +3029,10 @@
       "created_at": "2026-09-22T00:22:28Z",
       "detail": "Unavailable sources: arxiv, crossref, hackernews, openalex, semantic_scholar",
       "irregularity_id": "irr-7a8a2e69fe6e",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "audit",
       "suggested_action": "Confirm network egress from the runner, or accept snapshot replay for these sources.",
@@ -2928,7 +3044,10 @@
       "created_at": "2026-09-21T23:55:00Z",
       "detail": "Either every source failed, or the retrieved documents did not contain quotable content.",
       "irregularity_id": "irr-7b401468d982",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "audit",
       "suggested_action": "Check the source status table for this topic and add or repair sources.",
@@ -2940,7 +3059,10 @@
       "created_at": "2026-09-22T00:22:28Z",
       "detail": "api.crossref.org unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992). The window 2026-09-15..2026-09-22 was not polled, so items published in it will appear as new on a later run rather than being missed.",
       "irregularity_id": "irr-8268b26e8ebc",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "change_scan",
       "suggested_action": "Re-run the scan from a host with egress to this source.",
@@ -2952,7 +3074,10 @@
       "created_at": "2026-09-21T23:55:57Z",
       "detail": "Proposed from the engine's own rendering scaffolding, not from subject matter: the phrase recurs in every retrieved document because the adapter writes it, so it is not novel. Fixed in selflearn/think/invention.py by stripping scaffolding before candidate extraction.",
       "irregularity_id": "irr-8638b3cc17d7",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": true,
+      "resolved_at": "",
       "severity": "info",
       "stage": "review",
       "suggested_action": "The record stays in library/topics.jsonl; the topic is excluded from planning and from the site.",
@@ -2964,7 +3089,10 @@
       "created_at": "2026-09-22T00:08:04Z",
       "detail": "The synthesis rules no longer produce these statements, so they are marked superseded and are not published as current findings. The records remain in library/claims.jsonl with the reason stored on each.",
       "irregularity_id": "irr-9c1dc4f51574",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "info",
       "stage": "synthesis",
       "suggested_action": "No action needed unless a reviewer believes a retired statement was correct.",
@@ -2976,7 +3104,10 @@
       "created_at": "2026-09-22T00:08:00Z",
       "detail": "The synthesis rules no longer produce these statements, so they are marked superseded and are not published as current findings. The records remain in library/claims.jsonl with the reason stored on each.",
       "irregularity_id": "irr-9eedabcee374",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "info",
       "stage": "synthesis",
       "suggested_action": "No action needed unless a reviewer believes a retired statement was correct.",
@@ -2988,7 +3119,10 @@
       "created_at": "2026-09-21T23:55:57Z",
       "detail": "Proposed from the engine's own rendering scaffolding, not from subject matter: the phrase recurs in every retrieved document because the adapter writes it, so it is not novel. Fixed in selflearn/think/invention.py by stripping scaffolding before candidate extraction.",
       "irregularity_id": "irr-aabcbed375e6",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": true,
+      "resolved_at": "",
       "severity": "info",
       "stage": "review",
       "suggested_action": "The record stays in library/topics.jsonl; the topic is excluded from planning and from the site.",
@@ -2997,10 +3131,28 @@
       "url": null
     },
     {
+      "created_at": "2026-09-22T05:06:06Z",
+      "detail": "Request: https://services.nvd.nist.gov/rest/json/cves/2.0 with {\"keywordSearch\": \"autonomous agent\", \"lastModEndDate\": \"2026-09-22T00:00:00:000 UTC-00:00\", \"lastModStartDate\": \"2026-09-15T00:00:00:000 UTC-00:00\", \"resultsPerPage\": 5}. Response: ",
+      "irregularity_id": "irr-b52f25d10d39",
+      "resolution": "",
+      "resolution_link": "",
+      "resolved": false,
+      "resolved_at": "",
+      "severity": "warning",
+      "stage": "change_scan",
+      "suggested_action": "Verify the filter against the source's documentation and update changes.py.",
+      "summary": "Change scan for nvd returned HTTP 404",
+      "topic_id": null,
+      "url": "https://nvd.nist.gov/developers/vulnerabilities"
+    },
+    {
       "created_at": "2026-09-22T00:22:28Z",
       "detail": "earthquake.usgs.gov unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992). The window 2026-09-15..2026-09-22 was not polled, so items published in it will appear as new on a later run rather than being missed.",
       "irregularity_id": "irr-b9fce9a77ea5",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "change_scan",
       "suggested_action": "Re-run the scan from a host with egress to this source.",
@@ -3012,7 +3164,10 @@
       "created_at": "2026-09-21T23:55:00Z",
       "detail": "Either every source failed, or the retrieved documents did not contain quotable content.",
       "irregularity_id": "irr-bb461e738371",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "audit",
       "suggested_action": "Check the source status table for this topic and add or repair sources.",
@@ -3024,7 +3179,10 @@
       "created_at": "2026-09-21T23:55:57Z",
       "detail": "Proposed from the engine's own rendering scaffolding, not from subject matter: the phrase recurs in every retrieved document because the adapter writes it, so it is not novel. Fixed in selflearn/think/invention.py by stripping scaffolding before candidate extraction.",
       "irregularity_id": "irr-bf5855534bb7",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": true,
+      "resolved_at": "",
       "severity": "info",
       "stage": "review",
       "suggested_action": "The record stays in library/topics.jsonl; the topic is excluded from planning and from the site.",
@@ -3033,10 +3191,43 @@
       "url": null
     },
     {
+      "created_at": "2026-09-22T05:06:05Z",
+      "detail": "Request: https://export.arxiv.org/api/query with {\"max_results\": 5, \"search_query\": \"all:autonomous agent\", \"sortBy\": \"submittedDate\", \"sortOrder\": \"descending\", \"start\": 0}. Response: ",
+      "irregularity_id": "irr-c14cbd18b617",
+      "resolution": "",
+      "resolution_link": "",
+      "resolved": false,
+      "resolved_at": "",
+      "severity": "warning",
+      "stage": "change_scan",
+      "suggested_action": "Verify the filter against the source's documentation and update changes.py.",
+      "summary": "Change scan for arxiv returned HTTP 406",
+      "topic_id": null,
+      "url": "https://info.arxiv.org/help/api/user-manual.html"
+    },
+    {
+      "created_at": "2026-09-22T05:06:07Z",
+      "detail": "Unavailable sources: arxiv",
+      "irregularity_id": "irr-c7702daed02e",
+      "resolution": "",
+      "resolution_link": "",
+      "resolved": false,
+      "resolved_at": "",
+      "severity": "warning",
+      "stage": "audit",
+      "suggested_action": "Confirm network egress from the runner, or accept snapshot replay for these sources.",
+      "summary": "1 source(s) were not reachable during this run",
+      "topic_id": null,
+      "url": null
+    },
+    {
       "created_at": "2026-09-22T00:08:01Z",
       "detail": "The synthesis rules no longer produce these statements, so they are marked superseded and are not published as current findings. The records remain in library/claims.jsonl with the reason stored on each.",
       "irregularity_id": "irr-d1fed35636e8",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "info",
       "stage": "synthesis",
       "suggested_action": "No action needed unless a reviewer believes a retired statement was correct.",
@@ -3048,60 +3239,15 @@
       "created_at": "2026-09-21T23:55:00Z",
       "detail": "Either every source failed, or the retrieved documents did not contain quotable content.",
       "irregularity_id": "irr-d30052aa6bb1",
+      "resolution": "",
+      "resolution_link": "",
       "resolved": false,
+      "resolved_at": "",
       "severity": "warning",
       "stage": "audit",
       "suggested_action": "Check the source status table for this topic and add or repair sources.",
       "summary": "Topic 'Adoption signal' produced no verified claims",
       "topic_id": "topic-33df4650da1c",
-      "url": null
-    },
-    {
-      "created_at": "2026-09-22T05:06:05Z",
-      "detail": "Request: https://export.arxiv.org/api/query with {\"max_results\": 5, \"search_query\": \"all:autonomous agent\", \"sortBy\": \"submittedDate\", \"sortOrder\": \"descending\", \"start\": 0}. Response: ",
-      "irregularity_id": "irr-c14cbd18b617",
-      "resolved": false,
-      "severity": "warning",
-      "stage": "change_scan",
-      "suggested_action": "Verify the filter against the source's documentation and update changes.py.",
-      "summary": "Change scan for arxiv returned HTTP 406",
-      "topic_id": null,
-      "url": "https://info.arxiv.org/help/api/user-manual.html"
-    },
-    {
-      "created_at": "2026-09-22T05:06:06Z",
-      "detail": "Request: https://services.nvd.nist.gov/rest/json/cves/2.0 with {\"keywordSearch\": \"autonomous agent\", \"lastModEndDate\": \"2026-09-22T00:00:00:000 UTC-00:00\", \"lastModStartDate\": \"2026-09-15T00:00:00:000 UTC-00:00\", \"resultsPerPage\": 5}. Response: ",
-      "irregularity_id": "irr-b52f25d10d39",
-      "resolved": false,
-      "severity": "warning",
-      "stage": "change_scan",
-      "suggested_action": "Verify the filter against the source's documentation and update changes.py.",
-      "summary": "Change scan for nvd returned HTTP 404",
-      "topic_id": null,
-      "url": "https://nvd.nist.gov/developers/vulnerabilities"
-    },
-    {
-      "created_at": "2026-09-22T05:06:07Z",
-      "detail": "A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.",
-      "irregularity_id": "irr-569286381eaf",
-      "resolved": false,
-      "severity": "info",
-      "stage": "audit",
-      "suggested_action": "Nothing to do unless a reviewer believes a retired statement was correct.",
-      "summary": "24 stored claim(s) are marked superseded and are excluded from re-verification",
-      "topic_id": null,
-      "url": null
-    },
-    {
-      "created_at": "2026-09-22T05:06:07Z",
-      "detail": "Unavailable sources: arxiv",
-      "irregularity_id": "irr-c7702daed02e",
-      "resolved": false,
-      "severity": "warning",
-      "stage": "audit",
-      "suggested_action": "Confirm network egress from the runner, or accept snapshot replay for these sources.",
-      "summary": "1 source(s) were not reachable during this run",
-      "topic_id": null,
       "url": null
     }
   ],
@@ -4447,50 +4593,50 @@
       "completed": 2,
       "total": 2
     },
-    "generated_at": "2026-09-22T05:06:07Z",
+    "generated_at": "2026-09-22T07:20:46Z",
     "notes": [],
     "personas": [
       {
         "key": "persona-F",
-        "matches": 206,
+        "matches": 182,
         "rank": 1,
         "rating": 1744.6,
-        "wins": 168
+        "wins": 150
       },
       {
         "key": "persona-B",
-        "matches": 187,
+        "matches": 167,
         "rank": 2,
         "rating": 1622.4,
         "wins": 72
       },
       {
         "key": "persona-E",
-        "matches": 189,
+        "matches": 167,
         "rank": 3,
         "rating": 1524.1,
-        "wins": 81
+        "wins": 69
       },
       {
         "key": "persona-D",
-        "matches": 193,
+        "matches": 171,
         "rank": 4,
         "rating": 1512.5,
-        "wins": 118
+        "wins": 104
       },
       {
         "key": "persona-A",
-        "matches": 176,
+        "matches": 158,
         "rank": 5,
         "rating": 1403.1,
-        "wins": 74
+        "wins": 65
       },
       {
         "key": "persona-C",
-        "matches": 177,
+        "matches": 155,
         "rank": 6,
         "rating": 1193.2,
-        "wins": 34
+        "wins": 24
       }
     ],
     "rules": [
@@ -4704,7 +4850,6 @@
         "rank": 9
       }
     ],
-    "requirements_version": "1.0",
     "thresholds": {
       "cases": 26,
       "changed": false,
@@ -4715,7 +4860,7 @@
         "supported": 0.8
       },
       "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-      "ran_at": "2026-09-22T05:05:57Z",
+      "ran_at": "2026-09-22T07:20:46Z",
       "source": "state/calibration.json"
     }
   },
@@ -5397,16 +5542,20 @@
     {
       "evidence": [
         "tools/reject_topic.py",
+        "tools/resolve_finding.py",
+        "selflearn/learn/store.py",
         "selflearn/verify/audit.py",
         "library/irregularities.jsonl",
-        "docs/review.html"
+        "library/contradictions.jsonl",
+        "docs/review.html",
+        "tests/test_layers.py"
       ],
-      "gap": "There is no equivalent resolution record for an irregularity or a contradiction yet; a contradiction's resolution field still has to be written by hand.",
-      "how_to_verify": "Every finding is written to library/irregularities.jsonl and rendered on the review page. 'python3 tools/reject_topic.py --id <topic_id> --reason ...' appends a rejected record for the same primary key with a timestamp, a reason and an optional link, and records an info irregularity that a reviewer acted; the original record stays in the stream. Seven topics proposed from the engine's own scaffolding were closed this way on 2026-09-21.",
+      "gap": "Resolution is a repository operation (a commit), not a web form; there is no authentication or reviewer identity beyond the git history of the appended row.",
+      "how_to_verify": "Every finding is written to library/irregularities.jsonl and rendered on the review page. 'python3 tools/reject_topic.py --id <topic_id> --reason ...' appends a rejected record for the same primary key with a timestamp, a reason and an optional link, and records an info irregularity that a reviewer acted; the original record stays in the stream. 'python3 tools/resolve_finding.py --id <irr-... or con-...> --reason ... [--link URL]' does the same for an irregularity or a contradiction: a new row for the same key carrying resolution, resolved_at and resolution_link, with the original summary, detail and claim ids unchanged. The store carries a reviewer's decision forward when a later cycle re-detects the same finding, and '--reopen' reverses it explicitly. The review page shows open findings and, in a separate 'Resolved by a reviewer' table, the original text beside the reason. Run: python3 -m unittest tests.test_layers.ReviewerResolutionTests -v.",
       "id": "R-34",
       "requirement": "Flag irregularities for review, and let a reviewer close one without destroying the record.",
       "source": "user brief",
-      "status": "partial"
+      "status": "implemented"
     }
   ],
   "run_id": "run-31f65d836056",
@@ -11281,9 +11430,13 @@
           "claim_a": "cl-13cf26e4fba9",
           "claim_b": "cl-6ac20344a641",
           "contradiction_id": "con-4fb8033a159c",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (102 vs 150). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-autonomous-research-agents"
         },
@@ -11291,9 +11444,13 @@
           "claim_a": "cl-6ac20344a641",
           "claim_b": "cl-13cf26e4fba9",
           "contradiction_id": "con-c026367771df",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (150 vs 102). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-autonomous-research-agents"
         }
@@ -11521,7 +11678,7 @@
         "What experiment would resolve it?"
       ],
       "experiments": [],
-      "generated_at": "2026-09-22T05:06:07Z",
+      "generated_at": "2026-09-22T07:20:46Z",
       "questions": [
         {
           "id": "q-f7a08fa5afe7",
@@ -12276,7 +12433,7 @@
       ],
       "statistics": {
         "claims": 61,
-        "computed_at": "2026-09-22T05:06:07Z",
+        "computed_at": "2026-09-22T07:20:46Z",
         "documents": 11,
         "evidence_classes": [
           "commentary",
@@ -19696,9 +19853,13 @@
           "claim_a": "cl-87c1d0345e0e",
           "claim_b": "cl-9d035d5ab642",
           "contradiction_id": "con-5ddfe0dad53e",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (0 vs 5). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-fabrication-detection"
         },
@@ -19706,9 +19867,13 @@
           "claim_a": "cl-8faf22d0289e",
           "claim_b": "cl-ef6f3d3a8a5d",
           "contradiction_id": "con-96485a969ff6",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (10, 2026, 21, 35, 4, 9 vs 0, 1, 20, 2025, 47, 52). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-fabrication-detection"
         }
@@ -20028,7 +20193,7 @@
           "topic_id": "topic-fabrication-detection"
         }
       ],
-      "generated_at": "2026-09-22T05:06:07Z",
+      "generated_at": "2026-09-22T07:20:46Z",
       "questions": [
         {
           "id": "q-a12323d8e08a",
@@ -20589,7 +20754,7 @@
       ],
       "statistics": {
         "claims": 59,
-        "computed_at": "2026-09-22T05:06:07Z",
+        "computed_at": "2026-09-22T07:20:46Z",
         "documents": 10,
         "evidence_classes": [
           "primary_source",
@@ -21154,113 +21319,6 @@
           "title": "Optimization brief: Detecting fabricated statements in machine-generated text"
         },
         {
-          "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-1620816b0ed9] \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\" - GitHub REST API (primary_source)\n[cl-72c0d9630020] \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\" - GitHub REST API (primary_source)\n[cl-f74635ed0688] \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\" - GitHub REST API (primary_source)\n[cl-fe4c7b74e422] \"The record for summarizebot/LLM-QualityGuard states in its own description: An open-source library for Large Language Models (LLMs) correctness testing, including hallucination detection and content moderation, to enhance the reliability and safety of AI-generated content across diverse languages.\" - GitHub REST API (primary_source)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
-          "assumptions": [
-            "The retrieved documents are representative of the current state of the question.",
-            "Quoted measurements were produced under the conditions the quoted text describes.",
-            "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
-            "Conditions reported in the sources still hold; no newer evidence supersedes them."
-          ],
-          "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 97.7%, 98.4% for the same quantity.",
-          "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
-          "persona": "E - Optimization",
-          "persona_brief": "Find the cheapest, fastest or most scalable option given the sourced numbers.",
-          "persona_code": "E",
-          "predicted_outcomes": [
-            "If the sourced statement holds, then: \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\"",
-            "If the sourced statement holds, then: \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\"",
-            "If the sourced statement holds, then: \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\""
-          ],
-          "scorecard": {
-            "attacks": 4,
-            "claims_cited": 6,
-            "criteria": {
-              "adversarial_survival": {
-                "label": "Survives criticism",
-                "method": "measured",
-                "note": "Share of critic attacks the candidate survives.",
-                "value": 1.0,
-                "weight": 0.15
-              },
-              "computational_cost": {
-                "label": "Computational cost",
-                "method": "measured",
-                "note": "Cheaper to run and verify is better.",
-                "value": 0.0,
-                "weight": 0.04
-              },
-              "correctness": {
-                "label": "Correctness",
-                "method": "measured",
-                "note": "Every factual element traces to a verified claim; no numeric mismatch.",
-                "value": 1.0,
-                "weight": 0.18
-              },
-              "evidence_quality": {
-                "label": "Evidence quality",
-                "method": "measured",
-                "note": "Mean evidence-hierarchy rank of the supporting claims.",
-                "value": 0.7778,
-                "weight": 0.16
-              },
-              "experimental_performance": {
-                "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
-                "label": "Experimental performance",
-                "method": "measured",
-                "note": "Measured result relative to the recorded baseline, when a test exists.",
-                "value": 0.0417,
-                "weight": 0.1
-              },
-              "reproducibility": {
-                "label": "Reproducibility",
-                "method": "measured",
-                "note": "A third party can re-derive the result from the cited sources and commands.",
-                "value": 1.0,
-                "weight": 0.13
-              },
-              "robustness": {
-                "detail": "Perturbation spread 0.010 around a centre of 0.881.",
-                "label": "Robustness",
-                "method": "measured",
-                "note": "Stable when evidence order and weights are perturbed.",
-                "value": 0.9881,
-                "weight": 0.12
-              },
-              "scalability": {
-                "label": "Scalability",
-                "method": "heuristic",
-                "note": "Plausible to apply beyond the single case studied.",
-                "value": 1.0,
-                "weight": 0.05
-              },
-              "simplicity": {
-                "label": "Simplicity",
-                "method": "measured",
-                "note": "Fewer unsupported assumptions and fewer moving parts is better.",
-                "value": 0.6,
-                "weight": 0.07
-              }
-            },
-            "evidence_records": 4,
-            "fatal_attack": false,
-            "numbers_checked": true,
-            "total": 0.7992,
-            "unbacked_numbers": [],
-            "weights_total": 1.0
-          },
-          "status": "competing",
-          "strategy_id": "st-a918b79aaed1",
-          "supporting_claim_ids": [
-            "cl-1620816b0ed9",
-            "cl-72c0d9630020",
-            "cl-f74635ed0688",
-            "cl-fe4c7b74e422",
-            "cl-19af0640fce6",
-            "cl-2bad57cff1f7"
-          ],
-          "title": "Optimization brief: Detecting fabricated statements in machine-generated text"
-        },
-        {
           "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-1620816b0ed9] \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\" - GitHub REST API (primary_source)\n[cl-72c0d9630020] \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\" - GitHub REST API (primary_source)\n[cl-f74635ed0688] \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\" - GitHub REST API (primary_source)\n[cl-fe4c7b74e422] \"The record for summarizebot/LLM-QualityGuard states in its own description: An open-source library for Large Language Models (LLMs) correctness testing, including hallucination detection and content moderation, to enhance the reliability and safety of AI-generated content across diverse languages.\" - GitHub REST API (primary_source)\n[cl-0aaa55e54a4f] \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
           "assumptions": [
             "The retrieved documents are representative of the current state of the question.",
@@ -21364,6 +21422,113 @@
             "cl-fe4c7b74e422",
             "cl-0aaa55e54a4f",
             "cl-19af0640fce6"
+          ],
+          "title": "Optimization brief: Detecting fabricated statements in machine-generated text"
+        },
+        {
+          "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-1620816b0ed9] \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\" - GitHub REST API (primary_source)\n[cl-72c0d9630020] \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\" - GitHub REST API (primary_source)\n[cl-f74635ed0688] \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\" - GitHub REST API (primary_source)\n[cl-fe4c7b74e422] \"The record for summarizebot/LLM-QualityGuard states in its own description: An open-source library for Large Language Models (LLMs) correctness testing, including hallucination detection and content moderation, to enhance the reliability and safety of AI-generated content across diverse languages.\" - GitHub REST API (primary_source)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+          "assumptions": [
+            "The retrieved documents are representative of the current state of the question.",
+            "Quoted measurements were produced under the conditions the quoted text describes.",
+            "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+            "Conditions reported in the sources still hold; no newer evidence supersedes them."
+          ],
+          "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 97.7%, 98.4% for the same quantity.",
+          "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+          "persona": "E - Optimization",
+          "persona_brief": "Find the cheapest, fastest or most scalable option given the sourced numbers.",
+          "persona_code": "E",
+          "predicted_outcomes": [
+            "If the sourced statement holds, then: \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\"",
+            "If the sourced statement holds, then: \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\"",
+            "If the sourced statement holds, then: \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\""
+          ],
+          "scorecard": {
+            "attacks": 4,
+            "claims_cited": 6,
+            "criteria": {
+              "adversarial_survival": {
+                "label": "Survives criticism",
+                "method": "measured",
+                "note": "Share of critic attacks the candidate survives.",
+                "value": 1.0,
+                "weight": 0.15
+              },
+              "computational_cost": {
+                "label": "Computational cost",
+                "method": "measured",
+                "note": "Cheaper to run and verify is better.",
+                "value": 0.0,
+                "weight": 0.04
+              },
+              "correctness": {
+                "label": "Correctness",
+                "method": "measured",
+                "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+                "value": 1.0,
+                "weight": 0.18
+              },
+              "evidence_quality": {
+                "label": "Evidence quality",
+                "method": "measured",
+                "note": "Mean evidence-hierarchy rank of the supporting claims.",
+                "value": 0.7778,
+                "weight": 0.16
+              },
+              "experimental_performance": {
+                "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
+                "label": "Experimental performance",
+                "method": "measured",
+                "note": "Measured result relative to the recorded baseline, when a test exists.",
+                "value": 0.0417,
+                "weight": 0.1
+              },
+              "reproducibility": {
+                "label": "Reproducibility",
+                "method": "measured",
+                "note": "A third party can re-derive the result from the cited sources and commands.",
+                "value": 1.0,
+                "weight": 0.13
+              },
+              "robustness": {
+                "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+                "label": "Robustness",
+                "method": "measured",
+                "note": "Stable when evidence order and weights are perturbed.",
+                "value": 0.9881,
+                "weight": 0.12
+              },
+              "scalability": {
+                "label": "Scalability",
+                "method": "heuristic",
+                "note": "Plausible to apply beyond the single case studied.",
+                "value": 1.0,
+                "weight": 0.05
+              },
+              "simplicity": {
+                "label": "Simplicity",
+                "method": "measured",
+                "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+                "value": 0.6,
+                "weight": 0.07
+              }
+            },
+            "evidence_records": 4,
+            "fatal_attack": false,
+            "numbers_checked": true,
+            "total": 0.7992,
+            "unbacked_numbers": [],
+            "weights_total": 1.0
+          },
+          "status": "competing",
+          "strategy_id": "st-a918b79aaed1",
+          "supporting_claim_ids": [
+            "cl-1620816b0ed9",
+            "cl-72c0d9630020",
+            "cl-f74635ed0688",
+            "cl-fe4c7b74e422",
+            "cl-19af0640fce6",
+            "cl-2bad57cff1f7"
           ],
           "title": "Optimization brief: Detecting fabricated statements in machine-generated text"
         },
@@ -23710,112 +23875,6 @@
           "title": "Conventional brief: Detecting fabricated statements in machine-generated text"
         },
         {
-          "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n[cl-82e113eab284] \"This question is currently supported by 53 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
-          "assumptions": [
-            "The retrieved documents are representative of the current state of the question.",
-            "Quoted measurements were produced under the conditions the quoted text describes.",
-            "The quantities quoted are commensurable with each other after unit conversion."
-          ],
-          "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 2, 3, 39, 53, 97.7% for the same quantity.",
-          "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
-          "persona": "C - First principles",
-          "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
-          "persona_code": "C",
-          "predicted_outcomes": [
-            "If the sourced statement holds, then: \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
-            "If the sourced statement holds, then: \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
-            "If the sourced statement holds, then: \"The supporting documents span 2 evidence class(es) in the project hierarchy.\""
-          ],
-          "scorecard": {
-            "attacks": 4,
-            "claims_cited": 6,
-            "criteria": {
-              "adversarial_survival": {
-                "label": "Survives criticism",
-                "method": "measured",
-                "note": "Share of critic attacks the candidate survives.",
-                "value": 0.5122,
-                "weight": 0.15
-              },
-              "computational_cost": {
-                "label": "Computational cost",
-                "method": "measured",
-                "note": "Cheaper to run and verify is better.",
-                "value": 0.0643,
-                "weight": 0.04
-              },
-              "correctness": {
-                "label": "Correctness",
-                "method": "measured",
-                "note": "Every factual element traces to a verified claim; no numeric mismatch.",
-                "value": 1.0,
-                "weight": 0.18
-              },
-              "evidence_quality": {
-                "label": "Evidence quality",
-                "method": "measured",
-                "note": "Mean evidence-hierarchy rank of the supporting claims.",
-                "value": 0.0,
-                "weight": 0.16
-              },
-              "experimental_performance": {
-                "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
-                "label": "Experimental performance",
-                "method": "measured",
-                "note": "Measured result relative to the recorded baseline, when a test exists.",
-                "value": 0.0417,
-                "weight": 0.1
-              },
-              "reproducibility": {
-                "label": "Reproducibility",
-                "method": "measured",
-                "note": "A third party can re-derive the result from the cited sources and commands.",
-                "value": 0.0,
-                "weight": 0.13
-              },
-              "robustness": {
-                "detail": "Perturbation spread 0.047 around a centre of 0.467.",
-                "label": "Robustness",
-                "method": "measured",
-                "note": "Stable when evidence order and weights are perturbed.",
-                "value": 0.899,
-                "weight": 0.12
-              },
-              "scalability": {
-                "label": "Scalability",
-                "method": "heuristic",
-                "note": "Plausible to apply beyond the single case studied.",
-                "value": 1.0,
-                "weight": 0.05
-              },
-              "simplicity": {
-                "label": "Simplicity",
-                "method": "measured",
-                "note": "Fewer unsupported assumptions and fewer moving parts is better.",
-                "value": 0.6667,
-                "weight": 0.07
-              }
-            },
-            "evidence_records": 0,
-            "fatal_attack": false,
-            "numbers_checked": true,
-            "total": 0.4681,
-            "unbacked_numbers": [],
-            "weights_total": 1.0
-          },
-          "status": "competing",
-          "strategy_id": "st-4a3ba092a83e",
-          "supporting_claim_ids": [
-            "cl-19af0640fce6",
-            "cl-2bad57cff1f7",
-            "cl-2dc5f70a1a38",
-            "cl-4dd582aabcfb",
-            "cl-78627446b3ea",
-            "cl-82e113eab284"
-          ],
-          "title": "First principles brief: Detecting fabricated statements in machine-generated text"
-        },
-        {
           "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-0aaa55e54a4f] \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
           "assumptions": [
             "The retrieved documents are representative of the current state of the question.",
@@ -23918,6 +23977,112 @@
             "cl-2dc5f70a1a38",
             "cl-4dd582aabcfb",
             "cl-78627446b3ea"
+          ],
+          "title": "First principles brief: Detecting fabricated statements in machine-generated text"
+        },
+        {
+          "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n[cl-82e113eab284] \"This question is currently supported by 53 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+          "assumptions": [
+            "The retrieved documents are representative of the current state of the question.",
+            "Quoted measurements were produced under the conditions the quoted text describes.",
+            "The quantities quoted are commensurable with each other after unit conversion."
+          ],
+          "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 2, 3, 39, 53, 97.7% for the same quantity.",
+          "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+          "persona": "C - First principles",
+          "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
+          "persona_code": "C",
+          "predicted_outcomes": [
+            "If the sourced statement holds, then: \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+            "If the sourced statement holds, then: \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+            "If the sourced statement holds, then: \"The supporting documents span 2 evidence class(es) in the project hierarchy.\""
+          ],
+          "scorecard": {
+            "attacks": 4,
+            "claims_cited": 6,
+            "criteria": {
+              "adversarial_survival": {
+                "label": "Survives criticism",
+                "method": "measured",
+                "note": "Share of critic attacks the candidate survives.",
+                "value": 0.5122,
+                "weight": 0.15
+              },
+              "computational_cost": {
+                "label": "Computational cost",
+                "method": "measured",
+                "note": "Cheaper to run and verify is better.",
+                "value": 0.0643,
+                "weight": 0.04
+              },
+              "correctness": {
+                "label": "Correctness",
+                "method": "measured",
+                "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+                "value": 1.0,
+                "weight": 0.18
+              },
+              "evidence_quality": {
+                "label": "Evidence quality",
+                "method": "measured",
+                "note": "Mean evidence-hierarchy rank of the supporting claims.",
+                "value": 0.0,
+                "weight": 0.16
+              },
+              "experimental_performance": {
+                "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
+                "label": "Experimental performance",
+                "method": "measured",
+                "note": "Measured result relative to the recorded baseline, when a test exists.",
+                "value": 0.0417,
+                "weight": 0.1
+              },
+              "reproducibility": {
+                "label": "Reproducibility",
+                "method": "measured",
+                "note": "A third party can re-derive the result from the cited sources and commands.",
+                "value": 0.0,
+                "weight": 0.13
+              },
+              "robustness": {
+                "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+                "label": "Robustness",
+                "method": "measured",
+                "note": "Stable when evidence order and weights are perturbed.",
+                "value": 0.899,
+                "weight": 0.12
+              },
+              "scalability": {
+                "label": "Scalability",
+                "method": "heuristic",
+                "note": "Plausible to apply beyond the single case studied.",
+                "value": 1.0,
+                "weight": 0.05
+              },
+              "simplicity": {
+                "label": "Simplicity",
+                "method": "measured",
+                "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+                "value": 0.6667,
+                "weight": 0.07
+              }
+            },
+            "evidence_records": 0,
+            "fatal_attack": false,
+            "numbers_checked": true,
+            "total": 0.4681,
+            "unbacked_numbers": [],
+            "weights_total": 1.0
+          },
+          "status": "competing",
+          "strategy_id": "st-4a3ba092a83e",
+          "supporting_claim_ids": [
+            "cl-19af0640fce6",
+            "cl-2bad57cff1f7",
+            "cl-2dc5f70a1a38",
+            "cl-4dd582aabcfb",
+            "cl-78627446b3ea",
+            "cl-82e113eab284"
           ],
           "title": "First principles brief: Detecting fabricated statements in machine-generated text"
         }
@@ -29678,9 +29843,13 @@
           "claim_a": "cl-5a86c56f889c",
           "claim_b": "cl-92ae15540483",
           "contradiction_id": "con-62b85df6338e",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (0, 19, 2, 2020, 25, 7 vs 14, 17, 2024, 39, 49, 6, 9). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-research-loop-scheduling"
         },
@@ -29688,9 +29857,13 @@
           "claim_a": "cl-aae22a8bf2b6",
           "claim_b": "cl-34785ec24933",
           "contradiction_id": "con-704349b4aaa9",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-research-loop-scheduling"
         },
@@ -29698,9 +29871,13 @@
           "claim_a": "cl-34785ec24933",
           "claim_b": "cl-aae22a8bf2b6",
           "contradiction_id": "con-9e27fade0728",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-research-loop-scheduling"
         },
@@ -29708,9 +29885,13 @@
           "claim_a": "cl-aae22a8bf2b6",
           "claim_b": "cl-a39b827e786b",
           "contradiction_id": "con-ba498da15727",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 67% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-research-loop-scheduling"
         },
@@ -29718,9 +29899,13 @@
           "claim_a": "cl-a39b827e786b",
           "claim_b": "cl-aae22a8bf2b6",
           "contradiction_id": "con-c3814afc1d32",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 67% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-research-loop-scheduling"
         },
@@ -29728,9 +29913,13 @@
           "claim_a": "cl-aae22a8bf2b6",
           "claim_b": "cl-d3e7cd2b784b",
           "contradiction_id": "con-d3df6c302896",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 57% of their content tokens but contain disjoint numeric values (2 vs 0, 3). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-research-loop-scheduling"
         },
@@ -29738,9 +29927,13 @@
           "claim_a": "cl-92ae15540483",
           "claim_b": "cl-5a86c56f889c",
           "contradiction_id": "con-d448d769487d",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (14, 17, 2024, 39, 49, 6, 9 vs 0, 19, 2, 2020, 25, 7). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-research-loop-scheduling"
         },
@@ -29748,9 +29941,13 @@
           "claim_a": "cl-aae22a8bf2b6",
           "claim_b": "cl-c6ff1cae91a9",
           "contradiction_id": "con-f8b061b192ec",
+          "created_at": "2026-09-22T07:20:46Z",
           "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
+          "resolution_link": "",
+          "resolution_note": "",
+          "resolved_at": "",
           "severity": "medium",
           "topic_id": "topic-research-loop-scheduling"
         }
@@ -29963,7 +30160,7 @@
         "What experiment would resolve it?"
       ],
       "experiments": [],
-      "generated_at": "2026-09-22T05:06:07Z",
+      "generated_at": "2026-09-22T07:20:46Z",
       "questions": [
         {
           "id": "q-dd05e798300a",
@@ -30487,7 +30684,7 @@
       ],
       "statistics": {
         "claims": 61,
-        "computed_at": "2026-09-22T05:06:07Z",
+        "computed_at": "2026-09-22T07:20:46Z",
         "documents": 10,
         "evidence_classes": [
           "peer_reviewed",
@@ -40279,7 +40476,7 @@
           "topic_id": "topic-search-and-sorting-strategy"
         }
       ],
-      "generated_at": "2026-09-22T05:06:07Z",
+      "generated_at": "2026-09-22T07:20:46Z",
       "questions": [
         {
           "id": "q-29c92c5dc0ff",
@@ -40852,7 +41049,7 @@
       ],
       "statistics": {
         "claims": 68,
-        "computed_at": "2026-09-22T05:06:07Z",
+        "computed_at": "2026-09-22T07:20:46Z",
         "documents": 10,
         "evidence_classes": [
           "primary_source",
@@ -41631,113 +41828,6 @@
           "title": "Contrarian brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
         },
         {
-          "argument": "Contrarian brief. The retrieved evidence is searched for findings that limit, qualify or contradict the conventional reading.\n\n[cl-34c53c350fbf] \"The record for w32zhong/BTreeimplementation states in its own description: The arrays' contents and not pointers to their contents need to be written explicitly instead. fwrite( &node.n, sizeof( int ), 1, fp ); fwrite( node.key, sizeof( int ), order - 1, fp ); fwrite( node.child, sizeof( long ), order, fp ); Reading node structures from disk would use a similar strategy.\" - GitHub REST API (primary_source)\n[cl-581df6082d26] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\" - GitHub REST API (primary_source)\n[cl-7b5d83737c5f] \"The record for w32zhong/BTreeimplementation states in its own description: For example, trying to write node like this fwrite( &node, sizeof( btree_node ), 1, fp ); will write node's key count, the pointer value for its key array, and the pointer value for its child offset array, but it will not write the contents of the key and child offset arrays.\" - GitHub REST API (primary_source)\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
-          "assumptions": [
-            "The retrieved documents are representative of the current state of the question.",
-            "Quoted measurements were produced under the conditions the quoted text describes.",
-            "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
-            "The absence of a contradicting statement in the retrieved set is not evidence that none exists."
-          ],
-          "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 1, 2, 3, 44, 49, 5 for the same quantity.",
-          "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
-          "persona": "B - Contrarian",
-          "persona_brief": "Assume the conventional approach is wrong; find evidence-backed alternatives.",
-          "persona_code": "B",
-          "predicted_outcomes": [
-            "If the sourced statement holds, then: \"The record for w32zhong/BTreeimplementation states in its own description: The arrays' contents and not pointers to their contents need to be written explicitly instead. fwrite( &node.n, sizeof( int ), 1, fp ); fwrite( node.key, sizeof( int ), order - 1, fp ); fwrite( node.child, sizeof( long ), order, fp ); Reading node structures from disk would use a similar strategy.\"",
-            "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\"",
-            "If the sourced statement holds, then: \"The record for w32zhong/BTreeimplementation states in its own description: For example, trying to write node like this fwrite( &node, sizeof( btree_node ), 1, fp ); will write node's key count, the pointer value for its key array, and the pointer value for its child offset array, but it will not write the contents of the key and child offset arrays.\""
-          ],
-          "scorecard": {
-            "attacks": 5,
-            "claims_cited": 6,
-            "criteria": {
-              "adversarial_survival": {
-                "label": "Survives criticism",
-                "method": "measured",
-                "note": "Share of critic attacks the candidate survives.",
-                "value": 0.6829,
-                "weight": 0.15
-              },
-              "computational_cost": {
-                "label": "Computational cost",
-                "method": "measured",
-                "note": "Cheaper to run and verify is better.",
-                "value": 0.0,
-                "weight": 0.04
-              },
-              "correctness": {
-                "label": "Correctness",
-                "method": "measured",
-                "note": "Every factual element traces to a verified claim; no numeric mismatch.",
-                "value": 1.0,
-                "weight": 0.18
-              },
-              "evidence_quality": {
-                "label": "Evidence quality",
-                "method": "measured",
-                "note": "Mean evidence-hierarchy rank of the supporting claims.",
-                "value": 0.7778,
-                "weight": 0.16
-              },
-              "experimental_performance": {
-                "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
-                "label": "Experimental performance",
-                "method": "measured",
-                "note": "Measured result relative to the recorded baseline, when a test exists.",
-                "value": 0.0,
-                "weight": 0.1
-              },
-              "reproducibility": {
-                "label": "Reproducibility",
-                "method": "measured",
-                "note": "A third party can re-derive the result from the cited sources and commands.",
-                "value": 1.0,
-                "weight": 0.13
-              },
-              "robustness": {
-                "detail": "Perturbation spread 0.010 around a centre of 0.881.",
-                "label": "Robustness",
-                "method": "measured",
-                "note": "Stable when evidence order and weights are perturbed.",
-                "value": 0.9881,
-                "weight": 0.12
-              },
-              "scalability": {
-                "label": "Scalability",
-                "method": "heuristic",
-                "note": "Plausible to apply beyond the single case studied.",
-                "value": 1.0,
-                "weight": 0.05
-              },
-              "simplicity": {
-                "label": "Simplicity",
-                "method": "measured",
-                "note": "Fewer unsupported assumptions and fewer moving parts is better.",
-                "value": 0.6,
-                "weight": 0.07
-              }
-            },
-            "evidence_records": 3,
-            "fatal_attack": false,
-            "numbers_checked": true,
-            "total": 0.7475,
-            "unbacked_numbers": [],
-            "weights_total": 1.0
-          },
-          "status": "competing",
-          "strategy_id": "st-c9765c970e50",
-          "supporting_claim_ids": [
-            "cl-34c53c350fbf",
-            "cl-581df6082d26",
-            "cl-7b5d83737c5f",
-            "cl-04fe27e07fbd",
-            "cl-1b96e1fb0c3f",
-            "cl-226c5106e9cb"
-          ],
-          "title": "Contrarian brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
-        },
-        {
           "argument": "Contrarian brief. The retrieved evidence is searched for findings that limit, qualify or contradict the conventional reading.\n\n[cl-34c53c350fbf] \"The record for w32zhong/BTreeimplementation states in its own description: The arrays' contents and not pointers to their contents need to be written explicitly instead. fwrite( &node.n, sizeof( int ), 1, fp ); fwrite( node.key, sizeof( int ), order - 1, fp ); fwrite( node.child, sizeof( long ), order, fp ); Reading node structures from disk would use a similar strategy.\" - GitHub REST API (primary_source)\n[cl-581df6082d26] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\" - GitHub REST API (primary_source)\n[cl-7b5d83737c5f] \"The record for w32zhong/BTreeimplementation states in its own description: For example, trying to write node like this fwrite( &node, sizeof( btree_node ), 1, fp ); will write node's key count, the pointer value for its key array, and the pointer value for its child offset array, but it will not write the contents of the key and child offset arrays.\" - GitHub REST API (primary_source)\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-08ba6d35306b] \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
           "assumptions": [
             "The retrieved documents are representative of the current state of the question.",
@@ -41841,6 +41931,113 @@
             "cl-04fe27e07fbd",
             "cl-08ba6d35306b",
             "cl-0f29fe30cb1f"
+          ],
+          "title": "Contrarian brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+        },
+        {
+          "argument": "Contrarian brief. The retrieved evidence is searched for findings that limit, qualify or contradict the conventional reading.\n\n[cl-34c53c350fbf] \"The record for w32zhong/BTreeimplementation states in its own description: The arrays' contents and not pointers to their contents need to be written explicitly instead. fwrite( &node.n, sizeof( int ), 1, fp ); fwrite( node.key, sizeof( int ), order - 1, fp ); fwrite( node.child, sizeof( long ), order, fp ); Reading node structures from disk would use a similar strategy.\" - GitHub REST API (primary_source)\n[cl-581df6082d26] \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\" - GitHub REST API (primary_source)\n[cl-7b5d83737c5f] \"The record for w32zhong/BTreeimplementation states in its own description: For example, trying to write node like this fwrite( &node, sizeof( btree_node ), 1, fp ); will write node's key count, the pointer value for its key array, and the pointer value for its child offset array, but it will not write the contents of the key and child offset arrays.\" - GitHub REST API (primary_source)\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+          "assumptions": [
+            "The retrieved documents are representative of the current state of the question.",
+            "Quoted measurements were produced under the conditions the quoted text describes.",
+            "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+            "The absence of a contradicting statement in the retrieved set is not evidence that none exists."
+          ],
+          "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 1, 2, 3, 44, 49, 5 for the same quantity.",
+          "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+          "persona": "B - Contrarian",
+          "persona_brief": "Assume the conventional approach is wrong; find evidence-backed alternatives.",
+          "persona_code": "B",
+          "predicted_outcomes": [
+            "If the sourced statement holds, then: \"The record for w32zhong/BTreeimplementation states in its own description: The arrays' contents and not pointers to their contents need to be written explicitly instead. fwrite( &node.n, sizeof( int ), 1, fp ); fwrite( node.key, sizeof( int ), order - 1, fp ); fwrite( node.child, sizeof( long ), order, fp ); Reading node structures from disk would use a similar strategy.\"",
+            "If the sourced statement holds, then: \"The record for GroupAYECS765P/BDP-05-Large-scale-Clustering states in its own description: Report Contents Brief literature survey on clustering algorithms, including the challenges on implementing them at scale for parallel frameworks.\"",
+            "If the sourced statement holds, then: \"The record for w32zhong/BTreeimplementation states in its own description: For example, trying to write node like this fwrite( &node, sizeof( btree_node ), 1, fp ); will write node's key count, the pointer value for its key array, and the pointer value for its child offset array, but it will not write the contents of the key and child offset arrays.\""
+          ],
+          "scorecard": {
+            "attacks": 5,
+            "claims_cited": 6,
+            "criteria": {
+              "adversarial_survival": {
+                "label": "Survives criticism",
+                "method": "measured",
+                "note": "Share of critic attacks the candidate survives.",
+                "value": 0.6829,
+                "weight": 0.15
+              },
+              "computational_cost": {
+                "label": "Computational cost",
+                "method": "measured",
+                "note": "Cheaper to run and verify is better.",
+                "value": 0.0,
+                "weight": 0.04
+              },
+              "correctness": {
+                "label": "Correctness",
+                "method": "measured",
+                "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+                "value": 1.0,
+                "weight": 0.18
+              },
+              "evidence_quality": {
+                "label": "Evidence quality",
+                "method": "measured",
+                "note": "Mean evidence-hierarchy rank of the supporting claims.",
+                "value": 0.7778,
+                "weight": 0.16
+              },
+              "experimental_performance": {
+                "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+                "label": "Experimental performance",
+                "method": "measured",
+                "note": "Measured result relative to the recorded baseline, when a test exists.",
+                "value": 0.0,
+                "weight": 0.1
+              },
+              "reproducibility": {
+                "label": "Reproducibility",
+                "method": "measured",
+                "note": "A third party can re-derive the result from the cited sources and commands.",
+                "value": 1.0,
+                "weight": 0.13
+              },
+              "robustness": {
+                "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+                "label": "Robustness",
+                "method": "measured",
+                "note": "Stable when evidence order and weights are perturbed.",
+                "value": 0.9881,
+                "weight": 0.12
+              },
+              "scalability": {
+                "label": "Scalability",
+                "method": "heuristic",
+                "note": "Plausible to apply beyond the single case studied.",
+                "value": 1.0,
+                "weight": 0.05
+              },
+              "simplicity": {
+                "label": "Simplicity",
+                "method": "measured",
+                "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+                "value": 0.6,
+                "weight": 0.07
+              }
+            },
+            "evidence_records": 3,
+            "fatal_attack": false,
+            "numbers_checked": true,
+            "total": 0.7475,
+            "unbacked_numbers": [],
+            "weights_total": 1.0
+          },
+          "status": "competing",
+          "strategy_id": "st-c9765c970e50",
+          "supporting_claim_ids": [
+            "cl-34c53c350fbf",
+            "cl-581df6082d26",
+            "cl-7b5d83737c5f",
+            "cl-04fe27e07fbd",
+            "cl-1b96e1fb0c3f",
+            "cl-226c5106e9cb"
           ],
           "title": "Contrarian brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
         },
@@ -42912,112 +43109,6 @@
           "title": "Cross-domain brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
         },
         {
-          "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-25cb5d02b980] \"Of the claims recorded for this question, 96.9% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a7fadcedb31] \"Of the claims recorded for this question, 96.8% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
-          "assumptions": [
-            "The retrieved documents are representative of the current state of the question.",
-            "Quoted measurements were produced under the conditions the quoted text describes.",
-            "Conditions reported in the sources still hold; no newer evidence supersedes them."
-          ],
-          "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 3, 44, 49 for the same quantity.",
-          "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
-          "persona": "A - Conventional",
-          "persona_brief": "Find the strongest solution using established, well-evidenced knowledge.",
-          "persona_code": "A",
-          "predicted_outcomes": [
-            "If the sourced statement holds, then: \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\"",
-            "If the sourced statement holds, then: \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\"",
-            "If the sourced statement holds, then: \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\""
-          ],
-          "scorecard": {
-            "attacks": 4,
-            "claims_cited": 6,
-            "criteria": {
-              "adversarial_survival": {
-                "label": "Survives criticism",
-                "method": "measured",
-                "note": "Share of critic attacks the candidate survives.",
-                "value": 0.5122,
-                "weight": 0.15
-              },
-              "computational_cost": {
-                "label": "Computational cost",
-                "method": "measured",
-                "note": "Cheaper to run and verify is better.",
-                "value": 0.1073,
-                "weight": 0.04
-              },
-              "correctness": {
-                "label": "Correctness",
-                "method": "measured",
-                "note": "Every factual element traces to a verified claim; no numeric mismatch.",
-                "value": 1.0,
-                "weight": 0.18
-              },
-              "evidence_quality": {
-                "label": "Evidence quality",
-                "method": "measured",
-                "note": "Mean evidence-hierarchy rank of the supporting claims.",
-                "value": 0.0,
-                "weight": 0.16
-              },
-              "experimental_performance": {
-                "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
-                "label": "Experimental performance",
-                "method": "measured",
-                "note": "Measured result relative to the recorded baseline, when a test exists.",
-                "value": 0.0,
-                "weight": 0.1
-              },
-              "reproducibility": {
-                "label": "Reproducibility",
-                "method": "measured",
-                "note": "A third party can re-derive the result from the cited sources and commands.",
-                "value": 0.0,
-                "weight": 0.13
-              },
-              "robustness": {
-                "detail": "Perturbation spread 0.047 around a centre of 0.467.",
-                "label": "Robustness",
-                "method": "measured",
-                "note": "Stable when evidence order and weights are perturbed.",
-                "value": 0.899,
-                "weight": 0.12
-              },
-              "scalability": {
-                "label": "Scalability",
-                "method": "heuristic",
-                "note": "Plausible to apply beyond the single case studied.",
-                "value": 1.0,
-                "weight": 0.05
-              },
-              "simplicity": {
-                "label": "Simplicity",
-                "method": "measured",
-                "note": "Fewer unsupported assumptions and fewer moving parts is better.",
-                "value": 0.6667,
-                "weight": 0.07
-              }
-            },
-            "evidence_records": 0,
-            "fatal_attack": false,
-            "numbers_checked": true,
-            "total": 0.4657,
-            "unbacked_numbers": [],
-            "weights_total": 1.0
-          },
-          "status": "competing",
-          "strategy_id": "st-545531540d59",
-          "supporting_claim_ids": [
-            "cl-04fe27e07fbd",
-            "cl-0f29fe30cb1f",
-            "cl-1b96e1fb0c3f",
-            "cl-226c5106e9cb",
-            "cl-25cb5d02b980",
-            "cl-2a7fadcedb31"
-          ],
-          "title": "Conventional brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
-        },
-        {
           "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-08ba6d35306b] \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-25cb5d02b980] \"Of the claims recorded for this question, 96.9% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
           "assumptions": [
             "The retrieved documents are representative of the current state of the question.",
@@ -43124,17 +43215,17 @@
           "title": "Conventional brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
         },
         {
-          "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-25cb5d02b980] \"Of the claims recorded for this question, 96.9% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a7fadcedb31] \"Of the claims recorded for this question, 96.8% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+          "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-25cb5d02b980] \"Of the claims recorded for this question, 96.9% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a7fadcedb31] \"Of the claims recorded for this question, 96.8% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
           "assumptions": [
             "The retrieved documents are representative of the current state of the question.",
             "Quoted measurements were produced under the conditions the quoted text describes.",
-            "The quantities quoted are commensurable with each other after unit conversion."
+            "Conditions reported in the sources still hold; no newer evidence supersedes them."
           ],
           "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 3, 44, 49 for the same quantity.",
           "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
-          "persona": "C - First principles",
-          "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
-          "persona_code": "C",
+          "persona": "A - Conventional",
+          "persona_brief": "Find the strongest solution using established, well-evidenced knowledge.",
+          "persona_code": "A",
           "predicted_outcomes": [
             "If the sourced statement holds, then: \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\"",
             "If the sourced statement holds, then: \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\"",
@@ -43155,7 +43246,7 @@
                 "label": "Computational cost",
                 "method": "measured",
                 "note": "Cheaper to run and verify is better.",
-                "value": 0.1003,
+                "value": 0.1073,
                 "weight": 0.04
               },
               "correctness": {
@@ -43213,12 +43304,12 @@
             "evidence_records": 0,
             "fatal_attack": false,
             "numbers_checked": true,
-            "total": 0.4654,
+            "total": 0.4657,
             "unbacked_numbers": [],
             "weights_total": 1.0
           },
           "status": "competing",
-          "strategy_id": "st-a908c1b1a71d",
+          "strategy_id": "st-545531540d59",
           "supporting_claim_ids": [
             "cl-04fe27e07fbd",
             "cl-0f29fe30cb1f",
@@ -43227,7 +43318,7 @@
             "cl-25cb5d02b980",
             "cl-2a7fadcedb31"
           ],
-          "title": "First principles brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+          "title": "Conventional brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
         },
         {
           "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-08ba6d35306b] \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-25cb5d02b980] \"Of the claims recorded for this question, 96.9% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
@@ -43336,17 +43427,17 @@
           "title": "First principles brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
         },
         {
-          "argument": "Cross-domain brief. The statements below were retrieved for other topics and share subject matter with this one; they are candidates for transfer.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-25cb5d02b980] \"Of the claims recorded for this question, 96.9% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a7fadcedb31] \"Of the claims recorded for this question, 96.8% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+          "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-25cb5d02b980] \"Of the claims recorded for this question, 96.9% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a7fadcedb31] \"Of the claims recorded for this question, 96.8% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
           "assumptions": [
             "The retrieved documents are representative of the current state of the question.",
             "Quoted measurements were produced under the conditions the quoted text describes.",
-            "The other field's mechanism transfers without an omitted domain-specific constraint."
+            "The quantities quoted are commensurable with each other after unit conversion."
           ],
-          "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 3, 44, 49 for the same quantity. For a transferred mechanism, falsification is a demonstration that the domain-specific constraint is missing.",
+          "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 3, 44, 49 for the same quantity.",
           "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
-          "persona": "D - Cross-domain",
-          "persona_brief": "Look for solutions that worked in a completely different field.",
-          "persona_code": "D",
+          "persona": "C - First principles",
+          "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
+          "persona_code": "C",
           "predicted_outcomes": [
             "If the sourced statement holds, then: \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\"",
             "If the sourced statement holds, then: \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\"",
@@ -43367,7 +43458,7 @@
                 "label": "Computational cost",
                 "method": "measured",
                 "note": "Cheaper to run and verify is better.",
-                "value": 0.0963,
+                "value": 0.1003,
                 "weight": 0.04
               },
               "correctness": {
@@ -43425,12 +43516,12 @@
             "evidence_records": 0,
             "fatal_attack": false,
             "numbers_checked": true,
-            "total": 0.4652,
+            "total": 0.4654,
             "unbacked_numbers": [],
             "weights_total": 1.0
           },
           "status": "competing",
-          "strategy_id": "st-aeb6b66de12b",
+          "strategy_id": "st-a908c1b1a71d",
           "supporting_claim_ids": [
             "cl-04fe27e07fbd",
             "cl-0f29fe30cb1f",
@@ -43439,7 +43530,7 @@
             "cl-25cb5d02b980",
             "cl-2a7fadcedb31"
           ],
-          "title": "Cross-domain brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+          "title": "First principles brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
         },
         {
           "argument": "Cross-domain brief. The statements below were retrieved for other topics and share subject matter with this one; they are candidates for transfer.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-08ba6d35306b] \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-25cb5d02b980] \"Of the claims recorded for this question, 96.9% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
@@ -43544,6 +43635,112 @@
             "cl-1b96e1fb0c3f",
             "cl-226c5106e9cb",
             "cl-25cb5d02b980"
+          ],
+          "title": "Cross-domain brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+        },
+        {
+          "argument": "Cross-domain brief. The statements below were retrieved for other topics and share subject matter with this one; they are candidates for transfer.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-25cb5d02b980] \"Of the claims recorded for this question, 96.9% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a7fadcedb31] \"Of the claims recorded for this question, 96.8% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+          "assumptions": [
+            "The retrieved documents are representative of the current state of the question.",
+            "Quoted measurements were produced under the conditions the quoted text describes.",
+            "The other field's mechanism transfers without an omitted domain-specific constraint."
+          ],
+          "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 3, 44, 49 for the same quantity. For a transferred mechanism, falsification is a demonstration that the domain-specific constraint is missing.",
+          "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+          "persona": "D - Cross-domain",
+          "persona_brief": "Look for solutions that worked in a completely different field.",
+          "persona_code": "D",
+          "predicted_outcomes": [
+            "If the sourced statement holds, then: \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\"",
+            "If the sourced statement holds, then: \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\"",
+            "If the sourced statement holds, then: \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\""
+          ],
+          "scorecard": {
+            "attacks": 4,
+            "claims_cited": 6,
+            "criteria": {
+              "adversarial_survival": {
+                "label": "Survives criticism",
+                "method": "measured",
+                "note": "Share of critic attacks the candidate survives.",
+                "value": 0.5122,
+                "weight": 0.15
+              },
+              "computational_cost": {
+                "label": "Computational cost",
+                "method": "measured",
+                "note": "Cheaper to run and verify is better.",
+                "value": 0.0963,
+                "weight": 0.04
+              },
+              "correctness": {
+                "label": "Correctness",
+                "method": "measured",
+                "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+                "value": 1.0,
+                "weight": 0.18
+              },
+              "evidence_quality": {
+                "label": "Evidence quality",
+                "method": "measured",
+                "note": "Mean evidence-hierarchy rank of the supporting claims.",
+                "value": 0.0,
+                "weight": 0.16
+              },
+              "experimental_performance": {
+                "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+                "label": "Experimental performance",
+                "method": "measured",
+                "note": "Measured result relative to the recorded baseline, when a test exists.",
+                "value": 0.0,
+                "weight": 0.1
+              },
+              "reproducibility": {
+                "label": "Reproducibility",
+                "method": "measured",
+                "note": "A third party can re-derive the result from the cited sources and commands.",
+                "value": 0.0,
+                "weight": 0.13
+              },
+              "robustness": {
+                "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+                "label": "Robustness",
+                "method": "measured",
+                "note": "Stable when evidence order and weights are perturbed.",
+                "value": 0.899,
+                "weight": 0.12
+              },
+              "scalability": {
+                "label": "Scalability",
+                "method": "heuristic",
+                "note": "Plausible to apply beyond the single case studied.",
+                "value": 1.0,
+                "weight": 0.05
+              },
+              "simplicity": {
+                "label": "Simplicity",
+                "method": "measured",
+                "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+                "value": 0.6667,
+                "weight": 0.07
+              }
+            },
+            "evidence_records": 0,
+            "fatal_attack": false,
+            "numbers_checked": true,
+            "total": 0.4652,
+            "unbacked_numbers": [],
+            "weights_total": 1.0
+          },
+          "status": "competing",
+          "strategy_id": "st-aeb6b66de12b",
+          "supporting_claim_ids": [
+            "cl-04fe27e07fbd",
+            "cl-0f29fe30cb1f",
+            "cl-1b96e1fb0c3f",
+            "cl-226c5106e9cb",
+            "cl-25cb5d02b980",
+            "cl-2a7fadcedb31"
           ],
           "title": "Cross-domain brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
         }

@@ -26,7 +26,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from ..config import ROOT
+from ..config import PACKAGE_ROOT, ROOT
 from ..models import EvidenceRecord, ExperimentResult
 from ..util import sha256_text, stable_id, to_jsonable, utcnow_iso
 from .catalogue import ExperimentSpec
@@ -98,7 +98,12 @@ def run_experiment(
 ) -> ExperimentRun:
     """Execute one experiment script and capture everything it produced."""
     root = Path(root or ROOT)
+    # The script ships with the code. If the library root does not carry a copy
+    # (a temporary root, a CI smoke run), fall back to the checkout the package
+    # was imported from rather than reporting the experiment as missing.
     script = root / spec.script
+    if not script.exists() and (PACKAGE_ROOT / spec.script).exists():
+        script = PACKAGE_ROOT / spec.script
     seed = spec.seeds[0] if seed is None else seed
     timeout = timeout or spec.timeout_seconds
     python = python or sys.executable

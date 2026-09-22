@@ -380,6 +380,31 @@ class ExperimentTests(unittest.TestCase):
         self.assertEqual(run.error, "")
         self.assertTrue(all(check["outcome"] for check in run.result["checks"]))
 
+    def test_scheduling_policies_experiment_runs_and_is_deterministic(self) -> None:
+        spec = next(s for s in EXPERIMENTS if s.experiment_id == "scheduling-policies-v1")
+        first = run_experiment(spec, root=ROOT, timeout=300)
+        self.assertEqual(first.error, "", first.stderr[-500:])
+        self.assertEqual(first.status, "completed")
+        self.assertTrue(all(check["outcome"] for check in first.result["checks"]), first.result["checks"])
+        # Round-robin's pseudo-regret is exact, so the baseline is the analytic value.
+        self.assertAlmostEqual(first.result["baseline"], first.result["variants"][0]["value"])
+        self.assertIn(first.result["best_variant"], {"ucb1", "epsilon_greedy"})
+        second = run_experiment(spec, root=ROOT, timeout=300)
+        self.assertEqual(first.result["variants"], second.result["variants"])
+        self.assertEqual(first.result["regret_by_half"], second.result["regret_by_half"])
+
+    def test_the_scheduling_topic_is_matched_to_the_scheduling_experiment(self) -> None:
+        from selflearn.experiment.catalogue import experiments_for_topic
+
+        topic = Topic(
+            topic_id="topic-research-loop-scheduling",
+            title="How should a research loop schedule and prioritise its own work?",
+            slug="research-loop-scheduling",
+            question="Which published methods exist for deciding what an autonomous system should investigate next?",
+            keywords=["scheduling", "prioritisation", "active learning", "exploration", "research management", "bandit"],
+        )
+        self.assertEqual([s.experiment_id for s in experiments_for_topic(topic)], ["scheduling-policies-v1"])
+
 
 class PublishTests(unittest.TestCase):
     def test_site_builds_from_minimal_data(self) -> None:

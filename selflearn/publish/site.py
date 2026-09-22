@@ -290,7 +290,8 @@ def page_index(data: dict[str, Any], *, depth: int = 0) -> str:
     checks = data.get("checks", {})
     summary = data.get("run_summary", {})
     topics = data.get("topics", [])
-    leaderboard = (data.get("elo") or {}).get("leaderboard", [])
+    elo = data.get("elo") or {}
+    leaderboard = elo.get("leaderboard", [])
     calibration = data.get("calibration") or {}
     thresholds = calibration.get("applied_thresholds") or calibration.get("in_force") or {}
 
@@ -433,7 +434,10 @@ site is asserted on the basis of a language model's memory.</div>
 
 {section("Competition standings", (
     table(["#", "Brief", "Rating", "Wins / matches"], leaderboard_rows,
-          caption="Elo ratings over head-to-head tournament results. Ratings accumulate across cycles and questions.")
+          caption="Elo ratings over head-to-head tournament results. Ratings accumulate across cycles and questions."
+                  + (f" Wins and matches are counted over the last {esc(elo.get('history_window'))} recorded matches, "
+                     "which is all the state file keeps; the ratings themselves are not truncated."
+                     if elo.get("history_truncated") else ""))
     if leaderboard_rows else "<p>No tournament has been completed yet.</p>"
 ), anchor="standings",
    note="Ratings are bookkeeping, not truth. A brief that wins often is a brief that scores well on the published "
@@ -1493,25 +1497,63 @@ def page_review(data: dict[str, Any], *, depth: int = 0) -> str:
     checks = data.get("checks", {})
     calibration = data.get("calibration") or {}
 
-    irregularity_rows = [
-        [
+    def severity_order(row: dict[str, Any]) -> tuple[int, str]:
+        return ({"error": 0, "warning": 1, "info": 2}.get(row.get("severity", "info"), 3), row.get("stage", ""))
+
+    def irregularity_row(item: dict[str, Any]) -> list[str]:
+        return [
             badge(item.get("severity", ""), {"error": "err", "warning": "warn"}.get(item.get("severity", ""), "info")),
             esc(item.get("stage", "")),
-            esc(item.get("summary", "")),
+            f'{esc(item.get("summary", ""))}<div class="small muted mono">{esc(item.get("irregularity_id", ""))}</div>',
             esc(item.get("detail", ""))[:400],
             link(item.get("url"), "link") if item.get("url") else "&mdash;",
             esc(item.get("suggested_action", "")),
             esc(item.get("created_at", "")),
         ]
-        for item in sorted(irregularities, key=lambda row: ({"error": 0, "warning": 1, "info": 2}.get(row.get("severity", "info"), 3), row.get("stage", "")))
+
+    open_irregularities = sorted((i for i in irregularities if not i.get("resolved")), key=severity_order)
+    resolved_irregularities = sorted((i for i in irregularities if i.get("resolved")), key=severity_order)
+    irregularity_rows = [irregularity_row(item) for item in open_irregularities]
+    # A resolved finding keeps its original text; the reviewer's reason sits
+    # beside it, never in place of it.
+    resolved_irregularity_rows = [
+        irregularity_row(item)[:4]
+        + [
+            # Records written before the reviewer fields existed (the topic
+            # rejections of 2026-09-21) carry the reason in `detail`; say so
+            # rather than claiming no reason was recorded.
+            esc(item.get("resolution", ""))
+            or ("<span class='muted'>closed when recorded; the reason is the detail column</span>"
+                if item.get("stage") == "review" else "<span class='muted'>no reason recorded</span>"),
+            (link(item.get("resolution_link"), "reference") if item.get("resolution_link") else "&mdash;"),
+            esc(item.get("resolved_at", "")) or esc(item.get("created_at", "")) or "&mdash;",
+        ]
+        for item in resolved_irregularities
     ]
     failure_rows = [
         [esc(item.get("stage", "")), esc(item.get("summary", "")), esc(item.get("detail", ""))[:300], esc(item.get("remedy", ""))]
         for item in failures
     ]
-    contradiction_rows = [
-        [esc(item.get("topic_id", "")), esc(item.get("kind", "")), esc(item.get("detail", "")), esc(item.get("claim_a", "")) + " / " + esc(item.get("claim_b", ""))]
-        for item in contradictions
+
+    def contradiction_row(item: dict[str, Any]) -> list[str]:
+        return [
+            esc(item.get("topic_id", "")),
+            f'{esc(item.get("kind", ""))}<div class="small muted mono">{esc(item.get("contradiction_id", ""))}</div>',
+            esc(item.get("detail", "")),
+            f'<span class="mono">{esc(item.get("claim_a", ""))}</span> / <span class="mono">{esc(item.get("claim_b", ""))}</span>',
+        ]
+
+    open_contradictions = [c for c in contradictions if c.get("resolution", "unresolved") == "unresolved"]
+    resolved_contradictions = [c for c in contradictions if c.get("resolution", "unresolved") != "unresolved"]
+    contradiction_rows = [contradiction_row(item) for item in open_contradictions]
+    resolved_contradiction_rows = [
+        contradiction_row(item)
+        + [
+            esc(item.get("resolution_note", "")) or "<span class='muted'>no reason recorded</span>",
+            (link(item.get("resolution_link"), "reference") if item.get("resolution_link") else "&mdash;"),
+            esc(item.get("resolved_at", "")) or "&mdash;",
+        ]
+        for item in resolved_contradictions
     ]
     disagreements = calibration.get("disagreements") or []
     disagreement_rows = [[esc(d.get("case_id")), esc(d.get("name")), esc(d.get("expected")), esc(d.get("predicted"))] for d in disagreements]
@@ -1521,10 +1563,10 @@ def page_review(data: dict[str, Any], *, depth: int = 0) -> str:
 <p class="lede">This page is the point of the project: everything the engine could not reconcile on its own. Each entry
 says what was found, where, and what would resolve it. Nothing here is a conclusion.</p>
 <div class="grid four">
-{stat(checks.get('irregularity_counts', {}).get('error', 0), 'errors')}
-{stat(checks.get('irregularity_counts', {}).get('warning', 0), 'warnings')}
+{stat(checks.get('irregularity_counts', {}).get('error', 0), 'open errors')}
+{stat(checks.get('irregularity_counts', {}).get('warning', 0), 'open warnings')}
 {stat(checks.get('unresolved_contradictions', 0), 'unresolved contradictions')}
-{stat(len(failures), 'recorded failures')}
+{stat(len(resolved_irregularities) + len(resolved_contradictions), 'resolved by a reviewer')}
 </div>
 <div class="banner info"><strong>How to act on this page.</strong> An entry is either a genuine problem in the engine
 (a source that moved, a parser that broke, a threshold that is wrong) or a genuine problem in the evidence (sources
@@ -1534,7 +1576,9 @@ disagree, or a claim cannot be checked). The suggested action states which. Repr
 
 {section("Irregularities", table(
     ["Severity", "Stage", "Finding", "Detail", "Link", "Suggested action", "Detected"], irregularity_rows, sortable=True)
-    if irregularity_rows else "<p>No irregularities were detected in this run.</p>", anchor="irregularities")}
+    if irregularity_rows else "<p>No irregularities are open.</p>", anchor="irregularities",
+    note="Open findings only. A reviewer closes one with <span class='mono'>python3 tools/resolve_finding.py --id &lt;id&gt; --reason ...</span>; "
+         "the record is appended to, never edited, and the engine carries the decision forward if it detects the same finding again.")}
 
 {section("Label disagreements", table(
     ["Case", "Name", "Human label", "Engine verdict"], disagreement_rows) if disagreement_rows else
@@ -1545,6 +1589,15 @@ disagree, or a claim cannot be checked). The suggested action states which. Repr
 {section("Candidate contradictions", table(
     ["Question", "Kind", "Why it was flagged", "Claims"], contradiction_rows) if contradiction_rows else
     "<p>No candidate contradictions are open.</p>", anchor="contradictions")}
+
+{section("Resolved by a reviewer", (
+    (table(["Severity", "Stage", "Finding", "Detail", "Reviewer's reason", "Reference", "Resolved"], resolved_irregularity_rows)
+     if resolved_irregularity_rows else "<p>No irregularity has been resolved by a reviewer.</p>")
+    + (table(["Question", "Kind", "Why it was flagged", "Claims", "Reviewer's reason", "Reference", "Resolved"], resolved_contradiction_rows)
+       if resolved_contradiction_rows else "<p>No contradiction has been resolved by a reviewer.</p>")
+    ), anchor="resolved",
+    note="The original finding is shown unchanged next to the reason a reviewer gave for closing it. Reopen one with "
+         "<span class='mono'>python3 tools/resolve_finding.py --id &lt;id&gt; --reopen --reason ...</span>.")}
 
 {section("Failures", table(["Stage", "Failure", "Detail", "Remedy"], failure_rows) if failure_rows else
     "<p>No stages failed in this run.</p>", anchor="failures")}

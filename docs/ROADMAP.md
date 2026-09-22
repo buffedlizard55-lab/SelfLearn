@@ -3,7 +3,7 @@
 Ordered by what most increases the value of the output per unit of work. Each item
 says why it matters, what it needs, and how we would know it worked. Items marked
 **done** shipped in this repository with the test that proves them; the rest are open.
-The current order of the open items is 1, 2, 8, 9, 10, 11.
+The current order of the open items is 1, 2, 8, 9, 11.
 
 ## 1. Reach more sources (highest value) - open, blocked on the environment
 
@@ -187,20 +187,30 @@ rather than keyword-based.
 **How we would know.** The same site builds from the database, and the audit reports
 identical verdicts.
 
-## 9. More experiment families
+## 9. More experiment families - open, one added 2026-09-22
 
-**Why.** Three computational experiments cannot settle much. The catalogue is the part
-of the design document marked most partial (section 8: "thousands of iterations").
+**Why.** A handful of computational experiments cannot settle much. The catalogue is the
+part of the design document marked most partial (section 8: "thousands of iterations").
 
 **What it needs.** Seeded, dependency-free scripts in `experiments/` with a declared
 hypothesis, a falsifier and a metric, plus keywords so the manager can match them to
-questions. Candidate areas: scheduling policies, sampling and estimation error,
-search-pruning strategies, compression trade-offs, queueing models.
+questions. Candidate areas still open: sampling and estimation error, search-pruning
+strategies, compression trade-offs, queueing models.
+
+**What shipped.** `experiments/scheduling_policies.py` (`scheduling-policies-v1`):
+round-robin, epsilon-greedy and UCB1 on a five-armed stationary Bernoulli bandit, scored
+by pseudo-regret so round-robin's value is exact and serves as the analytic baseline. Its
+keywords match the scheduling question, which previously ran no experiment at all, so
+three of the four seed questions now have one. The script says in its own output that it
+is a toy problem and not a statement about which question the engine should investigate
+next. Two tests in `tests/test_engine.py::ExperimentTests` pin determinism and the
+topic match. The same pass found that `max_experiments_per_cycle` was published and never
+enforced; the loop now stops at the cap and records that it did.
 
 **How we would know.** The experiments page lists several families, each with a
 reproduce command and a stored result hash.
 
-## 10. Reviewer workflow - partial: topic rejection shipped, finding resolution open
+## 10. Reviewer workflow - done 2026-09-22
 
 **Why.** Irregularities and contradictions are published but there was no way for a
 reviewer to mark one resolved in the repository.
@@ -211,13 +221,19 @@ the reason and an optional link, and records an `info` irregularity saying a rev
 acted. The original record stays in `library/topics.jsonl`. Seven topics proposed from
 the engine's own rendering scaffolding were closed this way rather than edited out.
 
-**What it still needs.** The same mechanism for *findings*: a resolution record attached
-to an irregularity or a contradiction, rendered next to the original text on the review
-page rather than replacing it. Today a contradiction can only be resolved by writing its
-`resolution` field by hand.
+**What shipped for findings.** `tools/resolve_finding.py` does the same for an
+irregularity (`irr-...`) or a contradiction (`con-...`): it appends a new row for the
+same primary key carrying `resolution`, `resolved_at` and `resolution_link`, with the
+original summary, detail and claim ids copied unchanged. The store carries a reviewer's
+decision forward when a later cycle re-detects the same finding - the detectors emit
+"unresolved" every time, and before this change a run would have silently reopened
+whatever a human had closed. `--reopen` reverses a decision explicitly and records why.
+The review page now shows open findings in the main tables and a separate "Resolved by a
+reviewer" table with the original text beside the reason; the headline counts are of
+open findings only. Five tests in `tests/test_layers.py::ReviewerResolutionTests`.
 
-**How we would know.** The review page shows resolved items with their resolution and
-keeps the original text visible.
+**How we knew.** The review page shows resolved items with their resolution and keeps the
+original text visible; a resolved finding re-detected by the next cycle stays resolved.
 
 ## 11. Make the substance and synthesis layers pay off
 

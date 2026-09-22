@@ -656,3 +656,137 @@ class CredentialPathTests(unittest.TestCase):
 
 if __name__ == "__main__":  # pragma: no cover
     unittest.main()
+
+
+class ReviewerResolutionTests(unittest.TestCase):
+    """tools/resolve_finding.py: a finding is closed by appending, never by editing."""
+
+    def _library(self, root):
+        from selflearn.learn.store import Library
+        from selflearn.models import Contradiction, Irregularity
+
+        library = Library.load(root, run_id="test-1")
+        library.add_irregularities([
+            Irregularity(irregularity_id="irr-test0001", severity="warning", stage="audit", topic_id=None,
+                         summary="A finding", detail="Original detail")
+        ])
+        library.add_contradictions([
+            Contradiction(contradiction_id="con-test0001", topic_id="topic-x", claim_a="cl-a", claim_b="cl-b",
+                          kind="numeric", detail="Disjoint numbers", severity="medium")
+        ])
+        return library
+
+    def _tool(self):
+        import contextlib
+        import importlib.util
+        import io
+
+        spec = importlib.util.spec_from_file_location("resolve_finding", ROOT / "tools" / "resolve_finding.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        real_main = module.main
+
+        def quiet_main(argv):
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                return real_main(argv)
+
+        module.main = quiet_main
+        return module
+
+    def test_resolving_an_irregularity_appends_and_keeps_the_original_text(self):
+        import tempfile
+        from selflearn.learn.store import Library
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self._library(root)
+            tool = self._tool()
+            self.assertEqual(tool.main(["--root", tmp, "--id", "irr-test0001", "--reason", "Checked by hand", "--link", "https://example.org/x"]), 0)
+            reloaded = Library.load(root, run_id="test-2")
+            finding = reloaded.irregularities["irr-test0001"]
+            self.assertTrue(finding.resolved)
+            self.assertEqual(finding.resolution, "Checked by hand")
+            self.assertEqual(finding.resolution_link, "https://example.org/x")
+            self.assertTrue(finding.resolved_at)
+            self.assertEqual(finding.summary, "A finding")
+            self.assertEqual(finding.detail, "Original detail")
+            lines = (root / "library" / "irregularities.jsonl").read_text(encoding="utf-8").strip().splitlines()
+            self.assertEqual(len(lines), 2, "the original row stays; the resolution is a second row")
+
+    def test_resolving_twice_is_refused_and_reopen_is_explicit(self):
+        import tempfile
+        from selflearn.learn.store import Library
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self._library(root)
+            tool = self._tool()
+            self.assertEqual(tool.main(["--root", tmp, "--id", "irr-test0001", "--reason", "first"]), 0)
+            self.assertEqual(tool.main(["--root", tmp, "--id", "irr-test0001", "--reason", "second"]), 1)
+            self.assertEqual(tool.main(["--root", tmp, "--id", "irr-test0001", "--reopen", "--reason", "was wrong"]), 0)
+            finding = Library.load(root, run_id="t").irregularities["irr-test0001"]
+            self.assertFalse(finding.resolved)
+            self.assertIn("Reopened", finding.resolution)
+
+    def test_a_reviewers_decision_survives_the_engine_redetecting_the_finding(self):
+        import tempfile
+        from selflearn.learn.store import Library
+        from selflearn.models import Contradiction, Irregularity
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self._library(root)
+            tool = self._tool()
+            tool.main(["--root", tmp, "--id", "irr-test0001", "--reason", "closed"])
+            tool.main(["--root", tmp, "--id", "con-test0001", "--reason", "same period, different unit"])
+            # A later cycle raises both again, exactly as the detectors emit them.
+            library = Library.load(root, run_id="cycle-2")
+            library.add_irregularities([
+                Irregularity(irregularity_id="irr-test0001", severity="warning", stage="audit", topic_id=None,
+                             summary="A finding", detail="Original detail")
+            ])
+            library.add_contradictions([
+                Contradiction(contradiction_id="con-test0001", topic_id="topic-x", claim_a="cl-a", claim_b="cl-b",
+                              kind="numeric", detail="Disjoint numbers", severity="medium")
+            ])
+            reloaded = Library.load(root, run_id="cycle-3")
+            self.assertTrue(reloaded.irregularities["irr-test0001"].resolved)
+            self.assertEqual(reloaded.irregularities["irr-test0001"].resolution, "closed")
+            self.assertEqual(reloaded.contradictions["con-test0001"].resolution, "resolved")
+            self.assertEqual(reloaded.contradictions["con-test0001"].resolution_note, "same period, different unit")
+
+    def test_the_review_page_shows_resolved_findings_with_their_reason(self):
+        from selflearn.publish.site import page_review
+
+        data = {
+            "irregularities": [
+                {"irregularity_id": "irr-open", "severity": "warning", "stage": "audit", "summary": "Still open", "detail": "", "resolved": False},
+                {"irregularity_id": "irr-done", "severity": "warning", "stage": "audit", "summary": "Was closed", "detail": "d",
+                 "resolved": True, "resolution": "Reviewer reason text", "resolved_at": "2026-09-22T00:00:00Z", "resolution_link": ""},
+            ],
+            "failures": [],
+            "contradictions": [
+                {"contradiction_id": "con-done", "topic_id": "t", "kind": "numeric", "detail": "x", "claim_a": "a", "claim_b": "b",
+                 "resolution": "resolved", "resolution_note": "Contradiction reason", "resolved_at": "2026-09-22T00:00:00Z"},
+            ],
+            "checks": {"irregularity_counts": {"error": 0, "warning": 1}, "unresolved_contradictions": 0},
+            "calibration": {},
+            "counts": {}, "run_summary": {}, "topics": [],
+        }
+        html = page_review(data)
+        self.assertIn("Reviewer reason text", html)
+        self.assertIn("Contradiction reason", html)
+        self.assertIn("Was closed", html)
+        self.assertIn("Still open", html)
+        open_table = html.split('id="resolved"')[0]
+        self.assertNotIn("Was closed", open_table.split('id="irregularities"')[1].split("</section>")[0])
+
+    def test_an_unknown_prefix_and_a_missing_reason_are_rejected(self):
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp:
+            self._library(Path(tmp))
+            tool = self._tool()
+            self.assertEqual(tool.main(["--root", tmp, "--id", "xyz-1", "--reason", "r"]), 2)
+            self.assertEqual(tool.main(["--root", tmp, "--id", "irr-test0001"]), 2)
+            self.assertEqual(tool.main(["--root", tmp, "--id", "irr-missing", "--reason", "r"]), 1)

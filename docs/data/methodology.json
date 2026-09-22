@@ -47,7 +47,6 @@
       "rank": 9
     }
   ],
-  "requirements_version": "1.0",
   "thresholds": {
     "cases": 26,
     "changed": false,
@@ -58,7 +57,7 @@
       "supported": 0.8
     },
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-22T05:05:57Z",
+    "ran_at": "2026-09-22T07:20:46Z",
     "source": "state/calibration.json"
   }
 }

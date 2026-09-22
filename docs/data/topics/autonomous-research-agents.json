@@ -4203,9 +4203,13 @@
       "claim_a": "cl-13cf26e4fba9",
       "claim_b": "cl-6ac20344a641",
       "contradiction_id": "con-4fb8033a159c",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (102 vs 150). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-autonomous-research-agents"
     },
@@ -4213,9 +4217,13 @@
       "claim_a": "cl-6ac20344a641",
       "claim_b": "cl-13cf26e4fba9",
       "contradiction_id": "con-c026367771df",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (150 vs 102). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-autonomous-research-agents"
     }
@@ -4443,7 +4451,7 @@
     "What experiment would resolve it?"
   ],
   "experiments": [],
-  "generated_at": "2026-09-22T05:06:07Z",
+  "generated_at": "2026-09-22T07:20:46Z",
   "questions": [
     {
       "id": "q-f7a08fa5afe7",
@@ -5198,7 +5206,7 @@
   ],
   "statistics": {
     "claims": 61,
-    "computed_at": "2026-09-22T05:06:07Z",
+    "computed_at": "2026-09-22T07:20:46Z",
     "documents": 11,
     "evidence_classes": [
       "commentary",

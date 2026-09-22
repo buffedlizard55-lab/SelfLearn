@@ -540,6 +540,7 @@ def run_cycle(
     all_statuses: list[SourceStatus] = []
     irregularities: list[Irregularity] = list(library.irregularities.values())
     synthesis_retired: list[Claim] = []
+    experiments_run = 0
 
     # -- 4. per-topic research ----------------------------------------------
     for topic in plan.selected:
@@ -606,6 +607,16 @@ def run_cycle(
         experiments_here = []
         if run_experiments:
             for spec in experiments_for_topic(topic, limit=1):
+                # The declared budget is a cap on the whole cycle, not per
+                # question. Before this check the constant was published on the
+                # method page and never enforced.
+                if experiments_run >= BUDGET.max_experiments_per_cycle:
+                    result.notes.append(
+                        f"Experiment {spec.experiment_id} for {topic.topic_id} was not run: the cycle budget of "
+                        f"{BUDGET.max_experiments_per_cycle} experiment(s) was already spent."
+                    )
+                    break
+                experiments_run += 1
                 exp_run = run_experiment(spec, root=root)
                 if exp_run.error:
                     irregularities.append(

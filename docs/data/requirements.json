@@ -675,15 +675,19 @@
   {
     "evidence": [
       "tools/reject_topic.py",
+      "tools/resolve_finding.py",
+      "selflearn/learn/store.py",
       "selflearn/verify/audit.py",
       "library/irregularities.jsonl",
-      "docs/review.html"
+      "library/contradictions.jsonl",
+      "docs/review.html",
+      "tests/test_layers.py"
     ],
-    "gap": "There is no equivalent resolution record for an irregularity or a contradiction yet; a contradiction's resolution field still has to be written by hand.",
-    "how_to_verify": "Every finding is written to library/irregularities.jsonl and rendered on the review page. 'python3 tools/reject_topic.py --id <topic_id> --reason ...' appends a rejected record for the same primary key with a timestamp, a reason and an optional link, and records an info irregularity that a reviewer acted; the original record stays in the stream. Seven topics proposed from the engine's own scaffolding were closed this way on 2026-09-21.",
+    "gap": "Resolution is a repository operation (a commit), not a web form; there is no authentication or reviewer identity beyond the git history of the appended row.",
+    "how_to_verify": "Every finding is written to library/irregularities.jsonl and rendered on the review page. 'python3 tools/reject_topic.py --id <topic_id> --reason ...' appends a rejected record for the same primary key with a timestamp, a reason and an optional link, and records an info irregularity that a reviewer acted; the original record stays in the stream. 'python3 tools/resolve_finding.py --id <irr-... or con-...> --reason ... [--link URL]' does the same for an irregularity or a contradiction: a new row for the same key carrying resolution, resolved_at and resolution_link, with the original summary, detail and claim ids unchanged. The store carries a reviewer's decision forward when a later cycle re-detects the same finding, and '--reopen' reverses it explicitly. The review page shows open findings and, in a separate 'Resolved by a reviewer' table, the original text beside the reason. Run: python3 -m unittest tests.test_layers.ReviewerResolutionTests -v.",
     "id": "R-34",
     "requirement": "Flag irregularities for review, and let a reviewer close one without destroying the record.",
     "source": "user brief",
-    "status": "partial"
+    "status": "implemented"
   }
 ]

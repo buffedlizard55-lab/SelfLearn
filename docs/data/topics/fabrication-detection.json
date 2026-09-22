@@ -4585,9 +4585,13 @@
       "claim_a": "cl-87c1d0345e0e",
       "claim_b": "cl-9d035d5ab642",
       "contradiction_id": "con-5ddfe0dad53e",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (0 vs 5). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-fabrication-detection"
     },
@@ -4595,9 +4599,13 @@
       "claim_a": "cl-8faf22d0289e",
       "claim_b": "cl-ef6f3d3a8a5d",
       "contradiction_id": "con-96485a969ff6",
+      "created_at": "2026-09-22T07:20:46Z",
       "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (10, 2026, 21, 35, 4, 9 vs 0, 1, 20, 2025, 47, 52). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
+      "resolution_link": "",
+      "resolution_note": "",
+      "resolved_at": "",
       "severity": "medium",
       "topic_id": "topic-fabrication-detection"
     }
@@ -4917,7 +4925,7 @@
       "topic_id": "topic-fabrication-detection"
     }
   ],
-  "generated_at": "2026-09-22T05:06:07Z",
+  "generated_at": "2026-09-22T07:20:46Z",
   "questions": [
     {
       "id": "q-a12323d8e08a",
@@ -5478,7 +5486,7 @@
   ],
   "statistics": {
     "claims": 59,
-    "computed_at": "2026-09-22T05:06:07Z",
+    "computed_at": "2026-09-22T07:20:46Z",
     "documents": 10,
     "evidence_classes": [
       "primary_source",
@@ -6043,113 +6051,6 @@
       "title": "Optimization brief: Detecting fabricated statements in machine-generated text"
     },
     {
-      "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-1620816b0ed9] \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\" - GitHub REST API (primary_source)\n[cl-72c0d9630020] \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\" - GitHub REST API (primary_source)\n[cl-f74635ed0688] \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\" - GitHub REST API (primary_source)\n[cl-fe4c7b74e422] \"The record for summarizebot/LLM-QualityGuard states in its own description: An open-source library for Large Language Models (LLMs) correctness testing, including hallucination detection and content moderation, to enhance the reliability and safety of AI-generated content across diverse languages.\" - GitHub REST API (primary_source)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
-      "assumptions": [
-        "The retrieved documents are representative of the current state of the question.",
-        "Quoted measurements were produced under the conditions the quoted text describes.",
-        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
-        "Conditions reported in the sources still hold; no newer evidence supersedes them."
-      ],
-      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 97.7%, 98.4% for the same quantity.",
-      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
-      "persona": "E - Optimization",
-      "persona_brief": "Find the cheapest, fastest or most scalable option given the sourced numbers.",
-      "persona_code": "E",
-      "predicted_outcomes": [
-        "If the sourced statement holds, then: \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\"",
-        "If the sourced statement holds, then: \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\"",
-        "If the sourced statement holds, then: \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\""
-      ],
-      "scorecard": {
-        "attacks": 4,
-        "claims_cited": 6,
-        "criteria": {
-          "adversarial_survival": {
-            "label": "Survives criticism",
-            "method": "measured",
-            "note": "Share of critic attacks the candidate survives.",
-            "value": 1.0,
-            "weight": 0.15
-          },
-          "computational_cost": {
-            "label": "Computational cost",
-            "method": "measured",
-            "note": "Cheaper to run and verify is better.",
-            "value": 0.0,
-            "weight": 0.04
-          },
-          "correctness": {
-            "label": "Correctness",
-            "method": "measured",
-            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
-            "value": 1.0,
-            "weight": 0.18
-          },
-          "evidence_quality": {
-            "label": "Evidence quality",
-            "method": "measured",
-            "note": "Mean evidence-hierarchy rank of the supporting claims.",
-            "value": 0.7778,
-            "weight": 0.16
-          },
-          "experimental_performance": {
-            "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
-            "label": "Experimental performance",
-            "method": "measured",
-            "note": "Measured result relative to the recorded baseline, when a test exists.",
-            "value": 0.0417,
-            "weight": 0.1
-          },
-          "reproducibility": {
-            "label": "Reproducibility",
-            "method": "measured",
-            "note": "A third party can re-derive the result from the cited sources and commands.",
-            "value": 1.0,
-            "weight": 0.13
-          },
-          "robustness": {
-            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
-            "label": "Robustness",
-            "method": "measured",
-            "note": "Stable when evidence order and weights are perturbed.",
-            "value": 0.9881,
-            "weight": 0.12
-          },
-          "scalability": {
-            "label": "Scalability",
-            "method": "heuristic",
-            "note": "Plausible to apply beyond the single case studied.",
-            "value": 1.0,
-            "weight": 0.05
-          },
-          "simplicity": {
-            "label": "Simplicity",
-            "method": "measured",
-            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
-            "value": 0.6,
-            "weight": 0.07
-          }
-        },
-        "evidence_records": 4,
-        "fatal_attack": false,
-        "numbers_checked": true,
-        "total": 0.7992,
-        "unbacked_numbers": [],
-        "weights_total": 1.0
-      },
-      "status": "competing",
-      "strategy_id": "st-a918b79aaed1",
-      "supporting_claim_ids": [
-        "cl-1620816b0ed9",
-        "cl-72c0d9630020",
-        "cl-f74635ed0688",
-        "cl-fe4c7b74e422",
-        "cl-19af0640fce6",
-        "cl-2bad57cff1f7"
-      ],
-      "title": "Optimization brief: Detecting fabricated statements in machine-generated text"
-    },
-    {
       "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-1620816b0ed9] \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\" - GitHub REST API (primary_source)\n[cl-72c0d9630020] \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\" - GitHub REST API (primary_source)\n[cl-f74635ed0688] \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\" - GitHub REST API (primary_source)\n[cl-fe4c7b74e422] \"The record for summarizebot/LLM-QualityGuard states in its own description: An open-source library for Large Language Models (LLMs) correctness testing, including hallucination detection and content moderation, to enhance the reliability and safety of AI-generated content across diverse languages.\" - GitHub REST API (primary_source)\n[cl-0aaa55e54a4f] \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -6253,6 +6154,113 @@
         "cl-fe4c7b74e422",
         "cl-0aaa55e54a4f",
         "cl-19af0640fce6"
+      ],
+      "title": "Optimization brief: Detecting fabricated statements in machine-generated text"
+    },
+    {
+      "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-1620816b0ed9] \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\" - GitHub REST API (primary_source)\n[cl-72c0d9630020] \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\" - GitHub REST API (primary_source)\n[cl-f74635ed0688] \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\" - GitHub REST API (primary_source)\n[cl-fe4c7b74e422] \"The record for summarizebot/LLM-QualityGuard states in its own description: An open-source library for Large Language Models (LLMs) correctness testing, including hallucination detection and content moderation, to enhance the reliability and safety of AI-generated content across diverse languages.\" - GitHub REST API (primary_source)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 97.7%, 98.4% for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "E - Optimization",
+      "persona_brief": "Find the cheapest, fastest or most scalable option given the sourced numbers.",
+      "persona_code": "E",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\"",
+        "If the sourced statement holds, then: \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\"",
+        "If the sourced statement holds, then: \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0417,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 4,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.7992,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-a918b79aaed1",
+      "supporting_claim_ids": [
+        "cl-1620816b0ed9",
+        "cl-72c0d9630020",
+        "cl-f74635ed0688",
+        "cl-fe4c7b74e422",
+        "cl-19af0640fce6",
+        "cl-2bad57cff1f7"
       ],
       "title": "Optimization brief: Detecting fabricated statements in machine-generated text"
     },
@@ -8599,112 +8607,6 @@
       "title": "Conventional brief: Detecting fabricated statements in machine-generated text"
     },
     {
-      "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n[cl-82e113eab284] \"This question is currently supported by 53 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
-      "assumptions": [
-        "The retrieved documents are representative of the current state of the question.",
-        "Quoted measurements were produced under the conditions the quoted text describes.",
-        "The quantities quoted are commensurable with each other after unit conversion."
-      ],
-      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 2, 3, 39, 53, 97.7% for the same quantity.",
-      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
-      "persona": "C - First principles",
-      "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
-      "persona_code": "C",
-      "predicted_outcomes": [
-        "If the sourced statement holds, then: \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
-        "If the sourced statement holds, then: \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
-        "If the sourced statement holds, then: \"The supporting documents span 2 evidence class(es) in the project hierarchy.\""
-      ],
-      "scorecard": {
-        "attacks": 4,
-        "claims_cited": 6,
-        "criteria": {
-          "adversarial_survival": {
-            "label": "Survives criticism",
-            "method": "measured",
-            "note": "Share of critic attacks the candidate survives.",
-            "value": 0.5122,
-            "weight": 0.15
-          },
-          "computational_cost": {
-            "label": "Computational cost",
-            "method": "measured",
-            "note": "Cheaper to run and verify is better.",
-            "value": 0.0643,
-            "weight": 0.04
-          },
-          "correctness": {
-            "label": "Correctness",
-            "method": "measured",
-            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
-            "value": 1.0,
-            "weight": 0.18
-          },
-          "evidence_quality": {
-            "label": "Evidence quality",
-            "method": "measured",
-            "note": "Mean evidence-hierarchy rank of the supporting claims.",
-            "value": 0.0,
-            "weight": 0.16
-          },
-          "experimental_performance": {
-            "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
-            "label": "Experimental performance",
-            "method": "measured",
-            "note": "Measured result relative to the recorded baseline, when a test exists.",
-            "value": 0.0417,
-            "weight": 0.1
-          },
-          "reproducibility": {
-            "label": "Reproducibility",
-            "method": "measured",
-            "note": "A third party can re-derive the result from the cited sources and commands.",
-            "value": 0.0,
-            "weight": 0.13
-          },
-          "robustness": {
-            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
-            "label": "Robustness",
-            "method": "measured",
-            "note": "Stable when evidence order and weights are perturbed.",
-            "value": 0.899,
-            "weight": 0.12
-          },
-          "scalability": {
-            "label": "Scalability",
-            "method": "heuristic",
-            "note": "Plausible to apply beyond the single case studied.",
-            "value": 1.0,
-            "weight": 0.05
-          },
-          "simplicity": {
-            "label": "Simplicity",
-            "method": "measured",
-            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
-            "value": 0.6667,
-            "weight": 0.07
-          }
-        },
-        "evidence_records": 0,
-        "fatal_attack": false,
-        "numbers_checked": true,
-        "total": 0.4681,
-        "unbacked_numbers": [],
-        "weights_total": 1.0
-      },
-      "status": "competing",
-      "strategy_id": "st-4a3ba092a83e",
-      "supporting_claim_ids": [
-        "cl-19af0640fce6",
-        "cl-2bad57cff1f7",
-        "cl-2dc5f70a1a38",
-        "cl-4dd582aabcfb",
-        "cl-78627446b3ea",
-        "cl-82e113eab284"
-      ],
-      "title": "First principles brief: Detecting fabricated statements in machine-generated text"
-    },
-    {
       "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-0aaa55e54a4f] \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -8807,6 +8709,112 @@
         "cl-2dc5f70a1a38",
         "cl-4dd582aabcfb",
         "cl-78627446b3ea"
+      ],
+      "title": "First principles brief: Detecting fabricated statements in machine-generated text"
+    },
+    {
+      "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n[cl-82e113eab284] \"This question is currently supported by 53 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The quantities quoted are commensurable with each other after unit conversion."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 2, 3, 39, 53, 97.7% for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "C - First principles",
+      "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
+      "persona_code": "C",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+        "If the sourced statement holds, then: \"The supporting documents span 2 evidence class(es) in the project hierarchy.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5122,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0643,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0417,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.4681,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-4a3ba092a83e",
+      "supporting_claim_ids": [
+        "cl-19af0640fce6",
+        "cl-2bad57cff1f7",
+        "cl-2dc5f70a1a38",
+        "cl-4dd582aabcfb",
+        "cl-78627446b3ea",
+        "cl-82e113eab284"
       ],
       "title": "First principles brief: Detecting fabricated statements in machine-generated text"
     }

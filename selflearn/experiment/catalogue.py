@@ -108,6 +108,24 @@ EXPERIMENTS: tuple[ExperimentSpec, ...] = (
         seeds=(11,),
         keywords=("hash", "collision", "probability", "data structures", "sampling", "software"),
     ),
+    ExperimentSpec(
+        experiment_id="scheduling-policies-v1",
+        script="experiments/scheduling_policies.py",
+        title="Scheduling policies on a stationary bandit: round-robin, epsilon-greedy, UCB1",
+        purpose="capability",
+        hypothesis=(
+            "On a five-armed Bernoulli bandit with fixed means, UCB1 and epsilon-greedy both accumulate less "
+            "pseudo-regret than round-robin; UCB1's regret grows sublinearly and a fixed exploration rate keeps "
+            "paying a cost proportional to the horizon."
+        ),
+        falsifier=(
+            "Round-robin is not the worst of the three, or UCB1's second-half regret is not below its first-half "
+            "regret, or epsilon-greedy's second-half regret falls below the analytic exploration floor."
+        ),
+        metric="mean cumulative pseudo-regret",
+        seeds=(5,),
+        keywords=("scheduling", "prioritisation", "bandit", "exploration", "exploitation", "regret", "prioritise", "schedule"),
+    ),
 )
 
 

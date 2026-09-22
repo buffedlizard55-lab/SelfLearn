@@ -17,6 +17,12 @@ from pathlib import Path
 # writes into the repository's own library.
 ROOT = Path(os.environ.get("SELFLEARN_ROOT") or Path(__file__).resolve().parent.parent).resolve()
 
+# The checkout the code itself lives in. It differs from ROOT only when
+# SELFLEARN_ROOT is set. Things that ship with the code - the experiment scripts
+# - are resolved against this, not against the library root: a run pointed at an
+# empty directory must still be able to run the experiments it was shipped with.
+PACKAGE_ROOT = Path(__file__).resolve().parent.parent
+
 # --- Paths -----------------------------------------------------------------
 DATA_DIR = ROOT / "data"
 SEED_DIR = DATA_DIR / "seeds"
@@ -29,7 +35,7 @@ SITE_DIR = ROOT / "docs"          # GitHub Pages serves this repository from /do
 SITE_DATA_DIR = SITE_DIR / "data"
 SITE_STATIC_DIR = SITE_DIR / "static"
 DOCS_DIR = ROOT / "docs"
-EXPERIMENT_DIR = ROOT / "experiments"
+EXPERIMENT_DIR = PACKAGE_ROOT / "experiments"
 
 # Structured-memory streams (append-only JSONL). The relative paths are the
 # authoritative definition; STREAMS resolves them against the repository root so

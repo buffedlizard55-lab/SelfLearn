@@ -71,6 +71,9 @@ def main(argv: list[str] | None = None) -> int:
                 url=args.link or None,
                 suggested_action="The record stays in library/topics.jsonl; the topic is excluded from planning and from the site.",
                 resolved=True,
+                resolution=args.reason,
+                resolved_at=topic.last_updated,
+                resolution_link=args.link,
             )
         ]
     )
