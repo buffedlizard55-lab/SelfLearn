@@ -626,6 +626,49 @@ class VerifySurfaceTests(unittest.TestCase):
 
 
 class PerTopicStatusTests(unittest.TestCase):
+    def test_a_withdrawn_statement_is_retired_not_deleted(self) -> None:
+        """Regression: a corrected composition rule must not keep publishing the old statement."""
+        from selflearn.loop import retire_stale_synthesis
+        from selflearn.publish.report import build_topic_report
+
+        topic = Topic(
+            topic_id="topic-retire",
+            title="Retired statement",
+            slug="retired-statement",
+            question="How is grid-scale storage capacity measured?",
+            keywords=["capacity"],
+        )
+        stored = make_claims(topic)
+        stale = Claim(
+            claim_id=stable_id("cl", topic.topic_id, "synthesis", "old statement"),
+            topic_id=topic.topic_id,
+            claim_kind="synthesis",
+            text="Two documents disagree about a value expressed in stargazer: one reports 02 and the other 04.",
+            quote="The record for alpha reports: stargazers_count 37459.",
+            evidence_class="primary_source",
+            evidence_rank=EVIDENCE_RANK["primary_source"],
+            evidence_id=stored[0].evidence_id,
+            source_name=stored[0].source_name,
+            url=stored[0].url,
+            verification=Verification(verdict="supported", coverage=1.0, reasons=["composed from cited claims"]),
+        )
+        retired = retire_stale_synthesis(topic, stored + [stale], kept=[])
+        self.assertEqual(len(retired), 1)
+        self.assertTrue(retired[0].superseded.startswith("Superseded "))
+        self.assertIn("no longer produces", retired[0].superseded)
+        self.assertEqual(retired[0].verification.verdict, "supported", "the verification record is never rewritten")
+        # direct claims are never retired by this rule
+        self.assertFalse(any(c.claim_kind == "direct" for c in retired))
+
+        library = Library(Path(tempfile.mkdtemp()))
+        library.add_topics([topic])
+        library.add_evidence([make_evidence()])
+        library.add_claims(stored + retired)
+        report = build_topic_report(library, topic, source_status=[])
+        self.assertNotIn(stale.claim_id, [c.claim_id for c in report.claims], "a retired claim is not a current fact")
+        self.assertEqual([c.claim_id for c in report.retired_claims], [stale.claim_id])
+        self.assertIn("retired", report.to_dict())
+
     def test_report_shows_only_this_topics_sources(self) -> None:
         from selflearn.models import SourceStatus
         from selflearn.publish.report import build_topic_report

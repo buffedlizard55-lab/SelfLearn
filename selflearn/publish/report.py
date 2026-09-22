@@ -15,7 +15,7 @@ site is written (see :mod:`selflearn.verify.audit`).
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Iterable
 
 from .. import ENGINE_REPO_URL, ENGINE_SITE_URL, __version__
@@ -35,6 +35,9 @@ from ..models import (
     Strategy,
     Topic,
 )
+from ..fetch.changes import mechanism_table as change_mechanism_table
+from ..learn.substance import score_claim, substance_rule, substance_summary
+from ..think.invention import invention_rule
 from ..util import extract_dates, extract_numbers, stable_id, truncate, utcnow_iso
 
 # The design document's own prompt for each topic record, kept verbatim so the
@@ -62,6 +65,10 @@ class TopicReport:
     tournament: dict[str, Any] | None
     source_status: list[SourceStatus]
     status_history: list[dict[str, Any]]
+    # Claims a later cycle no longer produces (see Claim.superseded). Kept here so
+    # the page can say how many were retired and why, instead of quietly dropping
+    # statements that were published in an earlier cycle.
+    retired_claims: list[Claim] = field(default_factory=list)
 
     # -- headline numbers -------------------------------------------------
     def statistics(self) -> dict[str, Any]:
@@ -172,8 +179,50 @@ class TopicReport:
                     "limitations": c.limitations,
                     "recorded_at": c.recorded_at,
                     "evidence_id": c.evidence_id,
+                    "claim_kind": c.claim_kind,
+                    "context_numbers": c.context_numbers,
+                    "cited_claim_ids": c.cited_claim_ids,
+                    "substance": c.substance or score_claim(c).to_dict(),
                 }
-                for c in sorted(self.claims, key=lambda c: (c.evidence_rank, -c.verification.coverage, c.claim_id))
+                # Reading order is the published substance rule; see
+                # order_claims_for_reading. Nothing is dropped by this sort.
+                for c in self.claims
+            ],
+            "synthesis": [
+                {
+                    "claim_id": c.claim_id,
+                    "text": c.text,
+                    "cited_claim_ids": c.cited_claim_ids,
+                    "context_numbers": c.context_numbers,
+                    "limitations": c.limitations,
+                    "verdict": c.verification.verdict,
+                    "reasons": c.verification.reasons,
+                    "citations": [
+                        {
+                            "claim_id": other.claim_id,
+                            "text": other.text,
+                            "source_name": other.source_name,
+                            "url": other.url,
+                            "evidence_id": other.evidence_id,
+                            "verdict": other.verification.verdict,
+                        }
+                        for other in self.claims
+                        if other.claim_id in set(c.cited_claim_ids)
+                    ],
+                }
+                for c in self.claims
+                if c.claim_kind == "synthesis"
+            ],
+            "substance": substance_summary(self.claims),
+            "retired": [
+                {
+                    "claim_id": c.claim_id,
+                    "text": c.text,
+                    "claim_kind": c.claim_kind,
+                    "superseded": c.superseded,
+                    "recorded_at": c.recorded_at,
+                }
+                for c in self.retired_claims
             ],
             "documents": [
                 {
@@ -257,25 +306,46 @@ def _topic_status_history(library) -> list[dict[str, Any]]:
 def order_claims_for_reading(claims: list[Claim]) -> list[Claim]:
     """Order a topic's claims so the reader meets the most substantive ones first.
 
-    The rule is deliberately simple and published: claims that passed verification
-    come before those needing review, quantified claims before purely descriptive
-    ones, and stronger evidence classes before weaker. Nothing is dropped - the
-    ordering only decides what is read first. Every claim keeps its own verdict
-    badge, so this cannot promote anything.
+    The ordering rule is the published substance score
+    (:mod:`selflearn.learn.substance`), with two overrides that matter more than
+    any lexical feature:
+
+    * the engine's own computed statements (``derived``) come first, because they
+      tell the reader how much of what follows is supported at all;
+    * a claim that failed verification is never placed above one that passed.
+
+    Nothing is dropped - the ordering only decides what is read first, and every
+    claim keeps its own verdict and substance label, so this cannot promote
+    anything.
     """
+    ensure_substance(claims)
+
     def key(claim: Claim):
         verdict_rank = {"supported": 0, "partially_supported": 1, "unsupported": 2, "contradicted": 3}
-        quantified = 0 if extract_numbers(claim.text) or extract_dates(claim.text) else 1
-        derived = 0 if claim.claim_kind == "derived" else 1
+        substance = claim.substance or {}
         return (
-            derived,
+            0 if claim.claim_kind == "derived" else 1,
             verdict_rank.get(claim.verification.verdict, 4),
-            quantified,
-            claim.evidence_rank,
+            -float(substance.get("total", 0.0)),
+            int(claim.evidence_rank or 9),
             claim.claim_id,
         )
 
     return sorted(claims, key=key)
+
+
+def ensure_substance(claims: list[Claim]) -> dict[str, Any]:
+    """Score every claim that has no stored substance record, in place.
+
+    Claims written before the substance rule existed have no score, and the rule
+    itself may be revised; either way the published page must show a score
+    computed by the current rule rather than an empty cell. Returns the summary
+    for the set, which is what the index and the method page quote.
+    """
+    for claim in claims:
+        if not claim.substance:
+            claim.substance = score_claim(claim).to_dict()
+    return substance_summary(claims)
 
 
 def build_topic_report(
@@ -285,7 +355,13 @@ def build_topic_report(
     source_status: list[SourceStatus] | None = None,
 ) -> TopicReport:
     """Assemble the report object for one topic from the library."""
-    claims = order_claims_for_reading(library.claims_for_topic(topic.topic_id))
+    all_topic_claims = library.claims_for_topic(topic.topic_id)
+    # A superseded statement is one a later cycle would no longer produce, because
+    # the rule that composed it changed or a claim it cited is gone. It stays in
+    # the library - the streams are append-only - but it is not published as a
+    # current finding; the count and the reason are shown instead.
+    retired = [c for c in all_topic_claims if c.superseded]
+    claims = order_claims_for_reading([c for c in all_topic_claims if not c.superseded])
     evidence_ids = {c.evidence_id for c in claims}
     records = [library.evidence[eid] for eid in evidence_ids if eid in library.evidence]
     strategies = library.strategies_for_topic(topic.topic_id)
@@ -310,6 +386,7 @@ def build_topic_report(
     return TopicReport(
         topic=topic,
         claims=claims,
+        retired_claims=retired,
         records=records,
         strategies=strategies,
         attacks=attacks,
@@ -389,6 +466,12 @@ def build_site_data(
         "requirements": requirements,
         "methodology": methodology,
         "experiments": [e.to_dict() for e in library.experiments.values()],
+        "substance": ensure_substance(list(library.claims.values())),
+        "substance_rule": substance_rule(),
+        "invention_rule": invention_rule(),
+        "topic_proposals": list(run_summary.get("topic_proposals") or []),
+        "change_scan": dict(run_summary.get("change_scan") or {}),
+        "change_mechanisms": change_mechanism_table(),
     }
     payload["checks"] = {
         "fixture_documents": sum(1 for r in library.evidence.values() if r.is_fixture),

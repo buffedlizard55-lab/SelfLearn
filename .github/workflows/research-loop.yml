@@ -61,6 +61,22 @@ jobs:
         # reached is a finding, not a failure.
         run: python3 -m selflearn sources --probe
 
+      - name: Credential status
+        # Which keyed sources are enabled by the secrets above, and where a free
+        # key is issued for the ones that are not. Never fails the run.
+        run: python3 -m selflearn credentials
+
+      - name: Link check
+        # Every URL in the register, the change-scan mechanisms and the prose is
+        # resolved and its status recorded in reports/link_check.json. Non-strict:
+        # a moved page is a finding for a human, not a reason to stop a cycle.
+        run: python3 tools/verify_links.py || true
+
+      - name: Change scan
+        # Polls only the sources whose operator documents a change filter, records
+        # the window used, and turns unseen items into questions.
+        run: python3 -m selflearn scan --query "autonomous research" --discover
+
       - name: Research cycle
         run: python3 -m selflearn run --mode "$SELFLEARN_MODE"
 

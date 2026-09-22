@@ -38,6 +38,8 @@ from .fetch.net import HttpClient, NetworkUnavailable
 from .fetch.registry import registry_summary, source_matrix
 from .learn.calibration import active_thresholds, run_calibration, thresholds_in_force
 from .learn.store import Library
+from .learn.substance import score_claim, substance_summary
+from .learn.synthesis import synthesis_claim_id, synthesis_evidence_id, synthesise
 from .models import Claim, Discovery, Irregularity, SourceStatus, Topic
 from .publish.report import build_site_data, topic_slug
 from .publish.site import build_site
@@ -60,7 +62,13 @@ from .verify.audit import (
 )
 from .verify.contradiction import detect_contradictions
 from .verify.grounding import ground_evidence
-from .verify.verifier import confidence_label, independent_source_count, verify_claim, verify_derived
+from .verify.verifier import (
+    confidence_label,
+    independent_source_count,
+    verify_claim,
+    verify_derived,
+    verify_synthesis,
+)
 
 LOG = logging.getLogger("selflearn.loop")
 
@@ -167,6 +175,9 @@ def build_claims(
             )
             independent = independent_source_count(provisional, existing + produced)
             provisional.confidence = confidence_label(verification.verdict, record.evidence_rank, independent)
+            # The substance score is a reading aid computed from the finished
+            # verification record; it never feeds back into the verdict.
+            provisional.substance = score_claim(provisional).to_dict()
             produced.append(provisional)
             budget_left -= 1
     return produced
@@ -265,6 +276,141 @@ def _write_derived_record(
     return path
 
 
+def retire_stale_synthesis(topic: Topic, existing: list[Claim], kept: list[Claim]) -> list[Claim]:
+    """Mark the synthesis statements this cycle would no longer produce.
+
+    A synthesis statement is composed by a rule, and the rule can be corrected -
+    the first version of it read date fragments as quantities and published
+    "one reports 02 and the other reports 04". The streams are append-only, so the
+    correction cannot delete the old record; what it can do is stop publishing it
+    as current and say why. The record stays in ``library/claims.jsonl`` and the
+    reason is stored on it.
+    """
+    kept_ids = {claim.claim_id for claim in kept}
+    retired: list[Claim] = []
+    for claim in existing:
+        if claim.claim_kind != "synthesis" or claim.topic_id != topic.topic_id:
+            continue
+        if claim.claim_id in kept_ids or claim.superseded:
+            continue
+        claim.superseded = (
+            f"Superseded {utcnow_iso()}: a re-run of the synthesis rules no longer produces this statement. "
+            "It is kept in the library and is not published as a current finding."
+        )
+        retired.append(claim)
+    return retired
+
+
+def build_synthesis_claims(
+    topic: Topic,
+    claims: list[Claim],
+    *,
+    snapshot_dir: Path | None = None,
+    limit: int = 6,
+    existing: list[Claim] | None = None,
+) -> list[Claim]:
+    """Compose, verify and materialise this topic's cross-document statements.
+
+    A proposal that does not survive :func:`~selflearn.verify.verifier.verify_synthesis`
+    is dropped rather than published with a warning: an unsupported
+    cross-document statement is the most misleading thing this engine could say.
+    Every statement that is kept records the claims it cites and the figures it
+    was allowed to use, and the audit recomputes both on the next cycle.
+    """
+    evidence_id = synthesis_evidence_id(topic.topic_id)
+    kept: list[Claim] = []
+    record_lines: list[str] = []
+    for proposal in synthesise(topic.topic_id, claims, limit=limit):
+        cited = [c for c in claims if c.claim_id in set(proposal.cited_claim_ids)]
+        verification = verify_synthesis(proposal.text, cited, proposal.context_numbers)
+        if verification.verdict != "supported":
+            continue
+        claim = Claim(
+            claim_id=synthesis_claim_id(topic.topic_id, proposal),
+            topic_id=topic.topic_id,
+            text=proposal.text,
+            evidence_id=evidence_id,
+            source_name="Cross-document synthesis of cited claims",
+            url="",
+            quote="",
+            evidence_class="reproduced_experiment",
+            evidence_rank=2,
+            confidence="medium",
+            verification=verification,
+            claim_kind="synthesis",
+            context_numbers=list(proposal.context_numbers),
+            cited_claim_ids=list(proposal.cited_claim_ids),
+            limitations=proposal.limitations,
+        )
+        claim.substance = score_claim(claim).to_dict()
+        kept.append(claim)
+        record_lines.append(
+            f"{claim.claim_id} [{proposal.kind}] cites {', '.join(proposal.cited_claim_ids)}; "
+            f"allowed figures: {', '.join(proposal.context_numbers)}"
+        )
+    if kept and snapshot_dir is not None:
+        _write_synthesis_record(topic, kept, record_lines, Path(snapshot_dir))
+    return kept
+
+
+def rebuild_synthesis(
+    topic: Topic,
+    claims: list[Claim],
+    *,
+    snapshot_dir: Path | None = None,
+    limit: int = 6,
+    existing: list[Claim] | None = None,
+) -> tuple[list[Claim], list[Claim]]:
+    """Compose this topic's synthesis claims and retire the ones that no longer hold.
+
+    Returns ``(kept, retired)``. Both are written back to the library: the kept
+    statements as current claims, the retired ones with a supersession reason.
+    """
+    kept = build_synthesis_claims(topic, claims, snapshot_dir=snapshot_dir, limit=limit)
+    retired = retire_stale_synthesis(topic, existing or [], kept)
+    return kept, retired
+
+
+def _write_synthesis_record(
+    topic: Topic,
+    claims: list[Claim],
+    record_lines: list[str],
+    snapshot_dir: Path,
+) -> Path:
+    """Store the composition record behind the synthesis claims."""
+    snapshot_dir.mkdir(parents=True, exist_ok=True)
+    text = "\n".join(
+        [
+            f"Source: cross-document synthesis for {topic.topic_id}",
+            f"Question: {topic.question}",
+            "These statements combine figures that were already verified in the documents cited below.",
+            "No figure was averaged, summed or otherwise computed; a statement needing arithmetic is not written.",
+            "Statements, their citations and the figures each was allowed to use:",
+            *record_lines,
+        ]
+    )
+    payload = {
+        "evidence_id": synthesis_evidence_id(topic.topic_id),
+        "source_id": "selflearn_synthesis",
+        "source_name": "Cross-document synthesis of cited claims",
+        "url": "",
+        "title": f"Cross-document synthesis for {topic.title}",
+        "text": text,
+        "content_hash": sha256_text(text),
+        "evidence_class": "reproduced_experiment",
+        "evidence_rank": 2,
+        "is_fixture": False,
+        "is_live": True,
+        "claim_ids": [claim.claim_id for claim in claims],
+        "citations": {claim.claim_id: claim.cited_claim_ids for claim in claims},
+        "context_numbers": {claim.claim_id: claim.context_numbers for claim in claims},
+        "written_at": utcnow_iso(),
+    }
+    path = snapshot_dir / f"{payload['evidence_id']}.json"
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    return path
+
+
 def attention_by_topic(library: Library) -> dict[str, float]:
     """Measured attention signals, for the topics where a signal exists at all."""
     signals: dict[str, float] = {}
@@ -345,6 +491,7 @@ def run_cycle(
 
     all_statuses: list[SourceStatus] = []
     irregularities: list[Irregularity] = list(library.irregularities.values())
+    synthesis_retired: list[Claim] = []
 
     # -- 4. per-topic research ----------------------------------------------
     for topic in plan.selected:
@@ -374,6 +521,35 @@ def run_cycle(
             snapshot_dir=root / "evidence" / "snapshots",
         )
         library.add_claims(derived)
+
+        # Cross-document synthesis, built only from claims that are already
+        # verified against their own document, and re-verified here before storage.
+        synthesis, retired = rebuild_synthesis(
+            topic,
+            topic_claims,
+            snapshot_dir=root / "evidence" / "snapshots",
+            existing=existing,
+        )
+        library.add_claims(synthesis)
+        if retired:
+            library.add_claims(retired)
+            synthesis_retired.extend(retired)
+            irregularities.append(
+                Irregularity(
+                    irregularity_id=stable_id("irr", "synthesis-retired", topic.topic_id),
+                    severity="info",
+                    stage="synthesis",
+                    topic_id=topic.topic_id,
+                    summary=f"{len(retired)} cross-document statement(s) retired for {topic.topic_id}",
+                    detail=(
+                        "The synthesis rules no longer produce these statements, so they are marked superseded and "
+                        "are not published as current findings. The records remain in library/claims.jsonl with the "
+                        "reason stored on each."
+                    ),
+                    suggested_action="No action needed unless a reviewer believes a retired statement was correct.",
+                )
+            )
+        topic_claims = topic_claims + [c for c in synthesis if not c.superseded]
 
         personas = personas_for(topic.topic_id, count=6)
         strategies = generate_strategies(topic, topic_claims, personas, library=library.library_by_topic())
@@ -463,6 +639,99 @@ def run_cycle(
 
     elo.save()
 
+    # -- 4b. open scan: invent topics and look for what changed ------------
+    proposals_payload: list[dict[str, Any]] = []
+    promoted_topics: list[Topic] = []
+    if plan.selected:
+        from .think.invention import MAX_PROPOSALS_PER_CYCLE, propose_topics, to_topic
+
+        cycle_records = list(library.evidence.values())
+        proposals = propose_topics(
+            records=cycle_records,
+            claims=list(library.claims.values()),
+            topics=list(library.topics.values()),
+            existing_titles=[topic.title for topic in library.topics.values()],
+            limit=MAX_PROPOSALS_PER_CYCLE,
+        )
+        proposals_payload = [proposal.to_dict() for proposal in proposals]
+        for proposal in proposals:
+            if not proposal.accepted:
+                continue
+            new_topic = to_topic(proposal)
+            if new_topic.topic_id in library.topics:
+                continue
+            promoted_topics.append(new_topic)
+            library.add_topics([new_topic])
+            library.add_discoveries(
+                [
+                    Discovery(
+                        discovery_id=stable_id("disc", "invention", new_topic.topic_id),
+                        topic_id=new_topic.topic_id,
+                        text=(
+                            f"Proposed a new question, '{new_topic.title}', from {proposal.support_documents} "
+                            f"retrieved documents at novelty {proposal.novelty:.2f}."
+                        ),
+                        kind="new_question",
+                        derived_from=proposal.support_claim_ids[:5],
+                        confidence="low",
+                    )
+                ]
+            )
+        result.notes.append(
+            f"{len(proposals)} candidate topic(s) scored from the retrieved documents; "
+            f"{len(promoted_topics)} promoted to the topic list."
+        )
+
+    scan_payload: dict[str, Any] = {}
+    if allow_network:
+        from .fetch.changes import DEFAULT_WINDOW_DAYS, ChangeScanner, summarise_scan
+
+        scanner = ChangeScanner(client, state_path(root, "change_scan.json"), allow_network=allow_network)
+        scan_query = next((topic.keywords[0] for topic in plan.selected if topic.keywords), "research")
+        scan_outcome = scanner.scan(
+            scan_query,
+            run_id=run_id,
+            window_days=DEFAULT_WINDOW_DAYS,
+            limit=5,
+        )
+        irregularities.extend(scan_outcome.irregularities)
+        library.add_failures(scan_outcome.failures)
+        scan_payload = scan_outcome.to_dict()
+        save_json(root / "reports" / "change_scan.json", scan_payload)
+        if scan_outcome.items_new:
+            from .models import Question as _Question
+
+            new_questions = [
+                _Question(
+                    id=stable_id("q", "scan", row["identifier"]),
+                    topic_id="",
+                    text=(
+                        f"{scan.source_name} published or updated \"{row['title']}\" inside the window "
+                        f"{scan.window.get('since')}..{scan.window.get('until')} ({row['url'] or scan.request_url}). "
+                        "What does it change about what this library holds?"
+                    ),
+                    origin="discovery",
+                    priority=0.6,
+                )
+                for scan in scan_outcome.scans
+                for row in scan.new_items[:3]
+            ]
+            library.add_questions(new_questions)
+            result.notes.append(
+                f"Change scan: {scan_outcome.items_new} item(s) seen for the first time across "
+                f"{sum(1 for s in scan_outcome.scans if s.status == 'scanned')} source(s); "
+                f"{len(new_questions)} question(s) derived."
+            )
+        else:
+            result.notes.append(
+                "Change scan: no previously unseen items in the windows polled "
+                f"({summarise_scan(scan_outcome)})."
+            )
+    else:
+        result.notes.append(
+            "Change scan not attempted: this run was offline. The scan needs egress to the source it polls."
+        )
+
     # -- 5. audit ------------------------------------------------------------
     published_claims = list(library.claims.values())
     findings: list[Irregularity] = list(irregularities)
@@ -486,6 +755,15 @@ def run_cycle(
             )
 
     # -- 6. run summary (checked by the same numeric guard as the claims) ----
+    claims_by_kind = {"direct": 0, "derived": 0, "synthesis": 0}
+    for claim in library.claims.values():
+        if claim.superseded:
+            # A retired statement is still in the library, but it is not a current
+            # finding, so it is not counted as one. Reporting it as composed would
+            # make the summary disagree with the published page.
+            continue
+        claims_by_kind[claim.claim_kind] = claims_by_kind.get(claim.claim_kind, 0) + 1
+    substance = substance_summary(library.claims.values())
     counts = {
         "topics": len(library.topics),
         "claims": len(library.claims),
@@ -495,6 +773,9 @@ def run_cycle(
         "questions": len(library.questions),
         "experiments": len(library.experiments),
         "http_requests": client.request_count,
+        "synthesis_claims": claims_by_kind["synthesis"],
+        "substantive_claims": substance["labels"]["substantive"],
+        "metadata_claims": substance["labels"]["metadata"],
     }
     severity_counts = summarise(findings)["by_severity"]
     # Every figure that appears in the generated summary is collected here first,
@@ -510,6 +791,14 @@ def run_cycle(
         "open_questions": counts["questions"],
         "errors": severity_counts.get("error", 0),
         "warnings": severity_counts.get("warning", 0),
+        "synthesis_claims": counts["synthesis_claims"],
+        "synthesis_retired": len(synthesis_retired),
+        "substantive_claims": counts["substantive_claims"],
+        "metadata_claims": counts["metadata_claims"],
+        "topics_proposed": len(proposals_payload),
+        "topics_promoted": len(promoted_topics),
+        "change_scan_sources": len(scan_payload.get("scans", [])),
+        "change_scan_new_items": int(scan_payload.get("items_new", 0)),
     }
     run_summary = {
         "run_id": run_id,
@@ -521,8 +810,19 @@ def run_cycle(
             f"This cycle retrieved {figures['documents_retrieved']} document(s) from "
             f"{figures['sources_reached']} of {figures['sources_polled']} polled source(s).",
             f"{figures['open_questions']} open question(s) have been derived from the retrieved evidence.",
+            f"{figures['synthesis_claims']} cross-document statement(s) are current, "
+            f"{figures['synthesis_retired']} were retired this cycle because the composition rules no longer "
+            f"produce them, and {figures['substantive_claims']} claim(s) scored as substantive while "
+            f"{figures['metadata_claims']} are labelled as registry metadata.",
+            f"{figures['topics_proposed']} candidate topic(s) were scored from the retrieved documents and "
+            f"{figures['topics_promoted']} promoted; the change scan polled {figures['change_scan_sources']} "
+            f"source(s) and found {figures['change_scan_new_items']} item(s) not seen before.",
             f"{figures['errors']} error(s) and {figures['warnings']} warning(s) are waiting for review.",
         ],
+        "claim_kinds": claims_by_kind,
+        "substance": substance,
+        "topic_proposals": proposals_payload,
+        "change_scan": scan_payload,
         "evidence_rank_mix": evidence_rank_mix(library.claims.values()),
         "registry": registry_summary(),
         "thresholds": thresholds_in_force(state_path(root, "calibration.json")),

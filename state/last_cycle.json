@@ -1,35 +1,40 @@
 {
   "counts": {
-    "attacks": 170,
-    "claims": 141,
-    "documents": 32,
+    "attacks": 416,
+    "claims": 206,
+    "documents": 34,
     "experiments": 2,
-    "http_requests": 17,
-    "questions": 16,
-    "strategies": 24,
-    "topics": 4
+    "http_requests": 22,
+    "metadata_claims": 41,
+    "questions": 46,
+    "strategies": 91,
+    "substantive_claims": 80,
+    "synthesis_claims": 0,
+    "topics": 11
   },
   "errors": [],
   "irregularities": {
     "by_severity": {
       "error": 0,
-      "info": 0,
-      "warning": 1
+      "info": 13,
+      "warning": 17
     },
-    "total": 1
+    "total": 30
   },
   "mode": "live",
   "notes": [
     "4 question(s) loaded from the seed file.",
     "Verification thresholds calibrated from 26 labelled cases; accuracy at the selected point 1.0.",
-    "topic-autonomous-research-agents: cannot measure evidence_strength, freshness, attention for this question. Those components are excluded from the score rather than defaulted.",
-    "topic-fabrication-detection: cannot measure evidence_strength, freshness, attention for this question. Those components are excluded from the score rather than defaulted.",
-    "topic-research-loop-scheduling: cannot measure evidence_strength, freshness, attention for this question. Those components are excluded from the score rather than defaulted.",
-    "topic-search-and-sorting-strategy: cannot measure evidence_strength, freshness, attention for this question. Those components are excluded from the score rather than defaulted.",
-    "topic-autonomous-research-agents: 18 new claim(s) from 4 document(s); 6 candidate(s); 34 attack(s).",
-    "topic-fabrication-detection: 39 new claim(s) from 10 document(s); 6 candidate(s); 41 attack(s).",
-    "topic-research-loop-scheduling: 20 new claim(s) from 6 document(s); 6 candidate(s); 53 attack(s).",
-    "topic-search-and-sorting-strategy: 44 new claim(s) from 10 document(s); 6 candidate(s); 42 attack(s)."
+    "topic-autonomous-research-agents: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
+    "topic-fabrication-detection: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
+    "topic-research-loop-scheduling: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
+    "topic-search-and-sorting-strategy: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
+    "topic-autonomous-research-agents: 0 new claim(s) from 4 document(s); 6 candidate(s); 22 attack(s).",
+    "topic-fabrication-detection: 0 new claim(s) from 10 document(s); 6 candidate(s); 21 attack(s).",
+    "topic-research-loop-scheduling: 0 new claim(s) from 6 document(s); 6 candidate(s); 24 attack(s).",
+    "topic-search-and-sorting-strategy: 0 new claim(s) from 10 document(s); 6 candidate(s); 22 attack(s).",
+    "1 candidate topic(s) scored from the retrieved documents; 0 promoted to the topic list.",
+    "Change scan: 4 item(s) seen for the first time across 1 source(s); 3 question(s) derived."
   ],
   "plan": {
     "budget": {
@@ -45,114 +50,114 @@
       "request_timeout": 20
     },
     "notes": [
-      "topic-autonomous-research-agents: cannot measure evidence_strength, freshness, attention for this question. Those components are excluded from the score rather than defaulted.",
-      "topic-fabrication-detection: cannot measure evidence_strength, freshness, attention for this question. Those components are excluded from the score rather than defaulted.",
-      "topic-research-loop-scheduling: cannot measure evidence_strength, freshness, attention for this question. Those components are excluded from the score rather than defaulted.",
-      "topic-search-and-sorting-strategy: cannot measure evidence_strength, freshness, attention for this question. Those components are excluded from the score rather than defaulted."
+      "topic-autonomous-research-agents: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
+      "topic-fabrication-detection: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
+      "topic-research-loop-scheduling: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
+      "topic-search-and-sorting-strategy: cannot measure attention for this question. Those components are excluded from the score rather than defaulted."
     ],
-    "run_id": "run-538d83841b75",
+    "run_id": "run-ea9b18aa72fa",
     "scores": [
       {
         "basis": [
-          "no documents retrieved",
-          "no publication dates were returned by any source",
-          "0 partially supported claim(s) out of 0",
-          "0 quantified claim(s)",
+          "mean evidence rank over 20 document(s)",
+          "20 document(s) carried a publication date",
+          "0 partially supported claim(s) out of 42",
+          "34 quantified claim(s)",
           "no attention signal (forum or repository activity) was retrieved for this topic",
           "topic last updated 0.0 day(s) ago"
         ],
         "components": {
           "attention": 0.0,
           "evidence_gaps": 0.0,
-          "evidence_strength": 0.0,
-          "freshness": 0.0,
+          "evidence_strength": 0.7778,
+          "freshness": 0.85,
           "neglect": 0.0,
-          "testability": 0.0
+          "testability": 0.8095
         },
-        "details": {},
+        "details": {
+          "newest_document_age_days": 26.0
+        },
         "topic_id": "topic-autonomous-research-agents",
-        "total": 0.0,
+        "total": 0.4494,
         "unmeasurable": [
-          "evidence_strength",
-          "freshness",
           "attention"
         ]
       },
       {
         "basis": [
-          "no documents retrieved",
-          "no publication dates were returned by any source",
-          "0 partially supported claim(s) out of 0",
-          "0 quantified claim(s)",
+          "mean evidence rank over 39 document(s)",
+          "39 document(s) carried a publication date",
+          "0 partially supported claim(s) out of 57",
+          "40 quantified claim(s)",
           "no attention signal (forum or repository activity) was retrieved for this topic",
           "topic last updated 0.0 day(s) ago"
         ],
         "components": {
           "attention": 0.0,
           "evidence_gaps": 0.0,
-          "evidence_strength": 0.0,
-          "freshness": 0.0,
+          "evidence_strength": 0.7778,
+          "freshness": 0.5128,
           "neglect": 0.0,
-          "testability": 0.0
+          "testability": 0.7018
         },
-        "details": {},
+        "details": {
+          "newest_document_age_days": 1.0
+        },
         "topic_id": "topic-fabrication-detection",
-        "total": 0.0,
+        "total": 0.3753,
         "unmeasurable": [
-          "evidence_strength",
-          "freshness",
           "attention"
         ]
       },
       {
         "basis": [
-          "no documents retrieved",
-          "no publication dates were returned by any source",
-          "0 partially supported claim(s) out of 0",
-          "0 quantified claim(s)",
+          "mean evidence rank over 20 document(s)",
+          "20 document(s) carried a publication date",
+          "0 partially supported claim(s) out of 38",
+          "31 quantified claim(s)",
           "no attention signal (forum or repository activity) was retrieved for this topic",
           "topic last updated 0.0 day(s) ago"
         ],
         "components": {
           "attention": 0.0,
           "evidence_gaps": 0.0,
-          "evidence_strength": 0.0,
-          "freshness": 0.0,
+          "evidence_strength": 0.7778,
+          "freshness": 0.35,
           "neglect": 0.0,
-          "testability": 0.0
+          "testability": 0.8158
         },
-        "details": {},
+        "details": {
+          "newest_document_age_days": 74.0
+        },
         "topic_id": "topic-research-loop-scheduling",
-        "total": 0.0,
+        "total": 0.3671,
         "unmeasurable": [
-          "evidence_strength",
-          "freshness",
           "attention"
         ]
       },
       {
         "basis": [
-          "no documents retrieved",
-          "no publication dates were returned by any source",
-          "0 partially supported claim(s) out of 0",
-          "0 quantified claim(s)",
+          "mean evidence rank over 44 document(s)",
+          "44 document(s) carried a publication date",
+          "0 partially supported claim(s) out of 62",
+          "50 quantified claim(s)",
           "no attention signal (forum or repository activity) was retrieved for this topic",
           "topic last updated 0.0 day(s) ago"
         ],
         "components": {
           "attention": 0.0,
           "evidence_gaps": 0.0,
-          "evidence_strength": 0.0,
-          "freshness": 0.0,
+          "evidence_strength": 0.7778,
+          "freshness": 0.0909,
           "neglect": 0.0,
-          "testability": 0.0
+          "testability": 0.8065
         },
-        "details": {},
+        "details": {
+          "newest_document_age_days": 90.0
+        },
         "topic_id": "topic-search-and-sorting-strategy",
-        "total": 0.0,
+        "total": 0.3224,
         "unmeasurable": [
-          "evidence_strength",
-          "freshness",
           "attention"
         ]
       }
@@ -192,7 +197,7 @@
     },
     "tasks": [
       {
-        "created_at": "2026-09-21T23:13:28Z",
+        "created_at": "2026-09-22T00:10:50Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -205,11 +210,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-82125b7df2a0",
+        "task_id": "task-17758630c376",
         "topic_id": "topic-autonomous-research-agents"
       },
       {
-        "created_at": "2026-09-21T23:13:28Z",
+        "created_at": "2026-09-22T00:10:50Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -222,11 +227,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-3a5cf02edbab",
+        "task_id": "task-422a20019b41",
         "topic_id": "topic-fabrication-detection"
       },
       {
-        "created_at": "2026-09-21T23:13:28Z",
+        "created_at": "2026-09-22T00:10:50Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -238,11 +243,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-ab54ce2ecfda",
+        "task_id": "task-6816d7ce1286",
         "topic_id": "topic-research-loop-scheduling"
       },
       {
-        "created_at": "2026-09-21T23:13:28Z",
+        "created_at": "2026-09-22T00:10:50Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -253,7 +258,7 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-da23d134eec9",
+        "task_id": "task-421bb07c5dc3",
         "topic_id": "topic-search-and-sorting-strategy"
       }
     ]
@@ -262,6 +267,8 @@
     "/home/user/SelfLearn/docs/static/style.css",
     "/home/user/SelfLearn/docs/static/app.js",
     "/home/user/SelfLearn/docs/.nojekyll",
+    "/home/user/SelfLearn/index.html",
+    "/home/user/SelfLearn/.nojekyll",
     "/home/user/SelfLearn/docs/index.html",
     "/home/user/SelfLearn/docs/library.html",
     "/home/user/SelfLearn/docs/sources.html",
@@ -287,7 +294,7 @@
     "/home/user/SelfLearn/docs/data/experiments.json",
     "/home/user/SelfLearn/docs/data/meta.json"
   ],
-  "run_id": "run-538d83841b75",
+  "run_id": "run-ea9b18aa72fa",
   "sources": {
     "checked": 17,
     "credential_required": [],

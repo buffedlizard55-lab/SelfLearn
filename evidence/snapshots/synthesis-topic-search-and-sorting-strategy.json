@@ -1,0 +1,113 @@
+{
+  "citations": {
+    "cl-2588110c9cb2": [
+      "cl-17e31e8a0271",
+      "cl-31828a6e4dbc",
+      "cl-34c53c350fbf",
+      "cl-79f952e8dc74",
+      "cl-7b5d83737c5f",
+      "cl-ccb33f2f4846"
+    ],
+    "cl-496c070074d2": [
+      "cl-295619da6666",
+      "cl-3c29257be308",
+      "cl-4bade2ba90ed",
+      "cl-567fb74f7476",
+      "cl-581df6082d26",
+      "cl-707a4ac5eced",
+      "cl-d22d711e7580",
+      "cl-d94f53b607bd",
+      "cl-ea90950f6fcb",
+      "cl-fe816a23a586"
+    ],
+    "cl-74df5dc9ae7c": [
+      "cl-0d4bd100b1d3",
+      "cl-20283298712b",
+      "cl-31828a6e4dbc",
+      "cl-3ebc66cc9362",
+      "cl-4439bb25ba6c",
+      "cl-538a326f671d",
+      "cl-587bc77ee0dc",
+      "cl-649ef2b67375",
+      "cl-69ae7eed4d60",
+      "cl-707a4ac5eced",
+      "cl-7765424281c9",
+      "cl-79f952e8dc74",
+      "cl-81e7fb53d180",
+      "cl-8b227d37130a",
+      "cl-91a0e539a726",
+      "cl-ab39c3f362d3",
+      "cl-ccb33f2f4846"
+    ],
+    "cl-811a41fd023d": [
+      "cl-17e31e8a0271",
+      "cl-31828a6e4dbc",
+      "cl-3c29257be308",
+      "cl-4439bb25ba6c",
+      "cl-538a326f671d",
+      "cl-587bc77ee0dc",
+      "cl-69ae7eed4d60",
+      "cl-707a4ac5eced",
+      "cl-79f952e8dc74"
+    ],
+    "cl-bbffbec2b35a": [
+      "cl-17e31e8a0271",
+      "cl-69ae7eed4d60"
+    ],
+    "cl-fcc47bd24686": [
+      "cl-538a326f671d",
+      "cl-17e31e8a0271"
+    ]
+  },
+  "claim_ids": [
+    "cl-74df5dc9ae7c",
+    "cl-496c070074d2",
+    "cl-2588110c9cb2",
+    "cl-fcc47bd24686",
+    "cl-bbffbec2b35a",
+    "cl-811a41fd023d"
+  ],
+  "content_hash": "sha256:1a84ce2a33d4befcd346d52d33164cd6d2f1a79ca49de4e5f2bf069489304fd9",
+  "context_numbers": {
+    "cl-2588110c9cb2": [
+      "1",
+      "4",
+      "1"
+    ],
+    "cl-496c070074d2": [
+      "05",
+      "3",
+      "1"
+    ],
+    "cl-74df5dc9ae7c": [
+      "0",
+      "9",
+      "1"
+    ],
+    "cl-811a41fd023d": [
+      "9",
+      "1",
+      "0",
+      "11"
+    ],
+    "cl-bbffbec2b35a": [
+      "01",
+      "02"
+    ],
+    "cl-fcc47bd24686": [
+      "0",
+      "1"
+    ]
+  },
+  "evidence_class": "reproduced_experiment",
+  "evidence_id": "synthesis-topic-search-and-sorting-strategy",
+  "evidence_rank": 2,
+  "is_fixture": false,
+  "is_live": true,
+  "source_id": "selflearn_synthesis",
+  "source_name": "Cross-document synthesis of cited claims",
+  "text": "Source: cross-document synthesis for topic-search-and-sorting-strategy\nQuestion: For the sorting and search strategies in common use, how do measured comparison counts compare with the stated bounds, and where does the choice change the outcome?\nThese statements combine figures that were already verified in the documents cited below.\nNo figure was averaged, summed or otherwise computed; a statement needing arithmetic is not written.\nStatements, their citations and the figures each was allowed to use:\ncl-74df5dc9ae7c [agreement] cites cl-0d4bd100b1d3, cl-20283298712b, cl-31828a6e4dbc, cl-3ebc66cc9362, cl-4439bb25ba6c, cl-538a326f671d, cl-587bc77ee0dc, cl-649ef2b67375, cl-69ae7eed4d60, cl-707a4ac5eced, cl-7765424281c9, cl-79f952e8dc74, cl-81e7fb53d180, cl-8b227d37130a, cl-91a0e539a726, cl-ab39c3f362d3, cl-ccb33f2f4846; allowed figures: 0, 9, 1\ncl-496c070074d2 [agreement] cites cl-295619da6666, cl-3c29257be308, cl-4bade2ba90ed, cl-567fb74f7476, cl-581df6082d26, cl-707a4ac5eced, cl-d22d711e7580, cl-d94f53b607bd, cl-ea90950f6fcb, cl-fe816a23a586; allowed figures: 05, 3, 1\ncl-2588110c9cb2 [agreement] cites cl-17e31e8a0271, cl-31828a6e4dbc, cl-34c53c350fbf, cl-79f952e8dc74, cl-7b5d83737c5f, cl-ccb33f2f4846; allowed figures: 1, 4, 1\ncl-fcc47bd24686 [divergence] cites cl-538a326f671d, cl-17e31e8a0271; allowed figures: 0, 1\ncl-bbffbec2b35a [divergence] cites cl-17e31e8a0271, cl-69ae7eed4d60; allowed figures: 01, 02\ncl-811a41fd023d [range] cites cl-17e31e8a0271, cl-31828a6e4dbc, cl-3c29257be308, cl-4439bb25ba6c, cl-538a326f671d, cl-587bc77ee0dc, cl-69ae7eed4d60, cl-707a4ac5eced, cl-79f952e8dc74; allowed figures: 9, 1, 0, 11",
+  "title": "Cross-document synthesis for Sorting and search strategies: which is most efficient in practice, and how does the choice scale?",
+  "url": "",
+  "written_at": "2026-09-22T00:03:49Z"
+}

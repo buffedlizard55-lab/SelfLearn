@@ -298,15 +298,18 @@
   },
   {
     "evidence": [
+      "docs/SOURCES.md",
+      "selflearn/fetch/changes.py",
       "selflearn/fetch/registry.py",
-      "selflearn/fetch/sources.py"
+      "selflearn/fetch/sources.py",
+      "tests/test_layers.py"
     ],
-    "gap": "Retrieval is driven by a question rather than by a change feed. A change-detection pass (fetch the same query twice and diff) is designed and listed in the roadmap; no scheduled diffing exists yet.",
-    "how_to_verify": "The register covers literature, government statistics, software, biology, chemistry and security; each adapter queries its API for the question at hand.",
+    "gap": "The remaining registered sources publish no documented change filter and are polled question by question; they are reported as having no change filter rather than as unchanged.",
+    "how_to_verify": "The register holds 36 machine-readable sources. Five of them publish a documented change filter (Crossref from-index-date, arXiv sortBy=submittedDate, GitHub pushed:>=, NVD lastModStartDate/lastModEndDate, USGS starttime/endtime) and selflearn/fetch/changes.py polls only those, recording the window used. Run 'python3 -m selflearn scan --offline' to see the five mechanisms, their endpoints and the operator documentation URL for each; the parameter names are pinned by tests/test_layers.py::ChangeScanTests.",
     "id": "D-01",
     "requirement": "A world scanner that monitors papers, repositories, government datasets, filings, patents and feeds, and asks what changed.",
     "source": "design document",
-    "status": "partial"
+    "status": "implemented"
   },
   {
     "evidence": [
@@ -428,11 +431,14 @@
   },
   {
     "evidence": [
+      "docs/index.html",
       "selflearn/think/discovery.py",
-      "selflearn/think/manager.py"
+      "selflearn/think/invention.py",
+      "selflearn/think/manager.py",
+      "tests/test_layers.py"
     ],
-    "gap": "No crawler adds brand-new topics on its own; candidate topics come from the seed file plus question derivation. Adding an automated topic proposer is the next step in the roadmap.",
-    "how_to_verify": "The scoring function is implemented with each component computed from retrieved metadata, and every unmeasurable component is reported instead of defaulted.",
+    "gap": "The candidate pool is the documents this engine has retrieved, not an open scan of the web, so 'novel' means novel to this library. That narrowing is published wherever a proposal appears.",
+    "how_to_verify": "selflearn/think/invention.py scores candidates as novelty x importance x potential with three gates (>=2 documents, novelty >= 0.5, total >= 0.45, at most 3 promotions per cycle). Every candidate, accepted or rejected, is published on the index page with its components and the reason. tests/test_layers.py::InventionTests covers the gates and the scaffolding regression.",
     "id": "D-12",
     "requirement": "Trending-topic discovery: scan, detect emerging topics, score novelty, importance and research potential, select projects.",
     "source": "design document",
@@ -577,5 +583,107 @@
     "requirement": "Provide links to official, verifiable sources for manual review.",
     "source": "user brief",
     "status": "implemented"
+  },
+  {
+    "evidence": [
+      "selflearn/fetch/registry.py",
+      "selflearn/fetch/sources.py",
+      "docs/SOURCES.md",
+      "tests/test_layers.py"
+    ],
+    "gap": "No live call has been made: no ODP key is configured in this repository, so the adapter is proven against the operator's documented shapes, not against a real response.",
+    "how_to_verify": "The register now points at https://api.uspto.gov/api/v1 with key USPTO_ODP_API_KEY. UsptoOdpSource issues GET /patent/applications/search?q=...&limit=N and GET /datasets/products/search?productTitle=..., both with the X-API-KEY header. The bulk-products response is parsed with the field names the operator publishes; any other shape is stored verbatim. Run: python3 -m unittest tests.test_layers.UsptoOdpAdapterTests -v. The migration facts and their official URLs are listed in docs/SOURCES.md item 1 under 'Flagged for review'.",
+    "id": "R-28",
+    "requirement": "Repair the PatentsView adapter against official sources, and close the flag with a note rather than deleting it.",
+    "source": "roadmap item 3 / user brief",
+    "status": "implemented"
+  },
+  {
+    "evidence": [
+      "selflearn/learn/substance.py",
+      "selflearn/publish/report.py",
+      "selflearn/publish/site.py",
+      "docs/method.html",
+      "tests/test_layers.py"
+    ],
+    "gap": "The rule is lexical. Dense prose without a digit scores as metadata, and a claim reciting a number scores as substantive. It orders reading and labels; it never overrides a verification verdict.",
+    "how_to_verify": "Eight features with published weights summing to 1 (quantity, date, comparison, mechanism, caveat, specificity, verification, evidence) produce a score and one of three labels. Topic pages order claims by it and show the label in the facts table; the index page reports the library-wide split; the method page prints the rule. Run: python3 -m unittest tests.test_layers.SubstanceRuleTests -v, which includes the test that an unsupported claim can never outrank an equivalent supported one.",
+    "id": "R-29",
+    "requirement": "A substance filter so quantified claims lead and metadata is labelled honestly.",
+    "source": "roadmap item 4 / user brief",
+    "status": "implemented"
+  },
+  {
+    "evidence": [
+      "selflearn/learn/synthesis.py",
+      "selflearn/verify/verifier.py",
+      "selflearn/verify/audit.py",
+      "selflearn/loop.py",
+      "tests/test_layers.py"
+    ],
+    "gap": "Units are matched by the word that followed the number, so two sources using one word for different measures could be combined; those statements are published as needing review and no averaging is ever performed.",
+    "how_to_verify": "claim_kind='synthesis' statements cite the direct claims they were built from, may contain only figures present in those claims plus the recorded document and source counts, and are rejected outright if verify_synthesis does not support them. The audit recomputes each one from its citations and raises an error if a cited claim has gone or the recomputation disagrees. Run: python3 -m unittest tests.test_layers.SynthesisTests -v; the test_a_figure_absent_from_the_citations_is_rejected case proves an invented average is refused.",
+    "id": "R-30",
+    "requirement": "Cross-document synthesis using the existing derived-claim machinery, with the same discipline.",
+    "source": "roadmap item 5 / user brief",
+    "status": "implemented"
+  },
+  {
+    "evidence": [
+      "selflearn/fetch/changes.py",
+      "selflearn/cli.py",
+      ".github/workflows/research-loop.yml",
+      "docs/SOURCES.md",
+      "tests/test_layers.py"
+    ],
+    "gap": "Not yet observed against live sources from this repository: the sandbox used for this build reaches only the GitHub hosts. Items published in a window the engine could not reach appear as new on a later run, attributed to the wrong window.",
+    "how_to_verify": "Five mechanisms, each with the operator's documentation URL published beside it. 'python3 -m selflearn scan' reports the window, the request, the items returned and the items not seen before; '--discover' turns new items into questions; the scheduled workflow runs it every cycle. Run: python3 -m unittest tests.test_layers.ChangeScanTests -v to see every parameter name pinned to its documented form.",
+    "id": "R-31",
+    "requirement": "Change-driven scanning using only filters the operators document.",
+    "source": "roadmap item 6 / design section 1",
+    "status": "implemented"
+  },
+  {
+    "evidence": [
+      "selflearn/think/invention.py",
+      "selflearn/loop.py",
+      "docs/index.html",
+      "tools/reject_topic.py",
+      "tests/test_layers.py"
+    ],
+    "gap": "The candidate pool is the engine's own retrieval, not an open crawl of the web, so 'novel' means novel to this library. Seed topics remain human-authored.",
+    "how_to_verify": "Candidates are phrases recurring in at least two retrieved documents' own prose, scored as novelty x importance x potential, gated on >=2 documents, novelty >= 0.5 and total >= 0.45, at most three promotions per cycle. Accepted and rejected candidates are both published with their components. Run: python3 -m unittest tests.test_layers.InventionTests -v, including the regression test that the engine's own scaffolding never becomes a candidate.",
+    "id": "R-32",
+    "requirement": "Topic invention from a scan, with published score components and provenance.",
+    "source": "roadmap item 7 / design section 12",
+    "status": "partial"
+  },
+  {
+    "evidence": [
+      "tools/verify_links.py",
+      "reports/link_check.json",
+      "docs/SOURCES.md",
+      ".github/workflows/tests.yml"
+    ],
+    "gap": "The tool proves a link resolves and where it lands; it does not assert anything about the page's content. Content-level verification of the operator statements used in this session is recorded by hand in docs/SOURCES.md with the date.",
+    "how_to_verify": "tools/verify_links.py resolves every URL in the register, the change mechanisms and the repository prose, and writes reports/link_check.json with the status, the URL after redirects and the error for each. The CI workflow runs it on GitHub's runners, where egress is unrestricted, and prints a summary. From a sandbox with limited egress the report records 'unreachable' with the transport error, which is distinguishable from a 404.",
+    "id": "R-33",
+    "requirement": "Verify links line by line from official sources and publish them for manual review.",
+    "source": "user brief",
+    "status": "implemented"
+  },
+  {
+    "evidence": [
+      "tools/reject_topic.py",
+      "selflearn/verify/audit.py",
+      "library/irregularities.jsonl",
+      "docs/review.html"
+    ],
+    "gap": "There is no equivalent resolution record for an irregularity or a contradiction yet; a contradiction's resolution field still has to be written by hand.",
+    "how_to_verify": "Every finding is written to library/irregularities.jsonl and rendered on the review page. 'python3 tools/reject_topic.py --id <topic_id> --reason ...' appends a rejected record for the same primary key with a timestamp, a reason and an optional link, and records an info irregularity that a reviewer acted; the original record stays in the stream. Seven topics proposed from the engine's own scaffolding were closed this way on 2026-09-21.",
+    "id": "R-34",
+    "requirement": "Flag irregularities for review, and let a reviewer close one without destroying the record.",
+    "source": "user brief",
+    "status": "partial"
   }
 ]

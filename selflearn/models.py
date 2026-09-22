@@ -86,8 +86,21 @@ class Claim:
     # are statements the engine computes about its own library; they are verified
     # against the engine's own numbers (context_numbers) rather than a document,
     # and they are exempt from the source-link check for that reason.
+    # "synthesis" claims combine figures that appear in two or more *documents*:
+    # they cite the direct claims they were built from (cited_claim_ids), and every
+    # figure they contain must appear in one of those claims or in the counts the
+    # engine computed alongside them (context_numbers).
     claim_kind: str = "direct"
     context_numbers: list[str] = field(default_factory=list)
+    cited_claim_ids: list[str] = field(default_factory=list)
+    # Output of the published substance rule (selflearn.learn.substance). It is a
+    # reading aid, never a verdict: the verification record above decides support.
+    substance: dict[str, Any] = field(default_factory=dict)
+    # Non-empty when a later cycle would no longer produce this statement, because
+    # the rule that composed it changed or a claim it cited is gone. The record is
+    # never deleted - the streams are append-only - but a superseded statement is
+    # not published as a current one, and the reason is stored here.
+    superseded: str = ""
     recorded_at: str = field(default_factory=utcnow_iso)
     limitations: str = ""
 

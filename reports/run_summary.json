@@ -1,27 +1,211 @@
 {
+  "change_scan": {
+    "by_status": {
+      "scanned": 1,
+      "unreachable": 4
+    },
+    "generated_at": "2026-09-22T00:10:55Z",
+    "items_new": 4,
+    "items_seen": 5,
+    "run_id": "run-ea9b18aa72fa",
+    "scans": [
+      {
+        "detail": "export.arxiv.org unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+        "docs_url": "https://info.arxiv.org/help/api/user-manual.html",
+        "items_new": 0,
+        "items_seen": 0,
+        "mechanism": "Results sorted by submission date, newest first",
+        "new_items": [],
+        "request_params": {
+          "max_results": 5,
+          "search_query": "all:autonomous agent",
+          "sortBy": "submittedDate",
+          "sortOrder": "descending",
+          "start": 0
+        },
+        "request_url": "https://export.arxiv.org/api/query",
+        "source_id": "arxiv",
+        "source_name": "arXiv API",
+        "status": "unreachable",
+        "window": {
+          "days": 7,
+          "first_scan": true,
+          "since": "2026-09-15",
+          "until": "2026-09-22"
+        }
+      },
+      {
+        "detail": "api.crossref.org unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+        "docs_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
+        "items_new": 0,
+        "items_seen": 0,
+        "mechanism": "Works reindexed at or after the given date",
+        "new_items": [],
+        "request_params": {
+          "filter": "from-index-date:2026-09-15",
+          "mailto": "selflearn@example.invalid",
+          "query": "autonomous agent",
+          "rows": 5,
+          "select": "DOI,title,abstract,URL,issued,container-title,type,publisher,is-referenced-by-count"
+        },
+        "request_url": "https://api.crossref.org/works",
+        "source_id": "crossref",
+        "source_name": "Crossref REST API",
+        "status": "unreachable",
+        "window": {
+          "days": 7,
+          "first_scan": true,
+          "since": "2026-09-15",
+          "until": "2026-09-22"
+        }
+      },
+      {
+        "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 4 not seen by this engine before.",
+        "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
+        "items_new": 4,
+        "items_seen": 5,
+        "mechanism": "Repositories pushed to on or after the given date",
+        "new_items": [
+          {
+            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: DevSwat-ResonantGenesis/RG_Agent_Engine\nThe",
+            "identifier": "https://github.com/DevSwat-ResonantGenesis/RG_Agent_Engine",
+            "published_at": "2026-09-22",
+            "source_id": "github",
+            "title": "DevSwat-ResonantGenesis/RG_Agent_Engine",
+            "url": "https://github.com/DevSwat-ResonantGenesis/RG_Agent_Engine"
+          },
+          {
+            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: f-o-x11/dreaming-press\nThe record for f-o-x",
+            "identifier": "https://github.com/f-o-x11/dreaming-press",
+            "published_at": "2026-09-22",
+            "source_id": "github",
+            "title": "f-o-x11/dreaming-press",
+            "url": "https://github.com/f-o-x11/dreaming-press"
+          },
+          {
+            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: simahanfeng007-lgtm/Tiangongzaowu-V3\nThe re",
+            "identifier": "https://github.com/simahanfeng007-lgtm/Tiangongzaowu-V3",
+            "published_at": "2026-09-22",
+            "source_id": "github",
+            "title": "simahanfeng007-lgtm/Tiangongzaowu-V3",
+            "url": "https://github.com/simahanfeng007-lgtm/Tiangongzaowu-V3"
+          },
+          {
+            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Bandito-coder/hermes-software-agents\nThe re",
+            "identifier": "https://github.com/Bandito-coder/hermes-software-agents",
+            "published_at": "2026-09-22",
+            "source_id": "github",
+            "title": "Bandito-coder/hermes-software-agents",
+            "url": "https://github.com/Bandito-coder/hermes-software-agents"
+          }
+        ],
+        "request_params": {
+          "order": "desc",
+          "per_page": 5,
+          "q": "autonomous agent pushed:>=2026-09-21",
+          "sort": "updated"
+        },
+        "request_url": "https://api.github.com/search/repositories",
+        "source_id": "github",
+        "source_name": "GitHub REST API",
+        "status": "scanned",
+        "window": {
+          "days": 1,
+          "first_scan": false,
+          "since": "2026-09-21",
+          "until": "2026-09-22"
+        }
+      },
+      {
+        "detail": "services.nvd.nist.gov unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+        "docs_url": "https://nvd.nist.gov/developers/vulnerabilities",
+        "items_new": 0,
+        "items_seen": 0,
+        "mechanism": "CVE records last modified inside an explicit window",
+        "new_items": [],
+        "request_params": {
+          "keywordSearch": "autonomous agent",
+          "lastModEndDate": "2026-09-22T00:00:00:000 UTC-00:00",
+          "lastModStartDate": "2026-09-15T00:00:00:000 UTC-00:00",
+          "resultsPerPage": 5
+        },
+        "request_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+        "source_id": "nvd",
+        "source_name": "NIST National Vulnerability Database API",
+        "status": "unreachable",
+        "window": {
+          "days": 7,
+          "first_scan": true,
+          "since": "2026-09-15",
+          "until": "2026-09-22"
+        }
+      },
+      {
+        "detail": "earthquake.usgs.gov unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+        "docs_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
+        "items_new": 0,
+        "items_seen": 0,
+        "mechanism": "Earthquake events inside an explicit time window",
+        "new_items": [],
+        "request_params": {
+          "endtime": "2026-09-22",
+          "format": "geojson",
+          "limit": 5,
+          "orderby": "time",
+          "starttime": "2026-09-15"
+        },
+        "request_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
+        "source_id": "usgs_earthquake",
+        "source_name": "USGS Earthquake Catalog (FDSN event service)",
+        "status": "unreachable",
+        "window": {
+          "days": 7,
+          "first_scan": true,
+          "since": "2026-09-15",
+          "until": "2026-09-22"
+        }
+      }
+    ],
+    "sources_attempted": 5,
+    "sources_scanned": 1,
+    "window_days": 7
+  },
+  "claim_kinds": {
+    "derived": 59,
+    "direct": 123,
+    "synthesis": 0
+  },
   "evidence_rank_mix": {
-    "primary_source": 121,
-    "reproduced_experiment": 20
+    "primary_source": 123,
+    "reproduced_experiment": 83
   },
   "figures": {
-    "claims": 141,
+    "change_scan_new_items": 4,
+    "change_scan_sources": 5,
+    "claims": 206,
     "documents_retrieved": 30,
-    "documents_total": 32,
+    "documents_total": 34,
     "errors": 0,
-    "open_questions": 16,
+    "metadata_claims": 41,
+    "open_questions": 46,
     "sources_polled": 6,
     "sources_reached": 1,
-    "topics": 4,
-    "warnings": 1
+    "substantive_claims": 80,
+    "synthesis_claims": 0,
+    "synthesis_retired": 0,
+    "topics": 11,
+    "topics_promoted": 0,
+    "topics_proposed": 1,
+    "warnings": 17
   },
-  "generated_at": "2026-09-21T23:13:32Z",
+  "generated_at": "2026-09-22T00:10:56Z",
   "irregularities": {
     "by_severity": {
       "error": 0,
-      "info": 0,
-      "warning": 1
+      "info": 13,
+      "warning": 17
     },
-    "total": 1
+    "total": 30
   },
   "mode": "live",
   "registry": {
@@ -74,7 +258,21 @@
     ],
     "total": 36
   },
-  "run_id": "run-538d83841b75",
+  "run_id": "run-ea9b18aa72fa",
+  "substance": {
+    "claims": 206,
+    "dated": 34,
+    "labels": {
+      "descriptive": 85,
+      "metadata": 41,
+      "substantive": 80
+    },
+    "mean_score": 0.4998,
+    "metadata_share": 0.199,
+    "quantified": 162,
+    "quantified_share": 0.7864,
+    "substantive_share": 0.3883
+  },
   "thresholds": {
     "cases": 26,
     "changed": false,
@@ -85,13 +283,43 @@
       "supported": 0.8
     },
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-21T23:13:28Z",
+    "ran_at": "2026-09-22T00:10:50Z",
     "source": "state/calibration.json"
   },
+  "topic_proposals": [
+    {
+      "accepted": false,
+      "components": {
+        "document_spread": 0.4,
+        "evidence_strength": 0.7778,
+        "novelty": 0.0,
+        "open_share": 0.0,
+        "quantified_share": 0.75,
+        "recency": 1.0
+      },
+      "importance": 0.5444,
+      "novel_tokens": [],
+      "novelty": 0.0,
+      "phrase": "virattt dexter",
+      "potential": 0.65,
+      "reason": "Every content word in this phrase is already in the library's vocabulary.",
+      "support_claim_ids": [
+        "cl-1ec591c4bc9f",
+        "cl-20a725b8704c",
+        "cl-6b97dc77dcbd",
+        "cl-fbf303b1b5c7"
+      ],
+      "support_documents": 2,
+      "title": "Virattt dexter",
+      "total": 0.0
+    }
+  ],
   "what_changed": [
-    "Library now holds 141 claim(s) across 4 question(s).",
+    "Library now holds 206 claim(s) across 11 question(s).",
     "This cycle retrieved 30 document(s) from 1 of 6 polled source(s).",
-    "16 open question(s) have been derived from the retrieved evidence.",
-    "0 error(s) and 1 warning(s) are waiting for review."
+    "46 open question(s) have been derived from the retrieved evidence.",
+    "0 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them, and 80 claim(s) scored as substantive while 41 are labelled as registry metadata.",
+    "1 candidate topic(s) were scored from the retrieved documents and 0 promoted; the change scan polled 5 source(s) and found 4 item(s) not seen before.",
+    "0 error(s) and 17 warning(s) are waiting for review."
   ]
 }

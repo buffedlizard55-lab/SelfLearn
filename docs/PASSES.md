@@ -74,6 +74,91 @@ The commands used for the final check, and what they returned:
 | `python3 -m selflearn run --mode fixture --offline`, `--mode snapshot` | both complete and label their evidence mode on every page |
 | `python3 -m selflearn site` | 27 files written, including all seven documents rendered into `documents.html` |
 
+## Pass 4 - the roadmap layers (2026-09-21)
+
+Implemented the next items on the roadmap: the substance filter, cross-document
+synthesis, change-driven scanning, topic invention, and the PatentsView repair. Before
+writing any adapter code, the operator documentation for every endpoint touched was read
+and the parameter names taken from it rather than from memory; each is cited in
+`docs/SOURCES.md`.
+
+| Defect | Evidence | Fix |
+| --- | --- | --- |
+| The PatentsView register entry pointed at an endpoint that no longer serves the API, and the documentation URL redirected to a portal home page | <https://data.uspto.gov/support/transition-guide/patentsview> states the migration date (2026-03-20), that the PatentSearch API has no estimated return, and that old keys are invalid for ODP | The register now points at `https://api.uspto.gov/api/v1` with `USPTO_ODP_API_KEY`; `UsptoOdpSource` queries the two documented endpoints; the flag is closed with the operator's statements rather than deleted |
+| Raw-response evidence ids were built from `hash()` of the URL | `hash()` is salted per process, so the same document would be stored again under a new evidence id every run | `raw_identifier()` derives the id from a sha256 of the rendered text; a test asserts stability |
+| Topic invention proposed seven topics out of the engine's own scaffolding ("Sentence below names", "Adoption signal") | the first live run published them; the phrase recurs in every document because the adapters write it | Candidates are drawn only from a source's own prose: scaffolding is stripped, field-label lines and raw `path = value` dumps are excluded, the engine's own records are skipped, and a regression test pins it |
+| A synthesis statement could in principle quote a digit from a source *name* ("ClinicalTrials.gov API v2") | reading the composed sentence | Source names are kept out of the sentence entirely and rendered as citations instead, so every figure in a synthesis statement comes from a cited document |
+| The scan window was one day longer than requested | `scan_window(None, max_days=7)` returned 8 | The day count is computed from the elapsed interval only when there is a previous scan; the first scan uses the requested look-back, and the report says it is a look-back |
+
+## Pass 5 - review of pass 4
+
+| Defect | Evidence | Fix |
+| --- | --- | --- |
+| The invention layer had no defence against the engine studying its own vocabulary | the seven rejected topics above | Provenance is published with every proposal, rejected candidates are published with the reason, and `tools/reject_topic.py` lets a reviewer close one without destroying the record; the seven were closed that way and the reason is stored on each |
+| The site had no way to show a claim's substance or a synthesis statement's citations | reading the rendered topic page | The facts table gained a Substance column with the label and score, each claim expands to its weighted components, and a new Cross-document synthesis section lists every cited claim with its own verdict and link |
+| Old claims had no substance record, so pages built from the stored library would show empty cells | `python3 -m selflearn site` on the pre-existing library | `ensure_substance()` scores any claim without a stored record at render time, so the published score always comes from the rule in force |
+| The link check died without writing its report when its output was piped | running `tools/verify_links.py \| head` | The report is written before any long output is printed, and the tool is invoked in CI without a pipe |
+| The engine's own experiment records entered the topic candidate pool | `source_ids present: ['github', 'selflearn_experiment']` | Records whose `source_id` starts with `selflearn`, and fixture records, are excluded from the candidate pool |
+
+## Pass 6 - re-check against the brief
+
+Every claim about this session's work was re-derived by running the code rather than
+by reading it. The commands used and what they returned are in the table below; the
+same commands can be re-run in the order given.
+
+| Command | Result |
+| --- | --- |
+| `python3 -m unittest discover -s tests -t . -p "test_*.py"` | 107 tests, all passing (66 before this session, 41 added) |
+| `python3 -m selflearn audit` | 206 claims re-checked against 34 stored documents, 0 errors, 0 warnings, 1 info finding (the 24 superseded statements, excluded from re-verification by design) |
+| `python3 -m selflearn run --mode live` | one complete cycle, exit 0, run `run-ea9b18aa72fa`, 1 of 6 polled sources reachable from this sandbox |
+| `python3 -m selflearn scan --offline` | five mechanisms reported with their windows, none polled, no items claimed as new |
+| `python3 -m selflearn credentials` | 4 keyed sources, 0 enabled, each with the operator's key page |
+| `python3 tools/verify_links.py` | 108 unique URLs: 22 resolved (the GitHub hosts this sandbox can reach), 86 recorded `unreachable` with the transport error |
+| `python3 tools/reject_topic.py --id ...` | seven scaffolding-derived topics closed with a stored reason |
+| `python3 -m selflearn site` | 29 files written; 0 current cross-document statements published, 24 retired ones listed with the reason on the pages that carried them |
+
+The numbers above are re-derived on every cycle rather than typed once. `reports/run_summary.json`
+from the run named in the table is the machine-readable copy of the same figures, and the
+narrative guard in `selflearn/loop.py` rejects any summary sentence containing a figure that is
+not in that dictionary.
+
+## Pass 7 - the defect found in the engine's own published output
+
+Pass 6 verified that the engine ran and that its numbers were consistent. It did not read the
+sentences the engine had written. Reading them found a false statement on a published page:
+
+> "Two documents disagree about a value expressed in stargazer: one reports 02 and the other
+> reports 04."
+
+The statement was *verifiable* and false. Both digits do appear in the claims it cited, so the
+verification gate passed; what it did not check is what the digits meant. They were the day and
+the hour of two ISO timestamps in two GitHub records for two unrelated repositories.
+
+| Defect | Evidence | Fix |
+| --- | --- | --- |
+| The synthesis figure extractor read the components of ISO dates and times as quantities | `figures_with_units("pushed_at 2026-08-02T01:55:40Z, stargazers_count 37459")` returned `2026`, `08`, `02`, `55`, `40` as measured values | `_DATE_TIME_RE` strips ISO dates, timestamps and bare years in 1600-2199 before figures are extracted; the same input now returns `37459` and `2490` only |
+| A figure took its unit from the *following* word, which in a rendered field list is the next field's label | the same call returned `37459` labelled `fork` | Adapters render fields as `label value`, so a label immediately before a number (recognised by the underscore the API gave it) is used as the unit; `37459` is now `stargazers_count` |
+| "Agreement" was declared between claims from one operator | with only GitHub reachable, every agreement statement compared one source's records to itself | `MIN_SOURCES_FOR_SYNTHESIS = 2`: an agreement or range statement needs at least two distinct `source_name` values, not just two documents |
+| "Disagreement" was declared between unrelated subjects | the two cited claims described different repositories that shared no measured quantity | `_shares_subject()` requires at least one shared content word, computed after `strip_rendered_labels()` removes the adapters' field rendering, so "record", "reports" and field labels cannot count as a subject |
+| A corrected rule left the old statements published, because the streams are append-only | `library/claims.jsonl` still held all 24 statements composed by the buggy extractor | `Claim.superseded` and `loop.retire_stale_synthesis`: a statement the current rules no longer produce is marked with a reason, excluded from the facts and synthesis sections, excluded from the audit's re-verification, and listed under "Retired statements" on the page that carried it. All 24 were retired this way; none was deleted |
+
+The honest consequence: with one reachable source, the synthesis layer now composes **zero**
+statements. That is the correct result for this corpus - there is no second source to agree or
+disagree with, and no shared subject between two registry records - and the site says so on every
+topic page instead of manufacturing a comparison. Six tests cover the regression:
+`test_date_fragments_are_never_read_as_quantities`,
+`test_a_field_label_preceding_a_number_is_its_unit`,
+`test_one_operator_repeating_a_figure_is_not_agreement`,
+`test_two_unrelated_records_are_not_described_as_disagreeing`,
+`test_the_same_subject_measured_differently_by_two_sources_is_a_divergence` and
+`test_a_withdrawn_statement_is_retired_not_deleted`.
+
+The wider lesson, recorded here because it applies to every future layer: passing the verification
+gate proves that a statement's figures exist in the evidence. It does not prove the statement is
+*about* what it appears to be about. Anything that composes new sentences from old ones needs a
+semantic gate of its own, and the gate has to be written before the layer is published, not after
+a reader notices.
+
 ## Known remaining defects and gaps
 
 These are open, published, and are the honest answer to "what is still wrong":
@@ -83,11 +168,15 @@ These are open, published, and are the honest answer to "what is still wrong":
    matter of the question. This is a consequence of egress, not of the verifier.
 2. **Unit substitution is undetectable.** Labelled case `c23` documents it and is
    excluded from calibration with a recorded reason.
-3. **PatentsView's endpoint has moved** and the adapter has not been updated.
+3. **PatentsView's endpoint has moved** - resolved this session: the adapter now targets
+   the USPTO Open Data Portal, proven against the operator's documented request and
+   response shapes, but not yet against a live response, because no key is configured.
 4. **No keyed source has ever been polled**, because no key is present in this
-   environment.
-5. **New topics are seeded.** Question derivation is automatic; topic invention from an
-   open scan of the web is not implemented (design section 12, marked partial).
+   environment. `python3 -m selflearn credentials` lists exactly which are missing and
+   where each free key is issued.
+5. **New topics are proposed from the engine's own retrieval.** Invention is implemented
+   and gated, but the candidate pool is what the engine has retrieved, not an open crawl
+   of the web, so section 12 of the design document stays marked partial.
 6. **The store never compacts.** Append-only streams grow without pruning.
 7. **Two of the four experiment families ran in the published cycle.** The catalogue
    holds four; two are matched to the questions the manager chose.

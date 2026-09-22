@@ -96,6 +96,18 @@ def class_badge(rank: int, label: str) -> str:
     return badge(f"{rank}. {label}", kind)
 
 
+def substance_badge(claim: dict[str, Any]) -> str:
+    """The published substance label, with its score, for one claim row."""
+    substance = claim.get("substance") or {}
+    label = substance.get("label", "")
+    if not label:
+        return '<span class="muted">unscored</span>'
+    kind = {"substantive": "ok", "descriptive": "", "metadata": "warn"}.get(label, "")
+    total = substance.get("total")
+    text = label if total is None else f"{label} {total:.2f}"
+    return badge(text, kind)
+
+
 def confidence_badge(confidence: str) -> str:
     kind = {"high": "ok", "medium": "info", "low": "warn", "unknown": ""}.get(confidence, "")
     return badge(confidence, kind)
@@ -290,6 +302,65 @@ site is asserted on the basis of a language model's memory.</div>
         for row in leaderboard[:12]
     ]
 
+    substance_stats = data.get("substance", {}) or {}
+    labels = substance_stats.get("labels", {}) or {}
+    substance_rule = data.get("substance_rule", {}) or {}
+    cutoffs = substance_rule.get("cutoffs") or {}
+    substance_html = (
+        f"""<div class="grid four">
+{stat(substance_stats.get('claims', 0), 'claims scored')}
+{stat(labels.get('substantive', 0), f"substantive (>= {esc(cutoffs.get('substantive'))})")}
+{stat(labels.get('descriptive', 0), 'descriptive')}
+{stat(labels.get('metadata', 0), f"registry metadata (< {esc(cutoffs.get('metadata'))})")}
+</div>"""
+        + f"<p class='small muted'>Mean substance score {esc(substance_stats.get('mean_score'))}; "
+        f"{substance_stats.get('quantified', 0)} claim(s) carry a quantity and {substance_stats.get('dated', 0)} carry "
+        f"a date or year. Where the metadata share is high it is because only registry-style sources were reachable, "
+        f"not because the verifier accepted thin claims: see the {rel('sources.html', 'sources page')}.</p>"
+    )
+
+    proposals = data.get("topic_proposals", []) or []
+    proposal_rows = [
+        [
+            badge("promoted" if row.get("accepted") else "not promoted", "ok" if row.get("accepted") else ""),
+            esc(row.get("title", "")),
+            f'<span class="num">{esc(row.get("novelty"))}</span>',
+            f'<span class="num">{esc(row.get("importance"))}</span>',
+            f'<span class="num">{esc(row.get("potential"))}</span>',
+            f'<span class="num">{esc(row.get("total"))}</span>',
+            f'<span class="num">{esc(row.get("support_documents", 0))}</span>',
+            esc(row.get("reason", "")),
+        ]
+        for row in proposals
+    ]
+    proposals_html = (
+        table(["Outcome", "Candidate", "Novelty", "Importance", "Potential", "Total", "Docs", "Why"],
+              proposal_rows, sortable=True)
+        if proposal_rows
+        else "<p>No candidate question cleared the promotion gates this cycle. Candidates are proposed only from "
+             "documents the engine actually retrieved, and only when the phrase is new to this library and carried by "
+             "more than one document.</p>"
+    )
+
+    scan = data.get("change_scan", {}) or {}
+    scan_rows = [
+        [
+            f'<span class="mono">{esc(row.get("source_id", ""))}</span>',
+            badge(row.get("status", ""), {"scanned": "ok", "unreachable": "err", "error": "err", "skipped": "warn"}.get(row.get("status", ""), "")),
+            f'<span class="mono small">{esc((row.get("window") or {}).get("since", ""))} &rarr; {esc((row.get("window") or {}).get("until", ""))}</span>',
+            f'<span class="num">{esc(row.get("items_new", 0))}</span>',
+            esc((row.get("detail") or "")[:180]),
+        ]
+        for row in (scan.get("scans") or [])
+    ]
+    scan_html = (
+        table(["Source", "Status", "Window", "New items", "Detail"], scan_rows)
+        if scan_rows
+        else "<p>No change scan is recorded for this run. The scan needs network access to the source it polls; the "
+             "mechanisms and their official documentation are on the "
+             + rel("sources.html", "sources page") + ".</p>"
+    )
+
     body = f"""
 <h1>An autonomous research library that shows its working</h1>
 {intro}
@@ -303,6 +374,18 @@ site is asserted on the basis of a language model's memory.</div>
 
 {section("This cycle", changed_body + f'<p class="small muted">Generation is idempotent: re-running the engine on '
          f'unchanged inputs reproduces the same records and the same page, which is what makes the diffs reviewable.</p>', anchor="cycle")}
+
+{section("Claim substance across the library", substance_html, anchor="substance",
+    note="Verification answers 'is this a span of a document?'. Substance answers 'does it tell me anything?'. The "
+         "second is a published arithmetic rule, printed in full on the method page, and it never overrides the first.")}
+
+{section("Questions the engine proposed for itself", proposals_html, anchor="proposals",
+    note="Scored as novelty x importance x research potential, all computed from retrieved documents. The candidate "
+         "pool is what this engine has retrieved, not an open crawl of the web, so 'novel' means novel to this library.")}
+
+{section("What changed since the last run", scan_html, anchor="scan",
+    note="Polled only through filters each operator documents, with the window used recorded. Items found this way "
+         "become questions, never claims: nothing here has been verified against a document yet.")}
 
 {section("Competition standings", (
     table(["#", "Brief", "Rating", "Wins / matches"], leaderboard_rows,
@@ -428,20 +511,46 @@ def page_topic(topic_data: dict[str, Any], data: dict[str, Any], *, depth: int =
             if claim.get("missing_numbers")
             else ""
         )
+        substance = claim.get("substance") or {}
+        components = substance.get("contributions") or {}
+        component_rows = "".join(
+            f"<li><span class='mono'>{esc(name)}</span>: {esc(round(value, 3))}</li>"
+            for name, value in sorted(components.items())
+        )
+        substance_detail = (
+            f"<p class='small'><strong>Substance {esc(substance.get('total'))} &mdash; "
+            f"{esc(substance.get('label', ''))}.</strong> {esc(substance.get('reason', ''))}</p>"
+            f"<ul class='small'>{component_rows}</ul>"
+            if substance
+            else ""
+        )
+        kind_note = ""
+        if claim.get("claim_kind") == "synthesis":
+            kind_note = (
+                "<p class='small'><strong>Cross-document statement.</strong> Composed from the claims listed in the "
+                "synthesis section below; every figure in it appears in one of them.</p>"
+            )
+        elif claim.get("claim_kind") == "derived":
+            kind_note = (
+                "<p class='small'><strong>Library computation.</strong> A statement about this library's own records, "
+                "not about the world, re-checked from the figures it records.</p>"
+            )
         detail = (
             f"<blockquote>{esc(quote)}<cite>{esc(claim['source_name'])} &middot; {link(claim.get('url'), 'source')} "
             f"&middot; snapshot <span class='mono'>{esc(claim.get('evidence_id'))}</span></cite></blockquote>"
             f"<p class='small'>Coverage {esc(pct(claim.get('coverage')))} &middot; verbatim quote match: "
             f"{'yes' if claim.get('quote_match') else 'no'} &middot; recorded {esc(claim.get('recorded_at'))}</p>"
+            f"{kind_note}{substance_detail}"
             f"{missing}<ul class='small'>{reasons}</ul>"
         )
         fact_rows.append(
             [
                 f'<div id="claim-{esc(claim["claim_id"])}" class="anchor">{esc(claim.get("text", ""))}</div>'
-                + details("Show the quoted span and how it was checked", detail),
+                + details("Show the quoted span, how it was checked, and why it scored this way", detail),
                 esc(claim.get("source_name", "")),
                 class_badge(int(claim.get("evidence_rank", 9)), claim.get("evidence_class_label", "")),
                 verdict_badge(claim.get("verdict", "")),
+                substance_badge(claim),
                 confidence_badge(claim.get("confidence", "")),
                 link(claim.get("url"), "open source"),
             ]
@@ -546,6 +655,63 @@ def page_topic(topic_data: dict[str, Any], data: dict[str, Any], *, depth: int =
         if state != "rejected"
     )
 
+    synthesis = topic_data.get("synthesis", [])
+    synthesis_blocks = []
+    for item in synthesis:
+        citation_rows = [
+            [
+                f'<span class="mono small">{esc(cite.get("claim_id", ""))}</span>',
+                esc(cite.get("text", "")),
+                esc(cite.get("source_name", "")),
+                verdict_badge(cite.get("verdict", "")),
+                link(cite.get("url"), "source"),
+            ]
+            for cite in item.get("citations", [])
+        ]
+        synthesis_blocks.append(
+            f"""<div class="card">
+<p>{esc(item.get('text', ''))}</p>
+<p class="small muted">{esc(item.get('limitations', ''))}</p>
+{details(f"The {len(citation_rows)} claim(s) this was composed from",
+         table(["Claim", "Statement", "Source", "Verification", "Link"], citation_rows)
+         if citation_rows else "<p>No citations recorded.</p>")}
+</div>"""
+        )
+    # -- retired statements ------------------------------------------------
+    # A statement that an earlier cycle published and a later cycle would no
+    # longer produce. It is shown here rather than silently deleted, because a
+    # reader who saw it before is entitled to know what happened to it.
+    retired = topic_data.get("retired", []) or []
+    retired_rows = [
+        [
+            f'<div id="claim-{esc(item.get("claim_id", ""))}" class="anchor">{esc(item.get("text", ""))}</div>',
+            badge(item.get("claim_kind", ""), "info"),
+            esc(item.get("superseded", "")),
+            esc(item.get("recorded_at", "")),
+        ]
+        for item in retired
+    ]
+    retired_html = (
+        table(["Statement that was retired", "Kind", "Why", "First published"], retired_rows)
+        if retired_rows
+        else ""
+    )
+
+    substance_stats = topic_data.get("substance", {}) or {}
+    substance_note = (
+        f"Of the {substance_stats.get('claims', 0)} claim(s) on this page, "
+        f"{(substance_stats.get('labels') or {}).get('substantive', 0)} scored as substantive, "
+        f"{(substance_stats.get('labels') or {}).get('descriptive', 0)} as descriptive and "
+        f"{(substance_stats.get('labels') or {}).get('metadata', 0)} as registry metadata."
+    )
+    synthesis_html = (
+        ("".join(synthesis_blocks) if synthesis_blocks else
+         "<p>No cross-document statement could be composed for this question yet. That happens when the verified "
+         "claims come from a single document, or when no figure is shared or comparable between two of them.</p>")
+        + f"<p class='small muted'>{esc(substance_note)} The scoring rule is published on the "
+        f"{rel('../method.html' if depth else 'method.html', 'method page')}.</p>"
+    )
+
     body = f"""
 <h1>{esc(meta.get('title', ''))}</h1>
 <p class="lede">{esc(meta.get('question', ''))}</p>
@@ -565,11 +731,25 @@ def page_topic(topic_data: dict[str, Any], data: dict[str, Any], *, depth: int =
 
 {section("What we do not know", unknown_html, anchor="unknowns")}
 
-{section("Verified facts", (table(["Statement", "Source", "Evidence class", "Verification", "Confidence", "Link"], fact_rows, sortable=True)
+{section("Verified facts", (table(["Statement", "Source", "Evidence class", "Verification", "Substance", "Confidence", "Link"], fact_rows, sortable=True)
         if fact_rows else "<p>No claims have been recorded for this question yet.</p>"),
         anchor="facts",
-        note="A statement is listed here only if it passed the verification check described on the method page. Claims that "
-             "failed stay in the library and appear on the review page.")}
+        note="Ordered most substantive first: a claim carrying a quantity, a period or a mechanism leads, and registry "
+             "metadata is labelled as such rather than dressed up as a finding. A statement is listed here only if it "
+             "passed the verification check described on the method page; claims that failed stay in the library and "
+             "appear on the review page.")}
+
+{section("Cross-document synthesis", synthesis_html, anchor="synthesis",
+        note="Statements composed from two or more documents at once. Every figure in one of these must already appear "
+             "in a claim it cites, or be a count of documents the engine recorded alongside it: the engine never "
+             "averages, sums or extrapolates, and a statement that would need arithmetic is simply not written.")}
+
+{(section("Retired statements", retired_html, anchor="retired",
+        note="Published in an earlier cycle, then withdrawn because a re-run of the composition rules no longer "
+             "produces them. The library never deletes a record: each statement stays in library/claims.jsonl with "
+             "the reason below, and it is excluded from the current facts and synthesis sections and from the audit's "
+             "re-verification.")
+        if retired_rows else "")}
 
 {section("Competing answers", "".join(scorecard_blocks) if scorecard_blocks else "<p>No candidates have been generated yet.</p>",
         anchor="competition",
@@ -635,6 +815,69 @@ def page_sources(data: dict[str, Any], *, depth: int = 0) -> str:
             ]
         )
 
+    mechanisms = data.get("change_mechanisms", []) or []
+    mechanism_rows = [
+        [
+            f'<span class="mono">{esc(row.get("source_id", ""))}</span>',
+            esc(row.get("label", "")),
+            f'<span class="mono small">{esc(row.get("endpoint", ""))}</span>',
+            link(row.get("docs_url"), "official documentation"),
+            esc(row.get("note", "")),
+        ]
+        for row in mechanisms
+    ]
+    scan = data.get("change_scan", {}) or {}
+    scan_rows = []
+    for row in scan.get("scans", []) or []:
+        window = row.get("window", {}) or {}
+        scan_rows.append(
+            [
+                f'<span class="mono">{esc(row.get("source_id", ""))}</span>',
+                badge(
+                    row.get("status", ""),
+                    {"scanned": "ok", "unreachable": "err", "error": "err", "skipped": "warn"}.get(row.get("status", ""), ""),
+                ),
+                f'<span class="mono small">{esc(window.get("since", ""))} &rarr; {esc(window.get("until", ""))}</span>'
+                + (badge("first scan", "warn") if window.get("first_scan") else ""),
+                f'<span class="num">{esc(row.get("items_seen", 0))}</span>',
+                f'<span class="num">{esc(row.get("items_new", 0))}</span>',
+                esc(row.get("detail", ""))[:260],
+                f'<span class="mono small">{esc(row.get("request_url", ""))}</span>',
+            ]
+        )
+    scan_items = [
+        item
+        for row in scan.get("scans", []) or []
+        for item in row.get("new_items", []) or []
+    ]
+    scan_item_rows = [
+        [
+            esc(item.get("source_id", "")),
+            link(item.get("url"), esc((item.get("title") or "untitled")[:120]) or "open"),
+            esc(item.get("published_at") or ""),
+            esc((item.get("excerpt") or "")[:220]),
+        ]
+        for item in scan_items[:40]
+    ]
+    scan_stats = (
+        f"Last scan: {esc(scan.get('generated_at', 'not yet run'))} &middot; "
+        f"{scan.get('sources_scanned', 0)} of {scan.get('sources_attempted', 0)} sources polled &middot; "
+        f"{scan.get('items_seen', 0)} items returned &middot; {scan.get('items_new', 0)} not seen before."
+    )
+    change_scan_html = (
+        (table(["Source", "Status", "Window", "Items", "New", "Detail", "Request"], scan_rows, sortable=True)
+         if scan_rows else "<p>No change scan has been recorded yet. Run "
+                          "<span class='mono'>python -m selflearn scan</span> from a host with egress.</p>")
+        + f"<p class='small muted'>{scan_stats}</p>"
+        + (table(["Source", "Item", "Published", "Excerpt"], scan_item_rows,
+                 caption="Items the engine had not recorded before. They become questions, not claims: nothing here "
+                         "has been verified against a document yet.")
+           if scan_item_rows else "")
+        + (table(["Source", "Documented change filter", "Endpoint", "Documentation", "Note"], mechanism_rows,
+                 caption="Each mechanism is a filter published by the operator of the source.")
+           if mechanism_rows else "")
+    )
+
     counts = {
         "total": len(matrix),
         "reached": sum(1 for row in status.values() if row.get("live_status") == "reachable"),
@@ -663,10 +906,17 @@ only for orientation; it is never the grounds for a factual claim.</div>
     rows, sortable=True, caption="Support rate is the share of claims from that source that passed full verification."),
     anchor="register")}
 
+{section("Change scanning: what is new since the last run", change_scan_html, anchor="changes",
+    note="Only sources whose operator documents a change filter are scanned. A source with no documented filter is "
+         "reported as having none rather than being polled and having its whole result set described as new. Each "
+         "mechanism links to the operator's own documentation.")}
+
 {section("What to do about a source that fails", bullet_list([
     "Unreachable sources are reported on the review page with the transport error, so the gap is visible.",
     "A source that repeatedly returns HTTP errors is a candidate for a fix in the adapter, not for silent removal.",
     "Credentials are read from environment variables named in the table. The engine never stores a credential in the repository.",
+    "Run <span class='mono'>python -m selflearn credentials</span> to list every keyed source, whether its variable is "
+    "set, and the operator's own page for requesting one.",
 ]), anchor="failures")}
 """
     return layout("Sources", body, active="sources.html", data=data, depth=depth)
@@ -781,6 +1031,72 @@ def page_method(data: dict[str, Any], *, depth: int = 0) -> str:
             ]
         )
 
+    substance_rule = data.get("substance_rule", {}) or {}
+    substance_weight_rows = [
+        [
+            f'<span class="mono">{esc(name)}</span>',
+            f'<span class="num">{esc(weight)}</span>',
+            esc((substance_rule.get("features") or {}).get(name, "")),
+        ]
+        for name, weight in (substance_rule.get("weights") or {}).items()
+    ]
+    substance_cutoffs = substance_rule.get("cutoffs") or {}
+    substance_label_rows = [
+        [badge(name, {"substantive": "ok", "descriptive": "", "metadata": "warn"}.get(name, "")), esc(text)]
+        for name, text in (substance_rule.get("labels") or {}).items()
+    ]
+    substance_stats = data.get("substance", {}) or {}
+    substance_rule_html = (
+        table(["Feature", "Weight", "What it tests"], substance_weight_rows,
+              caption="Weights sum to 1, so the score reads directly as a share of the maximum.")
+        + table(["Label", "Meaning"], substance_label_rows,
+                caption=f"Cut-offs: substantive at {esc(substance_cutoffs.get('substantive'))} and above, "
+                        f"metadata below {esc(substance_cutoffs.get('metadata'))}.")
+        + f"<p class='small muted'>{esc(substance_rule.get('note', ''))} This run: "
+        f"{substance_stats.get('claims', 0)} claim(s) scored, "
+        f"{(substance_stats.get('labels') or {}).get('substantive', 0)} substantive, "
+        f"{(substance_stats.get('labels') or {}).get('descriptive', 0)} descriptive, "
+        f"{(substance_stats.get('labels') or {}).get('metadata', 0)} metadata; mean score "
+        f"{esc(substance_stats.get('mean_score'))}.</p>"
+    )
+
+    synthesis_rule_html = """
+<ol>
+<li>Only claims that already passed verification against their own document take part, and only direct quotations -
+never the engine's own computed statistics.</li>
+<li>A statement must cite at least two <em>documents</em>. Two claims from one document are not a cross-document
+statement, and none is written.</li>
+<li>Every figure in the statement must appear in one of the cited claims, or be a count of documents or sources the
+engine computed and recorded beside the statement. There is no averaging, no summing, no extrapolation and no unit
+conversion anywhere in this stage: the arithmetic that would produce such a figure is simply never performed.</li>
+<li>Disagreement is published as disagreement. When two documents carry different values that share a unit word, the
+statement names both figures, says the engine cannot decide, and links both sources.</li>
+<li>The audit recomputes every synthesis statement from its citations on each cycle. If a cited claim is withdrawn or
+edited, the recomputation fails and the finding is raised rather than the statement being quietly kept.</li>
+</ol>
+<p class="small muted">The unit in a range or divergence statement is the word that followed the number in the source
+sentence. Two documents using the same word for different measures would be combined, which is why those statements are
+published as needing review rather than as findings.</p>
+"""
+
+    invention_rule = data.get("invention_rule", {}) or {}
+    invention_gates = invention_rule.get("gates") or {}
+    invention_rule_html = (
+        f"<p><strong>Formula.</strong> <span class='mono'>{esc(invention_rule.get('formula', ''))}</span></p>"
+        + bullet_list([
+            f"<strong>Novelty</strong> &mdash; {esc(invention_rule.get('novelty', ''))}",
+            f"<strong>Importance</strong> &mdash; {esc(invention_rule.get('importance', ''))}",
+            f"<strong>Potential</strong> &mdash; {esc(invention_rule.get('potential', ''))}",
+            f"<strong>Candidate pool</strong> &mdash; {esc(invention_rule.get('candidate_pool', ''))}",
+        ])
+        + table(["Gate", "Value"], [
+            ["Minimum documents carrying the phrase", f'<span class="num">{esc(invention_gates.get("min_documents"))}</span>'],
+            ["Minimum novelty", f'<span class="num">{esc(invention_gates.get("min_novelty"))}</span>'],
+            ["Minimum total score", f'<span class="num">{esc(invention_gates.get("min_total"))}</span>'],
+            ["Maximum promotions per cycle", f'<span class="num">{esc(invention_gates.get("max_promotions_per_cycle"))}</span>'],
+        ], caption="All three gates must hold before a candidate becomes a question.")
+    )
+
     body = f"""
 <h1>Method</h1>
 <p class="lede">Everything the engine does to a document, and everything it is forbidden from doing. If you only read one
@@ -841,6 +1157,18 @@ Selection rule: {esc(calibration.get('objective', 'n/a'))}.</p>
     caption="Weights sum to 1. The total is a weighted mean over the criteria that could be evaluated."),
     anchor="criteria",
     note="Heuristic criteria are labelled so that a reader can discard them. The experimental criterion contributes zero until an experiment exists for the question, which is stated on the question's page.")}
+
+{section("How a claim is judged substantive", substance_rule_html, anchor="substance",
+    note="The score changes reading order and labels metadata. It never changes a verification verdict: a claim that "
+         "failed verification is ranked below an equivalent claim that passed, and nothing is dropped.")}
+
+{section("How a cross-document statement is allowed to be written", synthesis_rule_html, anchor="synthesis-rule")}
+
+{section("How a new question is proposed", invention_rule_html, anchor="invention",
+    note="The candidate pool is what this engine has already retrieved, not an open crawl of the web. 'Novel' means "
+         "novel to this library. That narrowing is published wherever a proposed question appears, because the "
+         "alternative - inventing subjects from the engine's own vocabulary - is the failure mode this project exists "
+         "to avoid.")}
 
 {section("What the critic looks for", table(
     ["Rule", "Type", "Trigger", "Severity"], rule_rows), anchor="critic",

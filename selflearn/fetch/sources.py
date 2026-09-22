@@ -26,7 +26,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from typing import Any, Iterable
 
-from ..util import split_sentences
+from ..util import sha256_text, split_sentences
 from .net import HttpResult, RequestLogEntry  # noqa: F401  (re-export for typing)
 from .registry import REGISTRY, SourceSpec, get_source
 
@@ -149,6 +149,16 @@ def flatten_json(obj: Any, *, prefix: str = "", out: list[str] | None = None, li
         if rendered:
             out.append(f"{prefix} = {rendered}")
     return out
+
+
+def raw_identifier(source_id: str, text: str) -> str:
+    """Stable id for a response the engine stores verbatim.
+
+    Deliberately a content hash and not ``hash()``: Python salts string hashing
+    per process, so an id built from ``hash()`` changes on every run and the same
+    document would be stored again under a new evidence id each cycle.
+    """
+    return f"{source_id}-raw-{sha256_text(text)[:16]}"
 
 
 def json_to_evidence_text(payload: Any, *, header: str) -> str:
@@ -490,19 +500,20 @@ class GenericSource(Source):
             text = result.text[:MAX_ITEM_TEXT]
             return [
                 ParsedItem(
-                    identifier=f"{self.source_id}-{abs(hash(request.url)) % 10**8}",
+                    identifier=raw_identifier(self.source_id, text),
                     title=f"{self.spec.name} response",
                     url=request.url,
                     text=f"{self.spec.name} raw response for {request.url}\n{text}",
                     extra={"raw": True},
                 )
             ]
+        body = json_to_evidence_text(payload, header=f"{self.spec.name} response for {request.url}")
         return [
             ParsedItem(
-                identifier=f"{self.source_id}-raw-{abs(hash(request.url)) % 10**8}",
+                identifier=raw_identifier(self.source_id, body),
                 title=f"{self.spec.name} response",
                 url=request.url,
-                text=json_to_evidence_text(payload, header=f"{self.spec.name} response for {request.url}"),
+                text=body,
                 extra={"raw": True},
             )
         ]
@@ -953,6 +964,141 @@ class EurostatSource(Source):
 # ---------------------------------------------------------------------------
 
 
+
+class UsptoOdpSource(Source):
+    """USPTO Open Data Portal (the platform PatentsView migrated to in 2026).
+
+    Two documented endpoints are queried:
+
+    * ``/patent/applications/search`` - Patent File Wrapper search, ``q`` free-form
+      query with ``offset``/``limit`` pagination
+      (https://data.uspto.gov/documents/documents/ODP-API-Query-Spec.pdf);
+    * ``/datasets/products/search`` - Bulk Data Directory search by product title,
+      which is where the former PatentsView tables now live
+      (https://data.uspto.gov/apis/bulk-data/search).
+
+    Both require the ODP API key in the ``X-API-KEY`` header
+    (https://data.uspto.gov/apis/getting-started). The bulk-products response
+    shape is modelled field by field because it is published in the
+    documentation; any other shape falls back to the verbatim renderer, so a
+    response the engine does not understand is still stored exactly as received
+    rather than being guessed at.
+    """
+
+    KEY_HEADER = "X-API-KEY"
+
+    def _key(self) -> str:
+        import os
+
+        return os.environ.get(self.spec.key_env or "", "").strip()
+
+    def requests(self, query: str) -> list[Request]:
+        query = query.strip()
+        headers = {"accept": "application/json"}
+        key = self._key()
+        if key:
+            headers[self.KEY_HEADER] = key
+        return [
+            Request(
+                url=self.base_url() + "/patent/applications/search",
+                params={"q": query, "limit": MAX_ITEMS_PER_REQUEST},
+                headers=headers,
+                label=f"{self.source_id}:applications",
+            ),
+            Request(
+                url=self.base_url() + "/datasets/products/search",
+                params={"productTitle": query},
+                headers=headers,
+                label=f"{self.source_id}:datasets",
+            ),
+        ]
+
+    def parse(self, request: Request, result: HttpResult) -> list[ParsedItem]:
+        payload = result.json()
+        if isinstance(payload, dict) and isinstance(payload.get("bulkDataProductBag"), list):
+            return self._parse_bulk_products(request, payload)
+        return self._parse_verbatim(request, payload)
+
+    # -- bulk data directory ------------------------------------------------
+    def _parse_bulk_products(self, request: Request, payload: dict[str, Any]) -> list[ParsedItem]:
+        products: list[dict[str, Any]] = []
+        for group in payload.get("bulkDataProductBag") or []:
+            if isinstance(group, dict):
+                products.append(group)
+            elif isinstance(group, list):
+                products.extend(item for item in group if isinstance(item, dict))
+        out: list[ParsedItem] = []
+        for index, product in enumerate(products[:MAX_ITEMS_PER_REQUEST]):
+            identifier = as_text(dig(product, "productIdentifier")) or f"{self.source_id}-product-{index}"
+            title = as_text(dig(product, "productTitleText")) or f"{self.spec.name} product {index + 1}"
+            files = dig(product, "productFileBag.fileDataBag", []) or []
+            files = files if isinstance(files, list) else []
+            mapped = {
+                "description": as_text(dig(product, "productDescriptionText")),
+                "frequency": as_text(dig(product, "productFrequencyText")),
+                "coverage_from": as_text(dig(product, "productFromDate")),
+                "coverage_to": as_text(dig(product, "productToDate")),
+                "total_file_size_bytes": as_text(dig(product, "productTotalFileSize")),
+                "file_count": as_text(dig(product, "productFileTotalQuantity")),
+                "formats": ", ".join(
+                    sorted({as_text(mime) for group in (dig(product, "mimeTypeIdentifierArrayText") or [])
+                            for mime in (group if isinstance(group, list) else [group]) if as_text(mime)})
+                ),
+                "last_modified": as_text(dig(product, "lastModifiedDateTime")),
+                "files": "; ".join(
+                    f"{as_text(dig(f, 'fileName'))} ({as_text(dig(f, 'fileSize'))} bytes, released "
+                    f"{as_text(dig(f, 'fileReleaseDate'))})"
+                    for f in files[:3]
+                    if isinstance(f, dict)
+                ),
+            }
+            mapped = {k: v for k, v in mapped.items() if v}
+            download = as_text(dig(files[0], "fileDownloadURI")) if files and isinstance(files[0], dict) else ""
+            out.append(
+                ParsedItem(
+                    identifier=str(identifier),
+                    title=title,
+                    url=download or request.url,
+                    text=render_attributed_record(
+                        title,
+                        mapped,
+                        source_name=self.spec.name,
+                        base_url=self.spec.base_url,
+                        extra_notes=self.spec.notes,
+                        prose_label="description",
+                        label_overrides={
+                            "coverage_from": "data coverage from",
+                            "coverage_to": "data coverage to",
+                            "total_file_size_bytes": "total file size in bytes",
+                            "file_count": "number of files",
+                            "frequency": "release frequency",
+                            "formats": "file formats",
+                            "last_modified": "last modified",
+                            "files": "files",
+                        },
+                    ),
+                    published_at=_normalise_date(as_text(dig(product, "lastModifiedDateTime"))),
+                    extra=mapped,
+                )
+            )
+        return out
+
+    # -- anything else ------------------------------------------------------
+    def _parse_verbatim(self, request: Request, payload: Any) -> list[ParsedItem]:
+        """Store a response the engine has no field map for, exactly as received."""
+        body = json_to_evidence_text(payload, header=f"{self.spec.name} response for {request.url}")
+        return [
+            ParsedItem(
+                identifier=raw_identifier(self.source_id, body),
+                title=f"{self.spec.name} response",
+                url=request.url,
+                text=body,
+                extra={"raw": True},
+            )
+        ]
+
+
+
 def reconstruct_inverted_abstract(inverted: dict[str, list[int]]) -> str:
     """Rebuild abstract text from OpenAlex's ``abstract_inverted_index``.
 
@@ -1097,6 +1243,7 @@ CUSTOM: dict[str, type[Source]] = {
     "pubmed": PubMedSource,
     "nasa_api": NasaSource,
     "eurostat": EurostatSource,
+    "patentsview": UsptoOdpSource,
 }
 
 # Endpoints whose schema the engine does not model as a field map; the raw
@@ -1110,7 +1257,6 @@ GENERIC: dict[str, tuple[str, str, dict[str, Any]]] = {
     "wikimedia": ("/page/Main_Page", "", {}),
     "openlibrary": ("/search.json", "q", {"limit": MAX_ITEMS_PER_REQUEST}),
     "stackexchange": ("/search/advanced", "q", {"order": "desc", "sort": "votes", "site": "stackoverflow"}),
-    "patentsview": ("/patent/", "q", {"per_page": 5}),
     "fred": ("/series/search", "search_text", {"file_type": "json", "limit": 5}),
     "census_us": ("/2023/acs/acs1", "get", {"for": "us:*"}),
     "ncei": ("/datasets", "", {"limit": 5}),
