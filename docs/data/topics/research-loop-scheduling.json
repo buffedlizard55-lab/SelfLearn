@@ -2473,6 +2473,61 @@
     },
     {
       "cited_claim_ids": [],
+      "claim_id": "cl-649358884ee4",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "95.7%",
+        "95.7",
+        "0",
+        "66"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-research-loop-scheduling",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T17:02:52Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-649358884ee4",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.14,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 1.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "substantive",
+        "reason": "Carries a checkable quantity, a period or a mechanism, and passed verification.",
+        "total": 0.6533
+      },
+      "text": "Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
       "claim_id": "cl-8f7efe98b190",
       "claim_kind": "derived",
       "confidence": "medium",
@@ -2766,7 +2821,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T11:47:04Z",
+      "recorded_at": "2026-09-22T17:02:52Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-218a3db8595c",
@@ -3170,6 +3225,59 @@
     },
     {
       "cited_claim_ids": [],
+      "claim_id": "cl-a060d8ff632c",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "69",
+        "4"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-research-loop-scheduling",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T17:02:52Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-a060d8ff632c",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "descriptive",
+        "reason": "Describes a subject without a quantity or a period of its own.",
+        "total": 0.5133
+      },
+      "text": "This question is currently supported by 69 verified claim(s) drawn from 4 independent source(s).",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
       "claim_id": "cl-ae4f03cd8b89",
       "claim_kind": "derived",
       "confidence": "medium",
@@ -3242,7 +3350,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T11:47:04Z",
+      "recorded_at": "2026-09-22T17:02:52Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-bf2f3ca16301",
@@ -3559,7 +3667,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T11:47:04Z",
+      "recorded_at": "2026-09-22T17:02:52Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-0d0a69fa0651",
@@ -3891,7 +3999,7 @@
       "reasons": [
         "All 2 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-22T11:47:04Z",
+      "recorded_at": "2026-09-22T17:02:52Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-3328b7d99d8f",
@@ -3951,7 +4059,7 @@
       "reasons": [
         "All 3 figure(s) and 0 date(s) appear in the 5 cited claim(s) drawn from 4 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-22T11:47:04Z",
+      "recorded_at": "2026-09-22T17:02:52Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-acbe89830170",
@@ -4017,7 +4125,7 @@
       "reasons": [
         "All 3 figure(s) and 0 date(s) appear in the 11 cited claim(s) drawn from 7 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-22T11:47:04Z",
+      "recorded_at": "2026-09-22T17:02:52Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-f1535a686171",
@@ -5655,7 +5763,7 @@
       "claim_a": "cl-5a86c56f889c",
       "claim_b": "cl-92ae15540483",
       "contradiction_id": "con-62b85df6338e",
-      "created_at": "2026-09-22T11:47:04Z",
+      "created_at": "2026-09-22T17:02:52Z",
       "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (0, 19, 2, 2020, 25, 7 vs 14, 17, 2024, 39, 49, 6, 9). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -5669,7 +5777,7 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-34785ec24933",
       "contradiction_id": "con-704349b4aaa9",
-      "created_at": "2026-09-22T11:46:56Z",
+      "created_at": "2026-09-22T17:02:45Z",
       "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -5683,7 +5791,7 @@
       "claim_a": "cl-34785ec24933",
       "claim_b": "cl-aae22a8bf2b6",
       "contradiction_id": "con-9e27fade0728",
-      "created_at": "2026-09-22T11:47:04Z",
+      "created_at": "2026-09-22T17:02:52Z",
       "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -5697,7 +5805,7 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-a39b827e786b",
       "contradiction_id": "con-ba498da15727",
-      "created_at": "2026-09-22T11:46:56Z",
+      "created_at": "2026-09-22T17:02:45Z",
       "detail": "Claims share 67% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -5711,7 +5819,7 @@
       "claim_a": "cl-a39b827e786b",
       "claim_b": "cl-aae22a8bf2b6",
       "contradiction_id": "con-c3814afc1d32",
-      "created_at": "2026-09-22T11:47:04Z",
+      "created_at": "2026-09-22T17:02:52Z",
       "detail": "Claims share 67% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -5725,7 +5833,7 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-d3e7cd2b784b",
       "contradiction_id": "con-d3df6c302896",
-      "created_at": "2026-09-22T11:47:04Z",
+      "created_at": "2026-09-22T17:02:52Z",
       "detail": "Claims share 57% of their content tokens but contain disjoint numeric values (2 vs 0, 3). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -5739,7 +5847,7 @@
       "claim_a": "cl-92ae15540483",
       "claim_b": "cl-5a86c56f889c",
       "contradiction_id": "con-d448d769487d",
-      "created_at": "2026-09-22T11:46:56Z",
+      "created_at": "2026-09-22T17:02:45Z",
       "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (14, 17, 2024, 39, 49, 6, 9 vs 0, 19, 2, 2020, 25, 7). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -5753,7 +5861,7 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-c6ff1cae91a9",
       "contradiction_id": "con-f8b061b192ec",
-      "created_at": "2026-09-22T11:47:04Z",
+      "created_at": "2026-09-22T17:02:52Z",
       "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -5767,23 +5875,23 @@
   "derived": [
     {
       "context_numbers": [
-        "63",
+        "65",
         "4"
       ],
       "label": "library_volume",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "This question is currently supported by 63 verified claim(s) drawn from 4 independent source(s)."
+      "text": "This question is currently supported by 65 verified claim(s) drawn from 4 independent source(s)."
     },
     {
       "context_numbers": [
-        "95.2%",
-        "95.2",
+        "95.4%",
+        "95.4",
         "0",
-        "60"
+        "62"
       ],
       "label": "verification_rate",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "Of the claims recorded for this question, 95.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
+      "text": "Of the claims recorded for this question, 95.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
     },
     {
       "context_numbers": [
@@ -5822,7 +5930,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2023-08-01",
-      "retrieved_at": "2026-09-22T11:47:02Z",
+      "retrieved_at": "2026-09-22T17:02:51Z",
       "source_name": "GitHub REST API",
       "title": "sleepingcat4/Active-learning",
       "url": "https://github.com/sleepingcat4/Active-learning"
@@ -5837,7 +5945,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2020-06-20",
-      "retrieved_at": "2026-09-22T11:47:02Z",
+      "retrieved_at": "2026-09-22T17:02:51Z",
       "source_name": "GitHub REST API",
       "title": "jmamath/active-learning",
       "url": "https://github.com/jmamath/active-learning"
@@ -5852,7 +5960,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2024-06-17",
-      "retrieved_at": "2026-09-22T11:47:02Z",
+      "retrieved_at": "2026-09-22T17:02:51Z",
       "source_name": "GitHub REST API",
       "title": "ablancha/gpsearch",
       "url": "https://github.com/ablancha/gpsearch"
@@ -5867,7 +5975,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-06-22",
-      "retrieved_at": "2026-09-22T11:47:02Z",
+      "retrieved_at": "2026-09-22T17:02:51Z",
       "source_name": "GitHub REST API",
       "title": "TibMont/PyALAF",
       "url": "https://github.com/TibMont/PyALAF"
@@ -5882,7 +5990,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2020-07-02",
-      "retrieved_at": "2026-09-22T11:47:02Z",
+      "retrieved_at": "2026-09-22T17:02:51Z",
       "source_name": "GitHub REST API",
       "title": "umbrellagong/gpsearch",
       "url": "https://github.com/umbrellagong/gpsearch"
@@ -5897,7 +6005,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-07-10",
-      "retrieved_at": "2026-09-22T11:47:02Z",
+      "retrieved_at": "2026-09-22T17:02:51Z",
       "source_name": "GitHub REST API",
       "title": "IsaH93/pil-active-learning-screening",
       "url": "https://github.com/IsaH93/pil-active-learning-screening"
@@ -5912,7 +6020,7 @@
       "is_live": true,
       "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
       "published_at": "2017-01-01",
-      "retrieved_at": "2026-09-22T11:47:04Z",
+      "retrieved_at": "2026-09-22T17:02:52Z",
       "source_name": "Crossref REST API",
       "title": "Levels of active learning in programming skill acquisition: From lecture to active learning rooms",
       "url": "https://doi.org/10.1109/fie.2017.8190525"
@@ -5927,7 +6035,7 @@
       "is_live": true,
       "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
       "published_at": null,
-      "retrieved_at": "2026-09-22T11:47:04Z",
+      "retrieved_at": "2026-09-22T17:02:52Z",
       "source_name": "Crossref REST API",
       "title": "Sequential and Active Learning for Advancing MRI Acquisition and Anomaly Detection in Brain Images",
       "url": "https://doi.org/10.70675/b5ee8192zdc38z4512zb3e5zfb1c66f5e409"
@@ -5942,7 +6050,7 @@
       "is_live": true,
       "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
       "published_at": "2022-01-01",
-      "retrieved_at": "2026-09-22T11:47:04Z",
+      "retrieved_at": "2026-09-22T17:02:52Z",
       "source_name": "Crossref REST API",
       "title": "Using active learning techniques to facilitate employability and enterprise skills acquisition",
       "url": "https://doi.org/10.20919/opxr1032/42"
@@ -5957,7 +6065,7 @@
       "is_live": true,
       "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
       "published_at": "2010-01-01",
-      "retrieved_at": "2026-09-22T11:47:04Z",
+      "retrieved_at": "2026-09-22T17:02:52Z",
       "source_name": "Crossref REST API",
       "title": "Active learning of confidence measure function in robot language acquisition framework",
       "url": "https://doi.org/10.1109/iros.2010.5649754"
@@ -5976,13 +6084,13 @@
       "baseline": 960.0,
       "best_value": 139.0205,
       "best_variant": "epsilon_greedy",
-      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-37yc4201/result.json",
+      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-2yp14hu0/result.json",
       "error": "",
       "experiment_id": "scheduling-policies-v1",
       "hypothesis": "On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate keeps paying a cost proportional to the horizon.",
       "method": "100 independent trials of 4000 pulls per policy on arms with means [0.15, 0.25, 0.35, 0.45, 0.6]; pseudo-regret computed from the true mean of each pulled arm, so the metric has no reward noise.",
       "metric": "mean cumulative pseudo-regret",
-      "ran_at": "2026-09-22T11:47:05Z",
+      "ran_at": "2026-09-22T17:02:53Z",
       "result_json": {
         "arm_means": [
           0.15,
@@ -6074,7 +6182,7 @@
       "topic_id": "topic-research-loop-scheduling"
     }
   ],
-  "generated_at": "2026-09-22T11:47:11Z",
+  "generated_at": "2026-09-22T17:02:57Z",
   "questions": [
     {
       "id": "q-a7a594ff0997",
@@ -6564,14 +6672,14 @@
     {
       "claim_id": "q-c34e24cf4e97",
       "claim_kind": "open question (gap)",
-      "recorded_at": "2026-09-22T11:47:05Z",
-      "superseded": "Withdrawn 2026-09-22T11:47:11Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-05c6f4dc6499.",
+      "recorded_at": "2026-09-22T17:02:54Z",
+      "superseded": "Withdrawn 2026-09-22T17:02:57Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-05c6f4dc6499.",
       "text": "The quantity reported in cl-05c6f4dc6499 has no reference period in the quoted text. Over what period, and in what population, was it measured?"
     }
   ],
   "source_status": [
     {
-      "checked_at": "2026-09-22T11:47:02Z",
+      "checked_at": "2026-09-22T17:02:51Z",
       "detail": "6 document(s) retrieved; 4 result(s) dropped as unrelated to the query",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -6587,7 +6695,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-22T11:47:04Z",
+      "checked_at": "2026-09-22T17:02:52Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "peer_reviewed",
       "evidence_rank": 4,
@@ -6604,8 +6712,8 @@
     }
   ],
   "statistics": {
-    "claims": 63,
-    "computed_at": "2026-09-22T11:47:11Z",
+    "claims": 65,
+    "computed_at": "2026-09-22T17:02:57Z",
     "documents": 10,
     "evidence_classes": [
       "peer_reviewed",
@@ -6616,7 +6724,7 @@
     "live_documents": 10,
     "partially_supported": 0,
     "sources": 4,
-    "supported": 60,
+    "supported": 62,
     "unsupported": 3
   },
   "status_history": [
@@ -6749,6 +6857,18 @@
     {
       "last_updated": "2026-09-22T11:47:05Z",
       "line": 101,
+      "status": "testing",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "last_updated": "2026-09-22T17:02:45Z",
+      "line": 105,
+      "status": "new",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "last_updated": "2026-09-22T17:02:54Z",
+      "line": 109,
       "status": "testing",
       "topic_id": "topic-research-loop-scheduling"
     }
@@ -9748,6 +9868,112 @@
       "title": "First principles brief: How should a research loop schedule and prioritise its own work?"
     },
     {
+      "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-0d0a69fa0651] \"The supporting documents span 3 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-202bd48989dd] \"Of the claims recorded for this question, 93.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-218a3db8595c] \"32 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2750027fcff2] \"This question is currently supported by 40 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2fd92181cac6] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-30d31bfbf26c] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 2, 3, 32, 40, 42 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "A - Conventional",
+      "persona_brief": "Find the strongest solution using established, well-evidenced knowledge.",
+      "persona_code": "A",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The supporting documents span 3 evidence class(es) in the project hierarchy.\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 93.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+        "If the sourced statement holds, then: \"32 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5122,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.128,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean cumulative pseudo-regret: best variant epsilon_greedy scored 139.0205 against baseline 960.0 (experiment scheduling-policies-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.4665,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-ab8371e5a22d",
+      "supporting_claim_ids": [
+        "cl-0d0a69fa0651",
+        "cl-202bd48989dd",
+        "cl-218a3db8595c",
+        "cl-2750027fcff2",
+        "cl-2fd92181cac6",
+        "cl-30d31bfbf26c"
+      ],
+      "title": "Conventional brief: How should a research loop schedule and prioritise its own work?"
+    },
+    {
       "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-2750027fcff2] \"This question is currently supported by 40 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-30d31bfbf26c] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-3f38ece0d862] \"Of the claims recorded for this question, 94.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-7e054a79462a] \"The supporting documents span 1 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-7f0323d13ac7] \"This question is currently supported by 20 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-8d6e7a667f8e] \"20 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -9956,112 +10182,6 @@
         "cl-7f0323d13ac7",
         "cl-8d6e7a667f8e",
         "cl-9c6a6f2fba15"
-      ],
-      "title": "Conventional brief: How should a research loop schedule and prioritise its own work?"
-    },
-    {
-      "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-0d0a69fa0651] \"The supporting documents span 3 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-202bd48989dd] \"Of the claims recorded for this question, 93.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-218a3db8595c] \"32 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2750027fcff2] \"This question is currently supported by 40 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2fd92181cac6] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-30d31bfbf26c] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
-      "assumptions": [
-        "The retrieved documents are representative of the current state of the question.",
-        "Quoted measurements were produced under the conditions the quoted text describes.",
-        "Conditions reported in the sources still hold; no newer evidence supersedes them."
-      ],
-      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 2, 3, 32, 40, 42 for the same quantity.",
-      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
-      "persona": "A - Conventional",
-      "persona_brief": "Find the strongest solution using established, well-evidenced knowledge.",
-      "persona_code": "A",
-      "predicted_outcomes": [
-        "If the sourced statement holds, then: \"The supporting documents span 3 evidence class(es) in the project hierarchy.\"",
-        "If the sourced statement holds, then: \"Of the claims recorded for this question, 93.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
-        "If the sourced statement holds, then: \"32 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\""
-      ],
-      "scorecard": {
-        "attacks": 4,
-        "claims_cited": 6,
-        "criteria": {
-          "adversarial_survival": {
-            "label": "Survives criticism",
-            "method": "measured",
-            "note": "Share of critic attacks the candidate survives.",
-            "value": 0.5122,
-            "weight": 0.15
-          },
-          "computational_cost": {
-            "label": "Computational cost",
-            "method": "measured",
-            "note": "Cheaper to run and verify is better.",
-            "value": 0.128,
-            "weight": 0.04
-          },
-          "correctness": {
-            "label": "Correctness",
-            "method": "measured",
-            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
-            "value": 1.0,
-            "weight": 0.18
-          },
-          "evidence_quality": {
-            "label": "Evidence quality",
-            "method": "measured",
-            "note": "Mean evidence-hierarchy rank of the supporting claims.",
-            "value": 0.0,
-            "weight": 0.16
-          },
-          "experimental_performance": {
-            "detail": "Measured mean cumulative pseudo-regret: best variant epsilon_greedy scored 139.0205 against baseline 960.0 (experiment scheduling-policies-v1).",
-            "label": "Experimental performance",
-            "method": "measured",
-            "note": "Measured result relative to the recorded baseline, when a test exists.",
-            "value": 0.0,
-            "weight": 0.1
-          },
-          "reproducibility": {
-            "label": "Reproducibility",
-            "method": "measured",
-            "note": "A third party can re-derive the result from the cited sources and commands.",
-            "value": 0.0,
-            "weight": 0.13
-          },
-          "robustness": {
-            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
-            "label": "Robustness",
-            "method": "measured",
-            "note": "Stable when evidence order and weights are perturbed.",
-            "value": 0.899,
-            "weight": 0.12
-          },
-          "scalability": {
-            "label": "Scalability",
-            "method": "heuristic",
-            "note": "Plausible to apply beyond the single case studied.",
-            "value": 1.0,
-            "weight": 0.05
-          },
-          "simplicity": {
-            "label": "Simplicity",
-            "method": "measured",
-            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
-            "value": 0.6667,
-            "weight": 0.07
-          }
-        },
-        "evidence_records": 0,
-        "fatal_attack": false,
-        "numbers_checked": true,
-        "total": 0.4665,
-        "unbacked_numbers": [],
-        "weights_total": 1.0
-      },
-      "status": "competing",
-      "strategy_id": "st-ab8371e5a22d",
-      "supporting_claim_ids": [
-        "cl-0d0a69fa0651",
-        "cl-202bd48989dd",
-        "cl-218a3db8595c",
-        "cl-2750027fcff2",
-        "cl-2fd92181cac6",
-        "cl-30d31bfbf26c"
       ],
       "title": "Conventional brief: How should a research loop schedule and prioritise its own work?"
     },
@@ -10490,112 +10610,6 @@
       "title": "First principles brief: How should a research loop schedule and prioritise its own work?"
     },
     {
-      "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-2750027fcff2] \"This question is currently supported by 40 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-30d31bfbf26c] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-3f38ece0d862] \"Of the claims recorded for this question, 94.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-7e054a79462a] \"The supporting documents span 1 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-7f0323d13ac7] \"This question is currently supported by 20 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-8d6e7a667f8e] \"20 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
-      "assumptions": [
-        "The retrieved documents are representative of the current state of the question.",
-        "Quoted measurements were produced under the conditions the quoted text describes.",
-        "The quantities quoted are commensurable with each other after unit conversion."
-      ],
-      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 20, 3, 40 for the same quantity.",
-      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
-      "persona": "C - First principles",
-      "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
-      "persona_code": "C",
-      "predicted_outcomes": [
-        "If the sourced statement holds, then: \"This question is currently supported by 40 verified claim(s) drawn from 3 independent source(s).\"",
-        "If the sourced statement holds, then: \"The supporting documents span 2 evidence class(es) in the project hierarchy.\"",
-        "If the sourced statement holds, then: \"Of the claims recorded for this question, 94.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\""
-      ],
-      "scorecard": {
-        "attacks": 4,
-        "claims_cited": 6,
-        "criteria": {
-          "adversarial_survival": {
-            "label": "Survives criticism",
-            "method": "measured",
-            "note": "Share of critic attacks the candidate survives.",
-            "value": 0.5122,
-            "weight": 0.15
-          },
-          "computational_cost": {
-            "label": "Computational cost",
-            "method": "measured",
-            "note": "Cheaper to run and verify is better.",
-            "value": 0.121,
-            "weight": 0.04
-          },
-          "correctness": {
-            "label": "Correctness",
-            "method": "measured",
-            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
-            "value": 1.0,
-            "weight": 0.18
-          },
-          "evidence_quality": {
-            "label": "Evidence quality",
-            "method": "measured",
-            "note": "Mean evidence-hierarchy rank of the supporting claims.",
-            "value": 0.0,
-            "weight": 0.16
-          },
-          "experimental_performance": {
-            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
-            "label": "Experimental performance",
-            "method": "measured",
-            "note": "Measured result relative to the recorded baseline, when a test exists.",
-            "value": 0.0,
-            "weight": 0.1
-          },
-          "reproducibility": {
-            "label": "Reproducibility",
-            "method": "measured",
-            "note": "A third party can re-derive the result from the cited sources and commands.",
-            "value": 0.0,
-            "weight": 0.13
-          },
-          "robustness": {
-            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
-            "label": "Robustness",
-            "method": "measured",
-            "note": "Stable when evidence order and weights are perturbed.",
-            "value": 0.899,
-            "weight": 0.12
-          },
-          "scalability": {
-            "label": "Scalability",
-            "method": "heuristic",
-            "note": "Plausible to apply beyond the single case studied.",
-            "value": 1.0,
-            "weight": 0.05
-          },
-          "simplicity": {
-            "label": "Simplicity",
-            "method": "measured",
-            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
-            "value": 0.6667,
-            "weight": 0.07
-          }
-        },
-        "evidence_records": 0,
-        "fatal_attack": false,
-        "numbers_checked": true,
-        "total": 0.4662,
-        "unbacked_numbers": [],
-        "weights_total": 1.0
-      },
-      "status": "competing",
-      "strategy_id": "st-a2435b138221",
-      "supporting_claim_ids": [
-        "cl-2750027fcff2",
-        "cl-30d31bfbf26c",
-        "cl-3f38ece0d862",
-        "cl-7e054a79462a",
-        "cl-7f0323d13ac7",
-        "cl-8d6e7a667f8e"
-      ],
-      "title": "First principles brief: How should a research loop schedule and prioritise its own work?"
-    },
-    {
       "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-0d0a69fa0651] \"The supporting documents span 3 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-202bd48989dd] \"Of the claims recorded for this question, 93.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-218a3db8595c] \"32 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2750027fcff2] \"This question is currently supported by 40 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2fd92181cac6] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-30d31bfbf26c] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -10698,6 +10712,112 @@
         "cl-2750027fcff2",
         "cl-2fd92181cac6",
         "cl-30d31bfbf26c"
+      ],
+      "title": "First principles brief: How should a research loop schedule and prioritise its own work?"
+    },
+    {
+      "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-2750027fcff2] \"This question is currently supported by 40 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-30d31bfbf26c] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-3f38ece0d862] \"Of the claims recorded for this question, 94.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-7e054a79462a] \"The supporting documents span 1 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-7f0323d13ac7] \"This question is currently supported by 20 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-8d6e7a667f8e] \"20 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The quantities quoted are commensurable with each other after unit conversion."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 20, 3, 40 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "C - First principles",
+      "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
+      "persona_code": "C",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"This question is currently supported by 40 verified claim(s) drawn from 3 independent source(s).\"",
+        "If the sourced statement holds, then: \"The supporting documents span 2 evidence class(es) in the project hierarchy.\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 94.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5122,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.121,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.4662,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-a2435b138221",
+      "supporting_claim_ids": [
+        "cl-2750027fcff2",
+        "cl-30d31bfbf26c",
+        "cl-3f38ece0d862",
+        "cl-7e054a79462a",
+        "cl-7f0323d13ac7",
+        "cl-8d6e7a667f8e"
       ],
       "title": "First principles brief: How should a research loop schedule and prioritise its own work?"
     },
@@ -11127,18 +11247,18 @@
     }
   ],
   "substance": {
-    "claims": 63,
+    "claims": 65,
     "dated": 9,
     "labels": {
-      "descriptive": 30,
+      "descriptive": 31,
       "metadata": 10,
-      "substantive": 23
+      "substantive": 24
     },
-    "mean_score": 0.5056,
-    "metadata_share": 0.1587,
-    "quantified": 52,
-    "quantified_share": 0.8254,
-    "substantive_share": 0.3651
+    "mean_score": 0.508,
+    "metadata_share": 0.1538,
+    "quantified": 54,
+    "quantified_share": 0.8308,
+    "substantive_share": 0.3692
   },
   "synthesis": [
     {
@@ -11359,7 +11479,7 @@
     }
   ],
   "topic": {
-    "first_seen": "2026-09-22T11:46:56Z",
+    "first_seen": "2026-09-22T17:02:45Z",
     "keywords": [
       "scheduling",
       "prioritisation",
@@ -11368,7 +11488,7 @@
       "research management",
       "bandit"
     ],
-    "last_updated": "2026-09-22T11:47:05Z",
+    "last_updated": "2026-09-22T17:02:54Z",
     "notes": "Tests whether the manager's scoring design matches published practice, or whether a published method is better.",
     "origin": "seed",
     "parent_topic_id": null,

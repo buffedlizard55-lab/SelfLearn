@@ -4,10 +4,10 @@
       "error": 2,
       "scanned": 3
     },
-    "generated_at": "2026-09-22T11:47:08Z",
-    "items_new": 4,
+    "generated_at": "2026-09-22T17:02:56Z",
+    "items_new": 3,
     "items_seen": 15,
-    "run_id": "run-6fdd568ea4ac",
+    "run_id": "run-bbcaf0b83035",
     "scans": [
       {
         "detail": "HTTP 406: ",
@@ -60,43 +60,35 @@
         }
       },
       {
-        "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 4 not seen by this engine before.",
+        "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 3 not seen by this engine before.",
         "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-        "items_new": 4,
+        "items_new": 3,
         "items_seen": 5,
         "mechanism": "Repositories pushed to on or after the given date",
         "new_items": [
           {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: leandre755/HIVE-MIND\nThe record for leandre",
-            "identifier": "https://github.com/leandre755/HIVE-MIND",
+            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: fmogensen/ASF\nThe record for fmogensen/ASF ",
+            "identifier": "https://github.com/fmogensen/ASF",
             "published_at": "2026-09-22",
             "source_id": "github",
-            "title": "leandre755/HIVE-MIND",
-            "url": "https://github.com/leandre755/HIVE-MIND"
+            "title": "fmogensen/ASF",
+            "url": "https://github.com/fmogensen/ASF"
           },
           {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: vrajpal-jhala/langgraph-harness\nThe record ",
-            "identifier": "https://github.com/vrajpal-jhala/langgraph-harness",
+            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: juhastar-dev/200-protocol\nThe record for ju",
+            "identifier": "https://github.com/juhastar-dev/200-protocol",
             "published_at": "2026-09-22",
             "source_id": "github",
-            "title": "vrajpal-jhala/langgraph-harness",
-            "url": "https://github.com/vrajpal-jhala/langgraph-harness"
+            "title": "juhastar-dev/200-protocol",
+            "url": "https://github.com/juhastar-dev/200-protocol"
           },
           {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: darrowz/eimemory\nThe record for darrowz/eim",
-            "identifier": "https://github.com/darrowz/eimemory",
+            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: thejevos/jevos\nThe record for thejevos/jevo",
+            "identifier": "https://github.com/thejevos/jevos",
             "published_at": "2026-09-22",
             "source_id": "github",
-            "title": "darrowz/eimemory",
-            "url": "https://github.com/darrowz/eimemory"
-          },
-          {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: HuseyinAts/kiro2\nThe record for HuseyinAts/",
-            "identifier": "https://github.com/HuseyinAts/kiro2",
-            "published_at": "2026-09-22",
-            "source_id": "github",
-            "title": "HuseyinAts/kiro2",
-            "url": "https://github.com/HuseyinAts/kiro2"
+            "title": "thejevos/jevos",
+            "url": "https://github.com/thejevos/jevos"
           }
         ],
         "request_params": {
@@ -171,7 +163,7 @@
     "window_days": 7
   },
   "claim_kinds": {
-    "derived": 111,
+    "derived": 118,
     "direct": 141,
     "synthesis": 5
   },
@@ -179,21 +171,21 @@
     "commentary": 3,
     "peer_reviewed": 12,
     "primary_source": 126,
-    "reproduced_experiment": 140
+    "reproduced_experiment": 147
   },
   "figures": {
-    "change_scan_new_items": 4,
+    "change_scan_new_items": 3,
     "change_scan_sources": 5,
-    "claims": 281,
+    "claims": 288,
     "documents_retrieved": 69,
-    "documents_total": 82,
+    "documents_total": 86,
     "errors": 0,
     "metadata_claims": 45,
-    "open_questions": 114,
+    "open_questions": 127,
     "records_withdrawn": 2,
     "sources_polled": 4,
     "sources_reached": 3,
-    "substantive_claims": 114,
+    "substantive_claims": 117,
     "synthesis_claims": 5,
     "synthesis_retired": 0,
     "topics": 11,
@@ -201,7 +193,7 @@
     "topics_proposed": 3,
     "warnings": 18
   },
-  "generated_at": "2026-09-22T11:47:11Z",
+  "generated_at": "2026-09-22T17:02:57Z",
   "irregularities": {
     "by_severity": {
       "error": 0,
@@ -261,20 +253,20 @@
     ],
     "total": 36
   },
-  "run_id": "run-6fdd568ea4ac",
+  "run_id": "run-bbcaf0b83035",
   "substance": {
-    "claims": 281,
+    "claims": 288,
     "dated": 42,
     "labels": {
-      "descriptive": 122,
+      "descriptive": 126,
       "metadata": 45,
-      "substantive": 114
+      "substantive": 117
     },
-    "mean_score": 0.5144,
-    "metadata_share": 0.1601,
-    "quantified": 233,
-    "quantified_share": 0.8292,
-    "substantive_share": 0.4057
+    "mean_score": 0.5158,
+    "metadata_share": 0.1562,
+    "quantified": 240,
+    "quantified_share": 0.8333,
+    "substantive_share": 0.4062
   },
   "thresholds": {
     "cases": 26,
@@ -286,7 +278,7 @@
       "supported": 0.8
     },
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-22T11:46:57Z",
+    "ran_at": "2026-09-22T17:02:45Z",
     "source": "state/calibration.json"
   },
   "topic_proposals": [
@@ -365,11 +357,11 @@
     }
   ],
   "what_changed": [
-    "Library now holds 281 claim(s) across 11 question(s).",
+    "Library now holds 288 claim(s) across 11 question(s).",
     "This cycle retrieved 69 document(s) from 3 of 4 polled source(s).",
-    "114 open question(s) have been derived from the retrieved evidence.",
-    "5 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them (2 briefs, criticisms and questions withdrew with them), and 114 claim(s) scored as substantive while 45 are labelled as registry metadata.",
-    "3 candidate topic(s) were scored from the retrieved documents and 0 promoted; the change scan polled 5 source(s) and found 4 item(s) not seen before.",
+    "127 open question(s) have been derived from the retrieved evidence.",
+    "5 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them (2 briefs, criticisms and questions withdrew with them), and 117 claim(s) scored as substantive while 45 are labelled as registry metadata.",
+    "3 candidate topic(s) were scored from the retrieved documents and 0 promoted; the change scan polled 5 source(s) and found 3 item(s) not seen before.",
     "0 error(s) and 18 warning(s) are waiting for review."
   ]
 }

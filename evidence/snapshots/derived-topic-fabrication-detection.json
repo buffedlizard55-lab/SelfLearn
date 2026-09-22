@@ -1,18 +1,18 @@
 {
   "claim_ids": [
-    "cl-3ed81fdb299b",
+    "cl-4b876006b6e8",
     "cl-c85bb344c069",
     "cl-2dc5f70a1a38",
     "cl-f9832056f7c8",
     "cl-78627446b3ea"
   ],
-  "content_hash": "sha256:0456927fd820585efb73cf51767c3aa2728e53f5c7a262f929655e15a0a53161",
+  "content_hash": "sha256:0c8674b24c3dd3a67db40e8ebf0af5539e402ddaeb9317120b468c860613de56",
   "derived_contexts": {
     "cl-2dc5f70a1a38": [
       "2"
     ],
-    "cl-3ed81fdb299b": [
-      "65",
+    "cl-4b876006b6e8": [
+      "67",
       "3"
     ],
     "cl-78627446b3ea": [
@@ -22,7 +22,7 @@
       "98.5%",
       "98.5",
       "0",
-      "64"
+      "66"
     ],
     "cl-f9832056f7c8": [
       "39",
@@ -36,8 +36,8 @@
   "is_live": true,
   "source_id": "selflearn_library",
   "source_name": "SelfLearn library computation",
-  "text": "Source: SelfLearn library computation for topic-fabrication-detection\nQuestion: What open-source tooling exists for detecting unsupported or fabricated statements in machine-generated text, and what evidence supports its use?\nThese statements are computed by the engine from its own records. They assert nothing about the world.\nStatements and the figures each was computed from:\nThis question is currently supported by 65 verified claim(s) drawn from 3 independent source(s). [figures: 65, 3]\nOf the claims recorded for this question, 98.5% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. [figures: 98.5%, 98.5, 0, 64]\nThe supporting documents span 2 evidence class(es) in the project hierarchy. [figures: 2]\nOf the documents cited here, 39 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear. [figures: 39, 0]\n39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. [figures: 39]",
+  "text": "Source: SelfLearn library computation for topic-fabrication-detection\nQuestion: What open-source tooling exists for detecting unsupported or fabricated statements in machine-generated text, and what evidence supports its use?\nThese statements are computed by the engine from its own records. They assert nothing about the world.\nStatements and the figures each was computed from:\nThis question is currently supported by 67 verified claim(s) drawn from 3 independent source(s). [figures: 67, 3]\nOf the claims recorded for this question, 98.5% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. [figures: 98.5%, 98.5, 0, 66]\nThe supporting documents span 2 evidence class(es) in the project hierarchy. [figures: 2]\nOf the documents cited here, 39 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear. [figures: 39, 0]\n39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. [figures: 39]",
   "title": "Library computation for Detecting fabricated statements in machine-generated text",
   "url": "",
-  "written_at": "2026-09-22T11:47:00Z"
+  "written_at": "2026-09-22T17:02:49Z"
 }
