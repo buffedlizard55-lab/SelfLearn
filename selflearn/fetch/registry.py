@@ -688,7 +688,12 @@ _register(
         key_url="https://github.com/settings/tokens",
         license_name="Repository content carries each repository's own licence",
         license_url="https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api",
-        rate_limit_note="60 requests/hour unauthenticated; 5,000 requests/hour with a token.",
+        rate_limit_note=(
+            "Primary limit 60 requests/hour unauthenticated, 5,000/hour for a personal access token, and "
+            "1,000/hour per repository for the GITHUB_TOKEN built into GitHub Actions. Search endpoints carry a "
+            "more restrictive limit than the primary one. Documented at "
+            "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api (read 2026-09-22)."
+        ),
         topics=["open source activity", "software releases", "adoption signals", "reference implementations"],
         notes="Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
     )
