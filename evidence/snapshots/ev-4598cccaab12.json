@@ -1,0 +1,23 @@
+{
+  "bytes_read": 8122,
+  "content_hash": "sha256:cfe8a8f9e0d941f201f14ddbfa4ac913781895d0e8afd94a303f053cae799ea4",
+  "evidence_class": "peer_reviewed",
+  "evidence_class_label": "Peer-reviewed publication indexed by a DOI registry or PubMed.",
+  "evidence_id": "ev-4598cccaab12",
+  "evidence_rank": 4,
+  "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: A Comparison Based Parallel Sorting Algorithm\nThe record for A Comparison Based Parallel Sorting Algorithm reports: DOI 10.1109/icpp.1993.17, date 1993, venue ",
+  "http_status": 200,
+  "is_fixture": false,
+  "is_live": true,
+  "license": "Metadata: CC0; abstracts remain publisher copyright",
+  "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
+  "published_at": "1993-01-01",
+  "publisher": "Crossref (DOI registration agency, not-for-profit)",
+  "response_sha256": "sha256:556628451421488ab7870901264429a4d50fa96033eb9be642d2a05ab9db7a88",
+  "retrieved_at": "2026-09-22T05:06:04Z",
+  "source_id": "crossref",
+  "source_name": "Crossref REST API",
+  "text": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: A Comparison Based Parallel Sorting Algorithm\nThe record for A Comparison Based Parallel Sorting Algorithm reports: DOI 10.1109/icpp.1993.17, date 1993, venue 1993 International Conference on Parallel Processing - ICPP'93 Vol3.\nThe record for A Comparison Based Parallel Sorting Algorithm reports: type proceedings-article, publisher IEEE, citation count 15.\nThe record for A Comparison Based Parallel Sorting Algorithm reports: authors given: Laxmikant V.; family: Kale; sequence: first; role: vocabulary: crossref; role: author; given: Sanjeev; family: Krishnan; sequence: additional; role: vocabulary: crossref; role: author.\nSource note: The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
+  "title": "A Comparison Based Parallel Sorting Algorithm",
+  "url": "https://doi.org/10.1109/icpp.1993.17"
+}

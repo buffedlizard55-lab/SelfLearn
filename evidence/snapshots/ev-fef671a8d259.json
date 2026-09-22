@@ -1,0 +1,23 @@
+{
+  "bytes_read": 19175,
+  "content_hash": "sha256:4d17d5fc22160b8fa6f9682127cd348cb2b92b2ba0a69b7926502f8fd7ae0bbf",
+  "evidence_class": "peer_reviewed",
+  "evidence_class_label": "Peer-reviewed publication indexed by a DOI registry or PubMed.",
+  "evidence_id": "ev-fef671a8d259",
+  "evidence_rank": 4,
+  "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Hallucination Mitigation with Agentic AI NLP-Based Open-Floor Standard\nThe record for Hallucination Mitigation with Agentic AI NLP-Based Open-Floor Standard re",
+  "http_status": 200,
+  "is_fixture": false,
+  "is_live": true,
+  "license": "Metadata: CC0; abstracts remain publisher copyright",
+  "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
+  "published_at": "2026-01-01",
+  "publisher": "Crossref (DOI registration agency, not-for-profit)",
+  "response_sha256": "sha256:f4b51b2fcb2afcb11ebf4a7aabeac8614837f12cedf5bec56c06a8b4da654aa5",
+  "retrieved_at": "2026-09-22T05:05:59Z",
+  "source_id": "crossref",
+  "source_name": "Crossref REST API",
+  "text": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Hallucination Mitigation with Agentic AI NLP-Based Open-Floor Standard\nThe record for Hallucination Mitigation with Agentic AI NLP-Based Open-Floor Standard reports: DOI 10.5220/0013761000004052, date 2026, venue Proceedings of the 18th International Conference on Agents and Artificial Intelligence.\nThe record for Hallucination Mitigation with Agentic AI NLP-Based Open-Floor Standard reports: type proceedings-article, publisher SCITEPRESS - Science and Technology Publications, citation count 7.\nThe record for Hallucination Mitigation with Agentic AI NLP-Based Open-Floor Standard reports: authors given: Diego; family: Gosmar; sequence: first; affiliation: name: AI Tesisquare, Voiceinteroperability.ai Initiative, Linux Foundation AI and Data, Torino, TO 10100, Italy; role: vocabulary: crossref; role: author; given: Deborah; family: Dahl; sequence: additional; affiliation: name: Conversational Technologies, Voiceinteroperability.ai Initiative, Linux Foundation AI and Data, Plymouth Meeting, Pennsylvania, U.S.A.; role: vocabulary: crossref; role: author.\nSource note: The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
+  "title": "Hallucination Mitigation with Agentic AI NLP-Based Open-Floor Standard",
+  "url": "https://doi.org/10.5220/0013761000004052"
+}

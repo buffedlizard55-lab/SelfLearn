@@ -3,13 +3,13 @@
     "baseline": 16807.6,
     "best_value": 1726.4,
     "best_variant": "merge_sort",
-    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-5dct9e7h/result.json",
+    "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-si8wy354/result.json",
     "error": "",
     "experiment_id": "sorting-comparisons-v1",
     "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
     "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
     "metric": "mean element comparisons per run",
-    "ran_at": "2026-09-22T00:22:27Z",
+    "ran_at": "2026-09-22T05:06:04Z",
     "result_json": {
       "baseline": 16807.6,
       "baseline_name": "insertion_sort on shuffled input",
@@ -34,10 +34,10 @@
       ],
       "conclusion": "hypothesis supported by all stated checks",
       "environment": {
-        "cpu_count": 2,
+        "cpu_count": 4,
         "machine": "x86_64",
-        "platform": "Linux-6.1.158+-x86_64-with-glibc2.36",
-        "python": "3.11.2"
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.11.16"
       },
       "experiment_id": "sorting-comparisons-v1",
       "falsifier": "Insertion sort uses fewer comparisons than merge sort on the shuffled input, or does not use fewer than merge sort on the sorted input.",
@@ -57,9 +57,9 @@
             "merge_sort": 1024
           },
           "mean_seconds": {
-            "heapsort": 0.00038602,
-            "insertion_sort": 0.00290859,
-            "merge_sort": 0.0002659
+            "heapsort": 0.00045483,
+            "insertion_sort": 0.00366767,
+            "merge_sort": 0.00031145
           },
           "min_comparisons": {
             "heapsort": 3106,
@@ -79,9 +79,9 @@
             "merge_sort": 1726.4
           },
           "mean_seconds": {
-            "heapsort": 0.00042183,
-            "insertion_sort": 0.0015083,
-            "merge_sort": 0.00036296
+            "heapsort": 0.00048606,
+            "insertion_sort": 0.00186732,
+            "merge_sort": 0.00043243
           },
           "min_comparisons": {
             "heapsort": 3278,
@@ -101,9 +101,9 @@
             "merge_sort": 1024
           },
           "mean_seconds": {
-            "heapsort": 0.00045392,
-            "insertion_sort": 2.528e-05,
-            "merge_sort": 0.00025689
+            "heapsort": 0.00051763,
+            "insertion_sort": 3.316e-05,
+            "merge_sort": 0.00030779
           },
           "min_comparisons": {
             "heapsort": 3452,
@@ -139,13 +139,13 @@
     "baseline": 0.96,
     "best_value": 1.0,
     "best_variant": "support=0.8 partial=0.45 quote_chars=24.0",
-    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-yj73sj1g/result.json",
+    "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-edvm0lha/result.json",
     "error": "",
     "experiment_id": "verification-thresholds-v1",
     "hypothesis": "A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports.",
     "method": "Exhaustive sweep of 132 threshold combinations, evaluated against 26 hand-labelled claim/document pairs; selection is lexicographic on false supports, recall, F1, macro F1, distance from the documented default, then strictness.",
     "metric": "verdict accuracy on labelled cases",
-    "ran_at": "2026-09-22T00:22:25Z",
+    "ran_at": "2026-09-22T05:06:00Z",
     "result_json": {
       "baseline": 0.96,
       "baseline_name": "configured default thresholds support=0.8 partial=0.55 quote_chars=24.0",
@@ -172,8 +172,8 @@
       "conclusion": "hypothesis supported by all stated checks",
       "environment": {
         "machine": "x86_64",
-        "platform": "Linux-6.1.158+-x86_64-with-glibc2.36",
-        "python": "3.11.2"
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.11.16"
       },
       "excluded_cases": [
         {

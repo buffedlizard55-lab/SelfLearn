@@ -1,33 +1,17 @@
 {
   "citations": {
-    "cl-05c6f4dc6499": [
-      "cl-5a86c56f889c",
-      "cl-92ae15540483"
-    ],
-    "cl-a0216d97754f": [
-      "cl-882c9c63ae70",
-      "cl-5a86c56f889c"
-    ],
-    "cl-b48f6bae10aa": [
-      "cl-5a86c56f889c",
-      "cl-882c9c63ae70",
+    "cl-3328b7d99d8f": [
       "cl-92ae15540483",
-      "cl-99148575cd54",
-      "cl-a0e918ece362",
-      "cl-e2a879ce1949"
+      "cl-ef888b94be82"
     ],
-    "cl-c1528e745294": [
+    "cl-acbe89830170": [
       "cl-1f49f207b0ce",
       "cl-99148575cd54",
       "cl-a0e918ece362",
-      "cl-d3e7cd2b784b"
+      "cl-d3e7cd2b784b",
+      "cl-a59bec53438a"
     ],
-    "cl-ebe50866c472": [
-      "cl-92ae15540483",
-      "cl-99148575cd54",
-      "cl-a0e918ece362"
-    ],
-    "cl-ec0da4e41050": [
+    "cl-f1535a686171": [
       "cl-34785ec24933",
       "cl-5a86c56f889c",
       "cl-882c9c63ae70",
@@ -36,47 +20,32 @@
       "cl-c2ac62f4b160",
       "cl-c6ff1cae91a9",
       "cl-d3e7cd2b784b",
-      "cl-e2a879ce1949"
+      "cl-e2a879ce1949",
+      "cl-b758b39a74cb",
+      "cl-422018cead1f"
     ]
   },
   "claim_ids": [
-    "cl-ec0da4e41050",
-    "cl-ebe50866c472",
-    "cl-c1528e745294",
-    "cl-05c6f4dc6499",
-    "cl-a0216d97754f",
-    "cl-b48f6bae10aa"
+    "cl-f1535a686171",
+    "cl-3328b7d99d8f",
+    "cl-acbe89830170"
   ],
-  "content_hash": "sha256:ab376a8870708a73282671592f8c0a3ff0e3043212d2ed1ae15be65a4b17001c",
+  "content_hash": "sha256:8cc5b3ebcf3d1509c47231c01b398e5dd9b087ebe64a19dce27b7c9d5067662b",
   "context_numbers": {
-    "cl-05c6f4dc6499": [
-      "0",
-      "14"
+    "cl-3328b7d99d8f": [
+      "14",
+      "2",
+      "2"
     ],
-    "cl-a0216d97754f": [
-      "01",
-      "02"
-    ],
-    "cl-b48f6bae10aa": [
-      "6",
-      "1",
-      "0",
-      "14"
-    ],
-    "cl-c1528e745294": [
+    "cl-acbe89830170": [
       "3",
-      "3",
-      "1"
+      "4",
+      "2"
     ],
-    "cl-ebe50866c472": [
-      "06",
-      "3",
-      "1"
-    ],
-    "cl-ec0da4e41050": [
+    "cl-f1535a686171": [
       "0",
-      "5",
-      "1"
+      "7",
+      "2"
     ]
   },
   "evidence_class": "reproduced_experiment",
@@ -86,8 +55,8 @@
   "is_live": true,
   "source_id": "selflearn_synthesis",
   "source_name": "Cross-document synthesis of cited claims",
-  "text": "Source: cross-document synthesis for topic-research-loop-scheduling\nQuestion: Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?\nThese statements combine figures that were already verified in the documents cited below.\nNo figure was averaged, summed or otherwise computed; a statement needing arithmetic is not written.\nStatements, their citations and the figures each was allowed to use:\ncl-ec0da4e41050 [agreement] cites cl-34785ec24933, cl-5a86c56f889c, cl-882c9c63ae70, cl-a0e918ece362, cl-a39b827e786b, cl-c2ac62f4b160, cl-c6ff1cae91a9, cl-d3e7cd2b784b, cl-e2a879ce1949; allowed figures: 0, 5, 1\ncl-ebe50866c472 [agreement] cites cl-92ae15540483, cl-99148575cd54, cl-a0e918ece362; allowed figures: 06, 3, 1\ncl-c1528e745294 [agreement] cites cl-1f49f207b0ce, cl-99148575cd54, cl-a0e918ece362, cl-d3e7cd2b784b; allowed figures: 3, 3, 1\ncl-05c6f4dc6499 [divergence] cites cl-5a86c56f889c, cl-92ae15540483; allowed figures: 0, 14\ncl-a0216d97754f [divergence] cites cl-882c9c63ae70, cl-5a86c56f889c; allowed figures: 01, 02\ncl-b48f6bae10aa [range] cites cl-5a86c56f889c, cl-882c9c63ae70, cl-92ae15540483, cl-99148575cd54, cl-a0e918ece362, cl-e2a879ce1949; allowed figures: 6, 1, 0, 14",
+  "text": "Source: cross-document synthesis for topic-research-loop-scheduling\nQuestion: Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?\nThese statements combine figures that were already verified in the documents cited below.\nNo figure was averaged, summed or otherwise computed; a statement needing arithmetic is not written.\nStatements, their citations and the figures each was allowed to use:\ncl-f1535a686171 [agreement] cites cl-34785ec24933, cl-5a86c56f889c, cl-882c9c63ae70, cl-a0e918ece362, cl-a39b827e786b, cl-c2ac62f4b160, cl-c6ff1cae91a9, cl-d3e7cd2b784b, cl-e2a879ce1949, cl-b758b39a74cb, cl-422018cead1f; allowed figures: 0, 7, 2\ncl-3328b7d99d8f [agreement] cites cl-92ae15540483, cl-ef888b94be82; allowed figures: 14, 2, 2\ncl-acbe89830170 [agreement] cites cl-1f49f207b0ce, cl-99148575cd54, cl-a0e918ece362, cl-d3e7cd2b784b, cl-a59bec53438a; allowed figures: 3, 4, 2",
   "title": "Cross-document synthesis for How should a research loop schedule and prioritise its own work?",
   "url": "",
-  "written_at": "2026-09-22T00:03:48Z"
+  "written_at": "2026-09-22T05:06:02Z"
 }

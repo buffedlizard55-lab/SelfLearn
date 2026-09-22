@@ -338,6 +338,36 @@
       "strategy_id": "st-37f46e5fe489"
     },
     {
+      "attack_id": "atk-33a512552c42",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-3c4ff6793b28"
+    },
+    {
+      "attack_id": "atk-6baae7ecc43f",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-3c4ff6793b28"
+    },
+    {
+      "attack_id": "atk-f42bd00ce997",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
+      "strategy_id": "st-3c4ff6793b28"
+    },
+    {
       "attack_id": "atk-f3ed03dda181",
       "attack_type": "data",
       "claim_refs": [
@@ -816,6 +846,36 @@
       "strategy_id": "st-c1d34cd47519"
     },
     {
+      "attack_id": "atk-5f6c7f8c8530",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The absence of a contradicting statement in the retrieved set is not evidence that none exists.",
+      "strategy_id": "st-cfc94a2fc4d2"
+    },
+    {
+      "attack_id": "atk-d20b83237545",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-cfc94a2fc4d2"
+    },
+    {
+      "attack_id": "atk-f0fa9b7db858",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-cfc94a2fc4d2"
+    },
+    {
       "attack_id": "atk-5d953e811629",
       "attack_type": "data",
       "claim_refs": [
@@ -1010,6 +1070,61 @@
         "total": 0.6533
       },
       "text": "Of the claims recorded for this question, 97.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
+      "claim_id": "cl-3853270f01f0",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "96.7%",
+        "96.7",
+        "0",
+        "58"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-3853270f01f0",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.14,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 1.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "substantive",
+        "reason": "Carries a checkable quantity, a period or a mechanism, and passed verification.",
+        "total": 0.6533
+      },
+      "text": "Of the claims recorded for this question, 96.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.",
       "url": "",
       "verdict": "supported"
     },
@@ -1768,6 +1883,59 @@
     },
     {
       "cited_claim_ids": [],
+      "claim_id": "cl-7c45d8ea2e28",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "26",
+        "0"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-7c45d8ea2e28",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "descriptive",
+        "reason": "Describes a subject without a quantity or a period of its own.",
+        "total": 0.5133
+      },
+      "text": "Of the documents cited here, 26 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
       "claim_id": "cl-80395c24fb5a",
       "claim_kind": "derived",
       "confidence": "medium",
@@ -2084,6 +2252,58 @@
     },
     {
       "cited_claim_ids": [],
+      "claim_id": "cl-af231e4e8dd2",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "26"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 1 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-af231e4e8dd2",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "descriptive",
+        "reason": "Describes a subject without a quantity or a period of its own.",
+        "total": 0.5133
+      },
+      "text": "26 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
       "claim_id": "cl-b29de1cc2ac9",
       "claim_kind": "derived",
       "confidence": "medium",
@@ -2132,6 +2352,59 @@
         "total": 0.5133
       },
       "text": "Of the documents cited here, 19 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
+      "claim_id": "cl-b8d58e559ed9",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "60",
+        "4"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-b8d58e559ed9",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "descriptive",
+        "reason": "Describes a subject without a quantity or a period of its own.",
+        "total": 0.5133
+      },
+      "text": "This question is currently supported by 60 verified claim(s) drawn from 4 independent source(s).",
       "url": "",
       "verdict": "supported"
     },
@@ -2237,6 +2510,58 @@
         "total": 0.5133
       },
       "text": "This question is currently supported by 24 verified claim(s) drawn from 2 independent source(s).",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
+      "claim_id": "cl-9b4775e24b81",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "3"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 1 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-9b4775e24b81",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.075,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 0.625,
+          "verification": 1.0
+        },
+        "label": "descriptive",
+        "reason": "Describes a subject without a quantity or a period of its own.",
+        "total": 0.4683
+      },
+      "text": "The supporting documents span 3 evidence class(es) in the project hierarchy.",
       "url": "",
       "verdict": "supported"
     },
@@ -2459,6 +2784,120 @@
       "verdict": "unsupported"
     },
     {
+      "cited_claim_ids": [
+        "cl-3875d311770a",
+        "cl-fc01db4f0a3b"
+      ],
+      "claim_id": "cl-186537ad9245",
+      "claim_kind": "synthesis",
+      "confidence": "medium",
+      "context_numbers": [
+        "2",
+        "2",
+        "2"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "synthesis-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "Composed only of a figure that appears verbatim in each cited document and a count of documents. The engine does not know whether the documents are independent of one another; two outlets reporting the same press release count as two documents here.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 1 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "Cross-document synthesis of cited claims",
+      "substance": {
+        "claim_id": "cl-186537ad9245",
+        "contributions": {
+          "caveat": 0.08,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.14,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 1.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 1.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "substantive",
+        "reason": "Carries a checkable quantity, a period or a mechanism, and passed verification.",
+        "total": 0.7333
+      },
+      "text": "The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [
+        "cl-5d482d19855b",
+        "cl-fc01db4f0a3b"
+      ],
+      "claim_id": "cl-8737f188a55e",
+      "claim_kind": "synthesis",
+      "confidence": "medium",
+      "context_numbers": [
+        "3",
+        "2",
+        "2"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "synthesis-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "Composed only of a figure that appears verbatim in each cited document and a count of documents. The engine does not know whether the documents are independent of one another; two outlets reporting the same press release count as two documents here.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "Cross-document synthesis of cited claims",
+      "substance": {
+        "claim_id": "cl-8737f188a55e",
+        "contributions": {
+          "caveat": 0.08,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.14,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 1.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 1.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "substantive",
+        "reason": "Carries a checkable quantity, a period or a mechanism, and passed verification.",
+        "total": 0.7333
+      },
+      "text": "The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
       "cited_claim_ids": [],
       "claim_id": "cl-5d482d19855b",
       "claim_kind": "direct",
@@ -2506,6 +2945,106 @@
       },
       "text": "The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.",
       "url": "https://github.com/khoj-ai/khoj",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
+      "claim_id": "cl-b20f8a249e66",
+      "claim_kind": "direct",
+      "confidence": "low",
+      "context_numbers": [],
+      "coverage": 1.0,
+      "evidence_class": "commentary",
+      "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
+      "evidence_id": "ev-83f90da6798d",
+      "evidence_rank": 7,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for Deep Research Max: a step change for autonomous research agents reports: created_at 2026-04-21T16:30:01Z, points 9, comment count 0.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "Hacker News API (via Algolia index)",
+      "substance": {
+        "claim_id": "cl-b20f8a249e66",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.12,
+          "evidence": 0.02,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 1.0,
+          "evidence": 0.3333,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "substantive",
+        "reason": "Carries a checkable quantity, a period or a mechanism, and passed verification.",
+        "total": 0.6
+      },
+      "text": "The record for Deep Research Max: a step change for autonomous research agents reports: created_at 2026-04-21T16:30:01Z, points 9, comment count 0.",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
+      "claim_id": "cl-fc01db4f0a3b",
+      "claim_kind": "direct",
+      "confidence": "low",
+      "context_numbers": [],
+      "coverage": 1.0,
+      "evidence_class": "commentary",
+      "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
+      "evidence_id": "ev-502f6e95caeb",
+      "evidence_rank": 7,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for Autonomous AI research agent with Overleaf sync reports: created_at 2026-03-21T12:39:59Z, points 3, comment count 2.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "Hacker News API (via Algolia index)",
+      "substance": {
+        "claim_id": "cl-fc01db4f0a3b",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.12,
+          "evidence": 0.02,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 1.0,
+          "evidence": 0.3333,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "substantive",
+        "reason": "Carries a checkable quantity, a period or a mechanism, and passed verification.",
+        "total": 0.6
+      },
+      "text": "The record for Autonomous AI research agent with Overleaf sync reports: created_at 2026-03-21T12:39:59Z, points 3, comment count 2.",
+      "url": "https://github.com/nanoAgentTeam/research-claw",
       "verdict": "supported"
     },
     {
@@ -2706,6 +3245,56 @@
       },
       "text": "The record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37459, forks_count 2490.",
       "url": "https://github.com/khoj-ai/khoj",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
+      "claim_id": "cl-607f6f3d89e1",
+      "claim_kind": "direct",
+      "confidence": "medium",
+      "context_numbers": [],
+      "coverage": 1.0,
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-453933e4be9d",
+      "evidence_rank": 3,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for assafelovic/gpt-researcher reports: pushed_at 2026-08-27T19:34:56Z, stargazers_count 29559, forks_count 4026.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "GitHub REST API",
+      "substance": {
+        "claim_id": "cl-607f6f3d89e1",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.12,
+          "evidence": 0.0467,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.075,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 1.0,
+          "evidence": 0.7778,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 0.625,
+          "verification": 1.0
+        },
+        "label": "substantive",
+        "reason": "Carries a checkable quantity, a period or a mechanism, and passed verification.",
+        "total": 0.5817
+      },
+      "text": "The record for assafelovic/gpt-researcher reports: pushed_at 2026-08-27T19:34:56Z, stargazers_count 29559, forks_count 4026.",
+      "url": "https://github.com/assafelovic/gpt-researcher",
       "verdict": "supported"
     },
     {
@@ -2956,6 +3545,56 @@
       },
       "text": "The record for assafelovic/gpt-researcher reports: language Python, license Apache-2.0, topics agent; ai; automation; deepresearch; llms; mcp; mcp-server; python; research; search; webscraping.",
       "url": "https://github.com/assafelovic/gpt-researcher",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
+      "claim_id": "cl-5faccd0e8a10",
+      "claim_kind": "direct",
+      "confidence": "low",
+      "context_numbers": [],
+      "coverage": 1.0,
+      "evidence_class": "commentary",
+      "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
+      "evidence_id": "ev-83f90da6798d",
+      "evidence_rank": 7,
+      "limitations": "",
+      "missing_numbers": [],
+      "quote": "The record for Deep Research Max: a step change for autonomous research agents reports: objectID 47851065.",
+      "quote_match": true,
+      "reasons": [
+        "Verbatim quoted span found in the document."
+      ],
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "source_name": "Hacker News API (via Algolia index)",
+      "substance": {
+        "claim_id": "cl-5faccd0e8a10",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.02,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.3333,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "descriptive",
+        "reason": "Describes a subject without a quantity or a period of its own.",
+        "total": 0.48
+      },
+      "text": "The record for Deep Research Max: a step change for autonomous research agents reports: objectID 47851065.",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/",
       "verdict": "supported"
     },
     {
@@ -3584,48 +4223,48 @@
   "derived": [
     {
       "context_numbers": [
-        "50",
-        "2"
+        "61",
+        "4"
       ],
       "label": "library_volume",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "This question is currently supported by 50 verified claim(s) drawn from 2 independent source(s)."
+      "text": "This question is currently supported by 61 verified claim(s) drawn from 4 independent source(s)."
     },
     {
       "context_numbers": [
-        "96.0%",
-        "96.0",
+        "96.7%",
+        "96.7",
         "0",
-        "48"
+        "59"
       ],
       "label": "verification_rate",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "Of the claims recorded for this question, 96.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
+      "text": "Of the claims recorded for this question, 96.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
     },
     {
       "context_numbers": [
-        "2"
+        "3"
       ],
       "label": "evidence_spread",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "The supporting documents span 2 evidence class(es) in the project hierarchy."
+      "text": "The supporting documents span 3 evidence class(es) in the project hierarchy."
     },
     {
       "context_numbers": [
-        "8",
+        "11",
         "0"
       ],
       "label": "retrieval_mode",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "Of the documents cited here, 8 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear."
+      "text": "Of the documents cited here, 11 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear."
     },
     {
       "context_numbers": [
-        "22"
+        "26"
       ],
       "label": "quantified_support",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "22 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible."
+      "text": "26 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible."
     }
   ],
   "documents": [
@@ -3676,6 +4315,21 @@
     },
     {
       "bytes_read": 58968,
+      "content_hash": "sha256:7dd4e8f83006ae346fb87996713a948b72505f5c9a5792e3f471062f36a3c698",
+      "evidence_class": "primary_source",
+      "evidence_class_label": "Original data, official API response, official document or dataset.",
+      "evidence_id": "ev-453933e4be9d",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+      "published_at": "2026-08-27",
+      "retrieved_at": "2026-09-22T05:05:57Z",
+      "source_name": "GitHub REST API",
+      "title": "assafelovic/gpt-researcher",
+      "url": "https://github.com/assafelovic/gpt-researcher"
+    },
+    {
+      "bytes_read": 58968,
       "content_hash": "sha256:b8c7657bbb9b0356e6ae0966f2619a4508f0760e132740283945d35d20cc24d3",
       "evidence_class": "primary_source",
       "evidence_class_label": "Original data, official API response, official document or dataset.",
@@ -3699,7 +4353,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2025-08-20",
-      "retrieved_at": "2026-09-22T00:22:23Z",
+      "retrieved_at": "2026-09-22T05:05:57Z",
       "source_name": "GitHub REST API",
       "title": "SamuelSchmidgall/AgentLaboratory",
       "url": "https://github.com/SamuelSchmidgall/AgentLaboratory"
@@ -3714,7 +4368,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-08-04",
-      "retrieved_at": "2026-09-22T00:22:23Z",
+      "retrieved_at": "2026-09-22T05:05:57Z",
       "source_name": "GitHub REST API",
       "title": "virattt/dexter",
       "url": "https://github.com/virattt/dexter"
@@ -3729,7 +4383,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-08-02",
-      "retrieved_at": "2026-09-22T00:22:23Z",
+      "retrieved_at": "2026-09-22T05:05:57Z",
       "source_name": "GitHub REST API",
       "title": "khoj-ai/khoj",
       "url": "https://github.com/khoj-ai/khoj"
@@ -3748,6 +4402,36 @@
       "source_name": "GitHub REST API",
       "title": "khoj-ai/khoj",
       "url": "https://github.com/khoj-ai/khoj"
+    },
+    {
+      "bytes_read": 29992,
+      "content_hash": "sha256:df08633206dbde8fab6d39b92796c89e67a8d31d85b6672f8f81e6d4b12fce7b",
+      "evidence_class": "commentary",
+      "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
+      "evidence_id": "ev-502f6e95caeb",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
+      "published_at": "2026-03-21",
+      "retrieved_at": "2026-09-22T05:05:58Z",
+      "source_name": "Hacker News API (via Algolia index)",
+      "title": "Autonomous AI research agent with Overleaf sync",
+      "url": "https://github.com/nanoAgentTeam/research-claw"
+    },
+    {
+      "bytes_read": 29992,
+      "content_hash": "sha256:1a13c8887f1fbb32cfe6b82a2543d0192d5153b2b4b7a4eb9946d6e6386f9645",
+      "evidence_class": "commentary",
+      "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
+      "evidence_id": "ev-83f90da6798d",
+      "is_fixture": false,
+      "is_live": true,
+      "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
+      "published_at": "2026-04-21",
+      "retrieved_at": "2026-09-22T05:05:58Z",
+      "source_name": "Hacker News API (via Algolia index)",
+      "title": "Deep Research Max: a step change for autonomous research agents",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/"
     }
   ],
   "epistemic_questions": [
@@ -3759,7 +4443,7 @@
     "What experiment would resolve it?"
   ],
   "experiments": [],
-  "generated_at": "2026-09-22T03:58:01Z",
+  "generated_at": "2026-09-22T05:06:07Z",
   "questions": [
     {
       "id": "q-f7a08fa5afe7",
@@ -4473,25 +5157,59 @@
     {
       "claim_id": "q-3908709733c3",
       "claim_kind": "open question (gap)",
-      "recorded_at": "2026-09-22T00:22:23Z",
-      "superseded": "Withdrawn 2026-09-22T00:22:29Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-048f7bdbd6c3.",
+      "recorded_at": "2026-09-22T05:05:58Z",
+      "superseded": "Withdrawn 2026-09-22T05:06:07Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-048f7bdbd6c3.",
       "text": "The quantity reported in cl-048f7bdbd6c3 has no reference period in the quoted text. Over what period, and in what population, was it measured?"
     }
   ],
-  "source_status": [],
+  "source_status": [
+    {
+      "checked_at": "2026-09-22T05:05:57Z",
+      "detail": "4 document(s) retrieved; 6 result(s) dropped as unrelated to the query",
+      "evidence_class": "primary_source",
+      "evidence_rank": 3,
+      "http_status": 200,
+      "items": 4,
+      "live_status": "reachable",
+      "name": "GitHub REST API",
+      "requires_key": false,
+      "source_id": "github",
+      "topics": [
+        "topic-autonomous-research-agents"
+      ],
+      "url": "https://api.github.com/search/repositories"
+    },
+    {
+      "checked_at": "2026-09-22T05:05:58Z",
+      "detail": "9 document(s) retrieved; 1 result(s) dropped as unrelated to the query",
+      "evidence_class": "commentary",
+      "evidence_rank": 7,
+      "http_status": 200,
+      "items": 9,
+      "live_status": "reachable",
+      "name": "Hacker News API (via Algolia index)",
+      "requires_key": false,
+      "source_id": "hackernews",
+      "topics": [
+        "topic-autonomous-research-agents"
+      ],
+      "url": "https://hn.algolia.com/api/v1/search"
+    }
+  ],
   "statistics": {
-    "claims": 50,
-    "computed_at": "2026-09-22T03:58:01Z",
-    "documents": 8,
+    "claims": 61,
+    "computed_at": "2026-09-22T05:06:07Z",
+    "documents": 11,
     "evidence_classes": [
+      "commentary",
       "primary_source",
       "reproduced_experiment"
     ],
     "fixture_documents": 0,
-    "live_documents": 8,
+    "live_documents": 11,
     "partially_supported": 0,
-    "sources": 2,
-    "supported": 48,
+    "sources": 4,
+    "supported": 59,
     "unsupported": 2
   },
   "status_history": [
@@ -4600,6 +5318,18 @@
     {
       "last_updated": "2026-09-22T00:22:23Z",
       "line": 83,
+      "status": "competing",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-22T05:05:56Z",
+      "line": 87,
+      "status": "new",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-22T05:05:58Z",
+      "line": 91,
       "status": "competing",
       "topic_id": "topic-autonomous-research-agents"
     }
@@ -5676,6 +6406,218 @@
       "title": "Cross-domain brief: Autonomous research agents: which open implementations exist and how active are…"
     },
     {
+      "argument": "Contrarian brief. The retrieved evidence is searched for findings that limit, qualify or contradict the conventional reading.\n\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-8737f188a55e] \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2f15bcca9881] \"This question is currently supported by 18 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-35408f489136] \"Of the claims recorded for this question, 97.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The absence of a contradicting statement in the retrieved set is not evidence that none exists."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 18, 2, 3, 38 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "B - Contrarian",
+      "persona_brief": "Assume the conventional approach is wrong; find evidence-backed alternatives.",
+      "persona_code": "B",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\""
+      ],
+      "scorecard": {
+        "attacks": 3,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0577,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.5369,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-cfc94a2fc4d2",
+      "supporting_claim_ids": [
+        "cl-186537ad9245",
+        "cl-8737f188a55e",
+        "cl-209c483bda0a",
+        "cl-2a9e3216246c",
+        "cl-2f15bcca9881",
+        "cl-35408f489136"
+      ],
+      "title": "Contrarian brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-8737f188a55e] \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2f15bcca9881] \"This question is currently supported by 18 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-35408f489136] \"Of the claims recorded for this question, 97.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 18, 2, 3, 38 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "E - Optimization",
+      "persona_brief": "Find the cheapest, fastest or most scalable option given the sourced numbers.",
+      "persona_code": "E",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\""
+      ],
+      "scorecard": {
+        "attacks": 3,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.057,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.5368,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-3c4ff6793b28",
+      "supporting_claim_ids": [
+        "cl-186537ad9245",
+        "cl-8737f188a55e",
+        "cl-209c483bda0a",
+        "cl-2a9e3216246c",
+        "cl-2f15bcca9881",
+        "cl-35408f489136"
+      ],
+      "title": "Optimization brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
       "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2f15bcca9881] \"This question is currently supported by 18 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-35408f489136] \"Of the claims recorded for this question, 97.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4c05326d831d] \"This question is currently supported by 52 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-4d8022f5ac83] \"Of the documents cited here, 18 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -6525,22 +7467,95 @@
     }
   ],
   "substance": {
-    "claims": 50,
-    "dated": 8,
+    "claims": 61,
+    "dated": 11,
     "labels": {
-      "descriptive": 24,
+      "descriptive": 29,
       "metadata": 8,
-      "substantive": 18
+      "substantive": 24
     },
-    "mean_score": 0.499,
-    "metadata_share": 0.16,
-    "quantified": 42,
-    "quantified_share": 0.84,
-    "substantive_share": 0.36
+    "mean_score": 0.5138,
+    "metadata_share": 0.1311,
+    "quantified": 53,
+    "quantified_share": 0.8689,
+    "substantive_share": 0.3934
   },
-  "synthesis": [],
+  "synthesis": [
+    {
+      "citations": [
+        {
+          "claim_id": "cl-fc01db4f0a3b",
+          "evidence_id": "ev-502f6e95caeb",
+          "source_name": "Hacker News API (via Algolia index)",
+          "text": "The record for Autonomous AI research agent with Overleaf sync reports: created_at 2026-03-21T12:39:59Z, points 3, comment count 2.",
+          "url": "https://github.com/nanoAgentTeam/research-claw",
+          "verdict": "supported"
+        },
+        {
+          "claim_id": "cl-3875d311770a",
+          "evidence_id": "ev-4b8d9080afb3",
+          "source_name": "GitHub REST API",
+          "text": "The record for assafelovic/gpt-researcher reports: language Python, license Apache-2.0, topics agent; ai; automation; deepresearch; llms; mcp; mcp-server; python; research; search; webscraping.",
+          "url": "https://github.com/assafelovic/gpt-researcher",
+          "verdict": "supported"
+        }
+      ],
+      "cited_claim_ids": [
+        "cl-3875d311770a",
+        "cl-fc01db4f0a3b"
+      ],
+      "claim_id": "cl-186537ad9245",
+      "context_numbers": [
+        "2",
+        "2",
+        "2"
+      ],
+      "limitations": "Composed only of a figure that appears verbatim in each cited document and a count of documents. The engine does not know whether the documents are independent of one another; two outlets reporting the same press release count as two documents here.",
+      "reasons": [
+        "All 1 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
+      ],
+      "text": "The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.",
+      "verdict": "supported"
+    },
+    {
+      "citations": [
+        {
+          "claim_id": "cl-5d482d19855b",
+          "evidence_id": "ev-ebdb71978613",
+          "source_name": "GitHub REST API",
+          "text": "The record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.",
+          "url": "https://github.com/khoj-ai/khoj",
+          "verdict": "supported"
+        },
+        {
+          "claim_id": "cl-fc01db4f0a3b",
+          "evidence_id": "ev-502f6e95caeb",
+          "source_name": "Hacker News API (via Algolia index)",
+          "text": "The record for Autonomous AI research agent with Overleaf sync reports: created_at 2026-03-21T12:39:59Z, points 3, comment count 2.",
+          "url": "https://github.com/nanoAgentTeam/research-claw",
+          "verdict": "supported"
+        }
+      ],
+      "cited_claim_ids": [
+        "cl-5d482d19855b",
+        "cl-fc01db4f0a3b"
+      ],
+      "claim_id": "cl-8737f188a55e",
+      "context_numbers": [
+        "3",
+        "2",
+        "2"
+      ],
+      "limitations": "Composed only of a figure that appears verbatim in each cited document and a count of documents. The engine does not know whether the documents are independent of one another; two outlets reporting the same press release count as two documents here.",
+      "reasons": [
+        "All 2 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
+      ],
+      "text": "The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.",
+      "verdict": "supported"
+    }
+  ],
   "topic": {
-    "first_seen": "2026-09-22T00:22:22Z",
+    "first_seen": "2026-09-22T05:05:56Z",
     "keywords": [
       "autonomous agent",
       "research automation",
@@ -6549,7 +7564,7 @@
       "open source",
       "repository activity"
     ],
-    "last_updated": "2026-09-22T00:22:23Z",
+    "last_updated": "2026-09-22T05:05:58Z",
     "notes": "First seed question. Chosen because its evidence is repository metadata, which the engine can retrieve and quote verbatim.",
     "origin": "seed",
     "parent_topic_id": null,

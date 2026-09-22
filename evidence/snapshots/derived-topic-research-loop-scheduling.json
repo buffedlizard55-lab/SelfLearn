@@ -1,32 +1,32 @@
 {
   "claim_ids": [
-    "cl-8b8418494895",
-    "cl-b121ccddb7c6",
-    "cl-30d31bfbf26c",
-    "cl-f37ed063d5a1",
-    "cl-8d6e7a667f8e"
+    "cl-fa2149e021c2",
+    "cl-b90c3a660983",
+    "cl-0d0a69fa0651",
+    "cl-bf2f3ca16301",
+    "cl-218a3db8595c"
   ],
-  "content_hash": "sha256:9274ee7e06437c4528c23ba81e781f0f57f866152c95c9de95d81c4db1f55808",
+  "content_hash": "sha256:9b503cdf629054c0f2396c4c193f75997a1157804f815b21da2959536479be04",
   "derived_contexts": {
-    "cl-30d31bfbf26c": [
-      "2"
-    ],
-    "cl-8b8418494895": [
-      "46",
+    "cl-0d0a69fa0651": [
       "3"
     ],
-    "cl-8d6e7a667f8e": [
-      "20"
+    "cl-218a3db8595c": [
+      "32"
     ],
-    "cl-b121ccddb7c6": [
-      "93.5%",
-      "93.5",
+    "cl-b90c3a660983": [
+      "95.0%",
+      "95.0",
       "0",
-      "43"
+      "57"
     ],
-    "cl-f37ed063d5a1": [
-      "20",
+    "cl-bf2f3ca16301": [
+      "32",
       "0"
+    ],
+    "cl-fa2149e021c2": [
+      "60",
+      "4"
     ]
   },
   "evidence_class": "reproduced_experiment",
@@ -36,8 +36,8 @@
   "is_live": true,
   "source_id": "selflearn_library",
   "source_name": "SelfLearn library computation",
-  "text": "Source: SelfLearn library computation for topic-research-loop-scheduling\nQuestion: Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?\nThese statements are computed by the engine from its own records. They assert nothing about the world.\nStatements and the figures each was computed from:\nThis question is currently supported by 46 verified claim(s) drawn from 3 independent source(s). [figures: 46, 3]\nOf the claims recorded for this question, 93.5% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. [figures: 93.5%, 93.5, 0, 43]\nThe supporting documents span 2 evidence class(es) in the project hierarchy. [figures: 2]\nOf the documents cited here, 20 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear. [figures: 20, 0]\n20 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. [figures: 20]",
+  "text": "Source: SelfLearn library computation for topic-research-loop-scheduling\nQuestion: Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?\nThese statements are computed by the engine from its own records. They assert nothing about the world.\nStatements and the figures each was computed from:\nThis question is currently supported by 60 verified claim(s) drawn from 4 independent source(s). [figures: 60, 4]\nOf the claims recorded for this question, 95.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. [figures: 95.0%, 95.0, 0, 57]\nThe supporting documents span 3 evidence class(es) in the project hierarchy. [figures: 3]\nOf the documents cited here, 32 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear. [figures: 32, 0]\n32 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. [figures: 32]",
   "title": "Library computation for How should a research loop schedule and prioritise its own work?",
   "url": "",
-  "written_at": "2026-09-22T00:22:26Z"
+  "written_at": "2026-09-22T05:06:02Z"
 }

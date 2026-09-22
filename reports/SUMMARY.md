@@ -1,14 +1,14 @@
 # SelfLearn summary
 
-Generated 2026-09-22T03:58:22Z from the stored library. Nothing in this file is written by hand.
+Generated 2026-09-22T05:06:08Z from the stored library. Nothing in this file is written by hand.
 
 ## What the library holds
 
 - 11 question(s) under research
-- 240 claim(s): 231 supported, 0 needing review, 9 rejected
-- 36 retrieved document(s) stored and hashed
-- 150 competing candidate(s) with 666 recorded criticism(s)
-- 55 derived open question(s), 2 experiment(s) run
+- 273 claim(s): 264 supported, 0 needing review, 9 rejected
+- 76 retrieved document(s) stored and hashed
+- 166 competing candidate(s) with 729 recorded criticism(s)
+- 92 derived open question(s), 2 experiment(s) run
 - 12 contradiction(s) awaiting a human decision
 
 Verification thresholds in force: supported at coverage 0.8, partially supported at 0.45, verbatim quote minimum 24.0 characters (state/calibration.json).
@@ -53,7 +53,7 @@ State rejected · 0 claim(s) · 0 supported · 0 source(s) cited
 
 *What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?*
 
-State competing · 56 claim(s) · 54 supported · 3 source(s) cited
+State competing · 67 claim(s) · 65 supported · 4 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -62,11 +62,11 @@ State competing · 56 claim(s) · 54 supported · 3 source(s) cited
 - The record for SamuelSchmidgall/AgentLaboratory reports: pushed_at 2025-08-20T21:46:43Z, stargazers_count 5859, forks_count 800. — GitHub REST API · [primary_source] · https://github.com/SamuelSchmidgall/AgentLaboratory · coverage 1.0
 - The record for khoj-ai/khoj states in its own description: Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). — GitHub REST API · [primary_source] · https://github.com/khoj-ai/khoj · coverage 1.0
 - The record for assafelovic/gpt-researcher reports: open_issues_count 102. — GitHub REST API · [primary_source] · https://github.com/assafelovic/gpt-researcher · coverage 1.0
+- The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause. — Cross-document synthesis of cited claims · [reproduced_experiment] · computed · coverage 1.0
 - The record for virattt/dexter reports: pushed_at 2026-08-04T15:20:42Z, stargazers_count 27614, forks_count 3415. — GitHub REST API · [primary_source] · https://github.com/virattt/dexter · coverage 1.0
 - This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - The record for virattt/dexter states in its own description: An autonomous agent for deep financial research — GitHub REST API · [primary_source] · https://github.com/virattt/dexter · coverage 1.0
 - This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
-- Across 5 documents from 1 source(s), reported values expressed in fork range from 5859 to 37459. The documents are not measuring an agreed quantity: the unit is a word the engine matched, not a standardised measure. — Cross-document synthesis of cited claims · [reproduced_experiment] · computed · coverage 1.0
 
 ### Rejected by the verifier (2)
 
@@ -103,7 +103,7 @@ State rejected · 0 claim(s) · 0 supported · 0 source(s) cited
 
 *What open-source tooling exists for detecting unsupported or fabricated statements in machine-generated text, and what evidence supports its use?*
 
-State testing · 64 claim(s) · 63 supported · 3 source(s) cited
+State testing · 65 claim(s) · 64 supported · 3 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -143,26 +143,26 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports. — status completed · verdict accuracy on labelled cases: baseline 0.96 -> best 1.0 (support=0.8 partial=0.45 quote_chars=24.0) · /usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-yj73sj1g/result.json
+- A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports. — status completed · verdict accuracy on labelled cases: baseline 0.96 -> best 1.0 (support=0.8 partial=0.45 quote_chars=24.0) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-edvm0lha/result.json
 
 ## How should a research loop schedule and prioritise its own work?
 
 *Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?*
 
-State competing · 48 claim(s) · 45 supported · 3 source(s) cited
+State competing · 67 claim(s) · 64 supported · 4 source(s) cited
 
 ### Supported by a quotation (first 10)
 
 - Two documents disagree about a value expressed in fork: one reports 0 and the other reports 14. Both statements are verified against their own source; the engine cannot decide which is correct and has published the pair for review, with both sources linked below. — Cross-document synthesis of cited claims · [reproduced_experiment] · computed · coverage 1.0
+- The record for Sequential and Active Learning for Advancing MRI Acquisition and Anomaly Detection in Brain Images states in its own abstract: L'apprentissage séquentiel offre une solution robuste, servant de pierre angulaire à la descente de gradient stochastique et permettant aux réseaux neuronaux profonds (RNP) de traiter efficacement des ensembles de données à grande échelle. — Crossref REST API · [peer_reviewed] · https://doi.org/10.70675/b5ee8192zdc38z4512zb3e5zfb1c66f5e409 · coverage 1.0
+- The supporting documents span 3 evidence class(es) in the project hierarchy. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - The record for sleepingcat4/Active-learning states in its own description: written 3 differrent acquisition functions for active learning. — GitHub REST API · [primary_source] · https://github.com/sleepingcat4/Active-learning · coverage 1.0
 - Of the claims recorded for this question, 93.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
+- 32 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - This question is currently supported by 40 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - The supporting documents span 2 evidence class(es) in the project hierarchy. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
-- The record for jmamath/active-learning reports: language Python, license MIT, open_issues_count 0. — GitHub REST API · [primary_source] · https://github.com/jmamath/active-learning · coverage 1.0
-- Of the claims recorded for this question, 94.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
-- The record for umbrellagong/gpsearch states in its own description: Bayesian optimization and active learning with likelihood-weighted acquisition functions — GitHub REST API · [primary_source] · https://github.com/umbrellagong/gpsearch · coverage 1.0
-- The record for umbrellagong/gpsearch reports: pushed_at 2020-07-02T16:25:19Z, stargazers_count 0, forks_count 2. — GitHub REST API · [primary_source] · https://github.com/umbrellagong/gpsearch · coverage 1.0
+- The figure 14 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause. — Cross-document synthesis of cited claims · [reproduced_experiment] · computed · coverage 1.0
 
 ### Rejected by the verifier (3)
 
@@ -172,9 +172,10 @@ These are shown because the engine records what it refused to accept as well as 
 - Of the claims recorded for this question, 96.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 96%. Recomputation disagrees with the recorded context.
 - Of the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context.
 
-### Open questions (10)
+### Open questions (11)
 
 - A statement verified for a different topic - "The record for khoj-ai/khoj states in its own description: Build custom agents, schedule automations, do deep research." (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
+- A statement verified for a different topic - "The record for Deep Research Max: a step change for autonomous research agents reports: objectID 47851065." (Hacker News API (via Algolia index)) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The retrieved statements repeatedly introduce the term 'record', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - The retrieved statements repeatedly introduce the term 'question', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - The quantity reported in cl-1f49f207b0ce has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
@@ -183,7 +184,6 @@ These are shown because the engine records what it refused to accept as well as 
 - The retrieved statements repeatedly introduce the term 'count', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - The quantity reported in cl-aae22a8bf2b6 has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
 - The quantity reported in cl-05c6f4dc6499 has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
-- The source GitHub REST API reports an unresolved or hedged finding: "The record for IsaH93/pil-active-learning-screening states in its own description: GP surrogate over interpretable PIL descriptors → acquisition function (EI/UCB/uncertainty/greedy) → measure → repea…". Which additional evidence would settle whether this holds for this question? — sub_question · priority 0.7
 
 ### Contradictions (8)
 
@@ -200,7 +200,7 @@ These are shown because the engine records what it refused to accept as well as 
 
 *For the sorting and search strategies in common use, how do measured comparison counts compare with the stated bounds, and where does the choice change the outcome?*
 
-State testing · 72 claim(s) · 69 supported · 3 source(s) cited
+State testing · 74 claim(s) · 71 supported · 3 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -209,11 +209,11 @@ State testing · 72 claim(s) · 69 supported · 3 source(s) cited
 - The record for onuryilmaz-wip/ComparisonOfSortingAlgorithms reports: language C++, open_issues_count 0. — GitHub REST API · [primary_source] · https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms · coverage 1.0
 - This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - The record for daley331/Sorting-Algorithms-Analysis reports: pushed_at 2024-08-01T14:34:21Z, stargazers_count 1, forks_count 1. — GitHub REST API · [primary_source] · https://github.com/daley331/Sorting-Algorithms-Analysis · coverage 1.0
+- This question is currently supported by 72 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - The record for w32zhong/BTreeimplementation states in its own description: Two command line arguments will be specified: the name of the index file, and a B-tree order. assn_4 index-file order For example, executing your program as follows assn_4 index.bin 4 would open an index file called index.bin that holds integer keys stored in an order-4 B-tree. — GitHub REST API · [primary_source] · https://github.com/w32zhong/BTreeimplementation · coverage 1.0
 - The record for w32zhong/BTreeimplementation states in its own description: CSC 541 Assignment 4 B-Trees Introduction The goals of this assignment are two-fold: To introduce you to searching data on disk using B-trees. — GitHub REST API · [primary_source] · https://github.com/w32zhong/BTreeimplementation · coverage 1.0
 - This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - The record for sbtali/SortAlgorithmsComparison reports: language HTML, open_issues_count 0. — GitHub REST API · [primary_source] · https://github.com/sbtali/SortAlgorithmsComparison · coverage 1.0
-- This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 
 ### Rejected by the verifier (3)
 
@@ -235,11 +235,11 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either. — status completed · mean element comparisons per run: baseline 16807.6 -> best 1726.4 (merge_sort) · /usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-5dct9e7h/result.json
+- On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either. — status completed · mean element comparisons per run: baseline 16807.6 -> best 1726.4 (merge_sort) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-si8wy354/result.json
 
 ## Waiting for review
 
-17 open irregularit(ies): info 5, warning 12
+20 open irregularit(ies): info 5, warning 15
 
 - [warning] Topic 'Below names' produced no verified claims — audit · Check the source status table for this topic and add or repair sources.
 - [warning] Change scan could not reach nvd — change_scan · Re-run the scan from a host with egress to this source.

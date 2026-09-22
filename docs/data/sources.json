@@ -867,22 +867,22 @@
       "unsupported": 0
     },
     {
-      "citations": 454,
-      "claims_proposed": 91,
-      "claims_supported": 82,
+      "citations": 521,
+      "claims_proposed": 103,
+      "claims_supported": 94,
       "documents": 0,
       "evidence_class": "reproduced_experiment",
       "evidence_rank": 2,
       "partially_supported": 0,
       "source_id": "SelfLearn library computation",
       "source_name": "SelfLearn library computation",
-      "support_rate": 0.9011,
+      "support_rate": 0.9126,
       "unsupported": 9
     },
     {
-      "citations": 181,
-      "claims_proposed": 24,
-      "claims_supported": 24,
+      "citations": 191,
+      "claims_proposed": 29,
+      "claims_supported": 29,
       "documents": 0,
       "evidence_class": "reproduced_experiment",
       "evidence_rank": 2,
@@ -893,9 +893,9 @@
       "unsupported": 0
     },
     {
-      "citations": 265,
-      "claims_proposed": 125,
-      "claims_supported": 125,
+      "citations": 281,
+      "claims_proposed": 126,
+      "claims_supported": 126,
       "documents": 0,
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -909,7 +909,7 @@
       "citations": 0,
       "claims_proposed": 0,
       "claims_supported": 0,
-      "documents": 34,
+      "documents": 35,
       "evidence_class": "primary_source",
       "evidence_rank": 3,
       "partially_supported": 0,
@@ -917,7 +917,204 @@
       "source_name": "GitHub REST API",
       "support_rate": 0.0,
       "unsupported": 0
+    },
+    {
+      "citations": 2,
+      "claims_proposed": 12,
+      "claims_supported": 12,
+      "documents": 0,
+      "evidence_class": "peer_reviewed",
+      "evidence_rank": 4,
+      "partially_supported": 0,
+      "source_id": "Crossref REST API",
+      "source_name": "Crossref REST API",
+      "support_rate": 1.0,
+      "unsupported": 0
+    },
+    {
+      "citations": 0,
+      "claims_proposed": 0,
+      "claims_supported": 0,
+      "documents": 30,
+      "evidence_class": "peer_reviewed",
+      "evidence_rank": 4,
+      "partially_supported": 0,
+      "source_id": "crossref",
+      "source_name": "Crossref REST API",
+      "support_rate": 0.0,
+      "unsupported": 0
+    },
+    {
+      "citations": 1,
+      "claims_proposed": 3,
+      "claims_supported": 3,
+      "documents": 0,
+      "evidence_class": "commentary",
+      "evidence_rank": 7,
+      "partially_supported": 0,
+      "source_id": "Hacker News API (via Algolia index)",
+      "source_name": "Hacker News API (via Algolia index)",
+      "support_rate": 1.0,
+      "unsupported": 0
+    },
+    {
+      "citations": 0,
+      "claims_proposed": 0,
+      "claims_supported": 0,
+      "documents": 9,
+      "evidence_class": "commentary",
+      "evidence_rank": 7,
+      "partially_supported": 0,
+      "source_id": "hackernews",
+      "source_name": "Hacker News API (via Algolia index)",
+      "support_rate": 0.0,
+      "unsupported": 0
     }
   ],
-  "status": []
+  "status": [
+    {
+      "checked_at": "2026-09-22T05:05:57Z",
+      "detail": "4 document(s) retrieved; 6 result(s) dropped as unrelated to the query",
+      "evidence_class": "primary_source",
+      "evidence_rank": 3,
+      "http_status": 200,
+      "items": 4,
+      "live_status": "reachable",
+      "name": "GitHub REST API",
+      "requires_key": false,
+      "source_id": "github",
+      "topics": [
+        "topic-autonomous-research-agents"
+      ],
+      "url": "https://api.github.com/search/repositories"
+    },
+    {
+      "checked_at": "2026-09-22T05:05:58Z",
+      "detail": "9 document(s) retrieved; 1 result(s) dropped as unrelated to the query",
+      "evidence_class": "commentary",
+      "evidence_rank": 7,
+      "http_status": 200,
+      "items": 9,
+      "live_status": "reachable",
+      "name": "Hacker News API (via Algolia index)",
+      "requires_key": false,
+      "source_id": "hackernews",
+      "topics": [
+        "topic-autonomous-research-agents"
+      ],
+      "url": "https://hn.algolia.com/api/v1/search"
+    },
+    {
+      "checked_at": "2026-09-22T05:05:59Z",
+      "detail": "10 document(s) retrieved",
+      "evidence_class": "primary_source",
+      "evidence_rank": 3,
+      "http_status": 200,
+      "items": 10,
+      "live_status": "reachable",
+      "name": "GitHub REST API",
+      "requires_key": false,
+      "source_id": "github",
+      "topics": [
+        "topic-fabrication-detection"
+      ],
+      "url": "https://api.github.com/search/repositories"
+    },
+    {
+      "checked_at": "2026-09-22T05:05:59Z",
+      "detail": "",
+      "evidence_class": "primary_source",
+      "evidence_rank": 3,
+      "http_status": 406,
+      "items": 0,
+      "live_status": "error",
+      "name": "arXiv API",
+      "requires_key": false,
+      "source_id": "arxiv",
+      "topics": [
+        "topic-fabrication-detection"
+      ],
+      "url": "https://export.arxiv.org/api/query"
+    },
+    {
+      "checked_at": "2026-09-22T05:05:59Z",
+      "detail": "10 document(s) retrieved",
+      "evidence_class": "peer_reviewed",
+      "evidence_rank": 4,
+      "http_status": 200,
+      "items": 10,
+      "live_status": "reachable",
+      "name": "Crossref REST API",
+      "requires_key": false,
+      "source_id": "crossref",
+      "topics": [
+        "topic-fabrication-detection"
+      ],
+      "url": "https://api.crossref.org/works"
+    },
+    {
+      "checked_at": "2026-09-22T05:06:01Z",
+      "detail": "6 document(s) retrieved; 4 result(s) dropped as unrelated to the query",
+      "evidence_class": "primary_source",
+      "evidence_rank": 3,
+      "http_status": 200,
+      "items": 6,
+      "live_status": "reachable",
+      "name": "GitHub REST API",
+      "requires_key": false,
+      "source_id": "github",
+      "topics": [
+        "topic-research-loop-scheduling"
+      ],
+      "url": "https://api.github.com/search/repositories"
+    },
+    {
+      "checked_at": "2026-09-22T05:06:02Z",
+      "detail": "10 document(s) retrieved",
+      "evidence_class": "peer_reviewed",
+      "evidence_rank": 4,
+      "http_status": 200,
+      "items": 10,
+      "live_status": "reachable",
+      "name": "Crossref REST API",
+      "requires_key": false,
+      "source_id": "crossref",
+      "topics": [
+        "topic-research-loop-scheduling"
+      ],
+      "url": "https://api.crossref.org/works"
+    },
+    {
+      "checked_at": "2026-09-22T05:06:03Z",
+      "detail": "10 document(s) retrieved",
+      "evidence_class": "primary_source",
+      "evidence_rank": 3,
+      "http_status": 200,
+      "items": 10,
+      "live_status": "reachable",
+      "name": "GitHub REST API",
+      "requires_key": false,
+      "source_id": "github",
+      "topics": [
+        "topic-search-and-sorting-strategy"
+      ],
+      "url": "https://api.github.com/search/repositories"
+    },
+    {
+      "checked_at": "2026-09-22T05:06:04Z",
+      "detail": "10 document(s) retrieved",
+      "evidence_class": "peer_reviewed",
+      "evidence_rank": 4,
+      "http_status": 200,
+      "items": 10,
+      "live_status": "reachable",
+      "name": "Crossref REST API",
+      "requires_key": false,
+      "source_id": "crossref",
+      "topics": [
+        "topic-search-and-sorting-strategy"
+      ],
+      "url": "https://api.crossref.org/works"
+    }
+  ]
 }

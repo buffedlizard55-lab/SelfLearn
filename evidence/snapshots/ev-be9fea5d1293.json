@@ -1,0 +1,23 @@
+{
+  "bytes_read": 12388,
+  "content_hash": "sha256:29039bffc03205cbc529321da2d4f0c10ab1a1ebf2b060e26cd7a4d27b6130e3",
+  "evidence_class": "peer_reviewed",
+  "evidence_class_label": "Peer-reviewed publication indexed by a DOI registry or PubMed.",
+  "evidence_id": "ev-be9fea5d1293",
+  "evidence_rank": 4,
+  "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Active reward learning with a novel acquisition function\nThe record for Active reward learning with a novel acquisition function reports: DOI 10.1007/s10514-01",
+  "http_status": 200,
+  "is_fixture": false,
+  "is_live": true,
+  "license": "Metadata: CC0; abstracts remain publisher copyright",
+  "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
+  "published_at": "2015-01-01",
+  "publisher": "Crossref (DOI registration agency, not-for-profit)",
+  "response_sha256": "sha256:5153dd92aff1825e45eeb8c61ef737c547e3623d4de0eac2a129c6963e0a3b50",
+  "retrieved_at": "2026-09-22T05:06:02Z",
+  "source_id": "crossref",
+  "source_name": "Crossref REST API",
+  "text": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Active reward learning with a novel acquisition function\nThe record for Active reward learning with a novel acquisition function reports: DOI 10.1007/s10514-015-9454-z, date 2015, venue Autonomous Robots.\nThe record for Active reward learning with a novel acquisition function reports: type journal-article, publisher Springer Science and Business Media LLC, citation count 33.\nThe record for Active reward learning with a novel acquisition function reports: authors ORCID: https://orcid.org/0000-0001-7065-5326; authenticated-orcid: false; given: Christian; family: Daniel; sequence: first; role: role: author; vocabulary: crossref; given: Oliver; family: Kroemer; sequence: additional; role: role: author; vocabulary: crossref; given: Malte; family: Viering; sequence: additional; role: role: author; vocabulary: crossref; given: Jan; family: Metz; sequence: additional; role: role: author; vocabulary: crossref; given: Jan; family: Peters; sequence: additional; role: role: author; vocabulary: crossref.\nSource note: The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
+  "title": "Active reward learning with a novel acquisition function",
+  "url": "https://doi.org/10.1007/s10514-015-9454-z"
+}

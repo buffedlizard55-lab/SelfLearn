@@ -1,76 +1,29 @@
 {
   "citations": {
-    "cl-048f7bdbd6c3": [
-      "cl-5f0a877b333d",
-      "cl-1ec591c4bc9f"
+    "cl-186537ad9245": [
+      "cl-3875d311770a",
+      "cl-fc01db4f0a3b"
     ],
-    "cl-2e3e3ac718ec": [
-      "cl-0ccba4f941a7",
-      "cl-1ec591c4bc9f",
-      "cl-35e1e49fdb01",
-      "cl-5f0a877b333d",
-      "cl-92760b2fb5bb"
-    ],
-    "cl-460d139e9205": [
-      "cl-5f0a877b333d",
-      "cl-92760b2fb5bb"
-    ],
-    "cl-90e01a50007a": [
-      "cl-1ec591c4bc9f",
-      "cl-35e1e49fdb01"
-    ],
-    "cl-b62205c2fdf1": [
-      "cl-0ccba4f941a7",
-      "cl-1ec591c4bc9f",
-      "cl-35e1e49fdb01",
-      "cl-5f0a877b333d",
-      "cl-92760b2fb5bb"
-    ],
-    "cl-fc69467326e8": [
-      "cl-1ec591c4bc9f",
-      "cl-35e1e49fdb01",
-      "cl-5f0a877b333d",
-      "cl-92760b2fb5bb"
+    "cl-8737f188a55e": [
+      "cl-5d482d19855b",
+      "cl-fc01db4f0a3b"
     ]
   },
   "claim_ids": [
-    "cl-460d139e9205",
-    "cl-b62205c2fdf1",
-    "cl-fc69467326e8",
-    "cl-90e01a50007a",
-    "cl-048f7bdbd6c3",
-    "cl-2e3e3ac718ec"
+    "cl-186537ad9245",
+    "cl-8737f188a55e"
   ],
-  "content_hash": "sha256:e93bef7496c51fa9e7c7d96d903b5c26edfa4d9cde422fc7bc3c35d1ca104b79",
+  "content_hash": "sha256:4b44a0c65f69d008174eb0ad502f1be949e9c1ad990164abde6c69f09373b60d",
   "context_numbers": {
-    "cl-048f7bdbd6c3": [
-      "02",
-      "04"
-    ],
-    "cl-2e3e3ac718ec": [
-      "5",
-      "1",
-      "5859",
-      "37459"
-    ],
-    "cl-460d139e9205": [
-      "02",
+    "cl-186537ad9245": [
       "2",
-      "1"
+      "2",
+      "2"
     ],
-    "cl-90e01a50007a": [
-      "27614",
-      "29558"
-    ],
-    "cl-b62205c2fdf1": [
-      "08",
-      "5",
-      "1"
-    ],
-    "cl-fc69467326e8": [
-      "2026",
-      "4",
-      "1"
+    "cl-8737f188a55e": [
+      "3",
+      "2",
+      "2"
     ]
   },
   "evidence_class": "reproduced_experiment",
@@ -80,8 +33,8 @@
   "is_live": true,
   "source_id": "selflearn_synthesis",
   "source_name": "Cross-document synthesis of cited claims",
-  "text": "Source: cross-document synthesis for topic-autonomous-research-agents\nQuestion: What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?\nThese statements combine figures that were already verified in the documents cited below.\nNo figure was averaged, summed or otherwise computed; a statement needing arithmetic is not written.\nStatements, their citations and the figures each was allowed to use:\ncl-460d139e9205 [agreement] cites cl-5f0a877b333d, cl-92760b2fb5bb; allowed figures: 02, 2, 1\ncl-b62205c2fdf1 [agreement] cites cl-0ccba4f941a7, cl-1ec591c4bc9f, cl-35e1e49fdb01, cl-5f0a877b333d, cl-92760b2fb5bb; allowed figures: 08, 5, 1\ncl-fc69467326e8 [agreement] cites cl-1ec591c4bc9f, cl-35e1e49fdb01, cl-5f0a877b333d, cl-92760b2fb5bb; allowed figures: 2026, 4, 1\ncl-90e01a50007a [divergence] cites cl-1ec591c4bc9f, cl-35e1e49fdb01; allowed figures: 27614, 29558\ncl-048f7bdbd6c3 [divergence] cites cl-5f0a877b333d, cl-1ec591c4bc9f; allowed figures: 02, 04\ncl-2e3e3ac718ec [range] cites cl-0ccba4f941a7, cl-1ec591c4bc9f, cl-35e1e49fdb01, cl-5f0a877b333d, cl-92760b2fb5bb; allowed figures: 5, 1, 5859, 37459",
+  "text": "Source: cross-document synthesis for topic-autonomous-research-agents\nQuestion: What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?\nThese statements combine figures that were already verified in the documents cited below.\nNo figure was averaged, summed or otherwise computed; a statement needing arithmetic is not written.\nStatements, their citations and the figures each was allowed to use:\ncl-186537ad9245 [agreement] cites cl-3875d311770a, cl-fc01db4f0a3b; allowed figures: 2, 2, 2\ncl-8737f188a55e [agreement] cites cl-5d482d19855b, cl-fc01db4f0a3b; allowed figures: 3, 2, 2",
   "title": "Cross-document synthesis for Autonomous research agents: which open implementations exist and how active are they?",
   "url": "",
-  "written_at": "2026-09-22T00:03:45Z"
+  "written_at": "2026-09-22T05:05:58Z"
 }

@@ -171,6 +171,46 @@
       "strategy_id": "st-15f7224c6f55"
     },
     {
+      "attack_id": "atk-4ebfbc8de53e",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-1b8f900707ae"
+    },
+    {
+      "attack_id": "atk-57ce5da6c248",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The measurement can be reproduced with the same method in this environment.",
+      "strategy_id": "st-1b8f900707ae"
+    },
+    {
+      "attack_id": "atk-6103bb6a2607",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-1b8f900707ae"
+    },
+    {
+      "attack_id": "atk-d5c2c0a48b97",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-1b8f900707ae"
+    },
+    {
       "attack_id": "atk-96ce45d2a28f",
       "attack_type": "assumption",
       "claim_refs": [],
@@ -292,6 +332,100 @@
       "severity": "minor",
       "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
       "strategy_id": "st-34b71864b39a"
+    },
+    {
+      "attack_id": "atk-7f42bf9ead45",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-0aaa55e54a4f",
+        "cl-19af0640fce6",
+        "cl-2bad57cff1f7",
+        "cl-2dc5f70a1a38",
+        "cl-30d31bfbf26c",
+        "cl-4f2e80b38ed6"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated.",
+      "strategy_id": "st-3c7376f589ef"
+    },
+    {
+      "attack_id": "atk-0863cb3f7f45",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-3c7376f589ef"
+    },
+    {
+      "attack_id": "atk-165a4553ee49",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-3c7376f589ef"
+    },
+    {
+      "attack_id": "atk-2352afb1938e",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The other field's mechanism transfers without an omitted domain-specific constraint.",
+      "strategy_id": "st-3c7376f589ef"
+    },
+    {
+      "attack_id": "atk-8c398de0e065",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-0aaa55e54a4f",
+        "cl-19af0640fce6",
+        "cl-2bad57cff1f7",
+        "cl-2dc5f70a1a38",
+        "cl-4dd582aabcfb",
+        "cl-78627446b3ea"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated.",
+      "strategy_id": "st-41780a037dad"
+    },
+    {
+      "attack_id": "atk-045bd855a5ce",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-41780a037dad"
+    },
+    {
+      "attack_id": "atk-5afc22c562c9",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-41780a037dad"
+    },
+    {
+      "attack_id": "atk-660fe8c52e1f",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The quantities quoted are commensurable with each other after unit conversion.",
+      "strategy_id": "st-41780a037dad"
     },
     {
       "attack_id": "atk-db2d9cbe7fa6",
@@ -518,6 +652,46 @@
       "strategy_id": "st-535a201825e7"
     },
     {
+      "attack_id": "atk-696cda85d8fa",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-7631f70a5933"
+    },
+    {
+      "attack_id": "atk-8dc61c83895f",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
+      "strategy_id": "st-7631f70a5933"
+    },
+    {
+      "attack_id": "atk-ace2b4692c49",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-7631f70a5933"
+    },
+    {
+      "attack_id": "atk-e60dfd21f794",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-7631f70a5933"
+    },
+    {
       "attack_id": "atk-d75140e7ec46",
       "attack_type": "data",
       "claim_refs": [
@@ -660,6 +834,46 @@
       "severity": "minor",
       "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
       "strategy_id": "st-8b9958ff92be"
+    },
+    {
+      "attack_id": "atk-0dd96426fd03",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-933ba60624de"
+    },
+    {
+      "attack_id": "atk-1f630b9bd919",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-933ba60624de"
+    },
+    {
+      "attack_id": "atk-46c3c9bd6814",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The absence of a contradicting statement in the retrieved set is not evidence that none exists.",
+      "strategy_id": "st-933ba60624de"
+    },
+    {
+      "attack_id": "atk-7b8d6e53de51",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-933ba60624de"
     },
     {
       "attack_id": "atk-248f3096d257",
@@ -1032,6 +1246,53 @@
       "strategy_id": "st-d81dc65cf69b"
     },
     {
+      "attack_id": "atk-5aee229cb8e4",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-0aaa55e54a4f",
+        "cl-19af0640fce6",
+        "cl-2bad57cff1f7",
+        "cl-2dc5f70a1a38",
+        "cl-4dd582aabcfb",
+        "cl-78627446b3ea"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated.",
+      "strategy_id": "st-de8f99e04eee"
+    },
+    {
+      "attack_id": "atk-34157b1ca17b",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-de8f99e04eee"
+    },
+    {
+      "attack_id": "atk-500e3eba667f",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
+      "strategy_id": "st-de8f99e04eee"
+    },
+    {
+      "attack_id": "atk-5f9f3320930c",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-de8f99e04eee"
+    },
+    {
       "attack_id": "atk-e3f508b49416",
       "attack_type": "data",
       "claim_refs": [
@@ -1306,7 +1567,7 @@
         "98.4%",
         "98.4",
         "0",
-        "62"
+        "63"
       ],
       "coverage": 1.0,
       "evidence_class": "reproduced_experiment",
@@ -1320,7 +1581,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T00:22:24Z",
+      "recorded_at": "2026-09-22T05:05:59Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-19af0640fce6",
@@ -1627,6 +1888,59 @@
     },
     {
       "cited_claim_ids": [],
+      "claim_id": "cl-6816f189f8d5",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "64",
+        "3"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-fabrication-detection",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T05:05:59Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-6816f189f8d5",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "descriptive",
+        "reason": "Describes a subject without a quantity or a period of its own.",
+        "total": 0.5133
+      },
+      "text": "This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
       "claim_id": "cl-78627446b3ea",
       "claim_kind": "derived",
       "confidence": "medium",
@@ -1645,7 +1959,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T00:22:24Z",
+      "recorded_at": "2026-09-22T05:05:59Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-78627446b3ea",
@@ -2069,7 +2383,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T00:22:24Z",
+      "recorded_at": "2026-09-22T05:05:59Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-f9832056f7c8",
@@ -2174,7 +2488,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T00:22:24Z",
+      "recorded_at": "2026-09-22T05:05:59Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-2dc5f70a1a38",
@@ -4291,19 +4605,19 @@
   "derived": [
     {
       "context_numbers": [
-        "58",
+        "59",
         "2"
       ],
       "label": "library_volume",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "This question is currently supported by 58 verified claim(s) drawn from 2 independent source(s)."
+      "text": "This question is currently supported by 59 verified claim(s) drawn from 2 independent source(s)."
     },
     {
       "context_numbers": [
         "98.3%",
         "98.3",
         "0",
-        "57"
+        "58"
       ],
       "label": "verification_rate",
       "limitations": "A derived statement about this library, not about the subject matter.",
@@ -4346,7 +4660,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-06-16",
-      "retrieved_at": "2026-09-22T00:22:24Z",
+      "retrieved_at": "2026-09-22T05:05:59Z",
       "source_name": "GitHub REST API",
       "title": "raesa-razeen/halo-hallucination-detector",
       "url": "https://github.com/raesa-razeen/halo-hallucination-detector"
@@ -4361,7 +4675,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-02-08",
-      "retrieved_at": "2026-09-22T00:22:24Z",
+      "retrieved_at": "2026-09-22T05:05:59Z",
       "source_name": "GitHub REST API",
       "title": "108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT",
       "url": "https://github.com/108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT"
@@ -4376,7 +4690,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-09-21",
-      "retrieved_at": "2026-09-22T00:22:24Z",
+      "retrieved_at": "2026-09-22T05:05:59Z",
       "source_name": "GitHub REST API",
       "title": "sunilgentyala/aegis-integrity",
       "url": "https://github.com/sunilgentyala/aegis-integrity"
@@ -4391,7 +4705,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2024-03-01",
-      "retrieved_at": "2026-09-22T00:22:24Z",
+      "retrieved_at": "2026-09-22T05:05:59Z",
       "source_name": "GitHub REST API",
       "title": "summarizebot/LLM-QualityGuard",
       "url": "https://github.com/summarizebot/LLM-QualityGuard"
@@ -4406,7 +4720,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-05-01",
-      "retrieved_at": "2026-09-22T00:22:24Z",
+      "retrieved_at": "2026-09-22T05:05:59Z",
       "source_name": "GitHub REST API",
       "title": "pypl0/Ombre",
       "url": "https://github.com/pypl0/Ombre"
@@ -4421,7 +4735,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2025-01-20",
-      "retrieved_at": "2026-09-22T00:22:24Z",
+      "retrieved_at": "2026-09-22T05:05:59Z",
       "source_name": "GitHub REST API",
       "title": "pranav-kural/llm-hallucination-detection-service",
       "url": "https://github.com/pranav-kural/llm-hallucination-detection-service"
@@ -4436,7 +4750,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2025-06-19",
-      "retrieved_at": "2026-09-22T00:22:24Z",
+      "retrieved_at": "2026-09-22T05:05:59Z",
       "source_name": "GitHub REST API",
       "title": "xiaojing29/HallucinationDetection",
       "url": "https://github.com/xiaojing29/HallucinationDetection"
@@ -4451,7 +4765,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-07-18",
-      "retrieved_at": "2026-09-22T00:22:24Z",
+      "retrieved_at": "2026-09-22T05:05:59Z",
       "source_name": "GitHub REST API",
       "title": "shobhasingh50915-create/Hallucination-Detection-in-Large-Language-Models",
       "url": "https://github.com/shobhasingh50915-create/Hallucination-Detection-in-Large-Language-Models"
@@ -4466,7 +4780,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-06-19",
-      "retrieved_at": "2026-09-22T00:22:24Z",
+      "retrieved_at": "2026-09-22T05:05:59Z",
       "source_name": "GitHub REST API",
       "title": "AyushBhandari03/Fact_Check_LLM",
       "url": "https://github.com/AyushBhandari03/Fact_Check_LLM"
@@ -4481,7 +4795,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-01-25",
-      "retrieved_at": "2026-09-22T00:22:24Z",
+      "retrieved_at": "2026-09-22T05:05:59Z",
       "source_name": "GitHub REST API",
       "title": "Prajwal-Nagaraj/Chatbot-Simulation-Workflow",
       "url": "https://github.com/Prajwal-Nagaraj/Chatbot-Simulation-Workflow"
@@ -4500,13 +4814,13 @@
       "baseline": 0.96,
       "best_value": 1.0,
       "best_variant": "support=0.8 partial=0.45 quote_chars=24.0",
-      "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-yj73sj1g/result.json",
+      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-edvm0lha/result.json",
       "error": "",
       "experiment_id": "verification-thresholds-v1",
       "hypothesis": "A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports.",
       "method": "Exhaustive sweep of 132 threshold combinations, evaluated against 26 hand-labelled claim/document pairs; selection is lexicographic on false supports, recall, F1, macro F1, distance from the documented default, then strictness.",
       "metric": "verdict accuracy on labelled cases",
-      "ran_at": "2026-09-22T00:22:25Z",
+      "ran_at": "2026-09-22T05:06:00Z",
       "result_json": {
         "baseline": 0.96,
         "baseline_name": "configured default thresholds support=0.8 partial=0.55 quote_chars=24.0",
@@ -4533,8 +4847,8 @@
         "conclusion": "hypothesis supported by all stated checks",
         "environment": {
           "machine": "x86_64",
-          "platform": "Linux-6.1.158+-x86_64-with-glibc2.36",
-          "python": "3.11.2"
+          "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "python": "3.11.16"
         },
         "excluded_cases": [
           {
@@ -4603,7 +4917,7 @@
       "topic_id": "topic-fabrication-detection"
     }
   ],
-  "generated_at": "2026-09-22T03:58:01Z",
+  "generated_at": "2026-09-22T05:06:07Z",
   "questions": [
     {
       "id": "q-a12323d8e08a",
@@ -5112,10 +5426,59 @@
       "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
     }
   ],
-  "source_status": [],
+  "source_status": [
+    {
+      "checked_at": "2026-09-22T05:05:59Z",
+      "detail": "10 document(s) retrieved",
+      "evidence_class": "primary_source",
+      "evidence_rank": 3,
+      "http_status": 200,
+      "items": 10,
+      "live_status": "reachable",
+      "name": "GitHub REST API",
+      "requires_key": false,
+      "source_id": "github",
+      "topics": [
+        "topic-fabrication-detection"
+      ],
+      "url": "https://api.github.com/search/repositories"
+    },
+    {
+      "checked_at": "2026-09-22T05:05:59Z",
+      "detail": "",
+      "evidence_class": "primary_source",
+      "evidence_rank": 3,
+      "http_status": 406,
+      "items": 0,
+      "live_status": "error",
+      "name": "arXiv API",
+      "requires_key": false,
+      "source_id": "arxiv",
+      "topics": [
+        "topic-fabrication-detection"
+      ],
+      "url": "https://export.arxiv.org/api/query"
+    },
+    {
+      "checked_at": "2026-09-22T05:05:59Z",
+      "detail": "10 document(s) retrieved",
+      "evidence_class": "peer_reviewed",
+      "evidence_rank": 4,
+      "http_status": 200,
+      "items": 10,
+      "live_status": "reachable",
+      "name": "Crossref REST API",
+      "requires_key": false,
+      "source_id": "crossref",
+      "topics": [
+        "topic-fabrication-detection"
+      ],
+      "url": "https://api.crossref.org/works"
+    }
+  ],
   "statistics": {
-    "claims": 58,
-    "computed_at": "2026-09-22T03:58:01Z",
+    "claims": 59,
+    "computed_at": "2026-09-22T05:06:07Z",
     "documents": 10,
     "evidence_classes": [
       "primary_source",
@@ -5125,7 +5488,7 @@
     "live_documents": 10,
     "partially_supported": 0,
     "sources": 2,
-    "supported": 57,
+    "supported": 58,
     "unsupported": 1
   },
   "status_history": [
@@ -5234,6 +5597,18 @@
     {
       "last_updated": "2026-09-22T00:22:25Z",
       "line": 84,
+      "status": "testing",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "last_updated": "2026-09-22T05:05:56Z",
+      "line": 88,
+      "status": "new",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "last_updated": "2026-09-22T05:06:00Z",
+      "line": 92,
       "status": "testing",
       "topic_id": "topic-fabrication-detection"
     }
@@ -5454,6 +5829,113 @@
       "title": "Experimental brief: Detecting fabricated statements in machine-generated text"
     },
     {
+      "argument": "Experimental brief. The statements below carry a measurement, which makes them usable as the basis of a test.\n\n[cl-0a10536a3de6] \"The record for raesa-razeen/halo-hallucination-detector reports: language Python, topics hallucination-detection; legal-nlp; llm; nlp; python; research, open_issues_count 0.\" - GitHub REST API (primary_source)\n[cl-0aaa55e54a4f] \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-23b8d71bd6b7] \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow reports: language Python, open_issues_count 0.\" - GitHub REST API (primary_source)\n[cl-27094a8268a8] \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow reports: pushed_at 2026-01-25T06:48:24Z, stargazers_count 6, forks_count 0.\" - GitHub REST API (primary_source)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The measurement can be reproduced with the same method in this environment."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2026, 24, 25, 3 for the same quantity. The attached experiment is the intended test.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "F - Experimental",
+      "persona_brief": "Design a falsifiable test that could determine which idea is actually correct.",
+      "persona_code": "F",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for raesa-razeen/halo-hallucination-detector reports: language Python, topics hallucination-detection; legal-nlp; llm; nlp; python; research, open_issues_count 0.\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0883,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0417,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 3,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.8027,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-1b8f900707ae",
+      "supporting_claim_ids": [
+        "cl-0a10536a3de6",
+        "cl-0aaa55e54a4f",
+        "cl-19af0640fce6",
+        "cl-23b8d71bd6b7",
+        "cl-27094a8268a8",
+        "cl-2bad57cff1f7"
+      ],
+      "title": "Experimental brief: Detecting fabricated statements in machine-generated text"
+    },
+    {
       "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-1620816b0ed9] \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\" - GitHub REST API (primary_source)\n[cl-72c0d9630020] \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\" - GitHub REST API (primary_source)\n[cl-f74635ed0688] \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\" - GitHub REST API (primary_source)\n[cl-fe4c7b74e422] \"The record for summarizebot/LLM-QualityGuard states in its own description: An open-source library for Large Language Models (LLMs) correctness testing, including hallucination detection and content moderation, to enhance the reliability and safety of AI-generated content across diverse languages.\" - GitHub REST API (primary_source)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -5668,6 +6150,113 @@
       "title": "Optimization brief: Detecting fabricated statements in machine-generated text"
     },
     {
+      "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-1620816b0ed9] \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\" - GitHub REST API (primary_source)\n[cl-72c0d9630020] \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\" - GitHub REST API (primary_source)\n[cl-f74635ed0688] \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\" - GitHub REST API (primary_source)\n[cl-fe4c7b74e422] \"The record for summarizebot/LLM-QualityGuard states in its own description: An open-source library for Large Language Models (LLMs) correctness testing, including hallucination detection and content moderation, to enhance the reliability and safety of AI-generated content across diverse languages.\" - GitHub REST API (primary_source)\n[cl-0aaa55e54a4f] \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 3, 63, 98.4% for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "E - Optimization",
+      "persona_brief": "Find the cheapest, fastest or most scalable option given the sourced numbers.",
+      "persona_code": "E",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for xiaojing29/HallucinationDetection states in its own description: Detecting hallucinations in LLM-generated answers using cross-checking consistency across models.\"",
+        "If the sourced statement holds, then: \"The record for pranav-kural/llm-hallucination-detection-service states in its own description: Build your own open-source REST API endpoint to detect hallucination in LLM generated responses.\"",
+        "If the sourced statement holds, then: \"The record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0417,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 4,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.7992,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-7631f70a5933",
+      "supporting_claim_ids": [
+        "cl-1620816b0ed9",
+        "cl-72c0d9630020",
+        "cl-f74635ed0688",
+        "cl-fe4c7b74e422",
+        "cl-0aaa55e54a4f",
+        "cl-19af0640fce6"
+      ],
+      "title": "Optimization brief: Detecting fabricated statements in machine-generated text"
+    },
+    {
       "argument": "Contrarian brief. The retrieved evidence is searched for findings that limit, qualify or contradict the conventional reading.\n\n[cl-e8d4a4ab9fc2] \"The record for pypl0/Ombre states in its own description: Your data never leaves your server.\" - GitHub REST API (primary_source)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n[cl-82e113eab284] \"This question is currently supported by 53 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -5771,6 +6360,113 @@
         "cl-4dd582aabcfb",
         "cl-78627446b3ea",
         "cl-82e113eab284"
+      ],
+      "title": "Contrarian brief: Detecting fabricated statements in machine-generated text"
+    },
+    {
+      "argument": "Contrarian brief. The retrieved evidence is searched for findings that limit, qualify or contradict the conventional reading.\n\n[cl-e8d4a4ab9fc2] \"The record for pypl0/Ombre states in its own description: Your data never leaves your server.\" - GitHub REST API (primary_source)\n[cl-0aaa55e54a4f] \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The absence of a contradicting statement in the retrieved set is not evidence that none exists."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 2, 3, 63, 97.7%, 98.1% for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "B - Contrarian",
+      "persona_brief": "Assume the conventional approach is wrong; find evidence-backed alternatives.",
+      "persona_code": "B",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for pypl0/Ombre states in its own description: Your data never leaves your server.\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.093,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0417,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 0.8333,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 1,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.7946,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-933ba60624de",
+      "supporting_claim_ids": [
+        "cl-e8d4a4ab9fc2",
+        "cl-0aaa55e54a4f",
+        "cl-19af0640fce6",
+        "cl-2bad57cff1f7",
+        "cl-2dc5f70a1a38",
+        "cl-4dd582aabcfb"
       ],
       "title": "Contrarian brief: Detecting fabricated statements in machine-generated text"
     },
@@ -6737,6 +7433,112 @@
       "title": "Cross-domain brief: Detecting fabricated statements in machine-generated text"
     },
     {
+      "argument": "Cross-domain brief. The statements below were retrieved for other topics and share subject matter with this one; they are candidates for transfer.\n\n[cl-0aaa55e54a4f] \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-30d31bfbf26c] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4f2e80b38ed6] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The other field's mechanism transfers without an omitted domain-specific constraint."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 2, 3, 63, 97.7%, 98.4% for the same quantity. For a transferred mechanism, falsification is a demonstration that the domain-specific constraint is missing.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact. Cross-domain transfer is a hypothesis, not a result: the statements below were verified for a different question and their applicability here has not been tested.",
+      "persona": "D - Cross-domain",
+      "persona_brief": "Look for solutions that worked in a completely different field.",
+      "persona_code": "D",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5122,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.1163,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0417,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.4702,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-3c7376f589ef",
+      "supporting_claim_ids": [
+        "cl-0aaa55e54a4f",
+        "cl-19af0640fce6",
+        "cl-2bad57cff1f7",
+        "cl-2dc5f70a1a38",
+        "cl-30d31bfbf26c",
+        "cl-4f2e80b38ed6"
+      ],
+      "title": "Cross-domain brief: Detecting fabricated statements in machine-generated text"
+    },
+    {
       "argument": "Cross-domain brief. The statements below were retrieved for other topics and share subject matter with this one; they are candidates for transfer.\n\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n[cl-30d31bfbf26c] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4f2e80b38ed6] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -7691,6 +8493,112 @@
       "title": "Conventional brief: Detecting fabricated statements in machine-generated text"
     },
     {
+      "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-0aaa55e54a4f] \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 2, 3, 39, 63, 97.7% for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "A - Conventional",
+      "persona_brief": "Find the strongest solution using established, well-evidenced knowledge.",
+      "persona_code": "A",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5122,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0713,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0417,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.4684,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-de8f99e04eee",
+      "supporting_claim_ids": [
+        "cl-0aaa55e54a4f",
+        "cl-19af0640fce6",
+        "cl-2bad57cff1f7",
+        "cl-2dc5f70a1a38",
+        "cl-4dd582aabcfb",
+        "cl-78627446b3ea"
+      ],
+      "title": "Conventional brief: Detecting fabricated statements in machine-generated text"
+    },
+    {
       "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n[cl-82e113eab284] \"This question is currently supported by 53 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -7795,25 +8703,131 @@
         "cl-82e113eab284"
       ],
       "title": "First principles brief: Detecting fabricated statements in machine-generated text"
+    },
+    {
+      "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-0aaa55e54a4f] \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-19af0640fce6] \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2bad57cff1f7] \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-2dc5f70a1a38] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4dd582aabcfb] \"Of the claims recorded for this question, 98.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-78627446b3ea] \"39 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The quantities quoted are commensurable with each other after unit conversion."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 2, 3, 39, 63, 97.7% for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "C - First principles",
+      "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
+      "persona_code": "C",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"This question is currently supported by 63 verified claim(s) drawn from 3 independent source(s).\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 98.4% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 97.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5122,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0643,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured verdict accuracy on labelled cases: best variant support=0.8 partial=0.45 quote_chars=24.0 scored 1.0 against baseline 0.96 (experiment verification-thresholds-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0417,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.4681,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-41780a037dad",
+      "supporting_claim_ids": [
+        "cl-0aaa55e54a4f",
+        "cl-19af0640fce6",
+        "cl-2bad57cff1f7",
+        "cl-2dc5f70a1a38",
+        "cl-4dd582aabcfb",
+        "cl-78627446b3ea"
+      ],
+      "title": "First principles brief: Detecting fabricated statements in machine-generated text"
     }
   ],
   "substance": {
-    "claims": 58,
+    "claims": 59,
     "dated": 11,
     "labels": {
-      "descriptive": 25,
+      "descriptive": 26,
       "metadata": 16,
       "substantive": 17
     },
-    "mean_score": 0.4602,
-    "metadata_share": 0.2759,
-    "quantified": 41,
-    "quantified_share": 0.7069,
-    "substantive_share": 0.2931
+    "mean_score": 0.4611,
+    "metadata_share": 0.2712,
+    "quantified": 42,
+    "quantified_share": 0.7119,
+    "substantive_share": 0.2881
   },
   "synthesis": [],
   "topic": {
-    "first_seen": "2026-09-22T00:22:22Z",
+    "first_seen": "2026-09-22T05:05:56Z",
     "keywords": [
       "hallucination",
       "factuality",
@@ -7822,7 +8836,7 @@
       "attribution",
       "evidence"
     ],
-    "last_updated": "2026-09-22T00:22:25Z",
+    "last_updated": "2026-09-22T05:06:00Z",
     "notes": "Directly relevant to this project's own central problem: deciding whether a sentence is supported by a source.",
     "origin": "seed",
     "parent_topic_id": null,
@@ -8275,7 +9289,13 @@
     "tournament_id": "tour-25506dcdc28f",
     "winner": "st-036bb3e64aac"
   },
-  "unknowns": [],
+  "unknowns": [
+    {
+      "answer": "These registered sources could not be reached, so their evidence is absent from this page: arxiv.",
+      "question": "What do we not know?",
+      "resolve_with": "Confirm network egress from the run environment, then re-run."
+    }
+  ],
   "winner": {
     "persona": "F - Experimental",
     "score": 0.803,
