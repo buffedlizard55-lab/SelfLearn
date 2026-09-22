@@ -85,13 +85,14 @@ dependencies**, not even for HTTP or HTML.
 | Check one claim end to end | `python3 tools/check_claim.py` |
 | Re-verify the whole library | `python3 -m selflearn audit` |
 | Check all official source links and credentials | the [Official links page](https://buffedlizard55-lab.github.io/SelfLearn/docs/links.html), or `python3 tools/verify_links.py` |
-| Repeat an experiment | `python3 tools/reproduce_experiment.py sorting-comparisons-v1` |
+| Repeat an experiment | `python3 tools/reproduce_experiment.py sorting-comparisons-v1` (or `scheduling-policies-v1`) |
 | Read the calibration and thresholds in force | `python3 -m selflearn calibrate` |
 | Test every registered source for reachability | `python3 -m selflearn sources --probe` |
 | See what changed, and through which documented filter | `python3 -m selflearn scan` |
 | Resolve every URL the project publishes | `python3 tools/verify_links.py` (report in `reports/link_check.json`) |
 | Check the substance rule and the synthesis guard | `python3 -m unittest tests.test_layers -v` |
 | Close a topic a reviewer rejects, keeping the record | `python3 tools/reject_topic.py --id <topic_id> --reason ...` |
+| Resolve an irregularity or a contradiction, keeping the record | `python3 tools/resolve_finding.py --id <irr-... or con-...> --reason ...` |
 | Read the engine's own list of what it got wrong | `docs/review.html`, `reports/irregularities.md` |
 
 Every figure on the site is traceable to a claim or to a count the engine recorded, and
@@ -133,10 +134,10 @@ every cycle.
 selflearn/        the engine (fetch, verify, think, learn, experiment, publish)
 data/             seed questions, the labelled calibration cases, the requirements matrix
 experiments/      seeded experiment scripts, each with a hypothesis and a falsifier
-tests/            115 tests, no network and no credentials required
+tests/            122 tests, no network and no credentials required
 tools/            reviewer tools: check a claim, reproduce an experiment, export a summary,
                   verify every published link, compare link check outcomes, reject a topic,
-                  serve the site
+                  resolve a finding, serve the site
 docs/             the published site, plus the hand-written documents listed above
 library/          the append-only memory: 14 JSONL streams
 evidence/snapshots/   every retrieved document, hashed, exactly as it was verified

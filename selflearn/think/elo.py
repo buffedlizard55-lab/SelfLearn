@@ -21,6 +21,8 @@ from ..util import load_json, save_json, utcnow_iso
 
 DEFAULT_RATING = 1500.0
 K_FACTOR = 16.0
+# Match history rows kept in state/elo.json. Ratings are not affected by the cap.
+HISTORY_KEPT = 500
 
 
 @dataclass
@@ -45,7 +47,7 @@ class EloTable:
         self.updated_at = utcnow_iso()
         save_json(
             self.path,
-            {"ratings": self.ratings, "history": self.history[-500:], "updated_at": self.updated_at},
+            {"ratings": self.ratings, "history": self.history[-HISTORY_KEPT:], "updated_at": self.updated_at},
         )
 
     # -- rating maths ------------------------------------------------------
@@ -100,6 +102,11 @@ class EloTable:
             "ratings": dict(sorted(self.ratings.items())),
             "leaderboard": self.leaderboard(),
             "matches": len(self.history),
+            # Ratings accumulate over every match ever recorded; the on-disk
+            # history is capped at HISTORY_KEPT rows, so wins/matches counts on
+            # the leaderboard are over that window and are published as such.
+            "history_window": HISTORY_KEPT,
+            "history_truncated": len(self.history) >= HISTORY_KEPT,
             "updated_at": self.updated_at,
             "k_factor": K_FACTOR,
             "default_rating": DEFAULT_RATING,

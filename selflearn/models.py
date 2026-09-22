@@ -121,7 +121,14 @@ class Contradiction:
     kind: str                     # numeric | polar
     detail: str
     severity: str                 # high | medium
-    resolution: str = "unresolved"
+    resolution: str = "unresolved"  # unresolved | resolved
+    # Written only by a reviewer (tools/resolve_finding.py). The detector never
+    # sets these, and the store carries them forward when the same pair is
+    # detected again, so a decision survives the next cycle.
+    resolution_note: str = ""
+    resolved_at: str = ""
+    resolution_link: str = ""
+    created_at: str = field(default_factory=utcnow_iso)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -317,6 +324,11 @@ class Irregularity:
     suggested_action: str = ""
     created_at: str = field(default_factory=utcnow_iso)
     resolved: bool = False
+    # Reviewer fields: the reason a finding was closed, when, and a link if one
+    # supports the decision. The original summary and detail are never edited.
+    resolution: str = ""
+    resolved_at: str = ""
+    resolution_link: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

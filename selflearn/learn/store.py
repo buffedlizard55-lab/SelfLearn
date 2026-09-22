@@ -237,15 +237,39 @@ class Library:
             if existing is not None:
                 existing.detail = finding.detail or existing.detail
                 existing.created_at = finding.created_at
+                # A reviewer's decision outlives the run that re-detects the
+                # finding: the engine may raise the same id again, but it must
+                # not silently reopen what a human closed. The reviewer fields
+                # are copied onto the incoming record so the appended row and
+                # the in-memory view agree.
+                if existing.resolved and not finding.resolved:
+                    finding.resolved = True
+                    finding.resolution = finding.resolution or existing.resolution
+                    finding.resolved_at = finding.resolved_at or existing.resolved_at
+                    finding.resolution_link = finding.resolution_link or existing.resolution_link
+                existing.resolved = finding.resolved
+                existing.resolution = finding.resolution
+                existing.resolved_at = finding.resolved_at
+                existing.resolution_link = finding.resolution_link
             else:
                 self.irregularities[finding.irregularity_id] = finding
         self._write("irregularities", [f.to_dict() for f in findings], stage="audit")
         return len(findings)
 
     def add_contradictions(self, contradictions: Iterable[Contradiction]) -> int:
-        rows = [c.to_dict() for c in contradictions]
+        contradictions = list(contradictions)
         for contradiction in contradictions:
+            existing = self.contradictions.get(contradiction.contradiction_id)
+            # Same rule as for irregularities: the detector re-emits a pair as
+            # "unresolved" on every cycle, and a reviewer's resolution must
+            # survive that. The detector never writes the reviewer fields.
+            if existing is not None and existing.resolution != "unresolved" and contradiction.resolution == "unresolved":
+                contradiction.resolution = existing.resolution
+                contradiction.resolution_note = existing.resolution_note
+                contradiction.resolved_at = existing.resolved_at
+                contradiction.resolution_link = existing.resolution_link
             self.contradictions[contradiction.contradiction_id] = contradiction
+        rows = [c.to_dict() for c in contradictions]
         self._write("contradictions", rows, stage="verify")
         return len(rows)
 

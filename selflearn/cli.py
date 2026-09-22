@@ -31,8 +31,10 @@ from .fetch.net import HttpClient, NetworkUnavailable
 from .fetch.registry import REGISTRY, registry_summary, source_matrix
 from .learn.calibration import run_calibration, thresholds_in_force
 from .learn.store import Library
+from .models import SourceStatus
 from .publish.report import build_site_data
 from .publish.site import build_site
+from .think.elo import EloTable
 from .util import load_json, save_json, slugify, stable_id, utcnow_iso
 from .verify.audit import check_coverage, check_fixtures, check_links, recheck_claims, render_markdown, summarise
 
@@ -94,16 +96,33 @@ def cmd_audit(args: argparse.Namespace) -> int:
 
 
 def cmd_site(args: argparse.Namespace) -> int:
-    """Rebuild the site from the stored library and the last calibration."""
+    """Rebuild the site from the stored library and the last calibration.
+
+    Per-source reachability is measured by a cycle, not stored in the library, so
+    the rebuild reads it back from the ``reports/site_data.json`` the last cycle
+    wrote. Without that, every manual rebuild published an empty sources table and
+    "0 of N reachable" for a run that had in fact reached something.
+    """
     library = Library.load(ROOT, run_id="site-rebuild")
     calibration = run_calibration(FIXTURE_DIR / "verification_cases.jsonl", apply=False) if (FIXTURE_DIR / "verification_cases.jsonl").exists() else {}
+    last_cycle = load_json(ROOT / "reports" / "site_data.json", {}) or {}
+    recorded_status = [
+        SourceStatus(**{k: v for k, v in row.items() if k in SourceStatus.__dataclass_fields__})
+        for row in ((last_cycle.get("sources") or {}).get("status") or [])
+        if isinstance(row, dict) and row.get("source_id")
+    ]
+    mode = args.mode or str(last_cycle.get("mode") or "snapshot")
     data = build_site_data(
         library,
         source_matrix=source_matrix(),
-        source_status=[],
+        source_status=recorded_status,
         irregularities=list(library.irregularities.values()),
         failures=list(library.failures.values()),
-        elo_payload=load_json(STATE_DIR / "elo.json", {}) or {},
+        # The state file stores ratings and match history; the pages read the
+        # derived leaderboard. Loading the table and calling to_dict() is what
+        # the cycle does, and passing the raw file emptied the standings table
+        # on every manual rebuild.
+        elo_payload=EloTable.load(STATE_DIR / "elo.json").to_dict(),
         calibration=calibration or thresholds_in_force(CALIBRATION_STATE),
         requirements=load_json(ROOT / "data" / "requirements.json", []) or [],
         methodology={
@@ -113,12 +132,19 @@ def cmd_site(args: argparse.Namespace) -> int:
             ],
             "thresholds": thresholds_in_force(CALIBRATION_STATE),
         },
-        mode=args.mode,
+        mode=mode,
         run_summary=load_json(ROOT / "reports" / "run_summary.json", {}) or {},
     )
     data["experiment_catalogue"] = catalogue()
+    if last_cycle.get("run_id"):
+        # The pages name the run whose evidence they show, not the rebuild.
+        data["run_id"] = last_cycle["run_id"]
     written = build_site(data, SITE_DIR, write_root_entry=True)
     print(f"wrote {len(written)} file(s) to {SITE_DIR}")
+    if recorded_status:
+        print(f"source reachability carried over from cycle {last_cycle.get('run_id')} ({len(recorded_status)} status row(s), mode {mode})")
+    else:
+        print("no recorded cycle found in reports/site_data.json; the sources table shows no reachability")
     return 0
 
 
@@ -413,7 +439,10 @@ def build_parser() -> argparse.ArgumentParser:
     audit.set_defaults(func=cmd_audit)
 
     site = sub.add_parser("site", help="rebuild the published site from stored data")
-    site.add_argument("--mode", choices=("live", "snapshot", "fixture"), default="snapshot")
+    site.add_argument(
+        "--mode", choices=("live", "snapshot", "fixture"), default=None,
+        help="label for the rebuilt pages; defaults to the mode of the last recorded cycle, or 'snapshot' if none",
+    )
     site.set_defaults(func=cmd_site)
 
     sources = sub.add_parser("sources", help="list the source register, optionally probing reachability")

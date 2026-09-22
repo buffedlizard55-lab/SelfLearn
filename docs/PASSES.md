@@ -208,6 +208,22 @@ Line-by-line verification against the brief:
 - **Pull request and merge**: Work tracked on session branch `arena/01a0c72f-selflearn`, ready for PR to `main`.
 - **115 unit tests** passing with zero external dependencies and clean exit.
 
+## Pass 11 - Reviewer resolution of findings, a fifth experiment family, and three defects (2026-09-22)
+
+Line-by-line review of the review page, the store and the experiment stage, working from
+roadmap items 9 and 10:
+
+| Defect / gap | Evidence | Fix |
+| --- | --- | --- |
+| A contradiction could only be resolved by editing its `resolution` field by hand, and an irregularity not at all | `Contradiction` and `Irregularity` had no reviewer fields; the review page had one table for all findings | `tools/resolve_finding.py` appends a resolution row for the same key (`resolution`, `resolved_at`, `resolution_link`); the review page splits open findings from "Resolved by a reviewer" and shows the original text beside the reason |
+| A reviewer's decision would not have survived the next cycle | `detect_contradictions` emits `resolution="unresolved"` for every pair on every run, and `add_contradictions` overwrote the stored record; `add_irregularities` did the same for `resolved` | The store carries the reviewer fields forward when the incoming record does not set them; reopening is explicit (`--reopen`) and recorded. Test: `test_a_reviewers_decision_survives_the_engine_redetecting_the_finding` |
+| The published irregularity list carried one id twice | `docs/data/irregularities.json` held 28 rows for 27 ids: the cycle passes the stored findings plus the ones it raised, and the superseded-claims audit fires the same id each run | `build_site_data` and `render_markdown` publish one row per id; the headline counts are of open findings only |
+| `max_experiments_per_cycle = 3` was published on the method page and never enforced | no reference to it anywhere in `loop.py` | The loop counts experiments across the cycle, stops at the cap and records that it did |
+| A run pointed at another root (`SELFLEARN_ROOT`, as the CI smoke job does) reported every experiment as `script not found` | the runner resolved `experiments/` against the library root, which holds no code | Scripts resolve against the checkout the package was imported from when the library root has no copy (`PACKAGE_ROOT`); the smoke run now completes three experiments instead of three warnings |
+| The scheduling question had no experiment that bore on it | `experiments_for_topic` returned an empty list for `topic-research-loop-scheduling` | `experiments/scheduling_policies.py`: round-robin, epsilon-greedy and UCB1 on a stationary Bernoulli bandit, scored by pseudo-regret with an exact analytic baseline; deterministic across seeds and honest about being a toy problem |
+
+7 new tests (5 in `ReviewerResolutionTests`, 2 in `ExperimentTests`) bring the suite to 122.
+
 ## Known remaining defects and gaps
 
 These are open, published, and are the honest answer to "what is still wrong":
@@ -227,5 +243,6 @@ These are open, published, and are the honest answer to "what is still wrong":
    and gated, but the candidate pool is what the engine has retrieved, not an open crawl
    of the web, so section 12 of the design document stays marked partial.
 6. **The store never compacts.** Append-only streams grow without pruning.
-7. **Two of the four experiment families ran in the published cycle.** The catalogue
-   holds four; two are matched to the questions the manager chose.
+7. **Three of the five experiment families ran in the published cycle.** The catalogue
+   holds five; three are matched by keyword to the questions the manager chose, and the
+   autonomous-agents question has no computational experiment that would bear on it.

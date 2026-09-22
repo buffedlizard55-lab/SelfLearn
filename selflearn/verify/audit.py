@@ -429,11 +429,15 @@ def summarise(findings: Iterable[Irregularity]) -> dict[str, Any]:
 
 
 def render_markdown(findings: Iterable[Irregularity], *, generated_at: str) -> str:
+    unique: dict[str, Irregularity] = {}
+    for finding in findings:
+        unique[finding.irregularity_id] = finding
     findings = sorted(
-        findings,
+        unique.values(),
         key=lambda f: (SEVERITY_ORDER.get(f.severity, 9), f.stage, f.summary),
     )
     stats = summarise(findings)
+    resolved = sum(1 for f in findings if f.resolved)
     lines = [
         "# Irregularities for review",
         "",
@@ -445,7 +449,7 @@ def render_markdown(findings: Iterable[Irregularity], *, generated_at: str) -> s
         "",
         f"**Totals** - error: {stats['by_severity'].get('error', 0)}, "
         f"warning: {stats['by_severity'].get('warning', 0)}, "
-        f"info: {stats['by_severity'].get('info', 0)}.",
+        f"info: {stats['by_severity'].get('info', 0)}; resolved by a reviewer: {resolved}.",
         "",
     ]
     if not findings:
@@ -470,5 +474,11 @@ def render_markdown(findings: Iterable[Irregularity], *, generated_at: str) -> s
         if finding.suggested_action:
             lines.append(f"- **suggested action:** {finding.suggested_action}")
         lines.append(f"- **detected:** {finding.created_at}")
+        if finding.resolved:
+            lines.append(f"- **resolved by a reviewer:** {finding.resolved_at or 'date not recorded'}")
+            if finding.resolution:
+                lines.append(f"- **reviewer's reason:** {finding.resolution}")
+            if finding.resolution_link:
+                lines.append(f"- **reference:** <{finding.resolution_link}>")
         lines.append("")
     return "\n".join(lines)

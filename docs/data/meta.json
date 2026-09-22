@@ -4,9 +4,11 @@
     "fixture_documents": 0,
     "irregularity_counts": {
       "error": 0,
-      "info": 13,
+      "info": 5,
       "warning": 15
     },
+    "resolved_contradictions": 0,
+    "resolved_irregularities": 7,
     "unresolved_contradictions": 12,
     "unsupported_claims": 9
   },
@@ -23,6 +25,6 @@
     "strategies": 166,
     "topics": 4
   },
-  "generated_at": "2026-09-22T05:06:07Z",
+  "generated_at": "2026-09-22T07:20:46Z",
   "run_id": "run-31f65d836056"
 }

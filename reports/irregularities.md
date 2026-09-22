@@ -1,12 +1,12 @@
 # Irregularities for review
 
-Generated: 2026-09-22T05:06:07Z
+Generated: 2026-09-22T07:18:40Z
 
 This file is produced by the audit stage. It lists everything the engine could not
 reconcile on its own. Nothing here is a conclusion; each entry is a request for a human
 decision, with the evidence needed to make it.
 
-**Totals** - error: 0, warning: 0, info: 1.
+**Totals** - error: 0, warning: 0, info: 1; resolved by a reviewer: 0.
 
 ## Stage: audit
 
@@ -16,4 +16,4 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.
 - **suggested action:** Nothing to do unless a reviewer believes a retired statement was correct.
-- **detected:** 2026-09-22T05:06:07Z
+- **detected:** 2026-09-22T07:18:40Z

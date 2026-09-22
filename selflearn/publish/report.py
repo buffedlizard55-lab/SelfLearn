@@ -445,6 +445,19 @@ def build_topic_report(
     )
 
 
+def _dedupe_findings(irregularities: list[Irregularity]) -> list[Irregularity]:
+    """One row per irregularity id, the last one given winning.
+
+    A cycle passes the stored findings plus the ones it raised itself; an audit
+    rule that fires again produces the same id twice. The published list is the
+    current state, so it carries each id once.
+    """
+    by_id: dict[str, Irregularity] = {}
+    for finding in irregularities:
+        by_id[finding.irregularity_id] = finding
+    return list(by_id.values())
+
+
 def build_site_data(
     library,
     *,
@@ -506,7 +519,7 @@ def build_site_data(
         "meta_knowledge": meta.to_dict(),
         "elo": elo_payload,
         "calibration": calibration,
-        "irregularities": [i.to_dict() for i in irregularities],
+        "irregularities": [i.to_dict() for i in _dedupe_findings(irregularities)],
         "failures": [f.to_dict() for f in failures],
         "contradictions": [c.to_dict() for c in library.contradictions.values()],
         "requirements": requirements,
@@ -526,10 +539,14 @@ def build_site_data(
         "unsupported_claims": sum(1 for c in library.claims.values() if c.verification.verdict == "unsupported"),
         "claims_without_link": sum(1 for c in library.claims.values() if not str(c.url).startswith("http")),
         "unresolved_contradictions": sum(1 for c in library.contradictions.values() if c.resolution == "unresolved"),
+        # Open findings only: a finding a reviewer closed is still published
+        # (under "Resolved by a reviewer") but is no longer counted as pending.
         "irregularity_counts": {
-            severity: sum(1 for i in irregularities if i.severity == severity)
+            severity: sum(1 for i in irregularities if i.severity == severity and not i.resolved)
             for severity in ("error", "warning", "info")
         },
+        "resolved_irregularities": sum(1 for i in irregularities if i.resolved),
+        "resolved_contradictions": sum(1 for c in library.contradictions.values() if c.resolution != "unresolved"),
     }
     return payload
 
