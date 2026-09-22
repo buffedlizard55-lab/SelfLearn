@@ -4374,7 +4374,7 @@
     "What experiment would resolve it?"
   ],
   "experiments": [],
-  "generated_at": "2026-09-22T00:24:45Z",
+  "generated_at": "2026-09-22T03:58:01Z",
   "questions": [
     {
       "id": "q-dd05e798300a",
@@ -4858,7 +4858,7 @@
   "source_status": [],
   "statistics": {
     "claims": 42,
-    "computed_at": "2026-09-22T00:24:45Z",
+    "computed_at": "2026-09-22T03:58:01Z",
     "documents": 6,
     "evidence_classes": [
       "primary_source",

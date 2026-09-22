@@ -71,11 +71,23 @@
 
   var toggle = document.querySelector("[data-theme-toggle]");
   if (toggle) {
+    /* Resolving "no explicit theme yet" against the media query is what makes the
+       first click do what the reader expects rather than what the attribute says. */
+    function current() {
+      var set = document.documentElement.getAttribute("data-theme");
+      if (set) return set;
+      return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    function sync() {
+      toggle.setAttribute("aria-pressed", current() === "dark" ? "true" : "false");
+      toggle.textContent = current() === "dark" ? "Light theme" : "Dark theme";
+    }
     toggle.addEventListener("click", function () {
-      var root = document.documentElement;
-      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
+      var next = current() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
       try { localStorage.setItem("selflearn-theme", next); } catch (e) {}
+      sync();
     });
+    sync();
   }
 })();

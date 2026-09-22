@@ -518,6 +518,8 @@ def build_site_data(
         "topic_proposals": list(run_summary.get("topic_proposals") or []),
         "change_scan": dict(run_summary.get("change_scan") or {}),
         "change_mechanisms": change_mechanism_table(),
+        "link_check": load_link_check(),
+        "credentials": credential_table(),
     }
     payload["checks"] = {
         "fixture_documents": sum(1 for r in library.evidence.values() if r.is_fixture),
@@ -530,6 +532,108 @@ def build_site_data(
         },
     }
     return payload
+
+
+def load_link_check(root: Any = None) -> dict[str, Any]:
+    """The committed URL register, as evidence rather than as a fresh assertion.
+
+    ``reports/link_check.json`` is written by ``tools/verify_links.py`` and
+    committed by the Tests workflow, which runs on a host with unrestricted
+    egress. The site publishes what that file records - including the label of
+    the machine that produced it - and says so. A sandbox whose egress is
+    restricted reports most hosts as ``unreachable``, which is a property of the
+    machine; publishing the label is what keeps that from reading as a list of
+    broken links.
+    """
+    import json
+    from pathlib import Path
+
+    from ..config import ROOT
+
+    base = Path(root) if root else ROOT
+    path = base / "reports" / "link_check.json"
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {
+            "available": False,
+            "detail": "No committed link check found. Run `python3 tools/verify_links.py` to produce one.",
+        }
+    results = payload.get("results") or []
+    by_source: dict[str, list[dict[str, Any]]] = {}
+    for row in results:
+        by_source.setdefault(str(row.get("source_id") or "other"), []).append(
+            {
+                "url": row.get("url"),
+                "field": row.get("field"),
+                "group": row.get("group"),
+                "status": row.get("status"),
+                "ok": bool(row.get("ok")),
+                "final_url": row.get("final_url"),
+                "error": (row.get("error") or "")[:240],
+                "elapsed_seconds": row.get("elapsed_seconds"),
+            }
+        )
+    return {
+        "available": True,
+        "generated_at": payload.get("generated_at"),
+        "label": payload.get("label") or "unlabelled run",
+        "note": payload.get("note", ""),
+        "checked": payload.get("checked", len(results)),
+        "ok": payload.get("ok", 0),
+        "failed": payload.get("failed", 0),
+        "by_status": payload.get("by_status", {}),
+        "by_source": by_source,
+    }
+
+
+def credential_table() -> list[dict[str, Any]]:
+    """Every source that names a credential, and whether it is transmitted.
+
+    Two different facts, kept apart on purpose: whether the variable is required,
+    and whether an adapter actually puts it on the request. Conflating them is
+    how a source ends up reported as enabled while every call goes out
+    unauthenticated.
+    """
+    import os
+
+    from ..fetch.registry import REGISTRY
+    from ..fetch.sources import CREDENTIAL_MECHANISMS, credential_status
+
+    rows: list[dict[str, Any]] = []
+    for spec in sorted(REGISTRY.values(), key=lambda s: s.source_id):
+        if not spec.key_env:
+            continue
+        status = credential_status(spec)
+        mechanism = CREDENTIAL_MECHANISMS.get(spec.source_id)
+        rows.append(
+            {
+                "source_id": spec.source_id,
+                "name": spec.name,
+                "env": spec.key_env,
+                "present": bool(os.environ.get(spec.key_env)),
+                "required": bool(spec.requires_key),
+                "state": status["state"],
+                "detail": status["detail"],
+                "mechanism": (
+                    {
+                        "kind": mechanism.kind,
+                        "name": mechanism.name,
+                        "prefix": mechanism.prefix,
+                        "docs_url": mechanism.docs_url,
+                        "quote": mechanism.quote,
+                        "verified_at": mechanism.verified_at,
+                        "applied_by": mechanism.applied_by,
+                    }
+                    if mechanism
+                    else None
+                ),
+                "key_url": spec.key_url,
+                "docs_url": spec.docs_url,
+                "rate_limit_note": spec.rate_limit_note,
+            }
+        )
+    return rows
 
 
 def topic_slug(topic: Topic) -> str:

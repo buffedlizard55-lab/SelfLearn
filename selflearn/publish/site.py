@@ -31,6 +31,7 @@ NAV = (
     ("index.html", "Overview"),
     ("library.html", "Library"),
     ("sources.html", "Sources"),
+    ("links.html", "Official links"),
     ("experiments.html", "Experiments"),
     ("method.html", "Method"),
     ("documents.html", "Documents"),
@@ -113,6 +114,28 @@ def confidence_badge(confidence: str) -> str:
     return badge(confidence, kind)
 
 
+def credential_cell(row: dict[str, Any]) -> str:
+    """The credential column: required or optional, and whether it is transmitted.
+
+    A source with no credential says so. A source whose variable is named but whose
+    documented mechanism has not been transcribed says that too, because "needs
+    key" and "the key would be sent" are different claims.
+    """
+    if not row:
+        return '<span class="muted">open</span>'
+    requirement = badge("required", "err") if row.get("required") else badge("optional", "")
+    state = row.get("state", "")
+    if state == "applied":
+        transmitted = badge("transmitted", "ok")
+    elif state == "declared_only":
+        transmitted = badge("declared, not sent", "warn")
+    else:
+        transmitted = badge(state or "unknown", "")
+    env = f'<span class="mono small">{esc(row.get("env", ""))}</span>'
+    detail = esc(row.get("detail", ""))
+    return f"{env} {requirement} {transmitted}<div class='small muted'>{detail}</div>"
+
+
 def pct(value: float | None) -> str:
     if value is None:
         return "n/a"
@@ -150,6 +173,16 @@ def layout(title: str, body: str, *, active: str, data: dict[str, Any], depth: i
 <title>{esc(title)} - SelfLearn</title>
 <meta name="description" content="SelfLearn: an autonomous research engine that only publishes what it can quote from a retrieved source.">
 <meta name="color-scheme" content="light dark">
+<script>
+/* Applied before the first paint so a stored choice does not flash the other
+   theme. Inline and synchronous on purpose; it reads no network and no cookie. */
+(function () {{
+  try {{
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  }} catch (e) {{ /* storage unavailable: fall back to the media query */ }}
+}})();
+</script>
 <link rel="stylesheet" href="{prefix}static/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128218;</text></svg>">
 <script defer src="{prefix}static/app.js"></script>
@@ -162,7 +195,7 @@ def layout(title: str, body: str, *, active: str, data: dict[str, Any], depth: i
       <span class="brand">SelfLearn <small>autonomous evidence-verifying research engine v{esc(__version__)}</small></span>
       <span class="muted small">run <span class="mono">{esc(data.get('run_id') or 'n/a')}</span> &middot; generated {esc(generated)} &middot; mode {esc(mode)}</span>
     </div>
-    <nav class="site" aria-label="Primary">{nav_items}</nav>
+    <nav class="site" aria-label="Primary">{nav_items}<span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
   </div>
 </header>
 {mode_banner}
@@ -187,12 +220,23 @@ def layout(title: str, body: str, *, active: str, data: dict[str, Any], depth: i
 """
 
 
-def table(headers: Iterable[str], rows: Iterable[Iterable[str]], *, caption: str = "", sortable: bool = False, scroll: bool = True) -> str:
+def table(headers: Iterable[str], rows: Iterable[Any], *, caption: str = "", sortable: bool = False, scroll: bool = True) -> str:
+    """Render a table from either cell lists or pre-built ``<tr>`` markup.
+
+    Both forms are accepted because a page that needs per-row attributes for the
+    client-side filter has to build the row itself. Iterating a row that is
+    already a string yields its *characters*, which is how the library page came
+    to render every topic as a wall of single-letter cells and left its filter
+    matching nothing at all.
+    """
     head = "".join(f"<th scope=\"col\">{esc(h)}</th>" for h in headers)
     body_rows = []
     for row in rows:
-        cells = "".join(f"<td>{cell}</td>" for cell in row)
-        body_rows.append(f"<tr>{cells}</tr>")
+        if isinstance(row, str):
+            body_rows.append(row)
+        else:
+            cells = "".join(f"<td>{cell}</td>" for cell in row)
+            body_rows.append(f"<tr>{cells}</tr>")
     attrs = ' data-sortable' if sortable else ""
     cap = f"<caption>{esc(caption)}</caption>" if caption else ""
     core = f'<table{attrs}>{cap}<thead><tr>{head}</tr></thead><tbody>{"".join(body_rows)}</tbody></table>'
@@ -790,6 +834,7 @@ def page_sources(data: dict[str, Any], *, depth: int = 0) -> str:
     matrix = sources.get("matrix", [])
     status = {row.get("source_id"): row for row in sources.get("status", [])}
     reliability = {row.get("source_id"): row for row in sources.get("reliability", [])}
+    credentials = {row.get("source_id"): row for row in data.get("credentials", []) or []}
 
     rows = []
     for spec in matrix:
@@ -806,7 +851,7 @@ def page_sources(data: dict[str, Any], *, depth: int = 0) -> str:
                     {"reachable": "reached", "unreachable": "unreachable", "error": "error", "credential_required": "needs key", "not_attempted": "not tried"}.get(live_status, live_status),
                     {"reachable": "ok", "unreachable": "err", "error": "err", "credential_required": "warn"}.get(live_status, ""),
                 ),
-                ("needs " + str(spec.get("key_env")) if spec.get("requires_key") else "open"),
+                credential_cell(credentials.get(source_id, {})),
                 link(spec.get("docs_url"), "docs"),
                 f'<span class="num">{rel_row.get("documents", 0)}</span>',
                 f'<span class="num">{rel_row.get("claims_proposed", 0)}</span>',
@@ -920,6 +965,215 @@ only for orientation; it is never the grounds for a factual claim.</div>
 ]), anchor="failures")}
 """
     return layout("Sources", body, active="sources.html", data=data, depth=depth)
+
+
+#: What each register field is for, in the reader's own words.
+LINK_FIELD_LABEL = {
+    "docs_url": "API documentation",
+    "key_url": "Where a free key is issued",
+    "license_url": "Licence",
+    "terms_url": "Terms of use",
+    "citation": "Citation in this project's prose",
+}
+
+
+def _link_row(
+    url: str,
+    *,
+    source_id: str,
+    operator: str,
+    purpose: str,
+    result: dict[str, Any] | None,
+) -> str:
+    """One row of the official-link register, with the outcome the check recorded."""
+    if result is None:
+        outcome = badge("not checked", "warn")
+        detail = "Not present in the committed link check."
+        kind = "unchecked"
+    elif result.get("ok"):
+        status = result.get("status")
+        outcome = badge(f"resolved {status}", "ok")
+        final_url = result.get("final_url") or ""
+        redirected = final_url and final_url.rstrip("/") != (url or "").rstrip("/")
+        detail = (
+            "Redirected to " + link(final_url, "the address it landed on") if redirected else "Resolved directly."
+        )
+        kind = "resolved"
+    else:
+        status = result.get("status")
+        label = f"HTTP {status}" if status else "unreachable"
+        outcome = badge(label, "err")
+        detail = esc((result.get("error") or "no detail recorded")[:200])
+        kind = "failed"
+    search = " ".join([source_id, operator, purpose, url]).lower()
+    return (
+        f'<tr data-row data-kind="{esc(kind)}" data-search="{esc(search)}">'
+        f'<td><span class="mono">{esc(source_id)}</span><div class="small muted">{esc(operator)}</div></td>'
+        f"<td>{esc(purpose)}</td>"
+        f"<td>{link(url, 'open')}</td>"
+        f"<td>{outcome}</td>"
+        f'<td class="small">{detail}</td>'
+        "</tr>"
+    )
+
+
+def page_links(data: dict[str, Any], *, depth: int = 0) -> str:
+    """Every URL this project publishes, with the outcome of the last check.
+
+    The point of the page is manual review: a reader who wants to check a source
+    for themselves should not have to hunt for the address, and should be told
+    honestly whether the address was reachable when the engine last looked, and
+    from where.
+    """
+    check = data.get("link_check") or {}
+    sources = data.get("sources", {})
+    matrix = {row.get("source_id"): row for row in sources.get("matrix", [])}
+    by_source: dict[str, list[dict[str, Any]]] = check.get("by_source", {}) or {}
+    credentials = data.get("credentials", []) or []
+
+    # Every URL the register publishes, matched to the outcome recorded for it.
+    rows: list[str] = []
+    seen: set[str] = set()
+    for source_id, results in sorted(by_source.items()):
+        spec = matrix.get(source_id, {})
+        operator = spec.get("operator", "")
+        for result in sorted(results, key=lambda r: (str(r.get("group")), str(r.get("url")))):
+            url = result.get("url") or ""
+            if url in seen:
+                continue
+            seen.add(url)
+            purpose = LINK_FIELD_LABEL.get(result.get("field", ""), result.get("group", "link"))
+            if result.get("group") == "prose":
+                operator = "this repository"
+                purpose = f"cited in {esc(source_id)}"
+            elif result.get("group") == "change_mechanism":
+                purpose = "Documented change filter"
+            rows.append(
+                _link_row(url, source_id=source_id, operator=operator, purpose=purpose, result=result)
+            )
+
+    total = len(rows)
+    resolved = sum(1 for row in rows if 'data-kind="resolved"' in row)
+    failed = sum(1 for row in rows if 'data-kind="failed"' in row)
+    unchecked = sum(1 for row in rows if 'data-kind="unchecked"' in row)
+    sources_covered = len({r.split('data-search="')[1].split(" ")[0] for r in rows if "data-search=" in r})
+
+    if not check.get("available"):
+        provenance = (
+            '<div class="banner warn"><strong>No link check is committed.</strong> '
+            + esc(check.get("detail", ""))
+            + " The addresses below are the ones the register publishes; none of them has been resolved by a run this "
+            "repository has recorded.</div>"
+        )
+    else:
+        provenance = (
+            '<div class="banner info"><strong>Where these statuses came from.</strong> Recorded '
+            f"{esc(check.get('generated_at', 'at an unrecorded time'))} by "
+            f"<span class='mono'>{esc(check.get('label', 'an unlabelled run'))}</span>. "
+            "A status of <em>unreachable</em> means the machine that ran the check could not open a TLS connection to "
+            "that host. It is not a statement that the page is gone, which is why the machine is named: a sandbox with "
+            "restricted egress and a runner with unrestricted egress will disagree, and both records are true of the "
+            "machine that made them.</div>"
+        )
+
+    credential_rows = []
+    for row in credentials:
+        mechanism = row.get("mechanism")
+        if mechanism:
+            shape = (
+                f'<span class="mono">{esc(mechanism["name"])}: {esc(mechanism["prefix"])}&lt;value&gt;</span>'
+                if mechanism["kind"] == "header"
+                else f'<span class="mono">?{esc(mechanism["name"])}=&lt;value&gt;</span>'
+            )
+            citation = link(mechanism.get("docs_url"), "operator's page")
+            quote = mechanism.get("quote") or ""
+            checked_on = mechanism.get("verified_at") or ""
+            evidence = (
+                f'<blockquote>{esc(quote)}<cite>{citation}'
+                + (f" &middot; read {esc(checked_on)}" if checked_on else " &middot; not re-read this pass")
+                + "</cite></blockquote>"
+                if quote
+                else f"<p class='small muted'>Applied by <span class='mono'>{esc(mechanism.get('applied_by', ''))}</span>.</p>"
+            )
+        else:
+            shape = '<span class="muted">not transcribed</span>'
+            evidence = (
+                "<p class='small muted'>The operator's documented mechanism has not been transcribed, so no credential "
+                "is sent. The source is used within its unauthenticated limits.</p>"
+            )
+        state_badge = {
+            "applied": badge("transmitted", "ok"),
+            "declared_only": badge("declared, not sent", "warn"),
+        }.get(row.get("state", ""), badge(row.get("state", ""), ""))
+        credential_rows.append(
+            [
+                f'<span class="mono">{esc(row.get("source_id"))}</span><div class="small">{esc(row.get("name"))}</div>',
+                f'<span class="mono">{esc(row.get("env"))}</span>'
+                + (badge("required", "err") if row.get("required") else badge("optional", "")),
+                shape,
+                state_badge,
+                link(row.get("key_url"), "request a key"),
+                evidence,
+            ]
+        )
+
+    body = f"""
+<h1>Official links, and how each one was checked</h1>
+<p class="lede">Every address this project publishes: the operator's own documentation, licence and key-request page for
+each registered source, the documentation behind each change filter, and the citations in this repository's prose. Each
+row carries the outcome of the last recorded check, so a reviewer can go straight to the primary source and see whether
+the engine could reach it.</p>
+<div class="grid four">
+{stat(total, 'URLs published')}
+{stat(resolved, 'resolved')}
+{stat(failed, 'did not resolve')}
+{stat(sources_covered, 'sources and files covered')}
+</div>
+{provenance}
+<div class="banner warn"><strong>What this check proves, and what it does not.</strong> It records the HTTP status and
+the address after redirects. It does not read the page, so it cannot say the page still says what this project took
+from it. Where the engine relies on an operator's exact words - the credential mechanisms below - the words are quoted
+here beside the link, with the date they were read, so that part can be checked by eye.</div>
+
+<div class="filter">
+  <label for="link-filter" class="small">Filter</label>
+  <input id="link-filter" type="search" placeholder="Filter by source, operator or address"
+         data-filter-target="#link-table tbody" data-count-target="#link-count" data-filter-select="#outcome-filter">
+  <label for="outcome-filter" class="small">Outcome</label>
+  <select id="outcome-filter">
+    <option value="">any outcome</option>
+    <option value="resolved">resolved</option>
+    <option value="failed">did not resolve</option>
+    <option value="unchecked">not checked</option>
+  </select>
+  <span class="small muted" id="link-count"></span>
+</div>
+<div id="link-table">
+{table(["Source", "What the address is for", "Address", "Last check", "Detail"], rows, sortable=True,
+       caption="Status and final address only. Page content is never asserted here.")}
+</div>
+
+{section("Credentials: what each operator documents, and what the engine sends", table(
+    ["Source", "Variable", "Documented mechanism", "State", "Key", "The operator's own words"], credential_rows,
+    caption="A variable can be set and still never reach the request. The state column is the difference."),
+    anchor="credentials",
+    note="Every mechanism below is transcribed from the operator's own page, quoted beside it, with the date it was "
+         "read. A source whose mechanism has not been transcribed is published as 'declared, not sent' rather than "
+         "being guessed at: the engine will not invent an authentication scheme. "
+         "Run <span class='mono'>python3 -m selflearn credentials</span> for the same table as JSON.")}
+
+{section("Re-running the check", bullet_list([
+    "<span class='mono'>python3 tools/verify_links.py</span> - resolve every published URL from this machine and "
+    "write <span class='mono'>reports/link_check.json</span>.",
+    "<span class='mono'>python3 tools/verify_links.py --label &lt;where it ran&gt;</span> - record the machine, "
+    "because a result is only interpretable together with the egress that produced it.",
+    "<span class='mono'>python3 tools/link_check_changed.py</span> - report whether any URL changed outcome, which is "
+    "what decides whether a fresh report is worth committing.",
+    "The Tests workflow runs the check on every push from a runner with unrestricted egress and commits the register "
+    "when an outcome moves.",
+]), anchor="rerun")}
+"""
+    return layout("Official links", body, active="links.html", data=data, depth=depth)
 
 
 def page_experiments(data: dict[str, Any], *, depth: int = 0) -> str:
@@ -1378,92 +1632,185 @@ def page_not_found(data: dict[str, Any]) -> str:
 # ---------------------------------------------------------------------------
 
 
-def page_root_entry(data: dict[str, Any]) -> str:
-    """The repository-root landing page that GitHub Pages serves.
+def root_shell(title: str, description: str, body: str, data: dict[str, Any]) -> str:
+    """Shared shell for the two files GitHub Pages serves from the branch root.
 
-    GitHub Pages publishes this repository from the branch root, while the engine
-    writes the site into ``docs/``. Rather than move the site, this single page is
-    written next to it: a reader arriving at the Pages URL gets one clear entry
-    point, and every link on it is relative so it works from any host.
+    Pages publishes this repository from the branch root while the engine writes
+    the site into ``docs/``. These pages therefore sit one level above it and link
+    its stylesheet rather than carrying their own copy, so the entry point and the
+    site cannot drift apart visually.
     """
-    counts = data.get("counts") or {}
-    topics = data.get("topics") or []
+    generated = data.get("generated_at") or ""
     run_id = data.get("run_id") or "no run recorded"
     mode = data.get("mode") or "unknown"
-    generated = data.get("generated_at") or ""
-    topic_items = "".join(
-        f'<li>{rel(topic_href(item["topic"], prefix="docs/"), item["topic"].get("title", "question"))} '
-        f'<span class="muted">- {esc((item.get("topic") or {}).get("status", ""))}</span></li>'
-        for item in topics[:6]
-    )
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SelfLearn - autonomous evidence-verifying research engine</title>
-<meta name="description" content="SelfLearn researches questions from public sources and publishes only what it can quote from a retrieved document.">
+<title>{esc(title)}</title>
+<meta name="description" content="{esc(description)}">
 <meta name="color-scheme" content="light dark">
-<style>
-:root {{ --ink:#10202c; --muted:#5b6b78; --line:#c9d3da; --bg:#f7f9fb; --card:#fff; --accent:#0b5d7a; }}
-@media (prefers-color-scheme: dark) {{ :root {{ --ink:#e8eef2; --muted:#9fb0bd; --line:#2b3a45; --bg:#121a20; --card:#18232b; --accent:#7cc4de; }} }}
-* {{ box-sizing:border-box; }}
-body {{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }}
-main {{ max-width:44rem; margin:0 auto; padding:3rem 1.25rem 4rem; }}
-h1 {{ font-size:1.9rem; margin:0 0 .25rem; }}
-h2 {{ font-size:1.15rem; margin:2rem 0 .5rem; }}
-p {{ margin:.6rem 0; }}
-.lede {{ font-size:1.05rem; }}
-.muted {{ color:var(--muted); }}
-.card {{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:1rem 1.25rem; margin:1.25rem 0; }}
-a {{ color:var(--accent); }}
-ul {{ padding-left:1.2rem; }}
-.cta {{ display:inline-block; background:var(--accent); color:#fff; padding:.6rem 1rem; border-radius:8px; text-decoration:none; font-weight:600; }}
-@media (prefers-color-scheme: dark) {{ .cta {{ color:#08131a; }} }}
-code {{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }}
-.small {{ font-size:.9rem; }}
-</style>
+<link rel="stylesheet" href="docs/static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128218;</text></svg>">
 </head>
 <body>
-<main>
-  <h1>SelfLearn</h1>
-  <p class="lede">An autonomous research engine that will not publish a sentence it cannot quote from a
-  document it actually retrieved. No language model is used at any stage: every claim is a span of a
-  stored source, and the accept/reject decision is a string comparison a reviewer can re-run.</p>
-
-  <p><a class="cta" href="docs/index.html">Open the research site &rarr;</a></p>
-  <p class="muted small">Last published run <code>{esc(run_id)}</code> ({esc(mode)} mode), generated {esc(generated)}:
-  {esc(counts.get("topics", 0))} questions, {esc(counts.get("claims", 0))} claims over
-  {esc(counts.get("documents", 0))} stored documents.</p>
-
-  <div class="card">
-    <h2 style="margin-top:0">Go straight to</h2>
-    <ul>
-      <li>{rel("docs/index.html", "Overview")} - what the engine is doing and what changed this cycle</li>
-      <li>{rel("docs/review.html", "For review")} - every unresolved irregularity, failure and contradiction</li>
-      <li>{rel("docs/sources.html", "Sources")} - what was read, what was reachable, what needs a credential</li>
-      <li>{rel("docs/method.html", "Method")} - evidence hierarchy, thresholds in force, criteria, refusals</li>
-      <li>{rel("docs/documents.html", "Documents")} - design source, architecture, verification, limits, roadmap</li>
-      <li>{rel("docs/requirements.html", "Requirements")} - the brief traced line by line</li>
-    </ul>
-    {f'<p class="muted">Questions currently under research:</p><ul>{topic_items}</ul>' if topic_items else ''}
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">SelfLearn <small>autonomous evidence-verifying research engine v{esc(__version__)}</small></span>
+      <span class="muted small">run <span class="mono">{esc(run_id)}</span> &middot; generated {esc(generated)} &middot; mode {esc(mode)}</span>
+    </div>
   </div>
-
-  <h2>Check it yourself</h2>
-  <p>Every figure on the site is traceable to a claim or to a count the engine recorded. The stored
-  bytes behind each claim, the calibration that set the verification thresholds, the experiment results
-  and the run summary are all committed to the repository.</p>
-  <ul class="muted">
-    <li><code>python3 tools/check_claim.py</code> - a claim, its document, its hash, a fresh re-check</li>
-    <li><code>python3 -m selflearn audit</code> - re-verify every claim from its snapshot</li>
-    <li><code>python3 -m selflearn selftest</code> - the test suite</li>
-  </ul>
-  <p class="muted small">Source code: {link(ENGINE_REPO_URL, "github.com/buffedlizard55-lab/SelfLearn")}.
-  No third-party scripts, fonts or trackers.</p>
+</header>
+<main id="main" class="wrap">
+{body}
 </main>
+<footer class="site">
+  <div class="wrap">
+    <p class="small">Source code: {link(ENGINE_REPO_URL, 'github.com/buffedlizard55-lab/SelfLearn')} &middot;
+    Research site: {rel('docs/index.html', 'docs/index.html')} &middot; Generated {esc(generated)}.
+    No third-party scripts, fonts or trackers.</p>
+  </div>
+</footer>
 </body>
 </html>
 """
+
+
+def page_root_entry(data: dict[str, Any]) -> str:
+    """The repository-root landing page that GitHub Pages serves."""
+    counts = data.get("counts") or {}
+    checks = data.get("checks") or {}
+    topics = data.get("topics") or []
+    link_check = data.get("link_check") or {}
+    credentials = data.get("credentials", []) or []
+
+    topic_items = "".join(
+        f'<li>{rel(topic_href(item["topic"], prefix="docs/"), item["topic"].get("title", "question"))} '
+        f'<span class="muted small">- {esc((item.get("topic") or {}).get("status", ""))}</span></li>'
+        for item in topics[:8]
+    )
+
+    pages = (
+        ("docs/index.html", "Overview", "What the engine is studying, and what changed this cycle."),
+        ("docs/library.html", "Library", "One page per question: the verified facts, the competing answers, the criticism."),
+        ("docs/sources.html", "Sources", "Every registered source, who operates it, and whether the last run reached it."),
+        ("docs/links.html", "Official links", "Every published address, with the outcome of the last check."),
+        ("docs/method.html", "Method", "Evidence hierarchy, thresholds in force, scoring criteria, refusals."),
+        ("docs/documents.html", "Documents", "Design source, architecture, verification, limits, roadmap."),
+        ("docs/requirements.html", "Requirements", "The brief traced line by line against the implementation."),
+        ("docs/review.html", "For review", "Every unresolved irregularity, failure and contradiction."),
+    )
+    page_cards = "".join(
+        f'<div class="card"><h3>{rel(href, label)}</h3><p class="sub">{esc(blurb)}</p></div>'
+        for href, label, blurb in pages
+    )
+
+    link_note = (
+        f"{esc(link_check.get('ok', 0))} of {esc(link_check.get('checked', 0))} published URLs resolved, "
+        f"checked {esc(link_check.get('generated_at', 'at an unrecorded time'))} by "
+        f"<span class='mono'>{esc(link_check.get('label', 'an unlabelled run'))}</span>."
+        if link_check.get("available")
+        else "No link check is committed yet; the addresses are published but none has been resolved by a recorded run."
+    )
+    transmitted = sum(1 for row in credentials if row.get("state") == "applied")
+    declared_only = sum(1 for row in credentials if row.get("state") == "declared_only")
+
+    irregularity_counts = checks.get("irregularity_counts") or {}
+    open_errors = irregularity_counts.get("error", 0)
+    open_warnings = irregularity_counts.get("warning", 0)
+
+    body = f"""
+<h1>An autonomous research engine that shows its working</h1>
+<p class="lede">SelfLearn researches a question by retrieving documents from official public APIs, cutting its claims
+out of those documents as exact spans, and refusing to publish a sentence it cannot trace back to a stored source. No
+language model is used at any stage: the accept/reject decision is a string and set comparison a reviewer can re-run.</p>
+
+<div class="grid four">
+{stat(counts.get("topics", 0), 'questions under study')}
+{stat(counts.get("claims", 0), 'verified claims')}
+{stat(counts.get("documents", 0), 'documents cited')}
+{stat(open_errors, 'errors open for review')}
+</div>
+
+<div class="banner info"><strong>The rule this project is built around.</strong> A claim is promoted to
+&ldquo;verified&rdquo; only when every number and date in it appears in the cited document, and either a verbatim
+quoted span is present or the document covers the claim's content words above a published threshold. Anything the
+engine could not do is published too: unreachable sources, missing credentials, contradictions and its own
+irregularities. {esc(open_warnings)} warning(s) and {esc(open_errors)} error(s) are currently listed on the
+{rel('docs/review.html', 'review page')}.</div>
+
+<h2>Read the research</h2>
+<div class="grid two">
+{page_cards}
+</div>
+
+<h2>Provenance you can check</h2>
+<div class="grid two">
+  <div class="card"><h3>Official sources</h3>
+    <p class="sub">{link_note}</p>
+    <p class="small">Every address is the operator's own page. {rel('docs/links.html', 'See the register')}.</p></div>
+  <div class="card"><h3>Credentials</h3>
+    <p class="sub">{esc(transmitted)} source(s) have a credential the adapter actually transmits;
+    {esc(declared_only)} name a variable whose mechanism has not been transcribed and are published as
+    &ldquo;declared, not sent&rdquo;.</p>
+    <p class="small">{rel('docs/links.html#credentials', 'What each operator documents')}.</p></div>
+</div>
+
+<h2>Questions currently under research</h2>
+{f'<ul>{topic_items}</ul>' if topic_items else '<p class="muted">No topics are active in the stored library.</p>'}
+
+<h2>Check it yourself</h2>
+<p>Every figure on the site is traceable to a claim or to a count the engine recorded. The stored bytes behind each
+claim, the calibration that set the verification thresholds, the experiment results and the run summary are all
+committed to the repository.</p>
+<ul class="muted small">
+  <li><code>python3 -m selflearn audit</code> - re-verify every stored claim from its snapshot</li>
+  <li><code>python3 tools/check_claim.py</code> - one claim, its document, its hash, a fresh re-check</li>
+  <li><code>python3 -m selflearn credentials</code> - which keyed sources are enabled, and how to enable them</li>
+  <li><code>python3 tools/verify_links.py</code> - resolve every URL this project publishes</li>
+  <li><code>python3 -m selflearn selftest</code> - the test suite, no network and no credentials required</li>
+</ul>
+<p><a class="cta" href="docs/index.html">Open the research site &rarr;</a></p>
+"""
+    return root_shell(
+        "SelfLearn - autonomous evidence-verifying research engine",
+        "SelfLearn researches questions from public sources and publishes only what it can quote from a retrieved document.",
+        body,
+        data,
+    )
+
+
+def page_root_not_found(data: dict[str, Any]) -> str:
+    """The 404 Pages serves from the branch root.
+
+    Pages looks for ``404.html`` at the site root. For this repository that is the
+    branch root, so the copy the engine writes into ``docs/`` would never be shown;
+    this one is written beside the entry point and points back into the site.
+    """
+    body = """
+<h1>That page is not part of this site</h1>
+<p class="lede">The address you asked for does not exist here. Nothing was removed to produce this page: the engine
+only adds and annotates records, and a topic that is closed keeps its page and the reason it was closed.</p>
+<div class="grid two">
+  <div class="card"><h3>Start again</h3>
+    <p class="sub">The entry point, or straight into the research.</p>
+    <p><a href="index.html">Landing page</a> &middot; <a href="docs/index.html">Overview</a> &middot;
+    <a href="docs/library.html">Library</a></p></div>
+  <div class="card"><h3>Or check the record</h3>
+    <p class="sub">Everything the engine could not do is published rather than hidden.</p>
+    <p><a href="docs/review.html">For review</a> &middot; <a href="docs/links.html">Official links</a> &middot;
+    <a href="docs/method.html">Method</a></p></div>
+</div>
+"""
+    return root_shell(
+        "Page not found - SelfLearn",
+        "This page does not exist on the SelfLearn site. Start from the overview or the library.",
+        body,
+        data,
+    )
 
 
 def render_documents(source_dir: Path | None = None, *, repo_url: str = ENGINE_REPO_URL) -> list[dict[str, Any]]:
@@ -1526,11 +1873,16 @@ def build_site(
         # the site rather than a bare directory listing.
         root = out.parent
         (root / "index.html").write_text(page_root_entry(data), encoding="utf-8")
+        # Pages looks for 404.html at the *site* root, which for this repository is
+        # the branch root, not docs/. Without this file the copy in docs/ is
+        # unreachable and a mistyped address falls back to GitHub's own page.
+        (root / "404.html").write_text(page_root_not_found(data), encoding="utf-8")
         (root / ".nojekyll").write_text("", encoding="utf-8")
-        written.extend([root / "index.html", root / ".nojekyll"])
+        written.extend([root / "index.html", root / "404.html", root / ".nojekyll"])
     write(out / "index.html", page_index(data))
     write(out / "library.html", page_library(data))
     write(out / "sources.html", page_sources(data))
+    write(out / "links.html", page_links(data))
     write(out / "experiments.html", page_experiments(data))
     write(out / "method.html", page_method(data))
     write(out / "documents.html", page_documents(rendered_docs, data))

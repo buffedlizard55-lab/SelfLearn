@@ -103,8 +103,6 @@ live web and corrected where the operator had moved them:
 - Eurostat's API guide is now at
   <https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-getting-started>
   (the older Confluence wiki page is gone).
-- The IMF data service documentation is at
-  <https://datahelp.imf.org/knowledgebase/articles/667681-json-restful-web-service>.
 - OECD's SDMX documentation is published at
   <https://data.oecd.org/fr/api/sdmx-json-documentation/>.
 - DOAJ API v3 documentation is at <https://doaj.org/api/v3/docs>.
@@ -112,10 +110,55 @@ live web and corrected where the operator had moved them:
 - WHO's Global Health Observatory OData API is documented at
   <https://www.who.int/data/gho/info/gho-odata-api>.
 
-A reviewer can re-run the reachability check themselves:
+### Every published URL, resolved from a host with unrestricted egress
+
+The whole register is not spot-checked; it is resolved in full on every push, by the
+`links` job of `.github/workflows/tests.yml`, which runs `tools/verify_links.py` on a
+GitHub runner and commits the result to `reports/link_check.json`. The site publishes
+that file on its **Official links** page with the machine that produced it named.
+
+The run of 2026-09-22T03:49:20Z (`GitHub Actions ubuntu-latest (unrestricted egress)`)
+resolved **120 published URLs: 103 resolved, 17 did not**. Reading the 17 rather than
+counting them is what makes the number useful:
+
+| Outcome | Count | What it means |
+| --- | --- | --- |
+| HTTP 403 / 401 / 422 on an API host | 15 | The host answered and refused an unauthenticated or parameterless request. `api.uspto.gov` answers `Missing Authentication Token`; `api.github.com/search/repositories` answers that the `q` parameter is missing. Both are the endpoint working as documented, not a broken link. |
+| HTTP 403 on an operator's HTML page | 8 | Bot protection. `cisa.gov`, `imf.org`, `sec.gov`, `noaa.gov`, `gbif.org` and `oecd.org` returned "Access Denied" or a "Just a moment..." interstitial to a non-browser client. The page is not gone; it declines automated requests. |
+| HTTP 404 | 1 | **Genuinely moved.** `https://doaj.org/apply-for-api-key/` no longer exists. Fixed - see below. |
+| Name does not resolve | 1 | **Genuinely unreachable.** `datahelp.imf.org` failed DNS. Flagged, not replaced - see below. |
+| Read timeout | 1 | `export.arxiv.org/api/query` timed out on all three attempts from a runner with unrestricted egress. arXiv asks for a 3 second delay between requests and rate-limits; this is a finding about arXiv's export host, not about the adapter. |
+
+The counts above overlap: the 403s appear in both the first and second rows depending
+on whether the host is an API or a web page.
+
+Two corrections came out of that run, and both are recorded rather than quietly made:
+
+- **DOAJ's key-request page returned HTTP 404.** There is no public key-application
+  page. DOAJ's own API documentation states: "API keys are usually only available to
+  publishers who submit data to DOAJ. If you already have an account, please log in,
+  click 'My Account' and 'Settings' to see your API key." (<https://doaj.org/api/v4/docs>,
+  read 2026-09-22.) `key_url` now points at that page, and the register's rate-limit
+  note carries the quotation, because a link to a page that says how to get a key is
+  worth more than a link to a form that no longer exists.
+- **The IMF documentation host does not resolve.** `datahelp.imf.org` failed DNS from
+  the runner and from a second, unrelated network. `https://api.imf.org/` answered
+  HTTP 502 when it was checked. The pages that do describe the `api.imf.org` SDMX 3.0
+  endpoints are third-party profiles, and this register does not cite third parties as
+  an operator's documentation. The URL is therefore **flagged, not replaced**:
+  substituting an address that could not be verified against an IMF-operated page is
+  precisely the failure this project exists to avoid. There is a second problem behind
+  it - the register's `base_url` is `https://api.imf.org/external/sdmx`, while the
+  linked page documents the older `http://dataservices.imf.org/REST/SDMX_JSON.svc`
+  service, so the documentation and the endpoint describe different APIs. Resolving
+  this needs a human to open IMF's own data portal and record the page.
+
+A reviewer can re-run either check themselves:
 
 ```
-python3 -m selflearn sources --probe
+python3 -m selflearn sources --probe      # can each source be reached?
+python3 tools/verify_links.py             # does every published URL resolve?
+python3 tools/link_check_changed.py       # did any URL change outcome?
 ```
 
 ## Flagged for review
@@ -169,6 +212,51 @@ listed here rather than smoothed over.
 4. **Two sources cover news and commentary only.** Hacker News is useful for noticing
    that something is being discussed; it is not evidence that the thing is true. Its
    class reflects that, and no `supported` claim about the world rests on it alone.
+5. **A configured credential was not being sent - found and fixed 2026-09-22.** Reading
+   the credential path line by line showed that `eia`, `fred` and `ncei` declare
+   `requires_key=True` and a `key_env`, and `python3 -m selflearn credentials`
+   reported them as enabled once the variable was set - but no adapter ever put the
+   credential on the request. `GenericSource.requests()` built the request from the
+   endpoint and its extra parameters only, so setting the secret changed nothing and
+   every call would have gone out unauthenticated and been refused. Separately,
+   `.github/workflows/research-loop.yml` passed `PATENTSVIEW_API_KEY`, the name the
+   register stopped reading when it moved to the USPTO Open Data Portal.
+
+   Both are fixed. Each mechanism is now transcribed in `CREDENTIAL_MECHANISMS`
+   (`selflearn/fetch/sources.py`) with the operator's own page and their own words
+   beside it, verified 2026-09-22:
+
+   | Source | Mechanism | Operator's documentation |
+   | --- | --- | --- |
+   | `eia` | `?api_key=<key>` | "To use an API key, place it as a parameter after the route." <https://www.eia.gov/opendata/documentation.php> |
+   | `fred` | `?api_key=<key>` | <https://fred.stlouisfed.org/docs/api/fred/series_search.html> |
+   | `ncei` | `token: <token>` header | 'Assigned token is required to use these queries and must be in the header.' <https://www.ncei.noaa.gov/cdo-web/webservices/v2> |
+   | `github` | `Authorization: Bearer <token>` | <https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api> |
+
+   Six of the twelve keyed sources now transmit their credential. The other six
+   (`census_us`, `doaj`, `nvd`, `pubmed`, `semantic_scholar`, `stackexchange`) name a
+   variable whose documented mechanism has **not** been transcribed, so no credential
+   is sent and the source is used within its unauthenticated limits. That is published
+   as `declared, not sent` on the site's Official links page and as
+   `declared_but_not_transmitted` by `python3 -m selflearn credentials`, rather than
+   being left to look as though it worked. Guessing an authentication scheme is not an
+   option; transcribing six more operator pages is.
+   Covered by `tests/test_layers.py::CredentialPathTests`, including the test that no
+   source may be gated on a credential the engine then fails to send.
+6. **The GitHub rate-limit note was wrong for the token the scheduled run has.** The
+   register said "5,000 requests/hour with a token". GitHub documents 5,000/hour for a
+   *personal access token* and **1,000/hour per repository** for the `GITHUB_TOKEN`
+   built into GitHub Actions - which is the token the workflow has
+   (<https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api>,
+   read 2026-09-22). The note now states all three figures and cites the page.
+7. **The IMF documentation host is unreachable and the endpoint is unaligned - flagged 2026-09-22.**
+   When every URL was checked from a runner with unrestricted egress,
+   `datahelp.imf.org` failed DNS, and it failed from a second, unrelated network as
+   well. `https://api.imf.org/` answered HTTP 502. Furthermore, the register's
+   `base_url` is `https://api.imf.org/external/sdmx` while the linked page documents
+   the legacy `http://dataservices.imf.org/REST/SDMX_JSON.svc` service. The URL is
+   flagged rather than silently swapped with a third-party directory. A human reviewer
+   needs to visit IMF's data portal to verify the current official documentation URL.
 
 ## Change scanning
 

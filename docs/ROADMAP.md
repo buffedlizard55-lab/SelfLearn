@@ -31,12 +31,24 @@ questions about energy, economics and climate.
 case. The workflow already passes them through when present.
 
 **What shipped.** `python3 -m selflearn credentials` now prints, for every keyed
-source, whether its variable is set, the operator's own key-request page and the
+source, whether its variable is set, whether the credential is required or optional,
+whether the adapter actually transmits it, the operator's own key-request page, and the
 rate-limit note; the scheduled workflow runs it on every cycle, and the CI workflow
-runs the link check so a moved key-request page is visible rather than discovered
-by a failed run. The PatentsView key name changed to `USPTO_ODP_API_KEY` because the
-operator states that previously issued PatentsView keys are not valid for Open Data
-Portal APIs.
+runs the link check and commits the result so a moved page is visible rather than
+discovered by a failed run.
+
+Line-by-line review of the credential path on 2026-09-22 discovered that `GenericSource`
+never placed credentials on requests: `eia`, `fred` and `ncei` were accepted as enabled
+when secrets were set, but all HTTP requests went out unauthenticated. This is now fixed
+with `CREDENTIAL_MECHANISMS` in `selflearn/fetch/sources.py`, quoting the operator's own
+documentation and verifying how each credential is sent (`api_key` parameter for `eia`
+and `fred`, `token` header for `ncei`, `Authorization: Bearer` for `github`).
+`research-loop.yml` passes `USPTO_ODP_API_KEY` (replacing the retired
+`PATENTSVIEW_API_KEY`), the optional keys, and `GITHUB_TOKEN`.
+Sources whose transmission mechanism has not yet been transcribed are honestly published
+as `declared_but_not_transmitted` rather than silently assumed to work. A dedicated
+**Official links** page (`docs/links.html`) and root landing entry point publish the
+exact status of all 120 URLs checked from an unrestricted runner.
 
 **How we would know.** The sources page shows them as reachable with `credential_required`
 cleared, and claims appear with those sources named.

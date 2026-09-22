@@ -1449,7 +1449,7 @@
       "Selection used 26 labelled case(s); false supports at the selected point: 0."
     ],
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-22T00:24:45Z",
+    "ran_at": "2026-09-22T03:58:01Z",
     "selected": {
       "accuracy": 1.0,
       "all_cases": {
@@ -1901,6 +1901,212 @@
     "strategies": 150,
     "topics": 4
   },
+  "credentials": [
+    {
+      "detail": "CENSUS_API_KEY is named in the register, but the operator's documented way of transmitting it has not been transcribed, so the engine sends no credential and the source is used within its unauthenticated limits.",
+      "docs_url": "https://www.census.gov/data/developers/data-sets.html",
+      "env": "CENSUS_API_KEY",
+      "key_url": "https://api.census.gov/data/key_signup.html",
+      "mechanism": null,
+      "name": "U.S. Census Bureau API",
+      "present": false,
+      "rate_limit_note": "Works without a key up to a low daily cap; a free key raises it.",
+      "required": false,
+      "source_id": "census_us",
+      "state": "declared_only"
+    },
+    {
+      "detail": "DOAJ_API_KEY is named in the register, but the operator's documented way of transmitting it has not been transcribed, so the engine sends no credential and the source is used within its unauthenticated limits.",
+      "docs_url": "https://doaj.org/api/v3/docs",
+      "env": "DOAJ_API_KEY",
+      "key_url": "https://doaj.org/api/v4/docs",
+      "mechanism": null,
+      "name": "DOAJ API",
+      "present": false,
+      "rate_limit_note": "Public endpoints are rate limited. DOAJ states that keys are not generally issued on request: \"API keys are usually only available to publishers who submit data to DOAJ. If you already have an account, please log in, click 'My Account' and 'Settings' to see your API key.\" Quoted from https://doaj.org/api/v4/docs (read 2026-09-22).",
+      "required": false,
+      "source_id": "doaj",
+      "state": "declared_only"
+    },
+    {
+      "detail": "EIA_API_KEY is sent as ?api_key=<value> by the shared request layer. Transcription checked against the operator's page on 2026-09-22.",
+      "docs_url": "https://www.eia.gov/opendata/documentation.php",
+      "env": "EIA_API_KEY",
+      "key_url": "https://www.eia.gov/opendata/register.php",
+      "mechanism": {
+        "applied_by": "shared",
+        "docs_url": "https://www.eia.gov/opendata/documentation.php",
+        "kind": "query",
+        "name": "api_key",
+        "prefix": "",
+        "quote": "To use an API key, place it as a parameter after the route. https://api.eia.gov/API_route?api_key=xxxxxxx",
+        "verified_at": "2026-09-22"
+      },
+      "name": "U.S. Energy Information Administration API v2",
+      "present": false,
+      "rate_limit_note": "Free key required; documented request limits per key.",
+      "required": true,
+      "source_id": "eia",
+      "state": "applied"
+    },
+    {
+      "detail": "FRED_API_KEY is sent as ?api_key=<value> by the shared request layer. Transcription checked against the operator's page on 2026-09-22.",
+      "docs_url": "https://fred.stlouisfed.org/docs/api/fred/",
+      "env": "FRED_API_KEY",
+      "key_url": "https://fredaccount.stlouisfed.org/apikeys",
+      "mechanism": {
+        "applied_by": "shared",
+        "docs_url": "https://fred.stlouisfed.org/docs/api/fred/series_search.html",
+        "kind": "query",
+        "name": "api_key",
+        "prefix": "",
+        "quote": "https://api.stlouisfed.org/fred/series/search?search_text=monetary+service+index&api_key=abcdefghijklmnopqrstuvwxyz123456",
+        "verified_at": "2026-09-22"
+      },
+      "name": "FRED API",
+      "present": false,
+      "rate_limit_note": "Free key required; documented usage limits apply per key.",
+      "required": true,
+      "source_id": "fred",
+      "state": "applied"
+    },
+    {
+      "detail": "GITHUB_TOKEN is sent as Authorization: Bearer <value> by the shared request layer. Transcription checked against the operator's page on 2026-09-22.",
+      "docs_url": "https://docs.github.com/en/rest",
+      "env": "GITHUB_TOKEN",
+      "key_url": "https://github.com/settings/tokens",
+      "mechanism": {
+        "applied_by": "shared",
+        "docs_url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+        "kind": "header",
+        "name": "Authorization",
+        "prefix": "Bearer ",
+        "quote": "curl --request GET --url \"https://api.github.com/octocat\" --header \"Authorization: Bearer YOUR-TOKEN\"",
+        "verified_at": "2026-09-22"
+      },
+      "name": "GitHub REST API",
+      "present": true,
+      "rate_limit_note": "Primary limit 60 requests/hour unauthenticated, 5,000/hour for a personal access token, and 1,000/hour per repository for the GITHUB_TOKEN built into GitHub Actions. Search endpoints carry a more restrictive limit than the primary one. Documented at https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api (read 2026-09-22).",
+      "required": false,
+      "source_id": "github",
+      "state": "applied"
+    },
+    {
+      "detail": "NASA_API_KEY is sent as ?api_key=<value> by NasaSource.",
+      "docs_url": "https://api.nasa.gov/",
+      "env": "NASA_API_KEY",
+      "key_url": "https://api.nasa.gov/#signUp",
+      "mechanism": {
+        "applied_by": "NasaSource",
+        "docs_url": "https://api.nasa.gov/",
+        "kind": "query",
+        "name": "api_key",
+        "prefix": "",
+        "quote": "",
+        "verified_at": ""
+      },
+      "name": "NASA Open APIs",
+      "present": false,
+      "rate_limit_note": "DEMO_KEY works for exploration at 30 requests/hour and 50 requests/day; a free key raises this.",
+      "required": false,
+      "source_id": "nasa_api",
+      "state": "applied"
+    },
+    {
+      "detail": "NCEI_TOKEN is sent as token: <value> by the shared request layer. Transcription checked against the operator's page on 2026-09-22.",
+      "docs_url": "https://www.ncei.noaa.gov/cdo-web/webservices/v2",
+      "env": "NCEI_TOKEN",
+      "key_url": "https://www.ncdc.noaa.gov/cdo-web/token",
+      "mechanism": {
+        "applied_by": "shared",
+        "docs_url": "https://www.ncei.noaa.gov/cdo-web/webservices/v2",
+        "kind": "header",
+        "name": "token",
+        "prefix": "",
+        "quote": "header | token | curl -H \"token:<token>\" \"url\" | The token obtained from the token request page. Assigned token is required to use these queries and must be in the header.",
+        "verified_at": "2026-09-22"
+      },
+      "name": "NOAA NCEI Climate Data Online API",
+      "present": false,
+      "rate_limit_note": "Free token required; 5 requests/second and 10,000 requests/day per token.",
+      "required": true,
+      "source_id": "ncei",
+      "state": "applied"
+    },
+    {
+      "detail": "NVD_API_KEY is named in the register, but the operator's documented way of transmitting it has not been transcribed, so the engine sends no credential and the source is used within its unauthenticated limits.",
+      "docs_url": "https://nvd.nist.gov/developers/vulnerabilities",
+      "env": "NVD_API_KEY",
+      "key_url": "https://nvd.nist.gov/developers/request-an-api-key",
+      "mechanism": null,
+      "name": "NIST National Vulnerability Database API",
+      "present": false,
+      "rate_limit_note": "Without a key NVD permits 5 requests per 30 seconds; with a key 50 per 30 seconds.",
+      "required": false,
+      "source_id": "nvd",
+      "state": "declared_only"
+    },
+    {
+      "detail": "USPTO_ODP_API_KEY is sent as X-API-KEY: <value> by UsptoOdpSource.",
+      "docs_url": "https://data.uspto.gov/apis/getting-started",
+      "env": "USPTO_ODP_API_KEY",
+      "key_url": "https://data.uspto.gov/apikey/key-reveal",
+      "mechanism": {
+        "applied_by": "UsptoOdpSource",
+        "docs_url": "https://data.uspto.gov/apis/getting-started",
+        "kind": "header",
+        "name": "X-API-KEY",
+        "prefix": "",
+        "quote": "",
+        "verified_at": ""
+      },
+      "name": "USPTO Open Data Portal API (PatentsView data)",
+      "present": false,
+      "rate_limit_note": "ODP APIs require an API key sent as the X-API-KEY header. Bulk file downloads are capped at 20 per file per year per key (HTTP 429 on the 21st). Documented at https://data.uspto.gov/apis/getting-started and https://data.uspto.gov/apis/bulk-data/download.",
+      "required": true,
+      "source_id": "patentsview",
+      "state": "applied"
+    },
+    {
+      "detail": "NCBI_API_KEY is named in the register, but the operator's documented way of transmitting it has not been transcribed, so the engine sends no credential and the source is used within its unauthenticated limits.",
+      "docs_url": "https://www.ncbi.nlm.nih.gov/books/NBK25497/",
+      "env": "NCBI_API_KEY",
+      "key_url": "https://www.ncbi.nlm.nih.gov/account/settings/",
+      "mechanism": null,
+      "name": "NCBI E-utilities (PubMed)",
+      "present": false,
+      "rate_limit_note": "3 requests/second without an API key; 10 requests/second with one.",
+      "required": false,
+      "source_id": "pubmed",
+      "state": "declared_only"
+    },
+    {
+      "detail": "S2_API_KEY is named in the register, but the operator's documented way of transmitting it has not been transcribed, so the engine sends no credential and the source is used within its unauthenticated limits.",
+      "docs_url": "https://www.semanticscholar.org/product/api",
+      "env": "S2_API_KEY",
+      "key_url": "https://www.semanticscholar.org/product/api",
+      "mechanism": null,
+      "name": "Semantic Scholar Academic Graph API",
+      "present": false,
+      "rate_limit_note": "Unauthenticated requests are shared-pool rate limited; a free key raises limits.",
+      "required": false,
+      "source_id": "semantic_scholar",
+      "state": "declared_only"
+    },
+    {
+      "detail": "STACKEXCHANGE_KEY is named in the register, but the operator's documented way of transmitting it has not been transcribed, so the engine sends no credential and the source is used within its unauthenticated limits.",
+      "docs_url": "https://api.stackexchange.com/docs",
+      "env": "STACKEXCHANGE_KEY",
+      "key_url": "https://stackapps.com/apps/oauth/register",
+      "mechanism": null,
+      "name": "Stack Exchange API",
+      "present": false,
+      "rate_limit_note": "300 requests/day without a key; a free key raises this to 10,000/day.",
+      "required": false,
+      "source_id": "stackexchange",
+      "state": "declared_only"
+    }
+  ],
   "elo": {
     "history": [
       {
@@ -7419,7 +7625,7 @@
       "topic_id": null
     }
   ],
-  "generated_at": "2026-09-22T00:24:45Z",
+  "generated_at": "2026-09-22T03:58:01Z",
   "invention_rule": {
     "candidate_pool": "Phrases of two to four content words that recur in at least two retrieved documents. The pool is the engine's own retrieval, not an open crawl; 'novel' therefore means novel to this library.",
     "formula": "total = novelty x importance x potential, scaled by 2 and capped at 1",
@@ -7734,12 +7940,1314 @@
     "monitored",
     "rejected"
   ],
+  "link_check": {
+    "available": true,
+    "by_source": {
+      "ARCHITECTURE.md": [
+        {
+          "elapsed_seconds": 0.13,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://buffedlizard55-lab.github.io/SelfLearn/",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://buffedlizard55-lab.github.io/SelfLearn/"
+        }
+      ],
+      "DESIGN_SOURCE.md": [
+        {
+          "elapsed_seconds": 0.07,
+          "error": "<html>\n  <head>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <style global>body{font-family:Arial,Helvetica,sans-serif}.container{align-items:center;display:flex;flex",
+          "field": "citation",
+          "final_url": "https://chatgpt.com/backend-api/share/6ab1612a-2f14-83e8-9de6-808d21a48e53",
+          "group": "prose",
+          "ok": false,
+          "status": 403,
+          "url": "https://chatgpt.com/backend-api/share/6ab1612a-2f14-83e8-9de6-808d21a48e53"
+        },
+        {
+          "elapsed_seconds": 2.33,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://chatgpt.com/share/6ab1612a-2f14-83e8-9de6-808d21a48e53",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://chatgpt.com/share/6ab1612a-2f14-83e8-9de6-808d21a48e53"
+        }
+      ],
+      "PASSES.md": [
+        {
+          "elapsed_seconds": 0.15,
+          "error": "{\"message\":\"Missing Authentication Token\"}",
+          "field": "citation",
+          "final_url": "https://api.uspto.gov/api/v1",
+          "group": "prose",
+          "ok": false,
+          "status": 403,
+          "url": "https://api.uspto.gov/api/v1"
+        },
+        {
+          "elapsed_seconds": 1.03,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://data.uspto.gov/support/transition-guide/patentsview",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://data.uspto.gov/support/transition-guide/patentsview"
+        }
+      ],
+      "SOURCES.md": [
+        {
+          "elapsed_seconds": 1.31,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://api.crossref.org/works",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://api.crossref.org/works"
+        },
+        {
+          "elapsed_seconds": 0.15,
+          "error": "{\"message\":\"Validation Failed\",\"errors\":[{\"resource\":\"Search\",\"field\":\"q\",\"code\":\"missing\"}],\"documentation_url\":\"https://docs.github.com/v3/search\",\"status\":\"422\"}",
+          "field": "citation",
+          "final_url": "https://api.github.com/search/repositories",
+          "group": "prose",
+          "ok": false,
+          "status": 422,
+          "url": "https://api.github.com/search/repositories"
+        },
+        {
+          "elapsed_seconds": 0.98,
+          "error": "{\"message\":\"Unauthorized\"}",
+          "field": "citation",
+          "final_url": "https://api.uspto.gov/api/v1/datasets/products/search",
+          "group": "prose",
+          "ok": false,
+          "status": 401,
+          "url": "https://api.uspto.gov/api/v1/datasets/products/search"
+        },
+        {
+          "elapsed_seconds": 1.02,
+          "error": "{\"message\":\"Unauthorized\"}",
+          "field": "citation",
+          "final_url": "https://api.uspto.gov/api/v1/patent/applications/search",
+          "group": "prose",
+          "ok": false,
+          "status": 401,
+          "url": "https://api.uspto.gov/api/v1/patent/applications/search"
+        },
+        {
+          "elapsed_seconds": 0.28,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://data.uspto.gov/apis/bulk-data/download",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://data.uspto.gov/apis/bulk-data/download"
+        },
+        {
+          "elapsed_seconds": 0.95,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://data.uspto.gov/apis/bulk-data/search",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://data.uspto.gov/apis/bulk-data/search"
+        },
+        {
+          "elapsed_seconds": 0.99,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://data.uspto.gov/documents/documents/ODP-API-Query-Spec.pdf",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://data.uspto.gov/documents/documents/ODP-API-Query-Spec.pdf"
+        },
+        {
+          "elapsed_seconds": 1.02,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://data.uspto.gov/home",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://data.uspto.gov/home"
+        },
+        {
+          "elapsed_seconds": 2.86,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://earthquake.usgs.gov/fdsnws/event/1/query"
+        },
+        {
+          "elapsed_seconds": 67.3,
+          "error": "unreachable: all 3 attempts failed for https://export.arxiv.org/api/query: The read operation timed out",
+          "field": "citation",
+          "final_url": "https://export.arxiv.org/api/query",
+          "group": "prose",
+          "ok": false,
+          "status": null,
+          "url": "https://export.arxiv.org/api/query"
+        },
+        {
+          "elapsed_seconds": 18.59,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0"
+        }
+      ],
+      "SUMMARY.md": [
+        {
+          "elapsed_seconds": 0.64,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT"
+        },
+        {
+          "elapsed_seconds": 1.11,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/Anshsing/sorting-visualizer",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/Anshsing/sorting-visualizer"
+        },
+        {
+          "elapsed_seconds": 0.83,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering"
+        },
+        {
+          "elapsed_seconds": 1.17,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/IsaH93/pil-active-learning-screening",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/IsaH93/pil-active-learning-screening"
+        },
+        {
+          "elapsed_seconds": 0.94,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/Prajwal-Nagaraj/Chatbot-Simulation-Workflow",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/Prajwal-Nagaraj/Chatbot-Simulation-Workflow"
+        },
+        {
+          "elapsed_seconds": 0.89,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/SamuelSchmidgall/AgentLaboratory",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/SamuelSchmidgall/AgentLaboratory"
+        },
+        {
+          "elapsed_seconds": 1.16,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/TibMont/PyALAF",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/TibMont/PyALAF"
+        },
+        {
+          "elapsed_seconds": 1.33,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/assafelovic/gpt-researcher",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/assafelovic/gpt-researcher"
+        },
+        {
+          "elapsed_seconds": 0.55,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/daley331/Sorting-Algorithms-Analysis",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/daley331/Sorting-Algorithms-Analysis"
+        },
+        {
+          "elapsed_seconds": 1.0,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/jmamath/active-learning",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/jmamath/active-learning"
+        },
+        {
+          "elapsed_seconds": 1.32,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/khoj-ai/khoj",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/khoj-ai/khoj"
+        },
+        {
+          "elapsed_seconds": 0.79,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms"
+        },
+        {
+          "elapsed_seconds": 1.17,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/pranav-kural/llm-hallucination-detection-service",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/pranav-kural/llm-hallucination-detection-service"
+        },
+        {
+          "elapsed_seconds": 0.88,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/pypl0/Ombre",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/pypl0/Ombre"
+        },
+        {
+          "elapsed_seconds": 0.9,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/raesa-razeen/halo-hallucination-detector",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/raesa-razeen/halo-hallucination-detector"
+        },
+        {
+          "elapsed_seconds": 0.95,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/sbtali/SortAlgorithmsComparison",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/sbtali/SortAlgorithmsComparison"
+        },
+        {
+          "elapsed_seconds": 1.02,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/sleepingcat4/Active-learning",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/sleepingcat4/Active-learning"
+        },
+        {
+          "elapsed_seconds": 0.96,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/umbrellagong/gpsearch",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/umbrellagong/gpsearch"
+        },
+        {
+          "elapsed_seconds": 1.07,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/virattt/dexter",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/virattt/dexter"
+        },
+        {
+          "elapsed_seconds": 0.87,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/w32zhong/BTreeimplementation",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/w32zhong/BTreeimplementation"
+        },
+        {
+          "elapsed_seconds": 1.06,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://github.com/xiaojing29/HallucinationDetection",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/xiaojing29/HallucinationDetection"
+        }
+      ],
+      "arxiv": [
+        {
+          "elapsed_seconds": 0.37,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://info.arxiv.org/help/api/user-manual.html",
+          "group": "change_mechanism",
+          "ok": true,
+          "status": 200,
+          "url": "https://info.arxiv.org/help/api/user-manual.html"
+        },
+        {
+          "elapsed_seconds": 0.49,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://info.arxiv.org/help/api/index.html",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://info.arxiv.org/help/api/index.html"
+        },
+        {
+          "elapsed_seconds": 0.78,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://info.arxiv.org/help/license/index.html",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://info.arxiv.org/help/license/index.html"
+        }
+      ],
+      "census_us": [
+        {
+          "elapsed_seconds": 0.24,
+          "error": "",
+          "field": "key_url",
+          "final_url": "https://api.census.gov/data/key_signup.html",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://api.census.gov/data/key_signup.html"
+        },
+        {
+          "elapsed_seconds": 0.25,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.census.gov/data/developers/about/terms-of-service.html",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.census.gov/data/developers/about/terms-of-service.html"
+        },
+        {
+          "elapsed_seconds": 1.0,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.census.gov/data/developers/data-sets.html",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.census.gov/data/developers/data-sets.html"
+        }
+      ],
+      "cisa_kev": [
+        {
+          "elapsed_seconds": 0.14,
+          "error": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;cisa&#46;gov&#47;about&#47;website&#45;policies\" on thi",
+          "field": "license_url",
+          "final_url": "https://www.cisa.gov/about/website-policies",
+          "group": "register",
+          "ok": false,
+          "status": 403,
+          "url": "https://www.cisa.gov/about/website-policies"
+        },
+        {
+          "elapsed_seconds": 0.97,
+          "error": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;cisa&#46;gov&#47;known&#45;exploited&#45;vulnerabilitie",
+          "field": "docs_url",
+          "final_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "group": "register",
+          "ok": false,
+          "status": 403,
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ],
+      "clinicaltrials": [
+        {
+          "elapsed_seconds": 0.32,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://clinicaltrials.gov/about-site/terms-conditions",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://clinicaltrials.gov/about-site/terms-conditions"
+        },
+        {
+          "elapsed_seconds": 0.9,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://clinicaltrials.gov/data-api/api",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://clinicaltrials.gov/data-api/api"
+        }
+      ],
+      "crossref": [
+        {
+          "elapsed_seconds": 0.2,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
+          "group": "change_mechanism",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/"
+        },
+        {
+          "elapsed_seconds": 0.22,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
+        }
+      ],
+      "datacite": [
+        {
+          "elapsed_seconds": 0.71,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://datacite.org/legal/",
+          "group": "register",
+          "ok": true,
+          "status": 202,
+          "url": "https://datacite.org/legal/"
+        },
+        {
+          "elapsed_seconds": 0.26,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://support.datacite.org/docs/api",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://support.datacite.org/docs/api"
+        }
+      ],
+      "doaj": [
+        {
+          "elapsed_seconds": 0.41,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://doaj.org/api/v3/docs",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://doaj.org/api/v3/docs"
+        },
+        {
+          "elapsed_seconds": 0.78,
+          "error": "<!DOCTYPE html>\n<html dir=\"ltr\" lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">\n    <title>\n    \n    404: Not fou",
+          "field": "key_url",
+          "final_url": "https://doaj.org/apply-for-api-key/",
+          "group": "register",
+          "ok": false,
+          "status": 404,
+          "url": "https://doaj.org/apply-for-api-key/"
+        },
+        {
+          "elapsed_seconds": 1.01,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://doaj.org/terms/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://doaj.org/terms/"
+        }
+      ],
+      "eia": [
+        {
+          "elapsed_seconds": 0.29,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.eia.gov/about/copyrights_reuse.php",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.eia.gov/about/copyrights_reuse.php"
+        },
+        {
+          "elapsed_seconds": 0.96,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.eia.gov/opendata/documentation.php",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.eia.gov/opendata/documentation.php"
+        },
+        {
+          "elapsed_seconds": 0.89,
+          "error": "",
+          "field": "key_url",
+          "final_url": "https://www.eia.gov/opendata/register.php",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.eia.gov/opendata/register.php"
+        }
+      ],
+      "eurostat": [
+        {
+          "elapsed_seconds": 0.89,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice"
+        },
+        {
+          "elapsed_seconds": 1.13,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-getting-started",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-getting-started"
+        }
+      ],
+      "fred": [
+        {
+          "elapsed_seconds": 0.31,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://fred.stlouisfed.org/docs/api/fred/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://fred.stlouisfed.org/docs/api/fred/"
+        },
+        {
+          "elapsed_seconds": 0.92,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://fred.stlouisfed.org/legal/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://fred.stlouisfed.org/legal/"
+        },
+        {
+          "elapsed_seconds": 1.13,
+          "error": "",
+          "field": "key_url",
+          "final_url": "https://fredaccount.stlouisfed.org/login/secure/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://fredaccount.stlouisfed.org/apikeys"
+        }
+      ],
+      "gbif": [
+        {
+          "elapsed_seconds": 0.75,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://techdocs.gbif.org/en/openapi/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://techdocs.gbif.org/en/openapi/"
+        },
+        {
+          "elapsed_seconds": 0.15,
+          "error": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam",
+          "field": "license_url",
+          "final_url": "https://www.gbif.org/terms",
+          "group": "register",
+          "ok": false,
+          "status": 403,
+          "url": "https://www.gbif.org/terms"
+        }
+      ],
+      "github": [
+        {
+          "elapsed_seconds": 0.18,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
+          "group": "change_mechanism",
+          "ok": true,
+          "status": 200,
+          "url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories"
+        },
+        {
+          "elapsed_seconds": 0.19,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://docs.github.com/en/rest",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://docs.github.com/en/rest"
+        },
+        {
+          "elapsed_seconds": 0.91,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api"
+        },
+        {
+          "elapsed_seconds": 0.39,
+          "error": "",
+          "field": "key_url",
+          "final_url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Ftokens",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://github.com/settings/tokens"
+        }
+      ],
+      "hackernews": [
+        {
+          "elapsed_seconds": 0.27,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://hn.algolia.com/api",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://hn.algolia.com/api"
+        }
+      ],
+      "imf": [
+        {
+          "elapsed_seconds": 0.24,
+          "error": "unreachable: datahelp.imf.org unreachable: [Errno -2] Name or service not known",
+          "field": "docs_url",
+          "final_url": "https://datahelp.imf.org/knowledgebase/articles/667681-json-restful-web-service",
+          "group": "register",
+          "ok": false,
+          "status": null,
+          "url": "https://datahelp.imf.org/knowledgebase/articles/667681-json-restful-web-service"
+        },
+        {
+          "elapsed_seconds": 0.2,
+          "error": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;imf&#46;org&#47;en&#47;About&#47;terms\" on this server.",
+          "field": "license_url",
+          "final_url": "https://www.imf.org/en/About/terms",
+          "group": "register",
+          "ok": false,
+          "status": 403,
+          "url": "https://www.imf.org/en/About/terms"
+        }
+      ],
+      "nasa_api": [
+        {
+          "elapsed_seconds": 0.38,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://api.nasa.gov/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://api.nasa.gov/"
+        },
+        {
+          "elapsed_seconds": 0.87,
+          "error": "",
+          "field": "key_url",
+          "final_url": "https://api.nasa.gov/#signUp",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://api.nasa.gov/#signUp"
+        },
+        {
+          "elapsed_seconds": 0.13,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+        }
+      ],
+      "ncei": [
+        {
+          "elapsed_seconds": 0.28,
+          "error": "",
+          "field": "key_url",
+          "final_url": "https://www.ncdc.noaa.gov/cdo-web/token",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.ncdc.noaa.gov/cdo-web/token"
+        },
+        {
+          "elapsed_seconds": 0.33,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.ncei.noaa.gov/cdo-web/webservices/v2",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.ncei.noaa.gov/cdo-web/webservices/v2"
+        },
+        {
+          "elapsed_seconds": 0.24,
+          "error": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML><HEAD><META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=iso-8859-1\">\n<TITLE>ERROR",
+          "field": "license_url",
+          "final_url": "https://www.noaa.gov/information-technology/open-data-dissemination",
+          "group": "register",
+          "ok": false,
+          "status": 403,
+          "url": "https://www.noaa.gov/information-technology/open-data-dissemination"
+        }
+      ],
+      "nvd": [
+        {
+          "elapsed_seconds": 0.16,
+          "error": "",
+          "field": "key_url",
+          "final_url": "https://nvd.nist.gov/developers/request-an-api-key",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://nvd.nist.gov/developers/request-an-api-key"
+        },
+        {
+          "elapsed_seconds": 0.95,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://nvd.nist.gov/developers/vulnerabilities",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://nvd.nist.gov/developers/vulnerabilities"
+        },
+        {
+          "elapsed_seconds": 0.25,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.nist.gov/copyrights-disclaimers",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.nist.gov/oism/copyrights"
+        }
+      ],
+      "nws": [
+        {
+          "elapsed_seconds": 0.42,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.weather.gov/disclaimer",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.weather.gov/disclaimer"
+        },
+        {
+          "elapsed_seconds": 1.0,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.weather.gov/documentation/services-web-api",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.weather.gov/documentation/services-web-api"
+        }
+      ],
+      "oecd": [
+        {
+          "elapsed_seconds": 0.12,
+          "error": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam",
+          "field": "docs_url",
+          "final_url": "https://data.oecd.org/fr/api/sdmx-json-documentation/",
+          "group": "register",
+          "ok": false,
+          "status": 403,
+          "url": "https://data.oecd.org/fr/api/sdmx-json-documentation/"
+        },
+        {
+          "elapsed_seconds": 0.29,
+          "error": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam",
+          "field": "license_url",
+          "final_url": "https://www.oecd.org/termsandconditions/",
+          "group": "register",
+          "ok": false,
+          "status": 403,
+          "url": "https://www.oecd.org/termsandconditions/"
+        }
+      ],
+      "openalex": [
+        {
+          "elapsed_seconds": 0.26,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://help.openalex.org/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://docs.openalex.org/"
+        },
+        {
+          "elapsed_seconds": 0.97,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://help.openalex.org/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication"
+        }
+      ],
+      "openlibrary": [
+        {
+          "elapsed_seconds": 0.26,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://openlibrary.org/developers/api",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://openlibrary.org/developers/api"
+        }
+      ],
+      "osv": [
+        {
+          "elapsed_seconds": 0.23,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://google.github.io/osv.dev/api/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://google.github.io/osv.dev/api/"
+        },
+        {
+          "elapsed_seconds": 0.66,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://google.github.io/osv.dev/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://osv.dev/docs/"
+        }
+      ],
+      "patentsview": [
+        {
+          "elapsed_seconds": 0.21,
+          "error": "",
+          "field": "key_url",
+          "final_url": "https://data.uspto.gov/apikey/key-reveal",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://data.uspto.gov/apikey/key-reveal"
+        },
+        {
+          "elapsed_seconds": 1.1,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://data.uspto.gov/apis/getting-started",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://data.uspto.gov/apis/getting-started"
+        },
+        {
+          "elapsed_seconds": 0.86,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://data.uspto.gov/support/faq",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://data.uspto.gov/support/faq"
+        }
+      ],
+      "pubchem": [
+        {
+          "elapsed_seconds": 0.19,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access"
+        },
+        {
+          "elapsed_seconds": 0.97,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest"
+        }
+      ],
+      "pubmed": [
+        {
+          "elapsed_seconds": 1.13,
+          "error": "",
+          "field": "key_url",
+          "final_url": "https://account.ncbi.nlm.nih.gov/?back_url=https%3A//account.ncbi.nlm.nih.gov/settings/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.ncbi.nlm.nih.gov/account/settings/"
+        },
+        {
+          "elapsed_seconds": 0.18,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.ncbi.nlm.nih.gov/books/NBK25497/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK25497/"
+        },
+        {
+          "elapsed_seconds": 1.04,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.ncbi.nlm.nih.gov/home/about/policies/"
+        }
+      ],
+      "rcsb_pdb": [
+        {
+          "elapsed_seconds": 0.22,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://data.rcsb.org/redoc/index.html",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://data.rcsb.org/redoc/index.html"
+        },
+        {
+          "elapsed_seconds": 0.52,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.rcsb.org/pages/policies",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.rcsb.org/pages/policies"
+        }
+      ],
+      "sec_edgar": [
+        {
+          "elapsed_seconds": 0.18,
+          "error": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T",
+          "field": "license_url",
+          "final_url": "https://www.sec.gov/privacy#dissemination",
+          "group": "register",
+          "ok": false,
+          "status": 403,
+          "url": "https://www.sec.gov/privacy#dissemination"
+        },
+        {
+          "elapsed_seconds": 0.9,
+          "error": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T",
+          "field": "docs_url",
+          "final_url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+          "group": "register",
+          "ok": false,
+          "status": 403,
+          "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces"
+        }
+      ],
+      "semantic_scholar": [
+        {
+          "elapsed_seconds": 0.27,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.semanticscholar.org/product/api",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.semanticscholar.org/product/api"
+        },
+        {
+          "elapsed_seconds": 0.9,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.semanticscholar.org/product/api/license",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.semanticscholar.org/product/api/license"
+        }
+      ],
+      "stackexchange": [
+        {
+          "elapsed_seconds": 0.24,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://api.stackexchange.com/docs",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://api.stackexchange.com/docs"
+        },
+        {
+          "elapsed_seconds": 0.59,
+          "error": "",
+          "field": "key_url",
+          "final_url": "https://stackapps.com/users/login?returnurl=/applications",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://stackapps.com/apps/oauth/register"
+        },
+        {
+          "elapsed_seconds": 0.13,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://stackoverflow.com/legal/terms-of-service/public",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://stackoverflow.com/legal/terms-of-service/public"
+        }
+      ],
+      "un_sdg": [
+        {
+          "elapsed_seconds": 0.51,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://unstats.un.org/sdgapi/swagger/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://unstats.un.org/sdgapi/swagger/"
+        },
+        {
+          "elapsed_seconds": 0.75,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.un.org/en/about-us/terms-of-use",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.un.org/en/about-us/terms-of-use"
+        }
+      ],
+      "uniprot": [
+        {
+          "elapsed_seconds": 0.51,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.uniprot.org/help/api",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.uniprot.org/help/api"
+        },
+        {
+          "elapsed_seconds": 1.0,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.uniprot.org/help/license",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.uniprot.org/help/license"
+        }
+      ],
+      "usgs_earthquake": [
+        {
+          "elapsed_seconds": 0.51,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://earthquake.usgs.gov/fdsnws/event/1/"
+        },
+        {
+          "elapsed_seconds": 1.78,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "who_gho": [
+        {
+          "elapsed_seconds": 0.64,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://www.who.int/about/policies/publishing/copyright",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.who.int/about/policies/publishing/copyright"
+        },
+        {
+          "elapsed_seconds": 0.89,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.who.int/data/gho/info/gho-odata-api",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.who.int/data/gho/info/gho-odata-api"
+        }
+      ],
+      "wikimedia": [
+        {
+          "elapsed_seconds": 0.21,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://www.mediawiki.org/wiki/Wikimedia_APIs",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://api.wikimedia.org/wiki/Main_Page"
+        },
+        {
+          "elapsed_seconds": 0.36,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use"
+        }
+      ],
+      "worldbank": [
+        {
+          "elapsed_seconds": 0.17,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://datacatalog.worldbank.org/public-licenses",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://datacatalog.worldbank.org/public-licenses"
+        },
+        {
+          "elapsed_seconds": 0.38,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://datahelpdesk.worldbank.org/knowledgebase/topics/125589",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://datahelpdesk.worldbank.org/knowledgebase/topics/125589"
+        }
+      ],
+      "zenodo": [
+        {
+          "elapsed_seconds": 0.37,
+          "error": "",
+          "field": "license_url",
+          "final_url": "https://about.zenodo.org/policies/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://about.zenodo.org/policies/"
+        },
+        {
+          "elapsed_seconds": 0.42,
+          "error": "",
+          "field": "docs_url",
+          "final_url": "https://developers.zenodo.org/",
+          "group": "register",
+          "ok": true,
+          "status": 200,
+          "url": "https://developers.zenodo.org/"
+        }
+      ]
+    },
+    "by_status": {
+      "200": 102,
+      "202": 1,
+      "401": 2,
+      "403": 11,
+      "404": 1,
+      "422": 1,
+      "unreachable": 2
+    },
+    "checked": 120,
+    "failed": 17,
+    "generated_at": "2026-09-22T03:49:20Z",
+    "label": "GitHub Actions ubuntu-latest (unrestricted egress)",
+    "note": "Status and final URL only; page content is not asserted here. `label` names the machine that ran the check, because a host with restricted egress reports 'unreachable' for hosts it cannot reach, which is a property of the machine and is recorded as such rather than being read as a broken link.",
+    "ok": 103
+  },
   "meta_knowledge": {
     "experiments": {
       "completed": 2,
       "total": 2
     },
-    "generated_at": "2026-09-22T00:24:45Z",
+    "generated_at": "2026-09-22T03:58:01Z",
     "notes": [],
     "personas": [],
     "rules": [
@@ -7911,7 +9419,7 @@
         "supported": 0.8
       },
       "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-      "ran_at": "2026-09-22T00:24:45Z",
+      "ran_at": "2026-09-22T03:58:01Z",
       "source": "state/calibration.json"
     }
   },
@@ -9103,13 +10611,13 @@
         "evidence_class": "peer_reviewed",
         "evidence_rank": 4,
         "key_env": "DOAJ_API_KEY",
-        "key_url": "https://doaj.org/apply-for-api-key/",
+        "key_url": "https://doaj.org/api/v4/docs",
         "license_name": "Metadata CC0 per DOAJ terms",
         "license_url": "https://doaj.org/terms/",
         "name": "DOAJ API",
-        "notes": "Index of vetted open-access journals; used to confirm that a venue is genuinely peer reviewed.",
+        "notes": "Index of vetted open-access journals; used to confirm that a venue is genuinely peer reviewed. The previous key_url, https://doaj.org/apply-for-api-key/, returned HTTP 404 when the published URLs were resolved from a runner with unrestricted egress on 2026-09-22, and DOAJ publishes no public key-application page, so key_url now points at the API documentation that states where a key comes from. The adapter still queries the v3 search endpoint, whose own documentation resolves.",
         "operator": "Directory of Open Access Journals",
-        "rate_limit_note": "Public endpoints are rate limited; a free API key is available for higher limits.",
+        "rate_limit_note": "Public endpoints are rate limited. DOAJ states that keys are not generally issued on request: \"API keys are usually only available to publishers who submit data to DOAJ. If you already have an account, please log in, click 'My Account' and 'Settings' to see your API key.\" Quoted from https://doaj.org/api/v4/docs (read 2026-09-22).",
         "requires_key": false,
         "source_id": "doaj",
         "terms_url": "",
@@ -9229,7 +10737,7 @@
         "name": "GitHub REST API",
         "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
         "operator": "GitHub, Inc. (Microsoft)",
-        "rate_limit_note": "60 requests/hour unauthenticated; 5,000 requests/hour with a token.",
+        "rate_limit_note": "Primary limit 60 requests/hour unauthenticated, 5,000/hour for a personal access token, and 1,000/hour per repository for the GITHUB_TOKEN built into GitHub Actions. Search endpoints carry a more restrictive limit than the primary one. Documented at https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api (read 2026-09-22).",
         "requires_key": false,
         "source_id": "github",
         "terms_url": "",
@@ -9274,9 +10782,9 @@
         "license_name": "IMF terms of use",
         "license_url": "https://www.imf.org/en/About/terms",
         "name": "IMF Data API (SDMX)",
-        "notes": "Official macroeconomic aggregates published by the Fund.",
+        "notes": "Official macroeconomic aggregates published by the Fund. FLAGGED FOR REVIEW: the docs_url is kept as it was published rather than replaced, because no replacement could be verified against an IMF-operated page during this pass - https://api.imf.org/ answered HTTP 502 when it was checked, and the pages that do describe the api.imf.org SDMX 3.0 endpoints are third-party profiles, which this register does not cite as documentation. Substituting an unverified address would be exactly the failure this project exists to avoid. Resolving this needs a human to open IMF's own data portal and record the page.",
         "operator": "International Monetary Fund",
-        "rate_limit_note": "No key required for public datasets.",
+        "rate_limit_note": "No key required for public datasets. FLAGGED 2026-09-22: the documentation host below did not resolve when the published URLs were checked from a runner with unrestricted egress (getaddrinfo failure), and it did not resolve from a second, unrelated network either. Separately, this base_url targets https://api.imf.org/external/sdmx while the linked page documents the older http://dataservices.imf.org/REST/SDMX_JSON.svc service, so the two describe different endpoints.",
         "requires_key": false,
         "source_id": "imf",
         "terms_url": "",
@@ -13735,7 +15243,7 @@
         "What experiment would resolve it?"
       ],
       "experiments": [],
-      "generated_at": "2026-09-22T00:24:45Z",
+      "generated_at": "2026-09-22T03:58:01Z",
       "questions": [
         {
           "id": "q-f7a08fa5afe7",
@@ -14457,7 +15965,7 @@
       "source_status": [],
       "statistics": {
         "claims": 50,
-        "computed_at": "2026-09-22T00:24:45Z",
+        "computed_at": "2026-09-22T03:58:01Z",
         "documents": 8,
         "evidence_classes": [
           "primary_source",
@@ -21597,7 +23105,7 @@
           "topic_id": "topic-fabrication-detection"
         }
       ],
-      "generated_at": "2026-09-22T00:24:45Z",
+      "generated_at": "2026-09-22T03:58:01Z",
       "questions": [
         {
           "id": "q-a12323d8e08a",
@@ -22109,7 +23617,7 @@
       "source_status": [],
       "statistics": {
         "claims": 58,
-        "computed_at": "2026-09-22T00:24:45Z",
+        "computed_at": "2026-09-22T03:58:01Z",
         "documents": 10,
         "evidence_classes": [
           "primary_source",
@@ -29653,7 +31161,7 @@
         "What experiment would resolve it?"
       ],
       "experiments": [],
-      "generated_at": "2026-09-22T00:24:45Z",
+      "generated_at": "2026-09-22T03:58:01Z",
       "questions": [
         {
           "id": "q-dd05e798300a",
@@ -30137,7 +31645,7 @@
       "source_status": [],
       "statistics": {
         "claims": 42,
-        "computed_at": "2026-09-22T00:24:45Z",
+        "computed_at": "2026-09-22T03:58:01Z",
         "documents": 6,
         "evidence_classes": [
           "primary_source",
@@ -39032,7 +40540,7 @@
           "topic_id": "topic-search-and-sorting-strategy"
         }
       ],
-      "generated_at": "2026-09-22T00:24:45Z",
+      "generated_at": "2026-09-22T03:58:01Z",
       "questions": [
         {
           "id": "q-29c92c5dc0ff",
@@ -39572,7 +41080,7 @@
       "source_status": [],
       "statistics": {
         "claims": 66,
-        "computed_at": "2026-09-22T00:24:45Z",
+        "computed_at": "2026-09-22T03:58:01Z",
         "documents": 10,
         "evidence_classes": [
           "primary_source",

@@ -49,6 +49,45 @@ STYLESHEET = """\
     --info-soft: #17263c;
   }
 }
+/* An explicit choice beats the media query, so the toggle below has something to
+   change. Both blocks repeat the full set: a half-applied theme is worse than
+   none, because a stray light surface on a dark page is unreadable. */
+[data-theme="light"] {
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --surface-2: #f1f3f7;
+    --text: #16202c;
+    --muted: #5b6878;
+    --border: #dde2ea;
+    --accent: #1d5fd4;
+    --accent-soft: #e6eefc;
+    --ok: #15653f;
+    --ok-soft: #e2f3e9;
+    --warn: #7a5200;
+    --warn-soft: #fdf1d9;
+    --err: #98231f;
+    --err-soft: #fbe6e5;
+    --info: #2a4b7c;
+    --info-soft: #e7eefb;
+}
+[data-theme="dark"] {
+    --bg: #0f141a;
+    --surface: #161d26;
+    --surface-2: #1d2631;
+    --text: #e7edf5;
+    --muted: #9aa8b8;
+    --border: #2a3746;
+    --accent: #77a8ff;
+    --accent-soft: #1b2b47;
+    --ok: #7fdcab;
+    --ok-soft: #172c22;
+    --warn: #f2c66d;
+    --warn-soft: #33280f;
+    --err: #ff9c98;
+    --err-soft: #3a1e1d;
+    --info: #a6c3f5;
+    --info-soft: #17263c;
+}
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -63,6 +102,20 @@ body {
 a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.cta {
+  display: inline-block; background: var(--accent); color: #fff; padding: .55rem 1rem;
+  border-radius: 8px; text-decoration: none; font-weight: 600; border: 1px solid var(--accent);
+}
+.cta:hover { text-decoration: none; filter: brightness(1.08); }
+[data-theme="dark"] .cta, :root .cta { color: #fff; }
+@media (prefers-color-scheme: dark) { .cta { color: #08131a; } }
+[data-theme="dark"] .cta { color: #08131a; }
+[data-theme="light"] .cta { color: #fff; }
+.icon-btn {
+  background: var(--surface); color: var(--muted); border: 1px solid var(--border);
+  border-radius: 999px; padding: .25rem .7rem; font: inherit; font-size: .82rem; cursor: pointer;
+}
+.icon-btn:hover { color: var(--text); background: var(--surface-2); }
 .skip { position: absolute; left: -9999px; }
 .skip:focus { left: 1rem; top: 1rem; background: var(--surface); padding: .5rem .75rem; border-radius: 6px; z-index: 50; }
 
@@ -75,7 +128,8 @@ header.site {
 header.site .bar { display: flex; flex-wrap: wrap; gap: .35rem 1rem; align-items: baseline; padding: .8rem 0 .55rem; }
 .brand { font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em; }
 .brand small { font-weight: 500; color: var(--muted); font-size: .8rem; margin-left: .45rem; }
-nav.site { display: flex; flex-wrap: wrap; gap: .25rem; padding-bottom: .65rem; }
+nav.site { display: flex; flex-wrap: wrap; gap: .25rem; padding-bottom: .65rem; align-items: center; }
+nav.site .spacer { flex: 1 1 auto; }
 nav.site a {
   padding: .3rem .6rem; border-radius: 999px; text-decoration: none; color: var(--muted);
   border: 1px solid transparent; font-size: .93rem;
@@ -237,12 +291,24 @@ SCRIPT = """\
 
   var toggle = document.querySelector("[data-theme-toggle]");
   if (toggle) {
+    /* Resolving "no explicit theme yet" against the media query is what makes the
+       first click do what the reader expects rather than what the attribute says. */
+    function current() {
+      var set = document.documentElement.getAttribute("data-theme");
+      if (set) return set;
+      return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    function sync() {
+      toggle.setAttribute("aria-pressed", current() === "dark" ? "true" : "false");
+      toggle.textContent = current() === "dark" ? "Light theme" : "Dark theme";
+    }
     toggle.addEventListener("click", function () {
-      var root = document.documentElement;
-      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
+      var next = current() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
       try { localStorage.setItem("selflearn-theme", next); } catch (e) {}
+      sync();
     });
+    sync();
   }
 })();
 """
