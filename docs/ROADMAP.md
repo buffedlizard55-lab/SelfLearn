@@ -44,11 +44,19 @@ with `CREDENTIAL_MECHANISMS` in `selflearn/fetch/sources.py`, quoting the operat
 documentation and verifying how each credential is sent (`api_key` parameter for `eia`
 and `fred`, `token` header for `ncei`, `Authorization: Bearer` for `github`).
 `research-loop.yml` passes `USPTO_ODP_API_KEY` (replacing the retired
-`PATENTSVIEW_API_KEY`), the optional keys, and `GITHUB_TOKEN`.
-Sources whose transmission mechanism has not yet been transcribed are honestly published
-as `declared_but_not_transmitted` rather than silently assumed to work. A dedicated
+`PATENTSVIEW_API_KEY`), the optional keys, and `GITHUB_TOKEN`. A dedicated
 **Official links** page (`docs/links.html`) and root landing entry point publish the
 exact status of all 120 URLs checked from an unrestricted runner.
+
+**What shipped later the same day (second pass).** The remaining six keyed sources
+(`census_us`, `doaj`, `nvd`, `pubmed`, `semantic_scholar`, `stackexchange`) now have
+their mechanisms transcribed from the operator's own pages - each with a verbatim
+quote and a 2026-09-22 verification date, listed in `docs/SOURCES.md` - so
+`declared_but_not_transmitted` is empty and `python3 -m selflearn credentials`
+reports all twelve as transmitted. The same pass found `PubMedSource` building both
+of its two requests without `apply_credential`; both stages now send the key, with a
+test that pins the second stage. The code path for this item is complete: what
+remains is secrets plus a live probe from a runner that has both.
 
 **How we would know.** The sources page shows them as reachable with `credential_required`
 cleared, and claims appear with those sources named.
@@ -174,7 +182,7 @@ lines into every document. Candidates are now drawn only from a source's own pro
 the engine's field labels and boilerplate stripped, and its own records excluded
 entirely. A regression test pins that behaviour.
 
-## 8. Storage migration
+## 8. Storage migration - open, first half shipped 2026-09-22
 
 **Why.** JSONL is auditable and does not scale. The design document's reference stack
 exists for a reason.
@@ -183,6 +191,29 @@ exists for a reason.
 primary keys, and a read path that keeps the current guarantees (append-only, hashed,
 replayable). A vector index over claims would then make cross-domain retrieval real
 rather than keyword-based.
+
+**What shipped.** `selflearn/storage/database.py` mirrors every stream into a single
+append-only `library_rows` table (stream, key, stamp, JSON payload, sequence) through
+`python3 -m selflearn storage sync`, reads it back through the same loader
+(`Library.from_rows`), and `python3 -m selflearn storage verify` proves the database
+view and the JSONL view are identical row for row - the roadmap's "audit reports
+identical verdicts" check reduced to a command with an exit status. The default DSN
+is `sqlite:///state/library.sqlite3` (standard library only); a `postgres://` DSN
+uses the optional `psycopg`/`psycopg2` driver when installed and fails with that
+fact stated when it is not, so the engine's zero-dependency claim is untouched.
+The TF-IDF vector index (`selflearn/learn/vector_index.py`, command
+`python3 -m selflearn retrieve`) is live and now ranks `cross_domain_claims`, so
+transfers are scored by weighted whole-vocabulary similarity with the old
+containment gate kept as the candidate filter. Round trip proven on this
+repository's real library (4,677 rows, idempotent re-sync, all fourteen streams
+identical) and pinned by `tests/test_layers.py::StorageMirrorTests` and
+`VectorIndexTests`.
+
+**Still open.** Building the site *from* the database (`--from-database` on
+`site`/`run`) and verifying the mirror against a live PostgreSQL server - this
+build environment has none, so the PostgreSQL driver path is proven by its
+documented DB-API shape and the error path, not by a live connection, exactly
+like the USPTO adapter before its first key.
 
 **How we would know.** The same site builds from the database, and the audit reports
 identical verdicts.

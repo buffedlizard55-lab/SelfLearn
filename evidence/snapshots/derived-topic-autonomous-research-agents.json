@@ -1,32 +1,32 @@
 {
   "claim_ids": [
-    "cl-2be026086544",
-    "cl-cd57eb0bd490",
-    "cl-9b4775e24b81",
-    "cl-7c45d8ea2e28",
+    "cl-b0597cb75f3a",
+    "cl-b274cc7763f8",
+    "cl-dc28e31745a0",
+    "cl-661474e2276b",
     "cl-af231e4e8dd2"
   ],
-  "content_hash": "sha256:7688a22af6fef35ad93f0ccc1d854a0142ced4010d2cfd3b375f91b87ec1f342",
+  "content_hash": "sha256:9e71c38ba61592a3fbf6b6bfc3b8e0cacef55b053235de9d6dba7b7cde755e89",
   "derived_contexts": {
-    "cl-2be026086544": [
-      "71",
-      "4"
-    ],
-    "cl-7c45d8ea2e28": [
+    "cl-661474e2276b": [
       "26",
       "0"
-    ],
-    "cl-9b4775e24b81": [
-      "3"
     ],
     "cl-af231e4e8dd2": [
       "26"
     ],
-    "cl-cd57eb0bd490": [
-      "95.8%",
-      "95.8",
+    "cl-b0597cb75f3a": [
+      "26",
+      "2"
+    ],
+    "cl-b274cc7763f8": [
+      "100.0%",
+      "100.0",
       "0",
-      "68"
+      "26"
+    ],
+    "cl-dc28e31745a0": [
+      "2"
     ]
   },
   "evidence_class": "reproduced_experiment",
@@ -36,8 +36,8 @@
   "is_live": true,
   "source_id": "selflearn_library",
   "source_name": "SelfLearn library computation",
-  "text": "Source: SelfLearn library computation for topic-autonomous-research-agents\nQuestion: What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?\nThese statements are computed by the engine from its own records. They assert nothing about the world.\nStatements and the figures each was computed from:\nThis question is currently supported by 71 verified claim(s) drawn from 4 independent source(s). [figures: 71, 4]\nOf the claims recorded for this question, 95.8% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. [figures: 95.8%, 95.8, 0, 68]\nThe supporting documents span 3 evidence class(es) in the project hierarchy. [figures: 3]\nOf the documents cited here, 26 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear. [figures: 26, 0]\n26 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. [figures: 26]",
+  "text": "Source: SelfLearn library computation for topic-autonomous-research-agents\nQuestion: What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?\nThese statements are computed by the engine from its own records. They assert nothing about the world.\nStatements and the figures each was computed from:\nThis question is currently supported by 26 verified claim(s) drawn from 2 independent source(s). [figures: 26, 2]\nOf the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. [figures: 100.0%, 100.0, 0, 26]\nThe supporting documents span 2 evidence class(es) in the project hierarchy. [figures: 2]\nOf the documents cited here, 26 were retrieved live from their source and 0 are synthetic test fixtures, which are labelled wherever they appear. [figures: 26, 0]\n26 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. [figures: 26]",
   "title": "Library computation for Autonomous research agents: which open implementations exist and how active are they?",
   "url": "",
-  "written_at": "2026-09-22T21:24:56Z"
+  "written_at": "2026-09-22T22:03:24Z"
 }

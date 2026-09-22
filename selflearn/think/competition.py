@@ -61,14 +61,24 @@ def cross_domain_claims(
 ) -> list[Claim]:
     """Claims from *other* topics that share vocabulary with this topic.
 
-    Overlap is measured on content tokens. It is a coarse signal and is labelled
-    as one: the brief that consumes it presents these statements as candidates
-    for transfer, not as established results about this topic.
+    Two signals, both published by their own modules:
+
+    * a **containment gate** - at least ``min_overlap`` of the claim's content
+      tokens must appear in the topic's vocabulary. This is the coarse filter;
+      it decides which claims may transfer at all.
+    * a **vector ranking** - surviving candidates are ordered by the cosine
+      similarity from :mod:`selflearn.learn.vector_index` (TF-IDF over the
+      candidate claims), so a short claim sharing one distinctive term can beat
+      a long claim that merely repeats common words.
+
+    The result is still labelled as a candidate for transfer, not as an
+    established result about this topic; the brief that consumes it says so.
     """
-    target = content_tokens(" ".join(topic.keywords) + " " + topic.title + " " + topic.question)
+    target_text = " ".join(topic.keywords) + " " + topic.title + " " + topic.question
+    target = content_tokens(target_text)
     if not target:
         return []
-    scored: list[tuple[float, Claim]] = []
+    candidates: list[Claim] = []
     for other_topic_id, claims in library.items():
         if other_topic_id == topic.topic_id:
             continue
@@ -77,12 +87,22 @@ def cross_domain_claims(
                 # A retired claim is still in the library, but it is not a current
                 # finding, so it must not be transferred into a new brief either.
                 continue
+            if claim.claim_kind == "derived":
+                # Library statistics say nothing about the other field; only a
+                # document-verified statement is worth transferring.
+                continue
             tokens = content_tokens(claim.text)
             if not tokens:
                 continue
-            overlap = len(target & tokens) / len(tokens)
-            if overlap >= min_overlap:
-                scored.append((overlap, claim))
+            if len(target & tokens) / len(tokens) >= min_overlap:
+                candidates.append(claim)
+    if not candidates:
+        return []
+    from ..learn.vector_index import VectorIndex
+
+    index = VectorIndex.build(candidates)
+    query = index.query_vector(target_text)
+    scored = [(index.similarity(query, claim.claim_id), claim) for claim in candidates]
     scored.sort(key=lambda item: (-item[0], item[1].claim_id))
     return [claim for _, claim in scored[:limit]]
 
@@ -138,10 +158,17 @@ def generate_strategies(
 ) -> list[Strategy]:
     """Produce one candidate answer per persona, all grounded in the same claims."""
     library = library or {}
+    # A brief answers the *question*; a derived claim is a statement about this
+    # library ("currently supported by N claims"), not evidence about the world,
+    # and its figures churn every cycle. Grounding a candidate in it would quote
+    # a moving statistic as if it settled the topic, so only statements verified
+    # against a document (direct, synthesis) are usable support.
     usable = [
         c
         for c in claims
-        if c.verification.verdict in {"supported", "partially_supported"} and not c.superseded
+        if c.verification.verdict in {"supported", "partially_supported"}
+        and not c.superseded
+        and c.claim_kind != "derived"
     ]
     strategies: list[Strategy] = []
 

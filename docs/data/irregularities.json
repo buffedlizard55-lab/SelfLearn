@@ -150,6 +150,21 @@
     "url": null
   },
   {
+    "created_at": "2026-09-22T22:03:28Z",
+    "detail": "134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.",
+    "irregularity_id": "irr-6218b1a3c625",
+    "resolution": "",
+    "resolution_link": "",
+    "resolved": false,
+    "resolved_at": "",
+    "severity": "info",
+    "stage": "audit",
+    "suggested_action": "Nothing to do unless a reviewer believes a retired statement was correct.",
+    "summary": "Stored claims are marked superseded and are excluded from re-verification",
+    "topic_id": null,
+    "url": null
+  },
+  {
     "created_at": "2026-09-21T23:55:57Z",
     "detail": "Proposed from the engine's own rendering scaffolding, not from subject matter: the phrase recurs in every retrieved document because the adapter writes it, so it is not novel. Fixed in selflearn/think/invention.py by stripping scaffolding before candidate extraction.",
     "irregularity_id": "irr-64d0b7776639",
@@ -270,6 +285,21 @@
     "url": null
   },
   {
+    "created_at": "2026-09-22T22:03:25Z",
+    "detail": "A re-run of the library statistics produced different figures, so the previous \"currently supported by ...\" statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.",
+    "irregularity_id": "irr-a3f3cdf7cce5",
+    "resolution": "",
+    "resolution_link": "",
+    "resolved": false,
+    "resolved_at": "",
+    "severity": "info",
+    "stage": "audit",
+    "suggested_action": "Nothing to do unless a reviewer believes the old figures were correct.",
+    "summary": "4 library-statistic statement(s) retired for topic-research-loop-scheduling",
+    "topic_id": "topic-research-loop-scheduling",
+    "url": null
+  },
+  {
     "created_at": "2026-09-21T23:55:57Z",
     "detail": "Proposed from the engine's own rendering scaffolding, not from subject matter: the phrase recurs in every retrieved document because the adapter writes it, so it is not novel. Fixed in selflearn/think/invention.py by stripping scaffolding before candidate extraction.",
     "irregularity_id": "irr-aabcbed375e6",
@@ -315,6 +345,21 @@
     "url": null
   },
   {
+    "created_at": "2026-09-22T21:44:30Z",
+    "detail": "These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.",
+    "irregularity_id": "irr-bb345a59eabf",
+    "resolution": "",
+    "resolution_link": "",
+    "resolved": false,
+    "resolved_at": "",
+    "severity": "info",
+    "stage": "synthesis",
+    "suggested_action": "Review the retired statements section on the affected topic pages.",
+    "summary": "109 brief(s), 449 criticism(s) and 3 open question(s) withdrawn with their retired claims",
+    "topic_id": "",
+    "url": null
+  },
+  {
     "created_at": "2026-09-21T23:55:00Z",
     "detail": "Either every source failed, or the retrieved documents did not contain quotable content.",
     "irregularity_id": "irr-bb461e738371",
@@ -345,6 +390,21 @@
     "url": null
   },
   {
+    "created_at": "2026-09-22T22:03:24Z",
+    "detail": "A re-run of the library statistics produced different figures, so the previous \"currently supported by ...\" statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.",
+    "irregularity_id": "irr-c0fc2312c838",
+    "resolution": "",
+    "resolution_link": "",
+    "resolved": false,
+    "resolved_at": "",
+    "severity": "info",
+    "stage": "audit",
+    "suggested_action": "Nothing to do unless a reviewer believes the old figures were correct.",
+    "summary": "4 library-statistic statement(s) retired for topic-autonomous-research-agents",
+    "topic_id": "topic-autonomous-research-agents",
+    "url": null
+  },
+  {
     "created_at": "2026-09-22T21:25:05Z",
     "detail": "Request: https://export.arxiv.org/api/query with {\"max_results\": 5, \"search_query\": \"all:autonomous agent\", \"sortBy\": \"submittedDate\", \"sortOrder\": \"descending\", \"start\": 0}. Response: ",
     "irregularity_id": "irr-c14cbd18b617",
@@ -360,8 +420,8 @@
     "url": "https://info.arxiv.org/help/api/user-manual.html"
   },
   {
-    "created_at": "2026-09-22T21:25:06Z",
-    "detail": "Unavailable sources: arxiv",
+    "created_at": "2026-09-22T22:03:28Z",
+    "detail": "Unavailable sources: github",
     "irregularity_id": "irr-c7702daed02e",
     "resolution": "",
     "resolution_link": "",
@@ -402,6 +462,51 @@
     "suggested_action": "Check the source status table for this topic and add or repair sources.",
     "summary": "Topic 'Adoption signal' produced no verified claims",
     "topic_id": "topic-33df4650da1c",
+    "url": null
+  },
+  {
+    "created_at": "2026-09-22T22:03:27Z",
+    "detail": "A re-run of the library statistics produced different figures, so the previous \"currently supported by ...\" statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.",
+    "irregularity_id": "irr-d8825881157a",
+    "resolution": "",
+    "resolution_link": "",
+    "resolved": false,
+    "resolved_at": "",
+    "severity": "info",
+    "stage": "audit",
+    "suggested_action": "Nothing to do unless a reviewer believes the old figures were correct.",
+    "summary": "4 library-statistic statement(s) retired for topic-search-and-sorting-strategy",
+    "topic_id": "topic-search-and-sorting-strategy",
+    "url": null
+  },
+  {
+    "created_at": "2026-09-22T22:03:25Z",
+    "detail": "A re-run of the library statistics produced different figures, so the previous \"currently supported by ...\" statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.",
+    "irregularity_id": "irr-efcc377db02b",
+    "resolution": "",
+    "resolution_link": "",
+    "resolved": false,
+    "resolved_at": "",
+    "severity": "info",
+    "stage": "audit",
+    "suggested_action": "Nothing to do unless a reviewer believes the old figures were correct.",
+    "summary": "4 library-statistic statement(s) retired for topic-fabrication-detection",
+    "topic_id": "topic-fabrication-detection",
+    "url": null
+  },
+  {
+    "created_at": "2026-09-22T22:03:28Z",
+    "detail": "These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.",
+    "irregularity_id": "irr-a2b19bc8ff0e",
+    "resolution": "",
+    "resolution_link": "",
+    "resolved": false,
+    "resolved_at": "",
+    "severity": "info",
+    "stage": "synthesis",
+    "suggested_action": "Review the retired statements section on the affected topic pages.",
+    "summary": "21 brief(s), 83 criticism(s) and 3 open question(s) withdrawn with their retired claims",
+    "topic_id": "",
     "url": null
   }
 ]

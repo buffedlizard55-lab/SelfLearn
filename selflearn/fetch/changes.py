@@ -96,7 +96,11 @@ MECHANISMS: dict[str, ChangeMechanism] = {
         docs_url="https://nvd.nist.gov/developers/vulnerabilities",
         path="/cves/2.0",
         kind="range",
-        note="lastModStartDate and lastModEndDate are both required and the range may not exceed 120 days.",
+        note=(
+            "lastModStartDate and lastModEndDate are both required, the range may not exceed 120 days, "
+            "and both timestamps use the extended ISO-8601 datetime format required by API 2.0 "
+            "(https://nvd.nist.gov/general/news/api-20-announcements)."
+        ),
     ),
     "usgs_earthquake": ChangeMechanism(
         source_id="usgs_earthquake",
@@ -147,9 +151,18 @@ def scan_window(previous_iso: str | None, *, now: datetime | None = None, max_da
 
 
 def _iso_stamp(value: str) -> str:
-    """NVD's documented form: ``yyyy-MM-ddTHH:mm:ss:SSS UTC-00:00``."""
+    """NVD API 2.0's documented form: extended ISO-8601 with an explicit offset.
+
+    The API 1.0 nonstandard form (``yyyy-MM-ddTHH:mm:ss:SSS UTC-00:00``) is
+    rejected by the 2.0 endpoint: observed live on 2026-09-22, a request using
+    it returned HTTP 404 with an ``Invalid ISO 8601 date/time format`` body,
+    while the ISO-8601 form below answered HTTP 200 with records. NVD's own
+    transition guide states that 2.0 timestamps "use the extended ISO-8601
+    datetime format"
+    (https://nvd.nist.gov/general/news/api-20-announcements).
+    """
     parsed = _parse_iso(value)
-    return parsed.strftime("%Y-%m-%dT%H:%M:%S:000 UTC-00:00")
+    return parsed.strftime("%Y-%m-%dT%H:%M:%S.") + f"{parsed.microsecond // 1000:03d}+00:00"
 
 
 # ---------------------------------------------------------------------------

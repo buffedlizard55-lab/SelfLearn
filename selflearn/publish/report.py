@@ -39,6 +39,7 @@ from ..fetch.changes import mechanism_table as change_mechanism_table
 from ..learn.substance import score_claim, substance_rule, substance_summary
 from ..think.invention import invention_rule
 from ..util import extract_dates, extract_numbers, stable_id, truncate, utcnow_iso
+from ..verify.audit import merge_findings
 
 # The design document's own prompt for each topic record, kept verbatim so the
 # site can show exactly which questions each page is answering.
@@ -446,16 +447,14 @@ def build_topic_report(
 
 
 def _dedupe_findings(irregularities: list[Irregularity]) -> list[Irregularity]:
-    """One row per irregularity id, the last one given winning.
+    """One row per irregularity id; see :func:`audit.merge_findings`.
 
     A cycle passes the stored findings plus the ones it raised itself; an audit
     rule that fires again produces the same id twice. The published list is the
-    current state, so it carries each id once.
+    current state, so it carries each id once - and a reviewer's resolution
+    travels with the id when the engine re-detects the same finding.
     """
-    by_id: dict[str, Irregularity] = {}
-    for finding in irregularities:
-        by_id[finding.irregularity_id] = finding
-    return list(by_id.values())
+    return merge_findings(irregularities)
 
 
 def build_site_data(
@@ -534,6 +533,11 @@ def build_site_data(
         "link_check": load_link_check(),
         "credentials": credential_table(),
     }
+    # The headline counts must agree with the rows published above them. The raw
+    # list can hold the same id more than once (stored findings plus this run's
+    # fresh detections), so counting it directly reported open totals that did
+    # not match the deduplicated tables rendered from the same data.
+    deduped_findings = _dedupe_findings(irregularities)
     payload["checks"] = {
         "fixture_documents": sum(1 for r in library.evidence.values() if r.is_fixture),
         "unsupported_claims": sum(1 for c in library.claims.values() if c.verification.verdict == "unsupported"),
@@ -542,10 +546,10 @@ def build_site_data(
         # Open findings only: a finding a reviewer closed is still published
         # (under "Resolved by a reviewer") but is no longer counted as pending.
         "irregularity_counts": {
-            severity: sum(1 for i in irregularities if i.severity == severity and not i.resolved)
+            severity: sum(1 for i in deduped_findings if i.severity == severity and not i.resolved)
             for severity in ("error", "warning", "info")
         },
-        "resolved_irregularities": sum(1 for i in irregularities if i.resolved),
+        "resolved_irregularities": sum(1 for i in deduped_findings if i.resolved),
         "resolved_contradictions": sum(1 for c in library.contradictions.values() if c.resolution != "unresolved"),
     }
     return payload

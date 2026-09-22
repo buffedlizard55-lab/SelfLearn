@@ -56,6 +56,7 @@ from .verify.audit import (
     check_coverage,
     check_fixtures,
     check_links,
+    merge_findings,
     recheck_claims,
     render_markdown,
     summarise,
@@ -296,6 +297,31 @@ def retire_stale_synthesis(topic: Topic, existing: list[Claim], kept: list[Claim
         claim.superseded = (
             f"Superseded {utcnow_iso()}: a re-run of the synthesis rules no longer produces this statement. "
             "It is kept in the library and is not published as a current finding."
+        )
+        retired.append(claim)
+    return retired
+
+
+def retire_stale_derived(topic: Topic, existing: list[Claim], kept: list[Claim]) -> list[Claim]:
+    """Mark the library-statistics statements this cycle no longer produces.
+
+    A derived claim's id hashes its text, and its text contains the figures -
+    when the figures move the id moves, so without this pass every historical
+    "currently supported by N" statement stays published as current next to the
+    new one. The rule is the same as for synthesis: the stream keeps the record,
+    the site stops presenting it as current, and the reason rides on the claim.
+    """
+    kept_ids = {claim.claim_id for claim in kept}
+    retired: list[Claim] = []
+    for claim in existing:
+        if claim.claim_kind != "derived" or claim.topic_id != topic.topic_id:
+            continue
+        if claim.claim_id in kept_ids or claim.superseded:
+            continue
+        claim.superseded = (
+            f"Superseded {utcnow_iso()}: a re-run of the library statistics produced different figures, "
+            "so this statement is no longer current. It is kept in the library and is not published as a "
+            "current finding."
         )
         retired.append(claim)
     return retired
@@ -570,6 +596,25 @@ def run_cycle(
             snapshot_dir=root / "evidence" / "snapshots",
         )
         library.add_claims(derived)
+        retired_derived = retire_stale_derived(topic, existing + derived, derived)
+        if retired_derived:
+            library.add_claims(retired_derived)
+            irregularities.append(
+                Irregularity(
+                    irregularity_id=stable_id("irr", "derived-retired", topic.topic_id),
+                    severity="info",
+                    stage="audit",
+                    topic_id=topic.topic_id,
+                    summary=f"{len(retired_derived)} library-statistic statement(s) retired for {topic.topic_id}",
+                    detail=(
+                        "A re-run of the library statistics produced different figures, so the previous "
+                        "\"currently supported by ...\" statements are marked superseded. The records remain in "
+                        "library/claims.jsonl with the reason stored on each, and the pages publish only the "
+                        "current figures."
+                    ),
+                    suggested_action="Nothing to do unless a reviewer believes the old figures were correct.",
+                )
+            )
 
         # Cross-document synthesis, built only from claims that are already
         # verified against their own document, and re-verified here before storage.
@@ -825,7 +870,7 @@ def run_cycle(
         library.add_strategies(withdrawn["strategies"])
         library.add_attacks(withdrawn["attacks"])
         library.add_questions(withdrawn["questions"])
-        irregularities.append(
+        findings.append(
             Irregularity(
                 irregularity_id=stable_id("irr", "retired-dependents", run_id),
                 severity="info",
@@ -855,7 +900,12 @@ def run_cycle(
         claims_by_kind[claim.claim_kind] = claims_by_kind.get(claim.claim_kind, 0) + 1
     substance = substance_summary(library.claims.values())
     counts = {
-        "topics": len(library.topics),
+        # The site's "questions under study" table lists active topics; rejected
+        # topics stay in the library with their history but are not under study,
+        # so the narrative figure must match that table rather than the raw
+        # stream length (which also counts the rejected ones).
+        "topics": len(library.active_topics()),
+        "topics_total": len(library.topics),
         "claims": len(library.claims),
         "documents": len(library.evidence),
         "strategies": len(library.strategies),
@@ -867,7 +917,13 @@ def run_cycle(
         "substantive_claims": substance["labels"]["substantive"],
         "metadata_claims": substance["labels"]["metadata"],
     }
-    severity_counts = summarise(findings)["by_severity"]
+    # The stored findings and this cycle's re-detections share ids (an audit
+    # rule that fires again produces the same id), so the raw list behind this
+    # count holds some rows twice. Merge first: the narrative's "waiting for
+    # review" figures must equal the review page, which publishes the merged
+    # list, and only unresolved findings are actually waiting.
+    findings = merge_findings(findings)
+    severity_counts = summarise(f for f in findings if not f.resolved)["by_severity"]
     # Every figure that appears in the generated summary is collected here first,
     # and this dictionary is what the narrative guard is allowed to accept. The
     # summary cannot introduce a number that is not in the measured set.
@@ -900,14 +956,14 @@ def run_cycle(
         "figures": figures,
         "what_changed": [
             f"Library now holds {figures['claims']} claim(s) across {figures['topics']} question(s).",
-            f"This cycle retrieved {figures['documents_retrieved']} document(s) from "
-            f"{figures['sources_reached']} of {figures['sources_polled']} polled source(s).",
+            f"This cycle collected {figures['documents_retrieved']} document(s); "
+            f"{figures['sources_reached']} of {figures['sources_polled']} polled source(s) responded live.",
             f"{figures['open_questions']} open question(s) have been derived from the retrieved evidence.",
             f"{figures['synthesis_claims']} cross-document statement(s) are current, "
             f"{figures['synthesis_retired']} were retired this cycle because the composition rules no longer "
-            f"produce them ({figures['records_withdrawn']} briefs, criticisms and questions withdrew with them), and "
-            f"{figures['substantive_claims']} claim(s) scored as substantive while {figures['metadata_claims']} "
-            "are labelled as registry metadata.",
+            f"produce them, {figures['records_withdrawn']} briefs, criticisms and questions withdrew alongside "
+            f"retired claims this cycle, and {figures['substantive_claims']} claim(s) scored as substantive while "
+            f"{figures['metadata_claims']} are labelled as registry metadata.",
             f"{figures['topics_proposed']} candidate topic(s) were scored from the retrieved documents and "
             f"{figures['topics_promoted']} promoted; the change scan polled {figures['change_scan_sources']} "
             f"source(s) and found {figures['change_scan_new_items']} item(s) not seen before.",
@@ -928,6 +984,9 @@ def run_cycle(
             extra_allowed=list(figures.values()),
         )
     )
+    # The narrative check can re-raise an id the cycle already holds; merge
+    # once more so run_summary and the stored report publish one row per finding.
+    findings = merge_findings(findings)
     run_summary["irregularities"] = summarise(findings)
     library.add_irregularities(findings)
     result.irregularities = findings

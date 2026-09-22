@@ -51,27 +51,27 @@ limit affects a specific statement, the statement itself carries the warning.
 
 ## Limits of the layers added on 2026-09-21
 
-22. **The substance score is lexical.** It counts numbers, dates, comparatives, causal
+13. **The substance score is lexical.** It counts numbers, dates, comparatives, causal
     phrases and word length, and weights them by a published constant. A claim written in
     dense prose without a digit scores as metadata even when it carries a finding, and a
     claim that merely recites a number scores as substantive. It orders reading and labels
     metadata; it never overrides a verification verdict, and it is not a measure of truth.
-23. **Synthesis matches units by word.** A range or a divergence statement is built when
+14. **Synthesis matches units by word.** A range or a divergence statement is built when
     two documents carry different figures followed by the same word. Two sources using one
     word for two different measures would be combined, which is why those statements are
     published as needing review and why the engine never averages: the arithmetic that
     would produce an average is not performed anywhere in the pipeline.
-24. **Change scanning covers five sources.** Crossref, arXiv, GitHub, NVD and USGS
+15. **Change scanning covers five sources.** Crossref, arXiv, GitHub, NVD and USGS
     document a change filter; the other registered sources do not, and are reported as
     having none rather than polled. An item published in a window the engine could not
     reach is not missed - it appears as new on a later run - but the window it is
     attributed to will be wrong.
-25. **The USPTO adapter has never met a real response.** The request and response shapes
+16. **The USPTO adapter has never met a real response.** The request and response shapes
     are the operator's documented ones and are covered by tests against the published
     sample, but no key is configured, so no live call has been made. The first real
     response may differ from the documentation, and the adapter's fallback is to store the
     response verbatim rather than guess.
-26. **Topic invention can propose a topic that is not interesting.** The gates are
+17. **Topic invention can propose a topic that is not interesting.** The gates are
     arithmetic thresholds over counts. A phrase can clear them because two documents
     happen to share it. Every proposal is published with its components and the reason it
     was accepted or rejected, and a reviewer can close one with
@@ -79,33 +79,39 @@ limit affects a specific statement, the statement itself carries the warning.
 
 ## Operational limits
 
-13. **A cycle is a process, not a daemon.** Continuity comes from the schedule that
+18. **A cycle is a process, not a daemon.** Continuity comes from the schedule that
     starts it: `.github/workflows/research-loop.yml` runs a cycle on a timer on
     GitHub's infrastructure and commits the result. If the schedule is disabled, the
     engine stops; nothing runs on its own.
-14. **Budgets are small on purpose.** A cycle is capped at 60 HTTP requests, 900
+19. **Budgets are small on purpose.** A cycle is capped at 60 HTTP requests, 900
     seconds, four questions and three experiments. A run that hits a cap records that
     it stopped early.
-15. **Four sources need credentials that are not configured** (`eia`, `fred`, `ncei`,
+20. **Four sources need credentials that are not configured** (`eia`, `fred`, `ncei`,
     `patentsview`). Until keys are provided, questions that would use them record a
     `credential_required` status instead of silently returning nothing.
-16. **The build environment could not reach most sources.** In the sandbox used to
+21. **The build environment could not reach most sources.** In the sandbox used to
     produce the published run, egress was limited to GitHub, PyPI and npm, so arXiv,
     Crossref, Hacker News, OpenAlex and Semantic Scholar were unreachable. The run
     recorded that as a warning; the topic pages openly say that only GitHub answered.
     On GitHub Actions, where egress is unrestricted, this limit does not apply - but
     the published pages from *this* run still reflect it.
-17. **The library never forgets and never compacts.** Streams are append-only; a
+22. **The library never forgets and never compacts.** Streams are append-only; a
     superseded claim stays in `library/claims.jsonl` with its history. Growth is
     unbounded and there is no pruning tool yet.
-18. **No storage layer beyond files.** The design document's reference stack
-    (PostgreSQL, a vector store, a graph database, Redis) is deliberately not used.
-    Every record is a JSON line. This is auditable and portable, and it does not scale
-    past a research log.
+23. **Files are the source of truth; the database is an optional mirror.** The
+    default store is still append-only JSONL - auditable, diffable, portable.
+    Since 2026-09-22 `python3 -m selflearn storage sync|verify` mirrors every
+    stream into SQLite (standard library) or PostgreSQL (optional `psycopg`
+    driver) and proves the two views identical row for row, and
+    `python3 -m selflearn retrieve` searches claims through a deterministic
+    TF-IDF vector index. Not yet done: building the site from the database, and
+    a run against a live PostgreSQL server - none exists in this build
+    environment. The graph database and Redis from the design document's
+    reference stack remain deliberately unused.
 
 ## Coverage of the brief itself
 
-19. **New topics are proposed from the engine's own retrieval, not from the web.**
+24. **New topics are proposed from the engine's own retrieval, not from the web.**
     Topic invention now exists (`selflearn/think/invention.py`): phrases recurring in at
     least two retrieved documents are scored as novelty x importance x potential and can
     be promoted to a question, with every candidate and its components published. But the
@@ -114,24 +120,25 @@ limit affects a specific statement, the statement itself carries the warning.
     retrieved documents will never be proposed. The seed list
     `data/seeds/topics.json` remains human-authored. Section 12 of the design document is
     marked partial for that reason.
-20. **"Nonstop" is a schedule, not a promise.** The design document itself asks for
+25. **"Nonstop" is a schedule, not a promise.** The design document itself asks for
     event-driven operation rather than a process that never exits. The engine matches
     that reading; anyone expecting a permanently-running daemon will be disappointed.
-21. **The claim set skews to metadata.** With only GitHub reachable from the build
+26. **The claim set skews to metadata.** With only GitHub reachable from the build
     sandbox, most accepted claims are registry facts - repository descriptions, star
     counts, languages, licences, activity dates. That is genuine evidence, quoted and
     attributable, but it is not domain knowledge. The engine's usefulness scales with
     the number of sources it can reach, which is why the source layer is the first
     thing to fix (see `docs/ROADMAP.md`).
 
-22. **Cross-document synthesis currently composes nothing.** The layer exists and is
+27. **Cross-document synthesis currently composes nothing.** The layer exists and is
     tested, but its rules require two different sources and a shared subject, and with one
     reachable source neither can be satisfied. Every statement the earlier, weaker rules
     produced was retired rather than left published: 24 of them are listed under "Retired
     statements" on the pages that carried them, each with the reason, and none is counted as
     a current finding. The layer will start producing statements when a second source is
-    reachable, which is a consequence of limitation 21 rather than of the rules.
-23. **A retired statement stays in the library, and takes its dependents with it.**
+    reachable, which is a consequence of limitation 26 (the claim set skews to
+    metadata) rather than of the rules.
+28. **A retired statement stays in the library, and takes its dependents with it.**
     `Claim.superseded` marks a statement a later cycle no longer produces; the record is never
     deleted, the verification result is never rewritten, and the audit reports how many are
     excluded from re-verification. Briefs that quote a retired claim, criticisms of those
@@ -141,26 +148,41 @@ limit affects a specific statement, the statement itself carries the warning.
     topic page that carried it, with the reason. A reviewer who believes a retired statement
     was correct can read the reason on the record and say so - but there is no tool to
     reinstate one yet.
-24. **Withdrawal is one-directional and has no undo.** Nothing in the engine can restore a
+29. **Withdrawal is one-directional and has no undo.** Nothing in the engine can restore a
     superseded claim, brief, criticism or question to current status. Reinstating one means
     editing the JSON line by hand, which the audit would then report as a claim whose record
     does not match its history.
-25. **Six keyed sources have declared but un-transcribed credentials.** Six sources
-    (`eia`, `fred`, `ncei`, `github`, `nasa_api`, `patentsview`) now have their
-    authentication mechanisms transcribed from official documentation and transmitted
-    on every request. The remaining six (`census_us`, `doaj`, `nvd`, `pubmed`,
-    `semantic_scholar`, `stackexchange`) have environment variable names in the register
-    but their exact transmission mechanisms (header vs query param, parameter name,
-    casing) have not yet been transcribed. They run in unauthenticated mode and are
-    honestly published as `declared, not sent`.
-26. **URL reachability does not equal semantic validity.** The automated link check
+30. **All twelve keyed sources now have transcribed credential mechanisms - but
+    transcribed is not proven live.** The six that were outstanding on the morning
+    of 2026-09-22 (`census_us`, `doaj`, `nvd`, `pubmed`, `semantic_scholar`,
+    `stackexchange`) were transcribed from the operator's own documentation that
+    afternoon - each with a verbatim quote and a verification date in
+    `CREDENTIAL_MECHANISMS` and `docs/SOURCES.md` - so
+    `declared_but_not_transmitted` is empty. The same review found `PubMedSource`
+    omitting the key on its second-stage `efetch` request; both stages now send it.
+    The `declared, not sent` label remains in the code so any future registration
+    without a transcription is published as such rather than assumed to work.
+    No key except `GITHUB_TOKEN` is configured in this environment, so eleven of the
+    twelve have never carried their credential on a real request from this
+    repository.
+31. **URL reachability does not equal semantic validity.** The automated link check
     verifies that an HTTP endpoint or documentation URL resolves and records its status
     code (103 of 120 resolved on unrestricted runners). It does not parse the page
     content to confirm that an operator hasn't rewritten their schema or changed their terms.
     Where exact quotes are required (such as credential methods), they are quoted
     verbatim in `CREDENTIAL_MECHANISMS` with verification dates.
-27. **Upstream operator outages cannot be fixed internally.** During the link audit,
+32. **Upstream operator outages cannot be fixed internally.** During the link audit,
     IMF's documentation domain (`datahelp.imf.org`) failed DNS lookup from multiple
     independent networks, and `https://api.imf.org/` returned HTTP 502. The engine
     flags this irregularity for manual human review rather than guessing an alternative
     or substituting unverified third-party aggregators.
+33. **An offline cycle spends the per-topic evidence budget on the first source in
+    the reading list.** `max_evidence_per_topic` (12) caps how many documents one
+    topic collects; when the first source's stored snapshots replay 12 records the
+    collector stops, so the remaining sources in that topic's list are never
+    attempted and the cycle's source-status table lists only that first source.
+    Cycle `run-e5bee75a9789` shows the shape directly: `0 of 1 polled source(s)
+    responded live`. A live cycle rarely trips this because a reachable source
+    usually returns fewer than 12 items per query; a snapshot cycle must therefore
+    not be read as a coverage report - the coverage report is what a live cycle on
+    an unrestricted runner writes.

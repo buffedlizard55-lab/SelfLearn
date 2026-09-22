@@ -1,11 +1,11 @@
 {
   "checks": {
-    "claims_without_link": 153,
+    "claims_without_link": 159,
     "fixture_documents": 0,
     "irregularity_counts": {
       "error": 0,
-      "info": 6,
-      "warning": 18
+      "info": 12,
+      "warning": 15
     },
     "resolved_contradictions": 0,
     "resolved_irregularities": 7,
@@ -13,18 +13,18 @@
     "unsupported_claims": 10
   },
   "counts": {
-    "attacks": 865,
-    "claims": 294,
+    "attacks": 960,
+    "claims": 300,
     "contradictions": 12,
     "discoveries": 102,
     "documents": 89,
     "experiments": 3,
-    "failures": 21,
-    "irregularities": 27,
-    "questions": 138,
-    "strategies": 202,
+    "failures": 22,
+    "irregularities": 34,
+    "questions": 141,
+    "strategies": 222,
     "topics": 4
   },
-  "generated_at": "2026-09-22T21:25:06Z",
-  "run_id": "run-fe5ed07d9d98"
+  "generated_at": "2026-09-22T22:03:28Z",
+  "run_id": "run-735c72c7bf96"
 }

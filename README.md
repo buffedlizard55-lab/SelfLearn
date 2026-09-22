@@ -27,13 +27,18 @@ python3 -m selflearn run --mode live     # one complete research cycle, then pub
 python3 -m selflearn audit               # re-verify every stored claim from its snapshot
 python3 -m selflearn scan                # what changed, through each operator's own filter
 python3 -m selflearn credentials         # which keyed sources are enabled, and how to enable them
+python3 -m selflearn storage verify      # prove the database mirror matches the JSONL streams
+python3 -m selflearn retrieve "query"    # TF-IDF vector search over the current claims
 python3 -m selflearn selftest            # the test suite
 python3 tools/verify_links.py            # resolve every URL this project publishes
 python3 tools/serve_site.py              # read the published site locally
 ```
 
 Requirements: Python 3.10 or newer. Nothing else - the project has **no third-party
-dependencies**, not even for HTTP or HTML.
+dependencies**, not even for HTTP or HTML. An optional PostgreSQL mirror
+(`python3 -m selflearn storage`) will use `psycopg` if you point it at a
+`postgres://` DSN and have one installed; the default SQLite path is standard
+library only.
 
 ## What one cycle does
 
@@ -131,10 +136,10 @@ every cycle.
 ## Repository layout
 
 ```
-selflearn/        the engine (fetch, verify, think, learn, experiment, publish)
+selflearn/        the engine (fetch, verify, think, learn, experiment, publish, storage)
 data/             seed questions, the labelled calibration cases, the requirements matrix
 experiments/      seeded experiment scripts, each with a hypothesis and a falsifier
-tests/            122 tests, no network and no credentials required
+tests/            137 tests, no network and no credentials required
 tools/            reviewer tools: check a claim, reproduce an experiment, export a summary,
                   verify every published link, compare link check outcomes, reject a topic,
                   resolve a finding, serve the site
@@ -142,7 +147,8 @@ docs/             the published site, plus the hand-written documents listed abo
 library/          the append-only memory: 14 JSONL streams
 evidence/snapshots/   every retrieved document, hashed, exactly as it was verified
 reports/          run summary, irregularity list, the exported readable summary
-state/            calibration, Elo ratings, the last cycle
+state/            calibration, Elo ratings, the last cycle; the optional SQLite mirror
+                  (library.sqlite3, gitignored) lands here when `selflearn storage sync` runs
 ```
 
 ## Limitations, in one paragraph

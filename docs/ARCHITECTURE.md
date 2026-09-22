@@ -142,8 +142,26 @@ site also works from a local file path.
 ## Migration path to the reference stack
 
 The record types are dataclasses with `to_dict()`; the streams are lists of them.
-Moving to PostgreSQL means writing each stream's rows to a table with the id as the
-primary key, and reading them back through the same loader. A vector search over
-claims becomes possible once an embedding model is available, but it is not required
-for any guarantee above: nothing in the verification path depends on approximate
-similarity, only on exact containment and token coverage.
+The first half of that migration shipped on 2026-09-22: `selflearn/storage/database.py`
+writes every stream's rows to an append-only `library_rows` table (stream, primary
+key, stamp, JSON payload, sequence) through `python3 -m selflearn storage sync`, and
+reads them back through the same loader `Library.load` uses (`Library.from_rows`),
+so a database view and a file view of the same rows produce the same records.
+`python3 -m selflearn storage verify` compares the two views stream by stream and
+exits non-zero on any difference; on this repository's library it reports every
+stream identical. The default DSN is SQLite (`sqlite:///state/library.sqlite3`,
+standard library only); a `postgres://` DSN uses an optional `psycopg`/`psycopg2`
+driver and fails with that fact stated when none is installed - nothing else in the
+engine can require a third-party package. Still open: serving the site from the
+database, and a run against a live PostgreSQL server (none exists in this build
+environment, so the PostgreSQL path is proven the way the USPTO adapter is: against
+the driver's documented DB-API shape, not against a server).
+
+Vector search over claims no longer waits for an embedding model:
+`selflearn/learn/vector_index.py` builds a deterministic TF-IDF index (log term
+frequency, `ln(1 + N/df)` inverse document frequency, L2-normalised sparse vectors,
+cosine scoring, ties broken by claim id) over the claim text the documents already
+contain, exposed as `python3 -m selflearn retrieve QUERY` and used to rank
+`cross_domain_claims` in the competition stage. It is arithmetic a reviewer can
+recompute, not a model. Nothing in the verification path depends on it: exact
+containment and token coverage still decide every verdict.

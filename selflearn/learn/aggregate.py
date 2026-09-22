@@ -28,8 +28,18 @@ def derive_library_claims(
     claims: list[Claim],
     records: list[EvidenceRecord],
 ) -> list[tuple]:
-    """Return ``(proposal, context_numbers)`` pairs of derived library statistics."""
+    """Return ``(proposal, context_numbers)`` pairs of derived library statistics.
+
+    The statistics describe the *evidence*: only non-superseded ``direct`` claims
+    are counted. Counting the library's own composed statements (``derived``,
+    ``synthesis``) here would make the figures self-referential - each cycle's
+    "supported by N claims" would grow by the statements that quote it - and
+    counting retired claims would publish a figure that a later cycle has
+    already withdrawn. Both call sites (the cycle writer and the page renderer)
+    pass the topic's claims; filtering inside keeps their numbers identical.
+    """
     proposals: list[tuple] = []
+    claims = [c for c in claims if c.claim_kind == "direct" and not c.superseded]
     if len(claims) < MIN_CLAIMS_FOR_AGGREGATE:
         return proposals
 
@@ -100,7 +110,7 @@ def derive_library_claims(
         live = sum(1 for r in records if r.is_live)
         fixtures = sum(1 for r in records if r.is_fixture)
         text = (
-            f"Of the documents cited here, {live} were retrieved live in this cycle and "
+            f"Of the documents cited here, {live} were retrieved live from their source and "
             f"{fixtures} are synthetic test fixtures, which are labelled wherever they appear."
         )
         context = [live, fixtures]

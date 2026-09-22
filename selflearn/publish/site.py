@@ -153,10 +153,14 @@ def layout(title: str, body: str, *, active: str, data: dict[str, Any], depth: i
     generated = data.get("generated_at", utcnow_iso())
     mode_banner = ""
     if mode == "fixture":
+        # Fixture mode has network disabled and replays stored snapshots; it does
+        # not load synthetic evidence (load_fixture_evidence has no caller), so
+        # the banner must not claim the pages hold no real-world findings.
         mode_banner = (
-            '<div class="banner err wrap"><strong>Test run.</strong> This site was generated with synthetic fixture '
-            "evidence. Nothing on these pages is a real-world finding. Run the engine in live or snapshot mode before "
-            "reading anything here as research.</div>"
+            '<div class="banner err wrap"><strong>Test run.</strong> This site was generated in fixture mode with '
+            "network access disabled: it replays stored snapshots instead of retrieving live, so treat it as "
+            "smoke-test output rather than fresh research. Run the engine in live or snapshot mode before "
+            "publishing anything from it.</div>"
         )
     elif mode == "snapshot":
         mode_banner = (

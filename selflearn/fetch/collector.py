@@ -396,7 +396,13 @@ class Collector:
                     license=payload.get("license"),
                     publisher=payload.get("publisher"),
                     is_fixture=bool(payload.get("is_fixture", False)),
-                    is_live=False,
+                    # Keep the original acquisition provenance: a document that
+                    # was fetched live in an earlier cycle stays live after a
+                    # replay (same evidence_id and retrieved_at, so this row
+                    # replaces the original in the loaded view). Cycle-level
+                    # reachability is reported by SourceStatus, not by quietly
+                    # downgrading the record's badge.
+                    is_live=bool(payload.get("is_live", False)),
                     http_status=payload.get("http_status"),
                     bytes_read=int(payload.get("bytes_read", 0)),
                     response_sha256=payload.get("response_sha256", ""),

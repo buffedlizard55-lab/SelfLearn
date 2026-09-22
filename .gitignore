@@ -20,3 +20,4 @@ Thumbs.db
 *.swp
 .idea/
 .vscode/
+state/library.sqlite3
