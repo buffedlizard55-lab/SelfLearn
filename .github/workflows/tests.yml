@@ -70,7 +70,10 @@ jobs:
         # The runners have unrestricted egress, so this is the environment where a
         # moved documentation page is actually detectable. Reported, not enforced:
         # a source operator moving a page should not turn the build red.
-        run: python3 tools/verify_links.py | tee reports/link_check.txt
+        run: |
+          python3 tools/verify_links.py \
+            --label "GitHub Actions ubuntu-latest (unrestricted egress)" \
+            | tee reports/link_check.txt
       - name: Summary
         if: always()
         run: |
@@ -80,3 +83,16 @@ jobs:
             head -3 reports/link_check.txt
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload the link register
+        # The per-URL report is the evidence behind the site's "official links" page:
+        # a reviewer can read the recorded status of every URL without re-running the
+        # check from a host whose egress may differ.
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check
+          path: |
+            reports/link_check.json
+            reports/link_check.txt
+          if-no-files-found: warn
+          retention-days: 90

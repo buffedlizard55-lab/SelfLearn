@@ -30,6 +30,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -142,6 +143,16 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--only", default=None, help="limit to one source id or file name")
     parser.add_argument("--limit", type=int, default=400, help="request budget")
     parser.add_argument("--json", action="store_true", help="print the full report")
+    parser.add_argument(
+        "--label",
+        default=os.environ.get("LINK_CHECK_LABEL", "local machine"),
+        help="where this check ran, recorded in the report so a result can be judged by its egress",
+    )
+    parser.add_argument(
+        "--out",
+        default=None,
+        help="where to write the report (default: reports/link_check.json)",
+    )
     args = parser.parse_args(argv)
 
     rows = all_urls(ROOT, only=args.only)
@@ -165,16 +176,21 @@ def main(argv: list[str] | None = None) -> int:
         "ok": len(results) - len(failures),
         "failed": len(failures),
         "by_status": dict(sorted(by_status.items())),
+        "label": args.label,
         "results": results,
         "note": (
-            "Status and final URL only; page content is not asserted here. A sandbox with restricted egress reports "
-            "'unreachable' for hosts it cannot reach, which is a property of the machine and is recorded as such."
+            "Status and final URL only; page content is not asserted here. `label` names the machine that ran the "
+            "check, because a host with restricted egress reports 'unreachable' for hosts it cannot reach, which is a "
+            "property of the machine and is recorded as such rather than being read as a broken link."
         ),
     }
-    out = ROOT / "reports" / "link_check.json"
+    out = Path(args.out) if args.out else ROOT / "reports" / "link_check.json"
+    if not out.is_absolute():
+        out = ROOT / out
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"wrote reports/link_check.json")
+    print(f"wrote {out.relative_to(ROOT) if out.is_relative_to(ROOT) else out} "
+          f"({len(results)} URL(s), {len(results) - len(failures)} ok, {len(failures)} failed, label: {args.label!r})")
 
     if args.json:
         print(json.dumps(payload, indent=2, sort_keys=True))
