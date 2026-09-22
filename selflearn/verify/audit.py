@@ -24,6 +24,7 @@ Checks
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -85,14 +86,18 @@ def recheck_claims(claims: Iterable[Claim], snapshot_dir: Path) -> list[Irregula
     findings: list[Irregularity] = []
     superseded = [claim for claim in claims if claim.superseded]
     if superseded:
+        # The count lives in the detail, not the summary: the finding id is a
+        # hash of the summary, so a count in the summary would open a fresh row
+        # (and strand the old one) every time a cycle retires more statements.
         findings.append(
             _irregularity(
                 "info",
                 "audit",
                 None,
-                f"{len(superseded)} stored claim(s) are marked superseded and are excluded from re-verification",
-                "A superseded claim is one a later cycle no longer produces. It remains in the library with the "
-                "reason recorded on it, and is not published as a current finding.",
+                "Stored claims are marked superseded and are excluded from re-verification",
+                f"{len(superseded)} claim(s) currently carry a supersession reason. A superseded claim is one a "
+                "later cycle no longer produces. It remains in the library with the reason recorded on it, and "
+                "is not published as a current finding.",
                 suggested_action="Nothing to do unless a reviewer believes a retired statement was correct.",
             )
         )
@@ -428,12 +433,39 @@ def summarise(findings: Iterable[Irregularity]) -> dict[str, Any]:
     return {"total": len(findings), "by_severity": counts}
 
 
-def render_markdown(findings: Iterable[Irregularity], *, generated_at: str) -> str:
-    unique: dict[str, Irregularity] = {}
+def merge_findings(findings: Iterable[Irregularity]) -> list[Irregularity]:
+    """One row per irregularity id, the last row's content winning, while a
+    reviewer's decision survives the engine re-detecting the finding.
+
+    A cycle passes the stored findings plus the ones it raised itself; an audit
+    rule that fires again produces the same id twice (or, over time, many times).
+    The published list is the current state, so it carries each id once with the
+    newest content - but a plain last-wins dedupe would silently drop
+    ``resolved``/``resolution`` from the stored copy, because the fresh
+    re-detection never carries them. This merge keeps the reviewer fields from
+    whichever copy has them, which is what ``store.add_irregularities`` already
+    does on the write path; using the same rule here is what keeps the report,
+    the JSON export and the store from disagreeing.
+    """
+    by_id: dict[str, Irregularity] = {}
     for finding in findings:
-        unique[finding.irregularity_id] = finding
+        previous = by_id.get(finding.irregularity_id)
+        if previous is not None and (previous.resolved or previous.resolution or previous.resolved_at or previous.resolution_link):
+            if not (finding.resolved or finding.resolution):
+                finding = replace(
+                    finding,
+                    resolved=previous.resolved,
+                    resolved_at=previous.resolved_at,
+                    resolution=previous.resolution,
+                    resolution_link=previous.resolution_link,
+                )
+        by_id[finding.irregularity_id] = finding
+    return list(by_id.values())
+
+
+def render_markdown(findings: Iterable[Irregularity], *, generated_at: str) -> str:
     findings = sorted(
-        unique.values(),
+        merge_findings(findings),
         key=lambda f: (SEVERITY_ORDER.get(f.severity, 9), f.stage, f.summary),
     )
     stats = summarise(findings)

@@ -1,169 +1,7 @@
 {
-  "change_scan": {
-    "by_status": {
-      "error": 2,
-      "scanned": 3
-    },
-    "generated_at": "2026-09-22T17:02:56Z",
-    "items_new": 3,
-    "items_seen": 15,
-    "run_id": "run-bbcaf0b83035",
-    "scans": [
-      {
-        "detail": "HTTP 406: ",
-        "docs_url": "https://info.arxiv.org/help/api/user-manual.html",
-        "items_new": 0,
-        "items_seen": 0,
-        "mechanism": "Results sorted by submission date, newest first",
-        "new_items": [],
-        "request_params": {
-          "max_results": 5,
-          "search_query": "all:autonomous agent",
-          "sortBy": "submittedDate",
-          "sortOrder": "descending",
-          "start": 0
-        },
-        "request_url": "https://export.arxiv.org/api/query",
-        "source_id": "arxiv",
-        "source_name": "arXiv API",
-        "status": "error",
-        "window": {
-          "days": 7,
-          "first_scan": true,
-          "since": "2026-09-15",
-          "until": "2026-09-22"
-        }
-      },
-      {
-        "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 0 not seen by this engine before.",
-        "docs_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
-        "items_new": 0,
-        "items_seen": 5,
-        "mechanism": "Works reindexed at or after the given date",
-        "new_items": [],
-        "request_params": {
-          "filter": "from-index-date:2026-09-21",
-          "mailto": "selflearn@example.invalid",
-          "query": "autonomous agent",
-          "rows": 5,
-          "select": "DOI,title,abstract,URL,issued,container-title,type,publisher,is-referenced-by-count"
-        },
-        "request_url": "https://api.crossref.org/works",
-        "source_id": "crossref",
-        "source_name": "Crossref REST API",
-        "status": "scanned",
-        "window": {
-          "days": 1,
-          "first_scan": false,
-          "since": "2026-09-21",
-          "until": "2026-09-22"
-        }
-      },
-      {
-        "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 3 not seen by this engine before.",
-        "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-        "items_new": 3,
-        "items_seen": 5,
-        "mechanism": "Repositories pushed to on or after the given date",
-        "new_items": [
-          {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: fmogensen/ASF\nThe record for fmogensen/ASF ",
-            "identifier": "https://github.com/fmogensen/ASF",
-            "published_at": "2026-09-22",
-            "source_id": "github",
-            "title": "fmogensen/ASF",
-            "url": "https://github.com/fmogensen/ASF"
-          },
-          {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: juhastar-dev/200-protocol\nThe record for ju",
-            "identifier": "https://github.com/juhastar-dev/200-protocol",
-            "published_at": "2026-09-22",
-            "source_id": "github",
-            "title": "juhastar-dev/200-protocol",
-            "url": "https://github.com/juhastar-dev/200-protocol"
-          },
-          {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: thejevos/jevos\nThe record for thejevos/jevo",
-            "identifier": "https://github.com/thejevos/jevos",
-            "published_at": "2026-09-22",
-            "source_id": "github",
-            "title": "thejevos/jevos",
-            "url": "https://github.com/thejevos/jevos"
-          }
-        ],
-        "request_params": {
-          "order": "desc",
-          "per_page": 5,
-          "q": "autonomous agent pushed:>=2026-09-21",
-          "sort": "updated"
-        },
-        "request_url": "https://api.github.com/search/repositories",
-        "source_id": "github",
-        "source_name": "GitHub REST API",
-        "status": "scanned",
-        "window": {
-          "days": 1,
-          "first_scan": false,
-          "since": "2026-09-21",
-          "until": "2026-09-22"
-        }
-      },
-      {
-        "detail": "HTTP 404: ",
-        "docs_url": "https://nvd.nist.gov/developers/vulnerabilities",
-        "items_new": 0,
-        "items_seen": 0,
-        "mechanism": "CVE records last modified inside an explicit window",
-        "new_items": [],
-        "request_params": {
-          "keywordSearch": "autonomous agent",
-          "lastModEndDate": "2026-09-22T00:00:00:000 UTC-00:00",
-          "lastModStartDate": "2026-09-15T00:00:00:000 UTC-00:00",
-          "resultsPerPage": 5
-        },
-        "request_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
-        "source_id": "nvd",
-        "source_name": "NIST National Vulnerability Database API",
-        "status": "error",
-        "window": {
-          "days": 7,
-          "first_scan": true,
-          "since": "2026-09-15",
-          "until": "2026-09-22"
-        }
-      },
-      {
-        "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 0 not seen by this engine before.",
-        "docs_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
-        "items_new": 0,
-        "items_seen": 5,
-        "mechanism": "Earthquake events inside an explicit time window",
-        "new_items": [],
-        "request_params": {
-          "endtime": "2026-09-22",
-          "format": "geojson",
-          "limit": 5,
-          "orderby": "time",
-          "starttime": "2026-09-21"
-        },
-        "request_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
-        "source_id": "usgs_earthquake",
-        "source_name": "USGS Earthquake Catalog (FDSN event service)",
-        "status": "scanned",
-        "window": {
-          "days": 1,
-          "first_scan": false,
-          "since": "2026-09-21",
-          "until": "2026-09-22"
-        }
-      }
-    ],
-    "sources_attempted": 5,
-    "sources_scanned": 3,
-    "window_days": 7
-  },
+  "change_scan": {},
   "claim_kinds": {
-    "derived": 118,
+    "derived": 20,
     "direct": 141,
     "synthesis": 5
   },
@@ -171,38 +9,38 @@
     "commentary": 3,
     "peer_reviewed": 12,
     "primary_source": 126,
-    "reproduced_experiment": 147
+    "reproduced_experiment": 153
   },
   "figures": {
-    "change_scan_new_items": 3,
-    "change_scan_sources": 5,
-    "claims": 288,
-    "documents_retrieved": 69,
+    "change_scan_new_items": 0,
+    "change_scan_sources": 0,
+    "claims": 294,
+    "documents_retrieved": 48,
     "documents_total": 86,
     "errors": 0,
     "metadata_claims": 45,
-    "open_questions": 127,
-    "records_withdrawn": 2,
-    "sources_polled": 4,
-    "sources_reached": 3,
+    "open_questions": 129,
+    "records_withdrawn": 561,
+    "sources_polled": 1,
+    "sources_reached": 0,
     "substantive_claims": 117,
     "synthesis_claims": 5,
     "synthesis_retired": 0,
-    "topics": 11,
+    "topics": 4,
     "topics_promoted": 0,
     "topics_proposed": 3,
-    "warnings": 18
+    "warnings": 15
   },
-  "generated_at": "2026-09-22T17:02:57Z",
+  "generated_at": "2026-09-22T21:44:30Z",
   "irregularities": {
     "by_severity": {
       "error": 0,
-      "info": 13,
-      "warning": 18
+      "info": 18,
+      "warning": 15
     },
-    "total": 31
+    "total": 33
   },
-  "mode": "live",
+  "mode": "snapshot",
   "registry": {
     "by_evidence_class": {
       "commentary": 2,
@@ -253,20 +91,20 @@
     ],
     "total": 36
   },
-  "run_id": "run-bbcaf0b83035",
+  "run_id": "run-e5bee75a9789",
   "substance": {
-    "claims": 288,
+    "claims": 294,
     "dated": 42,
     "labels": {
-      "descriptive": 126,
+      "descriptive": 132,
       "metadata": 45,
       "substantive": 117
     },
-    "mean_score": 0.5158,
-    "metadata_share": 0.1562,
-    "quantified": 240,
-    "quantified_share": 0.8333,
-    "substantive_share": 0.4062
+    "mean_score": 0.5157,
+    "metadata_share": 0.1531,
+    "quantified": 246,
+    "quantified_share": 0.8367,
+    "substantive_share": 0.398
   },
   "thresholds": {
     "cases": 26,
@@ -278,7 +116,7 @@
       "supported": 0.8
     },
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-22T17:02:45Z",
+    "ran_at": "2026-09-22T21:44:26Z",
     "source": "state/calibration.json"
   },
   "topic_proposals": [
@@ -357,11 +195,11 @@
     }
   ],
   "what_changed": [
-    "Library now holds 288 claim(s) across 11 question(s).",
-    "This cycle retrieved 69 document(s) from 3 of 4 polled source(s).",
-    "127 open question(s) have been derived from the retrieved evidence.",
-    "5 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them (2 briefs, criticisms and questions withdrew with them), and 117 claim(s) scored as substantive while 45 are labelled as registry metadata.",
-    "3 candidate topic(s) were scored from the retrieved documents and 0 promoted; the change scan polled 5 source(s) and found 3 item(s) not seen before.",
-    "0 error(s) and 18 warning(s) are waiting for review."
+    "Library now holds 294 claim(s) across 4 question(s).",
+    "This cycle collected 48 document(s); 0 of 1 polled source(s) responded live.",
+    "129 open question(s) have been derived from the retrieved evidence.",
+    "5 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them, 561 briefs, criticisms and questions withdrew alongside retired claims this cycle, and 117 claim(s) scored as substantive while 45 are labelled as registry metadata.",
+    "3 candidate topic(s) were scored from the retrieved documents and 0 promoted; the change scan polled 0 source(s) and found 0 item(s) not seen before.",
+    "0 error(s) and 15 warning(s) are waiting for review."
   ]
 }

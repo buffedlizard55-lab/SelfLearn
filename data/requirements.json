@@ -46,7 +46,7 @@
       "selflearn/think/manager.py"
     ],
     "how_to_verify": "Open questions are derived from retrieved evidence and from vocabulary the brief did not contain; the manager then chooses what to work on next.",
-    "gap": "The engine writes no free prose. 'Thinking' here is candidate generation, criticism and ranking over verified claims. Free-form generative reasoning is an explicit opt-in adapter that is off by default."
+    "gap": "The engine writes no free prose. 'Thinking' here is candidate generation, criticism and ranking over verified claims. No language model exists in any stage of the pipeline - not as an option, not behind a flag - and adding one is explicitly out of scope (docs/ROADMAP.md, Deliberately not planned)."
   },
   {
     "id": "R-05",
@@ -121,7 +121,7 @@
       "docs/index.html"
     ],
     "how_to_verify": "Every topic page has a generated Summary section whose figures are all engine-computed, followed by the exact statements and links behind them.",
-    "gap": ""
+    "gap": "Ingestion, identity resolution and the content store shipped on 2026-09-21 (evidence snapshots, stable ids, 14 JSONL streams) and the storage mirror with its reader shipped on 2026-09-22 (python3 -m selflearn storage sync/verify, Library.from_rows). Not implemented: MongoDB, Neo4j and Redis from the design document's reference stack; the graph database remains unused by choice (docs/LIMITATIONS.md item 23)."
   },
   {
     "id": "R-11",
@@ -478,7 +478,7 @@
       "docs/ARCHITECTURE.md"
     ],
     "how_to_verify": "The engine uses only the Python standard library, so it installs with no dependency resolution at all.",
-    "gap": "The design document proposed PostgreSQL, a vector store, Neo4j and Redis/Celery. Those are not used. This is a deliberate trade: JSONL plus files is auditable and diffable, but it will not scale to millions of claims. The migration path is documented."
+    "gap": "The design document proposed PostgreSQL, a vector store, Neo4j and Redis/Celery. The engine still runs on JSONL plus files by default; this session added the migration path the roadmap called for: 'python3 -m selflearn storage sync|verify' mirrors every stream into SQLite (standard library) or PostgreSQL (optional psycopg driver) and proves the two views identical row for row, and the TF-IDF vector index ('python3 -m selflearn retrieve') now ranks cross-domain claim transfer. Not yet done: building the site from the database, and verifying the mirror against a live PostgreSQL server (none exists in this build environment). Graph database, Redis and sandboxes remain deliberately unused."
   },
   {
     "id": "D-16",
@@ -501,7 +501,7 @@
       "selflearn/models.py",
       "library/"
     ],
-    "how_to_verify": "All fifteen record types exist as dataclasses with stable identifiers; the relationships are the foreign keys shown in docs/DATA_GUIDE.md.",
+    "how_to_verify": "grep -n 'to_dict' selflearn/models.py selflearn/learn/store.py (every record type defines to_dict; store.py lists the streams and keys) - then python3 -m selflearn storage verify, which rebuilds a second view of the library from database rows through Library.from_rows and reports rows_identical: true, library_identical: true with matches: true on every stream",
     "gap": ""
   },
   {

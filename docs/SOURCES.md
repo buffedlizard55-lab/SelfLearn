@@ -232,17 +232,29 @@ listed here rather than smoothed over.
    | `fred` | `?api_key=<key>` | <https://fred.stlouisfed.org/docs/api/fred/series_search.html> |
    | `ncei` | `token: <token>` header | 'Assigned token is required to use these queries and must be in the header.' <https://www.ncei.noaa.gov/cdo-web/webservices/v2> |
    | `github` | `Authorization: Bearer <token>` | <https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api> |
+   | `pubmed` | `?api_key=<key>` (both stages) | "After creating the key, users should include it in each E-utility request by assigning it to the api_key parameter." <https://www.ncbi.nlm.nih.gov/books/NBK25497/> |
+   | `census_us` | `?key=<key>` | "Once you have a key, insert &key= followed by your key code at the end of your API data calls: &key=your key here" <https://www.census.gov/data/developers/guidance/api-user-guide.API_Key.html> |
+   | `nvd` | `apiKey: <key>` header | "API keys are passed in the request header using apiKey:{key value}. Please note, the {key value} is case sensitive" <https://nvd.nist.gov/developers/api-workflows> |
+   | `semantic_scholar` | `x-api-key: <key>` header | "If you are using an API key, it must be set in the header x-api-key (case-sensitive)." <https://api.semanticscholar.org/api-docs/> |
+   | `stackexchange` | `Authorization: Bearer <key>` header | "Your application's API key or access token must be provided using the authorization header Authorization: Bearer {API key or access token}." <https://api.stackexchange.com/docs/authentication> |
+   | `doaj` | `?api_key=<key>` (authenticated routes) | OpenAPI parameter `{"in": "query", "name": "api_key"}` in <https://doaj.org/api/v4/swagger.json> |
+   | `nasa_api` | `?api_key=<key>` (adapter-applied, DEMO_KEY fallback) | <https://api.nasa.gov/> |
+   | `patentsview` | `X-API-KEY: <key>` header (adapter-applied) | <https://data.uspto.gov/apis/getting-started> |
 
-   Six of the twelve keyed sources now transmit their credential. The other six
-   (`census_us`, `doaj`, `nvd`, `pubmed`, `semantic_scholar`, `stackexchange`) name a
-   variable whose documented mechanism has **not** been transcribed, so no credential
-   is sent and the source is used within its unauthenticated limits. That is published
-   as `declared, not sent` on the site's Official links page and as
-   `declared_but_not_transmitted` by `python3 -m selflearn credentials`, rather than
-   being left to look as though it worked. Guessing an authentication scheme is not an
-   option; transcribing six more operator pages is.
-   Covered by `tests/test_layers.py::CredentialPathTests`, including the test that no
-   source may be gated on a credential the engine then fails to send.
+   All twelve keyed sources now transmit their credential; `declared_but_not_transmitted`
+   is empty. The `declared, not sent` label stays in the code for any future
+   registration without a transcription, so a variable can never again be named
+   without a mechanism and look as though it worked. Guessing an authentication
+   scheme is not an option; transcribing the operator's page is.
+
+   The line-by-line pass on 2026-09-22 also found that `PubMedSource` built both of
+   its requests (`esearch`, then `efetch`) without calling `apply_credential`, so
+   even a transcribed key would have authenticated the search and then spent the
+   abstract fetch unauthenticated. Both stages now go through the shared path, and
+   `CredentialPathTests.test_pubmed_stages_both_carry_the_key` pins it.
+   Covered by `tests/test_layers.py::CredentialPathTests`, including the test that
+   every keyed source in the register transmits and none is gated on a credential
+   the engine then fails to send.
 6. **The GitHub rate-limit note was wrong for the token the scheduled run has.** The
    register said "5,000 requests/hour with a token". GitHub documents 5,000/hour for a
    *personal access token* and **1,000/hour per repository** for the `GITHUB_TOKEN`
@@ -272,7 +284,7 @@ polled and having its whole result set described as new.
 | `crossref` | `filter=from-index-date:<date>` ("reindexed in the API at or after the given date or time; includes changes from members, Crossref, and external sources") | `https://api.crossref.org/works` | <https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/> |
 | `arxiv` | `sortBy=submittedDate` or `lastUpdatedDate` with `sortOrder=ascending\|descending` | `https://export.arxiv.org/api/query` | <https://info.arxiv.org/help/api/user-manual.html> |
 | `github` | the `pushed:` qualifier, e.g. `q=<terms> pushed:>=<date>` ("the most recent commit made on any branch") | `https://api.github.com/search/repositories` | <https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories> |
-| `nvd` | `lastModStartDate` **and** `lastModEndDate` (both required; range at most 120 days) | `https://services.nvd.nist.gov/rest/json/cves/2.0` | <https://nvd.nist.gov/developers/vulnerabilities> |
+| `nvd` | `lastModStartDate` **and** `lastModEndDate` (both required; range at most 120 days; extended ISO-8601 datetimes, e.g. `2026-09-15T00:00:00.000+00:00` - the API 1.0 nonstandard form answers HTTP 404 "Invalid ISO 8601 date/time format", observed 2026-09-22) | `https://services.nvd.nist.gov/rest/json/cves/2.0` | <https://nvd.nist.gov/developers/vulnerabilities>, transition guide <https://nvd.nist.gov/general/news/api-20-announcements> |
 | `usgs_earthquake` | `starttime` / `endtime` (ISO-8601, UTC assumed); `updatedafter` for revisions | `https://earthquake.usgs.gov/fdsnws/event/1/query` | <https://earthquake.usgs.gov/fdsnws/event/1/> |
 
 Implementation: `selflearn/fetch/changes.py`; command `python3 -m selflearn scan`.

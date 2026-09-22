@@ -6,6 +6,8 @@
     python -m selflearn sources [--probe]
     python -m selflearn scan [--query TEXT] [--sources ids] [--days N] [--discover]
     python -m selflearn credentials
+    python -m selflearn storage {sync|verify|status} [--database DSN]
+    python -m selflearn retrieve QUERY [-k N]
     python -m selflearn experiments [--id ID]
     python -m selflearn calibrate
     python -m selflearn status
@@ -31,7 +33,7 @@ from .fetch.net import HttpClient, NetworkUnavailable
 from .fetch.registry import REGISTRY, registry_summary, source_matrix
 from .learn.calibration import run_calibration, thresholds_in_force
 from .learn.store import Library
-from .models import SourceStatus
+from .models import Irregularity, SourceStatus
 from .publish.report import build_site_data
 from .publish.site import build_site
 from .think.elo import EloTable
@@ -71,19 +73,32 @@ def cmd_run(args: argparse.Namespace) -> int:
 
 
 def cmd_audit(args: argparse.Namespace) -> int:
-    """Re-verify the whole library against its stored snapshots."""
+    """Re-verify the whole library against its stored snapshots.
+
+    The report written here is the full picture a reviewer needs: the findings
+    already stored on the library (including anything a reviewer resolved)
+    merged with whatever this audit re-detected. Writing only the fresh audit
+    rows - as this command used to do - replaced the cycle's published warning
+    list with a single info line, so ``reports/irregularities.md`` disagreed
+    with the review page built from the same library.
+    """
+    from .verify.audit import merge_findings
+
     library = Library.load(ROOT, run_id="audit")
     snapshots = ROOT / "evidence" / "snapshots"
     claims = list(library.claims.values())
-    findings = []
-    findings.extend(recheck_claims(claims, snapshots))
-    findings.extend(check_links(claims))
-    findings.extend(check_fixtures(library.evidence.values(), claims))
-    findings.extend(check_coverage(library.active_topics(), claims, []))
+    fresh: list[Irregularity] = []
+    fresh.extend(recheck_claims(claims, snapshots))
+    fresh.extend(check_links(claims))
+    fresh.extend(check_fixtures(library.evidence.values(), claims))
+    fresh.extend(check_coverage(library.active_topics(), claims, []))
+    findings = merge_findings(list(library.irregularities.values()) + fresh)
+    fresh_stats = summarise(fresh)
     stats = summarise(findings)
     print(f"claims re-checked: {len(claims)}")
     print(f"documents on file: {len(library.evidence)}")
-    print("findings: " + json.dumps(stats["by_severity"]))
+    print("findings (this audit): " + json.dumps(fresh_stats["by_severity"]))
+    print("findings (published, merged): " + json.dumps(stats["by_severity"]))
     for finding in sorted(findings, key=lambda f: f.severity)[: args.limit]:
         print(f"  [{finding.severity}] {finding.stage}: {finding.summary}")
     if args.write:
@@ -92,7 +107,9 @@ def cmd_audit(args: argparse.Namespace) -> int:
             render_markdown(findings, generated_at=utcnow_iso()), encoding="utf-8"
         )
         print("wrote reports/irregularities.md")
-    return 0 if stats["by_severity"].get("error", 0) == 0 else 1
+    # The exit status reflects this audit's own re-verification only: stored
+    # findings are published output, not a reason for a scheduled run to fail.
+    return 0 if fresh_stats["by_severity"].get("error", 0) == 0 else 1
 
 
 def cmd_site(args: argparse.Namespace) -> int:
@@ -221,9 +238,17 @@ def cmd_calibrate(args: argparse.Namespace) -> int:
 
 def cmd_status(args: argparse.Namespace) -> int:
     library = Library.load(ROOT, run_id="status")
+    total_topics = len(library.topics)
+    active_topics = len(library.active_topics())
     print(json.dumps(
         {
-            "topics": len(library.topics),
+            # "topics" is the whole stream, including rejected proposals whose
+            # history is kept; "topics_active" is what the site's table counts.
+            # Both are printed so the two published numbers cannot be mistaken
+            # for a contradiction.
+            "topics": total_topics,
+            "topics_active": active_topics,
+            "topics_rejected": total_topics - active_topics,
             "claims": len(library.claims),
             "documents": len(library.evidence),
             "strategies": len(library.strategies),
@@ -407,6 +432,87 @@ def cmd_selftest(args: argparse.Namespace) -> int:
     return 0 if outcome.wasSuccessful() else 1
 
 
+def cmd_storage(args: argparse.Namespace) -> int:
+    """Mirror the JSONL library into a database and prove the views agree.
+
+    Actions:
+
+    ``sync``    append every stored row the database does not already hold;
+                idempotent, append-only, JSONL stays the source of truth.
+    ``verify``  compare the JSONL mirror against the database - the raw rows
+                stream by stream, and the records decoded from them - and
+                exit non-zero unless both agree.
+    ``status``  row counts per stream in the database.
+    """
+    from .storage import (
+        connect,
+        count_rows,
+        dsn_from_environment,
+        ensure_schema,
+        sync_library,
+        verify_views,
+    )
+
+    dsn = dsn_from_environment(args.database)
+    try:
+        connection = connect(dsn)
+    except (RuntimeError, ValueError) as exc:
+        print(f"storage {args.action}: {exc}", file=sys.stderr)
+        return 2
+    try:
+        if args.action == "sync":
+            ensure_schema(connection)
+            report = sync_library(ROOT, connection)
+            print(json.dumps({"database": dsn, **report}, indent=2, sort_keys=True))
+            return 0
+        if args.action == "verify":
+            report = verify_views(ROOT, connection, dsn=dsn)
+            print(json.dumps(report, indent=2, sort_keys=True))
+            return 0 if report.get("rows_identical") and report.get("library_identical") else 1
+        # status
+        print(json.dumps({"database": dsn, "rows_by_stream": count_rows(connection)}, indent=2, sort_keys=True))
+        return 0
+    finally:
+        connection.close()
+
+
+def cmd_retrieve(args: argparse.Namespace) -> int:
+    """Search the current claims with the TF-IDF vector index (no model)."""
+    from .learn.vector_index import VectorIndex
+
+    library = Library.load(ROOT, run_id="retrieve")
+    current = [claim for claim in library.claims.values() if not claim.superseded]
+    index = VectorIndex.build(current)
+    hits = index.search(args.query, k=args.k)
+    rows = []
+    for claim_id, score in hits:
+        claim = library.claims[claim_id]
+        rows.append(
+            {
+                "claim_id": claim_id,
+                "score": round(score, 6),
+                "topic_id": claim.topic_id,
+                "verdict": claim.verification.verdict,
+                "evidence_class": claim.evidence_class,
+                "text": claim.text[:220],
+                "url": claim.url,
+            }
+        )
+    print(
+        json.dumps(
+            {
+                "query": args.query,
+                "indexed_claims": len(current),
+                "retired_excluded": len(library.claims) - len(current),
+                "hits": rows,
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
 # ---------------------------------------------------------------------------
 # Parser
 # ---------------------------------------------------------------------------
@@ -475,6 +581,23 @@ def build_parser() -> argparse.ArgumentParser:
 
     credentials = sub.add_parser("credentials", help="show which keyed sources are enabled and how to enable them")
     credentials.set_defaults(func=cmd_credentials)
+
+    storage = sub.add_parser(
+        "storage",
+        help="mirror the JSONL library into SQLite/PostgreSQL and verify the two views agree",
+    )
+    storage.add_argument("action", choices=("sync", "verify", "status"))
+    storage.add_argument(
+        "--database",
+        default=None,
+        help="DSN: sqlite:///path.db or postgres://... (default: $SELFLEARN_DATABASE_URL or sqlite:///state/library.sqlite3)",
+    )
+    storage.set_defaults(func=cmd_storage)
+
+    retrieve = sub.add_parser("retrieve", help="search current claims with the TF-IDF vector index")
+    retrieve.add_argument("query", help="the words to search for")
+    retrieve.add_argument("-k", type=int, default=10, help="how many claims to return")
+    retrieve.set_defaults(func=cmd_retrieve)
 
     selftest = sub.add_parser("selftest", help="run the test suite")
     selftest.set_defaults(func=cmd_selftest)

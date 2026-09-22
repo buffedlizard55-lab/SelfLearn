@@ -260,6 +260,43 @@ class AuditTests(unittest.TestCase):
             findings = recheck_claims([claim], Path(tmp))
             self.assertEqual([f for f in findings if f.severity == "error"], [])
 
+    def test_superseded_count_lives_in_the_detail_not_the_id(self) -> None:
+        """The finding id hashes the summary: a count there orphans the old row every cycle."""
+        import tempfile
+
+        def one_superseded() -> Claim:
+            claim = Claim(
+                claim_id="cl-sup",
+                topic_id="topic-1",
+                text="An older statement a later cycle no longer produces.",
+                evidence_id="ev-sup",
+                source_name="Test",
+                url="https://example.invalid/sup",
+                quote="An older statement a later cycle no longer produces.",
+                evidence_class="primary_source",
+                evidence_rank=5,
+                confidence="medium",
+                verification=Verification(verdict="supported", coverage=1.0),
+            )
+            claim.superseded = "Superseded by the test."
+            return claim
+
+        with tempfile.TemporaryDirectory() as tmp:
+            first = [f for f in recheck_claims([one_superseded()], Path(tmp)) if "superseded" in f.summary]
+            second_claim = Claim(
+                claim_id="cl-sup2", topic_id="topic-1", text="Another retired statement.",
+                evidence_id="ev-sup2", source_name="Test", url="https://example.invalid/s2",
+                quote="Another retired statement.", evidence_class="primary_source", evidence_rank=5,
+                confidence="medium", verification=Verification(verdict="supported", coverage=1.0),
+            )
+            second_claim.superseded = "Superseded by the test."
+            second = [f for f in recheck_claims([one_superseded(), second_claim], Path(tmp)) if "superseded" in f.summary]
+        self.assertEqual(len(first), 1)
+        self.assertEqual(len(second), 1, "the count must not open a second row")
+        self.assertEqual(first[0].irregularity_id, second[0].irregularity_id)
+        self.assertIn("1 claim(s)", first[0].detail)
+        self.assertIn("2 claim(s)", second[0].detail)
+
     def test_link_check_flags_relative_urls(self) -> None:
         claim = Claim(
             claim_id="cl-3",

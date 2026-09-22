@@ -103,36 +103,46 @@ class Library:
     # -- loading -----------------------------------------------------------
     @classmethod
     def load(cls, root: Path, *, run_id: str = "") -> "Library":
-        library = cls(root=Path(root), run_id=run_id)
         streams = _stream_paths(Path(root))
-        for row in _dedupe(read_jsonl(streams["evidence"]), *STREAM_KEYS["evidence"]):
+        rows = {name: list(read_jsonl(path)) for name, path in streams.items()}
+        return cls.from_rows(root, rows, run_id=run_id)
+
+    @classmethod
+    def from_rows(cls, root: Path, rows: dict[str, list[dict]], *, run_id: str = "") -> "Library":
+        """Build a library from raw stream rows.
+
+        `load` reads the JSONL files and calls this; the storage mirror reads the
+        same shapes out of the database and calls this, so both views of the same
+        rows go through one decoder."""
+        library = cls(root=Path(root), run_id=run_id)
+        for row in _dedupe(rows.get("evidence", []), *STREAM_KEYS["evidence"]):
             record = _evidence_from_row(row)
             library.evidence[record.evidence_id] = record
-        for row in _dedupe(read_jsonl(streams["claims"]), *STREAM_KEYS["claims"]):
+        for row in _dedupe(rows.get("claims", []), *STREAM_KEYS["claims"]):
             library.claims[row["claim_id"]] = _claim_from_row(row)
-        for row in _dedupe(read_jsonl(streams["topics"]), *STREAM_KEYS["topics"]):
+        for row in _dedupe(rows.get("topics", []), *STREAM_KEYS["topics"]):
             library.topics[row["topic_id"]] = _dataclass(Topic, row)
-        for row in _dedupe(read_jsonl(streams["questions"]), *STREAM_KEYS["questions"]):
+        for row in _dedupe(rows.get("questions", []), *STREAM_KEYS["questions"]):
             library.questions[row["id"]] = _dataclass(Question, row)
-        for row in _dedupe(read_jsonl(streams["strategies"]), *STREAM_KEYS["strategies"]):
+        for row in _dedupe(rows.get("strategies", []), *STREAM_KEYS["strategies"]):
             library.strategies[row["strategy_id"]] = _dataclass(Strategy, row)
-        for row in _dedupe(read_jsonl(streams["attacks"]), *STREAM_KEYS["attacks"]):
+        for row in _dedupe(rows.get("attacks", []), *STREAM_KEYS["attacks"]):
             library.attacks[row["attack_id"]] = _dataclass(Attack, row)
-        for row in _dedupe(read_jsonl(streams["experiments"]), *STREAM_KEYS["experiments"]):
+        for row in _dedupe(rows.get("experiments", []), *STREAM_KEYS["experiments"]):
             library.experiments[row["experiment_id"]] = _dataclass(ExperimentResult, row)
-        for row in _dedupe(read_jsonl(streams["discoveries"]), *STREAM_KEYS["discoveries"]):
+        for row in _dedupe(rows.get("discoveries", []), *STREAM_KEYS["discoveries"]):
             library.discoveries[row["discovery_id"]] = _dataclass(Discovery, row)
-        for row in _dedupe(read_jsonl(streams["failures"]), *STREAM_KEYS["failures"]):
+        for row in _dedupe(rows.get("failures", []), *STREAM_KEYS["failures"]):
             library.failures[row["failure_id"]] = _dataclass(Failure, row)
-        for row in _dedupe(read_jsonl(streams["irregularities"]), *STREAM_KEYS["irregularities"]):
+        for row in _dedupe(rows.get("irregularities", []), *STREAM_KEYS["irregularities"]):
             library.irregularities[row["irregularity_id"]] = _dataclass(Irregularity, row)
-        for row in read_jsonl(streams["audit"]):
+        for row in rows.get("audit", []):
             library.audit_log.append(row)
-        for row in _dedupe(read_jsonl(streams["contradictions"]), "contradiction_id", "created_at"):
+        for row in _dedupe(rows.get("contradictions", []), "contradiction_id", "created_at"):
             library.contradictions[row["contradiction_id"]] = _dataclass(Contradiction, row)
-        for row in _dedupe(read_jsonl(streams["tournaments"]), "tournament_id", "decided_at"):
+        for row in _dedupe(rows.get("tournaments", []), "tournament_id", "decided_at"):
             library.tournaments[row["tournament_id"]] = row
-        for row in _dedupe(read_jsonl(streams["tasks"]), "task_id", "created_at"):
+        for row in _dedupe(rows.get("tasks", []), "task_id", "created_at"):
             library.tasks[row["task_id"]] = _dataclass(Task, row)
         return library
 
@@ -362,6 +372,13 @@ def _dataclass(cls: type[T], row: dict[str, Any]) -> T:
     for name, field_obj in fields.items():
         if name in row:
             kwargs[name] = row[name]
+        elif field_obj.default_factory is utcnow_iso:
+            # Rows written before the field existed must not be given a
+            # fabricated creation time: decoding them with the wall clock makes
+            # every load disagree with the previous one (and the storage mirror
+            # disagree with itself across a second boundary). An empty stamp is
+            # what _dedupe already assumes for such rows (row.get(stamp, "")).
+            kwargs[name] = ""
         elif field_obj.default is dataclasses.MISSING and field_obj.default_factory is dataclasses.MISSING:
             if field_obj.type in {"str", str}:
                 kwargs[name] = ""

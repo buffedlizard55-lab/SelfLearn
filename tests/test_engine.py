@@ -229,6 +229,30 @@ class CompetitionTests(unittest.TestCase):
             self.assertEqual(strategy.status, "blocked")
             self.assertIn("UNKNOWN", strategy.limitations)
 
+    def test_briefs_never_ground_on_library_self_descriptions(self) -> None:
+        """A derived statement is a fact about this library, not evidence for the question."""
+        self_stat = Claim(
+            claim_id="cl-derived-self",
+            topic_id=self.topic.topic_id,
+            text="This question is currently supported by 3 verified claim(s) drawn from 1 independent source(s).",
+            evidence_id="derived-topic-test",
+            url="",
+            quote="",
+            evidence_class="reproduced_experiment",
+            evidence_rank=2,
+            source_name="SelfLearn library computation",
+            verification=Verification(verdict="supported", coverage=1.0),
+            claim_kind="derived",
+            context_numbers=["3", "1"],
+        )
+        strategies = generate_strategies(self.topic, [self_stat], ALL_PERSONAS)
+        for strategy in strategies:
+            self.assertEqual(strategy.status, "blocked", "library statistics alone cannot ground a brief")
+            self.assertNotIn(self_stat.claim_id, strategy.supporting_claim_ids)
+        mixed = generate_strategies(self.topic, self.claims + [self_stat], ALL_PERSONAS)
+        for strategy in mixed:
+            self.assertNotIn(self_stat.claim_id, strategy.supporting_claim_ids)
+
     def test_number_guard_catches_an_injected_figure(self) -> None:
         strategies = generate_strategies(self.topic, self.claims, ALL_PERSONAS)
         strategies[0].argument += " The project claims a 97% success rate."
@@ -439,6 +463,11 @@ class PublishTests(unittest.TestCase):
             self.assertIn("SelfLearn", index)
             self.assertIn("no third-party scripts", index)
             self.assertIn("Test run", index, "fixture mode must be visibly labelled")
+            self.assertNotIn(
+                "synthetic fixture evidence",
+                index,
+                "fixture mode replays stored snapshots; the banner must not claim synthetic evidence",
+            )
 
     def test_root_entry_page_links_into_the_site(self) -> None:
         from selflearn.publish.site import build_site
@@ -702,6 +731,51 @@ class PerTopicStatusTests(unittest.TestCase):
         self.assertNotIn(stale.claim_id, [c.claim_id for c in report.claims], "a retired claim is not a current fact")
         self.assertEqual([c.claim_id for c in report.retired_claims], [stale.claim_id])
         self.assertIn("retired", report.to_dict())
+
+    def test_stale_library_statistics_are_retired_not_deleted(self) -> None:
+        """Regression: every historical "currently supported by N" stayed published as current."""
+        from selflearn.loop import retire_stale_derived
+        from selflearn.publish.report import build_topic_report
+
+        topic = Topic(
+            topic_id="topic-stat", title="Statistics", slug="statistics", question="Q?", keywords=["k"]
+        )
+        direct = make_claims(topic)
+
+        def derived(text: str) -> Claim:
+            return Claim(
+                claim_id=stable_id("cl", topic.topic_id, "derived", text),
+                topic_id=topic.topic_id,
+                text=text,
+                evidence_id=f"derived-{topic.topic_id}",
+                url="",
+                quote="",
+                evidence_class="reproduced_experiment",
+                evidence_rank=2,
+                source_name="SelfLearn library computation",
+                verification=Verification(verdict="supported", coverage=1.0),
+                claim_kind="derived",
+                context_numbers=["18"],
+            )
+
+        stale = derived("This question is currently supported by 18 verified claim(s).")
+        current = derived("This question is currently supported by 69 verified claim(s).")
+        retired = retire_stale_derived(topic, direct + [stale, current], kept=[current])
+        self.assertEqual([c.claim_id for c in retired], [stale.claim_id])
+        self.assertTrue(stale.superseded.startswith("Superseded "))
+        self.assertIn("library statistics", stale.superseded)
+        self.assertFalse(current.superseded, "the statement this cycle produces stays current")
+        self.assertFalse(any(c.claim_kind == "direct" for c in retired))
+        # Already-retired statements are not retired twice.
+        self.assertEqual(retire_stale_derived(topic, [stale, current], kept=[current]), [])
+
+        library = Library(Path(tempfile.mkdtemp()))
+        library.add_topics([topic])
+        library.add_evidence([make_evidence()])
+        library.add_claims(direct + [stale, current, retired[0]])
+        report = build_topic_report(library, topic, source_status=[])
+        self.assertNotIn(stale.claim_id, [c.claim_id for c in report.claims])
+        self.assertEqual([c.claim_id for c in report.retired_claims], [stale.claim_id])
 
     def test_records_built_on_a_retired_claim_withdraw_with_it(self) -> None:
         """Regression: retiring a claim left 57 briefs quoting it published."""

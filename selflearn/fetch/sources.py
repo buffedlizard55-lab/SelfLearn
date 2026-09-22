@@ -254,6 +254,69 @@ CREDENTIAL_MECHANISMS: dict[str, CredentialMechanism] = {
         docs_url="https://data.uspto.gov/apis/getting-started",
         applied_by="UsptoOdpSource",
     ),
+    "pubmed": CredentialMechanism(
+        kind="query",
+        name="api_key",
+        docs_url="https://www.ncbi.nlm.nih.gov/books/NBK25497/",
+        quote=(
+            "After creating the key, users should include it in each E-utility request "
+            "by assigning it to the api_key parameter."
+        ),
+        verified_at="2026-09-22",
+    ),
+    "census_us": CredentialMechanism(
+        kind="query",
+        name="key",
+        docs_url="https://www.census.gov/data/developers/guidance/api-user-guide.API_Key.html",
+        quote=(
+            "Once you have a key, insert &key= followed by your key code at the end of your "
+            "API data calls: &key=your key here"
+        ),
+        verified_at="2026-09-22",
+    ),
+    "nvd": CredentialMechanism(
+        kind="header",
+        name="apiKey",
+        docs_url="https://nvd.nist.gov/developers/api-workflows",
+        quote=(
+            "API keys are passed in the request header using apiKey:{key value}. "
+            "Please note, the {key value} is case sensitive"
+        ),
+        verified_at="2026-09-22",
+    ),
+    "semantic_scholar": CredentialMechanism(
+        kind="header",
+        name="x-api-key",
+        docs_url="https://api.semanticscholar.org/api-docs/",
+        quote=(
+            "If you are using an API key, it must be set in the header x-api-key "
+            "(case-sensitive)."
+        ),
+        verified_at="2026-09-22",
+    ),
+    "stackexchange": CredentialMechanism(
+        kind="header",
+        name="Authorization",
+        prefix="Bearer ",
+        docs_url="https://api.stackexchange.com/docs/authentication",
+        quote=(
+            "All API requests must pass authentication details using request headers. "
+            "Your application's API key or access token must be provided using the "
+            "authorization header Authorization: Bearer {API key or access token}."
+        ),
+        verified_at="2026-09-22",
+    ),
+    "doaj": CredentialMechanism(
+        kind="query",
+        name="api_key",
+        docs_url="https://doaj.org/api/v4/swagger.json",
+        quote=(
+            'OpenAPI parameter {"in": "query", "name": "api_key", "required": true} '
+            "with the description: \"Go to 'DASHBOARD' and 'Settings' to find your API key. "
+            "If there is no key, click 'Generate a new API key'.\""
+        ),
+        verified_at="2026-09-22",
+    ),
 }
 
 
@@ -959,20 +1022,27 @@ class ArxivSource(Source):
 
 
 class PubMedSource(Source):
-    """NCBI E-utilities: esearch for identifiers, then efetch for the abstract text."""
+    """NCBI E-utilities: esearch for identifiers, then efetch for the abstract text.
+
+    Both stages go through :meth:`Source.apply_credential`: a two-stage adapter
+    that put the key only on the first request would spend the operator's
+    documented rate limit on stage one and then fail stage two unauthenticated.
+    """
 
     def requests(self, query: str) -> list[Request]:
         return [
-            Request(
-                url=self.base_url() + "/esearch.fcgi",
-                params={
-                    "db": "pubmed",
-                    "term": query.strip(),
-                    "retmode": "json",
-                    "retmax": MAX_ITEMS_PER_REQUEST,
-                    "sort": "date",
-                },
-                label="pubmed:esearch",
+            self.apply_credential(
+                Request(
+                    url=self.base_url() + "/esearch.fcgi",
+                    params={
+                        "db": "pubmed",
+                        "term": query.strip(),
+                        "retmode": "json",
+                        "retmax": MAX_ITEMS_PER_REQUEST,
+                        "sort": "date",
+                    },
+                    label="pubmed:esearch",
+                )
             )
         ]
 
@@ -986,10 +1056,12 @@ class PubMedSource(Source):
         if not ids:
             return []
         return [
-            Request(
-                url=self.base_url() + "/efetch.fcgi",
-                params={"db": "pubmed", "id": ",".join(ids), "rettype": "abstract", "retmode": "text"},
-                label="pubmed:efetch",
+            self.apply_credential(
+                Request(
+                    url=self.base_url() + "/efetch.fcgi",
+                    params={"db": "pubmed", "id": ",".join(ids), "rettype": "abstract", "retmode": "text"},
+                    label="pubmed:efetch",
+                )
             )
         ]
 

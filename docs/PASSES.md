@@ -224,6 +224,101 @@ roadmap items 9 and 10:
 
 7 new tests (5 in `ReviewerResolutionTests`, 2 in `ExperimentTests`) bring the suite to 122.
 
+## Pass 12 - finish the credential path, repair the scan and the reports, open the storage migration (2026-09-22)
+
+Worked the roadmap's open items in the stated order (1/2 credentials, 5's two live
+errors, 8 storage) plus the inconsistencies this session's review found in the
+published numbers. Every operator statement below was read from the operator's own
+page on 2026-09-22 before the code was written; each is quoted in
+`CREDENTIAL_MECHANISMS` or `docs/SOURCES.md` with its URL.
+
+| Defect / gap | Evidence | Fix |
+| --- | --- | --- |
+| Six keyed sources still had no transcribed credential mechanism, so `declared_but_not_transmitted` was non-empty and setting those secrets would change nothing | `python3 -m selflearn credentials` printed `NOT USED BY THE ADAPTER` for `census_us`, `doaj`, `nvd`, `pubmed`, `semantic_scholar`, `stackexchange` | Each mechanism transcribed from the operator's page into `CREDENTIAL_MECHANISMS` with a verbatim quote and `verified_at=2026-09-22`: `?key=` (Census API User Guide), `?api_key=` (NCBI E-utilities guide), `apiKey` header (NVD API workflows page), `x-api-key` header (Semantic Scholar api-docs), `Authorization: Bearer` (Stack Exchange authentication docs), `?api_key=` (DOAJ OpenAPI spec). All twelve keyed sources now report `applied` |
+| `PubMedSource` built both stages of its two-step retrieval (`esearch`, then `efetch`) without `apply_credential`, so a configured NCBI key would have authenticated the search and then spent the abstract fetch unauthenticated | reading `selflearn/fetch/sources.py` while transcribing the NCBI mechanism | Both `requests()` and `follow_up()` now go through `Source.apply_credential`; `CredentialPathTests.test_pubmed_stages_both_carry_the_key` pins the second stage |
+| The NVD change scan returned HTTP 404 on every run; the error body NVD returns for this is `Invalid ISO 8601 date/time format` | the committed scan report for run-bbcaf0b83035; a live probe on 2026-09-22: the API 1.0 form `2026-09-15T00:00:00:000 UTC-00:00` answered 404/empty, the extended ISO-8601 form `2026-09-15T00:00:00.000+00:00` answered 200 with records; NVD's own transition guide says 2.0 timestamps "use the extended ISO-8601 datetime format" | `_iso_stamp` in `selflearn/fetch/changes.py` now emits extended ISO-8601 with an explicit offset; the mechanism note and `docs/SOURCES.md` cite the transition guide; `ChangeScanTests.test_nvd_sends_both_ends_of_the_window_in_the_documented_iso_format` pins the exact strings |
+| The arXiv scan's HTTP 406 is an operator-edge refusal, not a bad request: the identical URL answered HTTP 200 through a different client the same day, and several independent projects reported the same 406 pattern against `export.arxiv.org` in September 2026 | the committed scan report; a live probe of the exact request URL on 2026-09-22 returned results | No request shape was changed (changing headers we cannot test would be a guess). The refusal stays published as a warning irregularity with the request, the response and the operator's documentation URL beside it, which is the "flag irregularities" requirement doing its job |
+| `python3 -m selflearn audit` overwrote `reports/irregularities.md` with only the fresh audit rows - one info line where the review page showed 15 warnings and 7 resolutions - because the workflow runs `audit` after `run` and the audit wrote `findings` alone | the committed report read `Totals - error: 0, warning: 0, info: 1` while `docs/data/meta.json` from the same commit read `warning: 18, info: 6` | `cmd_audit` now merges the stored library findings with what the audit re-detected (`audit.merge_findings`) before rendering; the report it writes totals `warning: 15, info: 12; resolved by a reviewer: 7`, matching the review page row for row. The exit status still reflects only this audit's fresh errors, so a scheduled run cannot be failed by published output |
+| A plain last-wins dedupe of findings erased a reviewer's resolution as soon as the engine re-detected the same id (the fresh copy carries no `resolved` field) | code review of `_dedupe_findings` and `render_markdown` against `store.add_irregularities`, which already carried resolutions forward on the write path | One rule everywhere: `audit.merge_findings` keeps the newest content and whichever copy carries the reviewer's fields; `render_markdown`, `_dedupe_findings` and `cmd_audit` all use it. Three tests in `FindingMergeTests` |
+| The site's headline `checks.irregularity_counts` counted the raw findings list (same id twice) while the tables below it rendered the deduplicated rows, so the header said 24 open where the tables showed 20 | comparing `docs/data/meta.json` with `docs/data/irregularities.json` from the same build | `build_site_data` computes every check count from `_dedupe_findings(...)`; `FindingMergeTests.test_published_check_counts_come_from_the_deduplicated_rows` pins header and rows to the same list |
+| The run narrative said "across 11 question(s)" while the table beside it listed 4, and `selflearn status` printed only the 11 | the published index page from run-bbcaf0b83035: `counts.topics` on the site counts active topics, the narrative counted the whole stream including the 7 rejected proposals | `figures["topics"]` and `counts["topics"]` in the cycle are now the active-topic count (all 288 claims belong to active topics, so the sentence is more accurate too), with `topics_total` kept beside it; `selflearn status` prints `topics`, `topics_active` and `topics_rejected` so the two published numbers cannot read as a contradiction |
+| The requirements matrix's D-17 row told reviewers to check `docs/DATA_GUIDE.md`, which does not exist | a script that walks every `evidence` path and every backticked path in `how_to_verify` across all 54 rows | The row now points at `docs/ARCHITECTURE.md` (streams and keys) and at `python3 -m selflearn storage verify`; the only other paths the same script flags are three `file#anchor` evidence entries (R-23 twice, D-05 once) whose files and anchors both exist |
+| Roadmap item 8 (storage migration) had a documented path and nothing behind it | `docs/ARCHITECTURE.md` "Migration path" section described a future, not a present | `selflearn/storage/database.py` + `python3 -m selflearn storage {sync,verify,status}`: every stream mirrored append-only into `library_rows`, read back through the same loader, `verify` proving the two views identical stream by stream. Proven on this repository's real library: 4,677 rows in, second sync inserts 0, all fourteen streams `matches: true`. `selflearn/learn/vector_index.py` (TF-IDF, cosine, deterministic tie-break) powers `python3 -m selflearn retrieve` and now ranks `cross_domain_claims`, replacing the raw containment ratio as the ranking signal while keeping the containment gate as the candidate filter. Tests: `StorageMirrorTests` (4) and `VectorIndexTests` (4) |
+| `docs/LIMITATIONS.md` numbered items 22-26 twice (once in the layers section, once in the coverage section) | walking the ordered lists with a script | The whole document is renumbered into one strict sequence 1..32, and the one internal cross-reference ("limitation 21") was updated to the item it always meant (the metadata-skew limitation, now 26) |
+
+Commands re-run after the pass, with what they returned:
+
+| Command | Result |
+| --- | --- |
+| `python3 -m unittest discover -s tests -t . -p "test_*.py"` | 137 tests, all passing (122 before this pass, 15 added) |
+| `python3 -m selflearn audit` | 288 claims re-checked; merged report totals `error: 0, warning: 15, info: 12; resolved by a reviewer: 7` |
+| `python3 -m selflearn credentials` | 12 keyed sources, all `used`, `declared_but_not_transmitted: []` |
+| `python3 -m selflearn storage sync` then `verify` then `sync` | 4,677 rows inserted, verify reported `rows_identical: true` and `library_identical: true`, second sync `rows_inserted: 0` |
+| `python3 -m selflearn retrieve "sorting comparison counts" -k 3` | three supported claims from the sorting topic, scores descending, 24 retired claims excluded from the pool |
+| `python3 -m selflearn status` | `topics: 11`, `topics_active: 4`, `topics_rejected: 7` |
+
+## Pass 13 - review for bugs, missing requirements, incorrect assumptions and edge cases (2026-09-22)
+
+The instrument for this review was not code reading alone: full cycles were executed
+in throwaway roots first, and every row below was measured before the fix and
+re-measured after. The defects were all in published output - sentences and figures
+a reader would have taken as verified fact.
+
+| Defect / gap | Evidence | Fix |
+| --- | --- | --- |
+| The library statistics were self-referential: `derive_library_claims` counted every claim kind, so "currently supported by N" grew each cycle by the derived statements that quote it, and the count also included statements a later cycle had already retired | a full cycle in a temp root (`run-43cb5fad7dbf`) left each active topic with 12 open "currently supported by" rows carrying 12 different figures; the library held 118 unique derived claims, none superseded | The function now counts only non-superseded `direct` claims, and both call sites - the cycle writer (`loop.py`) and the page renderer (`publish/report.py`) - compute through the same filter, so the stored claim and the rendered Summary cannot disagree. Test: `DerivedStatisticsTests.test_volume_counts_only_current_direct_claims` |
+| Historical derived statements were never retired (synthesis had `retire_stale_synthesis`; derived had no twin), so every topic page published dozens of mutually exclusive "currently supported by N" statements as current findings | `docs/topics/autonomous-research-agents.html` carried 13 open volume rows (figures 18 through 69) before the fix | `retire_stale_derived` marks prior derived claims superseded each cycle with the reason on the claim, an info finding per topic reports the count, and the existing `retire_dependents` pass withdraws the briefs, criticisms and questions that quote them (561 records withdrew in `run-e5bee75a9789`). After the run each topic publishes exactly one current volume statement (26 / 32 / 39 / 44) and the historical ones sit under "Retired statements". Test: `test_stale_library_statistics_are_retired_not_deleted` |
+| Briefs were grounded in the library's self-descriptions: `generate_strategies` treated derived claims as usable support, and persona-D transfer could move them between topics | a script over `library/strategies.jsonl` counted 454 of 576 open strategies citing at least one derived claim | `claim_kind != "derived"` now gates both `usable` support and `cross_domain_claims` candidates: a brief answers the question, and "currently supported by N claims" is not evidence about the world. Test: `test_briefs_never_ground_on_library_self_descriptions` |
+| The retrieval-mode statement asserted "retrieved live **in this cycle**" for records fetched in earlier cycles and for snapshot replays - false in every cycle after the first, and glaringly false in an offline run | the temp cycle published "32 were retrieved live in this cycle" with `http_requests: 0` | Wording corrected to "retrieved live from their source" (`aggregate.py`), which is what the `is_live` flag records. Test: `test_retrieval_mode_never_claims_this_cycle` |
+| Snapshot replay silently downgraded provenance: `_replay` forced `is_live=False`, and because the replayed row shares `(evidence_id, retrieved_at)` with the original, last-row-wins flipped originally-live documents after any offline cycle | the temp cycle measured the loaded-view `is_live` count drop from 86 True to 74 True / 12 False | Replay now preserves the payload's original `is_live`; cycle-level reachability stays the job of the `SourceStatus` table. Re-measured after the real offline run: 86/86 still True. Test: `test_replay_preserves_original_live_flag` |
+| The run narrative mis-stated two things: "retrieved N document(s) from 0 of 1 polled source(s)" read as documents fetched from an unreachable source, and the withdrawal clause attributed every withdrawal to the composition rules - false as soon as derived retirements also withdraw dependents | temp run: `retrieved 48 document(s) from 0 of 1 polled source(s)`; real run: `0 synthesis retired, 561 briefs ... withdrew with them` | Sentences reworded to `collected N document(s); X of Y polled source(s) responded live` and `withdrew alongside retired claims this cycle`; all figures keep their keys, so `audit_run_summary`'s numeric guard still passes |
+| The audit's superseded-count finding salted its id with the summary text, and the summary contained the count - so every count change opened a new row and stranded the old one with a frozen, eventually false, number | the real library carried `irr-569286381eaf` frozen at "24 stored claim(s)" while the live count was 128 | The count moved into the detail under a stable summary (id no longer changes with it); the stranded row was resolved with a reason through `tools/resolve_finding.py` rather than deleted. Test: `test_superseded_count_lives_in_the_detail_not_the_id` |
+| The fixture-mode banner claimed "synthetic fixture evidence. Nothing on these pages is a real-world finding" while the mode actually replays real stored snapshots (`load_fixture_evidence` has no caller and `data/fixtures/` holds no evidence files) | the fixture e2e (`run-10097389c74e`) built its site from replayed GitHub snapshots under that banner | The banner now states that network access was disabled and stored snapshots were replayed, and calls the output smoke-test material; the `Test run.` label the site test asserts is kept. The unwired loader is listed under known remaining defects |
+| Pass 12's verification table quoted a key the command never emits (`identical: true`), credited a path-walker script that was never committed, and counted its `file#anchor` findings as two when the data has three | `python3 tools/check_requirements_paths.py` reports 145 path citations and three anchor entries (R-23 twice, D-05 once), all files and anchors present | The verify row now quotes `rows_identical: true` and `library_identical: true`, the anchor count reads three, and the walker is committed so the claim stays re-runnable |
+
+Commands re-run after the fixes, with what they returned:
+
+| Command | Result |
+| --- | --- |
+| `SELFLEARN_ROOT=$(mktemp -d) … python3 -m selflearn run --mode fixture --offline --skip-experiments` (temp root) | exit 0, `run-10097389c74e`; 104 stale derived statements retired; loaded-view `is_live` 86/86 True; 166 strategies withdrawn for citing retired claims; 0 open strategies cite a retired claim |
+| `python3 -m selflearn run --mode snapshot --offline` (real root) | exit 0, `run-e5bee75a9789`; narrative ends `0 error(s) and 15 warning(s)`, matching the review page; one open volume statement per topic (26 / 32 / 39 / 44); 104 derived statements retired, 128 claims carrying a supersession reason |
+| `python3 -m unittest discover -s tests -t . -p "test_*.py"` | 145 tests, all passing (139 before this pass, 6 added) |
+| `python3 tools/check_requirements_paths.py` | 54 rows, 145 path citations checked, three `file#anchor` entries, all cited paths exist |
+
+## Pass 14 - re-check against the original request, final verification (2026-09-22)
+
+The brief restated: follow the roadmap in its order with no language model in the
+extraction path; verify line by line from official sources with links; run fully
+autonomously and flag irregularities; no hallucinations; publish a clean GitHub
+Pages site; open a pull request and merge it; run three passes and do not stop
+after the first. Each requirement, with the command that evidences it:
+
+| Brief requirement | Evidence |
+| --- | --- |
+| Roadmap order, no language model in the pipeline | `docs/ROADMAP.md` items 1-11 carry their measured statuses (3-7, 10 done; 1, 2, 8, 9, 11 open with the environment's limits stated); `data/requirements.json` R-04 records that no language model exists in any stage, not behind a flag |
+| The ChatGPT design link reviewed | `docs/DESIGN_SOURCE.md` records what the shared conversation specifies, traced section by section on the requirements page |
+| Line-by-line verification from official sources, with links | `docs/VERIFICATION.md`, `docs/SOURCES.md`, and the twelve verbatim credential quotes in `CREDENTIAL_MECHANISMS` (each with its operator URL and `verified_at`); `python3 tools/check_requirements_paths.py` proves every repository path the matrix cites exists |
+| Fully autonomous, irregularities flagged not hidden | `python3 -m selflearn audit` exits 0 on fresh errors while publishing 15 open warnings; the review page shows 8 resolved findings with reasons (`tools/resolve_finding.py`); this pass resolved its own stranded row rather than deleting it |
+| No hallucinations | `audit_run_summary` rejects narrative figures outside the measured set; `verify_derived` rejects derived sentences whose figures were not computed; Pass 13's eight fixes removed the contradictions the old pipeline published; narrative and review page now agree (`0 == 0`, `15 == 15`) |
+| Clean, organised GitHub Pages site | `python3 -m selflearn site` writes 31 pages; each topic page carries one current volume statement plus a Retired section with reasons; mode banner states snapshot for `run-e5bee75a9789`; D-17's how-to-verify text appears in `docs/requirements.html` |
+| Three passes | Pass 12 (implement), Pass 13 (review), Pass 14 (this recheck) |
+| Pull request and merge | attempted; the sandbox's GitHub credentials are rejected (`gh` HTTP 401, `git ls-remote` cannot read a username) - see known remaining defect 10; nothing was pushed |
+
+Final battery, re-run after every change above:
+
+| Command | Result |
+| --- | --- |
+| `python3 -m unittest discover -s tests -t . -p "test_*.py"` | 145 tests, all passing |
+| `python3 -m selflearn run --mode snapshot --offline` | exit 0, `run-e5bee75a9789` (Pass 13); narrative `0 error(s) and 15 warning(s)` equals the review page |
+| `python3 -m selflearn audit --no-write` | 294 claims re-checked; fresh findings `error: 0, warning: 0, info: 1`; published merged `error: 0, warning: 15, info: 18` |
+| `python3 -m selflearn credentials` | 12 keyed sources, `declared_but_not_transmitted: []`, 4 required and 8 optional env keys still missing in this environment |
+| `python3 -m selflearn storage sync` then `verify` then `sync` | first sync of this batch inserted 1,055 rows; verify reported `rows_identical: true`, `library_identical: true`, all 14 streams `matches: true`; second sync `rows_inserted: 0` |
+| `python3 -m selflearn status` | `topics: 11` (4 active, 7 rejected), `claims: 294`, `documents: 86`, `irregularities: 33`, thresholds `supported 0.8 / partially_supported 0.45` |
+| `python3 -m selflearn retrieve "sorting comparison counts" -k 3` | three supported claims from the sorting topic, scores descending, `indexed_claims: 166`, `retired_excluded: 128` |
+| `python3 tools/check_requirements_paths.py` | 54 rows, 145 path citations, three `file#anchor` entries, all cited paths exist |
+| numbering walk over `docs/LIMITATIONS.md` | strict sequence 1..33 (item 33 added this pass), internal cross-reference to item 26 still valid |
+| narrative versus `docs/data/meta.json` | `0 == 0` errors, `15 == 15` warnings, 8 resolved findings |
+
 ## Known remaining defects and gaps
 
 These are open, published, and are the honest answer to "what is still wrong":
@@ -246,3 +341,19 @@ These are open, published, and are the honest answer to "what is still wrong":
 7. **Three of the five experiment families ran in the published cycle.** The catalogue
    holds five; three are matched by keyword to the questions the manager chose, and the
    autonomous-agents question has no computational experiment that would bear on it.
+8. **Egress from this sandbox is fully blocked** (every outbound request fails at TLS),
+   so local cycles must run `--mode snapshot --offline` and the published site currently
+   reflects snapshot cycle `run-e5bee75a9789` - its mode banner and source-status table
+   included. Live retrieval, the credential path and the change scan can only be proven
+   on the GitHub runner (`research-loop.yml`) once this branch is merged; that first live
+   cycle replaces the snapshot statuses with real reachability.
+9. **Fixture mode replays stored snapshots instead of loading synthetic evidence.**
+   `load_fixture_evidence` has no caller and `data/fixtures/` holds no evidence files,
+   so `--mode fixture` is a network-disabled smoke run; its banner now says exactly that
+   (Pass 13). Wiring a real synthetic-evidence path is open work.
+10. **The GitHub connection for this workspace is rejected** (`gh` answers HTTP 401 and
+    `git ls-remote` cannot read a username), so the pull request and merge required by
+    the brief could not be opened from this session. Nothing was pushed; the work sits on
+    branch `arena/01a0ca3d-selflearn` ready to push once the connection is reconnected
+    in Arena, after which issue #3 is closed, the session PR is opened and merged, and
+    `gh workflow run research-loop.yml` starts the first live cycle described in item 8.

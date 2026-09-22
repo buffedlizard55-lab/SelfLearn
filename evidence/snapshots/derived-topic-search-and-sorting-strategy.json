@@ -1,31 +1,31 @@
 {
   "claim_ids": [
-    "cl-3798bab15a52",
-    "cl-7f6b5139db45",
-    "cl-4f2e80b38ed6",
-    "cl-a9621ea42680",
+    "cl-226c5106e9cb",
+    "cl-e11c78d29de7",
+    "cl-98b8b5ce690a",
+    "cl-515151e36c43",
     "cl-d738fd457549"
   ],
-  "content_hash": "sha256:4583ffe05b051faad83d70c6e54ce808b3ba2f43afce17d0e49488158a564aaf",
+  "content_hash": "sha256:54acfb1da302e6f4f23e0300677dd98012904fff733ca8902cc914fd3f8e9038",
   "derived_contexts": {
-    "cl-3798bab15a52": [
-      "76",
-      "3"
+    "cl-226c5106e9cb": [
+      "44",
+      "1"
     ],
-    "cl-4f2e80b38ed6": [
-      "2"
-    ],
-    "cl-7f6b5139db45": [
-      "96.1%",
-      "96.1",
-      "0",
-      "73"
-    ],
-    "cl-a9621ea42680": [
+    "cl-515151e36c43": [
       "44",
       "0"
     ],
+    "cl-98b8b5ce690a": [
+      "1"
+    ],
     "cl-d738fd457549": [
+      "44"
+    ],
+    "cl-e11c78d29de7": [
+      "100.0%",
+      "100.0",
+      "0",
       "44"
     ]
   },
@@ -36,8 +36,8 @@
   "is_live": true,
   "source_id": "selflearn_library",
   "source_name": "SelfLearn library computation",
-  "text": "Source: SelfLearn library computation for topic-search-and-sorting-strategy\nQuestion: For the sorting and search strategies in common use, how do measured comparison counts compare with the stated bounds, and where does the choice change the outcome?\nThese statements are computed by the engine from its own records. They assert nothing about the world.\nStatements and the figures each was computed from:\nThis question is currently supported by 76 verified claim(s) drawn from 3 independent source(s). [figures: 76, 3]\nOf the claims recorded for this question, 96.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. [figures: 96.1%, 96.1, 0, 73]\nThe supporting documents span 2 evidence class(es) in the project hierarchy. [figures: 2]\nOf the documents cited here, 44 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear. [figures: 44, 0]\n44 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. [figures: 44]",
+  "text": "Source: SelfLearn library computation for topic-search-and-sorting-strategy\nQuestion: For the sorting and search strategies in common use, how do measured comparison counts compare with the stated bounds, and where does the choice change the outcome?\nThese statements are computed by the engine from its own records. They assert nothing about the world.\nStatements and the figures each was computed from:\nThis question is currently supported by 44 verified claim(s) drawn from 1 independent source(s). [figures: 44, 1]\nOf the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. [figures: 100.0%, 100.0, 0, 44]\nThe supporting documents span 1 evidence class(es) in the project hierarchy. [figures: 1]\nOf the documents cited here, 44 were retrieved live from their source and 0 are synthetic test fixtures, which are labelled wherever they appear. [figures: 44, 0]\n44 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. [figures: 44]",
   "title": "Library computation for Sorting and search strategies: which is most efficient in practice, and how does the choice scale?",
   "url": "",
-  "written_at": "2026-09-22T17:02:56Z"
+  "written_at": "2026-09-22T21:44:29Z"
 }

@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -293,6 +294,115 @@ class SynthesisTests(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
+# Derived library statistics and snapshot replay
+# ---------------------------------------------------------------------------
+
+
+class DerivedStatisticsTests(unittest.TestCase):
+    """The figures must describe the evidence, never the library talking about itself."""
+
+    def test_volume_counts_only_current_direct_claims(self) -> None:
+        from selflearn.learn.aggregate import derive_library_claims
+
+        topic = Topic(topic_id="topic-agg", title="T", slug="t", question="Q?", keywords=["q"])
+        direct = [
+            make_claim("Capacity faded 18% over 400 cycles."),
+            make_claim("The cell swells above 40 C."),
+            make_claim("Throughput settled at 95 units per hour."),
+        ]
+        self_stat = make_claim(
+            "This question is currently supported by 3 verified claim(s).", kind="derived"
+        )
+        retired_direct = make_claim("An older direct statement that a later cycle retired.")
+        retired_direct.superseded = "Superseded for the test."
+        proposals = derive_library_claims(topic, direct + [self_stat, retired_direct], [])
+        volume = next(p for p, _ in proposals if p.label == "library_volume")
+        self.assertIn("3 verified claim(s)", volume.text, "the count must exclude derived and retired claims")
+        self.assertNotIn("5 verified claim(s)", volume.text)
+
+    def test_retrieval_mode_never_claims_this_cycle(self) -> None:
+        from selflearn.learn.aggregate import derive_library_claims
+
+        topic = Topic(topic_id="topic-agg", title="T", slug="t", question="Q?", keywords=["q"])
+        direct = [
+            make_claim("Capacity faded 18% over 400 cycles."),
+            make_claim("The cell swells above 40 C."),
+            make_claim("Throughput settled at 95 units per hour."),
+        ]
+        live = make_record("ev-live", "Live doc", "Fetched from the source.")
+        fixture = make_record("ev-fix", "Fixture doc", "Synthetic.")
+        fixture.is_fixture = True
+        fixture.is_live = False
+        proposals = derive_library_claims(topic, direct, [live, fixture])
+        mode = next(p for p, _ in proposals if p.label == "retrieval_mode")
+        self.assertNotIn("in this cycle", mode.text, "records cited here were fetched across cycles")
+        self.assertIn("retrieved live from their source", mode.text)
+        self.assertIn("1", mode.context_numbers)
+        self.assertIn("1", mode.context_numbers)
+
+
+class SnapshotReplayTests(unittest.TestCase):
+    """Replaying a stored snapshot must not downgrade the original provenance."""
+
+    def test_replay_preserves_original_live_flag(self) -> None:
+        import json as jsonlib
+
+        from selflearn.fetch.collector import Collector
+        from selflearn.fetch.net import HttpClient
+        from selflearn.fetch.sources import Request
+
+        topic = Topic(topic_id="topic-replay", title="T", slug="t", question="Q?", keywords=["q"])
+        with tempfile.TemporaryDirectory() as tmp:
+            snap = Path(tmp)
+            (snap / "ev-replay-live.json").write_text(
+                jsonlib.dumps(
+                    {
+                        "evidence_id": "ev-replay-live",
+                        "source_id": "github",
+                        "source_name": "GitHub",
+                        "url": "https://example.org/a",
+                        "title": "Live record",
+                        "text": "Fetched live in an earlier cycle.",
+                        "content_hash": sha256_text("Fetched live in an earlier cycle."),
+                        "evidence_class": "primary_source",
+                        "evidence_rank": 3,
+                        "retrieved_at": "2026-09-01T00:00:00Z",
+                        "is_fixture": False,
+                        "is_live": True,
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (snap / "ev-replay-fixture.json").write_text(
+                jsonlib.dumps(
+                    {
+                        "evidence_id": "ev-replay-fixture",
+                        "source_id": "github",
+                        "source_name": "GitHub",
+                        "url": "https://example.org/b",
+                        "title": "Fixture record",
+                        "text": "Synthetic fixture text.",
+                        "content_hash": sha256_text("Synthetic fixture text."),
+                        "evidence_class": "unverified_claim",
+                        "evidence_rank": 8,
+                        "retrieved_at": "2026-09-01T00:00:00Z",
+                        "is_fixture": True,
+                        "is_live": False,
+                    }
+                ),
+                encoding="utf-8",
+            )
+            collector = Collector(HttpClient(allow_network=False), snap)
+            request = Request(url="https://api.github.com/search", params={"q": "q"}, label="github:test")
+            rows = collector._replay(topic, "github", request, "query: q")
+            by_id = {row.evidence_id: row for row in rows}
+            self.assertTrue(by_id["ev-replay-live"].is_live, "a live document stays live across replays")
+            self.assertFalse(by_id["ev-replay-fixture"].is_live)
+            self.assertTrue(by_id["ev-replay-live"].is_fixture is False)
+            self.assertIn("replayed from stored snapshot", by_id["ev-replay-live"].notes)
+
+
+# ---------------------------------------------------------------------------
 # Change scanning
 # ---------------------------------------------------------------------------
 
@@ -318,10 +428,14 @@ class ChangeScanTests(unittest.TestCase):
         request = change_request("github", "batteries", since="2026-09-01", until="2026-09-08")
         self.assertIn("pushed:>=2026-09-01", request.params["q"])
 
-    def test_nvd_sends_both_ends_of_the_window(self):
+    def test_nvd_sends_both_ends_of_the_window_in_the_documented_iso_format(self):
         request = change_request("nvd", "openssl", since="2026-09-01", until="2026-09-08")
-        self.assertIn("lastModStartDate", request.params)
-        self.assertIn("lastModEndDate", request.params)
+        # API 2.0 requires the extended ISO-8601 datetime format; the API 1.0
+        # nonstandard form (yyyy-MM-ddTHH:mm:ss:SSS UTC-00:00) answers HTTP 404
+        # with "Invalid ISO 8601 date/time format". Observed live 2026-09-22.
+        self.assertEqual(request.params["lastModStartDate"], "2026-09-01T00:00:00.000+00:00")
+        self.assertEqual(request.params["lastModEndDate"], "2026-09-08T00:00:00.000+00:00")
+        self.assertNotIn("UTC-", request.params["lastModStartDate"])
 
     def test_usgs_uses_iso_time_boundaries(self):
         request = change_request("usgs_earthquake", "earthquake", since="2026-09-01", until="2026-09-08")
@@ -629,33 +743,74 @@ class CredentialPathTests(unittest.TestCase):
                 )
 
     def test_a_credential_the_adapter_does_not_send_is_reported_as_such(self):
-        """The honest answer for a variable with no transcribed mechanism."""
-        declared_only = [
+        """The honest branch still exists, for a spec with no transcribed mechanism.
+
+        Every registered keyed source now has one (see the test below); this
+        exercises the reporting path itself with a synthetic source id, because
+        a future registration without a transcription must not be silently
+        described as transmitting.
+        """
+        import dataclasses
+
+        synthetic = dataclasses.replace(get_source("eia"), source_id="untranscribed_source")
+        status = credential_status(synthetic)
+        self.assertEqual(status["state"], "declared_only")
+        self.assertIn("has not been transcribed", status["detail"])
+
+    def test_every_keyed_source_in_the_register_transmits_its_credential(self):
+        """No variable may be named in the register without a transcribed mechanism."""
+        untransmitted = [
             spec.source_id
             for spec in REGISTRY.values()
-            if spec.key_env and credential_status(spec)["state"] == "declared_only"
+            if spec.key_env and credential_status(spec)["state"] != "applied"
         ]
-        self.assertIn("census_us", declared_only)
-        self.assertIn(
-            "has not been transcribed",
-            credential_status(get_source("census_us"))["detail"],
+        self.assertEqual(
+            untransmitted, [],
+            f"these sources name a credential the engine does not send: {untransmitted}",
         )
 
-    def test_required_sources_all_have_a_transmitted_mechanism(self):
-        """No source may be gated on a credential the engine then fails to send."""
-        for spec in REGISTRY.values():
-            if not spec.requires_key:
-                continue
-            with self.subTest(source=spec.source_id):
-                self.assertEqual(
-                    credential_status(spec)["state"],
-                    "applied",
-                    f"{spec.source_id} refuses to run without {spec.key_env} but never sends it",
-                )
+    def test_optional_query_credentials_reach_the_request(self):
+        for source_id, env, param in (
+            ("census_us", "CENSUS_API_KEY", "key"),
+            ("pubmed", "NCBI_API_KEY", "api_key"),
+            ("doaj", "DOAJ_API_KEY", "api_key"),
+        ):
+            with self.subTest(source=source_id):
+                self.set_env(env, "TEST-KEY")
+                request = build_source(source_id).requests("population")[0]
+                self.assertEqual(request.params.get(param), "TEST-KEY")
 
+    def test_optional_header_credentials_reach_the_request_as_headers(self):
+        for source_id, env, header in (
+            ("nvd", "NVD_API_KEY", "apiKey"),
+            ("semantic_scholar", "S2_API_KEY", "x-api-key"),
+        ):
+            with self.subTest(source=source_id):
+                self.set_env(env, "TEST-KEY")
+                request = build_source(source_id).requests("cve")[0]
+                self.assertEqual(request.headers.get(header), "TEST-KEY")
+                self.assertNotIn(header, request.params)
 
-if __name__ == "__main__":  # pragma: no cover
-    unittest.main()
+    def test_stackexchange_sends_the_bearer_authorization_header(self):
+        """The operator documents Authorization: Bearer for API keys (read 2026-09-22)."""
+        self.set_env("STACKEXCHANGE_KEY", "TEST-KEY")
+        request = build_source("stackexchange").requests("python")[0]
+        self.assertEqual(request.headers.get("Authorization"), "Bearer TEST-KEY")
+        self.assertNotIn("key", request.params)
+
+    def test_pubmed_stages_both_carry_the_key(self):
+        """A two-stage adapter must authenticate every stage, not only the first."""
+        self.set_env("NCBI_API_KEY", "TEST-KEY")
+        adapter = build_source("pubmed")
+        search = adapter.requests("vaccine")[0]
+        self.assertEqual(search.params.get("api_key"), "TEST-KEY")
+        sample = HttpResult(
+            url=search.url, status=200, headers={}, content_type="application/json",
+            body=json.dumps({"esearchresult": {"idlist": ["1", "2"]}}).encode(),
+            retrieved_at="2026-09-22T00:00:00Z", attempts=1,
+        )
+        follow = adapter.follow_up(sample)[0]
+        self.assertEqual(follow.params.get("api_key"), "TEST-KEY")
 
 
 class ReviewerResolutionTests(unittest.TestCase):
@@ -790,3 +945,295 @@ class ReviewerResolutionTests(unittest.TestCase):
             self.assertEqual(tool.main(["--root", tmp, "--id", "xyz-1", "--reason", "r"]), 2)
             self.assertEqual(tool.main(["--root", tmp, "--id", "irr-test0001"]), 2)
             self.assertEqual(tool.main(["--root", tmp, "--id", "irr-missing", "--reason", "r"]), 1)
+
+
+class FindingMergeTests(unittest.TestCase):
+    """The report, the JSON export and the store must not disagree about findings.
+
+    These tests exist because `selflearn audit` used to overwrite
+    reports/irregularities.md with only the fresh audit rows - one info line
+    where the review page showed eighteen warnings - and because a plain
+    last-wins dedupe drops a reviewer's resolution as soon as the engine
+    re-detects the same finding.
+    """
+
+    def _stored(self):
+        from selflearn.models import Irregularity
+
+        return Irregularity(
+            irregularity_id="irr-merge0001", severity="warning", stage="change_scan",
+            topic_id=None, summary="A source was unreachable", detail="TLS closed",
+            resolved=True, resolved_at="2026-09-22T10:00:00Z",
+            resolution="Checked by hand", resolution_link="https://example.org/note",
+        )
+
+    def _fresh(self):
+        from selflearn.models import Irregularity
+
+        return Irregularity(
+            irregularity_id="irr-merge0001", severity="warning", stage="change_scan",
+            topic_id=None, summary="A source was unreachable", detail="TLS closed",
+        )
+
+    def test_re_detection_does_not_erase_a_reviewers_resolution(self):
+        from selflearn.verify.audit import merge_findings
+
+        rows = merge_findings([self._stored(), self._fresh()])
+        self.assertEqual(len(rows), 1)
+        self.assertTrue(rows[0].resolved)
+        self.assertEqual(rows[0].resolution, "Checked by hand")
+
+    def test_render_markdown_counts_the_merged_row_once_and_keeps_the_reason(self):
+        from selflearn.verify.audit import render_markdown, summarise, merge_findings
+
+        merged = merge_findings([self._stored(), self._fresh(), self._fresh()])
+        self.assertEqual(summarise(merged)["total"], 1)
+        text = render_markdown([self._stored(), self._fresh()], generated_at="2026-09-22T00:00:00Z")
+        self.assertIn("resolved by a reviewer: 1", text)
+        self.assertIn("Checked by hand", text)
+        self.assertEqual(text.count("### [WARNING] A source was unreachable"), 1)
+
+    def test_published_check_counts_come_from_the_deduplicated_rows(self):
+        from selflearn.learn.store import Library
+        from selflearn.publish.report import build_site_data
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            library = Library.load(root, run_id="merge-test")
+            data = build_site_data(
+                library,
+                source_matrix=[],
+                source_status=[],
+                irregularities=[self._stored(), self._fresh()],
+                failures=[],
+                elo_payload={"leaderboard": []},
+                calibration={},
+                requirements=[],
+                methodology={},
+                mode="live",
+                run_summary={},
+            )
+            self.assertEqual(len(data["irregularities"]), 1, "one row per id")
+            self.assertTrue(data["irregularities"][0]["resolved"])
+            # The raw list held two rows for one id; counting it directly would
+            # have reported one open warning plus one resolved, i.e. two.
+            self.assertEqual(data["checks"]["irregularity_counts"]["warning"], 0)
+            self.assertEqual(data["checks"]["resolved_irregularities"], 1)
+
+
+class VectorIndexTests(unittest.TestCase):
+    """The TF-IDF index is deterministic, dependency-free and actually used."""
+
+    def _claims(self):
+        from selflearn.models import Claim, Verification
+
+        def make(i, text):
+            return Claim(
+                claim_id=f"cl-vec{i}", topic_id="topic-a", text=text,
+                evidence_id="ev-vec", url="https://example.org/doc", quote="",
+                evidence_class="primary_source", evidence_rank=3, source_name="S",
+                verification=Verification(verdict="supported", coverage=1.0),
+            )
+
+        return [
+            make(1, "Sorting networks reduce comparison counts for fixed-size inputs."),
+            make(2, "Comparison sorting requires n log n comparisons in the average case."),
+            make(3, "Repository star counts indicate popularity of the project."),
+        ]
+
+    def test_search_is_deterministic_and_ranks_shared_vocabulary_first(self):
+        from selflearn.learn.vector_index import VectorIndex
+
+        claims = self._claims()
+        first = VectorIndex.build(claims).search("comparison sorting counts", k=3)
+        second = VectorIndex.build(list(reversed(claims))).search("comparison sorting counts", k=3)
+        self.assertEqual(first, second, "build order must not affect results")
+        self.assertEqual(first[0][0], "cl-vec1")
+        for claim_id, score in first:
+            self.assertGreater(score, 0.0)
+        self.assertTrue(all(a[1] >= b[1] for a, b in zip(first, first[1:])), "scores descending")
+
+    def test_a_query_with_no_indexed_terms_returns_nothing(self):
+        from selflearn.learn.vector_index import VectorIndex
+
+        index = VectorIndex.build(self._claims())
+        self.assertEqual(index.search("zeppelin xylophone quartzite"), [])
+
+    def test_retired_claims_are_excluded_from_the_cli_index_pool(self):
+        from selflearn.learn.vector_index import VectorIndex
+
+        claims = self._claims()
+        claims[0].superseded = "rule change"
+        index = VectorIndex.build(c for c in claims if not c.superseded)
+        self.assertNotIn("cl-vec1", index.doc_vectors)
+        self.assertEqual(len(index.doc_vectors), 2)
+
+    def test_cross_domain_claims_rank_with_the_vector_index(self):
+        from selflearn.learn.vector_index import VectorIndex
+        from selflearn.models import Topic
+        from selflearn.think.competition import cross_domain_claims
+
+        topic = Topic(
+            topic_id="topic-a", title="Which sorting strategy scales?", slug="sorting",
+            question="How do sorting strategies compare?", keywords=["sorting", "comparison"],
+        )
+        claims = self._claims()
+        library = {"topic-b": claims}
+        transferred = cross_domain_claims(topic, library, limit=2)
+        self.assertLessEqual(len(transferred), 2)
+        if transferred:
+            index = VectorIndex.build(claims)
+            query = index.query_vector(" ".join(topic.keywords) + " " + topic.title + " " + topic.question)
+            expected_top = [
+                claim_id for claim_id, _ in
+                sorted(
+                    ((c.claim_id, index.similarity(query, c.claim_id)) for c in claims),
+                    key=lambda item: (-item[1], item[0]),
+                )
+            ][: len(transferred)]
+            self.assertEqual([c.claim_id for c in transferred], expected_top)
+
+
+class StorageMirrorTests(unittest.TestCase):
+    """Roadmap item 8: the database mirror must round-trip the real library."""
+
+    def _connection(self, tmp):
+        from selflearn.storage import connect, ensure_schema
+
+        connection = connect(f"sqlite:///{tmp}/mirror.db")
+        self.addCleanup(connection.close)
+        ensure_schema(connection)
+        return connection
+
+    def test_sync_then_verify_reports_identical_views(self):
+        import shutil
+
+        from selflearn.storage import connect, ensure_schema, sync_library, verify_views
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            shutil.copytree(ROOT / "library", root / "library")
+            connection = self._connection(tmp)
+            report = sync_library(root, connection)
+            self.assertGreater(report["rows_inserted"], 0)
+            self.assertEqual(
+                report["rows_inserted"],
+                sum(report["file_rows_by_stream"].values()),
+                "every stored row must land in the database exactly once",
+            )
+            verdict = verify_views(root, connection)
+            self.assertTrue(
+                verdict["rows_identical"],
+                f"rows differ: {[name for name, row in verdict['streams'].items() if not row['matches']]}",
+            )
+            self.assertTrue(
+                verdict["library_identical"],
+                f"decoded records differ: {verdict['library_mismatched_streams']}",
+            )
+            for row in verdict["streams"].values():
+                self.assertTrue(row["matches"])
+
+    def test_a_second_sync_adds_nothing_and_a_changed_row_wins_in_both_views(self):
+        import shutil
+
+        from selflearn.learn.store import Library
+        from selflearn.storage import sync_library, verify_views
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            shutil.copytree(ROOT / "library", root / "library")
+            connection = self._connection(tmp)
+            sync_library(root, connection)
+            again = sync_library(root, connection)
+            self.assertEqual(again["rows_inserted"], 0, "sync must be idempotent")
+
+            # A changed record is appended (never edited in place); both views
+            # must show the newest write for that primary key.
+            library = Library.load(root, run_id="storage-change")
+            topic = next(iter(library.topics.values()))
+            topic.status = "rejected"
+            library.add_topics([topic])
+            verdict = verify_views(root, connection)
+            # The database only has the old row until the new file row is synced...
+            self.assertFalse(verdict["rows_identical"], "a new file row is not yet in the database")
+            sync_library(root, connection)
+            verdict = verify_views(root, connection)
+            self.assertTrue(verdict["rows_identical"], "after sync both row sets must agree again")
+            self.assertTrue(
+                verdict["library_identical"],
+                f"after sync the decoded records must agree: {verdict['library_mismatched_streams']}",
+            )
+
+    def test_a_tampered_database_row_fails_both_checks(self):
+        """A row edited in place (never in the files) must fail both views."""
+        import shutil
+
+        from selflearn.storage import sync_library, verify_views
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            shutil.copytree(ROOT / "library", root / "library")
+            connection = self._connection(tmp)
+            sync_library(root, connection)
+            cursor = connection.cursor()
+            # audit_log is appended in full (no dedupe), so any edit there is
+            # guaranteed to break both the row comparison and the record view.
+            cursor.execute("SELECT seq, payload FROM library_rows WHERE stream='audit' LIMIT 1")
+            seq, payload = cursor.fetchone()
+            row = json.loads(payload)
+            row["event"] = str(row.get("event", "")) + " (tampered)"
+            cursor.execute(
+                "UPDATE library_rows SET payload = ? WHERE seq = ?",
+                (json.dumps(row, ensure_ascii=False), seq),
+            )
+            connection.commit()
+            verdict = verify_views(root, connection)
+            self.assertFalse(verdict["rows_identical"], "an edited row must fail the row check")
+            self.assertFalse(verdict["library_identical"], "an edited row must fail the record check")
+            self.assertIn("audit", verdict["library_mismatched_streams"])
+
+    def test_decoding_rows_that_predate_a_timestamp_field_is_deterministic(self):
+        """Old rows omit created_at; decoding must not stamp the wall clock.
+
+        The default_factory used to fire at decode time, so two Library.from_rows
+        calls a second apart disagreed about created_at and storage verify flipped
+        between identical and not on the same data.
+        """
+        from selflearn.learn.store import _dataclass
+        from selflearn.models import Contradiction
+
+        row = {
+            "contradiction_id": "con-test",
+            "topic_id": "topic-x",
+            "claim_a": "claim-1",
+            "claim_b": "claim-2",
+            "kind": "numeric",
+            "detail": "1 vs 2",
+            "severity": "high",
+        }
+        first = _dataclass(Contradiction, dict(row))
+        second = _dataclass(Contradiction, dict(row))
+        self.assertEqual(first.created_at, "", "a missing stamp must decode to empty, not to now()")
+        self.assertEqual(first.created_at, second.created_at, "two decodes of the same row must agree")
+
+    def test_postgres_dsn_without_a_driver_fails_with_the_documented_message(self):
+        import importlib.util
+
+        from selflearn.storage import connect
+
+        if importlib.util.find_spec("psycopg") or importlib.util.find_spec("psycopg2"):
+            self.skipTest("a PostgreSQL driver is installed; the failure path cannot be exercised")
+        with self.assertRaises(RuntimeError) as caught:
+            connect("postgres://localhost/library")
+        self.assertIn("optional PostgreSQL driver", str(caught.exception))
+        self.assertIn("sqlite", str(caught.exception))
+
+    def test_an_unsupported_dsn_is_rejected(self):
+        from selflearn.storage import connect
+
+        with self.assertRaises(ValueError):
+            connect("mysql://localhost/library")
+
+
+if __name__ == "__main__":  # pragma: no cover
+    unittest.main()
