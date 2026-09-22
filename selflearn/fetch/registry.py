@@ -184,11 +184,22 @@ _register(
         evidence_class="peer_reviewed",
         license_name="Metadata CC0 per DOAJ terms",
         license_url="https://doaj.org/terms/",
-        rate_limit_note="Public endpoints are rate limited; a free API key is available for higher limits.",
+        rate_limit_note=(
+            "Public endpoints are rate limited. DOAJ states that keys are not generally issued on request: "
+            "\"API keys are usually only available to publishers who submit data to DOAJ. If you already have an "
+            "account, please log in, click 'My Account' and 'Settings' to see your API key.\" Quoted from "
+            "https://doaj.org/api/v4/docs (read 2026-09-22)."
+        ),
         key_env="DOAJ_API_KEY",
-        key_url="https://doaj.org/apply-for-api-key/",
+        key_url="https://doaj.org/api/v4/docs",
         topics=["open access journals", "peer-reviewed articles"],
-        notes="Index of vetted open-access journals; used to confirm that a venue is genuinely peer reviewed.",
+        notes=(
+            "Index of vetted open-access journals; used to confirm that a venue is genuinely peer reviewed. "
+            "The previous key_url, https://doaj.org/apply-for-api-key/, returned HTTP 404 when the published URLs "
+            "were resolved from a runner with unrestricted egress on 2026-09-22, and DOAJ publishes no public "
+            "key-application page, so key_url now points at the API documentation that states where a key comes "
+            "from. The adapter still queries the v3 search endpoint, whose own documentation resolves."
+        ),
     )
 )
 
@@ -285,9 +296,22 @@ _register(
         evidence_class="official_data",
         license_name="IMF terms of use",
         license_url="https://www.imf.org/en/About/terms",
-        rate_limit_note="No key required for public datasets.",
+        rate_limit_note=(
+            "No key required for public datasets. FLAGGED 2026-09-22: the documentation host below did not resolve "
+            "when the published URLs were checked from a runner with unrestricted egress (getaddrinfo failure), and it "
+            "did not resolve from a second, unrelated network either. Separately, this base_url targets "
+            "https://api.imf.org/external/sdmx while the linked page documents the older "
+            "http://dataservices.imf.org/REST/SDMX_JSON.svc service, so the two describe different endpoints."
+        ),
         topics=["macroeconomics", "balance of payments", "fiscal policy", "exchange rates"],
-        notes="Official macroeconomic aggregates published by the Fund.",
+        notes=(
+            "Official macroeconomic aggregates published by the Fund. FLAGGED FOR REVIEW: the docs_url is kept as it "
+            "was published rather than replaced, because no replacement could be verified against an IMF-operated "
+            "page during this pass - https://api.imf.org/ answered HTTP 502 when it was checked, and the pages that "
+            "do describe the api.imf.org SDMX 3.0 endpoints are third-party profiles, which this register does not "
+            "cite as documentation. Substituting an unverified address would be exactly the failure this project "
+            "exists to avoid. Resolving this needs a human to open IMF's own data portal and record the page."
+        ),
     )
 )
 
@@ -688,7 +712,12 @@ _register(
         key_url="https://github.com/settings/tokens",
         license_name="Repository content carries each repository's own licence",
         license_url="https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api",
-        rate_limit_note="60 requests/hour unauthenticated; 5,000 requests/hour with a token.",
+        rate_limit_note=(
+            "Primary limit 60 requests/hour unauthenticated, 5,000/hour for a personal access token, and "
+            "1,000/hour per repository for the GITHUB_TOKEN built into GitHub Actions. Search endpoints carry a "
+            "more restrictive limit than the primary one. Documented at "
+            "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api (read 2026-09-22)."
+        ),
         topics=["open source activity", "software releases", "adoption signals", "reference implementations"],
         notes="Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
     )

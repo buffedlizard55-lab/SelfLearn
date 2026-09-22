@@ -9,7 +9,17 @@ name: Research loop
 # records a `credential_required` status rather than failing. Add the secrets below
 # in Settings -> Secrets and variables -> Actions to enable them.
 #
-#   EIA_API_KEY, FRED_API_KEY, NCEI_TOKEN, PATENTSVIEW_API_KEY   (optional)
+# Required (the engine will not call these without one):
+#   EIA_API_KEY, FRED_API_KEY, NCEI_TOKEN, USPTO_ODP_API_KEY
+# Optional (raise the operator's rate limit):
+#   NASA_API_KEY, NVD_API_KEY, NCBI_API_KEY, S2_API_KEY, STACKEXCHANGE_KEY,
+#   DOAJ_API_KEY, CENSUS_API_KEY
+#
+# The names are the ones the register reads; `python3 -m selflearn credentials`
+# prints the same list and says which of them an adapter actually transmits.
+# USPTO_ODP_API_KEY replaced PATENTSVIEW_API_KEY when the register moved to the
+# Open Data Portal: USPTO states that previously issued PatentsView keys are not
+# valid for ODP APIs.
 
 on:
   schedule:
@@ -37,10 +47,25 @@ jobs:
     timeout-minutes: 30
     env:
       SELFLEARN_MODE: ${{ github.event.inputs.mode || 'live' }}
+      # Required credentials. Each is empty unless the secret exists, and the
+      # engine records `credential_required` for the source rather than failing.
       EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       NCEI_TOKEN: ${{ secrets.NCEI_TOKEN }}
-      PATENTSVIEW_API_KEY: ${{ secrets.PATENTSVIEW_API_KEY }}
+      USPTO_ODP_API_KEY: ${{ secrets.USPTO_ODP_API_KEY }}
+      # Optional credentials: the source is reachable without them, but the
+      # operator's documented rate limit is higher with one.
+      NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+      NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+      NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+      S2_API_KEY: ${{ secrets.S2_API_KEY }}
+      STACKEXCHANGE_KEY: ${{ secrets.STACKEXCHANGE_KEY }}
+      DOAJ_API_KEY: ${{ secrets.DOAJ_API_KEY }}
+      CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+      # GitHub's built-in token, which the runner already has: the adapter sends
+      # it as `Authorization: Bearer` and the primary rate limit rises from 60
+      # requests/hour to the GITHUB_TOKEN limit of 1,000/hour per repository.
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:

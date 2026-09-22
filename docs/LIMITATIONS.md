@@ -145,3 +145,22 @@ limit affects a specific statement, the statement itself carries the warning.
     superseded claim, brief, criticism or question to current status. Reinstating one means
     editing the JSON line by hand, which the audit would then report as a claim whose record
     does not match its history.
+25. **Six keyed sources have declared but un-transcribed credentials.** Six sources
+    (`eia`, `fred`, `ncei`, `github`, `nasa_api`, `patentsview`) now have their
+    authentication mechanisms transcribed from official documentation and transmitted
+    on every request. The remaining six (`census_us`, `doaj`, `nvd`, `pubmed`,
+    `semantic_scholar`, `stackexchange`) have environment variable names in the register
+    but their exact transmission mechanisms (header vs query param, parameter name,
+    casing) have not yet been transcribed. They run in unauthenticated mode and are
+    honestly published as `declared, not sent`.
+26. **URL reachability does not equal semantic validity.** The automated link check
+    verifies that an HTTP endpoint or documentation URL resolves and records its status
+    code (103 of 120 resolved on unrestricted runners). It does not parse the page
+    content to confirm that an operator hasn't rewritten their schema or changed their terms.
+    Where exact quotes are required (such as credential methods), they are quoted
+    verbatim in `CREDENTIAL_MECHANISMS` with verification dates.
+27. **Upstream operator outages cannot be fixed internally.** During the link audit,
+    IMF's documentation domain (`datahelp.imf.org`) failed DNS lookup from multiple
+    independent networks, and `https://api.imf.org/` returned HTTP 502. The engine
+    flags this irregularity for manual human review rather than guessing an alternative
+    or substituting unverified third-party aggregators.

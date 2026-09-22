@@ -61,6 +61,11 @@ jobs:
 
   links:
     runs-on: ubuntu-latest
+    permissions:
+      # This job commits the link register back to the branch: the report is the
+      # evidence behind the site's official-link tables, and this runner is the
+      # one environment where every host is actually reachable.
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -70,7 +75,10 @@ jobs:
         # The runners have unrestricted egress, so this is the environment where a
         # moved documentation page is actually detectable. Reported, not enforced:
         # a source operator moving a page should not turn the build red.
-        run: python3 tools/verify_links.py | tee reports/link_check.txt
+        run: |
+          python3 tools/verify_links.py \
+            --label "GitHub Actions ubuntu-latest (unrestricted egress)" \
+            | tee reports/link_check.txt
       - name: Summary
         if: always()
         run: |
@@ -80,3 +88,33 @@ jobs:
             head -3 reports/link_check.txt
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload the link register
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check
+          path: |
+            reports/link_check.json
+            reports/link_check.txt
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Commit the register when an outcome changed
+        # Guarded twice: only on a push (a pull-request checkout cannot push), and
+        # only when a URL's outcome actually moved, so timings and timestamps do
+        # not turn every run into a commit. [skip ci] keeps it from re-triggering.
+        if: github.event_name == 'push'
+        run: |
+          set -eu
+          git config user.name "selflearn-bot"
+          git config user.email "selflearn-bot@users.noreply.github.com"
+          if ! python3 tools/link_check_changed.py; then
+            echo "No published URL changed outcome; leaving the committed report alone."
+            exit 0
+          fi
+          git add reports/link_check.json
+          if git diff --cached --quiet; then
+            echo "Nothing staged after all."
+            exit 0
+          fi
+          git commit -m "Link register: outcomes re-checked from a runner with unrestricted egress [skip ci]"
+          git push

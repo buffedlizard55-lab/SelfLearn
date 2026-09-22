@@ -6,6 +6,16 @@
 <title>Not found - SelfLearn</title>
 <meta name="description" content="SelfLearn: an autonomous research engine that only publishes what it can quote from a retrieved source.">
 <meta name="color-scheme" content="light dark">
+<script>
+/* Applied before the first paint so a stored choice does not flash the other
+   theme. Inline and synchronous on purpose; it reads no network and no cookie. */
+(function () {
+  try {
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  } catch (e) { /* storage unavailable: fall back to the media query */ }
+})();
+</script>
 <link rel="stylesheet" href="static/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128218;</text></svg>">
 <script defer src="static/app.js"></script>
@@ -16,9 +26,9 @@
   <div class="wrap">
     <div class="bar">
       <span class="brand">SelfLearn <small>autonomous evidence-verifying research engine v0.1.0</small></span>
-      <span class="muted small">run <span class="mono">site-rebuild</span> &middot; generated 2026-09-22T00:24:45Z &middot; mode snapshot</span>
+      <span class="muted small">run <span class="mono">site-rebuild</span> &middot; generated 2026-09-22T03:58:01Z &middot; mode snapshot</span>
     </div>
-    <nav class="site" aria-label="Primary"><a href="index.html">Overview</a><a href="library.html">Library</a><a href="sources.html">Sources</a><a href="experiments.html">Experiments</a><a href="method.html">Method</a><a href="documents.html">Documents</a><a href="requirements.html">Requirements</a><a href="review.html">For review</a></nav>
+    <nav class="site" aria-label="Primary"><a href="index.html">Overview</a><a href="library.html">Library</a><a href="sources.html">Sources</a><a href="links.html">Official links</a><a href="experiments.html">Experiments</a><a href="method.html">Method</a><a href="documents.html">Documents</a><a href="requirements.html">Requirements</a><a href="review.html">For review</a><span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
   </div>
 </header>
 <div class="banner info wrap"><strong>Snapshot mode.</strong> Live retrieval was unavailable for at least part of this run, so the claims verified here were checked against the stored documents in <span class='mono'>evidence/snapshots/</span>. Each claim shows whether it was retrieved live. The source status table on the <a href="sources.html">sources page</a> records which sources were reached.</div>
@@ -35,7 +45,7 @@
     <p class="small">Engine and content licence: MIT (code). Retrieved documents keep their own licences, shown against
     each source. Source code: <a href="https://github.com/buffedlizard55-lab/SelfLearn" target="_blank" rel="noopener noreferrer">github.com/buffedlizard55-lab/SelfLearn<span aria-hidden="true">&#8599;</span></a> &middot;
     Published site: <a href="https://buffedlizard55-lab.github.io/SelfLearn/" target="_blank" rel="noopener noreferrer">https://buffedlizard55-lab.github.io/SelfLearn/<span aria-hidden="true">&#8599;</span></a> &middot;
-    Generated 2026-09-22T00:24:45Z. This page contains no third-party scripts, fonts or trackers.</p>
+    Generated 2026-09-22T03:58:01Z. This page contains no third-party scripts, fonts or trackers.</p>
   </div>
 </footer>
 </body>

@@ -30,7 +30,11 @@ from selflearn.fetch.changes import (  # noqa: E402
 )
 from selflearn.fetch.net import HttpClient, HttpResult  # noqa: E402
 from selflearn.fetch.registry import REGISTRY, get_source  # noqa: E402
-from selflearn.fetch.sources import build_source  # noqa: E402
+from selflearn.fetch.sources import (  # noqa: E402
+    CREDENTIAL_MECHANISMS,
+    build_source,
+    credential_status,
+)
 from selflearn.learn.substance import (  # noqa: E402
     SUBSTANCE_WEIGHTS,
     order_by_substance,
@@ -571,6 +575,83 @@ class UsptoOdpAdapterTests(unittest.TestCase):
         self.assertEqual(items[0].identifier, self.source.parse(request, result)[0].identifier)
         # A content hash, not a salted hash() of the URL.
         self.assertIn(sha256_text(items[0].text)[:16], items[0].identifier)
+
+
+class CredentialPathTests(unittest.TestCase):
+    """A configured credential has to reach the request, not just the register.
+
+    These tests exist because the register used to name a ``key_env`` for sources
+    whose adapter sent no credential at all, so a reviewer who set the secret was
+    told it was enabled while every request still went out unauthenticated.
+    """
+
+    def set_env(self, name: str, value: str) -> None:
+        previous = os.environ.get(name)
+        os.environ[name] = value
+        self.addCleanup(lambda: os.environ.__setitem__(name, previous) if previous is not None else os.environ.pop(name, None))
+
+    def test_a_query_parameter_credential_is_added_to_the_request(self):
+        for source_id, env in (("eia", "EIA_API_KEY"), ("fred", "FRED_API_KEY")):
+            with self.subTest(source=source_id):
+                self.set_env(env, "TEST-KEY")
+                request = build_source(source_id).requests("energy")[0]
+                self.assertEqual(request.params.get("api_key"), "TEST-KEY")
+
+    def test_a_header_credential_is_added_as_a_header_not_a_parameter(self):
+        self.set_env("NCEI_TOKEN", "TEST-TOKEN")
+        request = build_source("ncei").requests("climate")[0]
+        self.assertEqual(request.headers.get("token"), "TEST-TOKEN")
+        self.assertNotIn("token", request.params)
+
+    def test_a_bearer_credential_carries_the_documented_scheme_prefix(self):
+        self.set_env("GITHUB_TOKEN", "TEST-TOKEN")
+        request = build_source("github").requests("agents")[0]
+        self.assertEqual(request.headers.get("Authorization"), "Bearer TEST-TOKEN")
+
+    def test_an_absent_credential_leaves_the_request_untouched(self):
+        os.environ.pop("EIA_API_KEY", None)
+        request = build_source("eia").requests("energy")[0]
+        self.assertNotIn("api_key", request.params)
+
+    def test_every_documented_mechanism_cites_the_operators_own_page(self):
+        for source_id, mechanism in CREDENTIAL_MECHANISMS.items():
+            with self.subTest(source=source_id):
+                self.assertIn(mechanism.kind, ("query", "header"))
+                self.assertTrue(mechanism.name)
+                self.assertTrue(mechanism.docs_url.startswith("https://"))
+                # A transcription nobody can check is not a citation.
+                if mechanism.applied_by == "shared":
+                    self.assertTrue(mechanism.quote, f"{source_id} has no quoted operator text")
+                    self.assertTrue(mechanism.verified_at, f"{source_id} has no verification date")
+                self.assertTrue(
+                    REGISTRY[source_id].key_env,
+                    f"{source_id} documents a credential mechanism but names no environment variable",
+                )
+
+    def test_a_credential_the_adapter_does_not_send_is_reported_as_such(self):
+        """The honest answer for a variable with no transcribed mechanism."""
+        declared_only = [
+            spec.source_id
+            for spec in REGISTRY.values()
+            if spec.key_env and credential_status(spec)["state"] == "declared_only"
+        ]
+        self.assertIn("census_us", declared_only)
+        self.assertIn(
+            "has not been transcribed",
+            credential_status(get_source("census_us"))["detail"],
+        )
+
+    def test_required_sources_all_have_a_transmitted_mechanism(self):
+        """No source may be gated on a credential the engine then fails to send."""
+        for spec in REGISTRY.values():
+            if not spec.requires_key:
+                continue
+            with self.subTest(source=spec.source_id):
+                self.assertEqual(
+                    credential_status(spec)["state"],
+                    "applied",
+                    f"{spec.source_id} refuses to run without {spec.key_env} but never sends it",
+                )
 
 
 if __name__ == "__main__":  # pragma: no cover

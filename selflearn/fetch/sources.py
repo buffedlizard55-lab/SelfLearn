@@ -21,9 +21,10 @@ import csv
 import html
 import io
 import json
+import os
 import re
 import xml.etree.ElementTree as ET
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Any, Iterable
 
 from ..util import sha256_text, split_sentences
@@ -170,6 +171,126 @@ def json_to_evidence_text(payload: Any, *, header: str) -> str:
 # ---------------------------------------------------------------------------
 # Field maps: source_id -> request template + item mapping
 # ---------------------------------------------------------------------------
+
+
+@dataclass(frozen=True)
+class CredentialMechanism:
+    """How one source's operator says its credential is transmitted.
+
+    Every row here is transcribed from the operator's own documentation. The page
+    it was read from and the operator's own words are kept beside the mechanism,
+    because a transcription a reviewer cannot check is exactly the kind of
+    statement this project refuses to publish.
+
+    ``verified_at`` is the date the quote was read from ``docs_url``; an empty
+    value means the row records what an existing adapter already does and was not
+    re-read against the operator's page during that check.
+    """
+
+    kind: str  # "query" (a URL parameter) or "header" (an HTTP header)
+    name: str  # the parameter or header name the operator documents
+    prefix: str = ""  # value prefix, e.g. "Bearer " for an Authorization header
+    docs_url: str = ""
+    quote: str = ""
+    verified_at: str = ""
+    applied_by: str = "shared"  # "shared", or the adapter class that applies it itself
+
+
+#: Documented credential mechanisms for the registered sources that name a
+#: ``key_env``. Sources absent from this table are declared as taking a
+#: credential but have no transcription of how, and are reported as such rather
+#: than being guessed at: see :func:`credential_status`.
+CREDENTIAL_MECHANISMS: dict[str, CredentialMechanism] = {
+    "eia": CredentialMechanism(
+        kind="query",
+        name="api_key",
+        docs_url="https://www.eia.gov/opendata/documentation.php",
+        quote=(
+            "To use an API key, place it as a parameter after the route. "
+            "https://api.eia.gov/API_route?api_key=xxxxxxx"
+        ),
+        verified_at="2026-09-22",
+    ),
+    "fred": CredentialMechanism(
+        kind="query",
+        name="api_key",
+        docs_url="https://fred.stlouisfed.org/docs/api/fred/series_search.html",
+        quote=(
+            "https://api.stlouisfed.org/fred/series/search?search_text=monetary+service+index"
+            "&api_key=abcdefghijklmnopqrstuvwxyz123456"
+        ),
+        verified_at="2026-09-22",
+    ),
+    "ncei": CredentialMechanism(
+        kind="header",
+        name="token",
+        docs_url="https://www.ncei.noaa.gov/cdo-web/webservices/v2",
+        quote=(
+            'header | token | curl -H "token:<token>" "url" | The token obtained from the token request page. '
+            "Assigned token is required to use these queries and must be in the header."
+        ),
+        verified_at="2026-09-22",
+    ),
+    "github": CredentialMechanism(
+        kind="header",
+        name="Authorization",
+        prefix="Bearer ",
+        docs_url="https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+        quote=(
+            'curl --request GET --url "https://api.github.com/octocat" '
+            '--header "Authorization: Bearer YOUR-TOKEN"'
+        ),
+        verified_at="2026-09-22",
+    ),
+    "nasa_api": CredentialMechanism(
+        kind="query",
+        name="api_key",
+        docs_url="https://api.nasa.gov/",
+        applied_by="NasaSource",
+    ),
+    "patentsview": CredentialMechanism(
+        kind="header",
+        name="X-API-KEY",
+        docs_url="https://data.uspto.gov/apis/getting-started",
+        applied_by="UsptoOdpSource",
+    ),
+}
+
+
+def credential_status(spec: SourceSpec) -> dict[str, str]:
+    """What the engine actually does with a source's credential, stated plainly.
+
+    ``requires_key`` says the engine will not call the source without one. It does
+    not say the credential reaches the request: that depends on a mechanism being
+    transcribed above. Reporting the two separately is what keeps "the key is set"
+    from being mistaken for "the key is used".
+    """
+    mechanism = CREDENTIAL_MECHANISMS.get(spec.source_id)
+    if not spec.key_env:
+        return {"state": "none", "detail": "This source takes no credential."}
+    if mechanism is None:
+        return {
+            "state": "declared_only",
+            "detail": (
+                f"{spec.key_env} is named in the register, but the operator's documented way of "
+                "transmitting it has not been transcribed, so the engine sends no credential and the "
+                "source is used within its unauthenticated limits."
+            ),
+        }
+    where = "the shared request layer" if mechanism.applied_by == "shared" else mechanism.applied_by
+    if mechanism.kind == "header":
+        shape = f"{mechanism.name}: {mechanism.prefix}<value>"
+    else:
+        shape = f"?{mechanism.name}=<value>"
+    checked = (
+        " Transcription checked against the operator's page on " + mechanism.verified_at + "."
+        if mechanism.verified_at
+        else ""
+    )
+    return {
+        "state": "applied",
+        "detail": f"{spec.key_env} is sent as {shape} by {where}.{checked}",
+    }
 
 
 @dataclass
@@ -447,12 +568,36 @@ class Source:
         """Name of the missing environment variable, if a key is required."""
         if not self.spec.requires_key:
             return None
-        import os
-
         env_name = self.spec.key_env or ""
         if env_name and not os.environ.get(env_name):
             return env_name
         return None
+
+    def credential(self) -> str:
+        """The configured credential for this source, or an empty string."""
+        env_name = self.spec.key_env or ""
+        return os.environ.get(env_name, "").strip() if env_name else ""
+
+    def apply_credential(self, request: Request) -> Request:
+        """Return ``request`` carrying the credential the operator documents.
+
+        Nothing is guessed: the mechanism comes from :data:`CREDENTIAL_MECHANISMS`,
+        which records the operator's own page and words for each row. A source
+        whose mechanism has not been transcribed is sent unauthenticated, and
+        :func:`credential_status` publishes that fact, so a configured key is
+        never silently assumed to have been used.
+        """
+        mechanism = CREDENTIAL_MECHANISMS.get(self.source_id)
+        value = self.credential()
+        if mechanism is None or not value or mechanism.applied_by != "shared":
+            return request
+        if mechanism.kind == "header":
+            headers = dict(request.headers)
+            headers[mechanism.name] = mechanism.prefix + value
+            return replace(request, headers=headers)
+        params = dict(request.params)
+        params[mechanism.name] = mechanism.prefix + value
+        return replace(request, params=params)
 
     # -- to implement ----------------------------------------------------
     def requests(self, query: str) -> list[Request]:  # pragma: no cover - interface
@@ -491,7 +636,8 @@ class GenericSource(Source):
         params: dict[str, Any] = dict(self.extra_params)
         if self.param_name:
             params[self.param_name] = query.strip()
-        return [Request(url=self.base_url() + self.path, params=params, label=f"{self.source_id}:list")]
+        request = Request(url=self.base_url() + self.path, params=params, label=f"{self.source_id}:list")
+        return [self.apply_credential(request)]
 
     def parse(self, request: Request, result: HttpResult) -> list[ParsedItem]:
         try:
@@ -534,15 +680,14 @@ class MappedJsonSource(Source):
         if adapter.limit_param:
             params[adapter.limit_param] = adapter.limit_value
         path = adapter.endpoint.format(query=query.strip())
-        return [
-            Request(
-                url=self.base_url() + path,
-                params=params,
-                headers=adapter.headers,
-                method=adapter.method,
-                label=f"{self.source_id}:list",
-            )
-        ]
+        request = Request(
+            url=self.base_url() + path,
+            params=params,
+            headers=adapter.headers,
+            method=adapter.method,
+            label=f"{self.source_id}:list",
+        )
+        return [self.apply_credential(request)]
 
     def parse(self, request: Request, result: HttpResult) -> list[ParsedItem]:
         payload = result.json()

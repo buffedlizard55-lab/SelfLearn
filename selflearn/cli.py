@@ -297,43 +297,72 @@ def cmd_credentials(args: argparse.Namespace) -> int:
     """Report which keyed sources could be enabled, and how.
 
     The engine never calls a keyed API without a key and never guesses one. This
-    command exists so the gap is a checklist rather than a mystery: it prints
-    every registered source that needs a credential, whether the environment
-    variable is present, and the operator's own page for requesting one.
+    command exists so the gap is a checklist rather than a mystery. It answers two
+    different questions, because they have different answers:
+
+    1. **required** - sources the engine refuses to call without a credential;
+    2. **whether the credential is actually used** - a variable can be set and
+       still never reach the request, if the operator's documented way of
+       transmitting it has not been transcribed into the adapter. Reporting the
+       mechanism beside the variable is what keeps "the key is set" from being
+       read as "the key is being used".
     """
     import os
 
-    rows = []
+    from .fetch.sources import credential_status
+
+    required: list[dict[str, object]] = []
+    optional: list[dict[str, object]] = []
     for spec in sorted(REGISTRY.values(), key=lambda s: s.source_id):
-        if not spec.requires_key:
+        if not spec.key_env:
             continue
-        env_name = spec.key_env or ""
-        present = bool(env_name and os.environ.get(env_name))
-        rows.append(
-            {
-                "source_id": spec.source_id,
-                "name": spec.name,
-                "env": env_name,
-                "present": present,
-                "key_url": spec.key_url,
-                "docs_url": spec.docs_url,
-                "rate_limit_note": spec.rate_limit_note,
-            }
-        )
-    for row in rows:
-        state = "present" if row["present"] else "MISSING"
-        print(f"{state:8} {row['env']:22} {row['source_id']:16} {row['key_url'] or row['docs_url']}")
+        status = credential_status(spec)
+        row = {
+            "source_id": spec.source_id,
+            "name": spec.name,
+            "env": spec.key_env,
+            "present": bool(os.environ.get(spec.key_env)),
+            "required": spec.requires_key,
+            "mechanism_state": status["state"],
+            "mechanism": status["detail"],
+            "key_url": spec.key_url,
+            "docs_url": spec.docs_url,
+            "rate_limit_note": spec.rate_limit_note,
+        }
+        (required if spec.requires_key else optional).append(row)
+
+    for title, rows in (("REQUIRED - the engine will not call these without a credential", required),
+                        ("OPTIONAL - raises the operator's rate limit; the source works without one", optional)):
+        print(title)
+        for row in rows:
+            state = "present" if row["present"] else "MISSING"
+            used = "used" if row["mechanism_state"] == "applied" else "NOT USED BY THE ADAPTER"
+            print(f"  {state:8} {str(row['env']):22} {str(row['source_id']):16} {used:22} {row['key_url'] or row['docs_url']}")
+        if not rows:
+            print("  none")
+        print()
+
+    declared_only = [row for row in required + optional if row["mechanism_state"] == "declared_only"]
     print(
         json.dumps(
             {
-                "keyed_sources": len(rows),
-                "enabled": sum(1 for r in rows if r["present"]),
-                "missing": [r["env"] for r in rows if not r["present"]],
+                "keyed_sources": len(required) + len(optional),
+                "required": len(required),
+                "enabled": sum(1 for r in required + optional if r["present"]),
+                "missing_required": [str(r["env"]) for r in required if not r["present"]],
+                "credential_transmitted": sorted(str(r["source_id"]) for r in required + optional if r["mechanism_state"] == "applied"),
+                "declared_but_not_transmitted": sorted(str(r["source_id"]) for r in declared_only),
                 "how_to_enable": (
                     "Add each name above as a repository secret under Settings > Secrets and variables > "
                     "Actions; .github/workflows/research-loop.yml already passes them into the cycle when set."
                 ),
-                "sources": rows,
+                "note": (
+                    "`credential_transmitted` lists the sources whose operator documents how the credential is "
+                    "sent and whose adapter sends it. `declared_but_not_transmitted` lists the sources whose "
+                    "variable is named in the register but whose documented mechanism has not been transcribed, "
+                    "so setting the variable would change nothing."
+                ),
+                "sources": required + optional,
             },
             indent=2,
             sort_keys=True,
