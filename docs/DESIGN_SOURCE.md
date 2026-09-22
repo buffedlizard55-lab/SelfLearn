@@ -23,7 +23,7 @@ exists but is narrower than the document describes, and the narrowing is stated.
 
 | Section | What the document asks for | Where it lives | Status |
 | --- | --- | --- | --- |
-| 1 World scanner | Watch papers, code, government data, filings, patents, news and APIs for what changed | `selflearn/fetch/registry.py`, `selflearn/fetch/sources.py`, `selflearn/fetch/collector.py` | partial: the register holds 36 machine-readable sources, but polling is driven by the question being researched, not by a change feed |
+| 1 World scanner | Watch papers, code, government data, filings, patents, news and APIs for what changed | `selflearn/fetch/registry.py`, `selflearn/fetch/sources.py`, `selflearn/fetch/collector.py`, `selflearn/fetch/changes.py` | implemented for the five sources whose operators document a change filter (Crossref, arXiv, GitHub, NVD, USGS); the rest are polled question by question and are reported as having no change filter |
 | 2 Topic record | Facts, open questions, competing theories, evidence, experiments, confidence, next questions | `selflearn/models.py::Topic`, `library/*.jsonl`, topic pages under `docs/topics/` | implemented |
 | 3 Six researchers | Conventional, contrarian, first-principles, cross-domain, optimisation, experimental | `selflearn/think/personas.py`, `selflearn/think/competition.py` | implemented |
 | 4 Critics | Attack assumptions, contradictions, failure modes, simpler explanations, citation accuracy, reproducibility | `selflearn/think/critic.py` (eleven named rules) | implemented |
@@ -34,7 +34,7 @@ exists but is narrower than the document describes, and the narrowing is stated.
 | 9 Benchmark everything | The winner is criticised, reproduced and independently tested before promotion | `selflearn/think/tournament.py`, `selflearn/experiment/runner.py` | partial: the in-house reproduction step exists, an independent third party does not |
 | 10 Tournaments | Score on correctness, reproducibility, evidence quality, experimental performance, robustness, simplicity, cost and scalability, never persuasiveness | `selflearn/config.py::TOURNAMENT_CRITERIA`, `selflearn/think/tournament.py` | implemented; weights and measured-versus-heuristic method are published per criterion |
 | 11 Curiosity chains | Every answer produces further questions | `selflearn/think/discovery.py` | implemented |
-| 12 Trending discovery | Novelty times importance times research potential | `selflearn/think/discovery.py::score_topic` | partial: scoring is implemented, but "what is new in the world" is not scanned automatically |
+| 12 Trending discovery | Novelty times importance times research potential | `selflearn/think/discovery.py::score_topic`, `selflearn/think/invention.py` | partial: scoring and promotion gates are implemented and candidates are published with their components, but the candidate pool is the engine's own retrieval, not an open scan of the web |
 | 13 Central manager | One component decides what to work on next | `selflearn/think/manager.py`, `selflearn/loop.py::run_cycle` | implemented |
 | 14 Result card | A fixed, stable layout for every result | `selflearn/publish/site.py::page_topic` | implemented |
 | 15 Reference stack | Python, PostgreSQL, vector database, knowledge graph, object storage, Redis and sandboxes, model router | none of it; see *Deviations* below | not implemented, by design |
@@ -59,11 +59,12 @@ site. The data model is already normalised — every stream is a list of datacla
 records with a stable id — so moving to a database is a writer change, not a rewrite.
 `docs/ARCHITECTURE.md` describes the streams and their keys.
 
-**Retrieval is question-driven, not change-driven.** The document's scanner watches
-for "what changed". Absent a keyed change feed for every source, the engine instead
-plans queries per question and records, for each source, whether it answered and how
-fresh the answers were. That is a real narrowing and it is visible on the sources
-page: the freshness of each source's contribution is published, not assumed.
+**Retrieval is question-driven, and change-driven where the operator allows it.** The
+document's scanner watches for "what changed". Five registered sources publish a change
+filter, and `selflearn/fetch/changes.py` polls only those, using only the documented
+parameter and recording the window it used; the others are polled per question and are
+reported as having no change filter rather than being described as unchanged. Both paths
+publish, for each source, whether it answered and how fresh the answers were.
 
 **No language model in the reasoning path.** The document allows a model router. This
 implementation removes the model from the loop entirely: claims are spans copied out
@@ -77,15 +78,18 @@ statement about its own analysis.
 (threshold calibration, sorting and search comparison counts, hash collision rates).
 It cannot run physical experiments or surveys, and it does not claim to.
 
-**Topic proposals are seeded plus derived.** New questions are derived from retrieved
-evidence by `think/discovery.py`; brand-new topics are not yet proposed from an open
-scan of the web. Section 12 is therefore marked partial.
+**Topic proposals are seeded, derived and proposed.** New questions are derived from
+retrieved evidence by `think/discovery.py`, and `think/invention.py` promotes recurring
+phrases from retrieved documents into new topics when they clear the published novelty,
+importance and potential gates. The candidate pool is still the engine's own retrieval,
+not an open scan of the web, so section 12 remains marked partial - "novel" here means
+novel to this library.
 
 ## How the interpretation was checked
 
 1. Each section of the design document was turned into one or more rows in
-   `data/requirements.json` (44 rows in total: `R-*` for the brief's own
-   requirements, `D-*` for design-document sections).
+   `data/requirements.json` (`R-*` for the brief's own requirements, `D-*` for
+   design-document sections).
 2. Every row carries a status, the file that implements it, how a reviewer can check
    it, and the gap where the implementation is narrower than the design.
 3. The same rows are rendered on the site's requirements page and exported to

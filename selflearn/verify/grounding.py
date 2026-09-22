@@ -69,6 +69,35 @@ def strip_scaffolding(text: str) -> str:
     return "\n".join(kept)
 
 
+_LABEL_LINE_RE = re.compile(r"^the record for .+ reports:", re.I)
+
+
+def strip_rendered_labels(text: str) -> str:
+    """Remove the adapters' own rendering, keeping only the source's prose.
+
+    A retrieved document mixes three things: provenance scaffolding, the
+    adapters' rendering of response *fields* ("The record for X reports:
+    language Python, stars 400", or a raw ``path = value`` dump), and prose the
+    source itself wrote. The first two are the engine's vocabulary and are
+    identical across every document from that source, so anything computed from
+    them - a candidate topic, a shared subject between two claims - describes the
+    adapter rather than the world.
+    """
+    kept: list[str] = []
+    for line in strip_scaffolding(text or "").splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if _LABEL_LINE_RE.match(stripped):
+            continue
+        if " = " in stripped:                     # the raw-response renderer's format
+            continue
+        if stripped.casefold().startswith(("the record for", "source note", "record:", "source:")):
+            continue
+        kept.append(stripped)
+    return "\n".join(kept)
+
+
 @dataclass
 class ClaimProposal:
     text: str

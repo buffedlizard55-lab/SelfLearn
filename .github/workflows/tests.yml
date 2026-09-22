@@ -58,3 +58,25 @@ jobs:
         env:
           SELFLEARN_ROOT: ${{ runner.temp }}/selflearn-root
         run: python3 -m selflearn calibrate
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Resolve every published URL
+        # The runners have unrestricted egress, so this is the environment where a
+        # moved documentation page is actually detectable. Reported, not enforced:
+        # a source operator moving a page should not turn the build red.
+        run: python3 tools/verify_links.py | tee reports/link_check.txt
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo '### Link check'
+            echo '```'
+            head -3 reports/link_check.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

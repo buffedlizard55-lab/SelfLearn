@@ -4,6 +4,8 @@
     python -m selflearn audit
     python -m selflearn site
     python -m selflearn sources [--probe]
+    python -m selflearn scan [--query TEXT] [--sources ids] [--days N] [--discover]
+    python -m selflearn credentials
     python -m selflearn experiments [--id ID]
     python -m selflearn calibrate
     python -m selflearn status
@@ -31,7 +33,7 @@ from .learn.calibration import run_calibration, thresholds_in_force
 from .learn.store import Library
 from .publish.report import build_site_data
 from .publish.site import build_site
-from .util import load_json, save_json, slugify, utcnow_iso
+from .util import load_json, save_json, slugify, stable_id, utcnow_iso
 from .verify.audit import check_coverage, check_fixtures, check_links, recheck_claims, render_markdown, summarise
 
 
@@ -217,6 +219,129 @@ def cmd_status(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_scan(args: argparse.Namespace) -> int:
+    """Poll the sources that publish a documented change filter.
+
+    Reports, per source, the window used, the request made, how many items came
+    back and how many the engine had not seen before. Nothing is published as a
+    finding here; with ``--discover`` the new items become questions in the
+    library, each naming the item it came from.
+    """
+    from .fetch.changes import ChangeScanner, mechanism_table, summarise_scan
+
+    client = HttpClient(max_requests=args.max_requests, allow_network=not args.offline)
+    scanner = ChangeScanner(client, STATE_DIR / "change_scan.json", allow_network=not args.offline)
+    targets = [s.strip() for s in args.sources.split(",") if s.strip()] if args.sources else None
+    outcome = scanner.scan(
+        args.query,
+        source_ids=targets,
+        window_days=args.days,
+        limit=args.limit,
+        run_id=f"scan-{utcnow_iso()[:10]}",
+    )
+    for scan in outcome.scans:
+        print(
+            f"{scan.status:12} {scan.source_id:16} {scan.items_seen:4} item(s), {scan.items_new:4} new   "
+            f"{scan.window.get('since')}..{scan.window.get('until')}"
+        )
+        if scan.detail:
+            print(f"             {scan.detail[:150]}")
+    print(json.dumps(summarise_scan(outcome), indent=2, sort_keys=True))
+
+    (ROOT / "reports").mkdir(parents=True, exist_ok=True)
+    save_json(ROOT / "reports" / "change_scan.json", outcome.to_dict())
+    print("wrote reports/change_scan.json")
+
+    if args.discover and outcome.items_new:
+        from .models import Discovery, Question
+
+        library = Library.load(ROOT, run_id=f"scan-{utcnow_iso()[:10]}")
+        questions: list[Question] = []
+        discoveries: list[Discovery] = []
+        for scan in outcome.scans:
+            for row in scan.new_items[: args.limit]:
+                text = (
+                    f"{scan.source_name} published or updated \"{row['title']}\" inside the window "
+                    f"{scan.window.get('since')}..{scan.window.get('until')} "
+                    f"({row['url'] or scan.request_url}). What does it change about what this library holds?"
+                )
+                questions.append(
+                    Question(
+                        id=stable_id("q", "scan", row["identifier"]),
+                        topic_id="",
+                        text=text,
+                        origin="discovery",
+                        priority=0.6,
+                    )
+                )
+                discoveries.append(
+                    Discovery(
+                        discovery_id=stable_id("disc", "scan", row["identifier"]),
+                        topic_id="",
+                        text=text,
+                        kind="finding",
+                        derived_from=[row["identifier"]],
+                        confidence="low",
+                    )
+                )
+        library.add_questions(questions)
+        library.add_discoveries(discoveries)
+        print(f"recorded {len(questions)} question(s) and {len(discoveries)} finding(s) from the scan")
+
+    for finding in outcome.irregularities:
+        print(f"[{finding.severity}] {finding.summary}")
+    return 0
+
+
+def cmd_credentials(args: argparse.Namespace) -> int:
+    """Report which keyed sources could be enabled, and how.
+
+    The engine never calls a keyed API without a key and never guesses one. This
+    command exists so the gap is a checklist rather than a mystery: it prints
+    every registered source that needs a credential, whether the environment
+    variable is present, and the operator's own page for requesting one.
+    """
+    import os
+
+    rows = []
+    for spec in sorted(REGISTRY.values(), key=lambda s: s.source_id):
+        if not spec.requires_key:
+            continue
+        env_name = spec.key_env or ""
+        present = bool(env_name and os.environ.get(env_name))
+        rows.append(
+            {
+                "source_id": spec.source_id,
+                "name": spec.name,
+                "env": env_name,
+                "present": present,
+                "key_url": spec.key_url,
+                "docs_url": spec.docs_url,
+                "rate_limit_note": spec.rate_limit_note,
+            }
+        )
+    for row in rows:
+        state = "present" if row["present"] else "MISSING"
+        print(f"{state:8} {row['env']:22} {row['source_id']:16} {row['key_url'] or row['docs_url']}")
+    print(
+        json.dumps(
+            {
+                "keyed_sources": len(rows),
+                "enabled": sum(1 for r in rows if r["present"]),
+                "missing": [r["env"] for r in rows if not r["present"]],
+                "how_to_enable": (
+                    "Add each name above as a repository secret under Settings > Secrets and variables > "
+                    "Actions; .github/workflows/research-loop.yml already passes them into the cycle when set."
+                ),
+                "sources": rows,
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
 def cmd_selftest(args: argparse.Namespace) -> int:
     import unittest
 
@@ -279,6 +404,19 @@ def build_parser() -> argparse.ArgumentParser:
     status = sub.add_parser("status", help="print library counts")
     status.add_argument("--topics", action="store_true", dest="topics_list")
     status.set_defaults(func=cmd_status)
+
+    scan = sub.add_parser("scan", help="poll the sources that publish a documented change filter")
+    scan.add_argument("--query", default="research", help="search terms for the change query")
+    scan.add_argument("--sources", default=None, help="comma-separated source ids (default: all with a mechanism)")
+    scan.add_argument("--days", type=int, default=7, help="maximum look-back window in days")
+    scan.add_argument("--limit", type=int, default=10, help="items requested per source")
+    scan.add_argument("--max-requests", type=int, default=20, dest="max_requests")
+    scan.add_argument("--offline", action="store_true", help="record the window without polling")
+    scan.add_argument("--discover", action="store_true", help="turn new items into library questions")
+    scan.set_defaults(func=cmd_scan)
+
+    credentials = sub.add_parser("credentials", help="show which keyed sources are enabled and how to enable them")
+    credentials.set_defaults(func=cmd_credentials)
 
     selftest = sub.add_parser("selftest", help="run the test suite")
     selftest.set_defaults(func=cmd_selftest)

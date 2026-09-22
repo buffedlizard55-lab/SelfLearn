@@ -581,19 +581,31 @@ _register(
 _register(
     _spec(
         source_id="patentsview",
-        name="PatentsView API",
-        operator="U.S. Patent and Trademark Office (data platform)",
-        base_url="https://search.patentsview.org/api/v1",
-        docs_url="https://developer.uspto.gov/api-catalog/patentsview",
+        name="USPTO Open Data Portal API (PatentsView data)",
+        operator="U.S. Patent and Trademark Office (Open Data Portal)",
+        base_url="https://api.uspto.gov/api/v1",
+        docs_url="https://data.uspto.gov/apis/getting-started",
         evidence_class="official_data",
         requires_key=True,
-        key_env="PATENTSVIEW_API_KEY",
-        key_url="https://patentsview.org/apis/keyrequest",
+        key_env="USPTO_ODP_API_KEY",
+        key_url="https://data.uspto.gov/apikey/key-reveal",
         license_name="U.S. Government work: public domain",
-        license_url="https://patentsview.org/about",
-        rate_limit_note="Free API key required; documented per-key limits apply.",
-        topics=["patents", "inventors", "technology trends", "assignees"],
-        notes="USPTO patent data, useful for measuring whether a technology area is accelerating. Review flag: PatentsView was folded into the USPTO Open Data Portal, so this endpoint may be superseded; see docs/SOURCES.md for the flagged migration.",
+        license_url="https://data.uspto.gov/support/faq",
+        rate_limit_note=(
+            "ODP APIs require an API key sent as the X-API-KEY header. Bulk file downloads are capped at 20 per "
+            "file per year per key (HTTP 429 on the 21st). Documented at "
+            "https://data.uspto.gov/apis/getting-started and https://data.uspto.gov/apis/bulk-data/download."
+        ),
+        topics=["patents", "patent applications", "technology trends", "bulk patent datasets"],
+        notes=(
+            "Migrated 2026-03-20: the legacy PatentsView website and PatentSearch API "
+            "(search.patentsview.org/api) moved to the USPTO Open Data Portal, and previously issued PatentsView "
+            "API keys are not valid for ODP APIs, so this source now takes USPTO_ODP_API_KEY. USPTO states there "
+            "is no estimated date for reintroducing the PatentsView API functions on ODP; the PatentsView tables "
+            "are served as ODP bulk datasets, which is what this adapter queries. "
+            "Reference: https://data.uspto.gov/support/transition-guide/patentsview. "
+            "The source id is kept as 'patentsview' so records already in the library stay attributable."
+        ),
     )
 )
 

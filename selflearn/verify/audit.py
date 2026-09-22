@@ -30,7 +30,7 @@ from typing import Any, Iterable
 from ..config import THRESHOLDS
 from ..models import Claim, EvidenceRecord, Irregularity, SourceStatus, Topic
 from ..util import sha256_text, stable_id
-from .verifier import audit_narrative, verify_claim, verify_derived
+from .verifier import audit_narrative, verify_claim, verify_derived, verify_synthesis
 
 SEVERITY_ORDER = {"error": 0, "warning": 1, "info": 2}
 
@@ -65,7 +65,7 @@ def _irregularity(
 def recheck_claims(claims: Iterable[Claim], snapshot_dir: Path) -> list[Irregularity]:
     """Re-verify every claim from its stored provenance.
 
-    Two paths, because there are two kinds of claim:
+    Three paths, because there are three kinds of claim:
 
     * ``direct`` claims are re-checked against the stored document, with the same
       verifier that accepted them;
@@ -73,10 +73,32 @@ def recheck_claims(claims: Iterable[Claim], snapshot_dir: Path) -> list[Irregula
       so they are re-checked against the figures recorded on the claim
       (:func:`~selflearn.verify.verifier.verify_derived`). Checking a derived
       statement against a document would be meaningless: there is no document.
+    * ``synthesis`` claims combine figures from several documents, so they are
+      re-checked against the claims they cite
+      (:func:`~selflearn.verify.verifier.verify_synthesis`). If a cited claim has
+      been withdrawn or edited, the recomputation fails and the finding is raised
+      rather than the statement being silently kept.
     """
     snapshot_dir = Path(snapshot_dir)
+    claims = list(claims)
+    claims_by_id = {claim.claim_id: claim for claim in claims}
     findings: list[Irregularity] = []
+    superseded = [claim for claim in claims if claim.superseded]
+    if superseded:
+        findings.append(
+            _irregularity(
+                "info",
+                "audit",
+                None,
+                f"{len(superseded)} stored claim(s) are marked superseded and are excluded from re-verification",
+                "A superseded claim is one a later cycle no longer produces. It remains in the library with the "
+                "reason recorded on it, and is not published as a current finding.",
+                suggested_action="Nothing to do unless a reviewer believes a retired statement was correct.",
+            )
+        )
     for claim in claims:
+        if claim.superseded:
+            continue
         if claim.claim_kind == "derived":
             recheck = verify_derived(claim.text, claim.context_numbers)
             if recheck.verdict != claim.verification.verdict:
@@ -89,6 +111,48 @@ def recheck_claims(claims: Iterable[Claim], snapshot_dir: Path) -> list[Irregula
                         f"Recorded '{claim.verification.verdict}' against figures {claim.context_numbers}, "
                         f"recomputed '{recheck.verdict}'. " + " ".join(recheck.reasons[:2]),
                         suggested_action="The recorded figures no longer support the sentence; regenerate this topic.",
+                    )
+                )
+            continue
+
+        if claim.claim_kind == "synthesis":
+            cited = [claims_by_id[cid] for cid in claim.cited_claim_ids if cid in claims_by_id]
+            unresolved = [cid for cid in claim.cited_claim_ids if cid not in claims_by_id]
+            if unresolved:
+                findings.append(
+                    _irregularity(
+                        "error",
+                        "audit",
+                        claim.topic_id,
+                        f"Synthesis claim {claim.claim_id} cites claims that are not in the library",
+                        "Unresolvable citations: " + ", ".join(unresolved)
+                        + ". A cross-document statement cannot be re-checked if a claim it depends on is gone.",
+                        suggested_action="Regenerate this topic so the statement is rebuilt from the current library.",
+                    )
+                )
+                continue
+            recheck = verify_synthesis(claim.text, cited, claim.context_numbers)
+            if recheck.verdict != claim.verification.verdict:
+                findings.append(
+                    _irregularity(
+                        "error",
+                        "audit",
+                        claim.topic_id,
+                        f"Re-computation changed the verdict for synthesis claim {claim.claim_id}",
+                        f"Recorded '{claim.verification.verdict}', recomputed '{recheck.verdict}' from the "
+                        f"{len(cited)} cited claim(s). " + " ".join(recheck.reasons[:2]),
+                        suggested_action="The statement no longer follows from its citations; regenerate this topic.",
+                    )
+                )
+            elif len({c.evidence_id for c in cited}) < 2:
+                findings.append(
+                    _irregularity(
+                        "error",
+                        "audit",
+                        claim.topic_id,
+                        f"Synthesis claim {claim.claim_id} cites fewer than two documents",
+                        f"Cited documents: {sorted({c.evidence_id for c in cited})}.",
+                        suggested_action="A cross-document statement needs two documents; regenerate this topic.",
                     )
                 )
             continue
@@ -177,10 +241,28 @@ def check_links(claims: Iterable[Claim]) -> list[Irregularity]:
     Derived claims describe a computation, so they have no source to link to. That
     exemption is narrow and explicit: a claim is only exempt if it is marked
     ``derived`` *and* carries the figures it was computed from.
+
+    Synthesis claims combine several documents, so they carry no single URL of
+    their own; they are exempt only if they name the claims they were built from,
+    and each of those claims carries its own link. An exemption without citations
+    is reported as an error.
     """
     findings: list[Irregularity] = []
     seen: set[str] = set()
     for claim in claims:
+        if claim.claim_kind == "synthesis":
+            if not claim.cited_claim_ids:
+                findings.append(
+                    _irregularity(
+                        "error",
+                        "audit",
+                        claim.topic_id,
+                        f"Synthesis claim {claim.claim_id} cites no claims",
+                        "A cross-document statement without citations cannot be reviewed or re-checked.",
+                        suggested_action="Regenerate this topic; this indicates a bug in the synthesis stage.",
+                    )
+                )
+            continue
         if claim.claim_kind == "derived":
             if not claim.context_numbers:
                 findings.append(

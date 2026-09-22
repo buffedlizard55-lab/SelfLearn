@@ -365,6 +365,84 @@ def verify_derived(claim_text: str, context_numbers: list[str] | None = None) ->
     )
 
 
+def verify_synthesis(
+    claim_text: str,
+    cited_claims: list[Claim],
+    context_numbers: list[str] | None = None,
+) -> Verification:
+    """Verify a cross-document statement against the claims it cites.
+
+    Used for the ``synthesis`` claim tier. Three conditions, all of them
+    recomputable from the library alone:
+
+    1. at least two *documents* are cited, otherwise the statement is not
+       cross-document and the claim is rejected;
+    2. every numeric literal in the statement must appear either in one of the
+       cited claims (text or quote) or in ``context_numbers``, which holds the
+       document and source counts the engine computed while composing it;
+    3. every date literal must likewise appear in a cited claim.
+
+    Nothing here accepts an average, a sum or a difference: the arithmetic that
+    would produce one is never performed, so a figure of that kind can only reach
+    the statement by being quoted, and condition 2 then fails.
+    """
+    if not claim_text.strip():
+        return Verification(
+            verdict="unsupported", quote_match=False, coverage=0.0, reasons=["Synthesis statement is empty."]
+        )
+    if len(cited_claims) < 2:
+        return Verification(
+            verdict="unsupported",
+            quote_match=False,
+            coverage=0.0,
+            reasons=["A synthesis statement must cite at least two claims; it cites " + str(len(cited_claims)) + "."],
+        )
+    documents = {claim.evidence_id for claim in cited_claims if claim.evidence_id}
+    if len(documents) < 2:
+        return Verification(
+            verdict="unsupported",
+            quote_match=False,
+            coverage=0.0,
+            reasons=[
+                f"The {len(cited_claims)} cited claims come from {len(documents)} document(s). "
+                "A cross-document statement requires at least two distinct documents."
+            ],
+        )
+
+    allowed = {str(n) for n in (context_numbers or [])}
+    cited_text = " \n ".join((claim.text or "") + " " + (claim.quote or "") for claim in cited_claims)
+    allowed |= extract_numbers(cited_text)
+    allowed_dates = extract_dates(cited_text)
+
+    numbers = extract_numbers(claim_text)
+    missing = sorted(n for n in numbers if n not in allowed)
+    dates = extract_dates(claim_text)
+    missing_dates = sorted(d for d in dates if d not in allowed_dates)
+    if missing or missing_dates:
+        return Verification(
+            verdict="unsupported",
+            quote_match=False,
+            coverage=0.0,
+            missing_numbers=missing,
+            missing_dates=missing_dates,
+            reasons=[
+                "Synthesis statement contains figures that do not appear in the claims it cites: "
+                + ", ".join(missing + missing_dates)
+                + ". Cross-document statements may only combine figures already verified in a source."
+            ],
+        )
+    return Verification(
+        verdict="supported",
+        quote_match=False,
+        coverage=1.0,
+        reasons=[
+            f"All {len(numbers)} figure(s) and {len(dates)} date(s) appear in the "
+            f"{len(cited_claims)} cited claim(s) drawn from {len(documents)} documents, or in the "
+            "recorded document/source counts."
+        ],
+    )
+
+
 def audit_narrative(text: str, allowed_numbers: Iterable[str]) -> list[str]:
     """Return numbers in a narrative that are not present in the allowed set.
 

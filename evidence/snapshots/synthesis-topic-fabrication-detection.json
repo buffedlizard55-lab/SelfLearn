@@ -1,0 +1,110 @@
+{
+  "citations": {
+    "cl-363eae8855ad": [
+      "cl-27094a8268a8",
+      "cl-2e594ad8a6d2",
+      "cl-6f79deb7756e",
+      "cl-77a5ed340f3f",
+      "cl-82bc8f45ab3e",
+      "cl-8faf22d0289e",
+      "cl-a6e6daf71a03",
+      "cl-af69f2a39542",
+      "cl-d065dd18cc62",
+      "cl-ef6f3d3a8a5d"
+    ],
+    "cl-5bc38ec8e6e4": [
+      "cl-27094a8268a8",
+      "cl-a6e6daf71a03"
+    ],
+    "cl-c0877fa69b85": [
+      "cl-27094a8268a8",
+      "cl-82bc8f45ab3e",
+      "cl-af69f2a39542",
+      "cl-ef6f3d3a8a5d"
+    ],
+    "cl-c63a6b43180e": [
+      "cl-27094a8268a8",
+      "cl-2e594ad8a6d2",
+      "cl-77a5ed340f3f",
+      "cl-8faf22d0289e",
+      "cl-a6e6daf71a03",
+      "cl-af69f2a39542",
+      "cl-d065dd18cc62"
+    ],
+    "cl-deaf04a5663d": [
+      "cl-2e594ad8a6d2",
+      "cl-82bc8f45ab3e"
+    ],
+    "cl-fd0063f10461": [
+      "cl-0a10536a3de6",
+      "cl-23b8d71bd6b7",
+      "cl-27094a8268a8",
+      "cl-2e594ad8a6d2",
+      "cl-61452fe70bb3",
+      "cl-6393bea99200",
+      "cl-6f79deb7756e",
+      "cl-77a5ed340f3f",
+      "cl-82bc8f45ab3e",
+      "cl-87c1d0345e0e",
+      "cl-915e1ee16515",
+      "cl-96ee32c2288b",
+      "cl-a6e6daf71a03",
+      "cl-af69f2a39542",
+      "cl-b950d87da05c",
+      "cl-d065dd18cc62",
+      "cl-e8fceeb430ff",
+      "cl-ef6f3d3a8a5d"
+    ]
+  },
+  "claim_ids": [
+    "cl-fd0063f10461",
+    "cl-c0877fa69b85",
+    "cl-c63a6b43180e",
+    "cl-deaf04a5663d",
+    "cl-5bc38ec8e6e4",
+    "cl-363eae8855ad"
+  ],
+  "content_hash": "sha256:a81a567ecfbfe4a5c920452e4456cd686588adb4d934f044f6232d07da230568",
+  "context_numbers": {
+    "cl-363eae8855ad": [
+      "10",
+      "1",
+      "0",
+      "10"
+    ],
+    "cl-5bc38ec8e6e4": [
+      "01",
+      "02"
+    ],
+    "cl-c0877fa69b85": [
+      "01",
+      "4",
+      "1"
+    ],
+    "cl-c63a6b43180e": [
+      "2026",
+      "7",
+      "1"
+    ],
+    "cl-deaf04a5663d": [
+      "0",
+      "1"
+    ],
+    "cl-fd0063f10461": [
+      "0",
+      "10",
+      "1"
+    ]
+  },
+  "evidence_class": "reproduced_experiment",
+  "evidence_id": "synthesis-topic-fabrication-detection",
+  "evidence_rank": 2,
+  "is_fixture": false,
+  "is_live": true,
+  "source_id": "selflearn_synthesis",
+  "source_name": "Cross-document synthesis of cited claims",
+  "text": "Source: cross-document synthesis for topic-fabrication-detection\nQuestion: What open-source tooling exists for detecting unsupported or fabricated statements in machine-generated text, and what evidence supports its use?\nThese statements combine figures that were already verified in the documents cited below.\nNo figure was averaged, summed or otherwise computed; a statement needing arithmetic is not written.\nStatements, their citations and the figures each was allowed to use:\ncl-fd0063f10461 [agreement] cites cl-0a10536a3de6, cl-23b8d71bd6b7, cl-27094a8268a8, cl-2e594ad8a6d2, cl-61452fe70bb3, cl-6393bea99200, cl-6f79deb7756e, cl-77a5ed340f3f, cl-82bc8f45ab3e, cl-87c1d0345e0e, cl-915e1ee16515, cl-96ee32c2288b, cl-a6e6daf71a03, cl-af69f2a39542, cl-b950d87da05c, cl-d065dd18cc62, cl-e8fceeb430ff, cl-ef6f3d3a8a5d; allowed figures: 0, 10, 1\ncl-c0877fa69b85 [agreement] cites cl-27094a8268a8, cl-82bc8f45ab3e, cl-af69f2a39542, cl-ef6f3d3a8a5d; allowed figures: 01, 4, 1\ncl-c63a6b43180e [agreement] cites cl-27094a8268a8, cl-2e594ad8a6d2, cl-77a5ed340f3f, cl-8faf22d0289e, cl-a6e6daf71a03, cl-af69f2a39542, cl-d065dd18cc62; allowed figures: 2026, 7, 1\ncl-deaf04a5663d [divergence] cites cl-2e594ad8a6d2, cl-82bc8f45ab3e; allowed figures: 0, 1\ncl-5bc38ec8e6e4 [divergence] cites cl-27094a8268a8, cl-a6e6daf71a03; allowed figures: 01, 02\ncl-363eae8855ad [range] cites cl-27094a8268a8, cl-2e594ad8a6d2, cl-6f79deb7756e, cl-77a5ed340f3f, cl-82bc8f45ab3e, cl-8faf22d0289e, cl-a6e6daf71a03, cl-af69f2a39542, cl-d065dd18cc62, cl-ef6f3d3a8a5d; allowed figures: 10, 1, 0, 10",
+  "title": "Cross-document synthesis for Detecting fabricated statements in machine-generated text",
+  "url": "",
+  "written_at": "2026-09-22T00:03:47Z"
+}

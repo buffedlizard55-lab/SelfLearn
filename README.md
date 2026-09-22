@@ -25,7 +25,10 @@ accepted or rejected by string and set operations that anyone can re-run.
 ```
 python3 -m selflearn run --mode live     # one complete research cycle, then publish
 python3 -m selflearn audit               # re-verify every stored claim from its snapshot
+python3 -m selflearn scan                # what changed, through each operator's own filter
+python3 -m selflearn credentials         # which keyed sources are enabled, and how to enable them
 python3 -m selflearn selftest            # the test suite
+python3 tools/verify_links.py            # resolve every URL this project publishes
 python3 tools/serve_site.py              # read the published site locally
 ```
 
@@ -47,6 +50,10 @@ dependencies**, not even for HTTP or HTML.
 | Rank | Nine weighted criteria, with measured and heuristic criteria labelled differently; Elo ratings accumulate across cycles | `selflearn/think/tournament.py`, `elo.py` |
 | Experiment | Seeded, dependency-free scripts run in a subprocess with a tamper check on the script hash | `selflearn/experiment/` |
 | Derive | New questions are derived from what was retrieved, each with the claims it came from | `selflearn/think/discovery.py` |
+| Score | Every claim gets a published substance score and one of three labels, so quantified findings lead and registry metadata says what it is | `selflearn/learn/substance.py` |
+| Synthesise | Statements that hold across two or more documents are composed from the figures those documents already contain, and rejected if any figure does not | `selflearn/learn/synthesis.py` |
+| Scan | The sources whose operators document a change filter are polled for what is new since the last run; unseen items become questions, never claims | `selflearn/fetch/changes.py` |
+| Propose | Phrases recurring across retrieved documents are scored as novelty x importance x potential and can be promoted to a new question, with every candidate published | `selflearn/think/invention.py` |
 | Audit | Every claim is re-verified from its snapshot; links, fixtures, coverage and published prose are checked for numbers that are not in the evidence | `selflearn/verify/audit.py` |
 | Publish | A static site, plus JSON for every page | `selflearn/publish/` |
 
@@ -61,6 +68,11 @@ dependencies**, not even for HTTP or HTML.
   introduce a figure that is not a measured count.
 - Statements about the engine's own library are marked `derived` and are re-checked
   against the figures recorded on the claim.
+- Statements spanning two or more documents are marked `synthesis`, cite the claims
+  they were built from, and may contain only figures those claims already carry. The
+  engine never averages, sums or extrapolates: the arithmetic that would produce such a
+  figure is not performed anywhere in the pipeline, and the audit recomputes every
+  synthesis statement from its citations.
 - Anything the engine could not do is published: unreachable sources, missing
   credentials, contradictions, fixture evidence, and the irregularities the audit
   raises against the engine's own output.
@@ -75,6 +87,10 @@ dependencies**, not even for HTTP or HTML.
 | Repeat an experiment | `python3 tools/reproduce_experiment.py sorting-comparisons-v1` |
 | Read the calibration and thresholds in force | `python3 -m selflearn calibrate` |
 | Test every registered source for reachability | `python3 -m selflearn sources --probe` |
+| See what changed, and through which documented filter | `python3 -m selflearn scan` |
+| Resolve every URL the project publishes | `python3 tools/verify_links.py` (report in `reports/link_check.json`) |
+| Check the substance rule and the synthesis guard | `python3 -m unittest tests.test_layers -v` |
+| Close a topic a reviewer rejects, keeping the record | `python3 tools/reject_topic.py --id <topic_id> --reason ...` |
 | Read the engine's own list of what it got wrong | `docs/review.html`, `reports/irregularities.md` |
 
 Every figure on the site is traceable to a claim or to a count the engine recorded, and
@@ -103,8 +119,12 @@ run artefacts. `.github/workflows/tests.yml` runs the suite on every push and do
 full cycle into a temporary root, so the pipeline is exercised without touching the
 repository's own library.
 
-Sources that need a credential (`eia`, `fred`, `ncei`, `patentsview`) are never called
-without one; each records a `credential_required` status naming the secret to set.
+Sources that need a credential (`EIA_API_KEY`, `FRED_API_KEY`, `NCEI_TOKEN`,
+`USPTO_ODP_API_KEY`) are never called without one; each records a
+`credential_required` status naming the secret to set, and
+`python3 -m selflearn credentials` prints the whole list with the operator's own
+key-request page. The scheduled workflow also runs the link check and the change scan on
+every cycle.
 
 ## Repository layout
 
@@ -112,8 +132,9 @@ without one; each records a `credential_required` status naming the secret to se
 selflearn/        the engine (fetch, verify, think, learn, experiment, publish)
 data/             seed questions, the labelled calibration cases, the requirements matrix
 experiments/      seeded experiment scripts, each with a hypothesis and a falsifier
-tests/            65 tests, no network and no credentials required
-tools/            reviewer tools: check a claim, reproduce an experiment, export a summary, serve the site
+tests/            107 tests, no network and no credentials required
+tools/            reviewer tools: check a claim, reproduce an experiment, export a summary,
+                  verify every published link, reject a topic, serve the site
 docs/             the published site, plus the hand-written documents listed above
 library/          the append-only memory: 14 JSONL streams
 evidence/snapshots/   every retrieved document, hashed, exactly as it was verified
@@ -128,8 +149,9 @@ dates and reversed polarity, but it cannot catch a unit substitution, and it can
 tell whether a quoted sentence is being used in the author's sense. The experiment
 catalogue is computational - no physical experiments. Only sources that answer without
 a credential and are reachable from the runner contribute, so a run's evidence is as
-good as its egress. New topics come from a seed file plus derived questions; the
-engine does not yet crawl the open web to invent topics. The full list, including what
+good as its egress. New topics come from a seed file, from derived questions, and from
+phrases recurring in retrieved documents; the candidate pool is the engine's own
+retrieval, so it does not crawl the open web and "novel" means novel to this library. The full list, including what
 the published run could not reach, is in [docs/LIMITATIONS.md](docs/LIMITATIONS.md) and
 on the site's method page.
 

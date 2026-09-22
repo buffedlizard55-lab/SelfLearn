@@ -1,0 +1,93 @@
+{
+  "citations": {
+    "cl-05c6f4dc6499": [
+      "cl-5a86c56f889c",
+      "cl-92ae15540483"
+    ],
+    "cl-a0216d97754f": [
+      "cl-882c9c63ae70",
+      "cl-5a86c56f889c"
+    ],
+    "cl-b48f6bae10aa": [
+      "cl-5a86c56f889c",
+      "cl-882c9c63ae70",
+      "cl-92ae15540483",
+      "cl-99148575cd54",
+      "cl-a0e918ece362",
+      "cl-e2a879ce1949"
+    ],
+    "cl-c1528e745294": [
+      "cl-1f49f207b0ce",
+      "cl-99148575cd54",
+      "cl-a0e918ece362",
+      "cl-d3e7cd2b784b"
+    ],
+    "cl-ebe50866c472": [
+      "cl-92ae15540483",
+      "cl-99148575cd54",
+      "cl-a0e918ece362"
+    ],
+    "cl-ec0da4e41050": [
+      "cl-34785ec24933",
+      "cl-5a86c56f889c",
+      "cl-882c9c63ae70",
+      "cl-a0e918ece362",
+      "cl-a39b827e786b",
+      "cl-c2ac62f4b160",
+      "cl-c6ff1cae91a9",
+      "cl-d3e7cd2b784b",
+      "cl-e2a879ce1949"
+    ]
+  },
+  "claim_ids": [
+    "cl-ec0da4e41050",
+    "cl-ebe50866c472",
+    "cl-c1528e745294",
+    "cl-05c6f4dc6499",
+    "cl-a0216d97754f",
+    "cl-b48f6bae10aa"
+  ],
+  "content_hash": "sha256:ab376a8870708a73282671592f8c0a3ff0e3043212d2ed1ae15be65a4b17001c",
+  "context_numbers": {
+    "cl-05c6f4dc6499": [
+      "0",
+      "14"
+    ],
+    "cl-a0216d97754f": [
+      "01",
+      "02"
+    ],
+    "cl-b48f6bae10aa": [
+      "6",
+      "1",
+      "0",
+      "14"
+    ],
+    "cl-c1528e745294": [
+      "3",
+      "3",
+      "1"
+    ],
+    "cl-ebe50866c472": [
+      "06",
+      "3",
+      "1"
+    ],
+    "cl-ec0da4e41050": [
+      "0",
+      "5",
+      "1"
+    ]
+  },
+  "evidence_class": "reproduced_experiment",
+  "evidence_id": "synthesis-topic-research-loop-scheduling",
+  "evidence_rank": 2,
+  "is_fixture": false,
+  "is_live": true,
+  "source_id": "selflearn_synthesis",
+  "source_name": "Cross-document synthesis of cited claims",
+  "text": "Source: cross-document synthesis for topic-research-loop-scheduling\nQuestion: Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?\nThese statements combine figures that were already verified in the documents cited below.\nNo figure was averaged, summed or otherwise computed; a statement needing arithmetic is not written.\nStatements, their citations and the figures each was allowed to use:\ncl-ec0da4e41050 [agreement] cites cl-34785ec24933, cl-5a86c56f889c, cl-882c9c63ae70, cl-a0e918ece362, cl-a39b827e786b, cl-c2ac62f4b160, cl-c6ff1cae91a9, cl-d3e7cd2b784b, cl-e2a879ce1949; allowed figures: 0, 5, 1\ncl-ebe50866c472 [agreement] cites cl-92ae15540483, cl-99148575cd54, cl-a0e918ece362; allowed figures: 06, 3, 1\ncl-c1528e745294 [agreement] cites cl-1f49f207b0ce, cl-99148575cd54, cl-a0e918ece362, cl-d3e7cd2b784b; allowed figures: 3, 3, 1\ncl-05c6f4dc6499 [divergence] cites cl-5a86c56f889c, cl-92ae15540483; allowed figures: 0, 14\ncl-a0216d97754f [divergence] cites cl-882c9c63ae70, cl-5a86c56f889c; allowed figures: 01, 02\ncl-b48f6bae10aa [range] cites cl-5a86c56f889c, cl-882c9c63ae70, cl-92ae15540483, cl-99148575cd54, cl-a0e918ece362, cl-e2a879ce1949; allowed figures: 6, 1, 0, 14",
+  "title": "Cross-document synthesis for How should a research loop schedule and prioritise its own work?",
+  "url": "",
+  "written_at": "2026-09-22T00:03:48Z"
+}

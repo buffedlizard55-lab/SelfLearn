@@ -1,28 +1,28 @@
 {
   "checks": {
-    "claims_without_link": 20,
+    "claims_without_link": 83,
     "fixture_documents": 0,
     "irregularity_counts": {
       "error": 0,
-      "info": 0,
-      "warning": 1
+      "info": 12,
+      "warning": 12
     },
-    "unresolved_contradictions": 8,
-    "unsupported_claims": 4
+    "unresolved_contradictions": 12,
+    "unsupported_claims": 6
   },
   "counts": {
-    "attacks": 170,
-    "claims": 141,
-    "contradictions": 8,
-    "discoveries": 12,
-    "documents": 32,
+    "attacks": 416,
+    "claims": 206,
+    "contradictions": 12,
+    "discoveries": 34,
+    "documents": 34,
     "experiments": 2,
-    "failures": 5,
-    "irregularities": 1,
-    "questions": 16,
-    "strategies": 24,
+    "failures": 18,
+    "irregularities": 24,
+    "questions": 46,
+    "strategies": 91,
     "topics": 4
   },
-  "generated_at": "2026-09-21T23:16:05Z",
+  "generated_at": "2026-09-22T00:12:06Z",
   "run_id": "site-rebuild"
 }

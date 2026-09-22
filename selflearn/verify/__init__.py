@@ -21,15 +21,18 @@ from .grounding import (
     strip_scaffolding,
 )
 from .verifier import (
+    audit_narrative,
     confidence_label,
     independent_source_count,
     verify_claim,
     verify_derived,
     verify_library,
+    verify_synthesis,
 )
 
 __all__ = [
     "ClaimProposal",
+    "audit_narrative",
     "audit_run_summary",
     "check_coverage",
     "check_fixtures",
@@ -48,4 +51,5 @@ __all__ = [
     "verify_claim",
     "verify_derived",
     "verify_library",
+    "verify_synthesis",
 ]
