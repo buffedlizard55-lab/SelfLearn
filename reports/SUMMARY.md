@@ -1,14 +1,14 @@
 # SelfLearn summary
 
-Generated 2026-09-22T17:02:58Z from the stored library. Nothing in this file is written by hand.
+Generated 2026-09-22T21:25:07Z from the stored library. Nothing in this file is written by hand.
 
 ## What the library holds
 
 - 11 question(s) under research
-- 288 claim(s): 278 supported, 0 needing review, 10 rejected
-- 86 retrieved document(s) stored and hashed
-- 194 competing candidate(s) with 836 recorded criticism(s)
-- 127 derived open question(s), 3 experiment(s) run
+- 294 claim(s): 284 supported, 0 needing review, 10 rejected
+- 89 retrieved document(s) stored and hashed
+- 202 competing candidate(s) with 865 recorded criticism(s)
+- 138 derived open question(s), 3 experiment(s) run
 - 12 contradiction(s) awaiting a human decision
 
 Verification thresholds in force: supported at coverage 0.8, partially supported at 0.45, verbatim quote minimum 24.0 characters (state/calibration.json).
@@ -53,7 +53,7 @@ State rejected · 0 claim(s) · 0 supported · 0 source(s) cited
 
 *What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?*
 
-State competing · 71 claim(s) · 68 supported · 4 source(s) cited
+State competing · 72 claim(s) · 69 supported · 4 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -104,7 +104,7 @@ State rejected · 0 claim(s) · 0 supported · 0 source(s) cited
 
 *What open-source tooling exists for detecting unsupported or fabricated statements in machine-generated text, and what evidence supports its use?*
 
-State testing · 68 claim(s) · 67 supported · 3 source(s) cited
+State testing · 69 claim(s) · 68 supported · 3 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -145,13 +145,13 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports. — status completed · verdict accuracy on labelled cases: baseline 0.96 -> best 1.0 (support=0.8 partial=0.45 quote_chars=24.0) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-rs2ps69n/result.json
+- A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports. — status completed · verdict accuracy on labelled cases: baseline 0.96 -> best 1.0 (support=0.8 partial=0.45 quote_chars=24.0) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-a4slonji/result.json
 
 ## How should a research loop schedule and prioritise its own work?
 
 *Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?*
 
-State testing · 71 claim(s) · 68 supported · 4 source(s) cited
+State testing · 73 claim(s) · 70 supported · 4 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -200,13 +200,13 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate kee — status completed · mean cumulative pseudo-regret: baseline 960.0 -> best 139.0205 (epsilon_greedy) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-2yp14hu0/result.json
+- On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate kee — status completed · mean cumulative pseudo-regret: baseline 960.0 -> best 139.0205 (epsilon_greedy) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-sm4jlejg/result.json
 
 ## Sorting and search strategies: which is most efficient in practice, and how does the choice scale?
 
 *For the sorting and search strategies in common use, how do measured comparison counts compare with the stated bounds, and where does the choice change the outcome?*
 
-State testing · 78 claim(s) · 75 supported · 3 source(s) cited
+State testing · 80 claim(s) · 77 supported · 3 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -219,7 +219,7 @@ State testing · 78 claim(s) · 75 supported · 3 source(s) cited
 - The record for w32zhong/BTreeimplementation states in its own description: Two command line arguments will be specified: the name of the index file, and a B-tree order. assn_4 index-file order For example, executing your program as follows assn_4 index.bin 4 would open an index file called index.bin that holds integer keys stored in an order-4 B-tree. — GitHub REST API · [primary_source] · https://github.com/w32zhong/BTreeimplementation · coverage 1.0
 - The record for w32zhong/BTreeimplementation states in its own description: CSC 541 Assignment 4 B-Trees Introduction The goals of this assignment are two-fold: To introduce you to searching data on disk using B-trees. — GitHub REST API · [primary_source] · https://github.com/w32zhong/BTreeimplementation · coverage 1.0
 - This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
-- The record for sbtali/SortAlgorithmsComparison reports: language HTML, open_issues_count 0. — GitHub REST API · [primary_source] · https://github.com/sbtali/SortAlgorithmsComparison · coverage 1.0
+- Of the claims recorded for this question, 96.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 
 ### Rejected by the verifier (3)
 
@@ -241,7 +241,7 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either. — status completed · mean element comparisons per run: baseline 16807.6 -> best 1726.4 (merge_sort) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-mm6k9k6n/result.json
+- On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either. — status completed · mean element comparisons per run: baseline 16807.6 -> best 1726.4 (merge_sort) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-l515qo2g/result.json
 
 ## Waiting for review
 
