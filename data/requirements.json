@@ -478,7 +478,7 @@
       "docs/ARCHITECTURE.md"
     ],
     "how_to_verify": "The engine uses only the Python standard library, so it installs with no dependency resolution at all.",
-    "gap": "The design document proposed PostgreSQL, a vector store, Neo4j and Redis/Celery. The engine still runs on JSONL plus files by default; this session added the migration path the roadmap called for: 'python3 -m selflearn storage sync|verify' mirrors every stream into SQLite (standard library) or PostgreSQL (optional psycopg driver) and proves the two views identical row for row, and the TF-IDF vector index ('python3 -m selflearn retrieve') now ranks cross-domain claim transfer. Not yet done: building the site from the database, and verifying the mirror against a live PostgreSQL server (none exists in this build environment). Graph database, Redis and sandboxes remain deliberately unused."
+      "gap": "The design document proposed PostgreSQL, a vector store, Neo4j and Redis/Celery. The engine still runs on JSONL plus files by default; the migration path the roadmap called for now exists end to end: 'python3 -m selflearn storage sync|verify' mirrors every stream into SQLite (standard library) or PostgreSQL (optional psycopg driver) and proves the two views identical row for row, 'site --from-database' and 'run --from-database' build the published site from that mirror and refuse to publish unless the views agree, and the TF-IDF vector index ('python3 -m selflearn retrieve') ranks cross-domain claim transfer. Not yet done: verifying the mirror against a live PostgreSQL server (none exists in this build environment and none can be installed here). Graph database, Redis and sandboxes remain deliberately unused."
   },
   {
     "id": "D-16",

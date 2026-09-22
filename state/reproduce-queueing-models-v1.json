@@ -1,0 +1,60 @@
+{
+  "analytic": {
+    "M/D/1": 2.0,
+    "M/M/1": 4.0
+  },
+  "baseline": 4.0,
+  "baseline_name": "M/M/1 analytic Wq = rho/(mu(1-rho))",
+  "best_value": 2.001283,
+  "best_variant": "M/D/1",
+  "checks": [
+    {
+      "check": "M/M/1: simulated mean wait within tolerance of the analytic Pollaczek-Khinchine value",
+      "observed": "simulated=4.011842 analytic=4.0 difference=0.011842 tolerance=0.2",
+      "outcome": true
+    },
+    {
+      "check": "M/D/1: simulated mean wait within tolerance of the analytic Pollaczek-Khinchine value",
+      "observed": "simulated=2.001283 analytic=2.0 difference=0.001283 tolerance=0.1",
+      "outcome": true
+    },
+    {
+      "check": "M/D/1 mean wait is lower than M/M/1 at equal load (service variance removed)",
+      "observed": "M/D/1=2.001283 M/M/1=4.011842",
+      "outcome": true
+    }
+  ],
+  "conclusion": "hypothesis supported by all stated checks",
+  "customers": 40000,
+  "environment": {
+    "machine": "x86_64",
+    "platform": "Linux-6.1.158+-x86_64-with-glibc2.36",
+    "python": "3.11.2"
+  },
+  "experiment_id": "queueing-models-v1",
+  "falsifier": "Either simulated mean wait falls outside three standard errors (with a five-percent relative floor) of its analytic value, or M/D/1 does not have the lower mean wait at equal load.",
+  "hypothesis": "At utilisation 0.8 with Poisson arrivals of rate 0.8 and one server with mean service 1/1.0, the simulated mean wait in queue reproduces rho/(mu(1-rho)) = 4.0 for M/M/1 and rho/(2 mu(1-rho)) = 2.0 for M/D/1 within tolerance, and M/D/1's mean wait is lower.",
+  "lambda": 0.8,
+  "limitation": "Textbook queues only: Poisson arrivals, one server, exponential or constant service, unbounded capacity, FCFS discipline. This measures agreement between a simulation and the published formulas on that model; it is not a latency measurement of any real system.",
+  "method": "20 independent FCFS runs per model of 40000 customers each (Lindley recursion), first 4000 customers discarded as warm-up; standard error computed across trial means.",
+  "metric": "mean wait in queue per customer",
+  "mu": 1.0,
+  "rho": 0.8,
+  "seed": 13,
+  "standard_errors": {
+    "M/D/1": 0.016008,
+    "M/M/1": 0.046032
+  },
+  "trials": 20,
+  "variants": [
+    {
+      "name": "M/M/1",
+      "value": 4.011842
+    },
+    {
+      "name": "M/D/1",
+      "value": 2.001283
+    }
+  ],
+  "warmup": 4000
+}

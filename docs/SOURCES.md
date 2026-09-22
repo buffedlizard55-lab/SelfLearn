@@ -178,6 +178,10 @@ listed here rather than smoothed over.
      <https://data.uspto.gov/apikey/key-reveal>.
    - Accessing the portal requires a USPTO.gov account with multi-factor authentication
      from **18 June 2026**: <https://data.uspto.gov/home>.
+   - From **18 August 2026** the USPTO.gov profile must carry four additional fields of
+     information, and "failure to do so will result in loss of access to ODP products and
+     API key" - relevant to anyone provisioning `USPTO_ODP_API_KEY` for this register:
+     <https://data.uspto.gov/support/transition-guide/patentsview> (re-read 2026-09-22).
    - Portal APIs require the key in the `X-API-KEY` header; the documented examples use
      `GET https://api.uspto.gov/api/v1/patent/applications/search`:
      <https://data.uspto.gov/apis/getting-started>.

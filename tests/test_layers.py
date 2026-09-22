@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import tempfile
 import unittest
@@ -1233,6 +1234,159 @@ class StorageMirrorTests(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             connect("mysql://localhost/library")
+
+
+class SiteFromDatabaseTests(unittest.TestCase):
+    """Roadmap item 8: the same site must build from the database mirror.
+
+    ``rebuild_site(from_database=True)`` is the publish path the roadmap asked
+    for. The proof is byte-level: build the site twice from one library - once
+    from the JSONL rows, once from a synced database mirror - and require every
+    written file to be identical once wall-clock stamps are masked, because the
+    clock is the only thing two honest builds are allowed to disagree about.
+    """
+
+    ISO_STAMP = re.compile(
+        r"20\d{2}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})?"
+    )
+
+    def _root_with_library(self, tmp: str) -> Path:
+        import shutil
+
+        root = Path(tmp) / "root"
+        shutil.copytree(ROOT / "library", root / "library")
+        return root
+
+    def _sync(self, tmp: str, root: Path):
+        from selflearn.storage import connect, ensure_schema, sync_library
+
+        connection = connect(f"sqlite:///{tmp}/mirror.db")
+        self.addCleanup(connection.close)
+        ensure_schema(connection)
+        sync_library(root, connection)
+        return connection
+
+    def _build(self, root: Path, out: Path, *, from_database: bool, dsn: str | None) -> int:
+        from selflearn.cli import rebuild_site
+
+        return rebuild_site(
+            root=root,
+            site_dir=out,
+            mode="snapshot",
+            from_database=from_database,
+            dsn=dsn,
+            write_root_entry=False,
+        )
+
+    def _normalized_tree(self, out: Path) -> dict:
+        tree = {}
+        for path in sorted(out.rglob("*")):
+            if path.is_file():
+                text = path.read_text(encoding="utf-8")
+                tree[str(path.relative_to(out))] = self.ISO_STAMP.sub("<stamp>", text)
+        return tree
+
+    def test_the_same_site_builds_from_the_database(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root_with_library(tmp)
+            self._sync(tmp, root)
+            out_files = Path(tmp) / "site-files"
+            out_db = Path(tmp) / "site-db"
+            self.assertEqual(self._build(root, out_files, from_database=False, dsn=None), 0)
+            self.assertEqual(
+                self._build(root, out_db, from_database=True, dsn=f"sqlite:///{tmp}/mirror.db"), 0
+            )
+            files = self._normalized_tree(out_files)
+            database = self._normalized_tree(out_db)
+            self.assertTrue(files, "the build must have written files")
+            self.assertEqual(set(files), set(database), "both views must write the same file set")
+            self.assertEqual(files, database, "every file must be identical up to the wall clock")
+
+    def test_a_mirror_that_disagrees_is_refused_not_published(self):
+        from selflearn.storage import sync_library
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root_with_library(tmp)
+            connection = self._sync(tmp, root)
+            # A row edited in place (never in the files) makes the mirror disagree.
+            cursor = connection.cursor()
+            cursor.execute("SELECT seq, payload FROM library_rows WHERE stream='audit' LIMIT 1")
+            seq, payload = cursor.fetchone()
+            row = json.loads(payload)
+            row["event"] = str(row.get("event", "")) + " (tampered)"
+            cursor.execute(
+                "UPDATE library_rows SET payload = ? WHERE seq = ?",
+                (json.dumps(row, ensure_ascii=False), seq),
+            )
+            connection.commit()
+            out = Path(tmp) / "site-db"
+            code = self._build(root, out, from_database=True, dsn=f"sqlite:///{tmp}/mirror.db")
+            self.assertEqual(code, 1, "a disagreeing mirror must be refused")
+            self.assertFalse(out.exists(), "nothing may be published from a disagreeing mirror")
+            # The refusal names the fix: sync again cannot help an edit the files
+            # never made, so verify is the command a reviewer is pointed to.
+            sync_library(root, connection)
+            code = self._build(root, out, from_database=True, dsn=f"sqlite:///{tmp}/mirror.db")
+            self.assertEqual(code, 1, "sync copies files into the mirror; a tampered mirror row stays tampered")
+
+    def test_an_unreachable_database_is_reported_not_published(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self._root_with_library(tmp)
+            out = Path(tmp) / "site-db"
+            code = self._build(root, out, from_database=True, dsn="postgres://localhost/no-driver-here")
+            self.assertEqual(code, 2, "a missing PostgreSQL driver is an environment fact, exit 2")
+            self.assertFalse(out.exists())
+
+    def test_parser_wires_the_new_flags(self):
+        from selflearn.cli import build_parser, cmd_run, cmd_site
+
+        parser = build_parser()
+        args = parser.parse_args(["site", "--from-database", "--database", "sqlite:///x.db"])
+        self.assertIs(args.func, cmd_site)
+        self.assertTrue(args.from_database)
+        self.assertEqual(args.database, "sqlite:///x.db")
+        args = parser.parse_args(["run", "--from-database"])
+        self.assertIs(args.func, cmd_run)
+        self.assertFalse(args.no_publish)
+        with self.assertRaises(SystemExit):
+            parser.parse_args(["run", "--from-database", "--no-publish"])
+
+    def test_a_relative_sqlite_path_resolves_under_the_library_root_not_the_cwd(self):
+        """Found 2026-09-22: a smoke run's rows landed in the checkout's mirror.
+
+        Relative DSNs used to resolve against the working directory, so a run
+        with its own SELFLEARN_ROOT wrote its mirror into whatever ./state/ it
+        was started from - and `site --from-database` then (correctly) refused to
+        publish from the contaminated mirror. The mirror must live under the
+        same root as the library it mirrors.
+        """
+        import os
+
+        import selflearn.config as config
+        from selflearn.storage import connect
+
+        with tempfile.TemporaryDirectory() as tmp:
+            old_root = config.ROOT
+            old_cwd = os.getcwd()
+            config.ROOT = Path(tmp) / "root"
+            config.ROOT.mkdir()
+            try:
+                os.chdir(tmp)  # a working directory *outside* the library root
+                connection = connect("sqlite:///state/library.sqlite3")
+                self.addCleanup(connection.close)
+                connection.cursor().execute("CREATE TABLE t (x)")
+                connection.commit()
+            finally:
+                os.chdir(old_cwd)
+                config.ROOT = old_root
+            self.assertTrue(
+                (Path(tmp) / "root" / "state" / "library.sqlite3").exists(),
+                "the mirror must land under the library root",
+            )
+            self.assertFalse(
+                (Path(tmp) / "state" / "library.sqlite3").exists(),
+                "the mirror must not land under an unrelated working directory",
+            )
 
 
 if __name__ == "__main__":  # pragma: no cover

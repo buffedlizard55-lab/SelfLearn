@@ -106,12 +106,25 @@ def connect(dsn: str) -> Any:
     SQLite paths work with the standard library alone. PostgreSQL URLs need an
     optional driver; when one is missing the error says exactly that, because
     "the engine has no third-party dependencies" must stay true for everything
-    except this explicitly requested path.
+    except this explicitly requested path. A relative sqlite path is resolved
+    against the active library root (``SELFLEARN_ROOT`` or the repository), never
+    the working directory.
     """
     if dsn.startswith("sqlite:///"):
         import sqlite3
 
         path = dsn[len("sqlite:///"):]
+        if path != ":memory:" and not os.path.isabs(path):
+            # Relative sqlite paths resolve against the library root, not the
+            # working directory. Found 2026-09-22: a smoke run with its own
+            # SELFLEARN_ROOT synced 152 rows into whatever ./state/ it was
+            # started from, and `site --from-database` - correctly - refused to
+            # publish from the contaminated mirror. Each root now gets its own
+            # mirror at <root>/state/library.sqlite3, which is where the README
+            # has always said it lands.
+            from ..config import ROOT as LIBRARY_ROOT
+
+            path = str(Path(LIBRARY_ROOT) / path)
         if path != ":memory:":
             Path(path).parent.mkdir(parents=True, exist_ok=True)
         return sqlite3.connect(path)
@@ -219,6 +232,18 @@ def read_rows(connection: Any) -> dict[str, list[dict[str, Any]]]:
     for stream, payload in cursor.fetchall():
         grouped.setdefault(stream, []).append(json.loads(payload))
     return grouped
+
+
+def load_library_from_database(root: Path, connection: Any, *, run_id: str = "") -> Library:
+    """Build the same ``Library`` a JSONL load would produce, from database rows.
+
+    This is the read half of \"the same site builds from the database\": the
+    rows go through ``Library.from_rows`` - the exact decoder ``Library.load``
+    uses - so only the origin of the rows differs. Callers that publish from
+    this view run ``verify_views`` first and refuse to publish when the two
+    views disagree.
+    """
+    return Library.from_rows(Path(root), read_rows(connection), run_id=run_id)
 
 
 def count_rows(connection: Any) -> dict[str, int]:

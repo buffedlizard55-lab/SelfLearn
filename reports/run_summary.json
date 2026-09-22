@@ -20,7 +20,7 @@
     "errors": 0,
     "metadata_claims": 45,
     "open_questions": 141,
-    "records_withdrawn": 107,
+    "records_withdrawn": 3,
     "sources_polled": 1,
     "sources_reached": 0,
     "substantive_claims": 119,
@@ -31,14 +31,14 @@
     "topics_proposed": 3,
     "warnings": 15
   },
-  "generated_at": "2026-09-22T22:03:28Z",
+  "generated_at": "2026-09-22T23:12:31Z",
   "irregularities": {
     "by_severity": {
       "error": 0,
-      "info": 19,
+      "info": 20,
       "warning": 15
     },
-    "total": 34
+    "total": 35
   },
   "mode": "snapshot",
   "registry": {
@@ -91,7 +91,7 @@
     ],
     "total": 36
   },
-  "run_id": "run-735c72c7bf96",
+  "run_id": "run-e876f1525d9b",
   "substance": {
     "claims": 300,
     "dated": 42,
@@ -116,7 +116,7 @@
       "supported": 0.8
     },
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-22T22:03:24Z",
+    "ran_at": "2026-09-22T23:12:27Z",
     "source": "state/calibration.json"
   },
   "topic_proposals": [
@@ -198,7 +198,7 @@
     "Library now holds 300 claim(s) across 4 question(s).",
     "This cycle collected 48 document(s); 0 of 1 polled source(s) responded live.",
     "141 open question(s) have been derived from the retrieved evidence.",
-    "5 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them, 107 briefs, criticisms and questions withdrew alongside retired claims this cycle, and 119 claim(s) scored as substantive while 45 are labelled as registry metadata.",
+    "5 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them, 3 briefs, criticisms and questions withdrew alongside retired claims this cycle, and 119 claim(s) scored as substantive while 45 are labelled as registry metadata.",
     "3 candidate topic(s) were scored from the retrieved documents and 0 promoted; the change scan polled 0 source(s) and found 0 item(s) not seen before.",
     "0 error(s) and 15 warning(s) are waiting for review."
   ]

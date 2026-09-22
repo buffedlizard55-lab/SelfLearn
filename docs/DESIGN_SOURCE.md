@@ -15,6 +15,21 @@ The brief was a shared design document, *Design Autonomous Research System*:
   services, the Semantic Scholar API, SEC EDGAR APIs and the GitHub REST API as
   reference material for the world-scanning layer.
 
+**Re-verified 2026-09-22.** The share page itself serves only a JavaScript shell
+to a non-browser client, so the endpoint above is the only way to read the
+conversation programmatically; it still answers and was re-read in full this
+session. Checked line by line against it: the title ("Design Autonomous Research
+System"), the user brief quoted in the requirements matrix, the `safe_urls` list
+containing exactly the operator pages named above (Crossref REST API docs, NCEI
+CDO web services v2, the Semantic Scholar API product pages, SEC EDGAR's API
+page, the GitHub REST API pages, and OpenAI), the twenty numbered sections,
+section 15's reference stack (Python, PostgreSQL, pgvector or another vector
+database, Neo4j or a graph layer, Redis/Celery, sandboxed containers, a model
+router), and the minimum viable product of six components ("Topic Scanner,
+Researcher, Solver, Critic, Experimenter, Memory/Knowledge Base"). Every quote of
+the document in this repository appears in that conversation; nothing was
+paraphrased into the table below.
+
 The document describes a twenty-part system. The table below maps each part to what
 was built. *Status* uses the same vocabulary as the requirements matrix on the
 published site: **implemented** means the behaviour is in the code and exercised by
@@ -30,14 +45,14 @@ exists but is narrower than the document describes, and the narrowing is stated.
 | 5 Evidence hierarchy | Nine ranked classes, each claim carrying provenance | `selflearn/config.py::EVIDENCE_HIERARCHY`, every `Claim` records class and rank | implemented |
 | 6 Memory layers | Raw, knowledge, reasoning, experiments and meta-knowledge | `library/*.jsonl` (raw and reasoning), `library/experiments.jsonl`, `selflearn/learn/memory.py` (meta-knowledge) | implemented, as files rather than a database |
 | 7 Lifecycle | New, researching, hypothesis, competing, testing, validated, deployed, monitored, rejected | `selflearn/config.py::LIFECYCLE_STATES`, `selflearn/think/manager.py::topic_transition` | implemented; `validated` and beyond require an experiment to have passed |
-| 8 Automatic experimentation | Thousands of iterations, seeded and repeatable | `selflearn/experiment/` (catalogue, runner, five scripts) | partial: five experiment families, not thousands of variants |
+| 8 Automatic experimentation | Thousands of iterations, seeded and repeatable | `selflearn/experiment/` (catalogue, runner, seven scripts) | partial: seven experiment families, not thousands of variants |
 | 9 Benchmark everything | The winner is criticised, reproduced and independently tested before promotion | `selflearn/think/tournament.py`, `selflearn/experiment/runner.py` | partial: the in-house reproduction step exists, an independent third party does not |
 | 10 Tournaments | Score on correctness, reproducibility, evidence quality, experimental performance, robustness, simplicity, cost and scalability, never persuasiveness | `selflearn/config.py::TOURNAMENT_CRITERIA`, `selflearn/think/tournament.py` | implemented; weights and measured-versus-heuristic method are published per criterion |
 | 11 Curiosity chains | Every answer produces further questions | `selflearn/think/discovery.py` | implemented |
 | 12 Trending discovery | Novelty times importance times research potential | `selflearn/think/discovery.py::score_topic`, `selflearn/think/invention.py` | partial: scoring and promotion gates are implemented and candidates are published with their components, but the candidate pool is the engine's own retrieval, not an open scan of the web |
 | 13 Central manager | One component decides what to work on next | `selflearn/think/manager.py`, `selflearn/loop.py::run_cycle` | implemented |
 | 14 Result card | A fixed, stable layout for every result | `selflearn/publish/site.py::page_topic` | implemented |
-| 15 Reference stack | Python, PostgreSQL, vector database, knowledge graph, object storage, Redis and sandboxes, model router | none of it; see *Deviations* below | not implemented, by design |
+| 15 Reference stack | Python, PostgreSQL, vector database, knowledge graph, object storage, Redis and sandboxes, model router | `selflearn/storage/` (an optional SQLite/PostgreSQL mirror of the JSONL library, built by `site`/`run --from-database`), `selflearn/learn/vector_index.py` (a TF-IDF vector index over claims); the rest: none, see *Deviations* below | partial, by choice: the storage migration (roadmap item 8) implements the PostgreSQL and vector-index half with the JSONL streams kept as the source of truth; knowledge graph, object storage, Redis, containers and model router stay unused by design |
 | 16 Cadence | Event-driven rather than literally nonstop | `selflearn/loop.py::run_forever`, `.github/workflows/research-loop.yml` | implemented |
 | 17 Entities | Entities from topics down to benchmarks | `selflearn/models.py` dataclasses, `library/*.jsonl` | implemented |
 | 18 Say UNKNOWN | When the evidence does not settle a question, say so and give the next experiment | `selflearn/publish/report.py` unknowns block, `selflearn/think/discovery.py` | implemented |

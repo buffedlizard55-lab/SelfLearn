@@ -1,8 +1,8 @@
 """Command line interface.
 
-    python -m selflearn run [--mode live|snapshot|fixture] [--topics N] [--offline]
+    python -m selflearn run [--mode live|snapshot|fixture] [--topics N] [--offline] [--from-database]
     python -m selflearn audit
-    python -m selflearn site
+    python -m selflearn site [--from-database]
     python -m selflearn sources [--probe]
     python -m selflearn scan [--query TEXT] [--sources ids] [--days N] [--discover]
     python -m selflearn credentials
@@ -58,18 +58,51 @@ def cmd_run(args: argparse.Namespace) -> int:
     from .loop import run_cycle
 
     allow_network = args.mode != "fixture" and not args.offline
+    # --from-database publishes through the mirror, so the cycle must not write
+    # the site from the JSONL rows first: the mirror path writes it once, from
+    # the database view, after proving the two views agree.
     result = run_cycle(
         root=ROOT,
         mode=args.mode,
         max_topics=args.topics,
         max_requests=args.max_requests,
         allow_network=allow_network,
-        publish=not args.no_publish,
+        publish=not args.no_publish and not args.from_database,
         run_experiments=not args.skip_experiments,
     )
     print(json.dumps(result.to_dict(), indent=2, sort_keys=True))
+    if args.from_database:
+        return _run_publish_from_database(args)
     errors = summarise(result.irregularities)["by_severity"].get("error", 0)
     return 0 if errors == 0 else 0  # irregularities are expected output, not failure
+
+
+def _run_publish_from_database(args: argparse.Namespace) -> int:
+    """``run --from-database``: mirror the fresh rows, verify, publish from the mirror.
+
+    The JSONL streams just received this cycle's rows, so the mirror is synced
+    first (append-only, idempotent) and the site is then built from the database
+    view through ``rebuild_site``, which refuses to publish if the two views
+    disagree.
+    """
+    from .storage import connect, dsn_from_environment, ensure_schema, sync_library
+
+    dsn = dsn_from_environment(args.database)
+    try:
+        connection = connect(dsn)
+    except (RuntimeError, ValueError) as exc:
+        print(f"run --from-database: {exc}", file=sys.stderr)
+        return 2
+    try:
+        ensure_schema(connection)
+        report = sync_library(ROOT, connection)
+    finally:
+        connection.close()
+    print(
+        f"database mirror synced: {report['rows_inserted']} new row(s) appended to {dsn}; "
+        "publishing from the database view"
+    )
+    return rebuild_site(root=ROOT, site_dir=SITE_DIR, mode=args.mode, from_database=True, dsn=dsn)
 
 
 def cmd_audit(args: argparse.Namespace) -> int:
@@ -112,23 +145,71 @@ def cmd_audit(args: argparse.Namespace) -> int:
     return 0 if fresh_stats["by_severity"].get("error", 0) == 0 else 1
 
 
-def cmd_site(args: argparse.Namespace) -> int:
+def rebuild_site(
+    *,
+    root: Path,
+    site_dir: Path,
+    mode: str | None = None,
+    from_database: bool = False,
+    dsn: str | None = None,
+    write_root_entry: bool = True,
+) -> int:
     """Rebuild the site from the stored library and the last calibration.
 
     Per-source reachability is measured by a cycle, not stored in the library, so
     the rebuild reads it back from the ``reports/site_data.json`` the last cycle
     wrote. Without that, every manual rebuild published an empty sources table and
     "0 of N reachable" for a run that had in fact reached something.
+
+    ``from_database`` builds the same site from the database mirror instead of
+    the JSONL files (roadmap item 8). The two views are compared first with
+    ``verify_views`` - raw rows and decoded records - and a mirror that
+    disagrees is refused with the command that fixes it rather than published
+    from. The rows go through ``Library.from_rows``, the same decoder the file
+    view uses, so only the origin of the rows differs.
     """
-    library = Library.load(ROOT, run_id="site-rebuild")
-    calibration = run_calibration(FIXTURE_DIR / "verification_cases.jsonl", apply=False) if (FIXTURE_DIR / "verification_cases.jsonl").exists() else {}
-    last_cycle = load_json(ROOT / "reports" / "site_data.json", {}) or {}
+    root = Path(root)
+    run_label = "site-rebuild"
+    database_report: dict | None = None
+    if from_database:
+        from .storage import connect, dsn_from_environment, load_library_from_database, verify_views
+
+        dsn_value = dsn_from_environment(dsn)
+        try:
+            connection = connect(dsn_value)
+        except (RuntimeError, ValueError) as exc:
+            print(f"site --from-database: {exc}", file=sys.stderr)
+            return 2
+        try:
+            database_report = verify_views(root, connection, dsn=dsn_value)
+            if not (database_report.get("rows_identical") and database_report.get("library_identical")):
+                differing = [
+                    name
+                    for name, row in database_report["streams"].items()
+                    if not row["matches"] or name in database_report["library_mismatched_streams"]
+                ]
+                print(
+                    "site --from-database: the database mirror does not match the JSONL streams "
+                    f"(differing: {', '.join(differing) or 'unknown'}); nothing was published. "
+                    "Run `python3 -m selflearn storage sync` to append the missing rows, then "
+                    "`python3 -m selflearn storage verify` to re-check.",
+                    file=sys.stderr,
+                )
+                return 1
+            library = load_library_from_database(root, connection, run_id=run_label)
+        finally:
+            connection.close()
+    else:
+        library = Library.load(root, run_id=run_label)
+    calibration_path = root / "data" / "fixtures" / "verification_cases.jsonl"
+    calibration = run_calibration(calibration_path, apply=False) if calibration_path.exists() else {}
+    last_cycle = load_json(root / "reports" / "site_data.json", {}) or {}
     recorded_status = [
         SourceStatus(**{k: v for k, v in row.items() if k in SourceStatus.__dataclass_fields__})
         for row in ((last_cycle.get("sources") or {}).get("status") or [])
         if isinstance(row, dict) and row.get("source_id")
     ]
-    mode = args.mode or str(last_cycle.get("mode") or "snapshot")
+    resolved_mode = mode or str(last_cycle.get("mode") or "snapshot")
     data = build_site_data(
         library,
         source_matrix=source_matrix(),
@@ -139,30 +220,51 @@ def cmd_site(args: argparse.Namespace) -> int:
         # derived leaderboard. Loading the table and calling to_dict() is what
         # the cycle does, and passing the raw file emptied the standings table
         # on every manual rebuild.
-        elo_payload=EloTable.load(STATE_DIR / "elo.json").to_dict(),
-        calibration=calibration or thresholds_in_force(CALIBRATION_STATE),
-        requirements=load_json(ROOT / "data" / "requirements.json", []) or [],
+        elo_payload=EloTable.load(root / "state" / "elo.json").to_dict(),
+        calibration=calibration or thresholds_in_force(root / "state" / "calibration.json"),
+        requirements=load_json(root / "data" / "requirements.json", []) or [],
         methodology={
             "engine_version": __version__,
             "evidence_hierarchy": [
                 {"rank": rank, "name": name, "description": description} for rank, name, description in EVIDENCE_HIERARCHY
             ],
-            "thresholds": thresholds_in_force(CALIBRATION_STATE),
+            "thresholds": thresholds_in_force(root / "state" / "calibration.json"),
         },
-        mode=mode,
-        run_summary=load_json(ROOT / "reports" / "run_summary.json", {}) or {},
+        mode=resolved_mode,
+        run_summary=load_json(root / "reports" / "run_summary.json", {}) or {},
     )
     data["experiment_catalogue"] = catalogue()
     if last_cycle.get("run_id"):
         # The pages name the run whose evidence they show, not the rebuild.
         data["run_id"] = last_cycle["run_id"]
-    written = build_site(data, SITE_DIR, write_root_entry=True)
-    print(f"wrote {len(written)} file(s) to {SITE_DIR}")
+    written = build_site(data, Path(site_dir), write_root_entry=write_root_entry)
+    print(f"wrote {len(written)} file(s) to {site_dir}")
+    if from_database:
+        print(
+            f"site built from the database mirror ({database_report['dsn']}, driver {database_report['driver']}): "
+            f"{sum(row['database_rows'] for row in database_report['streams'].values())} rows, "
+            "identical to the JSONL streams row for row and record for record"
+        )
     if recorded_status:
-        print(f"source reachability carried over from cycle {last_cycle.get('run_id')} ({len(recorded_status)} status row(s), mode {mode})")
+        print(f"source reachability carried over from cycle {last_cycle.get('run_id')} ({len(recorded_status)} status row(s), mode {resolved_mode})")
     else:
         print("no recorded cycle found in reports/site_data.json; the sources table shows no reachability")
     return 0
+
+
+def cmd_site(args: argparse.Namespace) -> int:
+    """Rebuild the site from the stored library (or the database mirror).
+
+    See :func:`rebuild_site` for the reachability carry-over and the
+    ``--from-database`` guarantees.
+    """
+    return rebuild_site(
+        root=ROOT,
+        site_dir=SITE_DIR,
+        mode=args.mode,
+        from_database=args.from_database,
+        dsn=args.database,
+    )
 
 
 def cmd_sources(args: argparse.Namespace) -> int:
@@ -207,8 +309,20 @@ def _has_credential(spec) -> bool:
 
 
 def cmd_experiments(args: argparse.Namespace) -> int:
+    """Run catalogue experiments and record each result in the library.
+
+    Recording matters as much as running: ``tools/reproduce_experiment.py``
+    replays stored rows from ``library/experiments.jsonl``, and before 2026-09-22
+    a direct run stored nothing while that tool's own remedy pointed here. A
+    stored row carries ``topic_id`` empty, which is the honest marker for "run
+    directly, not attached to a question".
+    """
+    from .experiment.runner import to_evidence, to_result
+
+    library = Library.load(ROOT, run_id="experiments-cli")
     specs = [get_experiment(args.id)] if args.id else list(EXPERIMENTS)
     failed = 0
+    recorded = 0
     for spec in specs:
         run = run_experiment(spec, root=ROOT)
         status = run.status if not run.error else "failed"
@@ -217,6 +331,15 @@ def cmd_experiments(args: argparse.Namespace) -> int:
             print(json.dumps(run.to_dict(), indent=2, sort_keys=True))
         if run.error:
             failed += 1
+            continue
+        library.add_experiments([to_result(run, topic_id="")])
+        library.add_evidence([to_evidence(run, topic_id="")])
+        recorded += 1
+    if recorded:
+        print(
+            f"recorded {recorded} result(s) in library/experiments.jsonl "
+            "(topic_id empty: run directly, not attached to a question)"
+        )
     return 1 if failed else 0
 
 
@@ -535,7 +658,22 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--topics", type=int, default=None, help="maximum questions to work this cycle")
     run.add_argument("--max-requests", type=int, default=None, dest="max_requests")
     run.add_argument("--offline", action="store_true", help="refuse network access; replay stored snapshots only")
-    run.add_argument("--no-publish", action="store_true", dest="no_publish")
+    run_publish = run.add_mutually_exclusive_group()
+    run_publish.add_argument("--no-publish", action="store_true", dest="no_publish")
+    run_publish.add_argument(
+        "--from-database",
+        action="store_true",
+        dest="from_database",
+        help=(
+            "publish from the database mirror instead of the JSONL rows: sync the mirror first, "
+            "then build the site from it, refusing to publish if the two views disagree"
+        ),
+    )
+    run.add_argument(
+        "--database",
+        default=None,
+        help="DSN for --from-database: sqlite:///path.db or postgres://... (default: $SELFLEARN_DATABASE_URL or sqlite:///state/library.sqlite3)",
+    )
     run.add_argument("--skip-experiments", action="store_true", dest="skip_experiments")
     run.set_defaults(func=cmd_run)
 
@@ -548,6 +686,20 @@ def build_parser() -> argparse.ArgumentParser:
     site.add_argument(
         "--mode", choices=("live", "snapshot", "fixture"), default=None,
         help="label for the rebuilt pages; defaults to the mode of the last recorded cycle, or 'snapshot' if none",
+    )
+    site.add_argument(
+        "--from-database",
+        action="store_true",
+        dest="from_database",
+        help=(
+            "build from the database mirror instead of the JSONL rows; refused unless "
+            "`storage verify` would pass, so a stale or partial mirror cannot be published"
+        ),
+    )
+    site.add_argument(
+        "--database",
+        default=None,
+        help="DSN for --from-database: sqlite:///path.db or postgres://... (default: $SELFLEARN_DATABASE_URL or sqlite:///state/library.sqlite3)",
     )
     site.set_defaults(func=cmd_site)
 
