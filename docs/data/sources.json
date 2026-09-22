@@ -857,7 +857,7 @@
       "citations": 0,
       "claims_proposed": 0,
       "claims_supported": 0,
-      "documents": 3,
+      "documents": 5,
       "evidence_class": "direct_experiment",
       "evidence_rank": 1,
       "partially_supported": 0,
@@ -973,7 +973,7 @@
   ],
   "status": [
     {
-      "checked_at": "2026-09-22T22:03:24Z",
+      "checked_at": "2026-09-22T23:12:27Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=autonomous+research+agent+in%3Aname%2Cdescription",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -989,7 +989,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-22T22:03:24Z",
+      "checked_at": "2026-09-22T23:12:28Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=hallucination+detection+open+source+in%3Aname%2Cdescription",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -1005,7 +1005,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-22T22:03:25Z",
+      "checked_at": "2026-09-22T23:12:28Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=active+learning+acquisition+function+in%3Aname%2Cdescription",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -1021,7 +1021,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-22T22:03:27Z",
+      "checked_at": "2026-09-22T23:12:30Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=sorting+algorithm+comparison+count+in%3Aname%2Cdescription",
       "evidence_class": "primary_source",
       "evidence_rank": 3,

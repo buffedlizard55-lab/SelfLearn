@@ -48,7 +48,7 @@ jobs:
           mkdir -p "$SELFLEARN_ROOT/docs"
           cp -r data "$SELFLEARN_ROOT/data"
           cp docs/*.md "$SELFLEARN_ROOT/docs/" 2>/dev/null || true
-          python3 -m selflearn run --mode live
+          python3 -m selflearn run --mode live --from-database
           python3 -m selflearn status
           test -f "$SELFLEARN_ROOT/docs/index.html"
           test -f "$SELFLEARN_ROOT/docs/documents.html"
@@ -112,6 +112,13 @@ jobs:
             exit 0
           fi
           git add reports/link_check.json
+          # The site embeds the register's figures (the landing page's "N of M
+          # published URLs resolved"), so republish in the same commit. Without
+          # this the pages kept quoting the previous check until the next
+          # scheduled cycle - a stale figure on the front door, found by review
+          # on 2026-09-22.
+          python3 -m selflearn site
+          git add docs index.html 404.html .nojekyll
           if git diff --cached --quiet; then
             echo "Nothing staged after all."
             exit 0

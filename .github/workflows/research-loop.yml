@@ -103,7 +103,11 @@ jobs:
         run: python3 -m selflearn scan --query "autonomous research" --discover
 
       - name: Research cycle
-        run: python3 -m selflearn run --mode "$SELFLEARN_MODE"
+        # --from-database publishes through the database mirror: the cycle's rows
+        # are synced into state/library.sqlite3, the mirror is compared against the
+        # JSONL streams row for row and record for record, and the site is built
+        # from the mirror - or refused, loudly, if the two views ever disagree.
+        run: python3 -m selflearn run --mode "$SELFLEARN_MODE" --from-database
 
       - name: Audit the library
         run: python3 -m selflearn audit
@@ -128,7 +132,11 @@ jobs:
           set -eu
           git config user.name "selflearn-bot"
           git config user.email "selflearn-bot@users.noreply.github.com"
-          git add -A library evidence reports state docs
+          # index.html, 404.html and .nojekyll are part of every publish
+          # (build_site's root entry point). They were missing from this list, so
+          # a cycle updated the research site but left the landing door stale in
+          # git until someone rebuilt by hand - found by review 2026-09-22.
+          git add -A library evidence reports state docs index.html 404.html .nojekyll
           if git diff --cached --quiet; then
             echo "No changes to commit: the cycle reproduced the stored state exactly."
             exit 0

@@ -126,6 +126,47 @@ EXPERIMENTS: tuple[ExperimentSpec, ...] = (
         seeds=(5,),
         keywords=("scheduling", "prioritisation", "bandit", "exploration", "exploitation", "regret", "prioritise", "schedule"),
     ),
+    ExperimentSpec(
+        experiment_id="estimation-error-v1",
+        script="experiments/estimation_error.py",
+        title="Sampling and estimation error: how fast does RMSE fall with sample size?",
+        purpose="capability",
+        hypothesis=(
+            "The RMSE of a sample mean falls proportionally to 1/sqrt(n) (log-log slope in [-0.6, -0.4]) and "
+            "stays within [0.8, 1.25]x the analytic standard error on a standard normal and a unit uniform "
+            "population."
+        ),
+        falsifier=(
+            "The fitted log-log slope of RMSE against n falls outside the stated band on either population, or "
+            "any observed RMSE falls outside the stated multiple of the analytic standard error."
+        ),
+        metric="root-mean-square error of the sample mean",
+        seeds=(3,),
+        keywords=(
+            "sampling", "estimation", "error", "statistics", "variance", "uncertainty",
+            "quantitative", "confidence", "measurement",
+        ),
+    ),
+    ExperimentSpec(
+        experiment_id="queueing-models-v1",
+        script="experiments/queueing_models.py",
+        title="Queueing models: do simulated M/M/1 and M/D/1 waits match the textbook formulas?",
+        purpose="capability",
+        hypothesis=(
+            "At utilisation 0.8 with Poisson arrivals, a simulated FCFS queue reproduces rho/(mu(1-rho)) for "
+            "M/M/1 and rho/(2 mu(1-rho)) for M/D/1 within tolerance, and M/D/1's mean wait is lower at equal load."
+        ),
+        falsifier=(
+            "Either simulated mean wait falls outside three standard errors (with a five-percent relative floor) "
+            "of its analytic value, or M/D/1 does not have the lower mean wait at equal load."
+        ),
+        metric="mean wait in queue per customer",
+        seeds=(13,),
+        keywords=(
+            "queueing", "queue", "waiting", "latency", "throughput", "utilisation",
+            "capacity", "service", "load",
+        ),
+    ),
 )
 
 

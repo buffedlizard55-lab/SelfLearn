@@ -1448,7 +1448,7 @@
       "Selection used 26 labelled case(s); false supports at the selected point: 0."
     ],
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-22T22:03:24Z",
+    "ran_at": "2026-09-22T23:12:27Z",
     "selected": {
       "accuracy": 1.0,
       "all_cases": {
@@ -1597,7 +1597,7 @@
     "fixture_documents": 0,
     "irregularity_counts": {
       "error": 0,
-      "info": 12,
+      "info": 13,
       "warning": 15
     },
     "resolved_contradictions": 0,
@@ -1610,7 +1610,7 @@
       "claim_a": "cl-13cf26e4fba9",
       "claim_b": "cl-6ac20344a641",
       "contradiction_id": "con-4fb8033a159c",
-      "created_at": "2026-09-22T22:03:24Z",
+      "created_at": "2026-09-22T23:12:27Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (102 vs 150). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -1624,7 +1624,7 @@
       "claim_a": "cl-87c1d0345e0e",
       "claim_b": "cl-9d035d5ab642",
       "contradiction_id": "con-5ddfe0dad53e",
-      "created_at": "2026-09-22T22:03:24Z",
+      "created_at": "2026-09-22T23:12:28Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (0 vs 5). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -1638,7 +1638,7 @@
       "claim_a": "cl-5a86c56f889c",
       "claim_b": "cl-92ae15540483",
       "contradiction_id": "con-62b85df6338e",
-      "created_at": "2026-09-22T22:03:25Z",
+      "created_at": "2026-09-22T23:12:28Z",
       "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (0, 19, 2, 2020, 25, 7 vs 14, 17, 2024, 39, 49, 6, 9). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -1666,7 +1666,7 @@
       "claim_a": "cl-8faf22d0289e",
       "claim_b": "cl-ef6f3d3a8a5d",
       "contradiction_id": "con-96485a969ff6",
-      "created_at": "2026-09-22T22:03:24Z",
+      "created_at": "2026-09-22T23:12:28Z",
       "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (10, 2026, 21, 35, 4, 9 vs 0, 1, 20, 2025, 47, 52). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -1680,7 +1680,7 @@
       "claim_a": "cl-34785ec24933",
       "claim_b": "cl-aae22a8bf2b6",
       "contradiction_id": "con-9e27fade0728",
-      "created_at": "2026-09-22T22:03:25Z",
+      "created_at": "2026-09-22T23:12:28Z",
       "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -1722,7 +1722,7 @@
       "claim_a": "cl-a39b827e786b",
       "claim_b": "cl-aae22a8bf2b6",
       "contradiction_id": "con-c3814afc1d32",
-      "created_at": "2026-09-22T22:03:25Z",
+      "created_at": "2026-09-22T23:12:28Z",
       "detail": "Claims share 67% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -1736,7 +1736,7 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-d3e7cd2b784b",
       "contradiction_id": "con-d3df6c302896",
-      "created_at": "2026-09-22T22:03:25Z",
+      "created_at": "2026-09-22T23:12:28Z",
       "detail": "Claims share 57% of their content tokens but contain disjoint numeric values (2 vs 0, 3). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -1764,7 +1764,7 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-c6ff1cae91a9",
       "contradiction_id": "con-f8b061b192ec",
-      "created_at": "2026-09-22T22:03:25Z",
+      "created_at": "2026-09-22T23:12:28Z",
       "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -1783,7 +1783,7 @@
     "documents": 89,
     "experiments": 3,
     "failures": 22,
-    "irregularities": 34,
+    "irregularities": 35,
     "questions": 141,
     "strategies": 222,
     "topics": 4
@@ -2052,55 +2052,55 @@
         "key": "persona-F",
         "matches": 204,
         "rank": 1,
-        "rating": 1737.0,
-        "wins": 168
+        "rating": 1718.0,
+        "wins": 166
       },
       {
         "key": "persona-D",
-        "matches": 190,
+        "matches": 189,
         "rank": 2,
-        "rating": 1570.1,
+        "rating": 1581.4,
         "wins": 102
       },
       {
         "key": "persona-A",
-        "matches": 178,
+        "matches": 180,
         "rank": 3,
-        "rating": 1513.2,
-        "wins": 71
+        "rating": 1529.1,
+        "wins": 73
+      },
+      {
+        "key": "persona-C",
+        "matches": 181,
+        "rank": 4,
+        "rating": 1408.9,
+        "wins": 35
       },
       {
         "key": "persona-E",
         "matches": 185,
-        "rank": 4,
-        "rating": 1402.7,
-        "wins": 69
+        "rank": 5,
+        "rating": 1388.3,
+        "wins": 63
       },
       {
         "key": "persona-B",
-        "matches": 189,
-        "rank": 5,
-        "rating": 1399.3,
-        "wins": 90
-      },
-      {
-        "key": "persona-C",
-        "matches": 180,
+        "matches": 187,
         "rank": 6,
-        "rating": 1377.7,
-        "wins": 29
+        "rating": 1374.3,
+        "wins": 78
       }
     ],
     "matches": 563,
     "ratings": {
-      "persona-A": 1513.25,
-      "persona-B": 1399.31,
-      "persona-C": 1377.68,
-      "persona-D": 1570.13,
-      "persona-E": 1402.66,
-      "persona-F": 1736.97
+      "persona-A": 1529.08,
+      "persona-B": 1374.29,
+      "persona-C": 1408.92,
+      "persona-D": 1581.38,
+      "persona-E": 1388.28,
+      "persona-F": 1718.05
     },
-    "updated_at": "2026-09-22T22:03:28Z"
+    "updated_at": "2026-09-22T23:12:31Z"
   },
   "engine": {
     "name": "SelfLearn",
@@ -2221,6 +2221,56 @@
       ],
       "timeout_seconds": 300,
       "title": "Scheduling policies on a stationary bandit: round-robin, epsilon-greedy, UCB1"
+    },
+    {
+      "experiment_id": "estimation-error-v1",
+      "falsifier": "The fitted log-log slope of RMSE against n falls outside the stated band on either population, or any observed RMSE falls outside the stated multiple of the analytic standard error.",
+      "hypothesis": "The RMSE of a sample mean falls proportionally to 1/sqrt(n) (log-log slope in [-0.6, -0.4]) and stays within [0.8, 1.25]x the analytic standard error on a standard normal and a unit uniform population.",
+      "keywords": [
+        "sampling",
+        "estimation",
+        "error",
+        "statistics",
+        "variance",
+        "uncertainty",
+        "quantitative",
+        "confidence",
+        "measurement"
+      ],
+      "metric": "root-mean-square error of the sample mean",
+      "purpose": "capability",
+      "run_command": "python experiments/estimation_error.py --seed 3 --out result.json",
+      "script": "experiments/estimation_error.py",
+      "seeds": [
+        3
+      ],
+      "timeout_seconds": 300,
+      "title": "Sampling and estimation error: how fast does RMSE fall with sample size?"
+    },
+    {
+      "experiment_id": "queueing-models-v1",
+      "falsifier": "Either simulated mean wait falls outside three standard errors (with a five-percent relative floor) of its analytic value, or M/D/1 does not have the lower mean wait at equal load.",
+      "hypothesis": "At utilisation 0.8 with Poisson arrivals, a simulated FCFS queue reproduces rho/(mu(1-rho)) for M/M/1 and rho/(2 mu(1-rho)) for M/D/1 within tolerance, and M/D/1's mean wait is lower at equal load.",
+      "keywords": [
+        "queueing",
+        "queue",
+        "waiting",
+        "latency",
+        "throughput",
+        "utilisation",
+        "capacity",
+        "service",
+        "load"
+      ],
+      "metric": "mean wait in queue per customer",
+      "purpose": "capability",
+      "run_command": "python experiments/queueing_models.py --seed 13 --out result.json",
+      "script": "experiments/queueing_models.py",
+      "seeds": [
+        13
+      ],
+      "timeout_seconds": 300,
+      "title": "Queueing models: do simulated M/M/1 and M/D/1 waits match the textbook formulas?"
     }
   ],
   "experiments": [
@@ -2228,13 +2278,13 @@
       "baseline": 960.0,
       "best_value": 139.0205,
       "best_variant": "epsilon_greedy",
-      "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-enrnbm_y/result.json",
+      "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-rjuq7rd4/result.json",
       "error": "",
       "experiment_id": "scheduling-policies-v1",
       "hypothesis": "On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate keeps paying a cost proportional to the horizon.",
       "method": "100 independent trials of 4000 pulls per policy on arms with means [0.15, 0.25, 0.35, 0.45, 0.6]; pseudo-regret computed from the true mean of each pulled arm, so the metric has no reward noise.",
       "metric": "mean cumulative pseudo-regret",
-      "ran_at": "2026-09-22T22:03:27Z",
+      "ran_at": "2026-09-22T23:12:30Z",
       "result_json": {
         "arm_means": [
           0.15,
@@ -2329,13 +2379,13 @@
       "baseline": 16807.6,
       "best_value": 1726.4,
       "best_variant": "merge_sort",
-      "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-ewh64nx7/result.json",
+      "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-h1fcagfp/result.json",
       "error": "",
       "experiment_id": "sorting-comparisons-v1",
       "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
       "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
       "metric": "mean element comparisons per run",
-      "ran_at": "2026-09-22T22:03:27Z",
+      "ran_at": "2026-09-22T23:12:31Z",
       "result_json": {
         "baseline": 16807.6,
         "baseline_name": "insertion_sort on shuffled input",
@@ -2383,9 +2433,9 @@
               "merge_sort": 1024
             },
             "mean_seconds": {
-              "heapsort": 0.00038088,
-              "insertion_sort": 0.00285839,
-              "merge_sort": 0.00027088
+              "heapsort": 0.00040216,
+              "insertion_sort": 0.00296409,
+              "merge_sort": 0.00029199
             },
             "min_comparisons": {
               "heapsort": 3106,
@@ -2405,9 +2455,9 @@
               "merge_sort": 1726.4
             },
             "mean_seconds": {
-              "heapsort": 0.00043031,
-              "insertion_sort": 0.00153076,
-              "merge_sort": 0.00036719
+              "heapsort": 0.00043209,
+              "insertion_sort": 0.00153315,
+              "merge_sort": 0.00038271
             },
             "min_comparisons": {
               "heapsort": 3278,
@@ -2427,9 +2477,9 @@
               "merge_sort": 1024
             },
             "mean_seconds": {
-              "heapsort": 0.00044891,
-              "insertion_sort": 2.564e-05,
-              "merge_sort": 0.00024708
+              "heapsort": 0.00046406,
+              "insertion_sort": 2.62e-05,
+              "merge_sort": 0.00026364
             },
             "min_comparisons": {
               "heapsort": 3452,
@@ -2465,13 +2515,13 @@
       "baseline": 0.96,
       "best_value": 1.0,
       "best_variant": "support=0.8 partial=0.45 quote_chars=24.0",
-      "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-c578ymhr/result.json",
+      "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-cqfknhi5/result.json",
       "error": "",
       "experiment_id": "verification-thresholds-v1",
       "hypothesis": "A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports.",
       "method": "Exhaustive sweep of 132 threshold combinations, evaluated against 26 hand-labelled claim/document pairs; selection is lexicographic on false supports, recall, F1, macro F1, distance from the documented default, then strictness.",
       "metric": "verdict accuracy on labelled cases",
-      "ran_at": "2026-09-22T22:03:25Z",
+      "ran_at": "2026-09-22T23:12:28Z",
       "result_json": {
         "baseline": 0.96,
         "baseline_name": "configured default thresholds support=0.8 partial=0.55 quote_chars=24.0",
@@ -2732,7 +2782,7 @@
       "topic_id": "topic-fabrication-detection"
     },
     {
-      "created_at": "2026-09-22T22:03:27Z",
+      "created_at": "2026-09-22T23:12:30Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=sorting+algorithm+comparison+count+in%3Aname%2Cdescription",
       "failure_id": "fail-c62c311b2091",
       "remedy": "Confirm egress from the runner, or rely on snapshot replay for this source.",
@@ -2768,7 +2818,7 @@
       "topic_id": null
     }
   ],
-  "generated_at": "2026-09-22T22:03:28Z",
+  "generated_at": "2026-09-22T23:12:31Z",
   "invention_rule": {
     "candidate_pool": "Phrases of two to four content words that recur in at least two retrieved documents. The pool is the engine's own retrieval, not an open crawl; 'novel' therefore means novel to this library.",
     "formula": "total = novelty x importance x potential, scaled by 2 and capped at 1",
@@ -2934,7 +2984,7 @@
       "url": null
     },
     {
-      "created_at": "2026-09-22T22:03:28Z",
+      "created_at": "2026-09-22T23:12:31Z",
       "detail": "134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.",
       "irregularity_id": "irr-6218b1a3c625",
       "resolution": "",
@@ -3066,6 +3116,21 @@
       "suggested_action": "No action needed unless a reviewer believes a retired statement was correct.",
       "summary": "6 cross-document statement(s) retired for topic-autonomous-research-agents",
       "topic_id": "topic-autonomous-research-agents",
+      "url": null
+    },
+    {
+      "created_at": "2026-09-22T22:03:28Z",
+      "detail": "These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.",
+      "irregularity_id": "irr-a2b19bc8ff0e",
+      "resolution": "",
+      "resolution_link": "",
+      "resolved": false,
+      "resolved_at": "",
+      "severity": "info",
+      "stage": "synthesis",
+      "suggested_action": "Review the retired statements section on the affected topic pages.",
+      "summary": "21 brief(s), 83 criticism(s) and 3 open question(s) withdrawn with their retired claims",
+      "topic_id": "",
       "url": null
     },
     {
@@ -3204,7 +3269,7 @@
       "url": "https://info.arxiv.org/help/api/user-manual.html"
     },
     {
-      "created_at": "2026-09-22T22:03:28Z",
+      "created_at": "2026-09-22T23:12:31Z",
       "detail": "Unavailable sources: github",
       "irregularity_id": "irr-c7702daed02e",
       "resolution": "",
@@ -3279,9 +3344,9 @@
       "url": null
     },
     {
-      "created_at": "2026-09-22T22:03:28Z",
+      "created_at": "2026-09-22T23:12:31Z",
       "detail": "These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.",
-      "irregularity_id": "irr-a2b19bc8ff0e",
+      "irregularity_id": "irr-648fdbd55f2a",
       "resolution": "",
       "resolution_link": "",
       "resolved": false,
@@ -3289,7 +3354,7 @@
       "severity": "info",
       "stage": "synthesis",
       "suggested_action": "Review the retired statements section on the affected topic pages.",
-      "summary": "21 brief(s), 83 criticism(s) and 3 open question(s) withdrawn with their retired claims",
+      "summary": "0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims",
       "topic_id": "",
       "url": null
     }
@@ -3310,7 +3375,7 @@
     "by_source": {
       "ARCHITECTURE.md": [
         {
-          "elapsed_seconds": 0.15,
+          "elapsed_seconds": 0.2,
           "error": "",
           "field": "citation",
           "final_url": "https://buffedlizard55-lab.github.io/SelfLearn/",
@@ -3322,7 +3387,7 @@
       ],
       "DESIGN_SOURCE.md": [
         {
-          "elapsed_seconds": 0.05,
+          "elapsed_seconds": 0.04,
           "error": "<html>\n  <head>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <style global>body{font-family:Arial,Helvetica,sans-serif}.container{align-items:center;display:flex;flex",
           "field": "citation",
           "final_url": "https://chatgpt.com/backend-api/share/6ab1612a-2f14-83e8-9de6-808d21a48e53",
@@ -3332,7 +3397,7 @@
           "url": "https://chatgpt.com/backend-api/share/6ab1612a-2f14-83e8-9de6-808d21a48e53"
         },
         {
-          "elapsed_seconds": 1.63,
+          "elapsed_seconds": 1.49,
           "error": "",
           "field": "citation",
           "final_url": "https://chatgpt.com/share/6ab1612a-2f14-83e8-9de6-808d21a48e53",
@@ -3344,7 +3409,7 @@
       ],
       "LIMITATIONS.md": [
         {
-          "elapsed_seconds": 7.75,
+          "elapsed_seconds": 7.44,
           "error": "unreachable: all 3 attempts failed for https://api.imf.org/: HTTP 502 for https://api.imf.org/",
           "field": "citation",
           "final_url": "https://api.imf.org/",
@@ -3356,7 +3421,7 @@
       ],
       "PASSES.md": [
         {
-          "elapsed_seconds": 0.2,
+          "elapsed_seconds": 0.12,
           "error": "{\"message\":\"Missing Authentication Token\"}",
           "field": "citation",
           "final_url": "https://api.uspto.gov/api/v1",
@@ -3366,7 +3431,7 @@
           "url": "https://api.uspto.gov/api/v1"
         },
         {
-          "elapsed_seconds": 1.13,
+          "elapsed_seconds": 0.94,
           "error": "",
           "field": "citation",
           "final_url": "https://data.uspto.gov/support/transition-guide/patentsview",
@@ -3376,7 +3441,7 @@
           "url": "https://data.uspto.gov/support/transition-guide/patentsview"
         },
         {
-          "elapsed_seconds": 0.36,
+          "elapsed_seconds": 0.84,
           "error": "<!DOCTYPE html>\n<html dir=\"ltr\" lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">\n    <title>\n    \n    404: Not fou",
           "field": "citation",
           "final_url": "https://doaj.org/apply-for-api-key/",
@@ -3388,7 +3453,7 @@
       ],
       "README.md": [
         {
-          "elapsed_seconds": 1.0,
+          "elapsed_seconds": 0.96,
           "error": "",
           "field": "citation",
           "final_url": "https://buffedlizard55-lab.github.io/SelfLearn/docs/links.html",
@@ -3400,7 +3465,7 @@
       ],
       "SOURCES.md": [
         {
-          "elapsed_seconds": 0.08,
+          "elapsed_seconds": 0.14,
           "error": "unreachable: dataservices.imf.org unreachable: [Errno -2] Name or service not known",
           "field": "citation",
           "final_url": "http://dataservices.imf.org/REST/SDMX_JSON.svc",
@@ -3410,7 +3475,7 @@
           "url": "http://dataservices.imf.org/REST/SDMX_JSON.svc"
         },
         {
-          "elapsed_seconds": 1.57,
+          "elapsed_seconds": 1.68,
           "error": "",
           "field": "citation",
           "final_url": "https://api.crossref.org/works",
@@ -3420,7 +3485,7 @@
           "url": "https://api.crossref.org/works"
         },
         {
-          "elapsed_seconds": 0.17,
+          "elapsed_seconds": 0.14,
           "error": "{\"message\":\"Validation Failed\",\"errors\":[{\"resource\":\"Search\",\"field\":\"q\",\"code\":\"missing\"}],\"documentation_url\":\"https://docs.github.com/v3/search\",\"status\":\"422\"}",
           "field": "citation",
           "final_url": "https://api.github.com/search/repositories",
@@ -3430,7 +3495,7 @@
           "url": "https://api.github.com/search/repositories"
         },
         {
-          "elapsed_seconds": 0.22,
+          "elapsed_seconds": 0.13,
           "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }",
           "field": "citation",
           "final_url": "https://api.imf.org/external/sdmx",
@@ -3440,7 +3505,27 @@
           "url": "https://api.imf.org/external/sdmx"
         },
         {
-          "elapsed_seconds": 0.91,
+          "elapsed_seconds": 0.25,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://api.semanticscholar.org/api-docs/",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://api.semanticscholar.org/api-docs/"
+        },
+        {
+          "elapsed_seconds": 0.11,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://api.stackexchange.com/docs/authentication",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://api.stackexchange.com/docs/authentication"
+        },
+        {
+          "elapsed_seconds": 0.97,
           "error": "{\"message\":\"Unauthorized\"}",
           "field": "citation",
           "final_url": "https://api.uspto.gov/api/v1/datasets/products/search",
@@ -3450,7 +3535,7 @@
           "url": "https://api.uspto.gov/api/v1/datasets/products/search"
         },
         {
-          "elapsed_seconds": 1.04,
+          "elapsed_seconds": 1.0,
           "error": "{\"message\":\"Unauthorized\"}",
           "field": "citation",
           "final_url": "https://api.uspto.gov/api/v1/patent/applications/search",
@@ -3460,7 +3545,7 @@
           "url": "https://api.uspto.gov/api/v1/patent/applications/search"
         },
         {
-          "elapsed_seconds": 0.25,
+          "elapsed_seconds": 0.18,
           "error": "",
           "field": "citation",
           "final_url": "https://data.uspto.gov/apis/bulk-data/download",
@@ -3470,7 +3555,7 @@
           "url": "https://data.uspto.gov/apis/bulk-data/download"
         },
         {
-          "elapsed_seconds": 0.97,
+          "elapsed_seconds": 1.0,
           "error": "",
           "field": "citation",
           "final_url": "https://data.uspto.gov/apis/bulk-data/search",
@@ -3480,7 +3565,7 @@
           "url": "https://data.uspto.gov/apis/bulk-data/search"
         },
         {
-          "elapsed_seconds": 0.99,
+          "elapsed_seconds": 1.03,
           "error": "",
           "field": "citation",
           "final_url": "https://data.uspto.gov/documents/documents/ODP-API-Query-Spec.pdf",
@@ -3490,7 +3575,7 @@
           "url": "https://data.uspto.gov/documents/documents/ODP-API-Query-Spec.pdf"
         },
         {
-          "elapsed_seconds": 0.94,
+          "elapsed_seconds": 1.0,
           "error": "",
           "field": "citation",
           "final_url": "https://data.uspto.gov/home",
@@ -3500,7 +3585,17 @@
           "url": "https://data.uspto.gov/home"
         },
         {
-          "elapsed_seconds": 0.4,
+          "elapsed_seconds": 0.32,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://doaj.org/api/v4/swagger.json",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://doaj.org/api/v4/swagger.json"
+        },
+        {
+          "elapsed_seconds": 0.2,
           "error": "",
           "field": "citation",
           "final_url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
@@ -3510,7 +3605,7 @@
           "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api"
         },
         {
-          "elapsed_seconds": 0.9,
+          "elapsed_seconds": 0.96,
           "error": "",
           "field": "citation",
           "final_url": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
@@ -3520,7 +3615,7 @@
           "url": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api"
         },
         {
-          "elapsed_seconds": 2.07,
+          "elapsed_seconds": 2.57,
           "error": "",
           "field": "citation",
           "final_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
@@ -3530,7 +3625,7 @@
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query"
         },
         {
-          "elapsed_seconds": 0.13,
+          "elapsed_seconds": 0.26,
           "error": "",
           "field": "citation",
           "final_url": "https://export.arxiv.org/api/query",
@@ -3540,7 +3635,7 @@
           "url": "https://export.arxiv.org/api/query"
         },
         {
-          "elapsed_seconds": 0.29,
+          "elapsed_seconds": 0.4,
           "error": "",
           "field": "citation",
           "final_url": "https://fred.stlouisfed.org/docs/api/fred/series_search.html",
@@ -3550,7 +3645,27 @@
           "url": "https://fred.stlouisfed.org/docs/api/fred/series_search.html"
         },
         {
-          "elapsed_seconds": 2.8,
+          "elapsed_seconds": 0.17,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://nvd.nist.gov/developers/api-workflows",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://nvd.nist.gov/developers/api-workflows"
+        },
+        {
+          "elapsed_seconds": 1.12,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://nvd.nist.gov/general/news/api-20-announcements",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://nvd.nist.gov/general/news/api-20-announcements"
+        },
+        {
+          "elapsed_seconds": 14.33,
           "error": "",
           "field": "citation",
           "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
@@ -3558,11 +3673,21 @@
           "ok": true,
           "status": 200,
           "url": "https://services.nvd.nist.gov/rest/json/cves/2.0"
+        },
+        {
+          "elapsed_seconds": 0.2,
+          "error": "",
+          "field": "citation",
+          "final_url": "https://www.census.gov/data/developers/guidance/api-user-guide.API_Key.html",
+          "group": "prose",
+          "ok": true,
+          "status": 200,
+          "url": "https://www.census.gov/data/developers/guidance/api-user-guide.API_Key.html"
         }
       ],
       "SUMMARY.md": [
         {
-          "elapsed_seconds": 0.27,
+          "elapsed_seconds": 0.25,
           "error": "",
           "field": "citation",
           "final_url": "https://api.crossref.org/v1/works/10.70675%2Fb5ee8192zdc38z4512zb3e5zfb1c66f5e409/transform",
@@ -3572,7 +3697,7 @@
           "url": "https://doi.org/10.70675/b5ee8192zdc38z4512zb3e5zfb1c66f5e409"
         },
         {
-          "elapsed_seconds": 0.83,
+          "elapsed_seconds": 0.5,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/Prajwal-Nagaraj/Chatbot-Simulation-Workflow",
@@ -3582,7 +3707,7 @@
           "url": "https://github.com/Prajwal-Nagaraj/Chatbot-Simulation-Workflow"
         },
         {
-          "elapsed_seconds": 0.92,
+          "elapsed_seconds": 1.02,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/SamuelSchmidgall/AgentLaboratory",
@@ -3592,7 +3717,7 @@
           "url": "https://github.com/SamuelSchmidgall/AgentLaboratory"
         },
         {
-          "elapsed_seconds": 1.0,
+          "elapsed_seconds": 1.01,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/assafelovic/gpt-researcher",
@@ -3602,7 +3727,7 @@
           "url": "https://github.com/assafelovic/gpt-researcher"
         },
         {
-          "elapsed_seconds": 0.95,
+          "elapsed_seconds": 0.91,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/daley331/Sorting-Algorithms-Analysis",
@@ -3612,7 +3737,7 @@
           "url": "https://github.com/daley331/Sorting-Algorithms-Analysis"
         },
         {
-          "elapsed_seconds": 0.85,
+          "elapsed_seconds": 1.13,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/khoj-ai/khoj",
@@ -3622,7 +3747,7 @@
           "url": "https://github.com/khoj-ai/khoj"
         },
         {
-          "elapsed_seconds": 1.06,
+          "elapsed_seconds": 0.92,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms",
@@ -3632,7 +3757,7 @@
           "url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms"
         },
         {
-          "elapsed_seconds": 1.08,
+          "elapsed_seconds": 1.06,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/pypl0/Ombre",
@@ -3642,7 +3767,7 @@
           "url": "https://github.com/pypl0/Ombre"
         },
         {
-          "elapsed_seconds": 1.19,
+          "elapsed_seconds": 0.97,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/raesa-razeen/halo-hallucination-detector",
@@ -3652,17 +3777,7 @@
           "url": "https://github.com/raesa-razeen/halo-hallucination-detector"
         },
         {
-          "elapsed_seconds": 0.79,
-          "error": "",
-          "field": "citation",
-          "final_url": "https://github.com/sbtali/SortAlgorithmsComparison",
-          "group": "prose",
-          "ok": true,
-          "status": 200,
-          "url": "https://github.com/sbtali/SortAlgorithmsComparison"
-        },
-        {
-          "elapsed_seconds": 1.18,
+          "elapsed_seconds": 0.92,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/sleepingcat4/Active-learning",
@@ -3672,7 +3787,7 @@
           "url": "https://github.com/sleepingcat4/Active-learning"
         },
         {
-          "elapsed_seconds": 0.81,
+          "elapsed_seconds": 0.98,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/virattt/dexter",
@@ -3682,7 +3797,7 @@
           "url": "https://github.com/virattt/dexter"
         },
         {
-          "elapsed_seconds": 0.97,
+          "elapsed_seconds": 0.98,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/w32zhong/BTreeimplementation",
@@ -3692,7 +3807,7 @@
           "url": "https://github.com/w32zhong/BTreeimplementation"
         },
         {
-          "elapsed_seconds": 1.15,
+          "elapsed_seconds": 1.14,
           "error": "",
           "field": "citation",
           "final_url": "https://github.com/xiaojing29/HallucinationDetection",
@@ -3704,7 +3819,7 @@
       ],
       "arxiv": [
         {
-          "elapsed_seconds": 0.23,
+          "elapsed_seconds": 0.24,
           "error": "",
           "field": "docs_url",
           "final_url": "https://info.arxiv.org/help/api/user-manual.html",
@@ -3724,7 +3839,7 @@
           "url": "https://info.arxiv.org/help/api/index.html"
         },
         {
-          "elapsed_seconds": 1.05,
+          "elapsed_seconds": 0.91,
           "error": "",
           "field": "license_url",
           "final_url": "https://info.arxiv.org/help/license/index.html",
@@ -3736,7 +3851,7 @@
       ],
       "census_us": [
         {
-          "elapsed_seconds": 0.16,
+          "elapsed_seconds": 0.17,
           "error": "",
           "field": "key_url",
           "final_url": "https://api.census.gov/data/key_signup.html",
@@ -3746,7 +3861,7 @@
           "url": "https://api.census.gov/data/key_signup.html"
         },
         {
-          "elapsed_seconds": 0.29,
+          "elapsed_seconds": 0.15,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.census.gov/data/developers/about/terms-of-service.html",
@@ -3756,7 +3871,7 @@
           "url": "https://www.census.gov/data/developers/about/terms-of-service.html"
         },
         {
-          "elapsed_seconds": 0.95,
+          "elapsed_seconds": 1.02,
           "error": "",
           "field": "docs_url",
           "final_url": "https://www.census.gov/data/developers/data-sets.html",
@@ -3768,7 +3883,7 @@
       ],
       "cisa_kev": [
         {
-          "elapsed_seconds": 0.15,
+          "elapsed_seconds": 0.08,
           "error": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;cisa&#46;gov&#47;about&#47;website&#45;policies\" on thi",
           "field": "license_url",
           "final_url": "https://www.cisa.gov/about/website-policies",
@@ -3778,7 +3893,7 @@
           "url": "https://www.cisa.gov/about/website-policies"
         },
         {
-          "elapsed_seconds": 0.96,
+          "elapsed_seconds": 0.97,
           "error": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;cisa&#46;gov&#47;known&#45;exploited&#45;vulnerabilitie",
           "field": "docs_url",
           "final_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
@@ -3800,7 +3915,7 @@
           "url": "https://clinicaltrials.gov/about-site/terms-conditions"
         },
         {
-          "elapsed_seconds": 1.03,
+          "elapsed_seconds": 0.96,
           "error": "",
           "field": "docs_url",
           "final_url": "https://clinicaltrials.gov/data-api/api",
@@ -3812,7 +3927,7 @@
       ],
       "crossref": [
         {
-          "elapsed_seconds": 0.18,
+          "elapsed_seconds": 0.17,
           "error": "",
           "field": "docs_url",
           "final_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
@@ -3822,7 +3937,7 @@
           "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/"
         },
         {
-          "elapsed_seconds": 0.19,
+          "elapsed_seconds": 0.17,
           "error": "",
           "field": "docs_url",
           "final_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
@@ -3834,17 +3949,17 @@
       ],
       "datacite": [
         {
-          "elapsed_seconds": 1.17,
-          "error": "403 - Forbidden | Access to this page is forbidden.\n",
+          "elapsed_seconds": 0.52,
+          "error": "",
           "field": "license_url",
           "final_url": "https://datacite.org/legal/",
           "group": "register",
-          "ok": false,
-          "status": 403,
+          "ok": true,
+          "status": 202,
           "url": "https://datacite.org/legal/"
         },
         {
-          "elapsed_seconds": 0.12,
+          "elapsed_seconds": 0.39,
           "error": "",
           "field": "docs_url",
           "final_url": "https://support.datacite.org/docs/api",
@@ -3856,7 +3971,7 @@
       ],
       "doaj": [
         {
-          "elapsed_seconds": 0.24,
+          "elapsed_seconds": 0.18,
           "error": "",
           "field": "docs_url",
           "final_url": "https://doaj.org/api/v3/docs",
@@ -3866,7 +3981,7 @@
           "url": "https://doaj.org/api/v3/docs"
         },
         {
-          "elapsed_seconds": 1.02,
+          "elapsed_seconds": 0.98,
           "error": "",
           "field": "key_url",
           "final_url": "https://doaj.org/api/v4/docs",
@@ -3876,7 +3991,7 @@
           "url": "https://doaj.org/api/v4/docs"
         },
         {
-          "elapsed_seconds": 0.93,
+          "elapsed_seconds": 0.99,
           "error": "",
           "field": "license_url",
           "final_url": "https://doaj.org/terms/",
@@ -3888,7 +4003,7 @@
       ],
       "eia": [
         {
-          "elapsed_seconds": 0.36,
+          "elapsed_seconds": 0.21,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.eia.gov/about/copyrights_reuse.php",
@@ -3898,7 +4013,7 @@
           "url": "https://www.eia.gov/about/copyrights_reuse.php"
         },
         {
-          "elapsed_seconds": 0.8,
+          "elapsed_seconds": 0.93,
           "error": "",
           "field": "docs_url",
           "final_url": "https://www.eia.gov/opendata/documentation.php",
@@ -3908,7 +4023,7 @@
           "url": "https://www.eia.gov/opendata/documentation.php"
         },
         {
-          "elapsed_seconds": 1.0,
+          "elapsed_seconds": 0.95,
           "error": "",
           "field": "key_url",
           "final_url": "https://www.eia.gov/opendata/register.php",
@@ -3920,7 +4035,7 @@
       ],
       "eurostat": [
         {
-          "elapsed_seconds": 0.84,
+          "elapsed_seconds": 0.9,
           "error": "",
           "field": "license_url",
           "final_url": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
@@ -3930,7 +4045,7 @@
           "url": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice"
         },
         {
-          "elapsed_seconds": 0.94,
+          "elapsed_seconds": 0.97,
           "error": "",
           "field": "docs_url",
           "final_url": "https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-getting-started",
@@ -3942,7 +4057,7 @@
       ],
       "fred": [
         {
-          "elapsed_seconds": 0.26,
+          "elapsed_seconds": 0.13,
           "error": "",
           "field": "docs_url",
           "final_url": "https://fred.stlouisfed.org/docs/api/fred/",
@@ -3952,7 +4067,7 @@
           "url": "https://fred.stlouisfed.org/docs/api/fred/"
         },
         {
-          "elapsed_seconds": 0.92,
+          "elapsed_seconds": 1.04,
           "error": "",
           "field": "license_url",
           "final_url": "https://fred.stlouisfed.org/legal/",
@@ -3962,7 +4077,7 @@
           "url": "https://fred.stlouisfed.org/legal/"
         },
         {
-          "elapsed_seconds": 0.95,
+          "elapsed_seconds": 0.88,
           "error": "",
           "field": "key_url",
           "final_url": "https://fredaccount.stlouisfed.org/login/secure/",
@@ -3974,7 +4089,7 @@
       ],
       "gbif": [
         {
-          "elapsed_seconds": 0.58,
+          "elapsed_seconds": 0.82,
           "error": "",
           "field": "docs_url",
           "final_url": "https://techdocs.gbif.org/en/openapi/",
@@ -3984,7 +4099,7 @@
           "url": "https://techdocs.gbif.org/en/openapi/"
         },
         {
-          "elapsed_seconds": 0.15,
+          "elapsed_seconds": 0.24,
           "error": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam",
           "field": "license_url",
           "final_url": "https://www.gbif.org/terms",
@@ -3996,7 +4111,7 @@
       ],
       "github": [
         {
-          "elapsed_seconds": 0.57,
+          "elapsed_seconds": 0.2,
           "error": "",
           "field": "docs_url",
           "final_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
@@ -4006,7 +4121,7 @@
           "url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories"
         },
         {
-          "elapsed_seconds": 1.22,
+          "elapsed_seconds": 0.22,
           "error": "",
           "field": "docs_url",
           "final_url": "https://docs.github.com/en/rest",
@@ -4016,7 +4131,7 @@
           "url": "https://docs.github.com/en/rest"
         },
         {
-          "elapsed_seconds": 0.28,
+          "elapsed_seconds": 0.94,
           "error": "",
           "field": "license_url",
           "final_url": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api",
@@ -4026,7 +4141,7 @@
           "url": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api"
         },
         {
-          "elapsed_seconds": 0.39,
+          "elapsed_seconds": 0.35,
           "error": "",
           "field": "key_url",
           "final_url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Ftokens",
@@ -4038,7 +4153,7 @@
       ],
       "hackernews": [
         {
-          "elapsed_seconds": 0.15,
+          "elapsed_seconds": 0.22,
           "error": "",
           "field": "docs_url",
           "final_url": "https://hn.algolia.com/api",
@@ -4050,7 +4165,7 @@
       ],
       "imf": [
         {
-          "elapsed_seconds": 0.05,
+          "elapsed_seconds": 0.04,
           "error": "unreachable: datahelp.imf.org unreachable: [Errno -2] Name or service not known",
           "field": "docs_url",
           "final_url": "https://datahelp.imf.org/knowledgebase/articles/667681-json-restful-web-service",
@@ -4060,7 +4175,7 @@
           "url": "https://datahelp.imf.org/knowledgebase/articles/667681-json-restful-web-service"
         },
         {
-          "elapsed_seconds": 0.14,
+          "elapsed_seconds": 0.07,
           "error": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;imf&#46;org&#47;en&#47;About&#47;terms\" on this server.",
           "field": "license_url",
           "final_url": "https://www.imf.org/en/About/terms",
@@ -4072,7 +4187,7 @@
       ],
       "nasa_api": [
         {
-          "elapsed_seconds": 0.23,
+          "elapsed_seconds": 0.35,
           "error": "",
           "field": "docs_url",
           "final_url": "https://api.nasa.gov/",
@@ -4082,7 +4197,7 @@
           "url": "https://api.nasa.gov/"
         },
         {
-          "elapsed_seconds": 1.0,
+          "elapsed_seconds": 0.92,
           "error": "",
           "field": "key_url",
           "final_url": "https://api.nasa.gov/#signUp",
@@ -4092,7 +4207,7 @@
           "url": "https://api.nasa.gov/#signUp"
         },
         {
-          "elapsed_seconds": 0.17,
+          "elapsed_seconds": 0.05,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -4104,7 +4219,7 @@
       ],
       "ncei": [
         {
-          "elapsed_seconds": 0.29,
+          "elapsed_seconds": 0.25,
           "error": "",
           "field": "key_url",
           "final_url": "https://www.ncdc.noaa.gov/cdo-web/token",
@@ -4114,7 +4229,7 @@
           "url": "https://www.ncdc.noaa.gov/cdo-web/token"
         },
         {
-          "elapsed_seconds": 0.34,
+          "elapsed_seconds": 0.29,
           "error": "",
           "field": "docs_url",
           "final_url": "https://www.ncei.noaa.gov/cdo-web/webservices/v2",
@@ -4124,7 +4239,7 @@
           "url": "https://www.ncei.noaa.gov/cdo-web/webservices/v2"
         },
         {
-          "elapsed_seconds": 0.18,
+          "elapsed_seconds": 0.13,
           "error": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML><HEAD><META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=iso-8859-1\">\n<TITLE>ERROR",
           "field": "license_url",
           "final_url": "https://www.noaa.gov/information-technology/open-data-dissemination",
@@ -4136,7 +4251,7 @@
       ],
       "nvd": [
         {
-          "elapsed_seconds": 0.23,
+          "elapsed_seconds": 0.09,
           "error": "",
           "field": "key_url",
           "final_url": "https://nvd.nist.gov/developers/request-an-api-key",
@@ -4146,7 +4261,7 @@
           "url": "https://nvd.nist.gov/developers/request-an-api-key"
         },
         {
-          "elapsed_seconds": 0.87,
+          "elapsed_seconds": 1.05,
           "error": "",
           "field": "docs_url",
           "final_url": "https://nvd.nist.gov/developers/vulnerabilities",
@@ -4156,7 +4271,7 @@
           "url": "https://nvd.nist.gov/developers/vulnerabilities"
         },
         {
-          "elapsed_seconds": 0.73,
+          "elapsed_seconds": 0.16,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.nist.gov/copyrights-disclaimers",
@@ -4168,7 +4283,7 @@
       ],
       "nws": [
         {
-          "elapsed_seconds": 0.41,
+          "elapsed_seconds": 0.43,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.weather.gov/disclaimer",
@@ -4178,7 +4293,7 @@
           "url": "https://www.weather.gov/disclaimer"
         },
         {
-          "elapsed_seconds": 0.95,
+          "elapsed_seconds": 1.09,
           "error": "",
           "field": "docs_url",
           "final_url": "https://www.weather.gov/documentation/services-web-api",
@@ -4190,7 +4305,7 @@
       ],
       "oecd": [
         {
-          "elapsed_seconds": 0.09,
+          "elapsed_seconds": 0.18,
           "error": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam",
           "field": "docs_url",
           "final_url": "https://data.oecd.org/fr/api/sdmx-json-documentation/",
@@ -4200,7 +4315,7 @@
           "url": "https://data.oecd.org/fr/api/sdmx-json-documentation/"
         },
         {
-          "elapsed_seconds": 0.12,
+          "elapsed_seconds": 0.18,
           "error": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam",
           "field": "license_url",
           "final_url": "https://www.oecd.org/termsandconditions/",
@@ -4212,7 +4327,7 @@
       ],
       "openalex": [
         {
-          "elapsed_seconds": 0.27,
+          "elapsed_seconds": 0.32,
           "error": "",
           "field": "docs_url",
           "final_url": "https://help.openalex.org/",
@@ -4222,7 +4337,7 @@
           "url": "https://docs.openalex.org/"
         },
         {
-          "elapsed_seconds": 0.93,
+          "elapsed_seconds": 0.85,
           "error": "",
           "field": "license_url",
           "final_url": "https://help.openalex.org/",
@@ -4234,7 +4349,7 @@
       ],
       "openlibrary": [
         {
-          "elapsed_seconds": 1.29,
+          "elapsed_seconds": 2.54,
           "error": "",
           "field": "docs_url",
           "final_url": "https://openlibrary.org/developers/api",
@@ -4246,7 +4361,7 @@
       ],
       "osv": [
         {
-          "elapsed_seconds": 0.11,
+          "elapsed_seconds": 0.18,
           "error": "",
           "field": "docs_url",
           "final_url": "https://google.github.io/osv.dev/api/",
@@ -4256,7 +4371,7 @@
           "url": "https://google.github.io/osv.dev/api/"
         },
         {
-          "elapsed_seconds": 0.49,
+          "elapsed_seconds": 0.66,
           "error": "",
           "field": "license_url",
           "final_url": "https://google.github.io/osv.dev/",
@@ -4268,7 +4383,7 @@
       ],
       "patentsview": [
         {
-          "elapsed_seconds": 0.25,
+          "elapsed_seconds": 0.18,
           "error": "",
           "field": "key_url",
           "final_url": "https://data.uspto.gov/apikey/key-reveal",
@@ -4278,7 +4393,7 @@
           "url": "https://data.uspto.gov/apikey/key-reveal"
         },
         {
-          "elapsed_seconds": 0.99,
+          "elapsed_seconds": 0.97,
           "error": "",
           "field": "docs_url",
           "final_url": "https://data.uspto.gov/apis/getting-started",
@@ -4300,7 +4415,7 @@
       ],
       "pubchem": [
         {
-          "elapsed_seconds": 0.21,
+          "elapsed_seconds": 0.19,
           "error": "",
           "field": "license_url",
           "final_url": "https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access",
@@ -4310,7 +4425,7 @@
           "url": "https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access"
         },
         {
-          "elapsed_seconds": 0.98,
+          "elapsed_seconds": 0.93,
           "error": "",
           "field": "docs_url",
           "final_url": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
@@ -4322,7 +4437,7 @@
       ],
       "pubmed": [
         {
-          "elapsed_seconds": 0.67,
+          "elapsed_seconds": 0.49,
           "error": "",
           "field": "key_url",
           "final_url": "https://account.ncbi.nlm.nih.gov/?back_url=https%3A//account.ncbi.nlm.nih.gov/settings/",
@@ -4332,7 +4447,7 @@
           "url": "https://www.ncbi.nlm.nih.gov/account/settings/"
         },
         {
-          "elapsed_seconds": 0.52,
+          "elapsed_seconds": 0.63,
           "error": "",
           "field": "docs_url",
           "final_url": "https://www.ncbi.nlm.nih.gov/books/NBK25497/",
@@ -4342,7 +4457,7 @@
           "url": "https://www.ncbi.nlm.nih.gov/books/NBK25497/"
         },
         {
-          "elapsed_seconds": 0.99,
+          "elapsed_seconds": 1.03,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
@@ -4354,7 +4469,7 @@
       ],
       "rcsb_pdb": [
         {
-          "elapsed_seconds": 0.17,
+          "elapsed_seconds": 0.18,
           "error": "",
           "field": "docs_url",
           "final_url": "https://data.rcsb.org/redoc/index.html",
@@ -4364,7 +4479,7 @@
           "url": "https://data.rcsb.org/redoc/index.html"
         },
         {
-          "elapsed_seconds": 0.3,
+          "elapsed_seconds": 0.2,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.rcsb.org/pages/policies",
@@ -4376,7 +4491,7 @@
       ],
       "sec_edgar": [
         {
-          "elapsed_seconds": 0.14,
+          "elapsed_seconds": 0.06,
           "error": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T",
           "field": "license_url",
           "final_url": "https://www.sec.gov/privacy#dissemination",
@@ -4386,7 +4501,7 @@
           "url": "https://www.sec.gov/privacy#dissemination"
         },
         {
-          "elapsed_seconds": 1.0,
+          "elapsed_seconds": 0.98,
           "error": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T",
           "field": "docs_url",
           "final_url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
@@ -4408,7 +4523,7 @@
           "url": "https://www.semanticscholar.org/product/api"
         },
         {
-          "elapsed_seconds": 0.96,
+          "elapsed_seconds": 0.92,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.semanticscholar.org/product/api/license",
@@ -4430,7 +4545,7 @@
           "url": "https://api.stackexchange.com/docs"
         },
         {
-          "elapsed_seconds": 0.63,
+          "elapsed_seconds": 0.52,
           "error": "",
           "field": "key_url",
           "final_url": "https://stackapps.com/users/login?returnurl=/applications",
@@ -4440,7 +4555,7 @@
           "url": "https://stackapps.com/apps/oauth/register"
         },
         {
-          "elapsed_seconds": 0.24,
+          "elapsed_seconds": 0.11,
           "error": "",
           "field": "license_url",
           "final_url": "https://stackoverflow.com/legal/terms-of-service/public",
@@ -4452,7 +4567,7 @@
       ],
       "un_sdg": [
         {
-          "elapsed_seconds": 0.63,
+          "elapsed_seconds": 0.5,
           "error": "",
           "field": "docs_url",
           "final_url": "https://unstats.un.org/sdgapi/swagger/",
@@ -4462,7 +4577,7 @@
           "url": "https://unstats.un.org/sdgapi/swagger/"
         },
         {
-          "elapsed_seconds": 0.32,
+          "elapsed_seconds": 0.13,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.un.org/en/about-us/terms-of-use",
@@ -4474,7 +4589,7 @@
       ],
       "uniprot": [
         {
-          "elapsed_seconds": 0.53,
+          "elapsed_seconds": 0.65,
           "error": "",
           "field": "docs_url",
           "final_url": "https://www.uniprot.org/help/api",
@@ -4484,7 +4599,7 @@
           "url": "https://www.uniprot.org/help/api"
         },
         {
-          "elapsed_seconds": 1.12,
+          "elapsed_seconds": 0.81,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.uniprot.org/help/license",
@@ -4496,7 +4611,7 @@
       ],
       "usgs_earthquake": [
         {
-          "elapsed_seconds": 0.13,
+          "elapsed_seconds": 0.77,
           "error": "",
           "field": "docs_url",
           "final_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
@@ -4506,7 +4621,7 @@
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/"
         },
         {
-          "elapsed_seconds": 1.74,
+          "elapsed_seconds": 0.06,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
@@ -4518,7 +4633,7 @@
       ],
       "who_gho": [
         {
-          "elapsed_seconds": 0.21,
+          "elapsed_seconds": 0.32,
           "error": "",
           "field": "license_url",
           "final_url": "https://www.who.int/about/policies/publishing/copyright",
@@ -4528,7 +4643,7 @@
           "url": "https://www.who.int/about/policies/publishing/copyright"
         },
         {
-          "elapsed_seconds": 1.2,
+          "elapsed_seconds": 1.29,
           "error": "",
           "field": "docs_url",
           "final_url": "https://www.who.int/data/gho/info/gho-odata-api",
@@ -4540,7 +4655,7 @@
       ],
       "wikimedia": [
         {
-          "elapsed_seconds": 0.21,
+          "elapsed_seconds": 0.85,
           "error": "",
           "field": "docs_url",
           "final_url": "https://www.mediawiki.org/wiki/Wikimedia_APIs",
@@ -4550,7 +4665,7 @@
           "url": "https://api.wikimedia.org/wiki/Main_Page"
         },
         {
-          "elapsed_seconds": 0.12,
+          "elapsed_seconds": 0.31,
           "error": "",
           "field": "license_url",
           "final_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
@@ -4562,7 +4677,7 @@
       ],
       "worldbank": [
         {
-          "elapsed_seconds": 0.17,
+          "elapsed_seconds": 0.16,
           "error": "",
           "field": "license_url",
           "final_url": "https://datacatalog.worldbank.org/public-licenses",
@@ -4584,7 +4699,7 @@
       ],
       "zenodo": [
         {
-          "elapsed_seconds": 0.17,
+          "elapsed_seconds": 0.37,
           "error": "",
           "field": "license_url",
           "final_url": "https://about.zenodo.org/policies/",
@@ -4594,7 +4709,7 @@
           "url": "https://about.zenodo.org/policies/"
         },
         {
-          "elapsed_seconds": 0.17,
+          "elapsed_seconds": 0.32,
           "error": "",
           "field": "docs_url",
           "final_url": "https://developers.zenodo.org/",
@@ -4606,70 +4721,71 @@
       ]
     },
     "by_status": {
-      "200": 100,
+      "200": 105,
+      "202": 1,
       "401": 2,
-      "403": 12,
+      "403": 11,
       "404": 2,
       "406": 1,
       "422": 1,
       "unreachable": 3
     },
-    "checked": 121,
-    "failed": 21,
-    "generated_at": "2026-09-22T21:24:53Z",
-    "label": "local machine",
+    "checked": 126,
+    "failed": 20,
+    "generated_at": "2026-09-22T22:16:00Z",
+    "label": "GitHub Actions ubuntu-latest (unrestricted egress)",
     "note": "Status and final URL only; page content is not asserted here. `label` names the machine that ran the check, because a host with restricted egress reports 'unreachable' for hosts it cannot reach, which is a property of the machine and is recorded as such rather than being read as a broken link.",
-    "ok": 100
+    "ok": 106
   },
   "meta_knowledge": {
     "experiments": {
       "completed": 3,
       "total": 3
     },
-    "generated_at": "2026-09-22T22:03:28Z",
+    "generated_at": "2026-09-22T23:12:31Z",
     "notes": [],
     "personas": [
       {
         "key": "persona-F",
         "matches": 204,
         "rank": 1,
-        "rating": 1737.0,
-        "wins": 168
+        "rating": 1718.0,
+        "wins": 166
       },
       {
         "key": "persona-D",
-        "matches": 190,
+        "matches": 189,
         "rank": 2,
-        "rating": 1570.1,
+        "rating": 1581.4,
         "wins": 102
       },
       {
         "key": "persona-A",
-        "matches": 178,
+        "matches": 180,
         "rank": 3,
-        "rating": 1513.2,
-        "wins": 71
+        "rating": 1529.1,
+        "wins": 73
+      },
+      {
+        "key": "persona-C",
+        "matches": 181,
+        "rank": 4,
+        "rating": 1408.9,
+        "wins": 35
       },
       {
         "key": "persona-E",
         "matches": 185,
-        "rank": 4,
-        "rating": 1402.7,
-        "wins": 69
+        "rank": 5,
+        "rating": 1388.3,
+        "wins": 63
       },
       {
         "key": "persona-B",
-        "matches": 189,
-        "rank": 5,
-        "rating": 1399.3,
-        "wins": 90
-      },
-      {
-        "key": "persona-C",
-        "matches": 180,
+        "matches": 187,
         "rank": 6,
-        "rating": 1377.7,
-        "wins": 29
+        "rating": 1374.3,
+        "wins": 78
       }
     ],
     "rules": [
@@ -4894,7 +5010,7 @@
         "supported": 0.8
       },
       "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-      "ran_at": "2026-09-22T22:03:24Z",
+      "ran_at": "2026-09-22T23:12:27Z",
       "source": "state/calibration.json"
     }
   },
@@ -5592,7 +5708,7 @@
       "status": "implemented"
     }
   ],
-  "run_id": "run-735c72c7bf96",
+  "run_id": "run-e876f1525d9b",
   "run_summary": {
     "change_scan": {},
     "claim_kinds": {
@@ -5615,7 +5731,7 @@
       "errors": 0,
       "metadata_claims": 45,
       "open_questions": 141,
-      "records_withdrawn": 107,
+      "records_withdrawn": 3,
       "sources_polled": 1,
       "sources_reached": 0,
       "substantive_claims": 119,
@@ -5626,14 +5742,14 @@
       "topics_proposed": 3,
       "warnings": 15
     },
-    "generated_at": "2026-09-22T22:03:28Z",
+    "generated_at": "2026-09-22T23:12:31Z",
     "irregularities": {
       "by_severity": {
         "error": 0,
-        "info": 19,
+        "info": 20,
         "warning": 15
       },
-      "total": 34
+      "total": 35
     },
     "mode": "snapshot",
     "registry": {
@@ -5686,7 +5802,7 @@
       ],
       "total": 36
     },
-    "run_id": "run-735c72c7bf96",
+    "run_id": "run-e876f1525d9b",
     "substance": {
       "claims": 300,
       "dated": 42,
@@ -5711,7 +5827,7 @@
         "supported": 0.8
       },
       "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-      "ran_at": "2026-09-22T22:03:24Z",
+      "ran_at": "2026-09-22T23:12:27Z",
       "source": "state/calibration.json"
     },
     "topic_proposals": [
@@ -5793,7 +5909,7 @@
       "Library now holds 300 claim(s) across 4 question(s).",
       "This cycle collected 48 document(s); 0 of 1 polled source(s) responded live.",
       "141 open question(s) have been derived from the retrieved evidence.",
-      "5 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them, 107 briefs, criticisms and questions withdrew alongside retired claims this cycle, and 119 claim(s) scored as substantive while 45 are labelled as registry metadata.",
+      "5 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them, 3 briefs, criticisms and questions withdrew alongside retired claims this cycle, and 119 claim(s) scored as substantive while 45 are labelled as registry metadata.",
       "3 candidate topic(s) were scored from the retrieved documents and 0 promoted; the change scan polled 0 source(s) and found 0 item(s) not seen before.",
       "0 error(s) and 15 warning(s) are waiting for review."
     ]
@@ -6773,7 +6889,7 @@
     ],
     "status": [
       {
-        "checked_at": "2026-09-22T22:03:24Z",
+        "checked_at": "2026-09-22T23:12:27Z",
         "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=autonomous+research+agent+in%3Aname%2Cdescription",
         "evidence_class": "primary_source",
         "evidence_rank": 3,
@@ -6789,7 +6905,7 @@
         "url": "https://api.github.com/search/repositories"
       },
       {
-        "checked_at": "2026-09-22T22:03:24Z",
+        "checked_at": "2026-09-22T23:12:28Z",
         "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=hallucination+detection+open+source+in%3Aname%2Cdescription",
         "evidence_class": "primary_source",
         "evidence_rank": 3,
@@ -6805,7 +6921,7 @@
         "url": "https://api.github.com/search/repositories"
       },
       {
-        "checked_at": "2026-09-22T22:03:25Z",
+        "checked_at": "2026-09-22T23:12:28Z",
         "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=active+learning+acquisition+function+in%3Aname%2Cdescription",
         "evidence_class": "primary_source",
         "evidence_rank": 3,
@@ -6821,7 +6937,7 @@
         "url": "https://api.github.com/search/repositories"
       },
       {
-        "checked_at": "2026-09-22T22:03:27Z",
+        "checked_at": "2026-09-22T23:12:30Z",
         "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=sorting+algorithm+comparison+count+in%3Aname%2Cdescription",
         "evidence_class": "primary_source",
         "evidence_rank": 3,
@@ -7645,7 +7761,7 @@
           "reasons": [
             "All 2 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:24Z",
+          "recorded_at": "2026-09-22T23:12:27Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-661474e2276b",
@@ -7697,7 +7813,7 @@
           "reasons": [
             "All 1 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:24Z",
+          "recorded_at": "2026-09-22T23:12:27Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-af231e4e8dd2",
@@ -7750,7 +7866,7 @@
           "reasons": [
             "All 2 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:24Z",
+          "recorded_at": "2026-09-22T23:12:27Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-b0597cb75f3a",
@@ -7802,7 +7918,7 @@
           "reasons": [
             "All 1 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:24Z",
+          "recorded_at": "2026-09-22T23:12:27Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-dc28e31745a0",
@@ -7859,7 +7975,7 @@
           "reasons": [
             "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
           ],
-          "recorded_at": "2026-09-22T22:03:24Z",
+          "recorded_at": "2026-09-22T23:12:27Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-b274cc7763f8",
@@ -7916,7 +8032,7 @@
           "reasons": [
             "All 1 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
           ],
-          "recorded_at": "2026-09-22T22:03:24Z",
+          "recorded_at": "2026-09-22T23:12:27Z",
           "source_name": "Cross-document synthesis of cited claims",
           "substance": {
             "claim_id": "cl-186537ad9245",
@@ -7973,7 +8089,7 @@
           "reasons": [
             "All 2 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
           ],
-          "recorded_at": "2026-09-22T22:03:24Z",
+          "recorded_at": "2026-09-22T23:12:27Z",
           "source_name": "Cross-document synthesis of cited claims",
           "substance": {
             "claim_id": "cl-8737f188a55e",
@@ -9311,7 +9427,7 @@
           "claim_a": "cl-13cf26e4fba9",
           "claim_b": "cl-6ac20344a641",
           "contradiction_id": "con-4fb8033a159c",
-          "created_at": "2026-09-22T22:03:24Z",
+          "created_at": "2026-09-22T23:12:27Z",
           "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (102 vs 150). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
@@ -9559,7 +9675,7 @@
         "What experiment would resolve it?"
       ],
       "experiments": [],
-      "generated_at": "2026-09-22T22:03:28Z",
+      "generated_at": "2026-09-22T23:12:31Z",
       "questions": [
         {
           "id": "q-906c573de2ab",
@@ -11589,14 +11705,14 @@
         {
           "claim_id": "q-3908709733c3",
           "claim_kind": "open question (gap)",
-          "recorded_at": "2026-09-22T22:03:24Z",
-          "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-048f7bdbd6c3.",
+          "recorded_at": "2026-09-22T23:12:28Z",
+          "superseded": "Withdrawn 2026-09-22T23:12:31Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-048f7bdbd6c3.",
           "text": "The quantity reported in cl-048f7bdbd6c3 has no reference period in the quoted text. Over what period, and in what population, was it measured?"
         }
       ],
       "source_status": [
         {
-          "checked_at": "2026-09-22T22:03:24Z",
+          "checked_at": "2026-09-22T23:12:27Z",
           "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=autonomous+research+agent+in%3Aname%2Cdescription",
           "evidence_class": "primary_source",
           "evidence_rank": 3,
@@ -11614,7 +11730,7 @@
       ],
       "statistics": {
         "claims": 33,
-        "computed_at": "2026-09-22T22:03:28Z",
+        "computed_at": "2026-09-22T23:12:31Z",
         "documents": 11,
         "evidence_classes": [
           "commentary",
@@ -11806,6 +11922,18 @@
         {
           "last_updated": "2026-09-22T22:03:24Z",
           "line": 131,
+          "status": "competing",
+          "topic_id": "topic-autonomous-research-agents"
+        },
+        {
+          "last_updated": "2026-09-22T23:12:27Z",
+          "line": 135,
+          "status": "new",
+          "topic_id": "topic-autonomous-research-agents"
+        },
+        {
+          "last_updated": "2026-09-22T23:12:28Z",
+          "line": 139,
           "status": "competing",
           "topic_id": "topic-autonomous-research-agents"
         }
@@ -13185,7 +13313,7 @@
         }
       ],
       "topic": {
-        "first_seen": "2026-09-22T22:03:24Z",
+        "first_seen": "2026-09-22T23:12:27Z",
         "keywords": [
           "autonomous agent",
           "research automation",
@@ -13194,7 +13322,7 @@
           "open source",
           "repository activity"
         ],
-        "last_updated": "2026-09-22T22:03:24Z",
+        "last_updated": "2026-09-22T23:12:28Z",
         "notes": "First seed question. Chosen because its evidence is repository metadata, which the engine can retrieve and quote verbatim.",
         "origin": "seed",
         "parent_topic_id": null,
@@ -14442,7 +14570,7 @@
           "reasons": [
             "All 1 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-78627446b3ea",
@@ -14495,7 +14623,7 @@
           "reasons": [
             "All 2 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-b4ce8a385c20",
@@ -14548,7 +14676,7 @@
           "reasons": [
             "All 2 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-fc171e1b13c3",
@@ -14600,7 +14728,7 @@
           "reasons": [
             "All 1 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-b870dcc194e5",
@@ -14657,7 +14785,7 @@
           "reasons": [
             "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-ef843a21d7b8",
@@ -16645,7 +16773,7 @@
           "claim_a": "cl-87c1d0345e0e",
           "claim_b": "cl-9d035d5ab642",
           "contradiction_id": "con-5ddfe0dad53e",
-          "created_at": "2026-09-22T22:03:24Z",
+          "created_at": "2026-09-22T23:12:28Z",
           "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (0 vs 5). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
@@ -16659,7 +16787,7 @@
           "claim_a": "cl-8faf22d0289e",
           "claim_b": "cl-ef6f3d3a8a5d",
           "contradiction_id": "con-96485a969ff6",
-          "created_at": "2026-09-22T22:03:24Z",
+          "created_at": "2026-09-22T23:12:28Z",
           "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (10, 2026, 21, 35, 4, 9 vs 0, 1, 20, 2025, 47, 52). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
@@ -16882,13 +17010,13 @@
           "baseline": 0.96,
           "best_value": 1.0,
           "best_variant": "support=0.8 partial=0.45 quote_chars=24.0",
-          "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-c578ymhr/result.json",
+          "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-cqfknhi5/result.json",
           "error": "",
           "experiment_id": "verification-thresholds-v1",
           "hypothesis": "A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports.",
           "method": "Exhaustive sweep of 132 threshold combinations, evaluated against 26 hand-labelled claim/document pairs; selection is lexicographic on false supports, recall, F1, macro F1, distance from the documented default, then strictness.",
           "metric": "verdict accuracy on labelled cases",
-          "ran_at": "2026-09-22T22:03:25Z",
+          "ran_at": "2026-09-22T23:12:28Z",
           "result_json": {
             "baseline": 0.96,
             "baseline_name": "configured default thresholds support=0.8 partial=0.55 quote_chars=24.0",
@@ -16985,7 +17113,7 @@
           "topic_id": "topic-fabrication-detection"
         }
       ],
-      "generated_at": "2026-09-22T22:03:28Z",
+      "generated_at": "2026-09-22T23:12:31Z",
       "questions": [
         {
           "id": "q-a12323d8e08a",
@@ -18777,7 +18905,7 @@
       ],
       "source_status": [
         {
-          "checked_at": "2026-09-22T22:03:24Z",
+          "checked_at": "2026-09-22T23:12:28Z",
           "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=hallucination+detection+open+source+in%3Aname%2Cdescription",
           "evidence_class": "primary_source",
           "evidence_rank": 3,
@@ -18795,7 +18923,7 @@
       ],
       "statistics": {
         "claims": 44,
-        "computed_at": "2026-09-22T22:03:28Z",
+        "computed_at": "2026-09-22T23:12:31Z",
         "documents": 10,
         "evidence_classes": [
           "primary_source",
@@ -18986,6 +19114,18 @@
         {
           "last_updated": "2026-09-22T22:03:25Z",
           "line": 132,
+          "status": "testing",
+          "topic_id": "topic-fabrication-detection"
+        },
+        {
+          "last_updated": "2026-09-22T23:12:27Z",
+          "line": 136,
+          "status": "new",
+          "topic_id": "topic-fabrication-detection"
+        },
+        {
+          "last_updated": "2026-09-22T23:12:28Z",
+          "line": 140,
           "status": "testing",
           "topic_id": "topic-fabrication-detection"
         }
@@ -20185,7 +20325,7 @@
       },
       "synthesis": [],
       "topic": {
-        "first_seen": "2026-09-22T22:03:24Z",
+        "first_seen": "2026-09-22T23:12:27Z",
         "keywords": [
           "hallucination",
           "factuality",
@@ -20194,7 +20334,7 @@
           "attribution",
           "evidence"
         ],
-        "last_updated": "2026-09-22T22:03:25Z",
+        "last_updated": "2026-09-22T23:12:28Z",
         "notes": "Directly relevant to this project's own central problem: deciding whether a sentence is supported by a source.",
         "origin": "seed",
         "parent_topic_id": null,
@@ -20623,7 +20763,7 @@
             }
           }
         },
-        "decided_at": "2026-09-22T22:03:25Z",
+        "decided_at": "2026-09-22T23:12:28Z",
         "notes": "The final was decided on the weighted criterion total; the margin is published below.",
         "ranking": [
           "st-7a6aef4c9544",
@@ -21637,7 +21777,7 @@
           "reasons": [
             "All 2 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-14c6231464ba",
@@ -21689,7 +21829,7 @@
           "reasons": [
             "All 1 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-218a3db8595c",
@@ -21742,7 +21882,7 @@
           "reasons": [
             "All 2 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-5f7ead482aa8",
@@ -21794,7 +21934,7 @@
           "reasons": [
             "All 1 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-30d31bfbf26c",
@@ -21851,7 +21991,7 @@
           "reasons": [
             "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-f030bcdfc70a",
@@ -21908,7 +22048,7 @@
           "reasons": [
             "All 2 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "Cross-document synthesis of cited claims",
           "substance": {
             "claim_id": "cl-3328b7d99d8f",
@@ -21968,7 +22108,7 @@
           "reasons": [
             "All 3 figure(s) and 0 date(s) appear in the 5 cited claim(s) drawn from 4 documents, or in the recorded document/source counts."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "Cross-document synthesis of cited claims",
           "substance": {
             "claim_id": "cl-acbe89830170",
@@ -22034,7 +22174,7 @@
           "reasons": [
             "All 3 figure(s) and 0 date(s) appear in the 11 cited claim(s) drawn from 7 documents, or in the recorded document/source counts."
           ],
-          "recorded_at": "2026-09-22T22:03:25Z",
+          "recorded_at": "2026-09-22T23:12:28Z",
           "source_name": "Cross-document synthesis of cited claims",
           "substance": {
             "claim_id": "cl-f1535a686171",
@@ -23672,7 +23812,7 @@
           "claim_a": "cl-5a86c56f889c",
           "claim_b": "cl-92ae15540483",
           "contradiction_id": "con-62b85df6338e",
-          "created_at": "2026-09-22T22:03:25Z",
+          "created_at": "2026-09-22T23:12:28Z",
           "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (0, 19, 2, 2020, 25, 7 vs 14, 17, 2024, 39, 49, 6, 9). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
@@ -23700,7 +23840,7 @@
           "claim_a": "cl-34785ec24933",
           "claim_b": "cl-aae22a8bf2b6",
           "contradiction_id": "con-9e27fade0728",
-          "created_at": "2026-09-22T22:03:25Z",
+          "created_at": "2026-09-22T23:12:28Z",
           "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
@@ -23728,7 +23868,7 @@
           "claim_a": "cl-a39b827e786b",
           "claim_b": "cl-aae22a8bf2b6",
           "contradiction_id": "con-c3814afc1d32",
-          "created_at": "2026-09-22T22:03:25Z",
+          "created_at": "2026-09-22T23:12:28Z",
           "detail": "Claims share 67% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
@@ -23742,7 +23882,7 @@
           "claim_a": "cl-aae22a8bf2b6",
           "claim_b": "cl-d3e7cd2b784b",
           "contradiction_id": "con-d3df6c302896",
-          "created_at": "2026-09-22T22:03:25Z",
+          "created_at": "2026-09-22T23:12:28Z",
           "detail": "Claims share 57% of their content tokens but contain disjoint numeric values (2 vs 0, 3). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
@@ -23770,7 +23910,7 @@
           "claim_a": "cl-aae22a8bf2b6",
           "claim_b": "cl-c6ff1cae91a9",
           "contradiction_id": "con-f8b061b192ec",
-          "created_at": "2026-09-22T22:03:25Z",
+          "created_at": "2026-09-22T23:12:28Z",
           "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
           "kind": "numeric",
           "resolution": "unresolved",
@@ -23993,13 +24133,13 @@
           "baseline": 960.0,
           "best_value": 139.0205,
           "best_variant": "epsilon_greedy",
-          "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-enrnbm_y/result.json",
+          "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-rjuq7rd4/result.json",
           "error": "",
           "experiment_id": "scheduling-policies-v1",
           "hypothesis": "On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate keeps paying a cost proportional to the horizon.",
           "method": "100 independent trials of 4000 pulls per policy on arms with means [0.15, 0.25, 0.35, 0.45, 0.6]; pseudo-regret computed from the true mean of each pulled arm, so the metric has no reward noise.",
           "metric": "mean cumulative pseudo-regret",
-          "ran_at": "2026-09-22T22:03:27Z",
+          "ran_at": "2026-09-22T23:12:30Z",
           "result_json": {
             "arm_means": [
               0.15,
@@ -24091,7 +24231,7 @@
           "topic_id": "topic-research-loop-scheduling"
         }
       ],
-      "generated_at": "2026-09-22T22:03:28Z",
+      "generated_at": "2026-09-22T23:12:31Z",
       "questions": [
         {
           "id": "q-a7a594ff0997",
@@ -26051,14 +26191,14 @@
         {
           "claim_id": "q-c34e24cf4e97",
           "claim_kind": "open question (gap)",
-          "recorded_at": "2026-09-22T22:03:27Z",
-          "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-05c6f4dc6499.",
+          "recorded_at": "2026-09-22T23:12:30Z",
+          "superseded": "Withdrawn 2026-09-22T23:12:31Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-05c6f4dc6499.",
           "text": "The quantity reported in cl-05c6f4dc6499 has no reference period in the quoted text. Over what period, and in what population, was it measured?"
         }
       ],
       "source_status": [
         {
-          "checked_at": "2026-09-22T22:03:25Z",
+          "checked_at": "2026-09-22T23:12:28Z",
           "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=active+learning+acquisition+function+in%3Aname%2Cdescription",
           "evidence_class": "primary_source",
           "evidence_rank": 3,
@@ -26076,7 +26216,7 @@
       ],
       "statistics": {
         "claims": 40,
-        "computed_at": "2026-09-22T22:03:28Z",
+        "computed_at": "2026-09-22T23:12:31Z",
         "documents": 10,
         "evidence_classes": [
           "peer_reviewed",
@@ -26268,6 +26408,18 @@
         {
           "last_updated": "2026-09-22T22:03:27Z",
           "line": 133,
+          "status": "testing",
+          "topic_id": "topic-research-loop-scheduling"
+        },
+        {
+          "last_updated": "2026-09-22T23:12:27Z",
+          "line": 137,
+          "status": "new",
+          "topic_id": "topic-research-loop-scheduling"
+        },
+        {
+          "last_updated": "2026-09-22T23:12:30Z",
+          "line": 141,
           "status": "testing",
           "topic_id": "topic-research-loop-scheduling"
         }
@@ -27787,7 +27939,7 @@
         }
       ],
       "topic": {
-        "first_seen": "2026-09-22T22:03:24Z",
+        "first_seen": "2026-09-22T23:12:27Z",
         "keywords": [
           "scheduling",
           "prioritisation",
@@ -27796,7 +27948,7 @@
           "research management",
           "bandit"
         ],
-        "last_updated": "2026-09-22T22:03:27Z",
+        "last_updated": "2026-09-22T23:12:30Z",
         "notes": "Tests whether the manager's scoring design matches published practice, or whether a published method is better.",
         "origin": "seed",
         "parent_topic_id": null,
@@ -29180,7 +29332,7 @@
           "reasons": [
             "All 2 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:27Z",
+          "recorded_at": "2026-09-22T23:12:30Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-226c5106e9cb",
@@ -29233,7 +29385,7 @@
           "reasons": [
             "All 2 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:27Z",
+          "recorded_at": "2026-09-22T23:12:30Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-515151e36c43",
@@ -29285,7 +29437,7 @@
           "reasons": [
             "All 1 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:27Z",
+          "recorded_at": "2026-09-22T23:12:30Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-d738fd457549",
@@ -29337,7 +29489,7 @@
           "reasons": [
             "All 1 numeric literal(s) match the engine-computed context set."
           ],
-          "recorded_at": "2026-09-22T22:03:27Z",
+          "recorded_at": "2026-09-22T23:12:30Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-98b8b5ce690a",
@@ -29394,7 +29546,7 @@
           "reasons": [
             "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
           ],
-          "recorded_at": "2026-09-22T22:03:27Z",
+          "recorded_at": "2026-09-22T23:12:30Z",
           "source_name": "SelfLearn library computation",
           "substance": {
             "claim_id": "cl-e11c78d29de7",
@@ -31840,13 +31992,13 @@
           "baseline": 16807.6,
           "best_value": 1726.4,
           "best_variant": "merge_sort",
-          "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-ewh64nx7/result.json",
+          "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-h1fcagfp/result.json",
           "error": "",
           "experiment_id": "sorting-comparisons-v1",
           "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
           "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
           "metric": "mean element comparisons per run",
-          "ran_at": "2026-09-22T22:03:27Z",
+          "ran_at": "2026-09-22T23:12:31Z",
           "result_json": {
             "baseline": 16807.6,
             "baseline_name": "insertion_sort on shuffled input",
@@ -31894,9 +32046,9 @@
                   "merge_sort": 1024
                 },
                 "mean_seconds": {
-                  "heapsort": 0.00038088,
-                  "insertion_sort": 0.00285839,
-                  "merge_sort": 0.00027088
+                  "heapsort": 0.00040216,
+                  "insertion_sort": 0.00296409,
+                  "merge_sort": 0.00029199
                 },
                 "min_comparisons": {
                   "heapsort": 3106,
@@ -31916,9 +32068,9 @@
                   "merge_sort": 1726.4
                 },
                 "mean_seconds": {
-                  "heapsort": 0.00043031,
-                  "insertion_sort": 0.00153076,
-                  "merge_sort": 0.00036719
+                  "heapsort": 0.00043209,
+                  "insertion_sort": 0.00153315,
+                  "merge_sort": 0.00038271
                 },
                 "min_comparisons": {
                   "heapsort": 3278,
@@ -31938,9 +32090,9 @@
                   "merge_sort": 1024
                 },
                 "mean_seconds": {
-                  "heapsort": 0.00044891,
-                  "insertion_sort": 2.564e-05,
-                  "merge_sort": 0.00024708
+                  "heapsort": 0.00046406,
+                  "insertion_sort": 2.62e-05,
+                  "merge_sort": 0.00026364
                 },
                 "min_comparisons": {
                   "heapsort": 3452,
@@ -31973,7 +32125,7 @@
           "topic_id": "topic-search-and-sorting-strategy"
         }
       ],
-      "generated_at": "2026-09-22T22:03:28Z",
+      "generated_at": "2026-09-22T23:12:31Z",
       "questions": [
         {
           "id": "q-29c92c5dc0ff",
@@ -33408,14 +33560,14 @@
         {
           "claim_id": "q-012936aa0ff1",
           "claim_kind": "open question (gap)",
-          "recorded_at": "2026-09-22T22:03:28Z",
-          "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd.",
+          "recorded_at": "2026-09-22T23:12:31Z",
+          "superseded": "Withdrawn 2026-09-22T23:12:31Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd.",
           "text": "The quantity reported in cl-04fe27e07fbd has no reference period in the quoted text. Over what period, and in what population, was it measured?"
         }
       ],
       "source_status": [
         {
-          "checked_at": "2026-09-22T22:03:27Z",
+          "checked_at": "2026-09-22T23:12:30Z",
           "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=sorting+algorithm+comparison+count+in%3Aname%2Cdescription",
           "evidence_class": "primary_source",
           "evidence_rank": 3,
@@ -33433,7 +33585,7 @@
       ],
       "statistics": {
         "claims": 49,
-        "computed_at": "2026-09-22T22:03:28Z",
+        "computed_at": "2026-09-22T23:12:31Z",
         "documents": 10,
         "evidence_classes": [
           "primary_source",
@@ -33624,6 +33776,18 @@
         {
           "last_updated": "2026-09-22T22:03:28Z",
           "line": 134,
+          "status": "testing",
+          "topic_id": "topic-search-and-sorting-strategy"
+        },
+        {
+          "last_updated": "2026-09-22T23:12:27Z",
+          "line": 138,
+          "status": "new",
+          "topic_id": "topic-search-and-sorting-strategy"
+        },
+        {
+          "last_updated": "2026-09-22T23:12:31Z",
+          "line": 142,
           "status": "testing",
           "topic_id": "topic-search-and-sorting-strategy"
         }
@@ -35037,7 +35201,7 @@
       },
       "synthesis": [],
       "topic": {
-        "first_seen": "2026-09-22T22:03:24Z",
+        "first_seen": "2026-09-22T23:12:27Z",
         "keywords": [
           "algorithm",
           "sorting",
@@ -35047,7 +35211,7 @@
           "performance",
           "data structures"
         ],
-        "last_updated": "2026-09-22T22:03:28Z",
+        "last_updated": "2026-09-22T23:12:31Z",
         "notes": "The one seed question that matches the computational experiment catalogue, so the tournament's experimental criterion can be non-zero here.",
         "origin": "seed",
         "parent_topic_id": null,

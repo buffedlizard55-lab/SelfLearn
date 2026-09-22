@@ -17,10 +17,10 @@
   "irregularities": {
     "by_severity": {
       "error": 0,
-      "info": 19,
+      "info": 20,
       "warning": 15
     },
-    "total": 34
+    "total": 35
   },
   "mode": "snapshot",
   "notes": [
@@ -56,7 +56,7 @@
       "topic-research-loop-scheduling: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
       "topic-search-and-sorting-strategy: cannot measure attention for this question. Those components are excluded from the score rather than defaulted."
     ],
-    "run_id": "run-735c72c7bf96",
+    "run_id": "run-e876f1525d9b",
     "scores": [
       {
         "basis": [
@@ -76,7 +76,7 @@
           "testability": 0.8919
         },
         "details": {
-          "newest_document_age_days": 26.9
+          "newest_document_age_days": 27.0
         },
         "topic_id": "topic-autonomous-research-agents",
         "total": 0.4447,
@@ -102,7 +102,7 @@
           "testability": 0.7571
         },
         "details": {
-          "newest_document_age_days": 1.9
+          "newest_document_age_days": 2.0
         },
         "topic_id": "topic-fabrication-detection",
         "total": 0.3845,
@@ -128,7 +128,7 @@
           "testability": 0.8533
         },
         "details": {
-          "newest_document_age_days": 74.9
+          "newest_document_age_days": 75.0
         },
         "topic_id": "topic-research-loop-scheduling",
         "total": 0.346,
@@ -154,7 +154,7 @@
           "testability": 0.8519
         },
         "details": {
-          "newest_document_age_days": 90.9
+          "newest_document_age_days": 91.0
         },
         "topic_id": "topic-search-and-sorting-strategy",
         "total": 0.33,
@@ -198,7 +198,7 @@
     },
     "tasks": [
       {
-        "created_at": "2026-09-22T22:03:24Z",
+        "created_at": "2026-09-22T23:12:27Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -211,11 +211,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-f9582c46d6e3",
+        "task_id": "task-c85e44b6e43c",
         "topic_id": "topic-autonomous-research-agents"
       },
       {
-        "created_at": "2026-09-22T22:03:24Z",
+        "created_at": "2026-09-22T23:12:27Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -228,11 +228,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-833c456c7f1c",
+        "task_id": "task-bfe9003691db",
         "topic_id": "topic-fabrication-detection"
       },
       {
-        "created_at": "2026-09-22T22:03:24Z",
+        "created_at": "2026-09-22T23:12:27Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -244,11 +244,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-37e58ce6f812",
+        "task_id": "task-0b5ca1a7fce3",
         "topic_id": "topic-research-loop-scheduling"
       },
       {
-        "created_at": "2026-09-22T22:03:24Z",
+        "created_at": "2026-09-22T23:12:27Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -259,45 +259,13 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-fa903f45f56f",
+        "task_id": "task-7ceb75852c00",
         "topic_id": "topic-search-and-sorting-strategy"
       }
     ]
   },
-  "published": [
-    "/home/user/SelfLearn/docs/static/style.css",
-    "/home/user/SelfLearn/docs/static/app.js",
-    "/home/user/SelfLearn/docs/.nojekyll",
-    "/home/user/SelfLearn/index.html",
-    "/home/user/SelfLearn/404.html",
-    "/home/user/SelfLearn/.nojekyll",
-    "/home/user/SelfLearn/docs/index.html",
-    "/home/user/SelfLearn/docs/library.html",
-    "/home/user/SelfLearn/docs/sources.html",
-    "/home/user/SelfLearn/docs/links.html",
-    "/home/user/SelfLearn/docs/experiments.html",
-    "/home/user/SelfLearn/docs/method.html",
-    "/home/user/SelfLearn/docs/documents.html",
-    "/home/user/SelfLearn/docs/requirements.html",
-    "/home/user/SelfLearn/docs/review.html",
-    "/home/user/SelfLearn/docs/404.html",
-    "/home/user/SelfLearn/docs/topics/autonomous-research-agents.html",
-    "/home/user/SelfLearn/docs/data/topics/autonomous-research-agents.json",
-    "/home/user/SelfLearn/docs/topics/fabrication-detection.html",
-    "/home/user/SelfLearn/docs/data/topics/fabrication-detection.json",
-    "/home/user/SelfLearn/docs/topics/research-loop-scheduling.html",
-    "/home/user/SelfLearn/docs/data/topics/research-loop-scheduling.json",
-    "/home/user/SelfLearn/docs/topics/search-and-sorting-strategy.html",
-    "/home/user/SelfLearn/docs/data/topics/search-and-sorting-strategy.json",
-    "/home/user/SelfLearn/docs/data/index.json",
-    "/home/user/SelfLearn/docs/data/sources.json",
-    "/home/user/SelfLearn/docs/data/irregularities.json",
-    "/home/user/SelfLearn/docs/data/requirements.json",
-    "/home/user/SelfLearn/docs/data/methodology.json",
-    "/home/user/SelfLearn/docs/data/experiments.json",
-    "/home/user/SelfLearn/docs/data/meta.json"
-  ],
-  "run_id": "run-735c72c7bf96",
+  "published": [],
+  "run_id": "run-e876f1525d9b",
   "sources": {
     "checked": 4,
     "credential_required": [],

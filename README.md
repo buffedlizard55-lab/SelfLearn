@@ -90,7 +90,7 @@ library only.
 | Check one claim end to end | `python3 tools/check_claim.py` |
 | Re-verify the whole library | `python3 -m selflearn audit` |
 | Check all official source links and credentials | the [Official links page](https://buffedlizard55-lab.github.io/SelfLearn/docs/links.html), or `python3 tools/verify_links.py` |
-| Repeat an experiment | `python3 tools/reproduce_experiment.py sorting-comparisons-v1` (or `scheduling-policies-v1`) |
+| Repeat an experiment | `python3 tools/reproduce_experiment.py sorting-comparisons-v1` (or `search-scaling-v1`, `hash-collision-rates-v1`, `scheduling-policies-v1`, `estimation-error-v1`, `queueing-models-v1`) |
 | Read the calibration and thresholds in force | `python3 -m selflearn calibrate` |
 | Test every registered source for reachability | `python3 -m selflearn sources --probe` |
 | See what changed, and through which documented filter | `python3 -m selflearn scan` |
@@ -122,8 +122,12 @@ The same documents are rendered into the site at `docs/documents.html`.
 The engine is a process, not a daemon: a cycle runs to completion. Continuity comes
 from the schedule in `.github/workflows/research-loop.yml`, which runs a cycle every
 six hours on GitHub's runners, commits the updated library and pages, and uploads the
-run artefacts. `.github/workflows/tests.yml` runs the suite on every push and does a
-full cycle into a temporary root, so the pipeline is exercised without touching the
+run artefacts. Each scheduled cycle publishes through the database mirror (`run
+--from-database`): the fresh rows are synced into `state/library.sqlite3`, the mirror
+is compared against the JSONL streams row for row and record for record, and the site
+is built from the mirror - or refused, loudly, if the two views ever disagree.
+`.github/workflows/tests.yml` runs the suite on every push and does a full cycle into a
+temporary root the same way, so the pipeline is exercised without touching the
 repository's own library.
 
 Sources that need a credential (`EIA_API_KEY`, `FRED_API_KEY`, `NCEI_TOKEN`,
@@ -139,7 +143,7 @@ every cycle.
 selflearn/        the engine (fetch, verify, think, learn, experiment, publish, storage)
 data/             seed questions, the labelled calibration cases, the requirements matrix
 experiments/      seeded experiment scripts, each with a hypothesis and a falsifier
-tests/            137 tests, no network and no credentials required
+tests/            156 tests, no network and no credentials required
 tools/            reviewer tools: check a claim, reproduce an experiment, export a summary,
                   verify every published link, compare link check outcomes, reject a topic,
                   resolve a finding, serve the site

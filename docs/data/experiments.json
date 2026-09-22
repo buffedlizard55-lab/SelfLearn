@@ -1,15 +1,198 @@
 [
   {
+    "baseline": 0.015625,
+    "best_value": 0.9768,
+    "best_variant": "gaussian (RMSE x sqrt(n) / sigma at n=4096)",
+    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/estimation_error.py --seed 3 --out /tmp/selflearn-exp-azpzi_5r/result.json",
+    "error": "",
+    "experiment_id": "estimation-error-v1",
+    "hypothesis": "For the sample mean of independent draws from a population with known mean and finite variance, RMSE falls proportionally to 1/sqrt(n) (log-log slope in [-0.6, -0.4]) and observed RMSE stays within [0.8, 1.25]x the analytic standard error on a standard normal and a unit uniform population.",
+    "method": "400 independent replications of the sample mean at each of n=[16, 64, 256, 1024, 4096] draws, per population; the true mean and sigma are known in closed form, so the error of every replication is exact rather than estimated.",
+    "metric": "root-mean-square error of the sample mean",
+    "ran_at": "2026-09-22T23:19:24Z",
+    "result_json": {
+      "baseline": 0.015625,
+      "baseline_name": "analytic standard error sigma/sqrt(n) of the gaussian at n=4096",
+      "best_value": 0.9768,
+      "best_variant": "gaussian (RMSE x sqrt(n) / sigma at n=4096)",
+      "checks": [
+        {
+          "check": "gaussian: RMSE falls as 1/sqrt(n) (log-log slope in [-0.6, -0.4])",
+          "observed": "slope=-0.497",
+          "outcome": true
+        },
+        {
+          "check": "gaussian: every RMSE within [0.8, 1.25]x the analytic standard error",
+          "observed": "worst cell n=1024 ratio=1.0812 (rmse=0.033787, analytic=0.03125)",
+          "outcome": true
+        },
+        {
+          "check": "gaussian: no measured bias beyond four analytic bias standard errors",
+          "observed": "no cell beyond the band",
+          "outcome": true
+        },
+        {
+          "check": "uniform: RMSE falls as 1/sqrt(n) (log-log slope in [-0.6, -0.4])",
+          "observed": "slope=-0.4949",
+          "outcome": true
+        },
+        {
+          "check": "uniform: every RMSE within [0.8, 1.25]x the analytic standard error",
+          "observed": "worst cell n=4096 ratio=1.0426 (rmse=0.004703, analytic=0.004511)",
+          "outcome": true
+        },
+        {
+          "check": "uniform: no measured bias beyond four analytic bias standard errors",
+          "observed": "no cell beyond the band",
+          "outcome": true
+        }
+      ],
+      "conclusion": "hypothesis supported by all stated checks",
+      "environment": {
+        "machine": "x86_64",
+        "platform": "Linux-6.1.158+-x86_64-with-glibc2.36",
+        "python": "3.11.2"
+      },
+      "experiment_id": "estimation-error-v1",
+      "falsifier": "The fitted log-log slope of RMSE against n falls outside the stated band on either population, or any observed RMSE falls outside the stated multiple of the analytic standard error.",
+      "hypothesis": "For the sample mean of independent draws from a population with known mean and finite variance, RMSE falls proportionally to 1/sqrt(n) (log-log slope in [-0.6, -0.4]) and observed RMSE stays within [0.8, 1.25]x the analytic standard error on a standard normal and a unit uniform population.",
+      "limitation": "Synthetic Gaussian and uniform populations, sample mean only. The 1/sqrt(n) rate is a statement about independent draws from a fixed distribution with finite variance; it is not a measurement of any real quantity and says nothing about biased or dependent data.",
+      "method": "400 independent replications of the sample mean at each of n=[16, 64, 256, 1024, 4096] draws, per population; the true mean and sigma are known in closed form, so the error of every replication is exact rather than estimated.",
+      "metric": "root-mean-square error of the sample mean",
+      "rmse_by_size": {
+        "gaussian": {
+          "1024": 0.033787,
+          "16": 0.252817,
+          "256": 0.06214,
+          "4096": 0.015262,
+          "64": 0.120952
+        },
+        "uniform": {
+          "1024": 0.008882,
+          "16": 0.072579,
+          "256": 0.018439,
+          "4096": 0.004703,
+          "64": 0.035565
+        }
+      },
+      "seed": 3,
+      "sizes": [
+        16,
+        64,
+        256,
+        1024,
+        4096
+      ],
+      "slopes": {
+        "gaussian": -0.497,
+        "uniform": -0.4949
+      },
+      "trials": 400,
+      "variants": [
+        {
+          "name": "gaussian (RMSE x sqrt(n) / sigma at n=4096)",
+          "value": 0.9768
+        },
+        {
+          "name": "uniform (RMSE x sqrt(n) / sigma at n=4096)",
+          "value": 1.0426
+        }
+      ]
+    },
+    "script_path": "experiments/estimation_error.py",
+    "script_sha256": "sha256:8784ddb368024edcce4e520e766172f268dbe6bcdb0a6771ecbc04b1e8f2d7e8",
+    "seed": 3,
+    "status": "completed",
+    "topic_id": ""
+  },
+  {
+    "baseline": 4.0,
+    "best_value": 2.001283,
+    "best_variant": "M/D/1",
+    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/queueing_models.py --seed 13 --out /tmp/selflearn-exp-fmmrptyi/result.json",
+    "error": "",
+    "experiment_id": "queueing-models-v1",
+    "hypothesis": "At utilisation 0.8 with Poisson arrivals of rate 0.8 and one server with mean service 1/1.0, the simulated mean wait in queue reproduces rho/(mu(1-rho)) = 4.0 for M/M/1 and rho/(2 mu(1-rho)) = 2.0 for M/D/1 within tolerance, and M/D/1's mean wait is lower.",
+    "method": "20 independent FCFS runs per model of 40000 customers each (Lindley recursion), first 4000 customers discarded as warm-up; standard error computed across trial means.",
+    "metric": "mean wait in queue per customer",
+    "ran_at": "2026-09-22T23:19:25Z",
+    "result_json": {
+      "analytic": {
+        "M/D/1": 2.0,
+        "M/M/1": 4.0
+      },
+      "baseline": 4.0,
+      "baseline_name": "M/M/1 analytic Wq = rho/(mu(1-rho))",
+      "best_value": 2.001283,
+      "best_variant": "M/D/1",
+      "checks": [
+        {
+          "check": "M/M/1: simulated mean wait within tolerance of the analytic Pollaczek-Khinchine value",
+          "observed": "simulated=4.011842 analytic=4.0 difference=0.011842 tolerance=0.2",
+          "outcome": true
+        },
+        {
+          "check": "M/D/1: simulated mean wait within tolerance of the analytic Pollaczek-Khinchine value",
+          "observed": "simulated=2.001283 analytic=2.0 difference=0.001283 tolerance=0.1",
+          "outcome": true
+        },
+        {
+          "check": "M/D/1 mean wait is lower than M/M/1 at equal load (service variance removed)",
+          "observed": "M/D/1=2.001283 M/M/1=4.011842",
+          "outcome": true
+        }
+      ],
+      "conclusion": "hypothesis supported by all stated checks",
+      "customers": 40000,
+      "environment": {
+        "machine": "x86_64",
+        "platform": "Linux-6.1.158+-x86_64-with-glibc2.36",
+        "python": "3.11.2"
+      },
+      "experiment_id": "queueing-models-v1",
+      "falsifier": "Either simulated mean wait falls outside three standard errors (with a five-percent relative floor) of its analytic value, or M/D/1 does not have the lower mean wait at equal load.",
+      "hypothesis": "At utilisation 0.8 with Poisson arrivals of rate 0.8 and one server with mean service 1/1.0, the simulated mean wait in queue reproduces rho/(mu(1-rho)) = 4.0 for M/M/1 and rho/(2 mu(1-rho)) = 2.0 for M/D/1 within tolerance, and M/D/1's mean wait is lower.",
+      "lambda": 0.8,
+      "limitation": "Textbook queues only: Poisson arrivals, one server, exponential or constant service, unbounded capacity, FCFS discipline. This measures agreement between a simulation and the published formulas on that model; it is not a latency measurement of any real system.",
+      "method": "20 independent FCFS runs per model of 40000 customers each (Lindley recursion), first 4000 customers discarded as warm-up; standard error computed across trial means.",
+      "metric": "mean wait in queue per customer",
+      "mu": 1.0,
+      "rho": 0.8,
+      "seed": 13,
+      "standard_errors": {
+        "M/D/1": 0.016008,
+        "M/M/1": 0.046032
+      },
+      "trials": 20,
+      "variants": [
+        {
+          "name": "M/M/1",
+          "value": 4.011842
+        },
+        {
+          "name": "M/D/1",
+          "value": 2.001283
+        }
+      ],
+      "warmup": 4000
+    },
+    "script_path": "experiments/queueing_models.py",
+    "script_sha256": "sha256:591af83a3c0c21f44eae6820fa9299d3fd76c9c958ab27575f1eb214640ebf16",
+    "seed": 13,
+    "status": "completed",
+    "topic_id": ""
+  },
+  {
     "baseline": 960.0,
     "best_value": 139.0205,
     "best_variant": "epsilon_greedy",
-    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-enrnbm_y/result.json",
+    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-rjuq7rd4/result.json",
     "error": "",
     "experiment_id": "scheduling-policies-v1",
     "hypothesis": "On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate keeps paying a cost proportional to the horizon.",
     "method": "100 independent trials of 4000 pulls per policy on arms with means [0.15, 0.25, 0.35, 0.45, 0.6]; pseudo-regret computed from the true mean of each pulled arm, so the metric has no reward noise.",
     "metric": "mean cumulative pseudo-regret",
-    "ran_at": "2026-09-22T22:03:27Z",
+    "ran_at": "2026-09-22T23:12:30Z",
     "result_json": {
       "arm_means": [
         0.15,
@@ -104,13 +287,13 @@
     "baseline": 16807.6,
     "best_value": 1726.4,
     "best_variant": "merge_sort",
-    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-ewh64nx7/result.json",
+    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-h1fcagfp/result.json",
     "error": "",
     "experiment_id": "sorting-comparisons-v1",
     "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
     "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
     "metric": "mean element comparisons per run",
-    "ran_at": "2026-09-22T22:03:27Z",
+    "ran_at": "2026-09-22T23:12:31Z",
     "result_json": {
       "baseline": 16807.6,
       "baseline_name": "insertion_sort on shuffled input",
@@ -158,9 +341,9 @@
             "merge_sort": 1024
           },
           "mean_seconds": {
-            "heapsort": 0.00038088,
-            "insertion_sort": 0.00285839,
-            "merge_sort": 0.00027088
+            "heapsort": 0.00040216,
+            "insertion_sort": 0.00296409,
+            "merge_sort": 0.00029199
           },
           "min_comparisons": {
             "heapsort": 3106,
@@ -180,9 +363,9 @@
             "merge_sort": 1726.4
           },
           "mean_seconds": {
-            "heapsort": 0.00043031,
-            "insertion_sort": 0.00153076,
-            "merge_sort": 0.00036719
+            "heapsort": 0.00043209,
+            "insertion_sort": 0.00153315,
+            "merge_sort": 0.00038271
           },
           "min_comparisons": {
             "heapsort": 3278,
@@ -202,9 +385,9 @@
             "merge_sort": 1024
           },
           "mean_seconds": {
-            "heapsort": 0.00044891,
-            "insertion_sort": 2.564e-05,
-            "merge_sort": 0.00024708
+            "heapsort": 0.00046406,
+            "insertion_sort": 2.62e-05,
+            "merge_sort": 0.00026364
           },
           "min_comparisons": {
             "heapsort": 3452,
@@ -240,13 +423,13 @@
     "baseline": 0.96,
     "best_value": 1.0,
     "best_variant": "support=0.8 partial=0.45 quote_chars=24.0",
-    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-c578ymhr/result.json",
+    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-cqfknhi5/result.json",
     "error": "",
     "experiment_id": "verification-thresholds-v1",
     "hypothesis": "A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports.",
     "method": "Exhaustive sweep of 132 threshold combinations, evaluated against 26 hand-labelled claim/document pairs; selection is lexicographic on false supports, recall, F1, macro F1, distance from the documented default, then strictness.",
     "metric": "verdict accuracy on labelled cases",
-    "ran_at": "2026-09-22T22:03:25Z",
+    "ran_at": "2026-09-22T23:12:28Z",
     "result_json": {
       "baseline": 0.96,
       "baseline_name": "configured default thresholds support=0.8 partial=0.55 quote_chars=24.0",

@@ -13,9 +13,10 @@ limit affects a specific statement, the statement itself carries the warning.
    engine never paraphrases and never synthesises an explanation. A question whose
    answer is not already a sentence in a retrieved document cannot be answered.
 2. **It cannot run a physical experiment.** The experiment catalogue is computational:
-   threshold calibration, sorting and search comparison counts, hash collision rates.
-   Statements about the world can be sourced, quoted and contradicted, but not tested
-   here.
+   threshold calibration, sorting and search comparison counts, hash collision rates,
+   scheduling policies on a synthetic bandit, estimation error on synthetic
+   populations, and queueing formulas checked against simulation. Statements about the
+   world can be sourced, quoted and contradicted, but not tested here.
 3. **It cannot decide which of two contradicting sources is right.** Contradictions
    are detected and published as review items; the resolution is a human step.
 4. **It cannot read behind paywalls, logins or licences that forbid retrieval.** Only
@@ -104,10 +105,14 @@ limit affects a specific statement, the statement itself carries the warning.
     stream into SQLite (standard library) or PostgreSQL (optional `psycopg`
     driver) and proves the two views identical row for row, and
     `python3 -m selflearn retrieve` searches claims through a deterministic
-    TF-IDF vector index. Not yet done: building the site from the database, and
-    a run against a live PostgreSQL server - none exists in this build
-    environment. The graph database and Redis from the design document's
-    reference stack remain deliberately unused.
+    TF-IDF vector index. `site --from-database` and `run --from-database` build
+    the published site from the mirror - refused unless the views agree - and
+    the scheduled workflow publishes every cycle that way. Not yet done: a run
+    against a live PostgreSQL server - none exists in this build environment and
+    none can be installed here, so that driver path is proven only by its
+    documented DB-API shape and its missing-driver error. The graph database and
+    Redis from the design document's reference stack remain deliberately
+    unused.
 
 ## Coverage of the brief itself
 

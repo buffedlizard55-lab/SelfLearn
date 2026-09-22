@@ -429,6 +429,110 @@ class ExperimentTests(unittest.TestCase):
         )
         self.assertEqual([s.experiment_id for s in experiments_for_topic(topic)], ["scheduling-policies-v1"])
 
+    def test_estimation_error_experiment_runs_and_is_deterministic(self) -> None:
+        spec = next(s for s in EXPERIMENTS if s.experiment_id == "estimation-error-v1")
+        first = run_experiment(spec, root=ROOT, timeout=300)
+        self.assertEqual(first.error, "", first.stderr[-500:])
+        self.assertEqual(first.status, "completed")
+        self.assertTrue(all(check["outcome"] for check in first.result["checks"]), first.result["checks"])
+        self.assertEqual(set(first.result["slopes"]), {"gaussian", "uniform"})
+        second = run_experiment(spec, root=ROOT, timeout=300)
+        self.assertEqual(first.result["rmse_by_size"], second.result["rmse_by_size"])
+        self.assertEqual(first.result["slopes"], second.result["slopes"])
+
+    def test_published_slopes_recompute_from_the_published_rmse_values(self) -> None:
+        """A reader must be able to recompute every published slope.
+
+        Pass-7 defect this pins: a leaked comprehension variable published the
+        uniform population's slope under both names, and only an independent
+        recomputation from the published RMSE values exposed it.
+        """
+        import math
+
+        spec = next(s for s in EXPERIMENTS if s.experiment_id == "estimation-error-v1")
+        run = run_experiment(spec, root=ROOT, timeout=300)
+        sizes = run.result["sizes"]
+        for name, rmse_by_size in run.result["rmse_by_size"].items():
+            xs = [math.log(n) for n in sizes]
+            ys = [math.log(rmse_by_size[str(n)]) for n in sizes]
+            x_mean = sum(xs) / len(xs)
+            y_mean = sum(ys) / len(ys)
+            slope = sum((x - x_mean) * (y - y_mean) for x, y in zip(xs, ys)) / sum(
+                (x - x_mean) ** 2 for x in xs
+            )
+            self.assertAlmostEqual(slope, run.result["slopes"][name], places=3, msg=name)
+
+    def test_queueing_models_experiment_runs_and_is_deterministic(self) -> None:
+        spec = next(s for s in EXPERIMENTS if s.experiment_id == "queueing-models-v1")
+        first = run_experiment(spec, root=ROOT, timeout=300)
+        self.assertEqual(first.error, "", first.stderr[-500:])
+        self.assertEqual(first.status, "completed")
+        self.assertTrue(all(check["outcome"] for check in first.result["checks"]), first.result["checks"])
+        # The analytic Pollaczek-Khinchine values are exact at rho=0.8, mu=1.
+        self.assertEqual(first.result["analytic"], {"M/M/1": 4.0, "M/D/1": 2.0})
+        values = {row["name"]: row["value"] for row in first.result["variants"]}
+        self.assertLess(values["M/D/1"], values["M/M/1"], "M/D/1 must wait less at equal load")
+        self.assertEqual(first.result["best_variant"], "M/D/1")
+        second = run_experiment(spec, root=ROOT, timeout=300)
+        self.assertEqual(first.result["variants"], second.result["variants"])
+
+    def test_the_new_families_do_not_steal_the_scheduling_topic(self) -> None:
+        from selflearn.experiment.catalogue import experiments_for_topic
+
+        topic = Topic(
+            topic_id="topic-research-loop-scheduling",
+            title="How should a research loop schedule and prioritise its own work?",
+            slug="research-loop-scheduling",
+            question="Which published methods exist for deciding what an autonomous system should investigate next?",
+            keywords=["scheduling", "prioritisation", "active learning", "exploration", "research management", "bandit"],
+        )
+        self.assertEqual([s.experiment_id for s in experiments_for_topic(topic)], ["scheduling-policies-v1"])
+
+    def test_queueing_keywords_match_a_latency_question(self) -> None:
+        from selflearn.experiment.catalogue import experiments_for_topic
+
+        topic = Topic(
+            topic_id="topic-latency",
+            title="What drives waiting time and latency in a queueing system?",
+            slug="latency",
+            question="How do queueing policies affect latency and throughput under load?",
+            keywords=["latency", "queueing", "throughput", "waiting", "load"],
+        )
+        self.assertEqual([s.experiment_id for s in experiments_for_topic(topic)], ["queueing-models-v1"])
+
+    def test_a_direct_experiment_run_is_recorded_for_the_reproduce_tool(self) -> None:
+        """`experiments` must store, because `reproduce_experiment` replays rows.
+
+        Found 2026-09-22: the command ran each script and stored nothing, while
+        tools/reproduce_experiment.py's own remedy ("Run: python3 -m selflearn
+        experiments") pointed at it - so the result of a direct run could never
+        be reproduced from the library.
+        """
+        import json
+        import tempfile
+        import types
+
+        import selflearn.cli as cli
+
+        with tempfile.TemporaryDirectory() as tmp:
+            old_root = cli.ROOT
+            cli.ROOT = Path(tmp)
+            try:
+                code = cli.cmd_experiments(types.SimpleNamespace(id="estimation-error-v1", json=False))
+            finally:
+                cli.ROOT = old_root
+            self.assertEqual(code, 0)
+            rows = [
+                json.loads(line)
+                for line in (Path(tmp) / "library" / "experiments.jsonl").read_text(encoding="utf-8").splitlines()
+                if line.strip()
+            ]
+            self.assertEqual([row["experiment_id"] for row in rows], ["estimation-error-v1"])
+            self.assertEqual(rows[0]["topic_id"], "", "a direct run is attached to no question")
+            self.assertIn("checks", rows[0]["result_json"])
+            evidence = (Path(tmp) / "library" / "evidence_index.jsonl").read_text(encoding="utf-8")
+            self.assertIn("direct experiment", evidence)
+
 
 class PublishTests(unittest.TestCase):
     def test_site_builds_from_minimal_data(self) -> None:

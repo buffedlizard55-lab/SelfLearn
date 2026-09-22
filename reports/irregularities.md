@@ -1,12 +1,12 @@
 # Irregularities for review
 
-Generated: 2026-09-22T22:03:28Z
+Generated: 2026-09-22T23:21:42Z
 
 This file is produced by the audit stage. It lists everything the engine could not
 reconcile on its own. Nothing here is a conclusion; each entry is a request for a human
 decision, with the evidence needed to make it.
 
-**Totals** - error: 0, warning: 15, info: 19; resolved by a reviewer: 7.
+**Totals** - error: 0, warning: 15, info: 20; resolved by a reviewer: 7.
 
 ## Stage: audit
 
@@ -16,7 +16,7 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** Unavailable sources: github
 - **suggested action:** Confirm network egress from the runner, or accept snapshot replay for these sources.
-- **detected:** 2026-09-22T22:03:28Z
+- **detected:** 2026-09-22T23:12:31Z
 
 ### [WARNING] 5 source(s) were not reachable during this run
 
@@ -182,7 +182,7 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** 134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.
 - **suggested action:** Nothing to do unless a reviewer believes a retired statement was correct.
-- **detected:** 2026-09-22T22:03:28Z
+- **detected:** 2026-09-22T23:21:41Z
 
 ## Stage: review
 
@@ -250,6 +250,14 @@ decision, with the evidence needed to make it.
 - **resolved by a reviewer:** date not recorded
 
 ## Stage: synthesis
+
+### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-648fdbd55f2a`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-09-22T23:12:31Z
 
 ### [INFO] 109 brief(s), 449 criticism(s) and 3 open question(s) withdrawn with their retired claims
 

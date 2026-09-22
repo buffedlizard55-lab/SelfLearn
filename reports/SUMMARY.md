@@ -1,14 +1,14 @@
 # SelfLearn summary
 
-Generated 2026-09-22T21:25:07Z from the stored library. Nothing in this file is written by hand.
+Generated 2026-09-22T23:22:59Z from the stored library. Nothing in this file is written by hand.
 
 ## What the library holds
 
 - 11 question(s) under research
-- 294 claim(s): 284 supported, 0 needing review, 10 rejected
-- 89 retrieved document(s) stored and hashed
-- 202 competing candidate(s) with 865 recorded criticism(s)
-- 138 derived open question(s), 3 experiment(s) run
+- 300 claim(s): 290 supported, 0 needing review, 10 rejected
+- 91 retrieved document(s) stored and hashed
+- 222 competing candidate(s) with 960 recorded criticism(s)
+- 141 derived open question(s), 5 experiment(s) run
 - 12 contradiction(s) awaiting a human decision
 
 Verification thresholds in force: supported at coverage 0.8, partially supported at 0.45, verbatim quote minimum 24.0 characters (state/calibration.json).
@@ -53,7 +53,7 @@ State rejected · 0 claim(s) · 0 supported · 0 source(s) cited
 
 *What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?*
 
-State competing · 72 claim(s) · 69 supported · 4 source(s) cited
+State competing · 74 claim(s) · 71 supported · 4 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -76,18 +76,18 @@ These are shown because the engine records what it refused to accept as well as 
 - Of the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context.
 - Of the claims recorded for this question, 97.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 97%. Recomputation disagrees with the recorded context.
 
-### Open questions (11)
+### Open questions (12)
 
 - A statement verified for a different topic - "The record for raesa-razeen/halo-hallucination-detector reports: language Python, topics hallucination-detection; legal-nlp; llm; nlp; python; research, open_issues_count 0." (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The retrieved statements repeatedly introduce the term 'record', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - The retrieved statements repeatedly introduce the term 'documents', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - The quantity reported in cl-048f7bdbd6c3 has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
+- A statement verified for a different topic - "The record for raesa-razeen/halo-hallucination-detector states in its own description: Open-source hallucination detection framework for legal and high-stakes documents." (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The quantity reported in cl-5d482d19855b has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
 - The source Cross-document synthesis of cited claims reports an unresolved or hedged finding: "The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.". Which additional evidence would settle whether this holds for this question? — sub_question · priority 0.7
 - A statement verified for a different topic - "The record for pypl0/Ombre states in its own description: Open source AI infrastructure layer." (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The retrieved statements repeatedly introduce the term 'reports', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - The quantity reported in cl-13cf26e4fba9 has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
-- The retrieved statements repeatedly introduce the term 'question', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 
 ### Contradictions (2)
 
@@ -104,7 +104,7 @@ State rejected · 0 claim(s) · 0 supported · 0 source(s) cited
 
 *What open-source tooling exists for detecting unsupported or fabricated statements in machine-generated text, and what evidence supports its use?*
 
-State testing · 69 claim(s) · 68 supported · 3 source(s) cited
+State testing · 70 claim(s) · 69 supported · 3 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -145,26 +145,26 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports. — status completed · verdict accuracy on labelled cases: baseline 0.96 -> best 1.0 (support=0.8 partial=0.45 quote_chars=24.0) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-a4slonji/result.json
+- A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports. — status completed · verdict accuracy on labelled cases: baseline 0.96 -> best 1.0 (support=0.8 partial=0.45 quote_chars=24.0) · /usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-cqfknhi5/result.json
 
 ## How should a research loop schedule and prioritise its own work?
 
 *Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?*
 
-State testing · 73 claim(s) · 70 supported · 4 source(s) cited
+State testing · 75 claim(s) · 72 supported · 4 source(s) cited
 
 ### Supported by a quotation (first 10)
 
 - Two documents disagree about a value expressed in fork: one reports 0 and the other reports 14. Both statements are verified against their own source; the engine cannot decide which is correct and has published the pair for review, with both sources linked below. — Cross-document synthesis of cited claims · [reproduced_experiment] · computed · coverage 1.0
 - The record for Sequential and Active Learning for Advancing MRI Acquisition and Anomaly Detection in Brain Images states in its own abstract: L'apprentissage séquentiel offre une solution robuste, servant de pierre angulaire à la descente de gradient stochastique et permettant aux réseaux neuronaux profonds (RNP) de traiter efficacement des ensembles de données à grande échelle. — Crossref REST API · [peer_reviewed] · https://doi.org/10.70675/b5ee8192zdc38z4512zb3e5zfb1c66f5e409 · coverage 1.0
 - The supporting documents span 3 evidence class(es) in the project hierarchy. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
+- Of the documents cited here, 32 were retrieved live from their source and 0 are synthetic test fixtures, which are labelled wherever they appear. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - The record for sleepingcat4/Active-learning states in its own description: written 3 differrent acquisition functions for active learning. — GitHub REST API · [primary_source] · https://github.com/sleepingcat4/Active-learning · coverage 1.0
 - Of the claims recorded for this question, 93.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - 32 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - This question is currently supported by 40 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - The supporting documents span 2 evidence class(es) in the project hierarchy. — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
-- The figure 14 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause. — Cross-document synthesis of cited claims · [reproduced_experiment] · computed · coverage 1.0
 
 ### Rejected by the verifier (3)
 
@@ -174,8 +174,9 @@ These are shown because the engine records what it refused to accept as well as 
 - Of the claims recorded for this question, 96.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 96%. Recomputation disagrees with the recorded context.
 - Of the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context.
 
-### Open questions (12)
+### Open questions (14)
 
+- The retrieved statements repeatedly introduce the term 'source', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - A statement verified for a different topic - "The record for khoj-ai/khoj states in its own description: Build custom agents, schedule automations, do deep research." (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - A statement verified for a different topic - "The record for Deep Research Max: a step change for autonomous research agents reports: objectID 47851065." (Hacker News API (via Algolia index)) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The retrieved statements repeatedly introduce the term 'record', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
@@ -184,8 +185,7 @@ These are shown because the engine records what it refused to accept as well as 
 - The retrieved statements repeatedly introduce the term 'reports', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - A statement verified for a different topic - "The record for virattt/dexter states in its own description: An autonomous agent for deep financial research" (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The retrieved statements repeatedly introduce the term 'count', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
-- The source Cross-document synthesis of cited claims reports an unresolved or hedged finding: "The figure 14 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.". Which additional evidence would settle whether this holds for this question? — sub_question · priority 0.7
-- The quantity reported in cl-aae22a8bf2b6 has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
+- A statement verified for a different topic - "The record for raesa-razeen/halo-hallucination-detector states in its own description: Implements Legal Fidelity Score from published ICCIC-2025 research." (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 
 ### Contradictions (8)
 
@@ -200,13 +200,13 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate kee — status completed · mean cumulative pseudo-regret: baseline 960.0 -> best 139.0205 (epsilon_greedy) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-sm4jlejg/result.json
+- On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate kee — status completed · mean cumulative pseudo-regret: baseline 960.0 -> best 139.0205 (epsilon_greedy) · /usr/bin/python3 /home/user/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-rjuq7rd4/result.json
 
 ## Sorting and search strategies: which is most efficient in practice, and how does the choice scale?
 
 *For the sorting and search strategies in common use, how do measured comparison counts compare with the stated bounds, and where does the choice change the outcome?*
 
-State testing · 80 claim(s) · 77 supported · 3 source(s) cited
+State testing · 81 claim(s) · 78 supported · 3 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -241,11 +241,11 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either. — status completed · mean element comparisons per run: baseline 16807.6 -> best 1726.4 (merge_sort) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-l515qo2g/result.json
+- On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either. — status completed · mean element comparisons per run: baseline 16807.6 -> best 1726.4 (merge_sort) · /usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-h1fcagfp/result.json
 
 ## Waiting for review
 
-20 open irregularit(ies): info 5, warning 15
+28 open irregularit(ies): info 13, warning 15
 
 - [warning] Topic 'Below names' produced no verified claims — audit · Check the source status table for this topic and add or repair sources.
 - [warning] Change scan could not reach nvd — change_scan · Re-run the scan from a host with egress to this source.
@@ -254,9 +254,9 @@ These are shown because the engine records what it refused to accept as well as 
 - [warning] Change scan could not reach arxiv — change_scan · Re-run the scan from a host with egress to this source.
 - [info] 24 stored claim(s) are marked superseded and are excluded from re-verification — audit · Nothing to do unless a reviewer believes a retired statement was correct.
 - [warning] Topic 'Every sentence below names' produced no verified claims — audit · Check the source status table for this topic and add or repair sources.
+- [info] Stored claims are marked superseded and are excluded from re-verification — audit · Nothing to do unless a reviewer believes a retired statement was correct.
+- [info] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims — synthesis · Review the retired statements section on the affected topic pages.
 - [info] 6 cross-document statement(s) retired for topic-research-loop-scheduling — synthesis · No action needed unless a reviewer believes a retired statement was correct.
-- [warning] 5 source(s) were not reachable during this run — audit · Confirm network egress from the runner, or accept snapshot replay for these sources.
-- [warning] Topic 'Sentence below' produced no verified claims — audit · Check the source status table for this topic and add or repair sources.
 
 ## How to check this file
 

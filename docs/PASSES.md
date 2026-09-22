@@ -319,6 +319,107 @@ Final battery, re-run after every change above:
 | numbering walk over `docs/LIMITATIONS.md` | strict sequence 1..33 (item 33 added this pass), internal cross-reference to item 26 still valid |
 | narrative versus `docs/data/meta.json` | `0 == 0` errors, `15 == 15` warnings, 8 resolved findings |
 
+## Pass 15 - the database publish path, two experiment families, and two defects found by recomputation (2026-09-22)
+
+Worked the roadmap's open order: item 8's remaining code (`--from-database` on
+`site`/`run`) and item 9's experiment families are the two things not blocked on
+egress or secrets. Everything below was re-read against the official source or
+recomputed from published values before it was called done.
+
+| Defect | Evidence | Fix |
+| --- | --- | --- |
+| The first `estimation-error-v1` published the uniform population's log-log slope under **both** names | recomputing the slope from the script's own published RMSE values gave gaussian -0.4970 against a published -0.4949 | `{name: row["loglog_slope"] for name in sorted(rows)}` leaked the loop variable from the checks loop; the map is now keyed by `rows[name]`, and `test_published_slopes_recompute_from_the_published_rmse_values` pins the recomputation |
+| The published pages carried link-check figures from an older local-machine run (100 of 121, "local machine") while `reports/link_check.json` held the unrestricted-egress re-check (106 of 126, GitHub runners) | comparing `index.html`'s provenance card with the committed register | the site embeds the register at build time, so this session rebuilds it; the `links` CI job now republishes the site in the same commit as the register, so the front door cannot quote a superseded check again |
+| `run --from-database` had no definition - roadmap item 8 named it and `cmd_site`/`cmd_run` had no such flag | reading `selflearn/cli.py` | `rebuild_site()` gained a `from_database` path that runs `verify_views` first and refuses to publish from a disagreeing mirror; `run --from-database` syncs the mirror before building, and the two flags that contradict it (`--no-publish`) are mutually exclusive at the parser |
+| A relative sqlite DSN resolved against the *working directory*, so a run with its own `SELFLEARN_ROOT` wrote its mirror into whatever `./state/` it was started from | the first `run --from-database` on the real library: `verify_views` refused to publish from a mirror polluted by an earlier smoke run's 152 rows - the refusal guard doing exactly its job | `connect()` resolves relative sqlite paths against the active library root (`SELFLEARN_ROOT` or the repository), so each root's mirror lands at `<root>/state/library.sqlite3`; pinned by `test_a_relative_sqlite_path_resolves_under_the_library_root_not_the_cwd` |
+| `python3 -m selflearn experiments` ran each script and stored nothing, while `tools/reproduce_experiment.py`'s own remedy pointed at it - so a directly run experiment could never be reproduced from the library | running the two new families and then `reproduce_experiment estimation-error-v1`, which answered "No experiment" | `cmd_experiments` now records every completed run (result row and evidence row, `topic_id` empty as the marker for "run directly, not attached to a question"); pinned by `test_a_direct_experiment_run_is_recorded_for_the_reproduce_tool`, and both new families reproduce with "identical to the recorded result on every compared field" |
+
+What shipped:
+
+- `python3 -m selflearn site --from-database` and `python3 -m selflearn run
+  --from-database` build the site from the database mirror through
+  `Library.from_rows` - the same decoder the file view uses - after
+  `verify_views` proves the views identical row for row and record for record. A
+  tampered or stale mirror is refused with the command that fixes it; nothing is
+  published from a view that has not been proven.
+- Both workflows now publish every cycle through the mirror
+  (`research-loop.yml`, and the `tests.yml` end-to-end smoke), so the round trip
+  is exercised continuously on runners with real egress and a real library.
+- `tests/test_layers.py::SiteFromDatabaseTests`: the same library builds
+  byte-identical sites from files and from a synced mirror (28 files, wall-clock
+  stamps masked - the clock is the only thing two honest builds may disagree
+  about); a tampered mirror row is refused and publishes nothing; a DSN with no
+  installed driver exits 2 with the documented message; the parser wires the
+  flags and refuses `--from-database --no-publish`.
+- Two experiment families (roadmap item 9): `estimation-error-v1` (the
+  1/sqrt(n) rate and the calibration of the sample mean's RMSE against
+  sigma/sqrt(n), the error property behind every quantitative claim the engine
+  publishes) and `queueing-models-v1` (M/M/1 and M/D/1 mean waits reproduced
+  from simulation against the Pollaczek-Khinchine values, and the classic result
+  that removing service variance halves the mean wait at equal load). Both are
+  seeded, dependency-free, state their own limitation in their output, and are
+  pinned by determinism and topic-matching tests - including that neither steals
+  the scheduling question's experiment.
+- The shared design conversation was re-read in full through its share API
+  endpoint (the share page itself serves only a JavaScript shell): title, brief,
+  reference-source URLs, the twenty sections, section 15's stack and the
+  six-component MVP all checked against `docs/DESIGN_SOURCE.md`, which records
+  the re-verification.
+- An end-to-end `run --mode fixture --offline --from-database` against a
+  temporary root synced 152 rows and published 31 files from the database view.
+
+## Pass 16 - review for bugs, missing requirements, incorrect assumptions and edge cases (2026-09-22)
+
+Every line changed in pass 15 was re-read, the workflows diffed against what the
+publish path actually writes, and the operator pages behind this session's claims
+were fetched and read rather than trusted.
+
+| Defect | Evidence | Fix |
+| --- | --- | --- |
+| The research-loop commit step never staged the root `index.html`, `404.html` or `.nojekyll`, although every publish writes them | diffing `git add -A library evidence reports state docs` against `build_site(write_root_entry=True)`'s outputs | the three root files are now in the path list, so a cycle's landing-door update can no longer be left uncommitted while `docs/` moves ahead |
+| `data/requirements.json` D-15 still read "Not yet done: building the site from the database" hours after it shipped | re-reading every matrix row this session's work touches | the row now states the end-to-end migration path and leaves only the live-PostgreSQL verification open; `check_requirements_paths` re-passes 54 rows and 145 path citations |
+| README's test count lagged the suite twice (137, then 154 against 155 and 156) | `python3 -m selflearn selftest` after each batch | the count is 156 and is re-checked after the last code change of the session |
+| The USPTO transition guide had gained a requirement the register did not know: from **18 August 2026** a USPTO.gov profile without four additional fields loses "access to ODP products and API key" | fetched `data.uspto.gov/support/transition-guide/patentsview` and read it in full (it also re-confirms the 20 March 2026 migration, the no-estimate status of the PatentSearch API return, and old keys being invalid) | recorded in `docs/SOURCES.md` with the operator's own wording, next to the June 2026 MFA note it complements |
+
+Re-read from the operators this pass, not trusted: the Crossref REST API filters page
+(the `from-index-date` authority), the arXiv API User's Manual (its section 3.1.1.3 is
+the `sortBy` authority), the NVD Vulnerability APIs page (the parameter table with
+`lastModStartDate & lastModEndDate` in extended ISO-8601, exactly as the scanner's
+test pins), the USPTO PatentsView transition guide, and the shared design
+conversation through its share API. Each answered as the repository claims.
+
+## Pass 17 - re-check against the original request, final verification (2026-09-22)
+
+| Brief line | Where it is answered | Re-checked this pass |
+| --- | --- | --- |
+| Review the repo | `README.md`, `docs/ARCHITECTURE.md`, this file | the roadmap's open order was worked item by item (8 and 9) |
+| Review the attached document / the chat link | `docs/DESIGN_SOURCE.md` | the share conversation was re-read in full; the re-verification is recorded there |
+| Think and reason on its own, continuously, research topics, competition of strategies, expanding library, learn from previous ideas | `selflearn/think/`, `selflearn/loop.py`, `.github/workflows/research-loop.yml` | unchanged this session except the publish path, which now runs through the database mirror every cycle |
+| Work line by line, official verified sources, links for manual review | `docs/SOURCES.md`, `docs/links.html`, `docs/VERIFICATION.md` | the four load-bearing operator pages were fetched and matched line by line; one new USPTO requirement was found and recorded |
+| No manual input; flag irregularities | `selflearn/verify/audit.py`, `docs/review.html` | audit: 0 fresh errors on 300 claims; 15 open warnings published, none hidden |
+| No hallucinations - verify line by line | the numeric guards, `tools/check_claim.py`, the reproduce tool | one hallucination-class defect found and killed in pass 15 (a published slope that was not the one its own values recompute to) and pinned by a regression test |
+| Full list that follows our requirements | `data/requirements.json` (54 rows) | every row re-read; D-15 updated; `check_requirements_paths` passes |
+| GitHub page: clean, simple, organised, verified links | `docs/` + the root entry point, published at <https://buffedlizard55-lab.github.io/SelfLearn/> | the stale provenance figures on the front door were found and fixed (pass 15), and the CI gap that produced them is closed |
+| Pull request and merge onto main | this session's PR from `arena/01a0cb4c-selflearn` | opened and merged with `gh`; the previous session's GitHub-auth blocker is closed (known defect 10) |
+| Suggestions for future work and limitations | `docs/ROADMAP.md` (order updated), `docs/LIMITATIONS.md`, `docs/PASSES.md` (this list), and the PR description | the open order is now 1, 2, 8 (verification only), 11, 9 |
+| Multiple passes | Pass 15 (implement), Pass 16 (review), Pass 17 (this re-check) | each pass's findings are in its own table above |
+
+Final battery, re-run after every change above:
+
+| Command | Result |
+| --- | --- |
+| `python3 -m selflearn selftest` | 156 tests, all passing |
+| `python3 -m selflearn run --mode snapshot --offline --from-database` | exit 0, `run-e876f1525d9b`; 300 claims, 89 documents at cycle time; publish refused at first from a mirror polluted by an earlier smoke run - the guard that exposed the relative-DSN defect |
+| `python3 -m selflearn site --from-database` | 31 files written; "7012 rows, identical to the JSONL streams row for row and record for record" at first publish |
+| `python3 -m selflearn audit` | 300 claims re-checked against 91 documents; fresh findings `error: 0, warning: 0, info: 1`; published merged `error: 0, warning: 15, info: 20` |
+| `python3 -m selflearn calibrate` | 26 labelled cases, accuracy 1.00, macro F1 1.00, 0 false supports |
+| `python3 -m selflearn status` | `claims: 300`, `documents: 91`, `experiments: 5`, `attacks: 960`, `strategies: 222`, `questions: 141`, thresholds `supported 0.8 / partially_supported 0.45` |
+| `python3 -m selflearn experiments --id estimation-error-v1` / `--id queueing-models-v1` | both completed and recorded; `tools/reproduce_experiment.py` on each: "identical to the recorded result on every compared field", script hash MATCH |
+| `python3 -m selflearn storage verify` | `rows_identical: true`, `library_identical: true`, all 14 streams matching |
+| `python3 tools/check_requirements_paths.py` | 54 rows, 145 path citations, 3 file#anchor citations, all cited paths exist |
+| `python3 tools/check_claim.py` | `cl-226c5106e9cb` derived claim re-verified against its recorded figures |
+| operator pages fetched and read | Crossref filters, arXiv manual, NVD parameters, USPTO transition guide, and the design conversation - all as the repository claims |
+
 ## Known remaining defects and gaps
 
 These are open, published, and are the honest answer to "what is still wrong":
@@ -338,8 +439,9 @@ These are open, published, and are the honest answer to "what is still wrong":
    and gated, but the candidate pool is what the engine has retrieved, not an open crawl
    of the web, so section 12 of the design document stays marked partial.
 6. **The store never compacts.** Append-only streams grow without pruning.
-7. **Three of the five experiment families ran in the published cycle.** The catalogue
-   holds five; three are matched by keyword to the questions the manager chose, and the
+7. **Not every experiment family bears on every question.** The catalogue holds seven
+   families (five before this session); a cycle runs at most `max_experiments_per_cycle`
+   of the ones keyword-matched to the questions the manager chose, and the
    autonomous-agents question has no computational experiment that would bear on it.
 8. **Egress from this sandbox is fully blocked** (every outbound request fails at TLS),
    so local cycles must run `--mode snapshot --offline` and the published site currently
@@ -351,9 +453,15 @@ These are open, published, and are the honest answer to "what is still wrong":
    `load_fixture_evidence` has no caller and `data/fixtures/` holds no evidence files,
    so `--mode fixture` is a network-disabled smoke run; its banner now says exactly that
    (Pass 13). Wiring a real synthetic-evidence path is open work.
-10. **The GitHub connection for this workspace is rejected** (`gh` answers HTTP 401 and
-    `git ls-remote` cannot read a username), so the pull request and merge required by
-    the brief could not be opened from this session. Nothing was pushed; the work sits on
-    branch `arena/01a0ca3d-selflearn` ready to push once the connection is reconnected
-    in Arena, after which issue #3 is closed, the session PR is opened and merged, and
-    `gh workflow run research-loop.yml` starts the first live cycle described in item 8.
+10. **The GitHub connection for this workspace was rejected earlier on 2026-09-22**
+    (`gh` answered HTTP 401 and `git ls-remote` could not read a username), which
+    blocked the brief's pull request in that session. It works again in the later
+    session of the same day: this pass's pull request is opened and merged onto `main`
+    from this workspace, and the first scheduled research-loop run on `main` performs
+    the first live cycle described in item 8.
+11. **The PostgreSQL driver path has never met a live server.** The mirror, the
+    `--from-database` publish path and the refusal behaviour are proven on SQLite
+    (standard library); a `postgres://` DSN is proven only through its documented
+    DB-API shape and its missing-driver error, because this build environment has no
+    PostgreSQL server and cannot install one. Roadmap item 8's remaining open half is
+    exactly one run against a live server.

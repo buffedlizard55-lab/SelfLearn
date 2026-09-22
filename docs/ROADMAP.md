@@ -3,7 +3,8 @@
 Ordered by what most increases the value of the output per unit of work. Each item
 says why it matters, what it needs, and how we would know it worked. Items marked
 **done** shipped in this repository with the test that proves them; the rest are open.
-The current order of the open items is 1, 2, 8, 9, 11.
+The current order of the open items is 1, 2, 8, 11, 9 - item 8 is now one
+verification (a live PostgreSQL server) rather than code.
 
 ## 1. Reach more sources (highest value) - open, blocked on the environment
 
@@ -182,7 +183,7 @@ lines into every document. Candidates are now drawn only from a source's own pro
 the engine's field labels and boilerplate stripped, and its own records excluded
 entirely. A regression test pins that behaviour.
 
-## 8. Storage migration - open, first half shipped 2026-09-22
+## 8. Storage migration - open, one verification left 2026-09-22
 
 **Why.** JSONL is auditable and does not scale. The design document's reference stack
 exists for a reason.
@@ -205,28 +206,47 @@ The TF-IDF vector index (`selflearn/learn/vector_index.py`, command
 `python3 -m selflearn retrieve`) is live and now ranks `cross_domain_claims`, so
 transfers are scored by weighted whole-vocabulary similarity with the old
 containment gate kept as the candidate filter. Round trip proven on this
-repository's real library (4,677 rows, idempotent re-sync, all fourteen streams
-identical) and pinned by `tests/test_layers.py::StorageMirrorTests` and
-`VectorIndexTests`.
+repository's real library (4,677 rows at the time of that run, idempotent re-sync,
+all fourteen streams identical) and pinned by `tests/test_layers.py::StorageMirrorTests`
+and `VectorIndexTests`.
 
-**Still open.** Building the site *from* the database (`--from-database` on
-`site`/`run`) and verifying the mirror against a live PostgreSQL server - this
-build environment has none, so the PostgreSQL driver path is proven by its
-documented DB-API shape and the error path, not by a live connection, exactly
-like the USPTO adapter before its first key.
+**What shipped the same day (this session).** The site now builds *from* the
+database: `python3 -m selflearn site --from-database` and
+`python3 -m selflearn run --from-database` load the mirror through
+`Library.from_rows` - the exact decoder the file view uses - but only after
+`verify_views` proves the two views identical row for row and record for record;
+a mirror that disagrees is refused with the command that fixes it and nothing is
+published. `run --from-database` syncs the mirror first (the JSONL streams are
+the source of truth), and both scheduled workflows now publish every cycle
+through it, so the round trip is exercised continuously, not only by tests.
+`tests/test_layers.py::SiteFromDatabaseTests` pins the strongest form of the
+roadmap's check: the same library builds byte-identical sites from the files and
+from a synced mirror (28 files, wall-clock stamps masked), a tampered mirror row
+is refused rather than published, and a DSN with no installed driver exits with
+the documented message. An end-to-end `run --mode fixture --offline
+--from-database` against a temporary root published 31 files from 152 mirrored
+rows.
 
-**How we would know.** The same site builds from the database, and the audit reports
-identical verdicts.
+**Still open.** Verifying the mirror against a live PostgreSQL server - this
+build environment has none and cannot install one (no root, no package index
+reachable), so the PostgreSQL driver path is proven by its documented DB-API
+shape and the error path, not by a live connection, exactly like the USPTO
+adapter before its first key.
 
-## 9. More experiment families - open, one added 2026-09-22
+**How we would know.** The same site builds from the database (done, and proven
+byte-identical), and the audit reports identical verdicts (done, `storage
+verify`'s exit status). What remains is one run against a live PostgreSQL
+server.
+
+## 9. More experiment families - open, three shipped 2026-09-22
 
 **Why.** A handful of computational experiments cannot settle much. The catalogue is the
 part of the design document marked most partial (section 8: "thousands of iterations").
 
 **What it needs.** Seeded, dependency-free scripts in `experiments/` with a declared
 hypothesis, a falsifier and a metric, plus keywords so the manager can match them to
-questions. Candidate areas still open: sampling and estimation error, search-pruning
-strategies, compression trade-offs, queueing models.
+questions. Candidate areas still open: search-pruning strategies, compression
+trade-offs, estimation beyond the sample mean.
 
 **What shipped.** `experiments/scheduling_policies.py` (`scheduling-policies-v1`):
 round-robin, epsilon-greedy and UCB1 on a five-armed stationary Bernoulli bandit, scored
@@ -237,6 +257,28 @@ is a toy problem and not a statement about which question the engine should inve
 next. Two tests in `tests/test_engine.py::ExperimentTests` pin determinism and the
 topic match. The same pass found that `max_experiments_per_cycle` was published and never
 enforced; the loop now stops at the cap and records that it did.
+
+**What shipped this session.** Two more families, both against exact analytic
+baselines so the checks cannot drift with sampling noise beyond a stated band:
+`experiments/estimation_error.py` (`estimation-error-v1`) measures the 1/sqrt(n) rate
+and the calibration of the sample mean's RMSE against sigma/sqrt(n) on a Gaussian and
+a uniform population - the error properties of every quantitative claim the engine
+makes - and `experiments/queueing_models.py` (`queueing-models-v1`) reproduces the
+Pollaczek-Khinchine waiting times for M/M/1 and M/D/1 from simulation and confirms
+that removing service variance halves the mean wait at equal load. Both state in
+their own output that they measure synthetic populations and textbook queues, not
+any real system. Five tests in `tests/test_engine.py::ExperimentTests` pin
+determinism, the topic matching (including that the new families do not steal the
+scheduling question's experiment), and - after a defect this session - that every
+published slope can be recomputed from the published values.
+
+**The defect, because it is the point of the exercise.** The first version of
+`estimation-error-v1` published the *uniform* population's slope under both names:
+a comprehension leaked the loop variable from the checks loop (`{name:
+row["loglog_slope"] for name in sorted(rows)}`), and only an independent
+recomputation from the published RMSE values exposed it. The regression test
+`test_published_slopes_recompute_from_the_published_rmse_values` now pins exactly
+that recomputation.
 
 **How we would know.** The experiments page lists several families, each with a
 reproduce command and a stored result hash.
