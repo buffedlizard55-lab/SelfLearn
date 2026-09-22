@@ -1,14 +1,14 @@
 # SelfLearn summary
 
-Generated 2026-09-22T07:20:53Z from the stored library. Nothing in this file is written by hand.
+Generated 2026-09-22T11:47:11Z from the stored library. Nothing in this file is written by hand.
 
 ## What the library holds
 
 - 11 question(s) under research
-- 273 claim(s): 264 supported, 0 needing review, 9 rejected
-- 76 retrieved document(s) stored and hashed
-- 166 competing candidate(s) with 729 recorded criticism(s)
-- 92 derived open question(s), 2 experiment(s) run
+- 281 claim(s): 271 supported, 0 needing review, 10 rejected
+- 82 retrieved document(s) stored and hashed
+- 185 competing candidate(s) with 803 recorded criticism(s)
+- 114 derived open question(s), 3 experiment(s) run
 - 12 contradiction(s) awaiting a human decision
 
 Verification thresholds in force: supported at coverage 0.8, partially supported at 0.45, verbatim quote minimum 24.0 characters (state/calibration.json).
@@ -53,12 +53,13 @@ State rejected · 0 claim(s) · 0 supported · 0 source(s) cited
 
 *What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?*
 
-State competing · 67 claim(s) · 65 supported · 4 source(s) cited
+State competing · 69 claim(s) · 66 supported · 4 source(s) cited
 
 ### Supported by a quotation (first 10)
 
 - Two documents disagree about a value expressed in stargazer: one reports 02 and the other reports 04. Both statements are verified against their own source; the engine cannot decide which is correct and has published the pair for review, with both sources linked below. — Cross-document synthesis of cited claims · [reproduced_experiment] · computed · coverage 1.0
 - The record for SamuelSchmidgall/AgentLaboratory states in its own description: Agent Laboratory is an end-to-end autonomous research workflow meant to assist you as the human researcher toward implementing your research ideas — GitHub REST API · [primary_source] · https://github.com/SamuelSchmidgall/AgentLaboratory · coverage 1.0
+- This question is currently supported by 67 verified claim(s) drawn from 4 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - The record for SamuelSchmidgall/AgentLaboratory reports: pushed_at 2025-08-20T21:46:43Z, stargazers_count 5859, forks_count 800. — GitHub REST API · [primary_source] · https://github.com/SamuelSchmidgall/AgentLaboratory · coverage 1.0
 - The record for khoj-ai/khoj states in its own description: Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). — GitHub REST API · [primary_source] · https://github.com/khoj-ai/khoj · coverage 1.0
 - The record for assafelovic/gpt-researcher reports: open_issues_count 102. — GitHub REST API · [primary_source] · https://github.com/assafelovic/gpt-researcher · coverage 1.0
@@ -66,27 +67,27 @@ State competing · 67 claim(s) · 65 supported · 4 source(s) cited
 - The record for virattt/dexter reports: pushed_at 2026-08-04T15:20:42Z, stargazers_count 27614, forks_count 3415. — GitHub REST API · [primary_source] · https://github.com/virattt/dexter · coverage 1.0
 - This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 - The record for virattt/dexter states in its own description: An autonomous agent for deep financial research — GitHub REST API · [primary_source] · https://github.com/virattt/dexter · coverage 1.0
-- This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s). — SelfLearn library computation · [reproduced_experiment] · computed · coverage 1.0
 
-### Rejected by the verifier (2)
+### Rejected by the verifier (3)
 
 These are shown because the engine records what it refused to accept as well as what it accepted.
 
 - Of the claims recorded for this question, 98.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 98%. Recomputation disagrees with the recorded context.
 - Of the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context.
+- Of the claims recorded for this question, 97.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 97%. Recomputation disagrees with the recorded context.
 
-### Open questions (10)
+### Open questions (11)
 
 - A statement verified for a different topic - "The record for raesa-razeen/halo-hallucination-detector reports: language Python, topics hallucination-detection; legal-nlp; llm; nlp; python; research, open_issues_count 0." (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The retrieved statements repeatedly introduce the term 'record', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - The retrieved statements repeatedly introduce the term 'documents', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - The quantity reported in cl-048f7bdbd6c3 has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
 - The quantity reported in cl-5d482d19855b has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
+- The source Cross-document synthesis of cited claims reports an unresolved or hedged finding: "The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.". Which additional evidence would settle whether this holds for this question? — sub_question · priority 0.7
 - A statement verified for a different topic - "The record for pypl0/Ombre states in its own description: Open source AI infrastructure layer." (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The retrieved statements repeatedly introduce the term 'reports', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - The quantity reported in cl-13cf26e4fba9 has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
 - The retrieved statements repeatedly introduce the term 'question', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
-- The source Cross-document synthesis of cited claims reports an unresolved or hedged finding: "The figure 02 appears in verified statements from 2 separate documents published by 1 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.". Which additional evidence would settle whether this holds for this question? — sub_question · priority 0.7
 
 ### Contradictions (2)
 
@@ -103,7 +104,7 @@ State rejected · 0 claim(s) · 0 supported · 0 source(s) cited
 
 *What open-source tooling exists for detecting unsupported or fabricated statements in machine-generated text, and what evidence supports its use?*
 
-State testing · 65 claim(s) · 64 supported · 3 source(s) cited
+State testing · 67 claim(s) · 66 supported · 3 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -124,9 +125,10 @@ These are shown because the engine records what it refused to accept as well as 
 
 - Of the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context.
 
-### Open questions (9)
+### Open questions (10)
 
 - A statement verified for a different topic - "The supporting documents span 1 evidence class(es) in the project hierarchy." (SelfLearn library computation) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
+- A statement verified for a different topic - "The supporting documents span 3 evidence class(es) in the project hierarchy." (SelfLearn library computation) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The quantity reported in cl-0a10536a3de6 has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
 - A statement verified for a different topic - "The supporting documents span 1 evidence class(es) in the project hierarchy." (SelfLearn library computation) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The quantity reported in cl-87c1d0345e0e has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
@@ -143,13 +145,13 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports. — status completed · verdict accuracy on labelled cases: baseline 0.96 -> best 1.0 (support=0.8 partial=0.45 quote_chars=24.0) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-edvm0lha/result.json
+- A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports. — status completed · verdict accuracy on labelled cases: baseline 0.96 -> best 1.0 (support=0.8 partial=0.45 quote_chars=24.0) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-kf3kk8xq/result.json
 
 ## How should a research loop schedule and prioritise its own work?
 
 *Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?*
 
-State competing · 67 claim(s) · 64 supported · 4 source(s) cited
+State testing · 69 claim(s) · 66 supported · 4 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -172,7 +174,7 @@ These are shown because the engine records what it refused to accept as well as 
 - Of the claims recorded for this question, 96.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 96%. Recomputation disagrees with the recorded context.
 - Of the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. — SelfLearn library computation · Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context.
 
-### Open questions (11)
+### Open questions (12)
 
 - A statement verified for a different topic - "The record for khoj-ai/khoj states in its own description: Build custom agents, schedule automations, do deep research." (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - A statement verified for a different topic - "The record for Deep Research Max: a step change for autonomous research agents reports: objectID 47851065." (Hacker News API (via Algolia index)) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
@@ -182,8 +184,8 @@ These are shown because the engine records what it refused to accept as well as 
 - The retrieved statements repeatedly introduce the term 'reports', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
 - A statement verified for a different topic - "The record for virattt/dexter states in its own description: An autonomous agent for deep financial research" (GitHub REST API) - shares subject matter with this question. Does it transfer, and what domain-specific constraint could block it? — discovery · priority 0.6
 - The retrieved statements repeatedly introduce the term 'count', which the topic brief does not mention. Does it warrant a topic of its own, and what primary evidence would define it? — discovery · priority 0.55
+- The source Cross-document synthesis of cited claims reports an unresolved or hedged finding: "The figure 14 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.". Which additional evidence would settle whether this holds for this question? — sub_question · priority 0.7
 - The quantity reported in cl-aae22a8bf2b6 has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
-- The quantity reported in cl-05c6f4dc6499 has no reference period in the quoted text. Over what period, and in what population, was it measured? — gap · priority 0.65
 
 ### Contradictions (8)
 
@@ -196,11 +198,15 @@ These are shown because the engine records what it refused to accept as well as 
 - numeric: cl-92ae15540483 vs cl-5a86c56f889c — medium · Claims share 64% of their content tokens but contain disjoint numeric values (14, 17, 2024, 39, 49, 6, 9 vs 0, 19, 2, 2020, 25, 7). One of the two readings, the unit, or the time period differs.
 - numeric: cl-aae22a8bf2b6 vs cl-c6ff1cae91a9 — medium · Claims share 69% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.
 
+### Experiments (1)
+
+- On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate kee — status completed · mean cumulative pseudo-regret: baseline 960.0 -> best 139.0205 (epsilon_greedy) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-37yc4201/result.json
+
 ## Sorting and search strategies: which is most efficient in practice, and how does the choice scale?
 
 *For the sorting and search strategies in common use, how do measured comparison counts compare with the stated bounds, and where does the choice change the outcome?*
 
-State testing · 74 claim(s) · 71 supported · 3 source(s) cited
+State testing · 76 claim(s) · 73 supported · 3 source(s) cited
 
 ### Supported by a quotation (first 10)
 
@@ -235,7 +241,7 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either. — status completed · mean element comparisons per run: baseline 16807.6 -> best 1726.4 (merge_sort) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-si8wy354/result.json
+- On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either. — status completed · mean element comparisons per run: baseline 16807.6 -> best 1726.4 (merge_sort) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-35k0jfl8/result.json
 
 ## Waiting for review
 

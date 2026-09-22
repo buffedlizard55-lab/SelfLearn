@@ -3,10 +3,10 @@
     "error": 2,
     "scanned": 3
   },
-  "generated_at": "2026-09-22T05:06:05Z",
-  "items_new": 10,
+  "generated_at": "2026-09-22T11:47:08Z",
+  "items_new": 4,
   "items_seen": 15,
-  "run_id": "run-31f65d836056",
+  "run_id": "run-6fdd568ea4ac",
   "scans": [
     {
       "detail": "HTTP 406: ",
@@ -34,53 +34,12 @@
       }
     },
     {
-      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 5 not seen by this engine before.",
+      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 0 not seen by this engine before.",
       "docs_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
-      "items_new": 5,
+      "items_new": 0,
       "items_seen": 5,
       "mechanism": "Works reindexed at or after the given date",
-      "new_items": [
-        {
-          "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Semantic Issues in the Verification of ",
-          "identifier": "10.1023/a:1010090027213",
-          "published_at": "2000-01-01",
-          "source_id": "crossref",
-          "title": "Semantic Issues in the Verification of Agent Communication Languages",
-          "url": "https://doi.org/10.1023/a:1010090027213"
-        },
-        {
-          "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: A Roadmap of Agent Research and Develop",
-          "identifier": "10.1023/a:1010090405266",
-          "published_at": "1998-01-01",
-          "source_id": "crossref",
-          "title": "A Roadmap of Agent Research and Development",
-          "url": "https://doi.org/10.1023/a:1010090405266"
-        },
-        {
-          "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: A Manifesto for Agent Technology: Towar",
-          "identifier": "10.1023/b:agnt.0000038027.29035.7c",
-          "published_at": "2004-01-01",
-          "source_id": "crossref",
-          "title": "A Manifesto for Agent Technology: Towards Next Generation Computing",
-          "url": "https://doi.org/10.1023/b:agnt.0000038027.29035.7c"
-        },
-        {
-          "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: VerifCar: a framework for modeling and ",
-          "identifier": "10.1007/s10458-019-09409-x",
-          "published_at": "2019-01-01",
-          "source_id": "crossref",
-          "title": "VerifCar: a framework for modeling and model checking communicating autonomous vehicles",
-          "url": "https://doi.org/10.1007/s10458-019-09409-x"
-        },
-        {
-          "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: The Gaia Methodology for Agent-Oriented",
-          "identifier": "10.1023/a:1010071910869",
-          "published_at": "2000-01-01",
-          "source_id": "crossref",
-          "title": "The Gaia Methodology for Agent-Oriented Analysis and Design",
-          "url": "https://doi.org/10.1023/a:1010071910869"
-        }
-      ],
+      "new_items": [],
       "request_params": {
         "filter": "from-index-date:2026-09-21",
         "mailto": "selflearn@example.invalid",
@@ -100,51 +59,43 @@
       }
     },
     {
-      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 5 not seen by this engine before.",
+      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 4 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 5,
+      "items_new": 4,
       "items_seen": 5,
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Jenqyang/Awesome-AI-Agents\nThe record for J",
-          "identifier": "https://github.com/Jenqyang/Awesome-AI-Agents",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: leandre755/HIVE-MIND\nThe record for leandre",
+          "identifier": "https://github.com/leandre755/HIVE-MIND",
           "published_at": "2026-09-22",
           "source_id": "github",
-          "title": "Jenqyang/Awesome-AI-Agents",
-          "url": "https://github.com/Jenqyang/Awesome-AI-Agents"
+          "title": "leandre755/HIVE-MIND",
+          "url": "https://github.com/leandre755/HIVE-MIND"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: samcharles93/archie-core\nThe record for sam",
-          "identifier": "https://github.com/samcharles93/archie-core",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: vrajpal-jhala/langgraph-harness\nThe record ",
+          "identifier": "https://github.com/vrajpal-jhala/langgraph-harness",
           "published_at": "2026-09-22",
           "source_id": "github",
-          "title": "samcharles93/archie-core",
-          "url": "https://github.com/samcharles93/archie-core"
+          "title": "vrajpal-jhala/langgraph-harness",
+          "url": "https://github.com/vrajpal-jhala/langgraph-harness"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: SHWE1530/agentguard-ai\nThe record for SHWE1",
-          "identifier": "https://github.com/SHWE1530/agentguard-ai",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: darrowz/eimemory\nThe record for darrowz/eim",
+          "identifier": "https://github.com/darrowz/eimemory",
           "published_at": "2026-09-22",
           "source_id": "github",
-          "title": "SHWE1530/agentguard-ai",
-          "url": "https://github.com/SHWE1530/agentguard-ai"
+          "title": "darrowz/eimemory",
+          "url": "https://github.com/darrowz/eimemory"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: fadhilfathi/ai-devsecops-command-center\nThe",
-          "identifier": "https://github.com/fadhilfathi/ai-devsecops-command-center",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: HuseyinAts/kiro2\nThe record for HuseyinAts/",
+          "identifier": "https://github.com/HuseyinAts/kiro2",
           "published_at": "2026-09-22",
           "source_id": "github",
-          "title": "fadhilfathi/ai-devsecops-command-center",
-          "url": "https://github.com/fadhilfathi/ai-devsecops-command-center"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: rewired89/Predicta\nThe record for rewired89",
-          "identifier": "https://github.com/rewired89/Predicta",
-          "published_at": "2026-09-22",
-          "source_id": "github",
-          "title": "rewired89/Predicta",
-          "url": "https://github.com/rewired89/Predicta"
+          "title": "HuseyinAts/kiro2",
+          "url": "https://github.com/HuseyinAts/kiro2"
         }
       ],
       "request_params": {

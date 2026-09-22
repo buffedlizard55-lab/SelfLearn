@@ -1,6 +1,36 @@
 {
   "attacks": [
     {
+      "attack_id": "atk-002eb3dfd310",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-00fa794b159a"
+    },
+    {
+      "attack_id": "atk-58d6ce37aa08",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
+      "strategy_id": "st-00fa794b159a"
+    },
+    {
+      "attack_id": "atk-6c1f4861825d",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-00fa794b159a"
+    },
+    {
       "attack_id": "atk-92fdb6877530",
       "attack_type": "data",
       "claim_refs": [
@@ -368,6 +398,36 @@
       "strategy_id": "st-3c4ff6793b28"
     },
     {
+      "attack_id": "atk-933f9e01bf29",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-42f4a1289431"
+    },
+    {
+      "attack_id": "atk-e696bb1584e0",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-42f4a1289431"
+    },
+    {
+      "attack_id": "atk-f16c4da0c801",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The quantities quoted are commensurable with each other after unit conversion.",
+      "strategy_id": "st-42f4a1289431"
+    },
+    {
       "attack_id": "atk-f3ed03dda181",
       "attack_type": "data",
       "claim_refs": [
@@ -460,6 +520,46 @@
       "severity": "minor",
       "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
       "strategy_id": "st-5151fa20b4e8"
+    },
+    {
+      "attack_id": "atk-58a8c32f11cc",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-84d63e1eefef"
+    },
+    {
+      "attack_id": "atk-7dc94f52b2b9",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The other field's mechanism transfers without an omitted domain-specific constraint.",
+      "strategy_id": "st-84d63e1eefef"
+    },
+    {
+      "attack_id": "atk-ae1ef5190219",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-84d63e1eefef"
+    },
+    {
+      "attack_id": "atk-b7a41ac1c355",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-84d63e1eefef"
     },
     {
       "attack_id": "atk-079aebf31a81",
@@ -742,6 +842,59 @@
       "strategy_id": "st-b0aae3239fc3"
     },
     {
+      "attack_id": "atk-5f01dbaec35d",
+      "attack_type": "counterexample",
+      "claim_refs": [
+        "cl-13cf26e4fba9",
+        "cl-6ac20344a641"
+      ],
+      "critic": "C4: Another claim in the library pulls in the opposite direction.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "The library holds cl-6ac20344a641 from GitHub REST API, which points the other way from cl-13cf26e4fba9 on the same subject. The brief does not address it.",
+      "strategy_id": "st-ba4442a6dced"
+    },
+    {
+      "attack_id": "atk-078e9215228b",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-ba4442a6dced"
+    },
+    {
+      "attack_id": "atk-2e3fdc2ae8c3",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-ba4442a6dced"
+    },
+    {
+      "attack_id": "atk-5015c72dba40",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-ba4442a6dced"
+    },
+    {
+      "attack_id": "atk-b92bacf5a688",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The measurement can be reproduced with the same method in this environment.",
+      "strategy_id": "st-ba4442a6dced"
+    },
+    {
       "attack_id": "atk-f7a683521f1a",
       "attack_type": "data",
       "claim_refs": [
@@ -874,6 +1027,66 @@
       "severity": "minor",
       "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
       "strategy_id": "st-cfc94a2fc4d2"
+    },
+    {
+      "attack_id": "atk-59ec37ba1a84",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The absence of a contradicting statement in the retrieved set is not evidence that none exists.",
+      "strategy_id": "st-df442435371e"
+    },
+    {
+      "attack_id": "atk-a62615c435e6",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-df442435371e"
+    },
+    {
+      "attack_id": "atk-df110bc9ad95",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-df442435371e"
+    },
+    {
+      "attack_id": "atk-a955af7906ef",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-e73aff1a561c"
+    },
+    {
+      "attack_id": "atk-e22b2f89d8a2",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-e73aff1a561c"
+    },
+    {
+      "attack_id": "atk-e2d6bc8a00f5",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
+      "strategy_id": "st-e73aff1a561c"
     },
     {
       "attack_id": "atk-5d953e811629",
@@ -1460,6 +1673,59 @@
     },
     {
       "cited_claim_ids": [],
+      "claim_id": "cl-09cf33a9256d",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "67",
+        "4"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T11:46:58Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-09cf33a9256d",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "descriptive",
+        "reason": "Describes a subject without a quantity or a period of its own.",
+        "total": 0.5133
+      },
+      "text": "This question is currently supported by 67 verified claim(s) drawn from 4 independent source(s).",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
       "claim_id": "cl-209c483bda0a",
       "claim_kind": "derived",
       "confidence": "medium",
@@ -1902,7 +2168,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T05:05:58Z",
+      "recorded_at": "2026-09-22T11:46:58Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-7c45d8ea2e28",
@@ -2270,7 +2536,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T05:05:58Z",
+      "recorded_at": "2026-09-22T11:46:58Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-af231e4e8dd2",
@@ -2533,7 +2799,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T05:05:58Z",
+      "recorded_at": "2026-09-22T11:46:58Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-9b4775e24b81",
@@ -2784,6 +3050,63 @@
       "verdict": "unsupported"
     },
     {
+      "cited_claim_ids": [],
+      "claim_id": "cl-d7cb49944955",
+      "claim_kind": "derived",
+      "confidence": "unknown",
+      "context_numbers": [
+        "97.0%",
+        "97.0",
+        "0",
+        "65"
+      ],
+      "coverage": 0.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-autonomous-research-agents",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [
+        "97%"
+      ],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "Derived statement contains figures the engine did not compute: 97%. Recomputation disagrees with the recorded context."
+      ],
+      "recorded_at": "2026-09-22T11:46:58Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-d7cb49944955",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.14,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.0
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 1.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 0.0
+        },
+        "label": "substantive",
+        "reason": "Carries a checkable quantity, a period or a mechanism, and passed verification.",
+        "total": 0.5533
+      },
+      "text": "Of the claims recorded for this question, 97.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.",
+      "url": "",
+      "verdict": "unsupported"
+    },
+    {
       "cited_claim_ids": [
         "cl-3875d311770a",
         "cl-fc01db4f0a3b"
@@ -2808,7 +3131,7 @@
       "reasons": [
         "All 1 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-22T05:05:58Z",
+      "recorded_at": "2026-09-22T11:46:58Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-186537ad9245",
@@ -2865,7 +3188,7 @@
       "reasons": [
         "All 2 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-22T05:05:58Z",
+      "recorded_at": "2026-09-22T11:46:58Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-8737f188a55e",
@@ -4203,7 +4526,7 @@
       "claim_a": "cl-13cf26e4fba9",
       "claim_b": "cl-6ac20344a641",
       "contradiction_id": "con-4fb8033a159c",
-      "created_at": "2026-09-22T07:20:46Z",
+      "created_at": "2026-09-22T11:46:58Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (102 vs 150). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -4217,7 +4540,7 @@
       "claim_a": "cl-6ac20344a641",
       "claim_b": "cl-13cf26e4fba9",
       "contradiction_id": "con-c026367771df",
-      "created_at": "2026-09-22T07:20:46Z",
+      "created_at": "2026-09-22T11:46:56Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (150 vs 102). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -4231,23 +4554,23 @@
   "derived": [
     {
       "context_numbers": [
-        "61",
+        "63",
         "4"
       ],
       "label": "library_volume",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "This question is currently supported by 61 verified claim(s) drawn from 4 independent source(s)."
+      "text": "This question is currently supported by 63 verified claim(s) drawn from 4 independent source(s)."
     },
     {
       "context_numbers": [
-        "96.7%",
-        "96.7",
+        "95.2%",
+        "95.2",
         "0",
-        "59"
+        "60"
       ],
       "label": "verification_rate",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "Of the claims recorded for this question, 96.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
+      "text": "Of the claims recorded for this question, 95.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
     },
     {
       "context_numbers": [
@@ -4412,7 +4735,7 @@
       "url": "https://github.com/khoj-ai/khoj"
     },
     {
-      "bytes_read": 29992,
+      "bytes_read": 29991,
       "content_hash": "sha256:df08633206dbde8fab6d39b92796c89e67a8d31d85b6672f8f81e6d4b12fce7b",
       "evidence_class": "commentary",
       "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -4421,13 +4744,13 @@
       "is_live": true,
       "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
       "published_at": "2026-03-21",
-      "retrieved_at": "2026-09-22T05:05:58Z",
+      "retrieved_at": "2026-09-22T11:46:58Z",
       "source_name": "Hacker News API (via Algolia index)",
       "title": "Autonomous AI research agent with Overleaf sync",
       "url": "https://github.com/nanoAgentTeam/research-claw"
     },
     {
-      "bytes_read": 29992,
+      "bytes_read": 29991,
       "content_hash": "sha256:1a13c8887f1fbb32cfe6b82a2543d0192d5153b2b4b7a4eb9946d6e6386f9645",
       "evidence_class": "commentary",
       "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -4436,7 +4759,7 @@
       "is_live": true,
       "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
       "published_at": "2026-04-21",
-      "retrieved_at": "2026-09-22T05:05:58Z",
+      "retrieved_at": "2026-09-22T11:46:58Z",
       "source_name": "Hacker News API (via Algolia index)",
       "title": "Deep Research Max: a step change for autonomous research agents",
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/"
@@ -4451,8 +4774,15 @@
     "What experiment would resolve it?"
   ],
   "experiments": [],
-  "generated_at": "2026-09-22T07:20:46Z",
+  "generated_at": "2026-09-22T11:47:11Z",
   "questions": [
+    {
+      "id": "q-906c573de2ab",
+      "origin": "sub_question",
+      "priority": 0.7,
+      "status": "open",
+      "text": "The source Cross-document synthesis of cited claims reports an unresolved or hedged finding: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\". Which additional evidence would settle whether this holds for this question?"
+    },
     {
       "id": "q-f7a08fa5afe7",
       "origin": "sub_question",
@@ -5165,14 +5495,14 @@
     {
       "claim_id": "q-3908709733c3",
       "claim_kind": "open question (gap)",
-      "recorded_at": "2026-09-22T05:05:58Z",
-      "superseded": "Withdrawn 2026-09-22T05:06:07Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-048f7bdbd6c3.",
+      "recorded_at": "2026-09-22T11:46:58Z",
+      "superseded": "Withdrawn 2026-09-22T11:47:11Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-048f7bdbd6c3.",
       "text": "The quantity reported in cl-048f7bdbd6c3 has no reference period in the quoted text. Over what period, and in what population, was it measured?"
     }
   ],
   "source_status": [
     {
-      "checked_at": "2026-09-22T05:05:57Z",
+      "checked_at": "2026-09-22T11:46:58Z",
       "detail": "4 document(s) retrieved; 6 result(s) dropped as unrelated to the query",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -5188,7 +5518,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-22T05:05:58Z",
+      "checked_at": "2026-09-22T11:46:58Z",
       "detail": "9 document(s) retrieved; 1 result(s) dropped as unrelated to the query",
       "evidence_class": "commentary",
       "evidence_rank": 7,
@@ -5205,8 +5535,8 @@
     }
   ],
   "statistics": {
-    "claims": 61,
-    "computed_at": "2026-09-22T07:20:46Z",
+    "claims": 63,
+    "computed_at": "2026-09-22T11:47:11Z",
     "documents": 11,
     "evidence_classes": [
       "commentary",
@@ -5217,8 +5547,8 @@
     "live_documents": 11,
     "partially_supported": 0,
     "sources": 4,
-    "supported": 59,
-    "unsupported": 2
+    "supported": 60,
+    "unsupported": 3
   },
   "status_history": [
     {
@@ -5338,6 +5668,18 @@
     {
       "last_updated": "2026-09-22T05:05:58Z",
       "line": 91,
+      "status": "competing",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-22T11:46:56Z",
+      "line": 95,
+      "status": "new",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-22T11:46:58Z",
+      "line": 99,
       "status": "competing",
       "topic_id": "topic-autonomous-research-agents"
     }
@@ -5558,6 +5900,113 @@
       "title": "Cross-domain brief: Autonomous research agents: which open implementations exist and how active are…"
     },
     {
+      "argument": "Cross-domain brief. The statements below were retrieved for other topics and share subject matter with this one; they are candidates for transfer.\n\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2f15bcca9881] \"This question is currently supported by 18 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-c0cc6a36f695] \"The record for pypl0/Ombre states in its own description: Open source AI infrastructure layer.\" - GitHub REST API (primary_source)\n[cl-0a10536a3de6] \"The record for raesa-razeen/halo-hallucination-detector reports: language Python, topics hallucination-detection; legal-nlp; llm; nlp; python; research, open_issues_count 0.\" - GitHub REST API (primary_source)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The other field's mechanism transfers without an omitted domain-specific constraint."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 18, 2, 3, 38 for the same quantity. For a transferred mechanism, falsification is a demonstration that the domain-specific constraint is missing.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact. Cross-domain transfer is a hypothesis, not a result: the statements below were verified for a different question and their applicability here has not been tested.",
+      "persona": "D - Cross-domain",
+      "persona_brief": "Look for solutions that worked in a completely different field.",
+      "persona_code": "D",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.1,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.178 around a centre of 0.752.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.7628,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 0.8333,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 2,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.7637,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-84d63e1eefef",
+      "supporting_claim_ids": [
+        "cl-186537ad9245",
+        "cl-209c483bda0a",
+        "cl-2a9e3216246c",
+        "cl-2f15bcca9881",
+        "cl-c0cc6a36f695",
+        "cl-0a10536a3de6"
+      ],
+      "title": "Cross-domain brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
       "argument": "Experimental brief. The statements below carry a measurement, which makes them usable as the basis of a test.\n\n[cl-0ccba4f941a7] \"The record for SamuelSchmidgall/AgentLaboratory reports: pushed_at 2025-08-20T21:46:43Z, stargazers_count 5859, forks_count 800.\" - GitHub REST API (primary_source)\n[cl-13cf26e4fba9] \"The record for assafelovic/gpt-researcher reports: open_issues_count 102.\" - GitHub REST API (primary_source)\n[cl-1ec591c4bc9f] \"The record for virattt/dexter reports: pushed_at 2026-08-04T15:20:42Z, stargazers_count 27614, forks_count 3415.\" - GitHub REST API (primary_source)\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2f15bcca9881] \"This question is currently supported by 18 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -5768,6 +6217,113 @@
         "cl-2f15bcca9881",
         "cl-35e1e49fdb01",
         "cl-3875d311770a"
+      ],
+      "title": "Experimental brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "argument": "Experimental brief. The statements below carry a measurement, which makes them usable as the basis of a test.\n\n[cl-0ccba4f941a7] \"The record for SamuelSchmidgall/AgentLaboratory reports: pushed_at 2025-08-20T21:46:43Z, stargazers_count 5859, forks_count 800.\" - GitHub REST API (primary_source)\n[cl-13cf26e4fba9] \"The record for assafelovic/gpt-researcher reports: open_issues_count 102.\" - GitHub REST API (primary_source)\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-1ec591c4bc9f] \"The record for virattt/dexter reports: pushed_at 2026-08-04T15:20:42Z, stargazers_count 27614, forks_count 3415.\" - GitHub REST API (primary_source)\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The measurement can be reproduced with the same method in this environment."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 102, 2, 20, 2025, 2026, 27614 for the same quantity. The attached experiment is the intended test.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "F - Experimental",
+      "persona_brief": "Design a falsifiable test that could determine which idea is actually correct.",
+      "persona_code": "F",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The record for SamuelSchmidgall/AgentLaboratory reports: pushed_at 2025-08-20T21:46:43Z, stargazers_count 5859, forks_count 800.\"",
+        "If the sourced statement holds, then: \"The record for assafelovic/gpt-researcher reports: open_issues_count 102.\"",
+        "If the sourced statement holds, then: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\""
+      ],
+      "scorecard": {
+        "attacks": 5,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5833,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.136,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.010 around a centre of 0.881.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.9881,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 3,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.738,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-ba4442a6dced",
+      "supporting_claim_ids": [
+        "cl-0ccba4f941a7",
+        "cl-13cf26e4fba9",
+        "cl-186537ad9245",
+        "cl-1ec591c4bc9f",
+        "cl-209c483bda0a",
+        "cl-2a9e3216246c"
       ],
       "title": "Experimental brief: Autonomous research agents: which open implementations exist and how active are…"
     },
@@ -6414,6 +6970,218 @@
       "title": "Cross-domain brief: Autonomous research agents: which open implementations exist and how active are…"
     },
     {
+      "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2f15bcca9881] \"This question is currently supported by 18 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-35408f489136] \"Of the claims recorded for this question, 97.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-3853270f01f0] \"Of the claims recorded for this question, 96.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 18, 2, 3, 38 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "A - Conventional",
+      "persona_brief": "Find the strongest solution using established, well-evidenced knowledge.",
+      "persona_code": "A",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\""
+      ],
+      "scorecard": {
+        "attacks": 3,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.072,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.5374,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-e73aff1a561c",
+      "supporting_claim_ids": [
+        "cl-186537ad9245",
+        "cl-209c483bda0a",
+        "cl-2a9e3216246c",
+        "cl-2f15bcca9881",
+        "cl-35408f489136",
+        "cl-3853270f01f0"
+      ],
+      "title": "Conventional brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2f15bcca9881] \"This question is currently supported by 18 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-35408f489136] \"Of the claims recorded for this question, 97.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-3853270f01f0] \"Of the claims recorded for this question, 96.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The quantities quoted are commensurable with each other after unit conversion."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 18, 2, 3, 38 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "C - First principles",
+      "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
+      "persona_code": "C",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\""
+      ],
+      "scorecard": {
+        "attacks": 3,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.065,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.5371,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-42f4a1289431",
+      "supporting_claim_ids": [
+        "cl-186537ad9245",
+        "cl-209c483bda0a",
+        "cl-2a9e3216246c",
+        "cl-2f15bcca9881",
+        "cl-35408f489136",
+        "cl-3853270f01f0"
+      ],
+      "title": "First principles brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
       "argument": "Contrarian brief. The retrieved evidence is searched for findings that limit, qualify or contradict the conventional reading.\n\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-8737f188a55e] \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2f15bcca9881] \"This question is currently supported by 18 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-35408f489136] \"Of the claims recorded for this question, 97.1% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -6622,6 +7390,218 @@
         "cl-2a9e3216246c",
         "cl-2f15bcca9881",
         "cl-35408f489136"
+      ],
+      "title": "Optimization brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "argument": "Contrarian brief. The retrieved evidence is searched for findings that limit, qualify or contradict the conventional reading.\n\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-8737f188a55e] \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-8737f188a55e] \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The absence of a contradicting statement in the retrieved set is not evidence that none exists."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 2, 3, 38, 42 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "B - Contrarian",
+      "persona_brief": "Assume the conventional approach is wrong; find evidence-backed alternatives.",
+      "persona_code": "B",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\""
+      ],
+      "scorecard": {
+        "attacks": 3,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.012,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.535,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-df442435371e",
+      "supporting_claim_ids": [
+        "cl-186537ad9245",
+        "cl-8737f188a55e",
+        "cl-186537ad9245",
+        "cl-8737f188a55e",
+        "cl-209c483bda0a",
+        "cl-2a9e3216246c"
+      ],
+      "title": "Contrarian brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "argument": "Optimisation brief. The statements below carry a rate, cost or scale term and are candidates for a cost or throughput argument.\n\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-8737f188a55e] \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-186537ad9245] \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-8737f188a55e] \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\" - Cross-document synthesis of cited claims (reproduced_experiment)\n[cl-209c483bda0a] \"This question is currently supported by 38 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a9e3216246c] \"This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 2, 3, 38, 42 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "E - Optimization",
+      "persona_brief": "Find the cheapest, fastest or most scalable option given the sourced numbers.",
+      "persona_code": "E",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"The figure 3 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\"",
+        "If the sourced statement holds, then: \"The figure 2 appears in verified statements from 2 separate documents published by 2 source(s), each quoting its own source. This is agreement on a figure, not confirmation of a shared cause.\""
+      ],
+      "scorecard": {
+        "attacks": 3,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.0113,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "No experiment has been run for this question, so this criterion contributes nothing.",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.535,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-00fa794b159a",
+      "supporting_claim_ids": [
+        "cl-186537ad9245",
+        "cl-8737f188a55e",
+        "cl-186537ad9245",
+        "cl-8737f188a55e",
+        "cl-209c483bda0a",
+        "cl-2a9e3216246c"
       ],
       "title": "Optimization brief: Autonomous research agents: which open implementations exist and how active are…"
     },
@@ -7475,18 +8455,18 @@
     }
   ],
   "substance": {
-    "claims": 61,
+    "claims": 63,
     "dated": 11,
     "labels": {
-      "descriptive": 29,
+      "descriptive": 30,
       "metadata": 8,
-      "substantive": 24
+      "substantive": 25
     },
-    "mean_score": 0.5138,
-    "metadata_share": 0.1311,
-    "quantified": 53,
-    "quantified_share": 0.8689,
-    "substantive_share": 0.3934
+    "mean_score": 0.5144,
+    "metadata_share": 0.127,
+    "quantified": 55,
+    "quantified_share": 0.873,
+    "substantive_share": 0.3968
   },
   "synthesis": [
     {
@@ -7563,7 +8543,7 @@
     }
   ],
   "topic": {
-    "first_seen": "2026-09-22T05:05:56Z",
+    "first_seen": "2026-09-22T11:46:56Z",
     "keywords": [
       "autonomous agent",
       "research automation",
@@ -7572,7 +8552,7 @@
       "open source",
       "repository activity"
     ],
-    "last_updated": "2026-09-22T05:05:58Z",
+    "last_updated": "2026-09-22T11:46:58Z",
     "notes": "First seed question. Chosen because its evidence is repository metadata, which the engine can retrieve and quote verbatim.",
     "origin": "seed",
     "parent_topic_id": null,

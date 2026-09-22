@@ -1,5 +1,5 @@
 {
-  "bytes_read": 19175,
+  "bytes_read": 21902,
   "content_hash": "sha256:65c340c1df71f664c703803c2f8362977e81da34fb9fb0e93f478d22af874886",
   "evidence_class": "peer_reviewed",
   "evidence_class_label": "Peer-reviewed publication indexed by a DOI registry or PubMed.",
@@ -13,8 +13,8 @@
   "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
   "published_at": null,
   "publisher": "Crossref (DOI registration agency, not-for-profit)",
-  "response_sha256": "sha256:f4b51b2fcb2afcb11ebf4a7aabeac8614837f12cedf5bec56c06a8b4da654aa5",
-  "retrieved_at": "2026-09-22T05:05:59Z",
+  "response_sha256": "sha256:a3380c698a0803c47660d5ec559a0d2dc1de51e0f09dac15a72e46f3e42089c1",
+  "retrieved_at": "2026-09-22T11:47:00Z",
   "source_id": "crossref",
   "source_name": "Crossref REST API",
   "text": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Crossref REST API record 6\nThe record for Crossref REST API record 6 reports: DOI 10.1117/12.2255644.5361903597001, type component, publisher SPIE-Intl Soc Optical Eng.\nThe record for Crossref REST API record 6 reports: citation count 0.\nSource note: The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",

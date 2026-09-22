@@ -3,13 +3,13 @@
     "baseline": 16807.6,
     "best_value": 1726.4,
     "best_variant": "merge_sort",
-    "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-si8wy354/result.json",
+    "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-35k0jfl8/result.json",
     "error": "",
     "experiment_id": "sorting-comparisons-v1",
     "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
     "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
     "metric": "mean element comparisons per run",
-    "ran_at": "2026-09-22T05:06:04Z",
+    "ran_at": "2026-09-22T11:47:08Z",
     "result_json": {
       "baseline": 16807.6,
       "baseline_name": "insertion_sort on shuffled input",
@@ -57,9 +57,9 @@
             "merge_sort": 1024
           },
           "mean_seconds": {
-            "heapsort": 0.00045483,
-            "insertion_sort": 0.00366767,
-            "merge_sort": 0.00031145
+            "heapsort": 0.00043815,
+            "insertion_sort": 0.00352034,
+            "merge_sort": 0.00029269
           },
           "min_comparisons": {
             "heapsort": 3106,
@@ -79,9 +79,9 @@
             "merge_sort": 1726.4
           },
           "mean_seconds": {
-            "heapsort": 0.00048606,
-            "insertion_sort": 0.00186732,
-            "merge_sort": 0.00043243
+            "heapsort": 0.00047462,
+            "insertion_sort": 0.00181191,
+            "merge_sort": 0.00041397
           },
           "min_comparisons": {
             "heapsort": 3278,
@@ -101,9 +101,9 @@
             "merge_sort": 1024
           },
           "mean_seconds": {
-            "heapsort": 0.00051763,
-            "insertion_sort": 3.316e-05,
-            "merge_sort": 0.00030779
+            "heapsort": 0.00050137,
+            "insertion_sort": 3.216e-05,
+            "merge_sort": 0.00029065
           },
           "min_comparisons": {
             "heapsort": 3452,
@@ -139,13 +139,13 @@
     "baseline": 0.96,
     "best_value": 1.0,
     "best_variant": "support=0.8 partial=0.45 quote_chars=24.0",
-    "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-edvm0lha/result.json",
+    "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-kf3kk8xq/result.json",
     "error": "",
     "experiment_id": "verification-thresholds-v1",
     "hypothesis": "A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports.",
     "method": "Exhaustive sweep of 132 threshold combinations, evaluated against 26 hand-labelled claim/document pairs; selection is lexicographic on false supports, recall, F1, macro F1, distance from the documented default, then strictness.",
     "metric": "verdict accuracy on labelled cases",
-    "ran_at": "2026-09-22T05:06:00Z",
+    "ran_at": "2026-09-22T11:47:01Z",
     "result_json": {
       "baseline": 0.96,
       "baseline_name": "configured default thresholds support=0.8 partial=0.55 quote_chars=24.0",
@@ -240,5 +240,106 @@
     "seed": 0,
     "status": "completed",
     "topic_id": "topic-fabrication-detection"
+  },
+  {
+    "baseline": 960.0,
+    "best_value": 139.0205,
+    "best_variant": "epsilon_greedy",
+    "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-37yc4201/result.json",
+    "error": "",
+    "experiment_id": "scheduling-policies-v1",
+    "hypothesis": "On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate keeps paying a cost proportional to the horizon.",
+    "method": "100 independent trials of 4000 pulls per policy on arms with means [0.15, 0.25, 0.35, 0.45, 0.6]; pseudo-regret computed from the true mean of each pulled arm, so the metric has no reward noise.",
+    "metric": "mean cumulative pseudo-regret",
+    "ran_at": "2026-09-22T11:47:05Z",
+    "result_json": {
+      "arm_means": [
+        0.15,
+        0.25,
+        0.35,
+        0.45,
+        0.6
+      ],
+      "baseline": 960.0,
+      "baseline_name": "round-robin (analytic: T x mean gap)",
+      "best_value": 139.0205,
+      "best_variant": "epsilon_greedy",
+      "checks": [
+        {
+          "check": "round-robin pseudo-regret equals the analytic value T x mean gap",
+          "observed": "observed=960.0000 analytic=960.0000",
+          "outcome": true
+        },
+        {
+          "check": "UCB1 accumulates less pseudo-regret than round-robin",
+          "observed": "ucb1=153.770 round_robin=960.000",
+          "outcome": true
+        },
+        {
+          "check": "epsilon-greedy accumulates less pseudo-regret than round-robin",
+          "observed": "epsilon_greedy=139.020 round_robin=960.000",
+          "outcome": true
+        },
+        {
+          "check": "UCB1 regret is sublinear: the second half of the horizon costs less than the first",
+          "observed": "first_half=117.578 second_half=36.192",
+          "outcome": true
+        },
+        {
+          "check": "a fixed exploration rate keeps paying: epsilon-greedy second-half regret stays above half its analytic floor",
+          "observed": "second_half=51.945 floor=24.000",
+          "outcome": true
+        }
+      ],
+      "conclusion": "hypothesis supported by all stated checks",
+      "environment": {
+        "machine": "x86_64",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "python": "3.11.16"
+      },
+      "epsilon": 0.1,
+      "experiment_id": "scheduling-policies-v1",
+      "falsifier": "Round-robin is not the worst of the three, or UCB1's second-half regret is not below its first-half regret, or epsilon-greedy's second-half regret falls below the analytic exploration floor.",
+      "horizon": 4000,
+      "hypothesis": "On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate keeps paying a cost proportional to the horizon.",
+      "limitation": "Stationary Bernoulli arms with means chosen in this script. The result compares policies on a known toy problem; it is not a measurement of any real research schedule and does not say which question the engine should investigate next.",
+      "method": "100 independent trials of 4000 pulls per policy on arms with means [0.15, 0.25, 0.35, 0.45, 0.6]; pseudo-regret computed from the true mean of each pulled arm, so the metric has no reward noise.",
+      "metric": "mean cumulative pseudo-regret",
+      "regret_by_half": {
+        "epsilon_greedy": {
+          "first_half": 87.0755,
+          "second_half": 51.945
+        },
+        "round_robin": {
+          "first_half": 480.0,
+          "second_half": 480.0
+        },
+        "ucb1": {
+          "first_half": 117.578,
+          "second_half": 36.192
+        }
+      },
+      "seed": 5,
+      "trials": 100,
+      "variants": [
+        {
+          "name": "round_robin",
+          "value": 960.0
+        },
+        {
+          "name": "epsilon_greedy",
+          "value": 139.0205
+        },
+        {
+          "name": "ucb1",
+          "value": 153.77
+        }
+      ]
+    },
+    "script_path": "experiments/scheduling_policies.py",
+    "script_sha256": "sha256:f2b05ccbef6e61c323835c05a654c9e8f441c19bbccf5d45f5a35f1f37d2ecd4",
+    "seed": 5,
+    "status": "completed",
+    "topic_id": "topic-research-loop-scheduling"
   }
 ]

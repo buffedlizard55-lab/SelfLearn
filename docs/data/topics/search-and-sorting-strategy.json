@@ -224,6 +224,53 @@
       "strategy_id": "st-2287d4b776db"
     },
     {
+      "attack_id": "atk-1294a982c273",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-04fe27e07fbd",
+        "cl-08ba6d35306b",
+        "cl-0f29fe30cb1f",
+        "cl-182dc995aef3",
+        "cl-1b96e1fb0c3f",
+        "cl-226c5106e9cb"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated.",
+      "strategy_id": "st-2979557c8287"
+    },
+    {
+      "attack_id": "atk-aa7e0da248b4",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-2979557c8287"
+    },
+    {
+      "attack_id": "atk-afe90fd391cd",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them.",
+      "strategy_id": "st-2979557c8287"
+    },
+    {
+      "attack_id": "atk-c40d6a7becef",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-2979557c8287"
+    },
+    {
       "attack_id": "atk-456d12a93071",
       "attack_type": "data",
       "claim_refs": [
@@ -1044,6 +1091,53 @@
       "strategy_id": "st-9a0d600642ed"
     },
     {
+      "attack_id": "atk-caad1f366e79",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-04fe27e07fbd",
+        "cl-08ba6d35306b",
+        "cl-0f29fe30cb1f",
+        "cl-182dc995aef3",
+        "cl-1b96e1fb0c3f",
+        "cl-226c5106e9cb"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated.",
+      "strategy_id": "st-a76200569bd0"
+    },
+    {
+      "attack_id": "atk-899d58739650",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The other field's mechanism transfers without an omitted domain-specific constraint.",
+      "strategy_id": "st-a76200569bd0"
+    },
+    {
+      "attack_id": "atk-a6c2fca25959",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-a76200569bd0"
+    },
+    {
+      "attack_id": "atk-abcd52b25f40",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-a76200569bd0"
+    },
+    {
       "attack_id": "atk-4117c457a0aa",
       "attack_type": "data",
       "claim_refs": [
@@ -1326,6 +1420,93 @@
       "severity": "moderate",
       "statement": "The freshest document cited by this brief is more than three years old at the time of the run, which is a risk for a question about current conditions.",
       "strategy_id": "st-c9765c970e50"
+    },
+    {
+      "attack_id": "atk-0a6c535c400d",
+      "attack_type": "data",
+      "claim_refs": [
+        "cl-04fe27e07fbd",
+        "cl-08ba6d35306b",
+        "cl-0f29fe30cb1f",
+        "cl-182dc995aef3",
+        "cl-1b96e1fb0c3f",
+        "cl-226c5106e9cb"
+      ],
+      "critic": "C7: All cited claims come from a single source.",
+      "outcome": "open",
+      "severity": "major",
+      "statement": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated.",
+      "strategy_id": "st-ddb1927751f5"
+    },
+    {
+      "attack_id": "atk-1d1b0b829608",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-ddb1927751f5"
+    },
+    {
+      "attack_id": "atk-58951f254cfd",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The quantities quoted are commensurable with each other after unit conversion.",
+      "strategy_id": "st-ddb1927751f5"
+    },
+    {
+      "attack_id": "atk-bde5480dde70",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-ddb1927751f5"
+    },
+    {
+      "attack_id": "atk-3ccc4c12f415",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The measurement can be reproduced with the same method in this environment.",
+      "strategy_id": "st-e3ed33ea5860"
+    },
+    {
+      "attack_id": "atk-6fff30e93b7e",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+      "strategy_id": "st-e3ed33ea5860"
+    },
+    {
+      "attack_id": "atk-e0c77ba75868",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes.",
+      "strategy_id": "st-e3ed33ea5860"
+    },
+    {
+      "attack_id": "atk-f32c6d60fb12",
+      "attack_type": "assumption",
+      "claim_refs": [],
+      "critic": "C3: The brief states an assumption it has not evidenced.",
+      "outcome": "survived",
+      "severity": "minor",
+      "statement": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question.",
+      "strategy_id": "st-e3ed33ea5860"
     },
     {
       "attack_id": "atk-27cdb4182b31",
@@ -1756,6 +1937,61 @@
     },
     {
       "cited_claim_ids": [],
+      "claim_id": "cl-ece8e2680383",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "95.9%",
+        "95.9",
+        "0",
+        "71"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-search-and-sorting-strategy",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T11:47:08Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-ece8e2680383",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.14,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 1.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "substantive",
+        "reason": "Carries a checkable quantity, a period or a mechanism, and passed verification.",
+        "total": 0.6533
+      },
+      "text": "Of the claims recorded for this question, 95.9% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
       "claim_id": "cl-04fe27e07fbd",
       "claim_kind": "derived",
       "confidence": "medium",
@@ -2146,7 +2382,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T05:06:04Z",
+      "recorded_at": "2026-09-22T11:47:08Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-a9621ea42680",
@@ -2251,7 +2487,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T05:06:04Z",
+      "recorded_at": "2026-09-22T11:47:08Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-d738fd457549",
@@ -2338,6 +2574,59 @@
     },
     {
       "cited_claim_ids": [],
+      "claim_id": "cl-edb1d48901ba",
+      "claim_kind": "derived",
+      "confidence": "medium",
+      "context_numbers": [
+        "74",
+        "3"
+      ],
+      "coverage": 1.0,
+      "evidence_class": "reproduced_experiment",
+      "evidence_class_label": "A previous experiment re-run and confirmed by this engine.",
+      "evidence_id": "derived-topic-search-and-sorting-strategy",
+      "evidence_rank": 2,
+      "limitations": "A derived statement about this library, not about the subject matter.",
+      "missing_numbers": [],
+      "quote": "",
+      "quote_match": false,
+      "reasons": [
+        "All 2 numeric literal(s) match the engine-computed context set."
+      ],
+      "recorded_at": "2026-09-22T11:47:08Z",
+      "source_name": "SelfLearn library computation",
+      "substance": {
+        "claim_id": "cl-edb1d48901ba",
+        "contributions": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.0533,
+          "mechanism": 0.0,
+          "quantity": 0.24,
+          "specificity": 0.12,
+          "verification": 0.1
+        },
+        "features": {
+          "caveat": 0.0,
+          "comparison": 0.0,
+          "date": 0.0,
+          "evidence": 0.8889,
+          "mechanism": 0.0,
+          "quantity": 1.0,
+          "specificity": 1.0,
+          "verification": 1.0
+        },
+        "label": "descriptive",
+        "reason": "Describes a subject without a quantity or a period of its own.",
+        "total": 0.5133
+      },
+      "text": "This question is currently supported by 74 verified claim(s) drawn from 3 independent source(s).",
+      "url": "",
+      "verdict": "supported"
+    },
+    {
+      "cited_claim_ids": [],
       "claim_id": "cl-ff0df5b3689a",
       "claim_kind": "derived",
       "confidence": "medium",
@@ -2409,7 +2698,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T05:06:04Z",
+      "recorded_at": "2026-09-22T11:47:08Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-4f2e80b38ed6",
@@ -4869,23 +5158,23 @@
   "derived": [
     {
       "context_numbers": [
-        "68",
+        "70",
         "2"
       ],
       "label": "library_volume",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "This question is currently supported by 68 verified claim(s) drawn from 2 independent source(s)."
+      "text": "This question is currently supported by 70 verified claim(s) drawn from 2 independent source(s)."
     },
     {
       "context_numbers": [
-        "95.6%",
-        "95.6",
+        "95.7%",
+        "95.7",
         "0",
-        "65"
+        "67"
       ],
       "label": "verification_rate",
       "limitations": "A derived statement about this library, not about the subject matter.",
-      "text": "Of the claims recorded for this question, 95.6% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
+      "text": "Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
     },
     {
       "context_numbers": [
@@ -4924,7 +5213,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2018-10-14",
-      "retrieved_at": "2026-09-22T05:06:03Z",
+      "retrieved_at": "2026-09-22T11:47:06Z",
       "source_name": "GitHub REST API",
       "title": "sbtali/SortAlgorithmsComparison",
       "url": "https://github.com/sbtali/SortAlgorithmsComparison"
@@ -4939,7 +5228,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2015-05-10",
-      "retrieved_at": "2026-09-22T05:06:03Z",
+      "retrieved_at": "2026-09-22T11:47:06Z",
       "source_name": "GitHub REST API",
       "title": "w32zhong/BTreeimplementation",
       "url": "https://github.com/w32zhong/BTreeimplementation"
@@ -4954,7 +5243,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2018-01-06",
-      "retrieved_at": "2026-09-22T05:06:03Z",
+      "retrieved_at": "2026-09-22T11:47:06Z",
       "source_name": "GitHub REST API",
       "title": "GroupAYECS765P/BDP-05-Large-scale-Clustering",
       "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering"
@@ -4969,7 +5258,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2022-02-10",
-      "retrieved_at": "2026-09-22T05:06:03Z",
+      "retrieved_at": "2026-09-22T11:47:06Z",
       "source_name": "GitHub REST API",
       "title": "allenvox/sorting-algorithms-comparison",
       "url": "https://github.com/allenvox/sorting-algorithms-comparison"
@@ -4984,7 +5273,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2022-11-06",
-      "retrieved_at": "2026-09-22T05:06:03Z",
+      "retrieved_at": "2026-09-22T11:47:06Z",
       "source_name": "GitHub REST API",
       "title": "picoders1/Sorting-Countable-Integers--DSA",
       "url": "https://github.com/picoders1/Sorting-Countable-Integers--DSA"
@@ -4999,7 +5288,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-06-24",
-      "retrieved_at": "2026-09-22T05:06:03Z",
+      "retrieved_at": "2026-09-22T11:47:06Z",
       "source_name": "GitHub REST API",
       "title": "Anshsing/sorting-visualizer",
       "url": "https://github.com/Anshsing/sorting-visualizer"
@@ -5014,7 +5303,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2024-08-01",
-      "retrieved_at": "2026-09-22T05:06:03Z",
+      "retrieved_at": "2026-09-22T11:47:06Z",
       "source_name": "GitHub REST API",
       "title": "daley331/Sorting-Algorithms-Analysis",
       "url": "https://github.com/daley331/Sorting-Algorithms-Analysis"
@@ -5029,7 +5318,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2020-05-18",
-      "retrieved_at": "2026-09-22T05:06:03Z",
+      "retrieved_at": "2026-09-22T11:47:06Z",
       "source_name": "GitHub REST API",
       "title": "thedonat/Sorting-Algorithms-Comparison",
       "url": "https://github.com/thedonat/Sorting-Algorithms-Comparison"
@@ -5044,7 +5333,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2013-02-04",
-      "retrieved_at": "2026-09-22T05:06:03Z",
+      "retrieved_at": "2026-09-22T11:47:06Z",
       "source_name": "GitHub REST API",
       "title": "onuryilmaz-wip/ComparisonOfSortingAlgorithms",
       "url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms"
@@ -5059,7 +5348,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2024-10-13",
-      "retrieved_at": "2026-09-22T05:06:03Z",
+      "retrieved_at": "2026-09-22T11:47:06Z",
       "source_name": "GitHub REST API",
       "title": "0Kiprotich/SortingAlgorithms-Comparison-based-Sorting",
       "url": "https://github.com/0Kiprotich/SortingAlgorithms-Comparison-based-Sorting"
@@ -5078,13 +5367,13 @@
       "baseline": 16807.6,
       "best_value": 1726.4,
       "best_variant": "merge_sort",
-      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-si8wy354/result.json",
+      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-35k0jfl8/result.json",
       "error": "",
       "experiment_id": "sorting-comparisons-v1",
       "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
       "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
       "metric": "mean element comparisons per run",
-      "ran_at": "2026-09-22T05:06:04Z",
+      "ran_at": "2026-09-22T11:47:08Z",
       "result_json": {
         "baseline": 16807.6,
         "baseline_name": "insertion_sort on shuffled input",
@@ -5132,9 +5421,9 @@
               "merge_sort": 1024
             },
             "mean_seconds": {
-              "heapsort": 0.00045483,
-              "insertion_sort": 0.00366767,
-              "merge_sort": 0.00031145
+              "heapsort": 0.00043815,
+              "insertion_sort": 0.00352034,
+              "merge_sort": 0.00029269
             },
             "min_comparisons": {
               "heapsort": 3106,
@@ -5154,9 +5443,9 @@
               "merge_sort": 1726.4
             },
             "mean_seconds": {
-              "heapsort": 0.00048606,
-              "insertion_sort": 0.00186732,
-              "merge_sort": 0.00043243
+              "heapsort": 0.00047462,
+              "insertion_sort": 0.00181191,
+              "merge_sort": 0.00041397
             },
             "min_comparisons": {
               "heapsort": 3278,
@@ -5176,9 +5465,9 @@
               "merge_sort": 1024
             },
             "mean_seconds": {
-              "heapsort": 0.00051763,
-              "insertion_sort": 3.316e-05,
-              "merge_sort": 0.00030779
+              "heapsort": 0.00050137,
+              "insertion_sort": 3.216e-05,
+              "merge_sort": 0.00029065
             },
             "min_comparisons": {
               "heapsort": 3452,
@@ -5211,7 +5500,7 @@
       "topic_id": "topic-search-and-sorting-strategy"
     }
   ],
-  "generated_at": "2026-09-22T07:20:46Z",
+  "generated_at": "2026-09-22T11:47:11Z",
   "questions": [
     {
       "id": "q-29c92c5dc0ff",
@@ -5750,7 +6039,7 @@
   ],
   "source_status": [
     {
-      "checked_at": "2026-09-22T05:06:03Z",
+      "checked_at": "2026-09-22T11:47:06Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -5766,7 +6055,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-22T05:06:04Z",
+      "checked_at": "2026-09-22T11:47:08Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "peer_reviewed",
       "evidence_rank": 4,
@@ -5783,8 +6072,8 @@
     }
   ],
   "statistics": {
-    "claims": 68,
-    "computed_at": "2026-09-22T07:20:46Z",
+    "claims": 70,
+    "computed_at": "2026-09-22T11:47:11Z",
     "documents": 10,
     "evidence_classes": [
       "primary_source",
@@ -5794,7 +6083,7 @@
     "live_documents": 10,
     "partially_supported": 0,
     "sources": 2,
-    "supported": 65,
+    "supported": 67,
     "unsupported": 3
   },
   "status_history": [
@@ -5915,6 +6204,18 @@
     {
       "last_updated": "2026-09-22T05:06:05Z",
       "line": 94,
+      "status": "testing",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "last_updated": "2026-09-22T11:46:56Z",
+      "line": 98,
+      "status": "new",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "last_updated": "2026-09-22T11:47:08Z",
+      "line": 102,
       "status": "testing",
       "topic_id": "topic-search-and-sorting-strategy"
     }
@@ -6345,6 +6646,113 @@
         "cl-17e31e8a0271",
         "cl-19244e6742c1",
         "cl-1ab333b64ea2"
+      ],
+      "title": "Experimental brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+    },
+    {
+      "argument": "Experimental brief. The statements below carry a measurement, which makes them usable as the basis of a test.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-08ba6d35306b] \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-0d4bd100b1d3] \"The record for onuryilmaz-wip/ComparisonOfSortingAlgorithms reports: language C++, open_issues_count 0.\" - GitHub REST API (primary_source)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-17e31e8a0271] \"The record for daley331/Sorting-Algorithms-Analysis reports: pushed_at 2024-08-01T14:34:21Z, stargazers_count 1, forks_count 1.\" - GitHub REST API (primary_source)\n[cl-182dc995aef3] \"This question is currently supported by 72 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id).",
+        "The measurement can be reproduced with the same method in this environment."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 2024, 21, 3 for the same quantity. The attached experiment is the intended test.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "F - Experimental",
+      "persona_brief": "Design a falsifiable test that could determine which idea is actually correct.",
+      "persona_code": "F",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+        "If the sourced statement holds, then: \"The record for onuryilmaz-wip/ComparisonOfSortingAlgorithms reports: language C++, open_issues_count 0.\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 1.0,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.135,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.7778,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 1.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.178 around a centre of 0.752.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.7628,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 2,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.7734,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-e3ed33ea5860",
+      "supporting_claim_ids": [
+        "cl-04fe27e07fbd",
+        "cl-08ba6d35306b",
+        "cl-0d4bd100b1d3",
+        "cl-0f29fe30cb1f",
+        "cl-17e31e8a0271",
+        "cl-182dc995aef3"
       ],
       "title": "Experimental brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
     },
@@ -7738,6 +8146,112 @@
       "title": "First principles brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
     },
     {
+      "argument": "Established-knowledge brief. The most strongly evidenced statements retrieved for this question are quoted below.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-08ba6d35306b] \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-182dc995aef3] \"This question is currently supported by 72 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "Conditions reported in the sources still hold; no newer evidence supersedes them."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 3, 44, 49 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "A - Conventional",
+      "persona_brief": "Find the strongest solution using established, well-evidenced knowledge.",
+      "persona_code": "A",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5122,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.1323,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.4667,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-2979557c8287",
+      "supporting_claim_ids": [
+        "cl-04fe27e07fbd",
+        "cl-08ba6d35306b",
+        "cl-0f29fe30cb1f",
+        "cl-182dc995aef3",
+        "cl-1b96e1fb0c3f",
+        "cl-226c5106e9cb"
+      ],
+      "title": "Conventional brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+    },
+    {
       "argument": "Cross-domain brief. The statements below were retrieved for other topics and share subject matter with this one; they are candidates for transfer.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-2a7fadcedb31] \"Of the claims recorded for this question, 96.8% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-4f2e80b38ed6] \"The supporting documents span 2 evidence class(es) in the project hierarchy.\" - SelfLearn library computation (reproduced_experiment)\n[cl-7e656dff6f56] \"This question is currently supported by 62 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
       "assumptions": [
         "The retrieved documents are representative of the current state of the question.",
@@ -7840,6 +8354,218 @@
         "cl-2a7fadcedb31",
         "cl-4f2e80b38ed6",
         "cl-7e656dff6f56"
+      ],
+      "title": "Cross-domain brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+    },
+    {
+      "argument": "First-principles brief. The statements below carry an explicit quantity, so a constraint can be derived from them rather than assumed.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-08ba6d35306b] \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-182dc995aef3] \"This question is currently supported by 72 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The quantities quoted are commensurable with each other after unit conversion."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 3, 44, 49 for the same quantity.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "C - First principles",
+      "persona_brief": "Derive a solution from fundamental constraints and published base rates.",
+      "persona_code": "C",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5122,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.1253,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.4664,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-ddb1927751f5",
+      "supporting_claim_ids": [
+        "cl-04fe27e07fbd",
+        "cl-08ba6d35306b",
+        "cl-0f29fe30cb1f",
+        "cl-182dc995aef3",
+        "cl-1b96e1fb0c3f",
+        "cl-226c5106e9cb"
+      ],
+      "title": "First principles brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
+    },
+    {
+      "argument": "Cross-domain brief. The statements below were retrieved for other topics and share subject matter with this one; they are candidates for transfer.\n\n[cl-04fe27e07fbd] \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-08ba6d35306b] \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\" - SelfLearn library computation (reproduced_experiment)\n[cl-0f29fe30cb1f] \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-182dc995aef3] \"This question is currently supported by 72 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-1b96e1fb0c3f] \"This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n[cl-226c5106e9cb] \"This question is currently supported by 44 verified claim(s) drawn from 1 independent source(s).\" - SelfLearn library computation (reproduced_experiment)\n\nAn assumption is a statement this brief needs to be true but which the retrieved sources do not establish. Assumptions are listed explicitly so that a critic can attack them.",
+      "assumptions": [
+        "The retrieved documents are representative of the current state of the question.",
+        "Quoted measurements were produced under the conditions the quoted text describes.",
+        "The other field's mechanism transfers without an omitted domain-specific constraint."
+      ],
+      "falsifier": "This brief is falsified if a source of comparable or stronger evidence class reports a value outside the set 0, 1, 2, 3, 44, 49 for the same quantity. For a transferred mechanism, falsification is a demonstration that the domain-specific constraint is missing.",
+      "limitations": "This brief is an inference over the quoted claims. It is not itself a sourced fact.",
+      "persona": "D - Cross-domain",
+      "persona_brief": "Look for solutions that worked in a completely different field.",
+      "persona_code": "D",
+      "predicted_outcomes": [
+        "If the sourced statement holds, then: \"This question is currently supported by 49 verified claim(s) drawn from 2 independent source(s).\"",
+        "If the sourced statement holds, then: \"Of the claims recorded for this question, 95.7% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page.\"",
+        "If the sourced statement holds, then: \"This question is currently supported by 64 verified claim(s) drawn from 3 independent source(s).\""
+      ],
+      "scorecard": {
+        "attacks": 4,
+        "claims_cited": 6,
+        "criteria": {
+          "adversarial_survival": {
+            "label": "Survives criticism",
+            "method": "measured",
+            "note": "Share of critic attacks the candidate survives.",
+            "value": 0.5122,
+            "weight": 0.15
+          },
+          "computational_cost": {
+            "label": "Computational cost",
+            "method": "measured",
+            "note": "Cheaper to run and verify is better.",
+            "value": 0.1213,
+            "weight": 0.04
+          },
+          "correctness": {
+            "label": "Correctness",
+            "method": "measured",
+            "note": "Every factual element traces to a verified claim; no numeric mismatch.",
+            "value": 1.0,
+            "weight": 0.18
+          },
+          "evidence_quality": {
+            "label": "Evidence quality",
+            "method": "measured",
+            "note": "Mean evidence-hierarchy rank of the supporting claims.",
+            "value": 0.0,
+            "weight": 0.16
+          },
+          "experimental_performance": {
+            "detail": "Measured mean element comparisons per run: best variant merge_sort scored 1726.4 against baseline 16807.6 (experiment sorting-comparisons-v1).",
+            "label": "Experimental performance",
+            "method": "measured",
+            "note": "Measured result relative to the recorded baseline, when a test exists.",
+            "value": 0.0,
+            "weight": 0.1
+          },
+          "reproducibility": {
+            "label": "Reproducibility",
+            "method": "measured",
+            "note": "A third party can re-derive the result from the cited sources and commands.",
+            "value": 0.0,
+            "weight": 0.13
+          },
+          "robustness": {
+            "detail": "Perturbation spread 0.047 around a centre of 0.467.",
+            "label": "Robustness",
+            "method": "measured",
+            "note": "Stable when evidence order and weights are perturbed.",
+            "value": 0.899,
+            "weight": 0.12
+          },
+          "scalability": {
+            "label": "Scalability",
+            "method": "heuristic",
+            "note": "Plausible to apply beyond the single case studied.",
+            "value": 1.0,
+            "weight": 0.05
+          },
+          "simplicity": {
+            "label": "Simplicity",
+            "method": "measured",
+            "note": "Fewer unsupported assumptions and fewer moving parts is better.",
+            "value": 0.6667,
+            "weight": 0.07
+          }
+        },
+        "evidence_records": 0,
+        "fatal_attack": false,
+        "numbers_checked": true,
+        "total": 0.4662,
+        "unbacked_numbers": [],
+        "weights_total": 1.0
+      },
+      "status": "competing",
+      "strategy_id": "st-a76200569bd0",
+      "supporting_claim_ids": [
+        "cl-04fe27e07fbd",
+        "cl-08ba6d35306b",
+        "cl-0f29fe30cb1f",
+        "cl-182dc995aef3",
+        "cl-1b96e1fb0c3f",
+        "cl-226c5106e9cb"
       ],
       "title": "Cross-domain brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
     },
@@ -8481,22 +9207,22 @@
     }
   ],
   "substance": {
-    "claims": 68,
+    "claims": 70,
     "dated": 9,
     "labels": {
-      "descriptive": 34,
+      "descriptive": 35,
       "metadata": 11,
-      "substantive": 23
+      "substantive": 24
     },
-    "mean_score": 0.492,
-    "metadata_share": 0.1618,
-    "quantified": 56,
-    "quantified_share": 0.8235,
-    "substantive_share": 0.3382
+    "mean_score": 0.4946,
+    "metadata_share": 0.1571,
+    "quantified": 58,
+    "quantified_share": 0.8286,
+    "substantive_share": 0.3429
   },
   "synthesis": [],
   "topic": {
-    "first_seen": "2026-09-22T05:05:56Z",
+    "first_seen": "2026-09-22T11:46:56Z",
     "keywords": [
       "algorithm",
       "sorting",
@@ -8506,7 +9232,7 @@
       "performance",
       "data structures"
     ],
-    "last_updated": "2026-09-22T05:06:05Z",
+    "last_updated": "2026-09-22T11:47:08Z",
     "notes": "The one seed question that matches the computational experiment catalogue, so the tournament's experimental criterion can be non-zero here.",
     "origin": "seed",
     "parent_topic_id": null,

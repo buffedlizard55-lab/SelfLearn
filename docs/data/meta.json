@@ -1,30 +1,30 @@
 {
   "checks": {
-    "claims_without_link": 132,
+    "claims_without_link": 140,
     "fixture_documents": 0,
     "irregularity_counts": {
       "error": 0,
-      "info": 5,
-      "warning": 15
+      "info": 6,
+      "warning": 18
     },
     "resolved_contradictions": 0,
     "resolved_irregularities": 7,
     "unresolved_contradictions": 12,
-    "unsupported_claims": 9
+    "unsupported_claims": 10
   },
   "counts": {
-    "attacks": 729,
-    "claims": 273,
+    "attacks": 803,
+    "claims": 281,
     "contradictions": 12,
-    "discoveries": 65,
-    "documents": 76,
-    "experiments": 2,
+    "discoveries": 84,
+    "documents": 82,
+    "experiments": 3,
     "failures": 21,
     "irregularities": 27,
-    "questions": 92,
-    "strategies": 166,
+    "questions": 114,
+    "strategies": 185,
     "topics": 4
   },
-  "generated_at": "2026-09-22T07:20:46Z",
-  "run_id": "run-31f65d836056"
+  "generated_at": "2026-09-22T11:47:11Z",
+  "run_id": "run-6fdd568ea4ac"
 }
