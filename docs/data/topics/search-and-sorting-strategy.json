@@ -921,7 +921,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T21:44:29Z",
+      "recorded_at": "2026-09-22T22:03:27Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-226c5106e9cb",
@@ -974,7 +974,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T21:44:29Z",
+      "recorded_at": "2026-09-22T22:03:27Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-515151e36c43",
@@ -1026,7 +1026,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T21:44:29Z",
+      "recorded_at": "2026-09-22T22:03:27Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-d738fd457549",
@@ -1078,7 +1078,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T21:44:29Z",
+      "recorded_at": "2026-09-22T22:03:27Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-98b8b5ce690a",
@@ -1135,7 +1135,7 @@
       "reasons": [
         "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
       ],
-      "recorded_at": "2026-09-22T21:44:29Z",
+      "recorded_at": "2026-09-22T22:03:27Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-e11c78d29de7",
@@ -3427,7 +3427,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness. [replayed from stored snapshot]",
       "published_at": "2018-10-14",
-      "retrieved_at": "2026-09-22T17:02:54Z",
+      "retrieved_at": "2026-09-22T21:25:01Z",
       "source_name": "GitHub REST API",
       "title": "sbtali/SortAlgorithmsComparison",
       "url": "https://github.com/sbtali/SortAlgorithmsComparison"
@@ -3442,7 +3442,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2015-05-10",
-      "retrieved_at": "2026-09-22T17:02:54Z",
+      "retrieved_at": "2026-09-22T21:25:01Z",
       "source_name": "GitHub REST API",
       "title": "w32zhong/BTreeimplementation",
       "url": "https://github.com/w32zhong/BTreeimplementation"
@@ -3457,7 +3457,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2018-01-06",
-      "retrieved_at": "2026-09-22T17:02:54Z",
+      "retrieved_at": "2026-09-22T21:25:01Z",
       "source_name": "GitHub REST API",
       "title": "GroupAYECS765P/BDP-05-Large-scale-Clustering",
       "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering"
@@ -3472,7 +3472,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2022-02-10",
-      "retrieved_at": "2026-09-22T17:02:54Z",
+      "retrieved_at": "2026-09-22T21:25:01Z",
       "source_name": "GitHub REST API",
       "title": "allenvox/sorting-algorithms-comparison",
       "url": "https://github.com/allenvox/sorting-algorithms-comparison"
@@ -3487,7 +3487,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2022-11-06",
-      "retrieved_at": "2026-09-22T17:02:54Z",
+      "retrieved_at": "2026-09-22T21:25:01Z",
       "source_name": "GitHub REST API",
       "title": "picoders1/Sorting-Countable-Integers--DSA",
       "url": "https://github.com/picoders1/Sorting-Countable-Integers--DSA"
@@ -3502,7 +3502,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-06-24",
-      "retrieved_at": "2026-09-22T17:02:54Z",
+      "retrieved_at": "2026-09-22T21:25:01Z",
       "source_name": "GitHub REST API",
       "title": "Anshsing/sorting-visualizer",
       "url": "https://github.com/Anshsing/sorting-visualizer"
@@ -3517,7 +3517,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2024-08-01",
-      "retrieved_at": "2026-09-22T17:02:54Z",
+      "retrieved_at": "2026-09-22T21:25:01Z",
       "source_name": "GitHub REST API",
       "title": "daley331/Sorting-Algorithms-Analysis",
       "url": "https://github.com/daley331/Sorting-Algorithms-Analysis"
@@ -3532,7 +3532,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2020-05-18",
-      "retrieved_at": "2026-09-22T17:02:54Z",
+      "retrieved_at": "2026-09-22T21:25:01Z",
       "source_name": "GitHub REST API",
       "title": "thedonat/Sorting-Algorithms-Comparison",
       "url": "https://github.com/thedonat/Sorting-Algorithms-Comparison"
@@ -3547,7 +3547,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2013-02-04",
-      "retrieved_at": "2026-09-22T17:02:54Z",
+      "retrieved_at": "2026-09-22T21:25:01Z",
       "source_name": "GitHub REST API",
       "title": "onuryilmaz-wip/ComparisonOfSortingAlgorithms",
       "url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms"
@@ -3562,7 +3562,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2024-10-13",
-      "retrieved_at": "2026-09-22T17:02:54Z",
+      "retrieved_at": "2026-09-22T21:25:01Z",
       "source_name": "GitHub REST API",
       "title": "0Kiprotich/SortingAlgorithms-Comparison-based-Sorting",
       "url": "https://github.com/0Kiprotich/SortingAlgorithms-Comparison-based-Sorting"
@@ -3581,13 +3581,13 @@
       "baseline": 16807.6,
       "best_value": 1726.4,
       "best_variant": "merge_sort",
-      "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-bsarn9ws/result.json",
+      "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-ewh64nx7/result.json",
       "error": "",
       "experiment_id": "sorting-comparisons-v1",
       "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
       "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
       "metric": "mean element comparisons per run",
-      "ran_at": "2026-09-22T21:44:29Z",
+      "ran_at": "2026-09-22T22:03:27Z",
       "result_json": {
         "baseline": 16807.6,
         "baseline_name": "insertion_sort on shuffled input",
@@ -3635,9 +3635,9 @@
               "merge_sort": 1024
             },
             "mean_seconds": {
-              "heapsort": 0.00042273,
-              "insertion_sort": 0.00318258,
-              "merge_sort": 0.0002873
+              "heapsort": 0.00038088,
+              "insertion_sort": 0.00285839,
+              "merge_sort": 0.00027088
             },
             "min_comparisons": {
               "heapsort": 3106,
@@ -3657,9 +3657,9 @@
               "merge_sort": 1726.4
             },
             "mean_seconds": {
-              "heapsort": 0.00054027,
-              "insertion_sort": 0.00194271,
-              "merge_sort": 0.00048157
+              "heapsort": 0.00043031,
+              "insertion_sort": 0.00153076,
+              "merge_sort": 0.00036719
             },
             "min_comparisons": {
               "heapsort": 3278,
@@ -3679,9 +3679,9 @@
               "merge_sort": 1024
             },
             "mean_seconds": {
-              "heapsort": 0.00070993,
-              "insertion_sort": 4.011e-05,
-              "merge_sort": 0.00045208
+              "heapsort": 0.00044891,
+              "insertion_sort": 2.564e-05,
+              "merge_sort": 0.00024708
             },
             "min_comparisons": {
               "heapsort": 3452,
@@ -3714,7 +3714,7 @@
       "topic_id": "topic-search-and-sorting-strategy"
     }
   ],
-  "generated_at": "2026-09-22T21:48:46Z",
+  "generated_at": "2026-09-22T22:03:28Z",
   "questions": [
     {
       "id": "q-29c92c5dc0ff",
@@ -3796,6 +3796,13 @@
       "text": "This question is currently supported by 60 verified claim(s) drawn from 3 independent source(s)."
     },
     {
+      "claim_id": "cl-1d2f187e89b4",
+      "claim_kind": "derived",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Superseded 2026-09-22T22:03:27Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
+      "text": "Of the claims recorded for this question, 96.2% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
+    },
+    {
       "claim_id": "cl-2588110c9cb2",
       "claim_kind": "synthesis",
       "recorded_at": "2026-09-22T00:03:49Z",
@@ -3838,6 +3845,13 @@
       "text": "This question is currently supported by 76 verified claim(s) drawn from 3 independent source(s)."
     },
     {
+      "claim_id": "cl-4080d6d27dbf",
+      "claim_kind": "derived",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Superseded 2026-09-22T22:03:27Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
+      "text": "This question is currently supported by 78 verified claim(s) drawn from 3 independent source(s)."
+    },
+    {
       "claim_id": "cl-4096e85149f6",
       "claim_kind": "derived",
       "recorded_at": "2026-09-22T05:06:04Z",
@@ -3854,8 +3868,8 @@
     {
       "claim_id": "cl-4f2e80b38ed6",
       "claim_kind": "derived",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Superseded 2026-09-22T21:44:29Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Superseded 2026-09-22T22:03:27Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
       "text": "The supporting documents span 2 evidence class(es) in the project hierarchy."
     },
     {
@@ -3896,8 +3910,8 @@
     {
       "claim_id": "cl-a9621ea42680",
       "claim_kind": "derived",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Superseded 2026-09-22T21:44:29Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Superseded 2026-09-22T22:03:27Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
       "text": "Of the documents cited here, 44 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear."
     },
     {
@@ -4015,8 +4029,8 @@
     {
       "claim_id": "st-2979557c8287",
       "claim_kind": "brief (A)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd, cl-08ba6d35306b, cl-0f29fe30cb1f, cl-182dc995aef3, cl-1b96e1fb0c3f.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd, cl-08ba6d35306b, cl-0f29fe30cb1f, cl-182dc995aef3, cl-1b96e1fb0c3f.",
       "text": "Conventional brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
     },
     {
@@ -4092,8 +4106,8 @@
     {
       "claim_id": "st-9477831e234d",
       "claim_kind": "brief (B)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd, cl-08ba6d35306b, cl-0f29fe30cb1f.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd, cl-08ba6d35306b, cl-0f29fe30cb1f.",
       "text": "Contrarian brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
     },
     {
@@ -4127,8 +4141,8 @@
     {
       "claim_id": "st-a76200569bd0",
       "claim_kind": "brief (D)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd, cl-08ba6d35306b, cl-0f29fe30cb1f, cl-182dc995aef3, cl-1b96e1fb0c3f.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd, cl-08ba6d35306b, cl-0f29fe30cb1f, cl-182dc995aef3, cl-1b96e1fb0c3f.",
       "text": "Cross-domain brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
     },
     {
@@ -4169,15 +4183,15 @@
     {
       "claim_id": "st-ddb1927751f5",
       "claim_kind": "brief (C)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd, cl-08ba6d35306b, cl-0f29fe30cb1f, cl-182dc995aef3, cl-1b96e1fb0c3f.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd, cl-08ba6d35306b, cl-0f29fe30cb1f, cl-182dc995aef3, cl-1b96e1fb0c3f.",
       "text": "First principles brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
     },
     {
       "claim_id": "st-e3ed33ea5860",
       "claim_kind": "brief (F)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd, cl-08ba6d35306b, cl-0f29fe30cb1f, cl-182dc995aef3.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd, cl-08ba6d35306b, cl-0f29fe30cb1f, cl-182dc995aef3.",
       "text": "Experimental brief: Sorting and search strategies: which is most efficient in practice, and how doe…"
     },
     {
@@ -4365,29 +4379,29 @@
     {
       "claim_id": "atk-1294a982c273",
       "claim_kind": "criticism (C7: All cited claims come from a single source.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-2979557c8287 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-2979557c8287 quotes a retired claim.",
       "text": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated."
     },
     {
       "claim_id": "atk-aa7e0da248b4",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-2979557c8287 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-2979557c8287 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
     },
     {
       "claim_id": "atk-afe90fd391cd",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-2979557c8287 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-2979557c8287 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them."
     },
     {
       "claim_id": "atk-c40d6a7becef",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-2979557c8287 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-2979557c8287 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
     },
     {
@@ -4673,36 +4687,36 @@
     {
       "claim_id": "atk-03c32498ecf6",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-9477831e234d quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-9477831e234d quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id)."
     },
     {
       "claim_id": "atk-04347b0148e6",
       "claim_kind": "criticism (C8: The cited evidence is older than the staleness horizon.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-9477831e234d quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-9477831e234d quotes a retired claim.",
       "text": "The freshest document cited by this brief is more than three years old at the time of the run, which is a risk for a question about current conditions."
     },
     {
       "claim_id": "atk-13ed4c66576d",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-9477831e234d quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-9477831e234d quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
     },
     {
       "claim_id": "atk-3248062aaa2e",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-9477831e234d quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-9477831e234d quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
     },
     {
       "claim_id": "atk-3c27c8e2c000",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-9477831e234d quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-9477831e234d quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The absence of a contradicting statement in the retrieved set is not evidence that none exists."
     },
     {
@@ -4820,29 +4834,29 @@
     {
       "claim_id": "atk-899d58739650",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-a76200569bd0 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-a76200569bd0 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The other field's mechanism transfers without an omitted domain-specific constraint."
     },
     {
       "claim_id": "atk-a6c2fca25959",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-a76200569bd0 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-a76200569bd0 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
     },
     {
       "claim_id": "atk-abcd52b25f40",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-a76200569bd0 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-a76200569bd0 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
     },
     {
       "claim_id": "atk-caad1f366e79",
       "claim_kind": "criticism (C7: All cited claims come from a single source.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-a76200569bd0 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-a76200569bd0 quotes a retired claim.",
       "text": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated."
     },
     {
@@ -4988,57 +5002,57 @@
     {
       "claim_id": "atk-0a6c535c400d",
       "claim_kind": "criticism (C7: All cited claims come from a single source.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-ddb1927751f5 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-ddb1927751f5 quotes a retired claim.",
       "text": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated."
     },
     {
       "claim_id": "atk-1d1b0b829608",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-ddb1927751f5 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-ddb1927751f5 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
     },
     {
       "claim_id": "atk-58951f254cfd",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-ddb1927751f5 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-ddb1927751f5 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The quantities quoted are commensurable with each other after unit conversion."
     },
     {
       "claim_id": "atk-bde5480dde70",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-ddb1927751f5 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-ddb1927751f5 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
     },
     {
       "claim_id": "atk-3ccc4c12f415",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-e3ed33ea5860 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-e3ed33ea5860 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The measurement can be reproduced with the same method in this environment."
     },
     {
       "claim_id": "atk-6fff30e93b7e",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-e3ed33ea5860 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-e3ed33ea5860 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id)."
     },
     {
       "claim_id": "atk-e0c77ba75868",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-e3ed33ea5860 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-e3ed33ea5860 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
     },
     {
       "claim_id": "atk-f32c6d60fb12",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
-      "recorded_at": "2026-09-22T17:02:56Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-e3ed33ea5860 quotes a retired claim.",
+      "recorded_at": "2026-09-22T21:25:04Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-e3ed33ea5860 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
     },
     {
@@ -5135,14 +5149,14 @@
     {
       "claim_id": "q-012936aa0ff1",
       "claim_kind": "open question (gap)",
-      "recorded_at": "2026-09-22T21:44:30Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd.",
+      "recorded_at": "2026-09-22T22:03:28Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd.",
       "text": "The quantity reported in cl-04fe27e07fbd has no reference period in the quoted text. Over what period, and in what population, was it measured?"
     }
   ],
   "source_status": [
     {
-      "checked_at": "2026-09-22T21:44:29Z",
+      "checked_at": "2026-09-22T22:03:27Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=sorting+algorithm+comparison+count+in%3Aname%2Cdescription",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -5160,7 +5174,7 @@
   ],
   "statistics": {
     "claims": 49,
-    "computed_at": "2026-09-22T21:48:46Z",
+    "computed_at": "2026-09-22T22:03:28Z",
     "documents": 10,
     "evidence_classes": [
       "primary_source",
@@ -5327,6 +5341,30 @@
     {
       "last_updated": "2026-09-22T21:44:30Z",
       "line": 118,
+      "status": "testing",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "last_updated": "2026-09-22T21:24:55Z",
+      "line": 122,
+      "status": "new",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "last_updated": "2026-09-22T21:25:04Z",
+      "line": 126,
+      "status": "testing",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "last_updated": "2026-09-22T22:03:24Z",
+      "line": 130,
+      "status": "new",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "last_updated": "2026-09-22T22:03:28Z",
+      "line": 134,
       "status": "testing",
       "topic_id": "topic-search-and-sorting-strategy"
     }
@@ -6740,7 +6778,7 @@
   },
   "synthesis": [],
   "topic": {
-    "first_seen": "2026-09-22T21:44:26Z",
+    "first_seen": "2026-09-22T22:03:24Z",
     "keywords": [
       "algorithm",
       "sorting",
@@ -6750,7 +6788,7 @@
       "performance",
       "data structures"
     ],
-    "last_updated": "2026-09-22T21:44:30Z",
+    "last_updated": "2026-09-22T22:03:28Z",
     "notes": "The one seed question that matches the computational experiment catalogue, so the tournament's experimental criterion can be non-zero here.",
     "origin": "seed",
     "parent_topic_id": null,

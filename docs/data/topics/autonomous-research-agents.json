@@ -683,7 +683,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T21:44:26Z",
+      "recorded_at": "2026-09-22T22:03:24Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-661474e2276b",
@@ -735,7 +735,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T21:44:26Z",
+      "recorded_at": "2026-09-22T22:03:24Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-af231e4e8dd2",
@@ -788,7 +788,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T21:44:26Z",
+      "recorded_at": "2026-09-22T22:03:24Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-b0597cb75f3a",
@@ -840,7 +840,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-22T21:44:26Z",
+      "recorded_at": "2026-09-22T22:03:24Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-dc28e31745a0",
@@ -897,7 +897,7 @@
       "reasons": [
         "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
       ],
-      "recorded_at": "2026-09-22T21:44:26Z",
+      "recorded_at": "2026-09-22T22:03:24Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-b274cc7763f8",
@@ -954,7 +954,7 @@
       "reasons": [
         "All 1 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-22T21:44:26Z",
+      "recorded_at": "2026-09-22T22:03:24Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-186537ad9245",
@@ -1011,7 +1011,7 @@
       "reasons": [
         "All 2 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-22T21:44:26Z",
+      "recorded_at": "2026-09-22T22:03:24Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-8737f188a55e",
@@ -2349,7 +2349,7 @@
       "claim_a": "cl-13cf26e4fba9",
       "claim_b": "cl-6ac20344a641",
       "contradiction_id": "con-4fb8033a159c",
-      "created_at": "2026-09-22T21:44:26Z",
+      "created_at": "2026-09-22T22:03:24Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (102 vs 150). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -2567,7 +2567,7 @@
       "is_live": true,
       "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
       "published_at": "2026-03-21",
-      "retrieved_at": "2026-09-22T17:02:46Z",
+      "retrieved_at": "2026-09-22T21:24:56Z",
       "source_name": "Hacker News API (via Algolia index)",
       "title": "Autonomous AI research agent with Overleaf sync",
       "url": "https://github.com/nanoAgentTeam/research-claw"
@@ -2582,7 +2582,7 @@
       "is_live": true,
       "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
       "published_at": "2026-04-21",
-      "retrieved_at": "2026-09-22T17:02:46Z",
+      "retrieved_at": "2026-09-22T21:24:56Z",
       "source_name": "Hacker News API (via Algolia index)",
       "title": "Deep Research Max: a step change for autonomous research agents",
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/"
@@ -2597,7 +2597,7 @@
     "What experiment would resolve it?"
   ],
   "experiments": [],
-  "generated_at": "2026-09-22T21:48:46Z",
+  "generated_at": "2026-09-22T22:03:28Z",
   "questions": [
     {
       "id": "q-906c573de2ab",
@@ -2721,6 +2721,13 @@
       "text": "This question is currently supported by 42 verified claim(s) drawn from 3 independent source(s)."
     },
     {
+      "claim_id": "cl-2be026086544",
+      "claim_kind": "derived",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Superseded 2026-09-22T22:03:24Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
+      "text": "This question is currently supported by 71 verified claim(s) drawn from 4 independent source(s)."
+    },
+    {
       "claim_id": "cl-2e3e3ac718ec",
       "claim_kind": "synthesis",
       "recorded_at": "2026-09-22T00:03:45Z",
@@ -2828,8 +2835,8 @@
     {
       "claim_id": "cl-7c45d8ea2e28",
       "claim_kind": "derived",
-      "recorded_at": "2026-09-22T17:02:46Z",
-      "superseded": "Superseded 2026-09-22T21:44:26Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Superseded 2026-09-22T22:03:24Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
       "text": "Of the documents cited here, 26 were retrieved live in this cycle and 0 are synthetic test fixtures, which are labelled wherever they appear."
     },
     {
@@ -2884,8 +2891,8 @@
     {
       "claim_id": "cl-9b4775e24b81",
       "claim_kind": "derived",
-      "recorded_at": "2026-09-22T17:02:46Z",
-      "superseded": "Superseded 2026-09-22T21:44:26Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Superseded 2026-09-22T22:03:24Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
       "text": "The supporting documents span 3 evidence class(es) in the project hierarchy."
     },
     {
@@ -2919,8 +2926,8 @@
     {
       "claim_id": "cl-cd57eb0bd490",
       "claim_kind": "derived",
-      "recorded_at": "2026-09-21T23:54:55Z",
-      "superseded": "Superseded 2026-09-22T21:44:26Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Superseded 2026-09-22T22:03:24Z: a re-run of the library statistics produced different figures, so this statement is no longer current. It is kept in the library and is not published as a current finding.",
       "text": "Of the claims recorded for this question, 95.8% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page."
     },
     {
@@ -3043,6 +3050,13 @@
       "text": "Contrarian brief: Autonomous research agents: which open implementations exist and how active are…"
     },
     {
+      "claim_id": "st-4faaeb2ef5c3",
+      "claim_kind": "brief (A)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-09cf33a9256d, cl-2048dca64215, cl-209c483bda0a, cl-2a9e3216246c, cl-2f15bcca9881.",
+      "text": "Conventional brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
       "claim_id": "st-50875e901fb9",
       "claim_kind": "brief (C)",
       "recorded_at": "2026-09-22T17:02:46Z",
@@ -3092,11 +3106,25 @@
       "text": "First principles brief: Autonomous research agents: which open implementations exist and how active are…"
     },
     {
+      "claim_id": "st-763da9244fdd",
+      "claim_kind": "brief (D)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-09cf33a9256d, cl-2048dca64215, cl-209c483bda0a.",
+      "text": "Cross-domain brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
       "claim_id": "st-76e23c576722",
       "claim_kind": "brief (A)",
       "recorded_at": "2026-09-21T23:54:55Z",
       "superseded": "Withdrawn 2026-09-22T00:20:52Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-460d139e9205, cl-b62205c2fdf1.",
       "text": "Conventional brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "claim_id": "st-7a3140362626",
+      "claim_kind": "brief (C)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-09cf33a9256d, cl-2048dca64215, cl-209c483bda0a, cl-2a9e3216246c, cl-2f15bcca9881.",
+      "text": "First principles brief: Autonomous research agents: which open implementations exist and how active are…"
     },
     {
       "claim_id": "st-8270e46876cf",
@@ -3194,6 +3222,27 @@
       "claim_kind": "brief (E)",
       "recorded_at": "2026-09-22T00:21:06Z",
       "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-209c483bda0a, cl-2a9e3216246c, cl-2f15bcca9881, cl-35408f489136, cl-4d8022f5ac83, cl-5593801943f0.",
+      "text": "Optimization brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "claim_id": "st-bca8ca96fab0",
+      "claim_kind": "brief (F)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-09cf33a9256d, cl-2048dca64215.",
+      "text": "Experimental brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "claim_id": "st-c32fe6b10194",
+      "claim_kind": "brief (B)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-09cf33a9256d, cl-2048dca64215.",
+      "text": "Contrarian brief: Autonomous research agents: which open implementations exist and how active are…"
+    },
+    {
+      "claim_id": "st-cfc7f155d67d",
+      "claim_kind": "brief (E)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-09cf33a9256d, cl-2048dca64215.",
       "text": "Optimization brief: Autonomous research agents: which open implementations exist and how active are…"
     },
     {
@@ -3568,6 +3617,27 @@
       "text": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated."
     },
     {
+      "claim_id": "atk-57d5cd9554d3",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-4faaeb2ef5c3 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
+    },
+    {
+      "claim_id": "atk-8ea7d04a4e0f",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-4faaeb2ef5c3 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
+    },
+    {
+      "claim_id": "atk-cad126707475",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-4faaeb2ef5c3 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them."
+    },
+    {
       "claim_id": "atk-376f36873eaa",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
       "recorded_at": "2026-09-22T17:02:47Z",
@@ -3764,6 +3834,34 @@
       "text": "Declared assumption, unevidenced by the retrieved sources: The quantities quoted are commensurable with each other after unit conversion."
     },
     {
+      "claim_id": "atk-61deefdaaedc",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-763da9244fdd quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
+    },
+    {
+      "claim_id": "atk-70cc9d62e789",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-763da9244fdd quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
+    },
+    {
+      "claim_id": "atk-a442e7244b8e",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-763da9244fdd quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id)."
+    },
+    {
+      "claim_id": "atk-d23e59a4c6e7",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-763da9244fdd quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The other field's mechanism transfers without an omitted domain-specific constraint."
+    },
+    {
       "claim_id": "atk-2c786b389231",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
       "recorded_at": "2026-09-21T23:54:55Z",
@@ -3783,6 +3881,27 @@
       "recorded_at": "2026-09-21T23:54:55Z",
       "superseded": "Withdrawn 2026-09-22T00:20:52Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-76e23c576722 quotes a retired claim.",
       "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
+    },
+    {
+      "claim_id": "atk-23f9ba28d3cc",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-7a3140362626 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The quantities quoted are commensurable with each other after unit conversion."
+    },
+    {
+      "claim_id": "atk-4ae3916b894c",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-7a3140362626 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
+    },
+    {
+      "claim_id": "atk-a44add23172b",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-7a3140362626 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
     },
     {
       "claim_id": "atk-b0e54ec68ca1",
@@ -4163,6 +4282,83 @@
       "text": "Every claim this brief cites comes from one source (SelfLearn library computation). Independence has not been demonstrated."
     },
     {
+      "claim_id": "atk-3577b12ce954",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-bca8ca96fab0 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
+    },
+    {
+      "claim_id": "atk-51c85be15d08",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-bca8ca96fab0 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
+    },
+    {
+      "claim_id": "atk-64fad41bc71f",
+      "claim_kind": "criticism (C4: Another claim in the library pulls in the opposite direction.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-bca8ca96fab0 quotes a retired claim.",
+      "text": "The library holds cl-6ac20344a641 from GitHub REST API, which points the other way from cl-13cf26e4fba9 on the same subject. The brief does not address it."
+    },
+    {
+      "claim_id": "atk-9f5261469d48",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-bca8ca96fab0 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The named publishers are the authority for the identifiers they mint (DOI, PMID, dataset id)."
+    },
+    {
+      "claim_id": "atk-d9ba498fc30b",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-bca8ca96fab0 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The measurement can be reproduced with the same method in this environment."
+    },
+    {
+      "claim_id": "atk-54876f6e38c8",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-c32fe6b10194 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The absence of a contradicting statement in the retrieved set is not evidence that none exists."
+    },
+    {
+      "claim_id": "atk-88584df31334",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-c32fe6b10194 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
+    },
+    {
+      "claim_id": "atk-cad69ad05117",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:56Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-c32fe6b10194 quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
+    },
+    {
+      "claim_id": "atk-55cebdacc737",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-cfc7f155d67d quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: The retrieved documents are representative of the current state of the question."
+    },
+    {
+      "claim_id": "atk-598b914eff23",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-cfc7f155d67d quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: Conditions reported in the sources still hold; no newer evidence supersedes them."
+    },
+    {
+      "claim_id": "atk-9468a801a742",
+      "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
+      "recorded_at": "2026-09-22T21:24:57Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Its brief st-cfc7f155d67d quotes a retired claim.",
+      "text": "Declared assumption, unevidenced by the retrieved sources: Quoted measurements were produced under the conditions the quoted text describes."
+    },
+    {
       "claim_id": "atk-5f6c7f8c8530",
       "claim_kind": "criticism (C3: The brief states an assumption it has not evidenced.)",
       "recorded_at": "2026-09-22T05:05:58Z",
@@ -4431,14 +4627,14 @@
     {
       "claim_id": "q-3908709733c3",
       "claim_kind": "open question (gap)",
-      "recorded_at": "2026-09-22T21:44:26Z",
-      "superseded": "Withdrawn 2026-09-22T21:44:30Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-048f7bdbd6c3.",
+      "recorded_at": "2026-09-22T22:03:24Z",
+      "superseded": "Withdrawn 2026-09-22T22:03:28Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-048f7bdbd6c3.",
       "text": "The quantity reported in cl-048f7bdbd6c3 has no reference period in the quoted text. Over what period, and in what population, was it measured?"
     }
   ],
   "source_status": [
     {
-      "checked_at": "2026-09-22T21:44:26Z",
+      "checked_at": "2026-09-22T22:03:24Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=autonomous+research+agent+in%3Aname%2Cdescription",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -4456,7 +4652,7 @@
   ],
   "statistics": {
     "claims": 33,
-    "computed_at": "2026-09-22T21:48:46Z",
+    "computed_at": "2026-09-22T22:03:28Z",
     "documents": 11,
     "evidence_classes": [
       "commentary",
@@ -4624,6 +4820,30 @@
     {
       "last_updated": "2026-09-22T21:44:26Z",
       "line": 115,
+      "status": "competing",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-22T21:24:55Z",
+      "line": 119,
+      "status": "new",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-22T21:24:57Z",
+      "line": 123,
+      "status": "competing",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-22T22:03:24Z",
+      "line": 127,
+      "status": "new",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-22T22:03:24Z",
+      "line": 131,
       "status": "competing",
       "topic_id": "topic-autonomous-research-agents"
     }
@@ -6003,7 +6223,7 @@
     }
   ],
   "topic": {
-    "first_seen": "2026-09-22T21:44:26Z",
+    "first_seen": "2026-09-22T22:03:24Z",
     "keywords": [
       "autonomous agent",
       "research automation",
@@ -6012,7 +6232,7 @@
       "open source",
       "repository activity"
     ],
-    "last_updated": "2026-09-22T21:44:26Z",
+    "last_updated": "2026-09-22T22:03:24Z",
     "notes": "First seed question. Chosen because its evidence is repository metadata, which the engine can retrieve and quote verbatim.",
     "origin": "seed",
     "parent_topic_id": null,

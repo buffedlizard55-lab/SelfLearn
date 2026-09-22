@@ -3,13 +3,13 @@
     "baseline": 960.0,
     "best_value": 139.0205,
     "best_variant": "epsilon_greedy",
-    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-gpdhe66m/result.json",
+    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-enrnbm_y/result.json",
     "error": "",
     "experiment_id": "scheduling-policies-v1",
     "hypothesis": "On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate keeps paying a cost proportional to the horizon.",
     "method": "100 independent trials of 4000 pulls per policy on arms with means [0.15, 0.25, 0.35, 0.45, 0.6]; pseudo-regret computed from the true mean of each pulled arm, so the metric has no reward noise.",
     "metric": "mean cumulative pseudo-regret",
-    "ran_at": "2026-09-22T21:44:29Z",
+    "ran_at": "2026-09-22T22:03:27Z",
     "result_json": {
       "arm_means": [
         0.15,
@@ -104,13 +104,13 @@
     "baseline": 16807.6,
     "best_value": 1726.4,
     "best_variant": "merge_sort",
-    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-bsarn9ws/result.json",
+    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-ewh64nx7/result.json",
     "error": "",
     "experiment_id": "sorting-comparisons-v1",
     "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
     "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
     "metric": "mean element comparisons per run",
-    "ran_at": "2026-09-22T21:44:29Z",
+    "ran_at": "2026-09-22T22:03:27Z",
     "result_json": {
       "baseline": 16807.6,
       "baseline_name": "insertion_sort on shuffled input",
@@ -158,9 +158,9 @@
             "merge_sort": 1024
           },
           "mean_seconds": {
-            "heapsort": 0.00042273,
-            "insertion_sort": 0.00318258,
-            "merge_sort": 0.0002873
+            "heapsort": 0.00038088,
+            "insertion_sort": 0.00285839,
+            "merge_sort": 0.00027088
           },
           "min_comparisons": {
             "heapsort": 3106,
@@ -180,9 +180,9 @@
             "merge_sort": 1726.4
           },
           "mean_seconds": {
-            "heapsort": 0.00054027,
-            "insertion_sort": 0.00194271,
-            "merge_sort": 0.00048157
+            "heapsort": 0.00043031,
+            "insertion_sort": 0.00153076,
+            "merge_sort": 0.00036719
           },
           "min_comparisons": {
             "heapsort": 3278,
@@ -202,9 +202,9 @@
             "merge_sort": 1024
           },
           "mean_seconds": {
-            "heapsort": 0.00070993,
-            "insertion_sort": 4.011e-05,
-            "merge_sort": 0.00045208
+            "heapsort": 0.00044891,
+            "insertion_sort": 2.564e-05,
+            "merge_sort": 0.00024708
           },
           "min_comparisons": {
             "heapsort": 3452,
@@ -240,13 +240,13 @@
     "baseline": 0.96,
     "best_value": 1.0,
     "best_variant": "support=0.8 partial=0.45 quote_chars=24.0",
-    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-f5u5uhbw/result.json",
+    "command": "/usr/bin/python3 /home/user/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-c578ymhr/result.json",
     "error": "",
     "experiment_id": "verification-thresholds-v1",
     "hypothesis": "A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports.",
     "method": "Exhaustive sweep of 132 threshold combinations, evaluated against 26 hand-labelled claim/document pairs; selection is lexicographic on false supports, recall, F1, macro F1, distance from the documented default, then strictness.",
     "metric": "verdict accuracy on labelled cases",
-    "ran_at": "2026-09-22T21:44:27Z",
+    "ran_at": "2026-09-22T22:03:25Z",
     "result_json": {
       "baseline": 0.96,
       "baseline_name": "configured default thresholds support=0.8 partial=0.55 quote_chars=24.0",

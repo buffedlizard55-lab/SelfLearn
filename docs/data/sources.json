@@ -867,20 +867,20 @@
       "unsupported": 0
     },
     {
-      "citations": 637,
-      "claims_proposed": 124,
-      "claims_supported": 114,
+      "citations": 668,
+      "claims_proposed": 130,
+      "claims_supported": 120,
       "documents": 0,
       "evidence_class": "reproduced_experiment",
       "evidence_rank": 2,
       "partially_supported": 0,
       "source_id": "SelfLearn library computation",
       "source_name": "SelfLearn library computation",
-      "support_rate": 0.9194,
+      "support_rate": 0.9231,
       "unsupported": 10
     },
     {
-      "citations": 265,
+      "citations": 277,
       "claims_proposed": 29,
       "claims_supported": 29,
       "documents": 0,
@@ -893,7 +893,7 @@
       "unsupported": 0
     },
     {
-      "citations": 376,
+      "citations": 381,
       "claims_proposed": 126,
       "claims_supported": 126,
       "documents": 0,
@@ -909,7 +909,7 @@
       "citations": 0,
       "claims_proposed": 0,
       "claims_supported": 0,
-      "documents": 43,
+      "documents": 46,
       "evidence_class": "primary_source",
       "evidence_rank": 3,
       "partially_supported": 0,
@@ -973,7 +973,7 @@
   ],
   "status": [
     {
-      "checked_at": "2026-09-22T21:44:26Z",
+      "checked_at": "2026-09-22T22:03:24Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=autonomous+research+agent+in%3Aname%2Cdescription",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -989,7 +989,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-22T21:44:26Z",
+      "checked_at": "2026-09-22T22:03:24Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=hallucination+detection+open+source+in%3Aname%2Cdescription",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -1005,7 +1005,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-22T21:44:27Z",
+      "checked_at": "2026-09-22T22:03:25Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=active+learning+acquisition+function+in%3Aname%2Cdescription",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -1021,7 +1021,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-22T21:44:29Z",
+      "checked_at": "2026-09-22T22:03:27Z",
       "detail": "network disabled by configuration; refused GET https://api.github.com/search/repositories?per_page=10&sort=stars&order=desc&q=sorting+algorithm+comparison+count+in%3Aname%2Cdescription",
       "evidence_class": "primary_source",
       "evidence_rank": 3,

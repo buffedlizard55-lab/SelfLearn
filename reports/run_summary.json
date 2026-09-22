@@ -9,21 +9,21 @@
     "commentary": 3,
     "peer_reviewed": 12,
     "primary_source": 126,
-    "reproduced_experiment": 153
+    "reproduced_experiment": 159
   },
   "figures": {
     "change_scan_new_items": 0,
     "change_scan_sources": 0,
-    "claims": 294,
+    "claims": 300,
     "documents_retrieved": 48,
-    "documents_total": 86,
+    "documents_total": 89,
     "errors": 0,
     "metadata_claims": 45,
-    "open_questions": 129,
-    "records_withdrawn": 561,
+    "open_questions": 141,
+    "records_withdrawn": 107,
     "sources_polled": 1,
     "sources_reached": 0,
-    "substantive_claims": 117,
+    "substantive_claims": 119,
     "synthesis_claims": 5,
     "synthesis_retired": 0,
     "topics": 4,
@@ -31,14 +31,14 @@
     "topics_proposed": 3,
     "warnings": 15
   },
-  "generated_at": "2026-09-22T21:44:30Z",
+  "generated_at": "2026-09-22T22:03:28Z",
   "irregularities": {
     "by_severity": {
       "error": 0,
-      "info": 18,
+      "info": 19,
       "warning": 15
     },
-    "total": 33
+    "total": 34
   },
   "mode": "snapshot",
   "registry": {
@@ -91,20 +91,20 @@
     ],
     "total": 36
   },
-  "run_id": "run-e5bee75a9789",
+  "run_id": "run-735c72c7bf96",
   "substance": {
-    "claims": 294,
+    "claims": 300,
     "dated": 42,
     "labels": {
-      "descriptive": 132,
+      "descriptive": 136,
       "metadata": 45,
-      "substantive": 117
+      "substantive": 119
     },
-    "mean_score": 0.5157,
-    "metadata_share": 0.1531,
-    "quantified": 246,
-    "quantified_share": 0.8367,
-    "substantive_share": 0.398
+    "mean_score": 0.5166,
+    "metadata_share": 0.15,
+    "quantified": 252,
+    "quantified_share": 0.84,
+    "substantive_share": 0.3967
   },
   "thresholds": {
     "cases": 26,
@@ -116,7 +116,7 @@
       "supported": 0.8
     },
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-22T21:44:26Z",
+    "ran_at": "2026-09-22T22:03:24Z",
     "source": "state/calibration.json"
   },
   "topic_proposals": [
@@ -195,10 +195,10 @@
     }
   ],
   "what_changed": [
-    "Library now holds 294 claim(s) across 4 question(s).",
+    "Library now holds 300 claim(s) across 4 question(s).",
     "This cycle collected 48 document(s); 0 of 1 polled source(s) responded live.",
-    "129 open question(s) have been derived from the retrieved evidence.",
-    "5 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them, 561 briefs, criticisms and questions withdrew alongside retired claims this cycle, and 117 claim(s) scored as substantive while 45 are labelled as registry metadata.",
+    "141 open question(s) have been derived from the retrieved evidence.",
+    "5 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them, 107 briefs, criticisms and questions withdrew alongside retired claims this cycle, and 119 claim(s) scored as substantive while 45 are labelled as registry metadata.",
     "3 candidate topic(s) were scored from the retrieved documents and 0 promoted; the change scan polled 0 source(s) and found 0 item(s) not seen before.",
     "0 error(s) and 15 warning(s) are waiting for review."
   ]

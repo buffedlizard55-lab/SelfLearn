@@ -120,13 +120,13 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T17:02:57Z",
+    "created_at": "2026-09-22T21:25:06Z",
     "detail": "A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.",
     "irregularity_id": "irr-569286381eaf",
-    "resolution": "Stranded by an id-scheme repair: this summary carried the superseded count, so the finding id froze the count at 24. The count now lives in the detail of finding irr-6218b1a3c625, whose id is stable across cycles. Resolving duplicates rather than publishing two rows that disagree.",
+    "resolution": "",
     "resolution_link": "",
-    "resolved": true,
-    "resolved_at": "2026-09-22T21:45:03Z",
+    "resolved": false,
+    "resolved_at": "",
     "severity": "info",
     "stage": "audit",
     "suggested_action": "Nothing to do unless a reviewer believes a retired statement was correct.",
@@ -150,8 +150,8 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T21:44:30Z",
-    "detail": "128 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.",
+    "created_at": "2026-09-22T22:03:28Z",
+    "detail": "134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.",
     "irregularity_id": "irr-6218b1a3c625",
     "resolution": "",
     "resolution_link": "",
@@ -285,7 +285,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T21:44:27Z",
+    "created_at": "2026-09-22T22:03:25Z",
     "detail": "A re-run of the library statistics produced different figures, so the previous \"currently supported by ...\" statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.",
     "irregularity_id": "irr-a3f3cdf7cce5",
     "resolution": "",
@@ -295,7 +295,7 @@
     "severity": "info",
     "stage": "audit",
     "suggested_action": "Nothing to do unless a reviewer believes the old figures were correct.",
-    "summary": "27 library-statistic statement(s) retired for topic-research-loop-scheduling",
+    "summary": "4 library-statistic statement(s) retired for topic-research-loop-scheduling",
     "topic_id": "topic-research-loop-scheduling",
     "url": null
   },
@@ -315,7 +315,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T17:02:57Z",
+    "created_at": "2026-09-22T21:25:06Z",
     "detail": "Request: https://services.nvd.nist.gov/rest/json/cves/2.0 with {\"keywordSearch\": \"autonomous agent\", \"lastModEndDate\": \"2026-09-22T00:00:00:000 UTC-00:00\", \"lastModStartDate\": \"2026-09-15T00:00:00:000 UTC-00:00\", \"resultsPerPage\": 5}. Response: ",
     "irregularity_id": "irr-b52f25d10d39",
     "resolution": "",
@@ -390,7 +390,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T21:44:26Z",
+    "created_at": "2026-09-22T22:03:24Z",
     "detail": "A re-run of the library statistics produced different figures, so the previous \"currently supported by ...\" statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.",
     "irregularity_id": "irr-c0fc2312c838",
     "resolution": "",
@@ -400,12 +400,12 @@
     "severity": "info",
     "stage": "audit",
     "suggested_action": "Nothing to do unless a reviewer believes the old figures were correct.",
-    "summary": "34 library-statistic statement(s) retired for topic-autonomous-research-agents",
+    "summary": "4 library-statistic statement(s) retired for topic-autonomous-research-agents",
     "topic_id": "topic-autonomous-research-agents",
     "url": null
   },
   {
-    "created_at": "2026-09-22T17:02:56Z",
+    "created_at": "2026-09-22T21:25:05Z",
     "detail": "Request: https://export.arxiv.org/api/query with {\"max_results\": 5, \"search_query\": \"all:autonomous agent\", \"sortBy\": \"submittedDate\", \"sortOrder\": \"descending\", \"start\": 0}. Response: ",
     "irregularity_id": "irr-c14cbd18b617",
     "resolution": "",
@@ -420,7 +420,7 @@
     "url": "https://info.arxiv.org/help/api/user-manual.html"
   },
   {
-    "created_at": "2026-09-22T21:44:30Z",
+    "created_at": "2026-09-22T22:03:28Z",
     "detail": "Unavailable sources: github",
     "irregularity_id": "irr-c7702daed02e",
     "resolution": "",
@@ -465,7 +465,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T21:44:29Z",
+    "created_at": "2026-09-22T22:03:27Z",
     "detail": "A re-run of the library statistics produced different figures, so the previous \"currently supported by ...\" statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.",
     "irregularity_id": "irr-d8825881157a",
     "resolution": "",
@@ -475,12 +475,12 @@
     "severity": "info",
     "stage": "audit",
     "suggested_action": "Nothing to do unless a reviewer believes the old figures were correct.",
-    "summary": "24 library-statistic statement(s) retired for topic-search-and-sorting-strategy",
+    "summary": "4 library-statistic statement(s) retired for topic-search-and-sorting-strategy",
     "topic_id": "topic-search-and-sorting-strategy",
     "url": null
   },
   {
-    "created_at": "2026-09-22T21:44:27Z",
+    "created_at": "2026-09-22T22:03:25Z",
     "detail": "A re-run of the library statistics produced different figures, so the previous \"currently supported by ...\" statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.",
     "irregularity_id": "irr-efcc377db02b",
     "resolution": "",
@@ -490,8 +490,23 @@
     "severity": "info",
     "stage": "audit",
     "suggested_action": "Nothing to do unless a reviewer believes the old figures were correct.",
-    "summary": "19 library-statistic statement(s) retired for topic-fabrication-detection",
+    "summary": "4 library-statistic statement(s) retired for topic-fabrication-detection",
     "topic_id": "topic-fabrication-detection",
+    "url": null
+  },
+  {
+    "created_at": "2026-09-22T22:03:28Z",
+    "detail": "These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.",
+    "irregularity_id": "irr-a2b19bc8ff0e",
+    "resolution": "",
+    "resolution_link": "",
+    "resolved": false,
+    "resolved_at": "",
+    "severity": "info",
+    "stage": "synthesis",
+    "suggested_action": "Review the retired statements section on the affected topic pages.",
+    "summary": "21 brief(s), 83 criticism(s) and 3 open question(s) withdrawn with their retired claims",
+    "topic_id": "",
     "url": null
   }
 ]

@@ -1,12 +1,12 @@
 # Irregularities for review
 
-Generated: 2026-09-22T21:44:30Z
+Generated: 2026-09-22T22:03:28Z
 
 This file is produced by the audit stage. It lists everything the engine could not
 reconcile on its own. Nothing here is a conclusion; each entry is a request for a human
 decision, with the evidence needed to make it.
 
-**Totals** - error: 0, warning: 15, info: 18; resolved by a reviewer: 7.
+**Totals** - error: 0, warning: 15, info: 19; resolved by a reviewer: 7.
 
 ## Stage: audit
 
@@ -16,7 +16,7 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** Unavailable sources: github
 - **suggested action:** Confirm network egress from the runner, or accept snapshot replay for these sources.
-- **detected:** 2026-09-22T21:44:30Z
+- **detected:** 2026-09-22T22:03:28Z
 
 ### [WARNING] 5 source(s) were not reachable during this run
 
@@ -123,7 +123,7 @@ decision, with the evidence needed to make it.
 - **link:** <https://info.arxiv.org/help/api/user-manual.html>
 - **detail:** Request: https://export.arxiv.org/api/query with {"max_results": 5, "search_query": "all:autonomous agent", "sortBy": "submittedDate", "sortOrder": "descending", "start": 0}. Response: 
 - **suggested action:** Verify the filter against the source's documentation and update changes.py.
-- **detected:** 2026-09-22T17:02:56Z
+- **detected:** 2026-09-22T21:25:05Z
 
 ### [WARNING] Change scan for nvd returned HTTP 404
 
@@ -132,25 +132,9 @@ decision, with the evidence needed to make it.
 - **link:** <https://nvd.nist.gov/developers/vulnerabilities>
 - **detail:** Request: https://services.nvd.nist.gov/rest/json/cves/2.0 with {"keywordSearch": "autonomous agent", "lastModEndDate": "2026-09-22T00:00:00:000 UTC-00:00", "lastModStartDate": "2026-09-15T00:00:00:000 UTC-00:00", "resultsPerPage": 5}. Response: 
 - **suggested action:** Verify the filter against the source's documentation and update changes.py.
-- **detected:** 2026-09-22T17:02:57Z
+- **detected:** 2026-09-22T21:25:06Z
 
 ## Stage: audit
-
-### [INFO] 19 library-statistic statement(s) retired for topic-fabrication-detection
-
-- **id:** `irr-efcc377db02b`
-- **topic:** topic-fabrication-detection
-- **detail:** A re-run of the library statistics produced different figures, so the previous "currently supported by ..." statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.
-- **suggested action:** Nothing to do unless a reviewer believes the old figures were correct.
-- **detected:** 2026-09-22T21:44:27Z
-
-### [INFO] 24 library-statistic statement(s) retired for topic-search-and-sorting-strategy
-
-- **id:** `irr-d8825881157a`
-- **topic:** topic-search-and-sorting-strategy
-- **detail:** A re-run of the library statistics produced different figures, so the previous "currently supported by ..." statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.
-- **suggested action:** Nothing to do unless a reviewer believes the old figures were correct.
-- **detected:** 2026-09-22T21:44:29Z
 
 ### [INFO] 24 stored claim(s) are marked superseded and are excluded from re-verification
 
@@ -158,31 +142,47 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.
 - **suggested action:** Nothing to do unless a reviewer believes a retired statement was correct.
-- **detected:** 2026-09-22T17:02:57Z
+- **detected:** 2026-09-22T21:25:06Z
 
-### [INFO] 27 library-statistic statement(s) retired for topic-research-loop-scheduling
-
-- **id:** `irr-a3f3cdf7cce5`
-- **topic:** topic-research-loop-scheduling
-- **detail:** A re-run of the library statistics produced different figures, so the previous "currently supported by ..." statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.
-- **suggested action:** Nothing to do unless a reviewer believes the old figures were correct.
-- **detected:** 2026-09-22T21:44:27Z
-
-### [INFO] 34 library-statistic statement(s) retired for topic-autonomous-research-agents
+### [INFO] 4 library-statistic statement(s) retired for topic-autonomous-research-agents
 
 - **id:** `irr-c0fc2312c838`
 - **topic:** topic-autonomous-research-agents
 - **detail:** A re-run of the library statistics produced different figures, so the previous "currently supported by ..." statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.
 - **suggested action:** Nothing to do unless a reviewer believes the old figures were correct.
-- **detected:** 2026-09-22T21:44:26Z
+- **detected:** 2026-09-22T22:03:24Z
+
+### [INFO] 4 library-statistic statement(s) retired for topic-fabrication-detection
+
+- **id:** `irr-efcc377db02b`
+- **topic:** topic-fabrication-detection
+- **detail:** A re-run of the library statistics produced different figures, so the previous "currently supported by ..." statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.
+- **suggested action:** Nothing to do unless a reviewer believes the old figures were correct.
+- **detected:** 2026-09-22T22:03:25Z
+
+### [INFO] 4 library-statistic statement(s) retired for topic-research-loop-scheduling
+
+- **id:** `irr-a3f3cdf7cce5`
+- **topic:** topic-research-loop-scheduling
+- **detail:** A re-run of the library statistics produced different figures, so the previous "currently supported by ..." statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.
+- **suggested action:** Nothing to do unless a reviewer believes the old figures were correct.
+- **detected:** 2026-09-22T22:03:25Z
+
+### [INFO] 4 library-statistic statement(s) retired for topic-search-and-sorting-strategy
+
+- **id:** `irr-d8825881157a`
+- **topic:** topic-search-and-sorting-strategy
+- **detail:** A re-run of the library statistics produced different figures, so the previous "currently supported by ..." statements are marked superseded. The records remain in library/claims.jsonl with the reason stored on each, and the pages publish only the current figures.
+- **suggested action:** Nothing to do unless a reviewer believes the old figures were correct.
+- **detected:** 2026-09-22T22:03:27Z
 
 ### [INFO] Stored claims are marked superseded and are excluded from re-verification
 
 - **id:** `irr-6218b1a3c625`
 - **topic:** n/a
-- **detail:** 128 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.
+- **detail:** 134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.
 - **suggested action:** Nothing to do unless a reviewer believes a retired statement was correct.
-- **detected:** 2026-09-22T21:44:30Z
+- **detected:** 2026-09-22T22:03:28Z
 
 ## Stage: review
 
@@ -258,6 +258,14 @@ decision, with the evidence needed to make it.
 - **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
 - **suggested action:** Review the retired statements section on the affected topic pages.
 - **detected:** 2026-09-22T21:44:30Z
+
+### [INFO] 21 brief(s), 83 criticism(s) and 3 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-a2b19bc8ff0e`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-09-22T22:03:28Z
 
 ### [INFO] 6 cross-document statement(s) retired for topic-autonomous-research-agents
 
