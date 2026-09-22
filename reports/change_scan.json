@@ -3,10 +3,10 @@
     "scanned": 1,
     "unreachable": 4
   },
-  "generated_at": "2026-09-22T00:10:55Z",
-  "items_new": 4,
+  "generated_at": "2026-09-22T00:22:27Z",
+  "items_new": 3,
   "items_seen": 5,
-  "run_id": "run-ea9b18aa72fa",
+  "run_id": "run-6cfd673bcf0b",
   "scans": [
     {
       "detail": "export.arxiv.org unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
@@ -59,43 +59,35 @@
       }
     },
     {
-      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 4 not seen by this engine before.",
+      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 3 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 4,
+      "items_new": 3,
       "items_seen": 5,
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: DevSwat-ResonantGenesis/RG_Agent_Engine\nThe",
-          "identifier": "https://github.com/DevSwat-ResonantGenesis/RG_Agent_Engine",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ScottColeSW/Void-Marauders\nThe record for S",
+          "identifier": "https://github.com/ScottColeSW/Void-Marauders",
           "published_at": "2026-09-22",
           "source_id": "github",
-          "title": "DevSwat-ResonantGenesis/RG_Agent_Engine",
-          "url": "https://github.com/DevSwat-ResonantGenesis/RG_Agent_Engine"
+          "title": "ScottColeSW/Void-Marauders",
+          "url": "https://github.com/ScottColeSW/Void-Marauders"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: f-o-x11/dreaming-press\nThe record for f-o-x",
-          "identifier": "https://github.com/f-o-x11/dreaming-press",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: gke-labs/kube-agents\nThe record for gke-lab",
+          "identifier": "https://github.com/gke-labs/kube-agents",
           "published_at": "2026-09-22",
           "source_id": "github",
-          "title": "f-o-x11/dreaming-press",
-          "url": "https://github.com/f-o-x11/dreaming-press"
+          "title": "gke-labs/kube-agents",
+          "url": "https://github.com/gke-labs/kube-agents"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: simahanfeng007-lgtm/Tiangongzaowu-V3\nThe re",
-          "identifier": "https://github.com/simahanfeng007-lgtm/Tiangongzaowu-V3",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: pedapudi/foe\nThe record for pedapudi/foe re",
+          "identifier": "https://github.com/pedapudi/foe",
           "published_at": "2026-09-22",
           "source_id": "github",
-          "title": "simahanfeng007-lgtm/Tiangongzaowu-V3",
-          "url": "https://github.com/simahanfeng007-lgtm/Tiangongzaowu-V3"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Bandito-coder/hermes-software-agents\nThe re",
-          "identifier": "https://github.com/Bandito-coder/hermes-software-agents",
-          "published_at": "2026-09-22",
-          "source_id": "github",
-          "title": "Bandito-coder/hermes-software-agents",
-          "url": "https://github.com/Bandito-coder/hermes-software-agents"
+          "title": "pedapudi/foe",
+          "url": "https://github.com/pedapudi/foe"
         }
       ],
       "request_params": {

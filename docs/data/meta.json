@@ -1,6 +1,6 @@
 {
   "checks": {
-    "claims_without_link": 83,
+    "claims_without_link": 115,
     "fixture_documents": 0,
     "irregularity_counts": {
       "error": 0,
@@ -8,21 +8,21 @@
       "warning": 12
     },
     "unresolved_contradictions": 12,
-    "unsupported_claims": 6
+    "unsupported_claims": 9
   },
   "counts": {
-    "attacks": 416,
-    "claims": 206,
+    "attacks": 666,
+    "claims": 240,
     "contradictions": 12,
     "discoveries": 34,
-    "documents": 34,
+    "documents": 36,
     "experiments": 2,
     "failures": 18,
     "irregularities": 24,
-    "questions": 46,
-    "strategies": 91,
+    "questions": 55,
+    "strategies": 150,
     "topics": 4
   },
-  "generated_at": "2026-09-22T00:12:06Z",
+  "generated_at": "2026-09-22T00:24:45Z",
   "run_id": "site-rebuild"
 }

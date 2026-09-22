@@ -867,17 +867,17 @@
       "unsupported": 0
     },
     {
-      "citations": 156,
-      "claims_proposed": 59,
-      "claims_supported": 53,
+      "citations": 454,
+      "claims_proposed": 91,
+      "claims_supported": 82,
       "documents": 0,
       "evidence_class": "reproduced_experiment",
       "evidence_rank": 2,
       "partially_supported": 0,
       "source_id": "SelfLearn library computation",
       "source_name": "SelfLearn library computation",
-      "support_rate": 0.8983,
-      "unsupported": 6
+      "support_rate": 0.9011,
+      "unsupported": 9
     },
     {
       "citations": 181,
@@ -893,9 +893,9 @@
       "unsupported": 0
     },
     {
-      "citations": 209,
-      "claims_proposed": 123,
-      "claims_supported": 123,
+      "citations": 265,
+      "claims_proposed": 125,
+      "claims_supported": 125,
       "documents": 0,
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -909,7 +909,7 @@
       "citations": 0,
       "claims_proposed": 0,
       "claims_supported": 0,
-      "documents": 32,
+      "documents": 34,
       "evidence_class": "primary_source",
       "evidence_rank": 3,
       "partially_supported": 0,

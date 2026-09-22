@@ -160,9 +160,12 @@ class Question:
     topic_id: str
     text: str
     origin: str                   # seed | sub_question | gap | discovery
-    status: str = "open"          # open | answered | abandoned
+    status: str = "open"          # open | answered | abandoned | superseded
     priority: float = 0.5
     created_at: str = field(default_factory=utcnow_iso)
+    # Set when the claim this question was derived from has itself been retired.
+    # The question is not deleted, but it is not published as an open gap either.
+    superseded: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -192,6 +195,10 @@ class Strategy:
     scorecard: dict[str, Any] = field(default_factory=dict)
     created_at: str = field(default_factory=utcnow_iso)
     limitations: str = ""
+    # Set when a claim this brief quotes has been retired. A brief is an inference
+    # over its quoted claims, so it cannot outlive them: it stops being published
+    # as a competing answer and the reason is recorded here.
+    superseded: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -209,8 +216,12 @@ class Attack:
     statement: str
     severity: str                 # minor | moderate | major | fatal
     claim_refs: list[str] = field(default_factory=list)
-    outcome: str = "open"         # open | survived | partial | conceded
+    outcome: str = "open"         # open | survived | partial | conceded | superseded
     created_at: str = field(default_factory=utcnow_iso)
+    # Set when the brief this criticism targets has been withdrawn. A criticism of
+    # a brief quoting a retired claim is no longer a live criticism; the record is
+    # kept and the reason is stored here rather than deleting the row.
+    superseded: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

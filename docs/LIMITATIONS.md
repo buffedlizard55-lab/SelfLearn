@@ -131,8 +131,17 @@ limit affects a specific statement, the statement itself carries the warning.
     statements" on the pages that carried them, each with the reason, and none is counted as
     a current finding. The layer will start producing statements when a second source is
     reachable, which is a consequence of limitation 21 rather than of the rules.
-23. **A retired statement stays in the library.** `Claim.superseded` marks a statement a
-    later cycle no longer produces; the record is never deleted, the verification result is
-    never rewritten, and the audit reports how many are excluded from re-verification. A
-    reviewer who believes a retired statement was correct can read the reason on the record
-    and say so - but there is no tool to reinstate one yet.
+23. **A retired statement stays in the library, and takes its dependents with it.**
+    `Claim.superseded` marks a statement a later cycle no longer produces; the record is never
+    deleted, the verification result is never rewritten, and the audit reports how many are
+    excluded from re-verification. Briefs that quote a retired claim, criticisms of those
+    briefs and gap questions about that claim are withdrawn the same way
+    (`loop.retire_dependents`), because a brief is an inference over the claims it quotes and
+    cannot outlive them. Every withdrawn record is listed under "Retired statements" on the
+    topic page that carried it, with the reason. A reviewer who believes a retired statement
+    was correct can read the reason on the record and say so - but there is no tool to
+    reinstate one yet.
+24. **Withdrawal is one-directional and has no undo.** Nothing in the engine can restore a
+    superseded claim, brief, criticism or question to current status. Reinstating one means
+    editing the JSON line by hand, which the audit would then report as a claim whose record
+    does not match its history.

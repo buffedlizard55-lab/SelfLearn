@@ -36,7 +36,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T00:10:56Z",
+    "created_at": "2026-09-22T00:22:28Z",
     "detail": "services.nvd.nist.gov unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992). The window 2026-09-15..2026-09-22 was not polled, so items published in it will appear as new on a later run rather than being missed.",
     "irregularity_id": "irr-0f32c8d0a71f",
     "resolved": false,
@@ -84,7 +84,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T00:10:55Z",
+    "created_at": "2026-09-22T00:22:28Z",
     "detail": "export.arxiv.org unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992). The window 2026-09-15..2026-09-22 was not polled, so items published in it will appear as new on a later run rather than being missed.",
     "irregularity_id": "irr-43ca699ef8b8",
     "resolved": false,
@@ -96,7 +96,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T00:10:56Z",
+    "created_at": "2026-09-22T00:22:28Z",
     "detail": "A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.",
     "irregularity_id": "irr-569286381eaf",
     "resolved": false,
@@ -144,7 +144,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T00:10:56Z",
+    "created_at": "2026-09-22T00:22:28Z",
     "detail": "Unavailable sources: arxiv, crossref, hackernews, openalex, semantic_scholar",
     "irregularity_id": "irr-7a8a2e69fe6e",
     "resolved": false,
@@ -168,7 +168,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T00:10:55Z",
+    "created_at": "2026-09-22T00:22:28Z",
     "detail": "api.crossref.org unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992). The window 2026-09-15..2026-09-22 was not polled, so items published in it will appear as new on a later run rather than being missed.",
     "irregularity_id": "irr-8268b26e8ebc",
     "resolved": false,
@@ -228,7 +228,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-22T00:10:56Z",
+    "created_at": "2026-09-22T00:22:28Z",
     "detail": "earthquake.usgs.gov unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992). The window 2026-09-15..2026-09-22 was not polled, so items published in it will appear as new on a later run rather than being missed.",
     "irregularity_id": "irr-b9fce9a77ea5",
     "resolved": false,

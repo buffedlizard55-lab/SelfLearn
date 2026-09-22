@@ -353,6 +353,54 @@ def build_synthesis_claims(
     return kept
 
 
+def retire_dependents(library: "Library", retired_claims: list[Claim]) -> dict[str, list[Any]]:
+    """Withdraw the records that were built on top of a retired claim.
+
+    A brief is an inference over the claims it quotes, a criticism is a criticism
+    of that brief, and a gap question is a question about a claim. None of them can
+    outlive the claim they rest on. This is the second half of the same fix that
+    retired the synthesis statements: the first version of that layer published a
+    false sentence, and the sentence had already been copied into 57 competing
+    briefs, 15 criticisms and 2 open questions. Retiring the claim alone left all
+    of those published.
+
+    Nothing is deleted. Each record keeps its text and gains a reason.
+    """
+    retired_ids = {claim.claim_id for claim in retired_claims}
+    if not retired_ids:
+        return {"strategies": [], "attacks": [], "questions": []}
+    reason = (
+        f"Withdrawn {utcnow_iso()}: a claim this record quotes has been superseded, so this record is not "
+        "published as current. It remains in the library."
+    )
+    strategies: list[Strategy] = []
+    attacks: list[Attack] = []
+    questions: list[Question] = []
+    for strategy in library.strategies.values():
+        if strategy.superseded:
+            continue
+        quoted = [cid for cid in strategy.supporting_claim_ids if cid in retired_ids]
+        if quoted:
+            strategy.superseded = reason + f" Retired claim(s): {', '.join(sorted(quoted))}."
+            strategies.append(strategy)
+    retired_strategy_ids = {s.strategy_id for s in strategies}
+    for attack in library.attacks.values():
+        if attack.superseded:
+            continue
+        if attack.strategy_id in retired_strategy_ids:
+            attack.superseded = reason + f" Its brief {attack.strategy_id} quotes a retired claim."
+            attacks.append(attack)
+    for question in library.questions.values():
+        if question.superseded:
+            continue
+        quoted = sorted(cid for cid in retired_ids if cid in (question.text or ""))
+        if quoted:
+            question.superseded = reason + f" Retired claim(s): {', '.join(quoted)}."
+            question.status = "superseded"
+            questions.append(question)
+    return {"strategies": strategies, "attacks": attacks, "questions": questions}
+
+
 def rebuild_synthesis(
     topic: Topic,
     claims: list[Claim],
@@ -754,6 +802,37 @@ def run_cycle(
                 )
             )
 
+    # -- 5b. withdraw records built on retired claims -----------------------
+    # Every superseded claim counts, not only the ones retired this cycle: the
+    # first fix retired 24 statements, and 57 briefs quoting them stayed published
+    # until the next run. The pass below is idempotent - a record already carrying
+    # a reason is skipped - so it can be re-run on any library.
+    withdrawn = retire_dependents(
+        library, [claim for claim in library.claims.values() if claim.superseded]
+    )
+    if any(withdrawn.values()):
+        library.add_strategies(withdrawn["strategies"])
+        library.add_attacks(withdrawn["attacks"])
+        library.add_questions(withdrawn["questions"])
+        irregularities.append(
+            Irregularity(
+                irregularity_id=stable_id("irr", "retired-dependents", run_id),
+                severity="info",
+                stage="synthesis",
+                topic_id="",
+                summary=(
+                    f"{len(withdrawn['strategies'])} brief(s), {len(withdrawn['attacks'])} criticism(s) and "
+                    f"{len(withdrawn['questions'])} open question(s) withdrawn with their retired claims"
+                ),
+                detail=(
+                    "These records quote a claim that a later cycle no longer produces. They stay in the library with "
+                    "the reason recorded on each, and are excluded from the competing answers, criticisms and open "
+                    "questions on the published pages."
+                ),
+                suggested_action="Review the retired statements section on the affected topic pages.",
+            )
+        )
+
     # -- 6. run summary (checked by the same numeric guard as the claims) ----
     claims_by_kind = {"direct": 0, "derived": 0, "synthesis": 0}
     for claim in library.claims.values():
@@ -793,6 +872,9 @@ def run_cycle(
         "warnings": severity_counts.get("warning", 0),
         "synthesis_claims": counts["synthesis_claims"],
         "synthesis_retired": len(synthesis_retired),
+        "records_withdrawn": (
+            len(withdrawn["strategies"]) + len(withdrawn["attacks"]) + len(withdrawn["questions"])
+        ),
         "substantive_claims": counts["substantive_claims"],
         "metadata_claims": counts["metadata_claims"],
         "topics_proposed": len(proposals_payload),
@@ -812,8 +894,9 @@ def run_cycle(
             f"{figures['open_questions']} open question(s) have been derived from the retrieved evidence.",
             f"{figures['synthesis_claims']} cross-document statement(s) are current, "
             f"{figures['synthesis_retired']} were retired this cycle because the composition rules no longer "
-            f"produce them, and {figures['substantive_claims']} claim(s) scored as substantive while "
-            f"{figures['metadata_claims']} are labelled as registry metadata.",
+            f"produce them ({figures['records_withdrawn']} briefs, criticisms and questions withdrew with them), and "
+            f"{figures['substantive_claims']} claim(s) scored as substantive while {figures['metadata_claims']} "
+            "are labelled as registry metadata.",
             f"{figures['topics_proposed']} candidate topic(s) were scored from the retrieved documents and "
             f"{figures['topics_promoted']} promoted; the change scan polled {figures['change_scan_sources']} "
             f"source(s) and found {figures['change_scan_new_items']} item(s) not seen before.",

@@ -69,6 +69,9 @@ class TopicReport:
     # the page can say how many were retired and why, instead of quietly dropping
     # statements that were published in an earlier cycle.
     retired_claims: list[Claim] = field(default_factory=list)
+    retired_strategies: list[Strategy] = field(default_factory=list)
+    retired_attacks: list[Attack] = field(default_factory=list)
+    retired_questions: list[Question] = field(default_factory=list)
 
     # -- headline numbers -------------------------------------------------
     def statistics(self) -> dict[str, Any]:
@@ -223,6 +226,36 @@ class TopicReport:
                     "recorded_at": c.recorded_at,
                 }
                 for c in self.retired_claims
+            ]
+            + [
+                {
+                    "claim_id": st.strategy_id,
+                    "text": st.title,
+                    "claim_kind": f"brief ({st.persona_code})",
+                    "superseded": st.superseded,
+                    "recorded_at": st.created_at,
+                }
+                for st in self.retired_strategies
+            ]
+            + [
+                {
+                    "claim_id": a.attack_id,
+                    "text": a.statement,
+                    "claim_kind": f"criticism ({a.critic})",
+                    "superseded": a.superseded,
+                    "recorded_at": a.created_at,
+                }
+                for a in self.retired_attacks
+            ]
+            + [
+                {
+                    "claim_id": q.id,
+                    "text": q.text,
+                    "claim_kind": f"open question ({q.origin})",
+                    "superseded": q.superseded,
+                    "recorded_at": q.created_at,
+                }
+                for q in self.retired_questions
             ],
             "documents": [
                 {
@@ -364,9 +397,19 @@ def build_topic_report(
     claims = order_claims_for_reading([c for c in all_topic_claims if not c.superseded])
     evidence_ids = {c.evidence_id for c in claims}
     records = [library.evidence[eid] for eid in evidence_ids if eid in library.evidence]
-    strategies = library.strategies_for_topic(topic.topic_id)
-    attacks = [a for s in strategies for a in library.attacks_for_strategy(s.strategy_id)]
-    questions = library.questions_for_topic(topic.topic_id)
+    # The same rule applies to the records built on top of a retired claim: a brief
+    # is an inference over the claims it quotes, a criticism is a criticism of that
+    # brief, and a gap question is a question about a claim. They are withdrawn with
+    # it, listed under "Retired", and not published as competing answers.
+    all_strategies = library.strategies_for_topic(topic.topic_id)
+    strategies = [st for st in all_strategies if not st.superseded]
+    retired_strategies = [st for st in all_strategies if st.superseded]
+    all_attacks = [a for st in all_strategies for a in library.attacks_for_strategy(st.strategy_id)]
+    attacks = [a for a in all_attacks if not a.superseded]
+    retired_attacks = [a for a in all_attacks if a.superseded]
+    all_questions = library.questions_for_topic(topic.topic_id)
+    questions = [q for q in all_questions if not q.superseded]
+    retired_questions = [q for q in all_questions if q.superseded]
     experiments = library.experiments_for_topic(topic.topic_id)
     contradictions = [c for c in library.contradictions.values() if c.topic_id == topic.topic_id]
     tournament = None
@@ -391,6 +434,9 @@ def build_topic_report(
         strategies=strategies,
         attacks=attacks,
         questions=questions,
+        retired_strategies=retired_strategies,
+        retired_attacks=retired_attacks,
+        retired_questions=retired_questions,
         experiments=experiments,
         contradictions=contradictions,
         tournament=tournament,
