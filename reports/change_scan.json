@@ -3,10 +3,10 @@
     "error": 2,
     "scanned": 3
   },
-  "generated_at": "2026-09-22T17:02:56Z",
-  "items_new": 3,
+  "generated_at": "2026-09-22T21:25:04Z",
+  "items_new": 4,
   "items_seen": 15,
-  "run_id": "run-bbcaf0b83035",
+  "run_id": "run-fe5ed07d9d98",
   "scans": [
     {
       "detail": "HTTP 406: ",
@@ -59,35 +59,43 @@
       }
     },
     {
-      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 3 not seen by this engine before.",
+      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 4 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 3,
+      "items_new": 4,
       "items_seen": 5,
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: fmogensen/ASF\nThe record for fmogensen/ASF ",
-          "identifier": "https://github.com/fmogensen/ASF",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: jadenryu/lurq\nThe record for jadenryu/lurq ",
+          "identifier": "https://github.com/jadenryu/lurq",
           "published_at": "2026-09-22",
           "source_id": "github",
-          "title": "fmogensen/ASF",
-          "url": "https://github.com/fmogensen/ASF"
+          "title": "jadenryu/lurq",
+          "url": "https://github.com/jadenryu/lurq"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: juhastar-dev/200-protocol\nThe record for ju",
-          "identifier": "https://github.com/juhastar-dev/200-protocol",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: PrimeIntellect-ai/prime-agent\nThe record fo",
+          "identifier": "https://github.com/PrimeIntellect-ai/prime-agent",
           "published_at": "2026-09-22",
           "source_id": "github",
-          "title": "juhastar-dev/200-protocol",
-          "url": "https://github.com/juhastar-dev/200-protocol"
+          "title": "PrimeIntellect-ai/prime-agent",
+          "url": "https://github.com/PrimeIntellect-ai/prime-agent"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: thejevos/jevos\nThe record for thejevos/jevo",
-          "identifier": "https://github.com/thejevos/jevos",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: rohanmandhanya/ASMA\nThe record for rohanman",
+          "identifier": "https://github.com/rohanmandhanya/ASMA",
           "published_at": "2026-09-22",
           "source_id": "github",
-          "title": "thejevos/jevos",
-          "url": "https://github.com/thejevos/jevos"
+          "title": "rohanmandhanya/ASMA",
+          "url": "https://github.com/rohanmandhanya/ASMA"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: whoff77/shorky\nThe record for whoff77/shork",
+          "identifier": "https://github.com/whoff77/shorky",
+          "published_at": "2026-09-22",
+          "source_id": "github",
+          "title": "whoff77/shorky",
+          "url": "https://github.com/whoff77/shorky"
         }
       ],
       "request_params": {
