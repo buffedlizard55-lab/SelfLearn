@@ -73,7 +73,9 @@ def cross_domain_claims(
         if other_topic_id == topic.topic_id:
             continue
         for claim in claims:
-            if claim.verification.verdict != "supported":
+            if claim.verification.verdict != "supported" or claim.superseded:
+                # A retired claim is still in the library, but it is not a current
+                # finding, so it must not be transferred into a new brief either.
                 continue
             tokens = content_tokens(claim.text)
             if not tokens:
@@ -136,7 +138,11 @@ def generate_strategies(
 ) -> list[Strategy]:
     """Produce one candidate answer per persona, all grounded in the same claims."""
     library = library or {}
-    usable = [c for c in claims if c.verification.verdict in {"supported", "partially_supported"}]
+    usable = [
+        c
+        for c in claims
+        if c.verification.verdict in {"supported", "partially_supported"} and not c.superseded
+    ]
     strategies: list[Strategy] = []
 
     for persona in personas:

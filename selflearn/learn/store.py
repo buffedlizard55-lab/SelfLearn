@@ -177,12 +177,20 @@ class Library:
         return len(topics)
 
     def add_questions(self, questions: Iterable[Question]) -> int:
+        """Append the given questions, including updates to ones already stored.
+
+        This used to write only ids it had not seen before, on the assumption that a
+        question is written once. That assumption broke the withdrawal path: a
+        question whose claim had been retired was updated in memory and then
+        silently dropped from the stream, so the published page kept showing it as
+        an open gap. Every other ``add_*`` here appends the row it is given and lets
+        the last write win; this one does the same now.
+        """
         questions = list(questions)
-        new = [q for q in questions if q.id not in self.questions]
         for question in questions:
             self.questions[question.id] = question
-        self._write("questions", [q.to_dict() for q in new], stage="curiosity")
-        return len(new)
+        self._write("questions", [q.to_dict() for q in questions], stage="curiosity")
+        return len(questions)
 
     def add_strategies(self, strategies: Iterable[Strategy]) -> int:
         strategies = list(strategies)

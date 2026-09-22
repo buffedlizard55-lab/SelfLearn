@@ -1,14 +1,14 @@
 {
   "counts": {
-    "attacks": 416,
-    "claims": 206,
-    "documents": 34,
+    "attacks": 666,
+    "claims": 240,
+    "documents": 36,
     "experiments": 2,
     "http_requests": 22,
     "metadata_claims": 41,
-    "questions": 46,
-    "strategies": 91,
-    "substantive_claims": 80,
+    "questions": 55,
+    "strategies": 150,
+    "substantive_claims": 96,
     "synthesis_claims": 0,
     "topics": 11
   },
@@ -29,12 +29,12 @@
     "topic-fabrication-detection: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
     "topic-research-loop-scheduling: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
     "topic-search-and-sorting-strategy: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
-    "topic-autonomous-research-agents: 0 new claim(s) from 4 document(s); 6 candidate(s); 22 attack(s).",
-    "topic-fabrication-detection: 0 new claim(s) from 10 document(s); 6 candidate(s); 21 attack(s).",
-    "topic-research-loop-scheduling: 0 new claim(s) from 6 document(s); 6 candidate(s); 24 attack(s).",
-    "topic-search-and-sorting-strategy: 0 new claim(s) from 10 document(s); 6 candidate(s); 22 attack(s).",
-    "1 candidate topic(s) scored from the retrieved documents; 0 promoted to the topic list.",
-    "Change scan: 4 item(s) seen for the first time across 1 source(s); 3 question(s) derived."
+    "topic-autonomous-research-agents: 0 new claim(s) from 4 document(s); 6 candidate(s); 25 attack(s).",
+    "topic-fabrication-detection: 0 new claim(s) from 10 document(s); 6 candidate(s); 24 attack(s).",
+    "topic-research-loop-scheduling: 0 new claim(s) from 6 document(s); 6 candidate(s); 26 attack(s).",
+    "topic-search-and-sorting-strategy: 0 new claim(s) from 10 document(s); 6 candidate(s); 26 attack(s).",
+    "2 candidate topic(s) scored from the retrieved documents; 0 promoted to the topic list.",
+    "Change scan: 3 item(s) seen for the first time across 1 source(s); 3 question(s) derived."
   ],
   "plan": {
     "budget": {
@@ -55,14 +55,14 @@
       "topic-research-loop-scheduling: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
       "topic-search-and-sorting-strategy: cannot measure attention for this question. Those components are excluded from the score rather than defaulted."
     ],
-    "run_id": "run-ea9b18aa72fa",
+    "run_id": "run-6cfd673bcf0b",
     "scores": [
       {
         "basis": [
-          "mean evidence rank over 20 document(s)",
-          "20 document(s) carried a publication date",
-          "0 partially supported claim(s) out of 42",
-          "34 quantified claim(s)",
+          "mean evidence rank over 22 document(s)",
+          "22 document(s) carried a publication date",
+          "0 partially supported claim(s) out of 54",
+          "46 quantified claim(s)",
           "no attention signal (forum or repository activity) was retrieved for this topic",
           "topic last updated 0.0 day(s) ago"
         ],
@@ -70,15 +70,15 @@
           "attention": 0.0,
           "evidence_gaps": 0.0,
           "evidence_strength": 0.7778,
-          "freshness": 0.85,
+          "freshness": 0.8182,
           "neglect": 0.0,
-          "testability": 0.8095
+          "testability": 0.8519
         },
         "details": {
           "newest_document_age_days": 26.0
         },
         "topic_id": "topic-autonomous-research-agents",
-        "total": 0.4494,
+        "total": 0.4512,
         "unmeasurable": [
           "attention"
         ]
@@ -87,8 +87,8 @@
         "basis": [
           "mean evidence rank over 39 document(s)",
           "39 document(s) carried a publication date",
-          "0 partially supported claim(s) out of 57",
-          "40 quantified claim(s)",
+          "0 partially supported claim(s) out of 63",
+          "46 quantified claim(s)",
           "no attention signal (forum or repository activity) was retrieved for this topic",
           "topic last updated 0.0 day(s) ago"
         ],
@@ -98,13 +98,13 @@
           "evidence_strength": 0.7778,
           "freshness": 0.5128,
           "neglect": 0.0,
-          "testability": 0.7018
+          "testability": 0.7302
         },
         "details": {
           "newest_document_age_days": 1.0
         },
         "topic_id": "topic-fabrication-detection",
-        "total": 0.3753,
+        "total": 0.38,
         "unmeasurable": [
           "attention"
         ]
@@ -113,8 +113,8 @@
         "basis": [
           "mean evidence rank over 20 document(s)",
           "20 document(s) carried a publication date",
-          "0 partially supported claim(s) out of 38",
-          "31 quantified claim(s)",
+          "0 partially supported claim(s) out of 46",
+          "39 quantified claim(s)",
           "no attention signal (forum or repository activity) was retrieved for this topic",
           "topic last updated 0.0 day(s) ago"
         ],
@@ -124,13 +124,13 @@
           "evidence_strength": 0.7778,
           "freshness": 0.35,
           "neglect": 0.0,
-          "testability": 0.8158
+          "testability": 0.8478
         },
         "details": {
           "newest_document_age_days": 74.0
         },
         "topic_id": "topic-research-loop-scheduling",
-        "total": 0.3671,
+        "total": 0.3725,
         "unmeasurable": [
           "attention"
         ]
@@ -139,8 +139,8 @@
         "basis": [
           "mean evidence rank over 44 document(s)",
           "44 document(s) carried a publication date",
-          "0 partially supported claim(s) out of 62",
-          "50 quantified claim(s)",
+          "0 partially supported claim(s) out of 70",
+          "58 quantified claim(s)",
           "no attention signal (forum or repository activity) was retrieved for this topic",
           "topic last updated 0.0 day(s) ago"
         ],
@@ -150,13 +150,13 @@
           "evidence_strength": 0.7778,
           "freshness": 0.0909,
           "neglect": 0.0,
-          "testability": 0.8065
+          "testability": 0.8286
         },
         "details": {
           "newest_document_age_days": 90.0
         },
         "topic_id": "topic-search-and-sorting-strategy",
-        "total": 0.3224,
+        "total": 0.3261,
         "unmeasurable": [
           "attention"
         ]
@@ -197,7 +197,7 @@
     },
     "tasks": [
       {
-        "created_at": "2026-09-22T00:10:50Z",
+        "created_at": "2026-09-22T00:22:23Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -210,11 +210,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-17758630c376",
+        "task_id": "task-e51d3c3a231f",
         "topic_id": "topic-autonomous-research-agents"
       },
       {
-        "created_at": "2026-09-22T00:10:50Z",
+        "created_at": "2026-09-22T00:22:23Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -227,11 +227,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-422a20019b41",
+        "task_id": "task-b2e84fd7a684",
         "topic_id": "topic-fabrication-detection"
       },
       {
-        "created_at": "2026-09-22T00:10:50Z",
+        "created_at": "2026-09-22T00:22:23Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -243,11 +243,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-6816d7ce1286",
+        "task_id": "task-117176a58802",
         "topic_id": "topic-research-loop-scheduling"
       },
       {
-        "created_at": "2026-09-22T00:10:50Z",
+        "created_at": "2026-09-22T00:22:23Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -258,7 +258,7 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-421bb07c5dc3",
+        "task_id": "task-c885be123efd",
         "topic_id": "topic-search-and-sorting-strategy"
       }
     ]
@@ -294,7 +294,7 @@
     "/home/user/SelfLearn/docs/data/experiments.json",
     "/home/user/SelfLearn/docs/data/meta.json"
   ],
-  "run_id": "run-ea9b18aa72fa",
+  "run_id": "run-6cfd673bcf0b",
   "sources": {
     "checked": 17,
     "credential_required": [],

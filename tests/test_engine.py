@@ -17,7 +17,16 @@ from selflearn.experiment.runner import render_experiment_text, run_experiment  
 from selflearn.fetch.registry import REGISTRY, registry_summary, source_matrix  # noqa: E402
 from selflearn.fetch.sources import build_source, dig, flatten_json, reconstruct_inverted_abstract, summarise_jsonstat  # noqa: E402
 from selflearn.learn.store import Library, _stream_paths  # noqa: E402
-from selflearn.models import Attack, Claim, EvidenceRecord, ExperimentResult, Strategy, Topic, Verification  # noqa: E402
+from selflearn.models import (  # noqa: E402
+    Attack,
+    Claim,
+    EvidenceRecord,
+    ExperimentResult,
+    Question,
+    Strategy,
+    Topic,
+    Verification,
+)
 from selflearn.think.competition import generate_strategies, strategy_numbers_ok  # noqa: E402
 from selflearn.think.critic import critique_strategy, has_fatal  # noqa: E402
 from selflearn.think.discovery import discover_questions, score_topic  # noqa: E402
@@ -668,6 +677,107 @@ class PerTopicStatusTests(unittest.TestCase):
         self.assertNotIn(stale.claim_id, [c.claim_id for c in report.claims], "a retired claim is not a current fact")
         self.assertEqual([c.claim_id for c in report.retired_claims], [stale.claim_id])
         self.assertIn("retired", report.to_dict())
+
+    def test_records_built_on_a_retired_claim_withdraw_with_it(self) -> None:
+        """Regression: retiring a claim left 57 briefs quoting it published."""
+        from selflearn.loop import retire_dependents
+        from selflearn.publish.report import build_topic_report
+
+        topic = Topic(
+            topic_id="topic-dep", title="Dependents", slug="dependents", question="Q?", keywords=["k"]
+        )
+        evidence = make_evidence()
+        kept_claims = make_claims(topic)
+        retired_claim = Claim(
+            claim_id="cl-retired-1",
+            topic_id=topic.topic_id,
+            claim_kind="synthesis",
+            text="Two documents disagree about a value expressed in stargazer: one reports 02 and the other 04.",
+            quote="stargazers_count 37459",
+            evidence_class="primary_source",
+            evidence_rank=EVIDENCE_RANK["primary_source"],
+            evidence_id=evidence.evidence_id,
+            source_name=evidence.source_name,
+            url=evidence.url,
+            verification=Verification(verdict="supported", coverage=1.0, reasons=["composed"]),
+            superseded="Superseded 2026-09-22T00:00:00Z: a re-run of the synthesis rules no longer produces this statement.",
+        )
+        brief = Strategy(
+            strategy_id="st-quotes-retired",
+            topic_id=topic.topic_id,
+            persona_code="D",
+            persona_name="Cross-domain",
+            persona_brief="Look elsewhere",
+            title="Cross-domain brief",
+            argument='[cl-retired-1] "' + retired_claim.text + '"',
+            supporting_claim_ids=[retired_claim.claim_id, kept_claims[0].claim_id],
+            status="competing",
+        )
+        critique = Attack(
+            attack_id="at-on-retired-brief",
+            strategy_id=brief.strategy_id,
+            topic_id=topic.topic_id,
+            critic="C3",
+            attack_type="assumption",
+            statement="The brief assumes something it has not evidenced.",
+            severity="minor",
+        )
+        gap = Question(
+            id="q-about-retired",
+            topic_id=topic.topic_id,
+            text=f"The quantity reported in {retired_claim.claim_id} has no reference period.",
+            origin="gap",
+        )
+        independent = Strategy(
+            strategy_id="st-clean",
+            topic_id=topic.topic_id,
+            persona_code="A",
+            persona_name="Incremental",
+            persona_brief="Build on what works",
+            title="Incremental brief",
+            argument=kept_claims[0].text,
+            supporting_claim_ids=[kept_claims[0].claim_id],
+            status="competing",
+        )
+
+        library = Library(Path(tempfile.mkdtemp()))
+        library.add_topics([topic])
+        library.add_evidence([evidence])
+        library.add_claims(kept_claims + [retired_claim])
+        library.add_strategies([brief, independent])
+        library.add_attacks([critique])
+        library.add_questions([gap])
+
+        withdrawn = retire_dependents(library, [retired_claim])
+        self.assertEqual([s.strategy_id for s in withdrawn["strategies"]], [brief.strategy_id])
+        self.assertEqual([a.attack_id for a in withdrawn["attacks"]], [critique.attack_id])
+        self.assertEqual([q.id for q in withdrawn["questions"]], [gap.id])
+        self.assertIn("cl-retired-1", withdrawn["strategies"][0].superseded)
+        self.assertEqual(withdrawn["questions"][0].status, "superseded")
+        self.assertFalse(independent.superseded, "a brief that quotes no retired claim is untouched")
+
+        # the withdrawal survives the round trip through the streams
+        library.add_strategies(withdrawn["strategies"])
+        library.add_attacks(withdrawn["attacks"])
+        library.add_questions(withdrawn["questions"])
+        reloaded = Library.load(library.root)
+        self.assertTrue(reloaded.strategies[brief.strategy_id].superseded)
+        self.assertTrue(reloaded.attacks[critique.attack_id].superseded)
+        self.assertTrue(reloaded.questions[gap.id].superseded)
+
+        report = build_topic_report(reloaded, topic, source_status=[])
+        self.assertEqual([s.strategy_id for s in report.strategies], [independent.strategy_id])
+        self.assertEqual([a.attack_id for a in report.attacks], [])
+        self.assertEqual([q.id for q in report.questions], [])
+        retired_kinds = {row["claim_kind"] for row in report.to_dict()["retired"]}
+        self.assertIn("brief (D)", retired_kinds)
+        self.assertIn("open question (gap)", retired_kinds)
+
+        # and running it again changes nothing
+        again = retire_dependents(reloaded, [retired_claim])
+        self.assertEqual(
+            (len(again["strategies"]), len(again["attacks"]), len(again["questions"])), (0, 0, 0)
+        )
 
     def test_report_shows_only_this_topics_sources(self) -> None:
         from selflearn.models import SourceStatus

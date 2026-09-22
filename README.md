@@ -132,7 +132,7 @@ every cycle.
 selflearn/        the engine (fetch, verify, think, learn, experiment, publish)
 data/             seed questions, the labelled calibration cases, the requirements matrix
 experiments/      seeded experiment scripts, each with a hypothesis and a falsifier
-tests/            107 tests, no network and no credentials required
+tests/            108 tests, no network and no credentials required
 tools/            reviewer tools: check a claim, reproduce an experiment, export a summary,
                   verify every published link, reject a topic, serve the site
 docs/             the published site, plus the hand-written documents listed above

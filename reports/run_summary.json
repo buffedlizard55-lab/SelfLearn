@@ -4,10 +4,10 @@
       "scanned": 1,
       "unreachable": 4
     },
-    "generated_at": "2026-09-22T00:10:55Z",
-    "items_new": 4,
+    "generated_at": "2026-09-22T00:22:27Z",
+    "items_new": 3,
     "items_seen": 5,
-    "run_id": "run-ea9b18aa72fa",
+    "run_id": "run-6cfd673bcf0b",
     "scans": [
       {
         "detail": "export.arxiv.org unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
@@ -60,43 +60,35 @@
         }
       },
       {
-        "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 4 not seen by this engine before.",
+        "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 3 not seen by this engine before.",
         "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-        "items_new": 4,
+        "items_new": 3,
         "items_seen": 5,
         "mechanism": "Repositories pushed to on or after the given date",
         "new_items": [
           {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: DevSwat-ResonantGenesis/RG_Agent_Engine\nThe",
-            "identifier": "https://github.com/DevSwat-ResonantGenesis/RG_Agent_Engine",
+            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ScottColeSW/Void-Marauders\nThe record for S",
+            "identifier": "https://github.com/ScottColeSW/Void-Marauders",
             "published_at": "2026-09-22",
             "source_id": "github",
-            "title": "DevSwat-ResonantGenesis/RG_Agent_Engine",
-            "url": "https://github.com/DevSwat-ResonantGenesis/RG_Agent_Engine"
+            "title": "ScottColeSW/Void-Marauders",
+            "url": "https://github.com/ScottColeSW/Void-Marauders"
           },
           {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: f-o-x11/dreaming-press\nThe record for f-o-x",
-            "identifier": "https://github.com/f-o-x11/dreaming-press",
+            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: gke-labs/kube-agents\nThe record for gke-lab",
+            "identifier": "https://github.com/gke-labs/kube-agents",
             "published_at": "2026-09-22",
             "source_id": "github",
-            "title": "f-o-x11/dreaming-press",
-            "url": "https://github.com/f-o-x11/dreaming-press"
+            "title": "gke-labs/kube-agents",
+            "url": "https://github.com/gke-labs/kube-agents"
           },
           {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: simahanfeng007-lgtm/Tiangongzaowu-V3\nThe re",
-            "identifier": "https://github.com/simahanfeng007-lgtm/Tiangongzaowu-V3",
+            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: pedapudi/foe\nThe record for pedapudi/foe re",
+            "identifier": "https://github.com/pedapudi/foe",
             "published_at": "2026-09-22",
             "source_id": "github",
-            "title": "simahanfeng007-lgtm/Tiangongzaowu-V3",
-            "url": "https://github.com/simahanfeng007-lgtm/Tiangongzaowu-V3"
-          },
-          {
-            "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Bandito-coder/hermes-software-agents\nThe re",
-            "identifier": "https://github.com/Bandito-coder/hermes-software-agents",
-            "published_at": "2026-09-22",
-            "source_id": "github",
-            "title": "Bandito-coder/hermes-software-agents",
-            "url": "https://github.com/Bandito-coder/hermes-software-agents"
+            "title": "pedapudi/foe",
+            "url": "https://github.com/pedapudi/foe"
           }
         ],
         "request_params": {
@@ -171,34 +163,35 @@
     "window_days": 7
   },
   "claim_kinds": {
-    "derived": 59,
-    "direct": 123,
+    "derived": 91,
+    "direct": 125,
     "synthesis": 0
   },
   "evidence_rank_mix": {
-    "primary_source": 123,
-    "reproduced_experiment": 83
+    "primary_source": 125,
+    "reproduced_experiment": 115
   },
   "figures": {
-    "change_scan_new_items": 4,
+    "change_scan_new_items": 3,
     "change_scan_sources": 5,
-    "claims": 206,
+    "claims": 240,
     "documents_retrieved": 30,
-    "documents_total": 34,
+    "documents_total": 36,
     "errors": 0,
     "metadata_claims": 41,
-    "open_questions": 46,
+    "open_questions": 55,
+    "records_withdrawn": 2,
     "sources_polled": 6,
     "sources_reached": 1,
-    "substantive_claims": 80,
+    "substantive_claims": 96,
     "synthesis_claims": 0,
     "synthesis_retired": 0,
     "topics": 11,
     "topics_promoted": 0,
-    "topics_proposed": 1,
+    "topics_proposed": 2,
     "warnings": 17
   },
-  "generated_at": "2026-09-22T00:10:56Z",
+  "generated_at": "2026-09-22T00:22:29Z",
   "irregularities": {
     "by_severity": {
       "error": 0,
@@ -258,20 +251,20 @@
     ],
     "total": 36
   },
-  "run_id": "run-ea9b18aa72fa",
+  "run_id": "run-6cfd673bcf0b",
   "substance": {
-    "claims": 206,
-    "dated": 34,
+    "claims": 240,
+    "dated": 36,
     "labels": {
-      "descriptive": 85,
+      "descriptive": 103,
       "metadata": 41,
-      "substantive": 80
+      "substantive": 96
     },
-    "mean_score": 0.4998,
-    "metadata_share": 0.199,
-    "quantified": 162,
-    "quantified_share": 0.7864,
-    "substantive_share": 0.3883
+    "mean_score": 0.5092,
+    "metadata_share": 0.1708,
+    "quantified": 196,
+    "quantified_share": 0.8167,
+    "substantive_share": 0.4
   },
   "thresholds": {
     "cases": 26,
@@ -283,10 +276,36 @@
       "supported": 0.8
     },
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-22T00:10:50Z",
+    "ran_at": "2026-09-22T00:22:23Z",
     "source": "state/calibration.json"
   },
   "topic_proposals": [
+    {
+      "accepted": false,
+      "components": {
+        "document_spread": 0.4,
+        "evidence_strength": 0.7778,
+        "novelty": 0.0,
+        "open_share": 0.0,
+        "quantified_share": 0.75,
+        "recency": 0.0
+      },
+      "importance": 0.3267,
+      "novel_tokens": [],
+      "novelty": 0.0,
+      "phrase": "samuelschmidgall agentlaboratory",
+      "potential": 0.65,
+      "reason": "Every content word in this phrase is already in the library's vocabulary.",
+      "support_claim_ids": [
+        "cl-07fcb3e7f437",
+        "cl-0ccba4f941a7",
+        "cl-92bda580056e",
+        "cl-eb78009d144f"
+      ],
+      "support_documents": 2,
+      "title": "Samuelschmidgall agentlaboratory",
+      "total": 0.0
+    },
     {
       "accepted": false,
       "components": {
@@ -315,11 +334,11 @@
     }
   ],
   "what_changed": [
-    "Library now holds 206 claim(s) across 11 question(s).",
+    "Library now holds 240 claim(s) across 11 question(s).",
     "This cycle retrieved 30 document(s) from 1 of 6 polled source(s).",
-    "46 open question(s) have been derived from the retrieved evidence.",
-    "0 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them, and 80 claim(s) scored as substantive while 41 are labelled as registry metadata.",
-    "1 candidate topic(s) were scored from the retrieved documents and 0 promoted; the change scan polled 5 source(s) and found 4 item(s) not seen before.",
+    "55 open question(s) have been derived from the retrieved evidence.",
+    "0 cross-document statement(s) are current, 0 were retired this cycle because the composition rules no longer produce them (2 briefs, criticisms and questions withdrew with them), and 96 claim(s) scored as substantive while 41 are labelled as registry metadata.",
+    "2 candidate topic(s) were scored from the retrieved documents and 0 promoted; the change scan polled 5 source(s) and found 3 item(s) not seen before.",
     "0 error(s) and 17 warning(s) are waiting for review."
   ]
 }

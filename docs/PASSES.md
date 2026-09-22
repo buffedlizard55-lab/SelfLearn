@@ -108,14 +108,14 @@ same commands can be re-run in the order given.
 
 | Command | Result |
 | --- | --- |
-| `python3 -m unittest discover -s tests -t . -p "test_*.py"` | 107 tests, all passing (66 before this session, 41 added) |
-| `python3 -m selflearn audit` | 206 claims re-checked against 34 stored documents, 0 errors, 0 warnings, 1 info finding (the 24 superseded statements, excluded from re-verification by design) |
-| `python3 -m selflearn run --mode live` | one complete cycle, exit 0, run `run-ea9b18aa72fa`, 1 of 6 polled sources reachable from this sandbox |
+| `python3 -m unittest discover -s tests -t . -p "test_*.py"` | 108 tests, all passing (66 before this session, 42 added) |
+| `python3 -m selflearn audit` | 240 claims re-checked against 36 stored documents, 0 errors, 0 warnings, 1 info finding (the 24 superseded statements, excluded from re-verification by design) |
+| `python3 -m selflearn run --mode live` | one complete cycle, exit 0, run `run-6cfd673bcf0b`, 1 of 6 polled sources reachable from this sandbox |
 | `python3 -m selflearn scan --offline` | five mechanisms reported with their windows, none polled, no items claimed as new |
 | `python3 -m selflearn credentials` | 4 keyed sources, 0 enabled, each with the operator's key page |
 | `python3 tools/verify_links.py` | 108 unique URLs: 22 resolved (the GitHub hosts this sandbox can reach), 86 recorded `unreachable` with the transport error |
 | `python3 tools/reject_topic.py --id ...` | seven scaffolding-derived topics closed with a stored reason |
-| `python3 -m selflearn site` | 29 files written; 0 current cross-document statements published, 24 retired ones listed with the reason on the pages that carried them |
+| `python3 -m selflearn site` | 29 files written; 0 current cross-document statements published, and every retired record listed with its reason on the page that carried it |
 
 The numbers above are re-derived on every cycle rather than typed once. `reports/run_summary.json`
 from the run named in the table is the machine-readable copy of the same figures, and the
@@ -142,16 +142,33 @@ the hour of two ISO timestamps in two GitHub records for two unrelated repositor
 | "Disagreement" was declared between unrelated subjects | the two cited claims described different repositories that shared no measured quantity | `_shares_subject()` requires at least one shared content word, computed after `strip_rendered_labels()` removes the adapters' field rendering, so "record", "reports" and field labels cannot count as a subject |
 | A corrected rule left the old statements published, because the streams are append-only | `library/claims.jsonl` still held all 24 statements composed by the buggy extractor | `Claim.superseded` and `loop.retire_stale_synthesis`: a statement the current rules no longer produce is marked with a reason, excluded from the facts and synthesis sections, excluded from the audit's re-verification, and listed under "Retired statements" on the page that carried it. All 24 were retired this way; none was deleted |
 
+Retiring the claims was not enough. The sentence had already been copied downstream, and the first
+fix left every copy published:
+
+| Defect | Evidence | Fix |
+| --- | --- | --- |
+| Retired claims were still quoted by competing briefs | 57 of 91 stored strategies cited one of the 24 retired claims, and the false sentence appeared 15 more times on the topic page under "Competing answers" | `loop.retire_dependents` withdraws every brief whose `supporting_claim_ids` include a retired claim, marks it with the reason, and excludes it from the competition section. `cross_domain_claims` and `generate_strategies` also skip retired claims, so a withdrawn statement can never seed a new brief |
+| Criticisms of a withdrawn brief stayed published as live criticisms | 15 stored attacks referenced a retired claim through their brief | The criticisms of a withdrawn brief are withdrawn with it and listed under "Retired" |
+| A gap question about a retired claim stayed open | 2 questions named a retired claim id in their text | The question is marked superseded, its status becomes `superseded`, and it leaves the open-questions table |
+| The withdrawal of a question was written to memory and then silently dropped from the stream | `q-3908709733c3` still read `superseded: null` on disk after a full cycle | `Library.add_questions` only appended ids it had not seen before, so an update to a stored question was never persisted. It now appends the row it is given and lets the last write win, like every other `add_*` in the store |
+| A withdrawal pass that ran once left earlier damage in place | the first version only retired claims retired *in that cycle* | The pass now considers every superseded claim in the library, and is idempotent: a record already carrying a reason is skipped, so re-running it changes nothing |
+
+After the fix, the false sentence appears in exactly one place in the published site: under
+"Retired statements" on the topic page that carried it, with the reason and the timestamp. It is
+gone from the facts table, the synthesis section, the competing answers, the criticisms and the
+open questions, and the machine-readable payloads agree with the page.
+
 The honest consequence: with one reachable source, the synthesis layer now composes **zero**
 statements. That is the correct result for this corpus - there is no second source to agree or
 disagree with, and no shared subject between two registry records - and the site says so on every
-topic page instead of manufacturing a comparison. Six tests cover the regression:
+topic page instead of manufacturing a comparison. Seven tests cover the regression:
 `test_date_fragments_are_never_read_as_quantities`,
 `test_a_field_label_preceding_a_number_is_its_unit`,
 `test_one_operator_repeating_a_figure_is_not_agreement`,
 `test_two_unrelated_records_are_not_described_as_disagreeing`,
-`test_the_same_subject_measured_differently_by_two_sources_is_a_divergence` and
-`test_a_withdrawn_statement_is_retired_not_deleted`.
+`test_the_same_subject_measured_differently_by_two_sources_is_a_divergence`,
+`test_a_withdrawn_statement_is_retired_not_deleted` and
+`test_records_built_on_a_retired_claim_withdraw_with_it`.
 
 The wider lesson, recorded here because it applies to every future layer: passing the verification
 gate proves that a statement's figures exist in the evidence. It does not prove the statement is
