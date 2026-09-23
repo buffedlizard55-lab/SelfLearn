@@ -3429,7 +3429,7 @@
       "topic_id": "topic-research-loop-scheduling"
     }
   ],
-  "generated_at": "2026-09-23T01:13:39Z",
+  "generated_at": "2026-09-23T01:17:40Z",
   "questions": [
     {
       "id": "q-a7a594ff0997",
@@ -5397,7 +5397,7 @@
   "source_status": [],
   "statistics": {
     "claims": 40,
-    "computed_at": "2026-09-23T01:13:39Z",
+    "computed_at": "2026-09-23T01:17:40Z",
     "documents": 10,
     "evidence_classes": [
       "peer_reviewed",
