@@ -1,5 +1,5 @@
 {
-  "bytes_read": 30045,
+  "bytes_read": 29992,
   "content_hash": "sha256:cfec0ddf8db9c02a61e378d7e14937f50b08e5764b69fc60e9463e28ba2946fe",
   "evidence_class": "commentary",
   "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -13,8 +13,8 @@
   "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
   "published_at": "2026-08-16",
   "publisher": "Y Combinator (Hacker News); Algolia operates the search index",
-  "response_sha256": "sha256:4d322e9e27f4ed074dab4e7329aeb77372f44268e9b6b8c7a629ce3ac747e636",
-  "retrieved_at": "2026-09-23T11:48:37Z",
+  "response_sha256": "sha256:b19133677de3925952de99ecf519cc056819db7e04902fb4fa8e4f0e0ed349aa",
+  "retrieved_at": "2026-09-23T17:11:59Z",
   "source_id": "hackernews",
   "source_name": "Hacker News API (via Algolia index)",
   "text": "Source: Hacker News API (via Algolia index) (https://hn.algolia.com/api/v1)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Autonomous Agentic Engineering Tools\nThe record for Autonomous Agentic Engineering Tools reports: created_at 2026-08-16T11:04:27Z, points 1, comment count 0.\nThe record for Autonomous Agentic Engineering Tools reports: objectID 49318900.\nSource note: Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
