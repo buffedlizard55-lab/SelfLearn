@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-09-23T17:12:12Z",
-  "items_new": 14,
+  "generated_at": "2026-09-23T21:36:26Z",
+  "items_new": 16,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-04b935d8d081",
+  "run_id": "run-c2c8b9b3c2ca",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-22..2026-09-23 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-22..2026-09-23 and dropped; 0 carried no readable date and were kept; 5 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 3,
+      "items_new": 5,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,28 +77,44 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: RajdeepDas012/codex-cerebrum\nThe record for",
-          "identifier": "https://github.com/RajdeepDas012/codex-cerebrum",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: nemuprojectofficial-glitch/n0-public\nThe re",
+          "identifier": "https://github.com/nemuprojectofficial-glitch/n0-public",
           "published_at": "2026-09-23",
           "source_id": "github",
-          "title": "RajdeepDas012/codex-cerebrum",
-          "url": "https://github.com/RajdeepDas012/codex-cerebrum"
+          "title": "nemuprojectofficial-glitch/n0-public",
+          "url": "https://github.com/nemuprojectofficial-glitch/n0-public"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: takecchi/alteroid\nThe record for takecchi/a",
-          "identifier": "https://github.com/takecchi/alteroid",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: itsOmidKarami/kraft\nThe record for itsOmidK",
+          "identifier": "https://github.com/itsOmidKarami/kraft",
           "published_at": "2026-09-23",
           "source_id": "github",
-          "title": "takecchi/alteroid",
-          "url": "https://github.com/takecchi/alteroid"
+          "title": "itsOmidKarami/kraft",
+          "url": "https://github.com/itsOmidKarami/kraft"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: rahulpaul-07/Sentinel-Autonomous-AppSec-Age",
-          "identifier": "https://github.com/rahulpaul-07/Sentinel-Autonomous-AppSec-Agent",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: monoes/monomind\nThe record for monoes/monom",
+          "identifier": "https://github.com/monoes/monomind",
           "published_at": "2026-09-23",
           "source_id": "github",
-          "title": "rahulpaul-07/Sentinel-Autonomous-AppSec-Agent",
-          "url": "https://github.com/rahulpaul-07/Sentinel-Autonomous-AppSec-Agent"
+          "title": "monoes/monomind",
+          "url": "https://github.com/monoes/monomind"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: elizaOS/eliza\nThe record for elizaOS/eliza ",
+          "identifier": "https://github.com/elizaOS/eliza",
+          "published_at": "2026-09-23",
+          "source_id": "github",
+          "title": "elizaOS/eliza",
+          "url": "https://github.com/elizaOS/eliza"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: GenesisClawbot/burnboard\nThe record for Gen",
+          "identifier": "https://github.com/GenesisClawbot/burnboard",
+          "published_at": "2026-09-23",
+          "source_id": "github",
+          "title": "GenesisClawbot/burnboard",
+          "url": "https://github.com/GenesisClawbot/burnboard"
         }
       ],
       "request_params": {
@@ -129,8 +145,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-23T17:12:14.890\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:a91af281a",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-23T21:36:27.552\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:2781cc2c9",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -166,43 +182,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/zentorch-weekly/2.14.0.1.dev20260916/",
+          "identifier": "https://pypi.org/project/probe-research/0.179.4/",
           "published_at": "2026-09-23",
           "source_id": "pypi",
-          "title": "zentorch-weekly 2.14.0.1.dev20260916",
-          "url": "https://pypi.org/project/zentorch-weekly/2.14.0.1.dev20260916/"
+          "title": "probe-research 0.179.4",
+          "url": "https://pypi.org/project/probe-research/0.179.4/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/bolt-anchors/0.3.0/",
+          "identifier": "https://pypi.org/project/thth/3.6.0/",
           "published_at": "2026-09-23",
           "source_id": "pypi",
-          "title": "bolt-anchors 0.3.0",
-          "url": "https://pypi.org/project/bolt-anchors/0.3.0/"
+          "title": "thth 3.6.0",
+          "url": "https://pypi.org/project/thth/3.6.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/pulumi-pulumiservice/1.4.0a1790182559/",
+          "identifier": "https://pypi.org/project/atom-tools/1.0.2/",
           "published_at": "2026-09-23",
           "source_id": "pypi",
-          "title": "pulumi-pulumiservice 1.4.0a1790182559",
-          "url": "https://pypi.org/project/pulumi-pulumiservice/1.4.0a1790182559/"
+          "title": "atom-tools 1.0.2",
+          "url": "https://pypi.org/project/atom-tools/1.0.2/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/analitiq-cdk/0.4.0/",
+          "identifier": "https://pypi.org/project/matrx-runtime/0.0.120/",
           "published_at": "2026-09-23",
           "source_id": "pypi",
-          "title": "analitiq-cdk 0.4.0",
-          "url": "https://pypi.org/project/analitiq-cdk/0.4.0/"
+          "title": "matrx-runtime 0.0.120",
+          "url": "https://pypi.org/project/matrx-runtime/0.0.120/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/swampyer/3.1.20260922/",
+          "identifier": "https://pypi.org/project/sarj-sql-lint/0.17.5/",
           "published_at": "2026-09-23",
           "source_id": "pypi",
-          "title": "swampyer 3.1.20260922",
-          "url": "https://pypi.org/project/swampyer/3.1.20260922/"
+          "title": "sarj-sql-lint 0.17.5",
+          "url": "https://pypi.org/project/sarj-sql-lint/0.17.5/"
         }
       ],
       "request_params": {},
