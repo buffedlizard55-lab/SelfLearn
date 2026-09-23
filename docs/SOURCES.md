@@ -345,7 +345,7 @@ python3 -m selflearn robots --offline       # no fetch at all; the gate is inert
 ```
 
 The published site carries the same rows on its
-[sources page](https://buffedlizard55-lab.github.io/SelfLearn/sources.html#policy),
+[sources page](https://buffedlizard55-lab.github.io/SelfLearn/docs/sources.html#policy),
 and a cycle records the figures in `reports/run_summary.json` under `figures`
 (`policy_hosts_checked`, `policy_urls_refused`) so a narrative sentence quoting them
 is auditable.
