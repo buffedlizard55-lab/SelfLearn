@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from .database import (
     DEFAULT_SQLITE_DSN,
+    MirrorNotInitialised,
     connect,
     count_rows,
     dsn_from_environment,
@@ -22,6 +23,7 @@ from .database import (
 
 __all__ = [
     "DEFAULT_SQLITE_DSN",
+    "MirrorNotInitialised",
     "connect",
     "count_rows",
     "dsn_from_environment",

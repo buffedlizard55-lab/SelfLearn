@@ -45,7 +45,8 @@ library only.
 | Stage | What happens | Where |
 | --- | --- | --- |
 | Plan | The manager picks the questions to work on and the sources to read for each | `selflearn/think/manager.py` |
-| Retrieve | Each source is polled through a politeness- and budget-limited client; failures are classified as unreachable, HTTP error, parse error or missing credential | `selflearn/fetch/` |
+| Ask permission | Every request URL is checked against its host's `robots.txt` under [RFC 9309](https://www.rfc-editor.org/rfc/rfc9309.html) before it is sent; a refused route is never requested, and the refusal is published with the verbatim rule that produced it | `selflearn/fetch/robots.py` |
+| Retrieve | Each source is polled through a politeness- and budget-limited client; failures are classified as unreachable, HTTP error, parse error, missing credential or refused by the operator's own access policy | `selflearn/fetch/` |
 | Store | The response is hashed and written to `evidence/snapshots/` **before** anything reads it | `selflearn/fetch/collector.py` |
 | Extract | Documents are turned into candidate claims by cutting sentences; scaffolding lines are dropped | `selflearn/verify/grounding.py` |
 | Verify | Each candidate is checked against the stored document: numbers, dates, polarity, direction, universality, then quote match and token coverage | `selflearn/verify/verifier.py` |
@@ -93,6 +94,7 @@ library only.
 | Repeat an experiment | `python3 tools/reproduce_experiment.py sorting-comparisons-v1` (or `search-scaling-v1`, `hash-collision-rates-v1`, `scheduling-policies-v1`, `estimation-error-v1`, `queueing-models-v1`) |
 | Read the calibration and thresholds in force | `python3 -m selflearn calibrate` |
 | Test every registered source for reachability | `python3 -m selflearn sources --probe` |
+| Read every access-policy decision, with the rule behind it | `python3 -m selflearn robots` (or `--json`) |
 | See what changed, and through which documented filter | `python3 -m selflearn scan` |
 | Resolve every URL the project publishes | `python3 tools/verify_links.py` (report in `reports/link_check.json`) |
 | Check the substance rule and the synthesis guard | `python3 -m unittest tests.test_layers -v` |
@@ -109,7 +111,7 @@ the full data behind every page is exported to `docs/data/`.
 | --- | --- |
 | [docs/DESIGN_SOURCE.md](docs/DESIGN_SOURCE.md) | The specification, section by section, and where each part was implemented |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Modules, data flow, storage layout, guarantees kept and deliberately not kept |
-| [docs/SOURCES.md](docs/SOURCES.md) | All 36 registered sources, their operators, classes, licences and access rules |
+| [docs/SOURCES.md](docs/SOURCES.md) | All 39 registered sources, their operators, classes, licences and access rules, and the RFC 9309 gate that decides what may be requested |
 | [docs/VERIFICATION.md](docs/VERIFICATION.md) | The verification rules in order of precedence, and what they cannot see |
 | [docs/LIMITATIONS.md](docs/LIMITATIONS.md) | Everything this engine does not do |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | What is next, and how we would know it worked |

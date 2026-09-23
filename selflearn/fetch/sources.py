@@ -396,6 +396,7 @@ MAPPED: dict[str, MappedAdapter] = {
             "venue": "container-title.0",
             "type": "type",
             "publisher": "publisher",
+    "organisation": "sourceOrganization",
             "citations": "is-referenced-by-count",
             "subject": "subject",
             "authors": "author",
@@ -500,12 +501,6 @@ MAPPED: dict[str, MappedAdapter] = {
             "interventions": "protocolSection.armsInterventionsModule.interventions",
         },
     ),
-    "worldbank": MappedAdapter(
-        endpoint="/country/all/indicator/{indicator}",
-        items_path="__custom__",
-        param_name="",
-        mapping={},
-    ),
     "usgs_earthquake": MappedAdapter(
         endpoint="/query",
         items_path="features",
@@ -607,6 +602,43 @@ MAPPED: dict[str, MappedAdapter] = {
             "smiles": "CanonicalSMILES",
         },
     ),
+    "npm": MappedAdapter(
+        prose_label="description",
+        label_overrides={
+            "date": "date",
+            "version": "version",
+            "keywords": "keywords",
+            "publisher": "publisher.username",
+            "maintainers": "maintainers",
+            "repository": "links.repository",
+            "quality": "score.detail.quality",
+            "popularity": "score.detail.popularity",
+            "maintenance": "score.detail.maintenance",
+            "search_score": "searchScore",
+        },
+        endpoint="/-/v1/search",
+        items_path="objects",
+        param_name="text",
+        # `size` is the documented result-count parameter: "how many results should
+        # be returned (default 20, max 250)" - REGISTRY-API.md, read 2026-09-22.
+        extra_params={"size": MAX_ITEMS_PER_REQUEST},
+        limit_param=None,
+        mapping={
+            "title": "package.name",
+            "abstract": "package.description",
+            "url": "package.links.npm",
+            "date": "package.date",
+            "version": "package.version",
+            "keywords": "package.keywords",
+            "publisher": "package.publisher.username",
+            "maintainers": "package.maintainers",
+            "repository": "package.links.repository",
+            "quality": "score.detail.quality",
+            "popularity": "score.detail.popularity",
+            "maintenance": "score.detail.maintenance",
+            "search_score": "searchScore",
+        },
+    ),
     "eurostat": MappedAdapter(endpoint="", items_path="__custom__", param_name="", mapping={}),
 }
 
@@ -663,6 +695,16 @@ class Source:
         return replace(request, params=params)
 
     # -- to implement ----------------------------------------------------
+    def unusable_query_reason(self, query: str) -> str | None:
+        """Why this adapter cannot use ``query`` at all, or ``None`` if it can.
+
+        An operator may document a constraint on the query itself rather than on
+        the response. Refusing to build a request that the operator has said it
+        will not answer is cheaper than sending it, and the reason is published as
+        a source status instead of the request failing silently.
+        """
+        return None
+
     def requests(self, query: str) -> list[Request]:  # pragma: no cover - interface
         raise NotImplementedError
 
@@ -889,6 +931,25 @@ FIELD_LABELS = {
     "identifiers": "external identifiers",
     "topics": "topics",
     "identifier": "identifier",
+    # Package-registry fields. The label is the response's own field path so a
+    # reviewer can find the value in the stored document without a translation
+    # table of the engine's invention.
+    "version": "version",
+    "keywords": "keywords",
+    "publisher": "publisher.username",
+    "maintainers": "maintainers",
+    "repository": "links.repository",
+    "quality": "score.detail.quality",
+    "popularity": "score.detail.popularity",
+    "maintenance": "score.detail.maintenance",
+    "search_score": "searchScore",
+    "downloads": "downloads",
+    "period": "period",
+    "period_start": "start",
+    "period_end": "end",
+    "package": "package",
+    "feed": "feed",
+    "guid": "guid",
 }
 
 FIELDS_PER_SENTENCE = 3
@@ -1146,13 +1207,28 @@ class EurostatSource(Source):
 
     DEFAULT_DATASET = "nrg_ind_ren"  # share of renewable energy in gross final energy consumption
 
+    #: A Eurostat dataset code is a short lowercase token with underscores
+    #: (``nrg_ind_ren``, ``tipsun20``, ``tec00111``). A research question's query
+    #: is prose, and sending prose as the dataset path can only answer 404, so the
+    #: query is used only when it already *is* a code. Before this, every query
+    #: was interpolated into the path: the source was registered, polled and never
+    #: able to answer. Found by asking every adapter to build its requests.
+    DATASET_CODE_RE = re.compile(r"^[a-z]{2,5}_[a-z0-9_]+$|^[a-z]{4,10}[0-9]{2,4}$")
+
+    def dataset_for(self, query: str) -> tuple[str, bool]:
+        """``(dataset_code, came_from_query)``."""
+        candidate = (query or "").strip().casefold()
+        if self.DATASET_CODE_RE.match(candidate):
+            return candidate, True
+        return self.DEFAULT_DATASET, False
+
     def requests(self, query: str) -> list[Request]:
-        dataset = query.strip() or self.DEFAULT_DATASET
+        dataset, _from_query = self.dataset_for(query)
         return [
             Request(
                 url=f"{self.base_url()}/statistics/1.0/data/{dataset}",
                 params={"format": "JSON", "lang": "EN"},
-                label="eurostat:dataset",
+                label=f"eurostat:{dataset}" + ("" if _from_query else ":default"),
             )
         ]
 
@@ -1410,6 +1486,338 @@ def parse_csv_evidence(text: str, *, header: str, max_rows: int = 40) -> str:
     return header + "\n" + "\n".join(" | ".join(cell.strip() for cell in row) for row in rows)
 
 
+# ---------------------------------------------------------------------------
+# Package registries (added 2026-09-22)
+# ---------------------------------------------------------------------------
+
+
+class NpmSearchSource(MappedJsonSource):
+    """``GET /-/v1/search`` on the npm registry, with the operator's own constraint.
+
+    The route, its parameters and the response shape are transcribed from
+    https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md (read
+    2026-09-22), which documents ``text``, ``size`` ("how many results should be
+    returned (default 20, max 250)"), ``from``, ``quality``, ``popularity`` and
+    ``maintenance`` as query parameters and ``objects[].package`` /
+    ``objects[].score`` as the response shape.
+
+    The minimum query length is the operator's, not a guess: npm's rate-limiting
+    announcement states "we limit package search requests to queries that are at
+    least three characters long"
+    (https://blog.npmjs.org/post/164799520460/api-rate-limiting-rolling-out.html,
+    read 2026-09-22 - the page carries the operator's own notice that its content
+    is deprecated, which is recorded in the register rather than hidden). A query
+    below the limit produces no request and a published reason, because sending it
+    would spend a request on an answer the operator has said it will not give.
+    """
+
+    MIN_SEARCH_CHARS = 3
+
+    def unusable_query_reason(self, query: str) -> str | None:
+        text = (query or "").strip()
+        if len(text) < self.MIN_SEARCH_CHARS:
+            return (
+                f"npm limits package search requests to queries of at least "
+                f"{self.MIN_SEARCH_CHARS} characters; the query {text!r} is shorter, so no request was made."
+            )
+        return None
+
+
+class NpmDownloadsSource(Source):
+    """``GET /downloads/point/{period}`` - the registry operator's own download totals.
+
+    Documented at https://github.com/npm/registry/blob/main/docs/download-counts.md
+    (read 2026-09-22): "Gets the total downloads for a given period, for all
+    packages or a specific package", with the acceptable period values
+    ``last-day``, ``last-week``, ``last-month``, ``last-year`` and a specific date
+    or ``start:end`` range, and an output of ``{downloads, start, end, package}``
+    where "The start and end dates are inclusive" and the ``package`` key "will
+    not be present" when no package was requested.
+
+    Only the all-packages form is requested here, because a package name cannot be
+    derived from a research question without inventing one. The figures are the
+    operator's daily aggregation: the same document says the previous day's logs
+    are crunched "once per day, soon after UTC midnight", so a count is always
+    about a closed period and the dates travel with it.
+    """
+
+    PERIODS: tuple[str, ...] = ("last-day", "last-week", "last-month")
+
+    def requests(self, query: str) -> list[Request]:
+        return [
+            Request(
+                url=self.base_url() + f"/downloads/point/{period}",
+                label=f"npm_downloads:{period}",
+            )
+            for period in self.PERIODS
+        ]
+
+    def parse(self, request: Request, result: HttpResult) -> list[ParsedItem]:
+        try:
+            payload = result.json()
+        except json.JSONDecodeError:
+            return GenericSource(self.spec, "/downloads/point", "").parse(request, result)
+        if not isinstance(payload, dict):
+            return []
+        period = request.url.rstrip("/").rsplit("/", 1)[-1]
+        downloads = payload.get("downloads")
+        start = payload.get("start") or ""
+        end = payload.get("end") or ""
+        package = payload.get("package") or ""
+        subject = f"{package} on npm" if package else "all packages on the npm registry"
+        title = f"npm download counts for {subject}, period {period}"
+        mapped: dict[str, str] = {
+            "downloads": as_text(downloads),
+            "period": period,
+            "period_start": as_text(start),
+            "period_end": as_text(end),
+        }
+        if package:
+            mapped["package"] = as_text(package)
+        text = render_attributed_record(
+            title,
+            mapped,
+            source_name=self.spec.name,
+            base_url=self.spec.base_url,
+            extra_notes=self.spec.notes,
+            prose_label="description",
+        )
+        return [
+            ParsedItem(
+                identifier=f"npm-downloads-{period}-{start}-{end}" + (f"-{package}" if package else ""),
+                title=title,
+                url=request.url,
+                text=text,
+                published_at=_normalise_date(end or None),
+                extra={"downloads": downloads, "period": period, "start": start, "end": end},
+            )
+        ]
+
+
+class PypiFeedSource(Source):
+    """PyPI's two documented global RSS feeds.
+
+    Both routes and their descriptions are quoted from
+    https://docs.pypi.org/api/feeds/ (read 2026-09-22):
+
+    * Newest Packages Feed, ``https://pypi.org/rss/packages.xml`` - "This feed
+      provides the latest newly created projects on PyPI, including the package
+      name, description and a link to the project page."
+    * Latest Updates Feed, ``https://pypi.org/rss/updates.xml`` - "This feed
+      provides the latest newly created releases for individual projects on PyPI,
+      including the project name and description, release version, and a link to
+      the release page."
+
+    The operator's API policy page directs consumers here for exactly what the
+    change scan does: "For periodically checking for new packages or updates to
+    existing packages, use our RSS feeds" (https://docs.pypi.org/api/).
+
+    Neither feed takes a query. They are read as published, and the collector's
+    relevance rule - not this adapter - decides which items bear on a question,
+    reporting how many it dropped. The JSON API documented at
+    https://docs.pypi.org/api/json/ is *not* requested: pypi.org/robots.txt
+    disallows ``/pypi/*/json`` to every user agent (fetched 2026-09-22), and the
+    RFC 9309 gate in :mod:`selflearn.fetch.robots` refuses it.
+    """
+
+    FEEDS: tuple[tuple[str, str, str], ...] = (
+        ("newest-packages", "/rss/packages.xml", "Newest Packages Feed"),
+        ("latest-updates", "/rss/updates.xml", "Latest Updates Feed"),
+    )
+
+    def requests(self, query: str) -> list[Request]:
+        return [
+            Request(url=self.base_url() + path, label=f"pypi:{name}")
+            for name, path, _label in self.FEEDS
+        ]
+
+    def parse(self, request: Request, result: HttpResult) -> list[ParsedItem]:
+        try:
+            root = ET.fromstring(result.text)
+        except ET.ParseError:
+            return GenericSource(self.spec, "/rss", "").parse(request, result)
+        label = next(
+            (name for name, path, _label in self.FEEDS if request.url.endswith(path)),
+            "feed",
+        )
+        feed_title = (root.findtext("channel/title") or "").strip()
+        feed_description = (root.findtext("channel/description") or "").strip()
+        out: list[ParsedItem] = []
+        for item in root.findall("channel/item"):
+            title = (item.findtext("title") or "").strip()
+            link = (item.findtext("link") or "").strip()
+            guid = (item.findtext("guid") or "").strip()
+            description = (item.findtext("description") or "").strip()
+            author = (item.findtext("author") or "").strip()
+            pub_date = (item.findtext("pubDate") or "").strip()
+            iso_date = _rfc822_to_iso(pub_date)
+            mapped: dict[str, str] = {
+                "feed": feed_title or label,
+                "guid": guid or link,
+                "date": iso_date or pub_date,
+            }
+            if author:
+                mapped["publisher"] = author
+            text = render_attributed_record(
+                title or (guid or request.url),
+                {**mapped, "description": description},
+                source_name=self.spec.name,
+                base_url=self.spec.base_url,
+                extra_notes=self.spec.notes,
+                prose_label="description",
+            )
+            if feed_description:
+                text = f"Feed description as published by the operator: {feed_description}\n{text}"
+            out.append(
+                ParsedItem(
+                    identifier=guid or link or raw_identifier(self.source_id, title + pub_date),
+                    title=title or (guid or request.url),
+                    url=link or request.url,
+                    text=text[:MAX_ITEM_TEXT],
+                    published_at=iso_date,
+                    extra={
+                        "feed": label,
+                        "feed_title": feed_title,
+                        "guid": guid,
+                        "author": author,
+                        "pub_date": pub_date,
+                    },
+                )
+            )
+            if len(out) >= MAX_ITEMS_PER_REQUEST:
+                break
+        return out
+
+
+class WorldBankSource(Source):
+    """World Bank Indicators API, using only the routes the operator documents.
+
+    Quoted from https://datahelpdesk.worldbank.org/knowledgebase/articles/898599-indicator-api-queries
+    (read 2026-09-22): "To request all indicators: https://api.worldbank.org/v2/indicator"
+    and "To request the indicator GDP (Current US$), use its indicator code,
+    NY.GDP.MKTP.CD: https://api.worldbank.org/v2/indicator/NY.GDP.MKTP.CD", with
+    ``?format=json`` shown for the JSON form. The same page lists what an
+    indicator query returns: "Code, Name, Unit, Source ID, Source Note, Source
+    Organization, Topic ID, Topic Name".
+
+    The route this adapter used before asked for
+    ``/country/all/indicator/{indicator}`` and interpolated nothing: building a
+    request raised ``KeyError: 'indicator'``, so the source was registered and
+    could never be polled. Found by asking every registered adapter to build its
+    requests for a normal research query. Nothing is invented here: a query that
+    is already an indicator code is used as one, and anything else falls back to
+    the documented "all indicators" route rather than to a code this engine chose.
+    """
+
+    #: A World Bank indicator code is dotted and upper case (``NY.GDP.MKTP.CD``);
+    #: the operator's own example is the shape this recognises.
+    INDICATOR_CODE_RE = re.compile(r"^[A-Za-z]{1,4}(\.[A-Za-z0-9]{2,}){1,4}$")
+
+    def indicator_for(self, query: str) -> str | None:
+        candidate = (query or "").strip()
+        return candidate if self.INDICATOR_CODE_RE.match(candidate) else None
+
+    def requests(self, query: str) -> list[Request]:
+        indicator = self.indicator_for(query)
+        path = f"/indicator/{indicator}" if indicator else "/indicator"
+        return [
+            Request(
+                url=self.base_url() + path,
+                params={"format": "json", "per_page": MAX_ITEMS_PER_REQUEST},
+                label="worldbank:" + (indicator or "all-indicators"),
+            )
+        ]
+
+    def parse(self, request: Request, result: HttpResult) -> list[ParsedItem]:
+        try:
+            payload = result.json()
+        except json.JSONDecodeError:
+            return GenericSource(self.spec, "/indicator", "").parse(request, result)
+        # The documented JSON form is a two-element array: a pagination object and
+        # the rows. Both shapes the operator shows are handled, and anything else
+        # falls back to the generic renderer so the bytes are still stored.
+        rows: Any = payload
+        if isinstance(payload, list) and len(payload) == 2 and isinstance(payload[1], list):
+            rows = payload[1]
+        if isinstance(rows, dict):
+            rows = [rows]
+        if not isinstance(rows, list):
+            return GenericSource(self.spec, "/indicator", "").parse(request, result)
+        out: list[ParsedItem] = []
+        for row in rows[:MAX_ITEMS_PER_REQUEST]:
+            if not isinstance(row, dict):
+                continue
+            code = as_text(row.get("id") or row.get("code"))
+            name = as_text(row.get("name") or row.get("value")) or code
+            if not name:
+                continue
+            source_note = ""
+            source_value = row.get("source")
+            if isinstance(source_value, dict):
+                source_value = source_value.get("value")
+            unit = as_text(row.get("unit"))
+            note = row.get("sourceNote") or row.get("source_note")
+            if isinstance(note, dict):
+                note = note.get("value")
+            source_note = as_text(note)
+            organisation = row.get("sourceOrganization") or row.get("source_organization")
+            if isinstance(organisation, dict):
+                organisation = organisation.get("value")
+            topics = [
+                as_text(topic.get("value") if isinstance(topic, dict) else topic)
+                for topic in (row.get("topics") or [])
+            ]
+            mapped = {
+                "identifier": code,
+                "unit": unit,
+                "publisher": as_text(source_value),
+                "organisation": as_text(organisation),
+                "topics": ", ".join(t for t in topics if t),
+            }
+            mapped = {key: value for key, value in mapped.items() if value}
+            if source_note:
+                mapped["abstract"] = source_note
+            title = f"{name}" + (f" ({code})" if code and code != name else "")
+            out.append(
+                ParsedItem(
+                    identifier=code or raw_identifier(self.source_id, title),
+                    title=title,
+                    url=request.url,
+                    text=render_attributed_record(
+                        title,
+                        mapped,
+                        source_name=self.spec.name,
+                        base_url=self.spec.base_url,
+                        extra_notes=self.spec.notes,
+                        prose_label="source note",
+                    ),
+                    published_at=None,
+                    extra={"indicator_code": code, "topics": topics},
+                )
+            )
+        return out
+
+
+def _rfc822_to_iso(value: str | None) -> str | None:
+    """Convert an RSS ``pubDate`` to the ISO-8601 date the engine records.
+
+    The feeds publish RFC-822 dates ("Tue, 22 Sep 2026 23:49:52 GMT"). The
+    conversion is the standard library's, and only the date part is kept, because
+    :func:`_normalise_date` and the verifier compare dates, not clocks.
+    """
+    if not value:
+        return None
+    from email.utils import parsedate_to_datetime
+
+    try:
+        parsed = parsedate_to_datetime(value.strip())
+    except (TypeError, ValueError):
+        return None
+    if parsed is None:
+        return None
+    return parsed.strftime("%Y-%m-%d")
+
+
 def _xml_text(element: ET.Element, path: str, namespaces: dict[str, str]) -> str:
     found = element.findtext(path, "", namespaces)
     return re.sub(r"\s+", " ", (found or "")).strip()
@@ -1461,6 +1869,10 @@ CUSTOM: dict[str, type[Source]] = {
     "nasa_api": NasaSource,
     "eurostat": EurostatSource,
     "patentsview": UsptoOdpSource,
+    "worldbank": WorldBankSource,
+    "npm": NpmSearchSource,
+    "npm_downloads": NpmDownloadsSource,
+    "pypi": PypiFeedSource,
 }
 
 # Endpoints whose schema the engine does not model as a field map; the raw
@@ -1489,7 +1901,13 @@ def build_source(source_id: str) -> Source:
     """Instantiate the adapter for a registered source."""
     spec = get_source(source_id)
     if source_id in CUSTOM:
-        return CUSTOM[source_id](spec)
+        klass = CUSTOM[source_id]
+        # A mapped adapter described in MAPPED and subclassed in CUSTOM (npm's
+        # search adapter, which adds the operator's minimum query length) needs
+        # its description; a fully custom adapter takes only the spec.
+        if source_id in MAPPED and issubclass(klass, MappedJsonSource):
+            return klass(spec, MAPPED[source_id])
+        return klass(spec)
     if source_id in MAPPED:
         return MappedJsonSource(spec, MAPPED[source_id])
     if source_id in GENERIC:

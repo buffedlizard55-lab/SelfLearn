@@ -7,10 +7,12 @@ follows when reading them.
 
 ## The register
 
-There are 36 registered sources. Eighteen publish official data, nine are primary
+There are 39 registered sources. Eighteen publish official data, twelve are primary
 sources, three are peer-reviewed indexes, four are reputable secondary compilations
 and two are commentary. Four require a credential; the engine will not call those
-APIs unless the credential is present in the environment.
+APIs unless the credential is present in the environment. The counts are read from
+the register itself (`python3 -c "from selflearn.fetch.registry import registry_summary;
+print(registry_summary())"`), so they cannot drift from the code.
 
 | Source id | Name | Operator | Evidence class | Key required | Official documentation |
 | --- | --- | --- | --- | --- | --- |
@@ -30,6 +32,8 @@ APIs unless the credential is present in the environment.
 | `imf` | IMF Data API (SDMX) | International Monetary Fund | Data published by a government, standards body or international agency. | no | <https://datahelp.imf.org/knowledgebase/articles/667681-json-restful-web-service> |
 | `nasa_api` | NASA Open APIs | National Aeronautics and Space Administration | Data published by a government, standards body or international agency. | no | <https://api.nasa.gov/> |
 | `ncei` | NOAA NCEI Climate Data Online API | U.S. National Oceanic and Atmospheric Administration, National Centers for Environmental Information | Data published by a government, standards body or international agency. | yes (NCEI_TOKEN) | <https://www.ncei.noaa.gov/cdo-web/webservices/v2> |
+| `npm` | npm Registry Search API | npm, Inc. (GitHub, Microsoft) | Original data, official API response, official document or dataset. | no | <https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md> |
+| `npm_downloads` | npm Download Counts API | npm, Inc. (GitHub, Microsoft) | Original data, official API response, official document or dataset. | no | <https://github.com/npm/registry/blob/main/docs/download-counts.md> |
 | `nvd` | NIST National Vulnerability Database API | U.S. National Institute of Standards and Technology | Data published by a government, standards body or international agency. | no | <https://nvd.nist.gov/developers/vulnerabilities> |
 | `nws` | National Weather Service API | U.S. National Weather Service, NOAA | Data published by a government, standards body or international agency. | no | <https://www.weather.gov/documentation/services-web-api> |
 | `oecd` | OECD Data Explorer API (SDMX) | Organisation for Economic Co-operation and Development | Data published by a government, standards body or international agency. | no | <https://data.oecd.org/fr/api/sdmx-json-documentation/> |
@@ -39,6 +43,7 @@ APIs unless the credential is present in the environment.
 | `patentsview` | USPTO Open Data Portal API (PatentsView data) | U.S. Patent and Trademark Office (Open Data Portal) | Data published by a government, standards body or international agency. | yes (USPTO_ODP_API_KEY) | <https://data.uspto.gov/apis/getting-started> |
 | `pubchem` | PubChem PUG-REST | U.S. National Library of Medicine, NCBI | Original data, official API response, official document or dataset. | no | <https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest> |
 | `pubmed` | NCBI E-utilities (PubMed) | U.S. National Library of Medicine, National Center for Biotechnology Information | Peer-reviewed publication indexed by a DOI registry or PubMed. | no | <https://www.ncbi.nlm.nih.gov/books/NBK25497/> |
+| `pypi` | PyPI RSS Feeds (newest packages and latest updates) | Python Software Foundation (PyPI) | Original data, official API response, official document or dataset. | no | <https://docs.pypi.org/api/feeds/> |
 | `rcsb_pdb` | RCSB Protein Data Bank Data API | RCSB PDB (Rutgers/UCSD/UCSF) for the wwPDB consortium | Original data, official API response, official document or dataset. | no | <https://data.rcsb.org/redoc/index.html> |
 | `sec_edgar` | SEC EDGAR submissions and full-text search | U.S. Securities and Exchange Commission | Data published by a government, standards body or international agency. | no | <https://www.sec.gov/search-filings/edgar-application-programming-interfaces> |
 | `semantic_scholar` | Semantic Scholar Academic Graph API | Allen Institute for AI (non-profit) | Encyclopaedic or established secondary compilation. | no | <https://www.semanticscholar.org/product/api> |
@@ -76,6 +81,11 @@ source from the most recent run.
    status code. The two produce different remedies.
 8. **Check relevance.** A result whose text shares no meaningful token with the query
    is dropped, and the number dropped is reported.
+9. **Read the operator's access policy before asking.** Every request URL is checked
+   against the host's `robots.txt` under
+   [RFC 9309](https://www.rfc-editor.org/rfc/rfc9309.html) before it is sent, and a
+   refused route is published with the verbatim rule that refused it (see
+   [Access policy](#access-policy-rfc-9309-honoured-literally) below).
 
 ## What each source can and cannot establish
 
@@ -91,6 +101,10 @@ records a class per source rather than a single "trusted" flag.
 - Official statistical series (Eurostat, World Bank, IMF, OECD, Census, EIA, NCEI,
   WHO, USGS, NASA, UN SDG) establish the published value, with the publisher's own
   revision policy attached.
+- Package registries (npm, PyPI) are primary sources for what the registry recorded:
+  a package's own metadata is its maintainer's text, and an npm download count is the
+  operator's daily aggregation of install logs, not a live figure. Neither establishes
+  that the software works or that it is safe.
 - Commentary (Hacker News) is recorded as commentary and is never used alone to
   support a fact claim.
 
@@ -273,6 +287,68 @@ listed here rather than smoothed over.
    the legacy `http://dataservices.imf.org/REST/SDMX_JSON.svc` service. The URL is
    flagged rather than silently swapped with a third-party directory. A human reviewer
    needs to visit IMF's data portal to verify the current official documentation URL.
+
+## Access policy: RFC 9309, honoured literally
+
+The register's admission rule says the engine does not read a site that forbids it.
+That rule is now a check in code, not a sentence: `selflearn/fetch/robots.py`
+implements the
+[Robots Exclusion Protocol, RFC 9309](https://www.rfc-editor.org/rfc/rfc9309.html)
+(published September 2022, Standards Track;
+[text](https://www.rfc-editor.org/rfc/rfc9309.txt)) and is attached to the HTTP
+client, so no caller - collector, reachability probe, change scan - can bypass it by
+forgetting to ask.
+
+What is implemented, clause by clause:
+
+| Clause | What the standard requires | What the gate does |
+| --- | --- | --- |
+| 2.2.1 | A group applies when its product token "is a substring of the User-Agent HTTP header"; several matching groups are merged; otherwise the `*` group applies; if neither exists, no rules apply | Group selection by case-insensitive substring, merge of every matching group, `*` fallback, and a distinct published status (`allowed_no_applicable_group`) when nothing applies |
+| 2.2.2 | "The most specific match found MUST be used. The most specific match is the match that has the most octets." An equivalent allow and disallow resolve in favour of allow; no match means allowed | Rules ranked by octets in the pattern, allow winning ties, and a second distinct status (`allowed`) when a group applied but no rule matched the path |
+| 2.2.3 | `#` starts a comment, `$` ends a pattern, `*` matches zero or more of any character | All three, and `?` treated as a literal because the protocol defines only those three specials |
+| 2.3 | The file is `scheme:[//authority]/robots.txt`, UTF-8, media type `text/plain` | URL built that way; a body served with another media type is recorded as an irregularity and then parsed anyway |
+| 2.3.1.3 | A 4xx robots.txt means "unavailable" and the crawler "MAY access any resources on the server" | Fails **open**, status `unavailable_allowed` |
+| 2.3.1.4 | An unreachable robots.txt "means the robots.txt file is undefined and the crawler MUST assume complete disallow" | Fails **closed**, status `unreachable_disallowed`; a cached copy may still be used (`unreachable_cached`) |
+| 2.4 | A cached copy "SHOULD NOT" be used for more than 24 hours unless the file is unreachable | `state/robots.json`, reused inside 24 hours, refetched after, and the age published |
+| 2.5 | The parsing limit "MUST be at least 500 kibibytes" | 512 KiB parsed, truncation recorded |
+
+Two published departures from a strict reading, both recorded in the module's own
+docstring rather than left implicit: matching is against the **path only** (RFC 9309
+2.2.2 speaks of the path, while its Figure 4 lists a URL with a query in a column
+headed "Path to Match", which is ambiguous), and an unreachable file disallows with
+its own status rather than being folded into "the source is down".
+
+Two operators' files decided how this project reads them:
+
+- **PyPI** documents a JSON API at <https://docs.pypi.org/api/json/>, and
+  <https://pypi.org/robots.txt> (fetched 2026-09-22) disallows `/pypi/*/json`,
+  `/pypi/*/*/json`, `/pypi*?`, `/search*`, `/simple/` and `/packages/` to every user
+  agent. The operator's own API page directs consumers elsewhere: "For periodically
+  checking for new packages or updates to existing packages, use our RSS feeds"
+  (<https://docs.pypi.org/api/>). The engine therefore requests only
+  `https://pypi.org/rss/packages.xml` and `https://pypi.org/rss/updates.xml`
+  (<https://docs.pypi.org/api/feeds/>), and the gate refuses the JSON route if
+  anything ever asks for it.
+- **npm** answers `https://registry.npmjs.org/robots.txt` with HTTP 200 and
+  `content-type: application/json` - the package document of a package literally
+  named `robots.txt` (observed 2026-09-22). A JSON body has no `user-agent:` lines,
+  so 2.2.1 leaves no rules applying and the registry search route is allowed. The
+  media type is published as an irregularity next to the decision, because 2.3 asks
+  for `text/plain`.
+
+Read the decisions yourself:
+
+```console
+python3 -m selflearn robots                 # every route the engine would request
+python3 -m selflearn robots --json          # the same, as data
+python3 -m selflearn robots --offline       # no fetch at all; the gate is inert
+```
+
+The published site carries the same rows on its
+[sources page](https://buffedlizard55-lab.github.io/SelfLearn/sources.html#policy),
+and a cycle records the figures in `reports/run_summary.json` under `figures`
+(`policy_hosts_checked`, `policy_urls_refused`) so a narrative sentence quoting them
+is auditable.
 
 ## Change scanning
 

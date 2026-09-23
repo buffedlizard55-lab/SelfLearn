@@ -224,10 +224,28 @@ def sync_library(root: Path, connection: Any) -> dict[str, Any]:
     }
 
 
+class MirrorNotInitialised(RuntimeError):
+    """Raised when a database has no ``library_rows`` table to read.
+
+    ``storage verify`` and ``site --from-database`` both read the mirror. Against
+    a database that has never been synced - a fresh checkout, a path typed by hand,
+    an empty SQLite file created by the driver on connect - the read raised the
+    driver's own error (``sqlite3.OperationalError: no such table: library_rows``)
+    as a traceback, which reads like a bug in the engine rather than what it is:
+    nothing has been mirrored yet. This exception carries the command that fixes it.
+    """
+
+
 def read_rows(connection: Any) -> dict[str, list[dict[str, Any]]]:
     """Every row in the database, grouped by stream in insertion order."""
     cursor = connection.cursor()
-    cursor.execute("SELECT stream, payload FROM library_rows ORDER BY seq")
+    try:
+        cursor.execute("SELECT stream, payload FROM library_rows ORDER BY seq")
+    except Exception as exc:  # driver-specific: no such table, relation does not exist
+        raise MirrorNotInitialised(
+            f"{type(exc).__name__}: {exc}. The mirror has no library_rows table, so there is nothing to compare. "
+            "Run `python3 -m selflearn storage sync` to write the JSONL rows into it first."
+        ) from exc
     grouped: dict[str, list[dict[str, Any]]] = {stream: [] for stream in STREAM_FILES}
     for stream, payload in cursor.fetchall():
         grouped.setdefault(stream, []).append(json.loads(payload))

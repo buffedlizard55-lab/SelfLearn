@@ -31,6 +31,7 @@ from .experiment.catalogue import EXPERIMENTS, catalogue, get_experiment
 from .experiment.runner import run_experiment
 from .fetch.net import HttpClient, NetworkUnavailable
 from .fetch.registry import REGISTRY, registry_summary, source_matrix
+from .fetch.robots import RobotsDisallowed, load_gate
 from .learn.calibration import run_calibration, thresholds_in_force
 from .learn.store import Library
 from .models import Irregularity, SourceStatus
@@ -131,7 +132,10 @@ def cmd_audit(args: argparse.Namespace) -> int:
     print(f"claims re-checked: {len(claims)}")
     print(f"documents on file: {len(library.evidence)}")
     print("findings (this audit): " + json.dumps(fresh_stats["by_severity"]))
-    print("findings (published, merged): " + json.dumps(stats["by_severity"]))
+    print(
+        "findings (published, merged): open " + json.dumps(stats["by_severity"])
+        + "; resolved by a reviewer " + json.dumps(stats["resolved_by_severity"])
+    )
     for finding in sorted(findings, key=lambda f: f.severity)[: args.limit]:
         print(f"  [{finding.severity}] {finding.stage}: {finding.summary}")
     if args.write:
@@ -172,7 +176,13 @@ def rebuild_site(
     run_label = "site-rebuild"
     database_report: dict | None = None
     if from_database:
-        from .storage import connect, dsn_from_environment, load_library_from_database, verify_views
+        from .storage import (
+            MirrorNotInitialised,
+            connect,
+            dsn_from_environment,
+            load_library_from_database,
+            verify_views,
+        )
 
         dsn_value = dsn_from_environment(dsn)
         try:
@@ -181,7 +191,13 @@ def rebuild_site(
             print(f"site --from-database: {exc}", file=sys.stderr)
             return 2
         try:
-            database_report = verify_views(root, connection, dsn=dsn_value)
+            try:
+                database_report = verify_views(root, connection, dsn=dsn_value)
+            except MirrorNotInitialised as exc:
+                # An empty mirror is not a reason to publish from it, and not a
+                # reason to print a driver traceback either: name the fix.
+                print(f"site --from-database: {exc}", file=sys.stderr)
+                return 2
             if not (database_report.get("rows_identical") and database_report.get("library_identical")):
                 differing = [
                     name
@@ -277,8 +293,9 @@ def cmd_sources(args: argparse.Namespace) -> int:
         print(json.dumps(registry_summary(), indent=2, sort_keys=True))
         return 0
 
-    client = HttpClient(max_requests=args.max_requests)
-    reachable, unreachable, skipped = [], [], []
+    gate = load_gate(ROOT, allow_network=True)
+    client = HttpClient(max_requests=args.max_requests, robots=gate)
+    reachable, unreachable, skipped, refused = [], [], [], []
     for source_id in sorted(REGISTRY):
         spec = REGISTRY[source_id]
         if spec.requires_key and not _has_credential(spec):
@@ -289,13 +306,22 @@ def cmd_sources(args: argparse.Namespace) -> int:
             result = client.get(url)
             reachable.append((source_id, result.status, len(result.body)))
             print(f"reachable   {source_id:18} HTTP {result.status} {len(result.body)} bytes")
+        except RobotsDisallowed as exc:
+            refused.append(source_id)
+            print(f"refused     {source_id:18} {exc.decision.status}: {exc.decision.detail[:110]}")
         except NetworkUnavailable as exc:
             unreachable.append((source_id, str(exc)[:80]))
             print(f"unreachable {source_id:18} {str(exc)[:90]}")
         except Exception as exc:  # HttpError and friends: reachable but unhappy
             unreachable.append((source_id, str(exc)[:80]))
             print(f"error       {source_id:18} {str(exc)[:90]}")
-    print(json.dumps({"reachable": len(reachable), "unreachable": len(unreachable), "credential_required": skipped}, indent=2))
+    gate.save()
+    print(json.dumps({
+        "reachable": len(reachable),
+        "unreachable": len(unreachable),
+        "credential_required": skipped,
+        "refused_by_access_policy": refused,
+    }, indent=2))
     return 0
 
 
@@ -403,7 +429,8 @@ def cmd_scan(args: argparse.Namespace) -> int:
     """
     from .fetch.changes import ChangeScanner, mechanism_table, summarise_scan
 
-    client = HttpClient(max_requests=args.max_requests, allow_network=not args.offline)
+    gate = load_gate(ROOT, allow_network=not args.offline)
+    client = HttpClient(max_requests=args.max_requests, allow_network=not args.offline, robots=gate)
     scanner = ChangeScanner(client, STATE_DIR / "change_scan.json", allow_network=not args.offline)
     targets = [s.strip() for s in args.sources.split(",") if s.strip()] if args.sources else None
     outcome = scanner.scan(
@@ -464,6 +491,93 @@ def cmd_scan(args: argparse.Namespace) -> int:
 
     for finding in outcome.irregularities:
         print(f"[{finding.severity}] {finding.summary}")
+    gate.save()
+    return 0
+
+
+def cmd_robots(args: argparse.Namespace) -> int:
+    """Print the access-policy decision for every route the engine would request.
+
+    The engine obeys RFC 9309 rather than treating robots.txt as advice, and this
+    command is how a reviewer sees that: for each registered source it builds the
+    requests its adapter would send for a query, checks each URL against the
+    operator's own robots.txt, and prints the decision with the verbatim rule that
+    produced it. Nothing is fetched except robots.txt itself, which is cached for
+    24 hours as RFC 9309 2.4 asks.
+    """
+    from .fetch.sources import build_source
+
+    query = args.query
+    gate = load_gate(ROOT, allow_network=not args.offline)
+    rows: list[dict[str, object]] = []
+    for source_id in sorted(REGISTRY):
+        spec = REGISTRY[source_id]
+        if spec.requires_key and not _has_credential(spec):
+            rows.append({
+                "source_id": source_id,
+                "url": spec.base_url,
+                "status": "not_checked",
+                "allowed": None,
+                "rule": "",
+                "detail": f"Credential {spec.key_env} is not set, so no request would be made and no policy check was needed.",
+            })
+            continue
+        try:
+            requests = build_source(source_id).requests(query)
+        except Exception as exc:  # a malformed adapter is a finding, not a crash
+            rows.append({
+                "source_id": source_id,
+                "url": spec.base_url,
+                "status": "adapter_error",
+                "allowed": None,
+                "rule": "",
+                "detail": f"{type(exc).__name__}: {exc}"[:300],
+            })
+            continue
+        for request in requests or []:
+            url = request.url
+            if request.params:
+                import urllib.parse
+
+                url = url + ("&" if "?" in url else "?") + urllib.parse.urlencode(request.params, doseq=True)
+            decision = gate.check(url)
+            rows.append({
+                "source_id": source_id,
+                "url": url,
+                "status": decision.status,
+                "allowed": decision.allowed,
+                "rule": decision.rule,
+                "detail": decision.detail,
+                "robots_url": decision.robots_url,
+                "content_type": decision.content_type,
+                "http_status": decision.http_status,
+                "sha256": decision.sha256,
+            })
+    gate.save()
+
+    if args.json:
+        print(json.dumps({"query": query, "spec": gate.payload()["spec"], "rows": rows,
+                          "hosts": gate.payload()["hosts"]}, indent=2, sort_keys=True, ensure_ascii=False))
+        return 0
+
+    allowed = sum(1 for row in rows if row["allowed"] is True)
+    refused = sum(1 for row in rows if row["allowed"] is False)
+    for row in rows:
+        mark = {True: "allow  ", False: "REFUSE ", None: "skip   "}[row["allowed"]]
+        print(f"{mark} {row['source_id']:14} {str(row['status']):26} {str(row['url'])[:96]}")
+        if row["rule"]:
+            print(f"               rule: {row['rule']}")
+        if row["detail"]:
+            print(f"               {str(row['detail'])[:200]}")
+    print(json.dumps({
+        "urls_checked": len(rows),
+        "allowed": allowed,
+        "refused": refused,
+        "not_checked": sum(1 for row in rows if row["allowed"] is None),
+        "hosts": gate.payload()["hosts_checked"],
+        "spec": gate.payload()["spec"],
+        "cache": str(STATE_DIR / "robots.json"),
+    }, indent=2, sort_keys=True))
     return 0
 
 
@@ -568,6 +682,7 @@ def cmd_storage(args: argparse.Namespace) -> int:
     ``status``  row counts per stream in the database.
     """
     from .storage import (
+        MirrorNotInitialised,
         connect,
         count_rows,
         dsn_from_environment,
@@ -589,11 +704,20 @@ def cmd_storage(args: argparse.Namespace) -> int:
             print(json.dumps({"database": dsn, **report}, indent=2, sort_keys=True))
             return 0
         if args.action == "verify":
-            report = verify_views(ROOT, connection, dsn=dsn)
+            try:
+                report = verify_views(ROOT, connection, dsn=dsn)
+            except MirrorNotInitialised as exc:
+                print(f"storage verify: {exc}", file=sys.stderr)
+                return 2
             print(json.dumps(report, indent=2, sort_keys=True))
             return 0 if report.get("rows_identical") and report.get("library_identical") else 1
         # status
-        print(json.dumps({"database": dsn, "rows_by_stream": count_rows(connection)}, indent=2, sort_keys=True))
+        try:
+            rows_by_stream = count_rows(connection)
+        except MirrorNotInitialised as exc:
+            print(f"storage status: {exc}", file=sys.stderr)
+            return 2
+        print(json.dumps({"database": dsn, "rows_by_stream": rows_by_stream}, indent=2, sort_keys=True))
         return 0
     finally:
         connection.close()
@@ -733,6 +857,15 @@ def build_parser() -> argparse.ArgumentParser:
 
     credentials = sub.add_parser("credentials", help="show which keyed sources are enabled and how to enable them")
     credentials.set_defaults(func=cmd_credentials)
+
+    robots = sub.add_parser(
+        "robots",
+        help="show the RFC 9309 access-policy decision for every route the engine would request",
+    )
+    robots.add_argument("--query", default="autonomous research agent", help="query the adapters build requests from")
+    robots.add_argument("--offline", action="store_true", help="do not fetch robots.txt; report the cached decisions only")
+    robots.add_argument("--json", action="store_true", help="print the decisions as JSON")
+    robots.set_defaults(func=cmd_robots)
 
     storage = sub.add_parser(
         "storage",

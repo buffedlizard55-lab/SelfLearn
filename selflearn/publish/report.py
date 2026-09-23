@@ -530,6 +530,7 @@ def build_site_data(
         "topic_proposals": list(run_summary.get("topic_proposals") or []),
         "change_scan": dict(run_summary.get("change_scan") or {}),
         "change_mechanisms": change_mechanism_table(),
+        "robots": robots_payload(run_summary),
         "link_check": load_link_check(),
         "credentials": credential_table(),
     }
@@ -606,6 +607,92 @@ def load_link_check(root: Any = None) -> dict[str, Any]:
         "by_status": payload.get("by_status", {}),
         "by_source": by_source,
     }
+
+
+def load_robots_state(root: Any = None) -> dict[str, Any]:
+    """The stored RFC 9309 access-policy cache, for a rebuild with no cycle behind it.
+
+    A cycle publishes the gate's decisions through its run summary. A manual
+    ``site`` rebuild has no cycle, so it reads ``state/robots.json`` - the cache
+    the gate writes - and publishes that instead, labelled with where it came
+    from. An empty cache publishes an empty section that says the check has not
+    been run and names the command that runs it; it never invents a decision.
+    """
+    import json
+    from pathlib import Path
+
+    from ..config import ROOT
+    from ..fetch.robots import SPEC_URL
+
+    base = Path(root) if root else ROOT
+    path = base / "state" / "robots.json"
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {
+            "available": False,
+            "spec": SPEC_URL,
+            "detail": (
+                "No access-policy check has been recorded yet. Run `python3 -m selflearn robots` (or any cycle) to "
+                "read each operator's robots.txt and store the decision."
+            ),
+        }
+    hosts = payload.get("hosts") if isinstance(payload, dict) else None
+    if not isinstance(hosts, dict):
+        return {"available": False, "spec": SPEC_URL, "detail": "The stored access-policy cache holds no host records."}
+    rows: list[dict[str, Any]] = []
+    for host in sorted(hosts):
+        row = dict(hosts[host] or {})
+        text = row.pop("text", "") or ""
+        row["excerpt"] = "\n".join(text.splitlines()[:18])
+        rows.append(row)
+    decisions = [row for row in (payload.get("decisions") or []) if isinstance(row, dict)]
+    by_status: dict[str, int] = {}
+    for row in decisions:
+        status = str(row.get("status") or "unknown")
+        by_status[status] = by_status.get(status, 0) + 1
+    return {
+        "available": True,
+        "source": "state/robots.json",
+        "spec": payload.get("spec") or SPEC_URL,
+        "generated_at": payload.get("generated_at", ""),
+        "decisions_recorded_at": payload.get("decisions_recorded_at") or payload.get("generated_at", ""),
+        "user_agent": payload.get("user_agent", ""),
+        "cache_max_age_hours": payload.get("cache_max_age_hours"),
+        "hosts_published": len(rows),
+        "hosts_checked": len(rows),
+        "urls_checked": len(decisions),
+        "urls_refused": sum(1 for row in decisions if row.get("allowed") is False),
+        "by_status": dict(sorted(by_status.items())),
+        "hosts": rows,
+        "decisions": decisions,
+    }
+
+
+def robots_payload(run_summary: dict[str, Any] | None) -> dict[str, Any]:
+    """The access-policy table the sources page renders.
+
+    A cycle that made requests publishes the gate's own payload. A cycle that ran
+    offline made none, and a manual ``site`` rebuild runs no cycle at all; in both
+    cases the last recorded check in ``state/robots.json`` is the honest thing to
+    publish, labelled with the file it came from and the moment it was made, so an
+    offline run cannot blank a table a networked check filled.
+    """
+    summary = dict((run_summary or {}).get("robots") or {})
+    # A cycle that actually asked the gate carries its own decisions. One that ran
+    # offline carries the cached host records and no decisions at all, and
+    # publishing that as "this cycle" would show a table the cycle did not make.
+    if summary.get("decisions"):
+        summary.setdefault("available", True)
+        summary.setdefault("source", "this cycle")
+        return summary
+    stored = load_robots_state()
+    if stored.get("available"):
+        return stored
+    summary.setdefault("available", False)
+    summary.setdefault("source", "this cycle")
+    summary.setdefault("detail", stored.get("detail", ""))
+    return summary
 
 
 def credential_table() -> list[dict[str, Any]]:

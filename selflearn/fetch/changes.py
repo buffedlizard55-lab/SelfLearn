@@ -11,7 +11,7 @@ guesses at an undocumented parameter, because an unsupported filter usually does
 not fail loudly: it returns the unfiltered result set and the engine would report
 old items as new.
 
-The five mechanisms implemented, and where each is documented:
+The six mechanisms implemented, and where each is documented:
 
 ``crossref``        ``filter=from-index-date:<date>``
                     https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/
@@ -23,6 +23,9 @@ The five mechanisms implemented, and where each is documented:
                     https://nvd.nist.gov/developers/vulnerabilities
 ``usgs_earthquake`` ``starttime`` / ``endtime`` (and ``updatedafter``)
                     https://earthquake.usgs.gov/fdsnws/event/1/
+``pypi``            no filter parameter exists: the Latest Updates Feed is read as
+                    published and the scanner itself drops items outside the window
+                    https://docs.pypi.org/api/feeds/
 
 A source that offers no change filter is *not* scanned and is reported as
 ``no_change_filter`` with the reason, rather than being polled and its whole
@@ -41,6 +44,7 @@ from ..models import Failure, Irregularity
 from ..util import load_json, save_json, stable_id, utcnow_iso
 from .net import HttpClient, HttpError, NetworkUnavailable
 from .registry import get_source
+from .robots import RobotsDisallowed
 from .sources import ParsedItem, Request, build_source
 
 MAX_ITEMS_PER_SCAN = 10
@@ -79,7 +83,8 @@ MECHANISMS: dict[str, ChangeMechanism] = {
         kind="date",
         note=(
             "arXiv documents sortBy=relevance|lastUpdatedDate|submittedDate with sortOrder=ascending|descending; "
-            "the newest-first ordering is the change signal, and the client drops entries older than the window."
+            "the newest-first ordering is the change signal, and the scanner drops entries published before the "
+            "window using each entry's own date, reporting how many it dropped."
         ),
     ),
     "github": ChangeMechanism(
@@ -109,6 +114,22 @@ MECHANISMS: dict[str, ChangeMechanism] = {
         path="/query",
         kind="range",
         note="starttime and endtime are ISO-8601; updatedafter is available for revision tracking.",
+    ),
+    "pypi": ChangeMechanism(
+        source_id="pypi",
+        label="Newly created releases, newest first, as published in the Latest Updates Feed",
+        docs_url="https://docs.pypi.org/api/feeds/",
+        path="/rss/updates.xml",
+        kind="feed",
+        note=(
+            "The feed takes no filter parameter: https://docs.pypi.org/api/feeds/ documents it as providing "
+            "'the latest newly created releases for individual projects on PyPI, including the project name and "
+            "description, release version, and a link to the release page', and the operator's API policy page "
+            "https://docs.pypi.org/api/ directs consumers to the RSS feeds 'For periodically checking for new "
+            "packages or updates to existing packages'. Each item carries a pubDate, so the scanner drops items "
+            "published before the window and reports how many it dropped. The JSON API route is not used: "
+            "pypi.org/robots.txt disallows /pypi/*/json to every user agent (fetched 2026-09-22)."
+        ),
     ),
 }
 
@@ -215,6 +236,10 @@ def change_request(source_id: str, query: str, *, since: str, until: str, limit:
             "orderby": "time",
             "limit": limit,
         }
+    elif source_id == "pypi":
+        # The feed is published as a whole; there is no parameter to narrow it, so
+        # nothing is invented here and the window is applied to the returned items.
+        params = {}
     else:  # pragma: no cover - MECHANISMS is the only way in
         raise KeyError(f"no change mechanism registered for {source_id}")
     return Request(
@@ -248,7 +273,7 @@ def mechanism_table() -> list[dict[str, Any]]:
 class SourceScan:
     source_id: str
     source_name: str
-    status: str                  # scanned | unreachable | error | skipped | not_attempted | no_change_filter
+    status: str                  # scanned | unreachable | error | skipped | not_attempted | policy_refused
     window: dict[str, Any] = field(default_factory=dict)
     request_url: str = ""
     request_params: dict[str, Any] = field(default_factory=dict)
@@ -258,6 +283,12 @@ class SourceScan:
     items_new: int = 0
     new_items: list[dict[str, Any]] = field(default_factory=list)
     detail: str = ""
+    #: How many items the source answered with, before the window was applied.
+    items_returned: int = 0
+    #: How many were dropped because they were published before the window.
+    items_out_of_window: int = 0
+    #: How many carried no date the scanner could read, and were kept anyway.
+    items_undated: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -271,6 +302,9 @@ class SourceScan:
             "docs_url": self.docs_url,
             "items_seen": self.items_seen,
             "items_new": self.items_new,
+            "items_returned": self.items_returned,
+            "items_out_of_window": self.items_out_of_window,
+            "items_undated": self.items_undated,
             "new_items": self.new_items,
             "detail": self.detail,
         }
@@ -297,6 +331,8 @@ class ScanOutcome:
             "sources_scanned": sum(1 for s in self.scans if s.status == "scanned"),
             "sources_attempted": len(self.scans),
             "items_seen": sum(s.items_seen for s in self.scans),
+            "items_returned": sum(s.items_returned for s in self.scans),
+            "items_out_of_window": sum(s.items_out_of_window for s in self.scans),
             "items_new": self.items_new,
             "by_status": _by_status(self.scans),
             "scans": [scan.to_dict() for scan in self.scans],
@@ -426,6 +462,36 @@ class ChangeScanner:
             scan.request_params = dict(request.params)
             try:
                 result = self.client.get(request.url, params=request.params, headers=request.headers)
+            except RobotsDisallowed as exc:
+                decision = exc.decision
+                scan.status = "policy_refused"
+                scan.detail = (decision.detail or decision.status)[:300]
+                outcome.scans.append(scan)
+                outcome.failures.append(
+                    Failure(
+                        failure_id=stable_id("fail", source_id, "scan", decision.status),
+                        topic_id=None,
+                        stage="policy",
+                        summary=f"{source_id} not scanned: the operator's access policy refused the request",
+                        detail=(decision.detail or "")[:500],
+                        remedy=(
+                            f"Read {decision.robots_url} and the operator's documentation at {mechanism.docs_url}. "
+                            "The engine obeys RFC 9309 and does not work around a disallow rule."
+                        ),
+                    )
+                )
+                outcome.irregularities.append(
+                    _irregularity(
+                        "warning" if decision.status == "disallowed" else "info",
+                        f"Change scan for {source_id} was refused by the operator's robots.txt",
+                        f"{decision.detail[:280]}. The window {since}..{until} was not polled for this source.",
+                        action=(
+                            "Register a route the operator's own rules permit, or leave the source unscanned."
+                        ),
+                        url=decision.robots_url,
+                    )
+                )
+                continue
             except NetworkUnavailable as exc:
                 scan.status = "unreachable"
                 scan.detail = str(exc)[:300]
@@ -492,32 +558,67 @@ class ChangeScanner:
                 )
                 continue
 
+            returned = len(items)
+            # The window is applied to what came back, because a source that
+            # documents a filter is not obliged to honour it exactly and a feed
+            # has no filter at all. An item published before the window is not
+            # "new" and must not be announced as one; the count of dropped items
+            # is published beside the count kept, so a source that returns its
+            # whole result set is visible rather than silently re-announced.
+            boundary = _parse_iso(since).date()
+            considered: list[ParsedItem] = []
+            out_of_window = 0
+            undated = 0
+            for item in items:
+                stamp = (item.published_at or "").strip()
+                if not stamp:
+                    undated += 1
+                    considered.append(item)
+                    continue
+                try:
+                    published = _parse_iso(stamp).date()
+                except ValueError:
+                    undated += 1
+                    considered.append(item)
+                    continue
+                if published < boundary:
+                    out_of_window += 1
+                    continue
+                considered.append(item)
+
             seen_before = self._seen_ids(source_id)
             fresh: list[dict[str, Any]] = []
-            for item in items:
+            for item in considered:
                 identifier = f"{source_id}:{item.identifier}"
                 if identifier in seen_before:
                     continue
                 fresh.append(_item_row(item, source_id))
-            scan.items_seen = len(items)
+            scan.items_returned = returned
+            scan.items_seen = len(considered)
+            scan.items_out_of_window = out_of_window
+            scan.items_undated = undated
             scan.items_new = len(fresh)
             scan.new_items = fresh[:limit]
             scan.status = "scanned"
             scan.detail = (
-                f"{len(items)} item(s) returned for the window {since}..{until}; "
-                f"{len(fresh)} not seen by this engine before."
+                f"{returned} item(s) returned; {out_of_window} published before the window {since}..{until} and "
+                f"dropped; {undated} carried no readable date and were kept; {len(fresh)} not seen by this engine "
+                "before."
             )
             if scan.window.get("first_scan"):
                 scan.detail += (
                     " First scan for this source: the window is the engine's default look-back, not a real "
                     "interval since a previous run, so 'new' here means 'not previously recorded'."
                 )
+            # Everything the source returned is remembered, including the items
+            # dropped as out of window: they can only get older, so remembering
+            # them keeps a later run from announcing them as new.
             self._remember(
                 source_id,
                 [f"{source_id}:{item.identifier}" for item in items],
                 now,
                 "scanned",
-                len(items),
+                returned,
             )
             outcome.scans.append(scan)
 
@@ -531,6 +632,8 @@ def summarise_scan(outcome: ScanOutcome) -> dict[str, Any]:
         "sources_attempted": len(outcome.scans),
         "sources_scanned": sum(1 for s in outcome.scans if s.status == "scanned"),
         "items_seen": sum(s.items_seen for s in outcome.scans),
+        "items_returned": sum(s.items_returned for s in outcome.scans),
+        "items_out_of_window": sum(s.items_out_of_window for s in outcome.scans),
         "items_new": outcome.items_new,
         "window_days": outcome.window_days,
         "by_status": _by_status(outcome.scans),

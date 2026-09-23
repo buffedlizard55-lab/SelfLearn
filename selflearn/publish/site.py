@@ -856,8 +856,11 @@ def page_sources(data: dict[str, Any], *, depth: int = 0) -> str:
                 esc(spec.get("operator", "")),
                 class_badge(int(spec.get("evidence_rank", 9)), spec.get("evidence_class", "")),
                 badge(
-                    {"reachable": "reached", "unreachable": "unreachable", "error": "error", "credential_required": "needs key", "not_attempted": "not tried"}.get(live_status, live_status),
-                    {"reachable": "ok", "unreachable": "err", "error": "err", "credential_required": "warn"}.get(live_status, ""),
+                    {"reachable": "reached", "unreachable": "unreachable", "error": "error", "credential_required": "needs key",
+                  "not_attempted": "not tried", "robots_disallowed": "refused by robots.txt",
+                  "robots_unreachable": "robots.txt unreadable", "adapter_error": "adapter error"}.get(live_status, live_status),
+                    {"reachable": "ok", "unreachable": "err", "error": "err", "credential_required": "warn",
+                     "robots_disallowed": "err", "robots_unreachable": "warn", "adapter_error": "err"}.get(live_status, ""),
                 ),
                 credential_cell(credentials.get(source_id, {})),
                 link(spec.get("docs_url"), "docs"),
@@ -892,6 +895,8 @@ def page_sources(data: dict[str, Any], *, depth: int = 0) -> str:
                 ),
                 f'<span class="mono small">{esc(window.get("since", ""))} &rarr; {esc(window.get("until", ""))}</span>'
                 + (badge("first scan", "warn") if window.get("first_scan") else ""),
+                f'<span class="num">{esc(row.get("items_returned", row.get("items_seen", 0)))}</span>',
+                f'<span class="num">{esc(row.get("items_out_of_window", 0))}</span>',
                 f'<span class="num">{esc(row.get("items_seen", 0))}</span>',
                 f'<span class="num">{esc(row.get("items_new", 0))}</span>',
                 esc(row.get("detail", ""))[:260],
@@ -918,7 +923,7 @@ def page_sources(data: dict[str, Any], *, depth: int = 0) -> str:
         f"{scan.get('items_seen', 0)} items returned &middot; {scan.get('items_new', 0)} not seen before."
     )
     change_scan_html = (
-        (table(["Source", "Status", "Window", "Items", "New", "Detail", "Request"], scan_rows, sortable=True)
+        (table(["Source", "Status", "Window", "Returned", "Out of window", "Considered", "New", "Detail", "Request"], scan_rows, sortable=True)
          if scan_rows else "<p>No change scan has been recorded yet. Run "
                           "<span class='mono'>python -m selflearn scan</span> from a host with egress.</p>")
         + f"<p class='small muted'>{scan_stats}</p>"
@@ -931,10 +936,106 @@ def page_sources(data: dict[str, Any], *, depth: int = 0) -> str:
            if mechanism_rows else "")
     )
 
+    policy = data.get("robots", {}) or {}
+    policy_decisions = policy.get("decisions", []) or []
+    policy_hosts = policy.get("hosts", []) or []
+    decision_rows = [
+        [
+            f'<span class="mono">{esc(row.get("host", ""))}</span>',
+            f'<span class="mono small">{esc(row.get("path", ""))}</span>',
+            badge(
+                "allowed" if row.get("allowed") else "refused",
+                "ok" if row.get("allowed") else "err",
+            ),
+            f'<span class="mono small">{esc(row.get("status", ""))}</span>',
+            f'<span class="mono small">{esc(row.get("rule", "") or "—")}</span>',
+            link(row.get("robots_url"), "robots.txt"),
+            f'<span class="small">{esc((row.get("detail") or "")[:300])}</span>',
+        ]
+        for row in policy_decisions
+    ]
+    host_rows = []
+    for row in policy_hosts:
+        note = row.get("media_type_note") or ""
+        host_rows.append(
+            [
+                f'<span class="mono">{esc(row.get("host", ""))}</span>',
+                link(row.get("robots_url"), "open"),
+                badge(
+                    str(row.get("status", "")),
+                    {
+                        "fetched": "ok",
+                        "unavailable": "info",
+                        "unreachable": "err",
+                        "unreachable_cached": "warn",
+                        "offline": "",
+                    }.get(str(row.get("status", "")), "warn")
+                    if not str(row.get("status", "")).startswith("cached")
+                    else "info",
+                ),
+                f'<span class="num">{esc(row.get("http_status") if row.get("http_status") is not None else "")}</span>',
+                f'<span class="mono small">{esc(row.get("content_type", "") or "—")}</span>',
+                f'<span class="num">{esc(row.get("rules", 0))}</span>',
+                f'<span class="num">{esc(row.get("groups", 0))}</span>',
+                f'<span class="mono small">{esc((row.get("sha256") or "").replace("sha256:", "")[:16] or "—")}</span>',
+                f'<span class="small">{esc(row.get("fetched_at") or row.get("checked_at") or "")}</span>'
+                + (f'<div class="small warn">{esc(note)}</div>' if note else ""),
+            ]
+        )
+    policy_html = (
+        (
+            f"<p class='small muted'>Checked with user agent <span class='mono'>{esc(policy.get('user_agent', ''))}</span>"
+            f" &middot; cache kept for {esc(policy.get('cache_max_age_hours', 24))} hours as the standard asks"
+            f" &middot; recorded {esc(policy.get('generated_at', ''))}"
+            + (
+                f" &middot; decisions made {esc(policy['decisions_recorded_at'])}"
+                if policy.get("decisions_recorded_at")
+                and policy.get("decisions_recorded_at") != policy.get("generated_at")
+                else ""
+            )
+            + (
+                " &middot; this run made no request, so these are the last recorded decisions"
+                if not policy.get("network_allowed", True)
+                else ""
+            )
+            + (f" &middot; read from <span class='mono'>{esc(policy.get('source'))}</span>" if policy.get("source") else "")
+            + "</p>"
+        )
+        if policy.get("hosts_published") or policy.get("hosts_checked") or policy.get("decisions")
+        else ""
+    )
+    if decision_rows:
+        policy_html += table(
+            ["Host", "Path requested", "Decision", "Status", "Rule that matched", "The operator's file", "Why"],
+            decision_rows,
+            sortable=True,
+            caption=(
+                "One row per request URL the engine would send. A refusal means no request was made: the engine "
+                "obeys the operator's own file rather than working around it."
+            ),
+        )
+    if host_rows:
+        policy_html += table(
+            ["Host", "robots.txt", "Fetch result", "HTTP", "Content type", "Rules", "Groups", "sha256 (first 16)", "Fetched"],
+            host_rows,
+            sortable=True,
+            caption=(
+                "What each operator's robots.txt answered. A media type that is not text/plain is recorded, because "
+                "the standard requires text/plain and a body that is not a robots file parses to no rules at all."
+            ),
+        )
+    if not decision_rows and not host_rows:
+        policy_html += (
+            "<p>No access-policy check has been recorded yet. Run "
+            "<span class='mono'>python3 -m selflearn robots</span>, or any research cycle, and the decisions appear "
+            "here with the rule that produced each one.</p>"
+        )
+
     counts = {
         "total": len(matrix),
         "reached": sum(1 for row in status.values() if row.get("live_status") == "reachable"),
         "unreachable": sum(1 for row in status.values() if row.get("live_status") in {"unreachable", "error"}),
+        "refused": sum(1 for row in status.values() if str(row.get("live_status", "")).startswith("robots_")),
         "needs_key": sum(1 for spec in matrix if spec.get("requires_key")),
     }
 
@@ -946,6 +1047,7 @@ the evidence class it can contribute, whether it needs a credential, and whether
 {stat(counts['total'], 'registered sources')}
 {stat(counts['reached'], 'reached this run')}
 {stat(counts['unreachable'], 'unreachable this run')}
+{stat(counts['refused'], 'refused by robots.txt')}
 {stat(counts['needs_key'], 'require a free key')}
 </div>
 <div class="banner info"><strong>Rules for admission.</strong> A source is registered only if it is operated by the body
@@ -958,6 +1060,13 @@ only for orientation; it is never the grounds for a factual claim.</div>
     ["Source", "Operated by", "Evidence class", "Last run", "Credential", "Documentation", "Docs", "Claims", "Support rate", "Rate limit / detail"],
     rows, sortable=True, caption="Support rate is the share of claims from that source that passed full verification."),
     anchor="register")}
+
+{section("Access policy: what each operator's robots.txt allows", policy_html, anchor="policy",
+    note="The engine treats itself as a crawler and obeys "
+         + link("https://www.rfc-editor.org/rfc/rfc9309.html", "RFC 9309, the Robots Exclusion Protocol")
+         + " literally: the most specific rule wins (2.2.2), an allow beats an equivalent disallow, a 4xx robots.txt "
+           "means the whole host is available (2.3.1.3), and an unreachable robots.txt means complete disallow "
+           "(2.3.1.4). A route refused here was never requested, and the refusal is published with the verbatim rule.")}
 
 {section("Change scanning: what is new since the last run", change_scan_html, anchor="changes",
     note="Only sources whose operator documents a change filter are scanned. A source with no documented filter is "

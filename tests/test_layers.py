@@ -984,6 +984,20 @@ class FindingMergeTests(unittest.TestCase):
         self.assertTrue(rows[0].resolved)
         self.assertEqual(rows[0].resolution, "Checked by hand")
 
+    def test_summarise_counts_a_resolved_finding_as_closed_not_open(self):
+        from selflearn.verify.audit import summarise
+
+        stats = summarise([self._stored(), self._fresh()])
+        # Both rows are the same finding, one of them closed by a reviewer: the
+        # open totals must not count it, or the report publishes an error total
+        # the review page does not show.
+        self.assertEqual(stats["total"], 2)
+        self.assertEqual(stats["open"], 1)
+        self.assertEqual(stats["resolved"], 1)
+        self.assertEqual(stats["by_severity"]["warning"], 1)
+        self.assertEqual(stats["resolved_by_severity"]["warning"], 1)
+        self.assertEqual(stats["by_severity"]["error"], 0)
+
     def test_render_markdown_counts_the_merged_row_once_and_keeps_the_reason(self):
         from selflearn.verify.audit import render_markdown, summarise, merge_findings
 
@@ -1105,6 +1119,18 @@ class StorageMirrorTests(unittest.TestCase):
         self.addCleanup(connection.close)
         ensure_schema(connection)
         return connection
+
+    def test_verify_against_a_mirror_that_was_never_synced_names_the_fix(self):
+        from selflearn.storage import MirrorNotInitialised, connect, verify_views
+
+        with tempfile.TemporaryDirectory() as tmp:
+            # connect() creates an empty SQLite file, so the driver's own error
+            # ("no such table: library_rows") used to escape as a traceback.
+            connection = connect(f"sqlite:///{tmp}/empty.db")
+            self.addCleanup(connection.close)
+            with self.assertRaises(MirrorNotInitialised) as caught:
+                verify_views(ROOT, connection)
+            self.assertIn("storage sync", str(caught.exception))
 
     def test_sync_then_verify_reports_identical_views(self):
         import shutil

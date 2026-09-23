@@ -191,3 +191,26 @@ limit affects a specific statement, the statement itself carries the warning.
     usually returns fewer than 12 items per query; a snapshot cycle must therefore
     not be read as a coverage report - the coverage report is what a live cycle on
     an unrestricted runner writes.
+
+34. **The access-policy gate can only be as honest as the network it runs on.**
+    `selflearn/fetch/robots.py` implements RFC 9309 literally, and 2.3.1.4 says an
+    unreachable `robots.txt` means complete disallow. In the sandbox that produced
+    the published run, most hosts close the TLS session at egress, so 34 of the 38
+    recorded decisions are `unreachable_disallowed`: a true record of what *this
+    machine* could read, not a statement about those operators. The first scheduled
+    cycle on a GitHub runner replaces it, and the page prints when each decision was
+    made and which run made it.
+35. **The gate matches the path, not the query string.** RFC 9309 2.2.2 speaks of
+    "the path", while its Figure 4 lists `/foo/bar?baz=quz` in a column headed "Path
+    to Match" - the standard is ambiguous here. This engine matches the path only and
+    publishes that choice in the module docstring, on the sources page and in
+    `docs/SOURCES.md`. An operator whose rules depend on query parameters would be
+    read more permissively than it intends.
+36. **A refusal is published, never worked around - including when the refusal is
+    wrong for this project.** PyPI's JSON API is documented by its operator and
+    disallowed to every crawler by the same operator's `robots.txt`, so the engine
+    uses the two RSS feeds the operator's API page recommends instead. That costs
+    per-project search: the feeds are global and unqueryable, so PyPI evidence arrives
+    as "what is new on PyPI" rather than "what PyPI says about this question". The
+    relevance filter drops what does not bear on the question and reports how much it
+    dropped. No mirror, proxy or alternative host is substituted for a refused route.
