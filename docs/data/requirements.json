@@ -298,6 +298,90 @@
   },
   {
     "evidence": [
+      "selflearn/fetch/registry.py",
+      "selflearn/fetch/sources.py",
+      "docs/SOURCES.md",
+      "tests/test_access_policy.py"
+    ],
+    "gap": "`api.npmjs.org` (npm_downloads) could not be reached from this sandbox - the TLS session is closed at egress - so that adapter is proven against the operator's documented request and response shapes and against a pinned fixture, not against a live response. The first scheduled cycle on the GitHub runner reaches it.",
+    "how_to_verify": "The register holds 39 sources, three added on 2026-09-22: `npm` (registry search, GET /-/v1/search, documented at https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md), `npm_downloads` (GET /downloads/point/{period}, documented at https://github.com/npm/registry/blob/main/docs/download-counts.md) and `pypi` (the two RSS feeds the operator directs consumers to, documented at https://docs.pypi.org/api/feeds/). Each carries the operator's own rate-limit or data-limit text quoted with the date it was read, in `rate_limit_note`. Run `python3 -c \"from selflearn.fetch.registry import registry_summary; print(registry_summary())\"` for the counts and `python3 -m unittest tests.test_access_policy.AdapterRouteTests -v` for the routes each adapter builds. npm search and both PyPI feeds were polled live on 2026-09-22 and returned 10 items each.",
+    "id": "R-35",
+    "requirement": "Reach more sources (roadmap item 1).",
+    "source": "roadmap item 1 / user brief",
+    "status": "partial"
+  },
+  {
+    "evidence": [
+      "selflearn/fetch/robots.py",
+      "selflearn/fetch/net.py",
+      "selflearn/cli.py",
+      "docs/SOURCES.md",
+      "docs/sources.html",
+      "tests/test_access_policy.py"
+    ],
+    "gap": "Matching is against the path only, not the query string: RFC 9309 2.2.2 speaks of the path while its Figure 4 lists a URL with a query under a column headed 'Path to Match', which is ambiguous. The departure is recorded in the module docstring and on the sources page. In this sandbox most hosts are unreachable, so their recorded status is `unreachable_disallowed` - an honest description of no egress, not a statement about the operator; CI regenerates the table from a runner with unrestricted egress.",
+    "how_to_verify": "`selflearn/fetch/robots.py` implements RFC 9309 (https://www.rfc-editor.org/rfc/rfc9309.html) clause by clause, each rule citing the clause that requires it: group selection by product-token substring and `*` fallback (2.2.1), most-specific-match-by-octets with allow winning ties (2.2.2), `#`, `$` and `*` (2.2.3), a 4xx robots.txt failing open (2.3.1.3), an unreachable one failing closed (2.3.1.4), a 24-hour cache (2.4) and a 512 KiB parsing limit (2.5). The gate is attached to the HTTP client, so no caller can bypass it. Run `python3 -m selflearn robots` for every route the engine would request with the verbatim rule behind each decision, or `python3 -m unittest tests.test_access_policy -v` for the 31 offline cases. The published site carries the same rows at `docs/sources.html#policy`. PyPI is the case that decided the design: https://pypi.org/robots.txt (fetched 2026-09-22) disallows \"/pypi/*/json\" and \"/search*\" to every user agent, so the engine requests only the RSS feeds the operator's own API page recommends.",
+    "id": "R-36",
+    "requirement": "Do not read a source whose operator forbids it, and publish the decision rather than choosing silently.",
+    "source": "user brief",
+    "status": "implemented"
+  },
+  {
+    "evidence": [
+      "selflearn/fetch/sources.py",
+      "selflearn/fetch/registry.py",
+      "tests/test_access_policy.py"
+    ],
+    "gap": "The sweep proves a request can be built and that its route is the operator's documented one; it does not prove the response parses, which needs a live response. World Bank country-value series are deliberately not requested, because choosing a country and an indicator together is an editorial act this engine does not perform.",
+    "how_to_verify": "Asking all 39 adapters to build their requests for one ordinary research query found two that could not. `worldbank` interpolated nothing into \"/country/all/indicator/{indicator}\" and raised `KeyError: 'indicator'`; it is replaced by `WorldBankSource`, which uses only the routes the operator documents at https://datahelpdesk.worldbank.org/knowledgebase/articles/898599-indicator-api-queries (read 2026-09-22): /v2/indicator for all indicators and /v2/indicator/<code> for one, with ?format=json. `eurostat` interpolated the prose query into the dataset path, which can only answer 404; it now uses a documented dataset unless the query already is a dataset code. Run `python3 -m unittest tests.test_access_policy.AdapterRouteTests.test_every_registered_adapter_can_build_a_request -v`, which is that sweep as a regression test.",
+    "id": "R-37",
+    "requirement": "Every registered source must be able to build its own request; a source that cannot is a defect, not a silent no-op.",
+    "source": "user brief",
+    "status": "implemented"
+  },
+  {
+    "evidence": [
+      "selflearn/fetch/collector.py",
+      ".github/workflows/research-loop.yml",
+      "tests/test_access_policy.py"
+    ],
+    "gap": "The failure is published, not repaired: no automatic adapter fix is attempted, because an invented endpoint would be a hallucination about the operator's API.",
+    "how_to_verify": "`Collector._collect_source` builds the adapter's requests inside a try/except: an exception becomes a `SourceStatus` with `live_status='adapter_error'`, a `Failure` with `stage='adapter'` naming the source and the operator's documentation URL, and an error irregularity, and the cycle continues with the next source. Before this, the worldbank `KeyError` took the whole cycle with it. Run `python3 -m unittest tests.test_access_policy.CollectorRobustnessTests -v`. The same guard exists in `python3 -m selflearn robots`, which also builds every adapter.",
+    "id": "R-38",
+    "requirement": "Run unattended: a broken adapter must not stop a cycle.",
+    "source": "user brief",
+    "status": "implemented"
+  },
+  {
+    "evidence": [
+      "selflearn/fetch/changes.py",
+      "selflearn/publish/site.py",
+      "state/change_scan.json",
+      "tests/test_layers.py"
+    ],
+    "gap": "Only sources whose operator documents a change filter are scanned; a source with no documented filter is reported as having none rather than being polled and having its whole result set described as new.",
+    "how_to_verify": "Each scan records four figures and the site's change-scan table publishes all four: `items_returned` (what the operator's endpoint sent), `items_out_of_window` (published before the window opened, dropped and counted), `items_seen` (considered) and `items_new` (not seen before). An undated item is kept and counted rather than silently treated as new. Run `python3 -m selflearn scan` and read `state/change_scan.json`, or `python3 -m unittest tests.test_layers -v` for the window, state and dedupe tests.",
+    "id": "R-39",
+    "requirement": "Report what a change filter returned, what its window excluded, and what was new.",
+    "source": "roadmap item 6 / design section 1",
+    "status": "implemented"
+  },
+  {
+    "evidence": [
+      "selflearn/publish/report.py",
+      "selflearn/fetch/robots.py",
+      "state/robots.json",
+      "docs/sources.html"
+    ],
+    "gap": "The cache has a 24-hour life by design (RFC 9309 2.4), so a rebuild more than a day after the last check shows the recorded decisions with their timestamp rather than re-fetching; a fresh `robots` run refreshes them.",
+    "how_to_verify": "`build_site_data` takes the gate payload from the run summary when a cycle produced one, and otherwise `load_robots_state` reads `state/robots.json` - the cache the gate writes, which now stores the per-URL decisions beside the per-host fetch records. `python3 -m selflearn site` therefore renders the same table without a cycle, and an empty cache renders the command that fills it instead of an empty section. Run `python3 -m selflearn robots` then `python3 -m selflearn site` and read the `policy` section of `docs/sources.html`.",
+    "id": "R-40",
+    "requirement": "A manual site rebuild must publish the same access-policy table a cycle publishes.",
+    "source": "user brief",
+    "status": "implemented"
+  },
+  {
+    "evidence": [
       "docs/SOURCES.md",
       "selflearn/fetch/changes.py",
       "selflearn/fetch/registry.py",
@@ -578,7 +662,7 @@
       "docs/ARCHITECTURE.md"
     ],
     "gap": "Four sources need credentials and are registered but never polled in this environment.",
-    "how_to_verify": "All 36 registered sources carry their operator and the operator's own documentation URL; the four least certain links were re-checked against the live web and corrected, and the corrections are listed in the sources document. Every claim links to the document it was cut from. The GitHub Pages entry point at the repository root is generated from the same data as the site, so the published URL cannot drift from the pages it links to.",
+    "how_to_verify": "All 39 registered sources carry their operator and the operator's own documentation URL; the four least certain links were re-checked against the live web and corrected, and the corrections are listed in the sources document. Every claim links to the document it was cut from. The GitHub Pages entry point at the repository root is generated from the same data as the site, so the published URL cannot drift from the pages it links to.",
     "id": "R-27",
     "requirement": "Provide links to official, verifiable sources for manual review.",
     "source": "user brief",

@@ -14,9 +14,10 @@ data/seeds/topics.json
  think/manager.py ........ pick the questions to work, and the sources to read
         |
         v
+ fetch/robots.py ......... RFC 9309: read the operator's robots.txt, decide every URL
  fetch/collector.py ...... poll each source for the question
    fetch/net.py .......... stdlib HTTP: politeness delay, retries, budget, TLS
-   fetch/registry.py ..... 36 source specs: operator, class, licence, key, docs
+   fetch/registry.py ..... 39 source specs: operator, class, licence, key, docs
    fetch/sources.py ...... per-source adapters; every record is rendered with attribution
         |
         v
@@ -26,6 +27,8 @@ data/seeds/topics.json
  verify/grounding.py ...... cut candidate claims out of the document (spans only)
  verify/verifier.py ....... accept, downgrade or reject each claim
  verify/contradiction.py .. find claims that pull against each other
+ learn/substance.py ....... score every claim; label quantified finding vs metadata
+ learn/synthesis.py ....... compose statements that hold across two or more documents
         |
         v
  think/competition.py ..... six personas build candidate answers from verified claims
@@ -33,6 +36,8 @@ data/seeds/topics.json
  think/tournament.py ...... score candidates on nine published criteria; Elo updates
  experiment/ .............. run the experiments a candidate asks for
  think/discovery.py ....... derive the next questions; score what to do next
+ think/invention.py ....... propose a new topic from phrases recurring in the evidence
+ fetch/changes.py ......... poll the documented change filters for what is new
  think/manager.py ......... move each topic along its lifecycle
         |
         v
@@ -56,7 +61,9 @@ can re-check the claim against the same bytes.
 | `selflearn/config.py` | Every path, budget, threshold, weight and enumerated constant, in one file | assertions in the test suite |
 | `selflearn/models.py` | The record types that make up the memory | round-trip tests |
 | `selflearn/fetch/net.py` | HTTP with politeness, retries, budgets and a hard distinction between *unreachable* and *bad response* | exercised offline; network failures are a first-class outcome |
-| `selflearn/fetch/registry.py` | The register of 36 sources | registration tests: every source has an operator, a documentation URL, a class and an adapter |
+| `selflearn/fetch/registry.py` | The register of 39 sources | registration tests: every source has an operator, a documentation URL, a class and an adapter |
+| `selflearn/fetch/robots.py` | The RFC 9309 access-policy gate: parse each operator's `robots.txt`, decide every request URL, cache for 24 h, publish every decision with its verbatim rule | 31 offline tests in `tests/test_access_policy.py`, one per clause exercised |
+| `selflearn/fetch/changes.py` | Poll only the sources whose operator documents a change filter, and count what the filter's window excluded | window, state and dedupe tests |
 | `selflearn/fetch/sources.py` | Adapters that turn a JSON or XML response into attributed text | parser tests for JSON paths, inverted abstracts, JSON-stat cells |
 | `selflearn/fetch/collector.py` | Poll a source for a question, drop irrelevant results, store snapshots, classify failures | budget, fixture replay and relevance tests |
 | `selflearn/verify/grounding.py` | Turn a document into candidate claims | scaffolding and attribution tests |
@@ -75,11 +82,14 @@ can re-check the claim against the same bytes.
 | `selflearn/learn/aggregate.py` | Compose derived statements from the library's own counts | derived-claim tests |
 | `selflearn/learn/calibration.py` | Sweep verification thresholds against labelled cases | calibration tests |
 | `selflearn/learn/memory.py` | Meta-knowledge: per-source reliability from recorded outcomes | reliability tests |
+| `selflearn/learn/substance.py` | Score each claim's substance so quantified findings lead and registry metadata says what it is | scoring and label tests |
+| `selflearn/learn/synthesis.py` | Compose cross-document statements from figures the documents already contain, refusing any that do not | guard tests |
+| `selflearn/think/invention.py` | Propose new topics from phrases recurring across retrieved evidence, with every candidate published | novelty and gate tests |
 | `selflearn/publish/report.py` | Assemble per-topic reports and the site dataset | rendering tests |
 | `selflearn/publish/site.py` | Static HTML, no third-party scripts | site-build tests |
 | `selflearn/publish/markdown.py` | Render the repository documents for the site, escaping everything | renderer and link-safety tests |
 | `selflearn/loop.py` | The cycle itself | end-to-end fixture tests |
-| `selflearn/cli.py` | `run`, `audit`, `site`, `sources`, `experiments`, `calibrate`, `status`, `selftest` | command tests |
+| `selflearn/cli.py` | `run`, `audit`, `site`, `sources`, `scan`, `robots`, `credentials`, `experiments`, `calibrate`, `status`, `storage`, `retrieve`, `selftest` | command tests |
 
 ## Storage
 

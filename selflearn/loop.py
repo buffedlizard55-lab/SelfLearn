@@ -36,6 +36,7 @@ from .experiment.runner import run_experiment, to_evidence, to_result
 from .fetch.collector import Collector, summarise_status
 from .fetch.net import HttpClient, NetworkUnavailable
 from .fetch.registry import registry_summary, source_matrix
+from .fetch.robots import load_gate
 from .learn.calibration import active_thresholds, run_calibration, thresholds_in_force
 from .learn.store import Library
 from .learn.substance import score_claim, substance_summary
@@ -556,9 +557,16 @@ def run_cycle(
     result.plan = plan.to_dict()
     result.notes.extend(plan.notes)
 
+    # The RFC 9309 access-policy gate is attached to the client, not called by
+    # each stage: a route the operator's own robots.txt disallows is refused
+    # before a request is made, and the refusal is published with the rule that
+    # matched. Offline runs make no requests at all, so the gate is inert and
+    # snapshot replay keeps working exactly as before.
+    gate = load_gate(root, allow_network=allow_network)
     client = HttpClient(
         max_requests=max_requests or BUDGET.max_http_requests,
         allow_network=allow_network,
+        robots=gate,
     )
     collector = Collector(client, root / "evidence" / "snapshots", strict=False)
     elo = EloTable.load(state_path(root, "elo.json"))
@@ -923,7 +931,14 @@ def run_cycle(
     # review" figures must equal the review page, which publishes the merged
     # list, and only unresolved findings are actually waiting.
     findings = merge_findings(findings)
-    severity_counts = summarise(f for f in findings if not f.resolved)["by_severity"]
+    severity_counts = summarise(findings)["by_severity"]   # open findings only
+    # The gate's decisions are published as figures and as a table, so they are
+    # read once, before the figures that quote them are built. (Building the
+    # figures first raised UnboundLocalError on the very first cycle after the
+    # gate was wired in: the numbers were quoted two lines above the assignment.)
+    gate.save()
+    gate_payload = gate.payload()
+
     # Every figure that appears in the generated summary is collected here first,
     # and this dictionary is what the narrative guard is allowed to accept. The
     # summary cannot introduce a number that is not in the measured set.
@@ -948,10 +963,33 @@ def run_cycle(
         "topics_promoted": len(promoted_topics),
         "change_scan_sources": len(scan_payload.get("scans", [])),
         "change_scan_new_items": int(scan_payload.get("items_new", 0)),
+        "policy_hosts_checked": int(gate_payload.get("hosts_checked", 0)),
+        "policy_hosts_published": int(gate_payload.get("hosts_published", 0)),
+        "policy_urls_checked": int(gate_payload.get("urls_checked", 0)),
+        "policy_urls_refused": int(gate_payload.get("urls_refused", 0)),
     }
+    # An offline cycle consults the gate for nothing, so the sentence must not
+    # claim it read 35 robots.txt files: it says what it did (nothing) and points
+    # at the records the last networked check stored. The standard's own number is
+    # deliberately not quoted here: the narrative guard treats every figure in a
+    # generated sentence as a claim about the world, and "9309" is a document
+    # number, not a measurement. It is published, linked, on the sources page.
+    if figures["policy_urls_checked"]:
+        policy_sentence = (
+            f"The access-policy gate read robots.txt for {figures['policy_hosts_checked']} host(s), decided "
+            f"{figures['policy_urls_checked']} request URL(s) and refused {figures['policy_urls_refused']} before "
+            f"they were sent; every refusal is published with the rule that matched."
+        )
+    else:
+        policy_sentence = (
+            "The access-policy gate decided no request URL in this cycle, because this run made no "
+            f"requests; the sources page still publishes the {figures['policy_hosts_published']} host record(s) the "
+            "last recorded check stored."
+        )
     run_summary = {
         "run_id": run_id,
         "mode": mode,
+        "robots": gate_payload,
         "generated_at": utcnow_iso(),
         "figures": figures,
         "what_changed": [
@@ -967,6 +1005,7 @@ def run_cycle(
             f"{figures['topics_proposed']} candidate topic(s) were scored from the retrieved documents and "
             f"{figures['topics_promoted']} promoted; the change scan polled {figures['change_scan_sources']} "
             f"source(s) and found {figures['change_scan_new_items']} item(s) not seen before.",
+            policy_sentence,
             f"{figures['errors']} error(s) and {figures['warnings']} warning(s) are waiting for review.",
         ],
         "claim_kinds": claims_by_kind,

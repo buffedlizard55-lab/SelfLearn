@@ -21,3 +21,5 @@ Thumbs.db
 .idea/
 .vscode/
 state/library.sqlite3
+# robots.txt cache (RFC 9309 2.4): fetched operator bodies with a 24 h life
+state/robots.json

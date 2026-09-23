@@ -248,9 +248,17 @@ _register(
         evidence_class="official_data",
         license_name="CC BY 4.0",
         license_url="https://datacatalog.worldbank.org/public-licenses",
-        rate_limit_note="No key required; responses paginate at 1000 rows per request.",
+        rate_limit_note="No key required; responses paginate, and `per_page` sets the page size.",
         topics=["development economics", "energy", "health", "education", "infrastructure"],
-        notes="Country-level indicators with documented definitions and methodology notes.",
+        notes=(
+            "Indicator definitions, units, source notes and topics with the operator's own methodology text. The "
+            "routes used are the ones the operator documents at "
+            "https://datahelpdesk.worldbank.org/knowledgebase/articles/898599-indicator-api-queries (read "
+            "2026-09-22): '/v2/indicator' for all indicators and '/v2/indicator/<code>' for one, with "
+            "'?format=json' for the JSON form. Country-level value series "
+            "('/v2/country/<code>/indicator/<code>') are not requested: choosing a country and an indicator for a "
+            "research question is an editorial act this engine does not perform silently."
+        ),
     )
 )
 
@@ -720,6 +728,127 @@ _register(
         ),
         topics=["open source activity", "software releases", "adoption signals", "reference implementations"],
         notes="Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+    )
+)
+
+# === Package registries ====================================================
+# Added 2026-09-22. Both operators are the registry itself, so each response is
+# the authoritative record of what was published; neither is an aggregator.
+# Every documentation URL below was fetched and read on 2026-09-22 and the
+# parameter names in the adapters are transcribed from it, not from memory.
+_register(
+    _spec(
+        source_id="npm",
+        name="npm Registry Search API",
+        operator="npm, Inc. (GitHub, Microsoft)",
+        base_url="https://registry.npmjs.org",
+        docs_url="https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md",
+        evidence_class="primary_source",
+        license_name="Package metadata as published by each package's own maintainers",
+        license_url="https://docs.npmjs.com/policies/open-source-terms",
+        terms_url="https://docs.npmjs.com/policies/terms",
+        rate_limit_note=(
+            "The operator publishes no numeric request limit for the public registry API. The documentation "
+            "directory of npm/registry was listed on 2026-09-22 (COUCHDB.md, REGISTRY-API.md, REPLICATE-API.md, "
+            "download-counts.md, follower.md, restful-api-conventions.md, varnish-config.md, hooks/, orgs/, "
+            "responses/, user/) and contains no rate-limit document; the 2017 announcement that introduced "
+            "registry rate limiting now carries the operator's own notice that 'The content in this blog post is "
+            "no longer applicable/has been deprecated' "
+            "(https://blog.npmjs.org/post/164799520460/api-rate-limiting-rolling-out.html, read 2026-09-22). Two "
+            "documented limits are honoured: REGISTRY-API.md gives the search parameter `size` a default of 20 "
+            "and a maximum of 250, and the same announcement states that package search queries must be at least "
+            "three characters long. HTTP 429 is treated as retryable and recorded."
+        ),
+        topics=[
+            "javascript ecosystem",
+            "package releases",
+            "open source tooling",
+            "dependency metadata",
+            "software supply chain",
+        ],
+        notes=(
+            "Search results carry the registry's own ranking; `score.detail.quality`, `score.detail.popularity` and "
+            "`score.detail.maintenance` are the operator's figures, not this engine's. A package description is the "
+            "maintainer's own text and is quoted as such. "
+            "Access policy: https://registry.npmjs.org/robots.txt answered HTTP 200 on 2026-09-22 with "
+            "content-type application/json - the package document of an npm package literally named 'robots.txt', "
+            "not a robots file. It contains no user-agent lines, so under RFC 9309 2.2.1 no rules apply and the "
+            "engine may request the documented search route. The observation is published on the sources page "
+            "rather than resolved silently."
+        ),
+    )
+)
+
+_register(
+    _spec(
+        source_id="npm_downloads",
+        name="npm Download Counts API",
+        operator="npm, Inc. (GitHub, Microsoft)",
+        base_url="https://api.npmjs.org",
+        docs_url="https://github.com/npm/registry/blob/main/docs/download-counts.md",
+        evidence_class="primary_source",
+        license_name="Aggregate download statistics published by the registry operator",
+        license_url="https://docs.npmjs.com/policies/open-source-terms",
+        terms_url="https://docs.npmjs.com/policies/terms",
+        rate_limit_note=(
+            "Documented data limits, quoted from download-counts.md (read 2026-09-22): 'Bulk queries are limited to "
+            "at most *128* packages at a time and at most *365 days* of data.' and 'All other queries are limited to "
+            "at most *18 months* of data. The earliest date for which data will be returned is January 10, 2015.' No "
+            "requests-per-hour figure is published; HTTP 429 is treated as retryable and recorded."
+        ),
+        topics=[
+            "package adoption",
+            "software supply chain",
+            "download statistics",
+            "javascript ecosystem",
+        ],
+        notes=(
+            "Counts are the operator's own daily aggregation of install logs, not a live figure. download-counts.md "
+            "states (read 2026-09-22): 'npm's raw log data is continuously written to a series of buckets on AWS S3. "
+            "Once per day, soon after UTC midnight, a map-reduce cluster is spun up that crunches the previous day's "
+            "logs and pushes them into the database.' Every claim from this source is therefore about a closed day or "
+            "period, and the `start` and `end` dates the API returns are quoted with the count."
+        ),
+    )
+)
+
+_register(
+    _spec(
+        source_id="pypi",
+        name="PyPI RSS Feeds (newest packages and latest updates)",
+        operator="Python Software Foundation (PyPI)",
+        base_url="https://pypi.org",
+        docs_url="https://docs.pypi.org/api/feeds/",
+        evidence_class="primary_source",
+        license_name="Project names, summaries and descriptions supplied by each project's own uploaders",
+        license_url="https://policies.python.org/pypi.org/Terms-of-Service/",
+        terms_url="https://policies.python.org/pypi.org/Terms-of-Service/",
+        rate_limit_note=(
+            "Quoted from the operator's API policy page https://docs.pypi.org/api/ (read 2026-09-22): 'Due to the "
+            "heavy caching and CDN use, there is currently no rate limiting of PyPI APIs at the edge.' The same page "
+            "asks consumers to 'Set your consumer's `User-Agent` header to uniquely identify your requests' and to "
+            "'Try not to make a lot of requests (thousands) in a short amount of time (minutes)'. The Terms of "
+            "Service API Terms (effective February 25, 2025) add that 'Abuse or excessively frequent requests to "
+            "PyPI via the API may result in the temporary or permanent suspension of your Account's access to the "
+            "API.' This engine asks for two feed documents per cycle."
+        ),
+        topics=[
+            "python ecosystem",
+            "package releases",
+            "open source tooling",
+            "software supply chain",
+        ],
+        notes=(
+            "Access policy, stated in full because it decided the route: https://pypi.org/robots.txt (fetched "
+            "2026-09-22) disallows '/pypi/*/json', '/pypi/*/*/json', '/pypi*?', '/search*', '/simple/' and "
+            "'/packages/' to every user agent, so the JSON API documented at https://docs.pypi.org/api/json/ and the "
+            "Index API at https://docs.pypi.org/api/index-api/ are not requested; the engine's RFC 9309 gate refuses "
+            "them and publishes the rule that matched. '/rss/' is not disallowed, and the operator's own API policy "
+            "page directs consumers there: 'For periodically checking for new packages or updates to existing "
+            "packages, use our RSS feeds.' This source therefore reads the two documented global feeds, and the "
+            "Project Releases Feed is available per project at "
+            "https://pypi.org/rss/project/<project_name>/releases.xml."
+        ),
     )
 )
 

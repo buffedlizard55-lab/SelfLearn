@@ -4,11 +4,11 @@
     "fixture_documents": 0,
     "irregularity_counts": {
       "error": 0,
-      "info": 13,
+      "info": 23,
       "warning": 15
     },
     "resolved_contradictions": 0,
-    "resolved_irregularities": 7,
+    "resolved_irregularities": 8,
     "unresolved_contradictions": 12,
     "unsupported_claims": 10
   },
@@ -17,14 +17,14 @@
     "claims": 300,
     "contradictions": 12,
     "discoveries": 102,
-    "documents": 91,
+    "documents": 93,
     "experiments": 5,
-    "failures": 22,
-    "irregularities": 35,
-    "questions": 141,
+    "failures": 28,
+    "irregularities": 46,
+    "questions": 147,
     "strategies": 222,
     "topics": 4
   },
-  "generated_at": "2026-09-22T23:23:02Z",
-  "run_id": "run-e876f1525d9b"
+  "generated_at": "2026-09-23T00:55:17Z",
+  "run_id": "run-a467fa87a6df"
 }

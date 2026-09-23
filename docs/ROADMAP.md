@@ -6,20 +6,39 @@ says why it matters, what it needs, and how we would know it worked. Items marke
 The current order of the open items is 1, 2, 8, 11, 9 - item 8 is now one
 verification (a live PostgreSQL server) rather than code.
 
-## 1. Reach more sources (highest value) - open, blocked on the environment
+## 1. Reach more sources (highest value) - three added 2026-09-22, still blocked on the environment
 
 **Why.** In the build sandbox only GitHub was reachable, so most accepted claims are
 repository metadata rather than domain knowledge. Every additional source converts
 directly into claims a reader can check.
 
-**What it needs.** Nothing new in code: run the loop on a host with unrestricted
-egress (the bundled workflow does this on GitHub's runners), then re-run
-`python3 -m selflearn sources --probe` and confirm the previously unreachable sources
-answer.
+**What shipped on 2026-09-22.** The register went from 36 sources to 39: `npm`
+(registry search, `GET /-/v1/search`), `npm_downloads` (`GET /downloads/point/{period}`)
+and `pypi` (the two RSS feeds the operator's own API page directs consumers to). npm
+search and both PyPI feeds were polled live and returned ten items each;
+`api.npmjs.org` could not be reached from the sandbox, so that one adapter is proven
+against the operator's documented shapes and a pinned fixture only. Each register row
+carries the operator's own limit text quoted with the date it was read - npm's
+"at least three characters long" search minimum and its unpublished request limit,
+npm's "128 packages / 365 days" bulk limit and its 2015-01-10 earliest date, PyPI's
+"no rate limiting of PyPI APIs at the edge" beside the Terms-of-Service abuse clause.
 
-**How we would know.** The sources page shows more than one reachable source, and the
-per-topic source tables show evidence classes above `primary_source` (peer-reviewed
-papers, official statistics).
+The same pass built the prerequisite this item silently depended on: an access-policy
+gate (`selflearn/fetch/robots.py`) that reads each operator's `robots.txt` under
+RFC 9309 before any request is sent. It is what found that PyPI documents a JSON API
+and disallows it to every crawler, and it publishes every decision with the verbatim
+rule. Reaching more sources without it would have meant scraping routes operators had
+already refused.
+
+**What it still needs.** Nothing new in code: run the loop on a host with unrestricted
+egress (the bundled workflow does this on GitHub's runners), then re-run
+`python3 -m selflearn sources --probe` and `python3 -m selflearn robots` and confirm
+the previously unreachable sources answer and are allowed.
+
+**How we would know.** The sources page shows more than one reachable source, the
+access-policy table shows `allowed` decisions from operators rather than
+`unreachable_disallowed` from the sandbox, and the per-topic source tables show
+evidence classes above `primary_source` (peer-reviewed papers, official statistics).
 
 ## 2. Finish the credential path - open, blocked on secrets (the code path is now complete)
 

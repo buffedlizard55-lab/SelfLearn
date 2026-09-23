@@ -426,11 +426,29 @@ def check_coverage(
 
 
 def summarise(findings: Iterable[Irregularity]) -> dict[str, Any]:
+    """Counts for publication: the open findings by severity, resolved ones apart.
+
+    A finding a reviewer closed with ``tools/resolve_finding.py`` keeps its original
+    severity and text, so counting it among the open totals published an error count
+    the review page did not show: the same row appeared under "resolved by a
+    reviewer" *and* in the open error total. ``by_severity`` is now the open set -
+    which is what the markdown report, the run summary and the site all render - and
+    the closed set is counted beside it rather than folded into it.
+    """
     findings = list(findings)
     counts: dict[str, int] = {"error": 0, "warning": 0, "info": 0}
+    resolved_counts: dict[str, int] = {"error": 0, "warning": 0, "info": 0}
     for finding in findings:
-        counts[finding.severity] = counts.get(finding.severity, 0) + 1
-    return {"total": len(findings), "by_severity": counts}
+        bucket = resolved_counts if finding.resolved else counts
+        bucket[finding.severity] = bucket.get(finding.severity, 0) + 1
+    open_total = sum(counts.values())
+    return {
+        "total": len(findings),
+        "open": open_total,
+        "resolved": len(findings) - open_total,
+        "by_severity": counts,
+        "resolved_by_severity": resolved_counts,
+    }
 
 
 def merge_findings(findings: Iterable[Irregularity]) -> list[Irregularity]:
@@ -469,7 +487,7 @@ def render_markdown(findings: Iterable[Irregularity], *, generated_at: str) -> s
         key=lambda f: (SEVERITY_ORDER.get(f.severity, 9), f.stage, f.summary),
     )
     stats = summarise(findings)
-    resolved = sum(1 for f in findings if f.resolved)
+    resolved = stats["resolved"]
     lines = [
         "# Irregularities for review",
         "",
@@ -479,9 +497,12 @@ def render_markdown(findings: Iterable[Irregularity], *, generated_at: str) -> s
         "reconcile on its own. Nothing here is a conclusion; each entry is a request for a human",
         "decision, with the evidence needed to make it.",
         "",
-        f"**Totals** - error: {stats['by_severity'].get('error', 0)}, "
+        f"**Totals (open)** - error: {stats['by_severity'].get('error', 0)}, "
         f"warning: {stats['by_severity'].get('warning', 0)}, "
-        f"info: {stats['by_severity'].get('info', 0)}; resolved by a reviewer: {resolved}.",
+        f"info: {stats['by_severity'].get('info', 0)}; resolved by a reviewer: {resolved}"
+        f" (error: {stats['resolved_by_severity'].get('error', 0)}, "
+        f"warning: {stats['resolved_by_severity'].get('warning', 0)}, "
+        f"info: {stats['resolved_by_severity'].get('info', 0)}).",
         "",
     ]
     if not findings:

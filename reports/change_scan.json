@@ -1,18 +1,23 @@
 {
   "by_status": {
-    "error": 2,
-    "scanned": 3
+    "policy_refused": 4,
+    "scanned": 2
   },
-  "generated_at": "2026-09-22T21:25:04Z",
-  "items_new": 4,
+  "generated_at": "2026-09-23T00:55:16Z",
+  "items_new": 13,
+  "items_out_of_window": 0,
+  "items_returned": 15,
   "items_seen": 15,
-  "run_id": "run-fe5ed07d9d98",
+  "run_id": "run-a467fa87a6df",
   "scans": [
     {
-      "detail": "HTTP 406: ",
+      "detail": "https://export.arxiv.org/robots.txt could not be fetched (URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>). RFC 9309 2.3.1.4: an unreachable robots.txt means the file is undefined and a crawler MUST assume complete disallow, so no request was made to this host.",
       "docs_url": "https://info.arxiv.org/help/api/user-manual.html",
       "items_new": 0,
+      "items_out_of_window": 0,
+      "items_returned": 0,
       "items_seen": 0,
+      "items_undated": 0,
       "mechanism": "Results sorted by submission date, newest first",
       "new_items": [],
       "request_params": {
@@ -25,23 +30,26 @@
       "request_url": "https://export.arxiv.org/api/query",
       "source_id": "arxiv",
       "source_name": "arXiv API",
-      "status": "error",
+      "status": "policy_refused",
       "window": {
         "days": 7,
         "first_scan": true,
-        "since": "2026-09-15",
-        "until": "2026-09-22"
+        "since": "2026-09-16",
+        "until": "2026-09-23"
       }
     },
     {
-      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 0 not seen by this engine before.",
+      "detail": "https://api.crossref.org/robots.txt could not be fetched (URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>). RFC 9309 2.3.1.4: an unreachable robots.txt means the file is undefined and a crawler MUST assume complete disallow, so no request was made to this host.",
       "docs_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
       "items_new": 0,
-      "items_seen": 5,
+      "items_out_of_window": 0,
+      "items_returned": 0,
+      "items_seen": 0,
+      "items_undated": 0,
       "mechanism": "Works reindexed at or after the given date",
       "new_items": [],
       "request_params": {
-        "filter": "from-index-date:2026-09-21",
+        "filter": "from-index-date:2026-09-22",
         "mailto": "selflearn@example.invalid",
         "query": "autonomous agent",
         "rows": 5,
@@ -50,58 +58,53 @@
       "request_url": "https://api.crossref.org/works",
       "source_id": "crossref",
       "source_name": "Crossref REST API",
-      "status": "scanned",
+      "status": "policy_refused",
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-21",
-        "until": "2026-09-22"
+        "since": "2026-09-22",
+        "until": "2026-09-23"
       }
     },
     {
-      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 4 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-22..2026-09-23 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 4,
+      "items_new": 3,
+      "items_out_of_window": 0,
+      "items_returned": 5,
       "items_seen": 5,
+      "items_undated": 0,
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: jadenryu/lurq\nThe record for jadenryu/lurq ",
-          "identifier": "https://github.com/jadenryu/lurq",
-          "published_at": "2026-09-22",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: lshaible/azure-observability-agent-demo\nThe",
+          "identifier": "https://github.com/lshaible/azure-observability-agent-demo",
+          "published_at": "2026-09-23",
           "source_id": "github",
-          "title": "jadenryu/lurq",
-          "url": "https://github.com/jadenryu/lurq"
+          "title": "lshaible/azure-observability-agent-demo",
+          "url": "https://github.com/lshaible/azure-observability-agent-demo"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: PrimeIntellect-ai/prime-agent\nThe record fo",
-          "identifier": "https://github.com/PrimeIntellect-ai/prime-agent",
-          "published_at": "2026-09-22",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: CocoRoF/Geny\nThe record for CocoRoF/Geny re",
+          "identifier": "https://github.com/CocoRoF/Geny",
+          "published_at": "2026-09-23",
           "source_id": "github",
-          "title": "PrimeIntellect-ai/prime-agent",
-          "url": "https://github.com/PrimeIntellect-ai/prime-agent"
+          "title": "CocoRoF/Geny",
+          "url": "https://github.com/CocoRoF/Geny"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: rohanmandhanya/ASMA\nThe record for rohanman",
-          "identifier": "https://github.com/rohanmandhanya/ASMA",
-          "published_at": "2026-09-22",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: api-evangelist/mount\nThe record for api-eva",
+          "identifier": "https://github.com/api-evangelist/mount",
+          "published_at": "2026-09-23",
           "source_id": "github",
-          "title": "rohanmandhanya/ASMA",
-          "url": "https://github.com/rohanmandhanya/ASMA"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: whoff77/shorky\nThe record for whoff77/shork",
-          "identifier": "https://github.com/whoff77/shorky",
-          "published_at": "2026-09-22",
-          "source_id": "github",
-          "title": "whoff77/shorky",
-          "url": "https://github.com/whoff77/shorky"
+          "title": "api-evangelist/mount",
+          "url": "https://github.com/api-evangelist/mount"
         }
       ],
       "request_params": {
         "order": "desc",
         "per_page": 5,
-        "q": "autonomous agent pushed:>=2026-09-21",
+        "q": "autonomous agent pushed:>=2026-09-22",
         "sort": "updated"
       },
       "request_url": "https://api.github.com/search/repositories",
@@ -111,61 +114,130 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-21",
-        "until": "2026-09-22"
+        "since": "2026-09-22",
+        "until": "2026-09-23"
       }
     },
     {
-      "detail": "HTTP 404: ",
+      "detail": "https://services.nvd.nist.gov/robots.txt could not be fetched (URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>). RFC 9309 2.3.1.4: an unreachable robots.txt means the file is undefined and a crawler MUST assume complete disallow, so no request was made to this host.",
       "docs_url": "https://nvd.nist.gov/developers/vulnerabilities",
       "items_new": 0,
+      "items_out_of_window": 0,
+      "items_returned": 0,
       "items_seen": 0,
+      "items_undated": 0,
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [],
       "request_params": {
         "keywordSearch": "autonomous agent",
-        "lastModEndDate": "2026-09-22T00:00:00:000 UTC-00:00",
-        "lastModStartDate": "2026-09-15T00:00:00:000 UTC-00:00",
+        "lastModEndDate": "2026-09-23T00:00:00.000+00:00",
+        "lastModStartDate": "2026-09-16T00:00:00.000+00:00",
         "resultsPerPage": 5
       },
       "request_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
       "source_id": "nvd",
       "source_name": "NIST National Vulnerability Database API",
-      "status": "error",
+      "status": "policy_refused",
       "window": {
         "days": 7,
         "first_scan": true,
-        "since": "2026-09-15",
-        "until": "2026-09-22"
+        "since": "2026-09-16",
+        "until": "2026-09-23"
       }
     },
     {
-      "detail": "5 item(s) returned for the window 2026-09-21..2026-09-22; 0 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-09-16..2026-09-23 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before. First scan for this source: the window is the engine's default look-back, not a real interval since a previous run, so 'new' here means 'not previously recorded'.",
+      "docs_url": "https://docs.pypi.org/api/feeds/",
+      "items_new": 10,
+      "items_out_of_window": 0,
+      "items_returned": 10,
+      "items_seen": 10,
+      "items_undated": 0,
+      "mechanism": "Newly created releases, newest first, as published in the Latest Updates Feed",
+      "new_items": [
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/nbinlineai/0.1.1/",
+          "published_at": "2026-09-23",
+          "source_id": "pypi",
+          "title": "nbinlineai 0.1.1",
+          "url": "https://pypi.org/project/nbinlineai/0.1.1/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/lpdfio-lpdf/0.22.0/",
+          "published_at": "2026-09-23",
+          "source_id": "pypi",
+          "title": "lpdfio-lpdf 0.22.0",
+          "url": "https://pypi.org/project/lpdfio-lpdf/0.22.0/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/skcapstone/0.15.181/",
+          "published_at": "2026-09-23",
+          "source_id": "pypi",
+          "title": "skcapstone 0.15.181",
+          "url": "https://pypi.org/project/skcapstone/0.15.181/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/modal/1.5.6.dev25/",
+          "published_at": "2026-09-23",
+          "source_id": "pypi",
+          "title": "modal 1.5.6.dev25",
+          "url": "https://pypi.org/project/modal/1.5.6.dev25/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/volcano-sdk-python/0.10.3/",
+          "published_at": "2026-09-23",
+          "source_id": "pypi",
+          "title": "volcano-sdk-python 0.10.3",
+          "url": "https://pypi.org/project/volcano-sdk-python/0.10.3/"
+        }
+      ],
+      "request_params": {},
+      "request_url": "https://pypi.org/rss/updates.xml",
+      "source_id": "pypi",
+      "source_name": "PyPI RSS Feeds (newest packages and latest updates)",
+      "status": "scanned",
+      "window": {
+        "days": 7,
+        "first_scan": true,
+        "since": "2026-09-16",
+        "until": "2026-09-23"
+      }
+    },
+    {
+      "detail": "https://earthquake.usgs.gov/robots.txt could not be fetched (URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>). RFC 9309 2.3.1.4: an unreachable robots.txt means the file is undefined and a crawler MUST assume complete disallow, so no request was made to this host.",
       "docs_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
       "items_new": 0,
-      "items_seen": 5,
+      "items_out_of_window": 0,
+      "items_returned": 0,
+      "items_seen": 0,
+      "items_undated": 0,
       "mechanism": "Earthquake events inside an explicit time window",
       "new_items": [],
       "request_params": {
-        "endtime": "2026-09-22",
+        "endtime": "2026-09-23",
         "format": "geojson",
         "limit": 5,
         "orderby": "time",
-        "starttime": "2026-09-21"
+        "starttime": "2026-09-22"
       },
       "request_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
       "source_id": "usgs_earthquake",
       "source_name": "USGS Earthquake Catalog (FDSN event service)",
-      "status": "scanned",
+      "status": "policy_refused",
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-21",
-        "until": "2026-09-22"
+        "since": "2026-09-22",
+        "until": "2026-09-23"
       }
     }
   ],
-  "sources_attempted": 5,
-  "sources_scanned": 3,
+  "sources_attempted": 6,
+  "sources_scanned": 2,
   "window_days": 7
 }

@@ -1,14 +1,24 @@
 # Irregularities for review
 
-Generated: 2026-09-22T23:21:42Z
+Generated: 2026-09-23T00:55:16Z
 
 This file is produced by the audit stage. It lists everything the engine could not
 reconcile on its own. Nothing here is a conclusion; each entry is a request for a human
 decision, with the evidence needed to make it.
 
-**Totals** - error: 0, warning: 15, info: 20; resolved by a reviewer: 7.
+**Totals (open)** - error: 0, warning: 15, info: 23; resolved by a reviewer: 8 (error: 1, warning: 0, info: 7).
 
 ## Stage: audit
+
+### [ERROR] Generated summary contains figures not present in any verified claim
+
+- **id:** `irr-d5ae8a348d92`
+- **topic:** n/a
+- **detail:** Figures: 9309
+- **suggested action:** Remove the figure or add a verified claim that supports it.
+- **detected:** 2026-09-23T00:44:39Z
+- **resolved by a reviewer:** 2026-09-23T00:46:00Z
+- **reviewer's reason:** The generated summary quoted the standard's document number (RFC 9309) in a sentence about the access-policy gate. The narrative guard is right to reject it: every figure in a generated sentence must be a measured figure or come from a verified claim, and a document number is neither. The sentence was reworded to say 'the access-policy gate' and the RFC number is published, linked, on the sources page and in docs/SOURCES.md instead.
 
 ### [WARNING] 1 source(s) were not reachable during this run
 
@@ -16,7 +26,7 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** Unavailable sources: github
 - **suggested action:** Confirm network egress from the runner, or accept snapshot replay for these sources.
-- **detected:** 2026-09-22T23:12:31Z
+- **detected:** 2026-09-23T00:48:52Z
 
 ### [WARNING] 5 source(s) were not reachable during this run
 
@@ -182,7 +192,56 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** 134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.
 - **suggested action:** Nothing to do unless a reviewer believes a retired statement was correct.
-- **detected:** 2026-09-22T23:21:41Z
+- **detected:** 2026-09-23T00:55:16Z
+
+## Stage: change_scan
+
+### [INFO] Change scan for arxiv was refused by the operator's robots.txt
+
+- **id:** `irr-4bc3891da960`
+- **topic:** n/a
+- **link:** <https://export.arxiv.org/robots.txt>
+- **detail:** https://export.arxiv.org/robots.txt could not be fetched (URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>). RFC 9309 2.3.1.4: an unreachable robots.txt means the file is undefined and a crawler MUST assume complete disallow, so no request was made . The window 2026-09-16..2026-09-23 was not polled for this source.
+- **suggested action:** Register a route the operator's own rules permit, or leave the source unscanned.
+- **detected:** 2026-09-23T00:55:16Z
+
+### [INFO] Change scan for crossref was refused by the operator's robots.txt
+
+- **id:** `irr-159938997d12`
+- **topic:** n/a
+- **link:** <https://api.crossref.org/robots.txt>
+- **detail:** https://api.crossref.org/robots.txt could not be fetched (URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>). RFC 9309 2.3.1.4: an unreachable robots.txt means the file is undefined and a crawler MUST assume complete disallow, so no request was made . The window 2026-09-22..2026-09-23 was not polled for this source.
+- **suggested action:** Register a route the operator's own rules permit, or leave the source unscanned.
+- **detected:** 2026-09-23T00:55:16Z
+
+### [INFO] Change scan for nvd was refused by the operator's robots.txt
+
+- **id:** `irr-147cd6c3b572`
+- **topic:** n/a
+- **link:** <https://services.nvd.nist.gov/robots.txt>
+- **detail:** https://services.nvd.nist.gov/robots.txt could not be fetched (URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>). RFC 9309 2.3.1.4: an unreachable robots.txt means the file is undefined and a crawler MUST assume complete disallow, so no request was . The window 2026-09-16..2026-09-23 was not polled for this source.
+- **suggested action:** Register a route the operator's own rules permit, or leave the source unscanned.
+- **detected:** 2026-09-23T00:55:16Z
+
+### [INFO] Change scan for usgs_earthquake was refused by the operator's robots.txt
+
+- **id:** `irr-32f4f0d4ade9`
+- **topic:** n/a
+- **link:** <https://earthquake.usgs.gov/robots.txt>
+- **detail:** https://earthquake.usgs.gov/robots.txt could not be fetched (URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>). RFC 9309 2.3.1.4: an unreachable robots.txt means the file is undefined and a crawler MUST assume complete disallow, so no request was ma. The window 2026-09-22..2026-09-23 was not polled for this source.
+- **suggested action:** Register a route the operator's own rules permit, or leave the source unscanned.
+- **detected:** 2026-09-23T00:55:16Z
+
+## Stage: policy
+
+### [INFO] hackernews not requested: robots.txt unreachable
+
+- **id:** `irr-6524b709eebd`
+- **topic:** topic-autonomous-research-agents
+- **link:** <https://hn.algolia.com/robots.txt>
+- **detail:** https://hn.algolia.com/robots.txt could not be fetched (URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>). RFC 9309 2.3.1.4: an unreachable robots.txt means the file is undefined and a crawler MUST assume complete disallow, so no request was made to this host.
+- **suggested action:** Re-run from a host that can read this operator's robots.txt (RFC 9309 2.3.1.4 requires complete disallow while it is unreachable).
+- **detected:** 2026-09-23T00:55:15Z
 
 ## Stage: review
 
@@ -251,6 +310,30 @@ decision, with the evidence needed to make it.
 
 ## Stage: synthesis
 
+### [INFO] 0 brief(s), 0 criticism(s) and 1 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-2bc1e095b18b`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-09-23T00:55:16Z
+
+### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-29e94b8d954c`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-09-23T00:42:16Z
+
+### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-5a6a81604c30`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-09-23T00:44:39Z
+
 ### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
 
 - **id:** `irr-648fdbd55f2a`
@@ -258,6 +341,22 @@ decision, with the evidence needed to make it.
 - **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
 - **suggested action:** Review the retired statements section on the affected topic pages.
 - **detected:** 2026-09-22T23:12:31Z
+
+### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-6b9ba9d4bde9`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-09-23T00:46:12Z
+
+### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-f9e51e2c06d5`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-09-23T00:48:52Z
 
 ### [INFO] 109 brief(s), 449 criticism(s) and 3 open question(s) withdrawn with their retired claims
 

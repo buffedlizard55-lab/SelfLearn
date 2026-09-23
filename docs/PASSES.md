@@ -420,6 +420,101 @@ Final battery, re-run after every change above:
 | `python3 tools/check_claim.py` | `cl-226c5106e9cb` derived claim re-verified against its recorded figures |
 | operator pages fetched and read | Crossref filters, arXiv manual, NVD parameters, USPTO transition guide, and the design conversation - all as the repository claims |
 
+## Pass 18 - three more sources, and the access-policy gate that decided how to read one of them (2026-09-22)
+
+Roadmap item 1 asks for more sources. Reading the operators' own pages line by line
+before registering any turned up a prerequisite that had been a sentence in a document
+rather than a check: the register's admission rule says the engine does not read a site
+that forbids it, and nothing in the pipeline read `robots.txt`.
+
+What was built:
+
+| Piece | Where | Verified by |
+| --- | --- | --- |
+| RFC 9309 access-policy gate: parse, decide, cache, publish | `selflearn/fetch/robots.py` | 31 offline tests in `tests/test_access_policy.py`, one per clause exercised |
+| The gate attached to the HTTP client, so no caller can bypass it | `selflearn/fetch/net.py`, `selflearn/loop.py` | `python3 -m selflearn run --mode snapshot --offline` completes with the gate in the path |
+| A command that prints every decision with the verbatim rule behind it | `python3 -m selflearn robots [--json] [--offline]` | 42 request URLs across 35 hosts: 4 allowed, 34 refused, 4 not checked (credential absent) |
+| Three sources registered, 36 to 39 | `selflearn/fetch/registry.py`, `selflearn/fetch/sources.py` | `registry_summary()`; npm search and both PyPI feeds polled live, 10 items each |
+| The decisions published on the site, and in the run summary's figures | `selflearn/publish/site.py` (`sources.html#policy`), `selflearn/loop.py` | `docs/sources.html` renders 38 decision rows and 35 host rows; `reports/run_summary.json` carries `policy_*` figures |
+| The register's operator text for each new source, quoted with the date read | `docs/SOURCES.md`, `rate_limit_note` per row | npm's three-character search minimum and its unpublished request limit; npm's 128-package/365-day bulk limit and 2015-01-10 earliest date; PyPI's "no rate limiting of PyPI APIs at the edge" beside its Terms-of-Service abuse clause |
+
+The gate decided one source's route on the spot. PyPI documents a JSON API at
+<https://docs.pypi.org/api/json/>; <https://pypi.org/robots.txt> (fetched 2026-09-22)
+disallows `/pypi/*/json` and `/search*` to every user agent; and the operator's own API
+page says "For periodically checking for new packages or updates to existing packages,
+use our RSS feeds" (<https://docs.pypi.org/api/>). The adapter therefore requests only
+`https://pypi.org/rss/packages.xml` and `https://pypi.org/rss/updates.xml`, and the gate
+refuses the JSON route if anything ever asks for it. Both facts are published rather
+than one being chosen silently.
+
+A second operator answered in a way the standard anticipates but reviewers rarely see:
+`https://registry.npmjs.org/robots.txt` returns HTTP 200 with `content-type:
+application/json` - the package document of an npm package literally named
+`robots.txt`. RFC 9309 2.3 asks for `text/plain`; 2.3.1.1 still requires following the
+parseable rules, and a JSON body has no `user-agent:` lines, so 2.2.1 leaves no rules
+applying. The engine parses it, allows the search route, and publishes the media type as
+an irregularity next to the decision with its own status,
+`allowed_no_applicable_group`.
+
+## Pass 19 - review for bugs, missing requirements, incorrect assumptions and edge cases (2026-09-23)
+
+The review method that found the most was mechanical: ask every registered adapter to
+build the request it would send for one ordinary research query, then read the gate's
+own output back from disk and compare it with what the site published.
+
+| Defect | Evidence | Fix |
+| --- | --- | --- |
+| `worldbank` could not build a request at all: `KeyError: 'indicator'` from an endpoint template that interpolated nothing | the 39-adapter sweep | `WorldBankSource`, using only the routes the operator documents (`/v2/indicator`, `/v2/indicator/<code>`, `?format=json`); the sweep is now a regression test |
+| `eurostat` interpolated the prose query into the dataset path, so every request could only answer 404 | the same sweep | a dataset-code guard plus the documented default dataset, and a request label that says when the default was used |
+| A malformed adapter took the whole cycle down with it | the worldbank `KeyError`, uncaught in `_collect_source` | the build is wrapped: `live_status="adapter_error"`, a `Failure` with `stage="adapter"`, an error irregularity, and the cycle continues |
+| `UnboundLocalError: robots_payload` on the first cycle after the gate was wired in | the figures dictionary quoted a variable assigned two lines below it | the gate's payload is read once, before the figures that quote it |
+| The gate reported "hosts checked" from its cache, so an offline cycle claimed it had read 35 `robots.txt` files | `reports/run_summary.json` after a `--offline` cycle | `hosts_checked` is now what this run read and `hosts_published` what the table shows, and the summary sentence has two branches: one for a run that decided something, one for a run that made no request |
+| The generated sentence quoted "9309" and the engine's own narrative guard rejected it as a figure no verified claim contains | audit error `irr-d5ae8a348d92`, "Figures: 9309" | the sentence says "the access-policy gate"; the standard's number is published, linked, on the sources page and in `docs/SOURCES.md`. The finding was closed with `tools/resolve_finding.py`, which records the reason and keeps the original text |
+| An offline cycle's `gate.save()` erased the 38 decisions the networked check had stored | `state/robots.json` after a cycle: `decisions: 0` | `save()` keeps the stored decisions when a run made none, with `decisions_recorded_at` naming the run that did |
+| A manual rebuild published the cache as "this cycle" with an empty decisions table | `reports/site_data.json` after `python3 -m selflearn site` | `robots_payload()` prefers a cycle that decided something and otherwise labels the cached table with the file and timestamp it came from |
+| The site escaped `&mdash;` into visible text and showed `sha256:` plus two characters instead of the hash | reading the rendered `docs/sources.html` | a literal em dash, and the prefix stripped before truncation |
+| `summarise()` counted findings a reviewer had closed among the open totals, so the report published an error count the review page did not show | `reports/irregularities.md` "Totals - error: 1" beside "resolved by a reviewer: 8" | open and resolved are counted apart (`open`, `resolved`, `by_severity`, `resolved_by_severity`); two regression tests |
+| `storage verify` and `site --from-database` printed a driver traceback against a mirror that had never been synced | both commands on a fresh checkout: `sqlite3.OperationalError: no such table` | `MirrorNotInitialised`, raised by `read_rows`, caught by both commands, exit 2, naming `storage sync`; regression test |
+
+Requirements added to the matrix as a result: R-35 (more sources), R-36 (the access
+policy), R-37 (every adapter must build its own request), R-38 (an unattended cycle
+survives a broken adapter), R-39 (a change filter's window and its counts), R-40 (a
+rebuild publishes the same policy table a cycle does).
+
+## Pass 20 - re-check against the original request, final verification (2026-09-23)
+
+| Brief line | Where it is answered | Re-checked this pass |
+| --- | --- | --- |
+| Review the repo and pursue the highest-value work in order | `docs/ROADMAP.md` item 1, `docs/PASSES.md` passes 18-20 | item 1 was worked: three sources registered, and the access-policy gate that item silently depended on |
+| Reach more sources | `selflearn/fetch/registry.py` (39 rows), `docs/SOURCES.md` | every register row re-read against the operator's page; the counts are read from the register, not typed |
+| Work line by line, official verified sources, links for manual review | `docs/SOURCES.md` (access-policy section), `docs/links.html`, `data/requirements.json` (60 rows) | RFC 9309 read clause by clause from <https://www.rfc-editor.org/rfc/rfc9309.txt>; the npm, PyPI and World Bank operator pages read and quoted with dates |
+| No hallucinations - verify line by line | the numeric guards, `tools/check_claim.py`, the narrative audit | the guard fired on this pass's own prose ("9309") and the prose was corrected rather than the guard relaxed |
+| Flag irregularities for review | `selflearn/verify/audit.py`, `docs/review.html`, `reports/irregularities.md` | open findings error 0, warning 15, info 17; 8 resolved by a reviewer with reasons recorded |
+| No manual input | `.github/workflows/research-loop.yml`, `python3 -m selflearn run` | a cycle ran end to end with no intervention and published 31 files |
+| Full list that follows our requirements | `data/requirements.json` (60 rows) | R-35 to R-40 added; `tools/check_requirements_paths.py` passes on 181 path citations |
+| GitHub page: clean, simple, organised, verified links | `docs/`, published at <https://buffedlizard55-lab.github.io/SelfLearn/> | the sources page gained the access-policy table and the change-scan table gained the window columns |
+| Pull request and merge onto main | this session's PR from `arena/01a0cb72-selflearn` | opened and merged with `gh` |
+| Suggestions for future work and limitations | `docs/ROADMAP.md`, `docs/LIMITATIONS.md` (items 34-36), this list | the open order is unchanged: 1, 2, 8 (verification only), 11, 9 |
+| Multiple passes | Pass 18 (implement), Pass 19 (review), Pass 20 (this re-check) | each pass's findings are in its own table above |
+
+Final battery, re-run after every change above:
+
+| Command | Result |
+| --- | --- |
+| `python3 -m selflearn selftest` | 189 tests, all passing (156 before this session; 31 for the access-policy gate, 2 for the findings totals and the empty mirror) |
+| `python3 -m unittest tests.test_access_policy -v` | 31 tests: RFC 9309 clauses 2.2.1, 2.2.2, 2.2.3, 2.3, 2.3.1.3, 2.3.1.4, 2.4, 2.5, the two allowed statuses, the adapter sweep and the collector's `adapter_error` path |
+| `python3 -m selflearn robots` | 42 request URLs over 35 hosts: 4 allowed, 34 refused, 4 not checked because no credential is set; a second run answered from the cache in two seconds, as 2.4 asks |
+| `python3 -m selflearn run --mode snapshot --offline` | exit 0, `run-d2d7fd9bd6be`; 300 claims, 91 documents, 31 files published, open findings error 0 / warning 15 / info 17 |
+| `python3 -m selflearn audit` | 300 claims re-checked against 91 documents; fresh findings `error: 0, warning: 0, info: 1`; published merged open `error: 0, warning: 15, info: 16`, resolved by a reviewer `error: 1, info: 7` |
+| `python3 -m selflearn status` | `claims: 300`, `documents: 91`, `attacks: 960`, `strategies: 222`, `questions: 141`, `experiments: 5`, `contradictions: 12`, `irregularities: 40`, thresholds `supported 0.8 / partially_supported 0.45 / quote_min_chars 24` |
+| `python3 -m selflearn storage sync` then `storage verify` | 8927 rows mirrored; `rows_identical: true`, `library_identical: true`, all 14 streams matching |
+| `python3 -m selflearn storage verify` on a mirror that was never synced | exit 2 and the fix named, instead of a driver traceback |
+| `python3 -m selflearn calibrate` | 26 labelled cases, thresholds in force unchanged: `supported 0.8`, `partially_supported 0.45`, `quote_min_chars 24` |
+| `python3 -m selflearn credentials` | 4 keyed sources with no credential (`eia`, `fred`, `ncei`, `patentsview`), each with the operator's key page and whether its mechanism is `applied` or `declared_only` |
+| `python3 tools/check_requirements_paths.py` | 60 rows, 181 path citations, 4 file#anchor citations, all cited paths exist |
+| `python3 -m selflearn site` | 31 files; the access-policy table renders from `state/robots.json` when no cycle ran, labelled with the file and the moment the decisions were made |
+| operator pages fetched and read | RFC 9309 (rfc-editor.org), npm REGISTRY-API.md and download-counts.md, the npm rate-limiting announcement, docs.pypi.org/api/ and /api/feeds/, pypi.org/robots.txt, policies.python.org Terms of Service, the World Bank Indicator API queries article |
+
 ## Known remaining defects and gaps
 
 These are open, published, and are the honest answer to "what is still wrong":
@@ -443,10 +538,10 @@ These are open, published, and are the honest answer to "what is still wrong":
    families (five before this session); a cycle runs at most `max_experiments_per_cycle`
    of the ones keyword-matched to the questions the manager chose, and the
    autonomous-agents question has no computational experiment that would bear on it.
-8. **Egress from this sandbox is fully blocked** (every outbound request fails at TLS),
-   so local cycles must run `--mode snapshot --offline` and the published site currently
-   reflects snapshot cycle `run-e5bee75a9789` - its mode banner and source-status table
-   included. Live retrieval, the credential path and the change scan can only be proven
+8. **Egress from this sandbox is almost fully blocked** (GitHub, PyPI, npm and the
+   World Bank help desk answer; everything else fails at TLS), so local cycles must run
+   `--mode snapshot --offline` and the published site currently reflects snapshot cycle
+   `run-d2d7fd9bd6be` - its mode banner and source-status table included. Live retrieval, the credential path and the change scan can only be proven
    on the GitHub runner (`research-loop.yml`) once this branch is merged; that first live
    cycle replaces the snapshot statuses with real reachability.
 9. **Fixture mode replays stored snapshots instead of loading synthetic evidence.**
@@ -465,3 +560,15 @@ These are open, published, and are the honest answer to "what is still wrong":
     DB-API shape and its missing-driver error, because this build environment has no
     PostgreSQL server and cannot install one. Roadmap item 8's remaining open half is
     exactly one run against a live server.
+12. **The published access-policy table records a sandbox, not the operators.** 34 of
+    its 38 decisions are `unreachable_disallowed`, because RFC 9309 2.3.1.4 turns an
+    unreachable `robots.txt` into complete disallow and this machine cannot reach those
+    hosts. Each row carries the moment it was decided and the run that decided it, and
+    the first scheduled cycle on a GitHub runner replaces the table.
+13. **`api.npmjs.org` has never been reached**, so the `npm_downloads` adapter is proven
+    against the operator's documented request and response shapes and a pinned fixture,
+    not against a live response.
+14. **The gate matches the path only, not the query string**, a published reading of an
+    ambiguous standard (2.2.2 says "the path"; its Figure 4 lists a URL with a query
+    under a column headed "Path to Match"). An operator whose rules turn on query
+    parameters would be read more permissively than it intends.

@@ -25,6 +25,7 @@ from ..models import EvidenceRecord, Failure, Irregularity, SourceStatus, Topic
 from ..util import content_tokens, sha256_text, stable_id, utcnow_iso
 from .net import HttpClient, HttpError, NetworkUnavailable
 from .registry import get_source
+from .robots import RobotsDisallowed
 from .sources import ParsedItem, Request, Source, build_source
 
 LOG = logging.getLogger("selflearn.collector")
@@ -177,14 +178,119 @@ class Collector:
             )
             return
 
+        # An adapter may be unable to use the question's query at all, because the
+        # operator documents a constraint on the query itself. That is published as
+        # a status rather than sent as a request the operator will not answer, and
+        # rather than left silent: a source that contributes nothing must say so.
+        refusal = adapter.unusable_query_reason(queries[0])
+        try:
+            requests = [] if refusal else adapter.requests(queries[0])
+        except Exception as exc:  # a malformed adapter is a finding, not a crash
+            # An unattended cycle must survive an adapter that cannot build its
+            # own request. Before this, `worldbank` raised KeyError('indicator')
+            # from its endpoint template and took the whole cycle with it; found
+            # by asking every registered adapter to build its requests.
+            detail = (
+                f"The {source_id} adapter raised {type(exc).__name__}: {exc} while building its request, so nothing "
+                f"was asked of this source. Documentation: {spec.docs_url}"
+            )
+            outcome.failures.append(
+                Failure(
+                    failure_id=stable_id("fail", source_id, "adapter", type(exc).__name__),
+                    topic_id=topic.topic_id,
+                    stage="adapter",
+                    summary=f"{source_id} adapter could not build a request",
+                    detail=detail[:600],
+                    remedy="Fix the adapter's endpoint template or field map; the response shape is in the operator's documentation linked here.",
+                )
+            )
+            outcome.statuses.append(
+                SourceStatus(
+                    source_id=source_id,
+                    topics=[topic.topic_id],
+                    name=spec.name,
+                    url=spec.docs_url,
+                    evidence_class=spec.evidence_class,
+                    evidence_rank=spec.evidence_rank,
+                    requires_key=spec.requires_key,
+                    live_status="adapter_error",
+                    detail=detail[:300],
+                )
+            )
+            outcome.irregularities.append(
+                self._irregularity(
+                    "error",
+                    "collect",
+                    topic.topic_id,
+                    f"{source_id} adapter could not build a request: {type(exc).__name__}",
+                    detail,
+                    url=spec.docs_url,
+                    suggested_action="Repair the adapter in selflearn/fetch/sources.py against the operator's documented endpoint.",
+                )
+            )
+            return
+        if refusal or not requests:
+            detail = refusal or (
+                f"The {source_id} adapter built no request for the query {queries[0][:80]!r}. "
+                "Nothing was asked of this source in this cycle."
+            )
+            outcome.statuses.append(
+                SourceStatus(
+                    source_id=source_id,
+                    topics=[topic.topic_id],
+                    name=spec.name,
+                    url=spec.docs_url,
+                    evidence_class=spec.evidence_class,
+                    evidence_rank=spec.evidence_rank,
+                    requires_key=spec.requires_key,
+                    live_status="not_attempted",
+                    detail=detail[:300],
+                )
+            )
+            outcome.irregularities.append(
+                self._irregularity(
+                    "info",
+                    "collect",
+                    topic.topic_id,
+                    f"{source_id} not queried this cycle",
+                    detail,
+                    url=spec.docs_url,
+                    suggested_action=(
+                        "Use a query this operator's documented endpoint accepts, or read the source's own "
+                        "documentation linked here."
+                    ),
+                )
+            )
+            return
+
         note = spec.notes
-        for request in adapter.requests(queries[0]):
+        for request in requests:
             records, status, problems = self._run_request(topic, source_id, adapter, request, note)
             outcome.records.extend(records)
             for problem in problems:
                 outcome.failures.append(problem)
             if status is not None:
                 outcome.statuses.append(status)
+                if status.live_status in {"robots_disallowed", "robots_unreachable"}:
+                    explicit = status.live_status == "robots_disallowed"
+                    outcome.irregularities.append(
+                        self._irregularity(
+                            "warning" if explicit else "info",
+                            "policy",
+                            topic.topic_id,
+                            f"{source_id} not requested: {'robots.txt disallows the path' if explicit else 'robots.txt unreachable'}",
+                            status.detail,
+                            url=status.url,
+                            suggested_action=(
+                                "Read the operator's robots.txt and API documentation; the engine obeys RFC 9309 and "
+                                "does not work around a disallow rule. If the operator documents the route for API "
+                                "consumers, a reviewer can register a route the operator's own rules permit."
+                                if explicit
+                                else "Re-run from a host that can read this operator's robots.txt (RFC 9309 2.3.1.4 "
+                                "requires complete disallow while it is unreachable)."
+                            ),
+                        )
+                    )
 
     def _run_request(
         self,
@@ -198,6 +304,59 @@ class Collector:
         failures: list[Failure] = []
         try:
             result = self.client.get(request.url, params=request.params, headers=request.headers)
+        except RobotsDisallowed as exc:
+            decision = exc.decision
+            # Two different refusals, published differently, because they mean
+            # different things. An explicit rule in the operator's robots.txt is a
+            # policy decision the engine obeys and never works around: no snapshot
+            # is replayed for it, because replaying would keep publishing evidence
+            # from a path the operator asks crawlers not to read. An *unreachable*
+            # robots.txt is RFC 9309 2.3.1.4's "assume complete disallow", which is
+            # a network gap like any other, so the stored snapshot is replayed and
+            # marked as such.
+            explicit = decision.status == "disallowed"
+            failures.append(
+                Failure(
+                    failure_id=stable_id("fail", source_id, request.url, "robots", decision.status),
+                    topic_id=topic.topic_id,
+                    stage="policy",
+                    summary=(
+                        f"{source_id} not requested: the operator's robots.txt disallows this path"
+                        if explicit
+                        else f"{source_id} not requested: its robots.txt could not be read"
+                    ),
+                    detail=(decision.detail or "")[:600],
+                    remedy=(
+                        f"Read {decision.robots_url} and the operator's API documentation. If the operator "
+                        "documents this route for programmatic consumers, a reviewer can decide whether the "
+                        "engine should ask for it another way; nothing is fetched until that decision is made."
+                        if explicit
+                        else "Confirm egress from the runner. RFC 9309 2.3.1.4 requires a crawler to assume "
+                        "complete disallow while robots.txt is unreachable, so the source is skipped rather "
+                        "than requested."
+                    ),
+                )
+            )
+            replayed = [] if explicit else self._replay(topic, source_id, request, note)
+            return (
+                replayed,
+                SourceStatus(
+                    source_id=source_id,
+                    topics=[topic.topic_id],
+                    name=spec.name,
+                    url=decision.robots_url,
+                    evidence_class=spec.evidence_class,
+                    evidence_rank=spec.evidence_rank,
+                    requires_key=spec.requires_key,
+                    live_status="robots_disallowed" if explicit else "robots_unreachable",
+                    detail=(
+                        (f"robots.txt rule {decision.rule!r} disallows {decision.path}; " if decision.rule else "")
+                        + (decision.detail or "")
+                    )[:300],
+                    items=len(replayed),
+                ),
+                failures,
+            )
         except NetworkUnavailable as exc:
             failures.append(
                 Failure(
@@ -485,4 +644,6 @@ def summarise_status(statuses: list[SourceStatus]) -> dict[str, Any]:
         "unreachable": sorted({s.source_id for s in statuses if s.live_status == "unreachable"}),
         "errors": sorted({s.source_id for s in statuses if s.live_status == "error"}),
         "credential_required": sorted({s.source_id for s in statuses if s.live_status == "credential_required"}),
+        "robots_disallowed": sorted({s.source_id for s in statuses if s.live_status == "robots_disallowed"}),
+        "robots_unreachable": sorted({s.source_id for s in statuses if s.live_status == "robots_unreachable"}),
     }

@@ -26,6 +26,7 @@ from typing import Any
 
 from ..config import BUDGET, DEFAULT_USER_AGENT
 from ..util import sha256_bytes, utcnow_iso
+from .robots import RobotsDecision, RobotsDisallowed, RobotsGate
 
 LOG = logging.getLogger("selflearn.fetch")
 
@@ -102,6 +103,13 @@ class HttpClient:
     max_requests: int = BUDGET.max_http_requests
     allow_network: bool = True
     log: list[RequestLogEntry] = field(default_factory=list)
+    #: Optional RFC 9309 access-policy gate. When set, every URL is checked
+    #: against its host's robots.txt *before* a request is made, and a refused
+    #: URL raises :class:`RobotsDisallowed` instead of being fetched. It is a
+    #: field on the client rather than a call in each caller so that no code path
+    #: can bypass it by forgetting to ask.
+    robots: RobotsGate | None = None
+    robots_refusals: list[RobotsDecision] = field(default_factory=list)
 
     _last_request_at: dict[str, float] = field(default_factory=dict, init=False)
     _request_count: int = field(default=0, init=False)
@@ -127,6 +135,12 @@ class HttpClient:
         host = urllib.parse.urlparse(url).netloc
         if not self.allow_network:
             raise NetworkUnavailable(f"network disabled by configuration; refused GET {url}")
+        if self.robots is not None:
+            decision = self.robots.check(url)
+            if not decision.allowed:
+                if decision not in self.robots_refusals:
+                    self.robots_refusals.append(decision)
+                raise RobotsDisallowed(decision)
         if self._request_count >= self.max_requests:
             raise NetworkUnavailable(
                 f"request budget exhausted ({self.max_requests} per cycle); refused GET {url}"
