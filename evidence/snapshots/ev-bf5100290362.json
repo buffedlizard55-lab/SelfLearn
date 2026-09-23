@@ -1,0 +1,23 @@
+{
+  "bytes_read": 8122,
+  "content_hash": "sha256:441066c438cc224da1743ca621c2be893af8e995a8f1e0250d142ae61e084663",
+  "evidence_class": "peer_reviewed",
+  "evidence_class_label": "Peer-reviewed publication indexed by a DOI registry or PubMed.",
+  "evidence_id": "ev-bf5100290362",
+  "evidence_rank": 4,
+  "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: A comparison-free sorting algorithm\nThe record for A comparison-free sorting algorithm reports: DOI 10.1109/isocc.2014.7087612, date 2014, venue 2014 Internati",
+  "http_status": 200,
+  "is_fixture": false,
+  "is_live": true,
+  "license": "Metadata: CC0; abstracts remain publisher copyright",
+  "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
+  "published_at": "2014-01-01",
+  "publisher": "Crossref (DOI registration agency, not-for-profit)",
+  "response_sha256": "sha256:dccb84e57b94070f561fa5f111fb356f7cf3e55b43434b7f5c71448791bb0623",
+  "retrieved_at": "2026-09-23T04:53:07Z",
+  "source_id": "crossref",
+  "source_name": "Crossref REST API",
+  "text": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: A comparison-free sorting algorithm\nThe record for A comparison-free sorting algorithm reports: DOI 10.1109/isocc.2014.7087612, date 2014, venue 2014 International SoC Design Conference (ISOCC).\nThe record for A comparison-free sorting algorithm reports: type proceedings-article, publisher.username IEEE, citation count 1.\nThe record for A comparison-free sorting algorithm reports: authors given: Saleh; family: Abdel-hafeez; sequence: first; role: role: author; vocabulary: crossref; given: Ann; family: Gordon-Ross; sequence: additional; role: role: author; vocabulary: crossref.\nSource note: The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
+  "title": "A comparison-free sorting algorithm",
+  "url": "https://doi.org/10.1109/isocc.2014.7087612"
+}

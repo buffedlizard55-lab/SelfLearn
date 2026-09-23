@@ -2,11 +2,11 @@
   "counts": {
     "attacks": 960,
     "claims": 300,
-    "documents": 93,
+    "documents": 127,
     "experiments": 5,
-    "http_requests": 3,
+    "http_requests": 13,
     "metadata_claims": 45,
-    "questions": 147,
+    "questions": 180,
     "strategies": 222,
     "substantive_claims": 119,
     "synthesis_claims": 5,
@@ -17,17 +17,17 @@
   "irregularities": {
     "by_severity": {
       "error": 0,
-      "info": 23,
-      "warning": 15
+      "info": 24,
+      "warning": 17
     },
-    "open": 38,
+    "open": 41,
     "resolved": 8,
     "resolved_by_severity": {
       "error": 1,
       "info": 7,
       "warning": 0
     },
-    "total": 46
+    "total": 49
   },
   "mode": "live",
   "notes": [
@@ -38,8 +38,11 @@
     "topic-research-loop-scheduling: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
     "topic-search-and-sorting-strategy: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
     "topic-autonomous-research-agents: 0 new claim(s) from 13 document(s); 6 candidate(s); 26 attack(s).",
+    "topic-fabrication-detection: 0 new claim(s) from 20 document(s); 6 candidate(s); 30 attack(s).",
+    "topic-research-loop-scheduling: 0 new claim(s) from 16 document(s); 6 candidate(s); 27 attack(s).",
+    "topic-search-and-sorting-strategy: 0 new claim(s) from 20 document(s); 6 candidate(s); 30 attack(s).",
     "3 candidate topic(s) scored from the retrieved documents; 0 promoted to the topic list.",
-    "Change scan: 13 item(s) seen for the first time across 2 source(s); 6 question(s) derived."
+    "Change scan: 12 item(s) seen for the first time across 5 source(s); 7 question(s) derived."
   ],
   "plan": {
     "budget": {
@@ -60,7 +63,7 @@
       "topic-research-loop-scheduling: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
       "topic-search-and-sorting-strategy: cannot measure attention for this question. Those components are excluded from the score rather than defaulted."
     ],
-    "run_id": "run-a467fa87a6df",
+    "run_id": "run-948013a3ff8b",
     "scores": [
       {
         "basis": [
@@ -80,7 +83,7 @@
           "testability": 0.8919
         },
         "details": {
-          "newest_document_age_days": 27.0
+          "newest_document_age_days": 27.2
         },
         "topic_id": "topic-autonomous-research-agents",
         "total": 0.4447,
@@ -106,7 +109,7 @@
           "testability": 0.7571
         },
         "details": {
-          "newest_document_age_days": 2.0
+          "newest_document_age_days": 2.2
         },
         "topic_id": "topic-fabrication-detection",
         "total": 0.3845,
@@ -132,7 +135,7 @@
           "testability": 0.8533
         },
         "details": {
-          "newest_document_age_days": 75.0
+          "newest_document_age_days": 75.2
         },
         "topic_id": "topic-research-loop-scheduling",
         "total": 0.346,
@@ -158,7 +161,7 @@
           "testability": 0.8519
         },
         "details": {
-          "newest_document_age_days": 91.0
+          "newest_document_age_days": 91.2
         },
         "topic_id": "topic-search-and-sorting-strategy",
         "total": 0.33,
@@ -168,7 +171,10 @@
       }
     ],
     "selected_topics": [
-      "topic-autonomous-research-agents"
+      "topic-autonomous-research-agents",
+      "topic-fabrication-detection",
+      "topic-research-loop-scheduling",
+      "topic-search-and-sorting-strategy"
     ],
     "sources_by_topic": {
       "topic-autonomous-research-agents": [
@@ -177,11 +183,29 @@
         "crossref",
         "openalex",
         "arxiv"
+      ],
+      "topic-fabrication-detection": [
+        "github",
+        "arxiv",
+        "crossref",
+        "semantic_scholar",
+        "openalex"
+      ],
+      "topic-research-loop-scheduling": [
+        "github",
+        "crossref",
+        "openalex",
+        "arxiv"
+      ],
+      "topic-search-and-sorting-strategy": [
+        "github",
+        "crossref",
+        "arxiv"
       ]
     },
     "tasks": [
       {
-        "created_at": "2026-09-23T00:55:14Z",
+        "created_at": "2026-09-23T04:52:56Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -194,56 +218,74 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-4f3d2c91403c",
+        "task_id": "task-5835d36e2949",
         "topic_id": "topic-autonomous-research-agents"
+      },
+      {
+        "created_at": "2026-09-23T04:52:56Z",
+        "kind": "research",
+        "payload": {
+          "sources": [
+            "github",
+            "arxiv",
+            "crossref",
+            "semantic_scholar",
+            "openalex"
+          ]
+        },
+        "priority": 1.0,
+        "status": "queued",
+        "task_id": "task-9317226a7a1b",
+        "topic_id": "topic-fabrication-detection"
+      },
+      {
+        "created_at": "2026-09-23T04:52:56Z",
+        "kind": "research",
+        "payload": {
+          "sources": [
+            "github",
+            "crossref",
+            "openalex",
+            "arxiv"
+          ]
+        },
+        "priority": 1.0,
+        "status": "queued",
+        "task_id": "task-f0a2d993737e",
+        "topic_id": "topic-research-loop-scheduling"
+      },
+      {
+        "created_at": "2026-09-23T04:52:56Z",
+        "kind": "research",
+        "payload": {
+          "sources": [
+            "github",
+            "crossref",
+            "arxiv"
+          ]
+        },
+        "priority": 1.0,
+        "status": "queued",
+        "task_id": "task-910d73b9e197",
+        "topic_id": "topic-search-and-sorting-strategy"
       }
     ]
   },
-  "published": [
-    "/home/user/SelfLearn/docs/static/style.css",
-    "/home/user/SelfLearn/docs/static/app.js",
-    "/home/user/SelfLearn/docs/.nojekyll",
-    "/home/user/SelfLearn/index.html",
-    "/home/user/SelfLearn/404.html",
-    "/home/user/SelfLearn/.nojekyll",
-    "/home/user/SelfLearn/docs/index.html",
-    "/home/user/SelfLearn/docs/library.html",
-    "/home/user/SelfLearn/docs/sources.html",
-    "/home/user/SelfLearn/docs/links.html",
-    "/home/user/SelfLearn/docs/experiments.html",
-    "/home/user/SelfLearn/docs/method.html",
-    "/home/user/SelfLearn/docs/documents.html",
-    "/home/user/SelfLearn/docs/requirements.html",
-    "/home/user/SelfLearn/docs/review.html",
-    "/home/user/SelfLearn/docs/404.html",
-    "/home/user/SelfLearn/docs/topics/autonomous-research-agents.html",
-    "/home/user/SelfLearn/docs/data/topics/autonomous-research-agents.json",
-    "/home/user/SelfLearn/docs/topics/fabrication-detection.html",
-    "/home/user/SelfLearn/docs/data/topics/fabrication-detection.json",
-    "/home/user/SelfLearn/docs/topics/research-loop-scheduling.html",
-    "/home/user/SelfLearn/docs/data/topics/research-loop-scheduling.json",
-    "/home/user/SelfLearn/docs/topics/search-and-sorting-strategy.html",
-    "/home/user/SelfLearn/docs/data/topics/search-and-sorting-strategy.json",
-    "/home/user/SelfLearn/docs/data/index.json",
-    "/home/user/SelfLearn/docs/data/sources.json",
-    "/home/user/SelfLearn/docs/data/irregularities.json",
-    "/home/user/SelfLearn/docs/data/requirements.json",
-    "/home/user/SelfLearn/docs/data/methodology.json",
-    "/home/user/SelfLearn/docs/data/experiments.json",
-    "/home/user/SelfLearn/docs/data/meta.json"
-  ],
-  "run_id": "run-a467fa87a6df",
+  "published": [],
+  "run_id": "run-948013a3ff8b",
   "sources": {
-    "checked": 2,
+    "checked": 9,
     "credential_required": [],
     "errors": [],
     "reachable": [
-      "github"
-    ],
-    "robots_disallowed": [],
-    "robots_unreachable": [
+      "crossref",
+      "github",
       "hackernews"
     ],
+    "robots_disallowed": [
+      "arxiv"
+    ],
+    "robots_unreachable": [],
     "unreachable": []
   }
 }

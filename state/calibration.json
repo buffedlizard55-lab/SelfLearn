@@ -118,7 +118,7 @@
     }
   },
   "case_count": 26,
-  "cases_path": "/home/user/SelfLearn/data/fixtures/verification_cases.jsonl",
+  "cases_path": "/home/runner/work/SelfLearn/SelfLearn/data/fixtures/verification_cases.jsonl",
   "changed": false,
   "disagreements": [],
   "grid": [
@@ -1448,7 +1448,7 @@
     "Selection used 26 labelled case(s); false supports at the selected point: 0."
   ],
   "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-  "ran_at": "2026-09-22T23:23:02Z",
+  "ran_at": "2026-09-23T04:53:13Z",
   "selected": {
     "accuracy": 1.0,
     "all_cases": {

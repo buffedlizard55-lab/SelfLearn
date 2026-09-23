@@ -1,0 +1,23 @@
+{
+  "bytes_read": 12388,
+  "content_hash": "sha256:ede750b369bb2b67691864b103d3c4cf4adebc025c0ccbcdf5b41a53e1fd60b1",
+  "evidence_class": "peer_reviewed",
+  "evidence_class_label": "Peer-reviewed publication indexed by a DOI registry or PubMed.",
+  "evidence_id": "ev-3f9e6d1ab68c",
+  "evidence_rank": 4,
+  "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Using active learning techniques to facilitate employability and enterprise skills acquisition\nThe record for Using active learning techniques to facilitate em",
+  "http_status": 200,
+  "is_fixture": false,
+  "is_live": true,
+  "license": "Metadata: CC0; abstracts remain publisher copyright",
+  "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
+  "published_at": "2022-01-01",
+  "publisher": "Crossref (DOI registration agency, not-for-profit)",
+  "response_sha256": "sha256:7bb08fcb2ab4ab9e190e7947b40e09a5b50a6f8fbbf7e4ab7af8ab3e44464771",
+  "retrieved_at": "2026-09-23T04:53:03Z",
+  "source_id": "crossref",
+  "source_name": "Crossref REST API",
+  "text": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Using active learning techniques to facilitate employability and enterprise skills acquisition\nThe record for Using active learning techniques to facilitate employability and enterprise skills acquisition reports: DOI 10.20919/opxr1032/42, date 2022, venue Ideas for Active Learning.\nThe record for Using active learning techniques to facilitate employability and enterprise skills acquisition reports: type book-chapter, publisher.username University of Sussex Library, citation count 0.\nThe record for Using active learning techniques to facilitate employability and enterprise skills acquisition reports: authors given: Karen; family: Heard-LauréoteMark; sequence: first; role: role: author; vocabulary: crossref.\nSource note: The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
+  "title": "Using active learning techniques to facilitate employability and enterprise skills acquisition",
+  "url": "https://doi.org/10.20919/opxr1032/42"
+}
