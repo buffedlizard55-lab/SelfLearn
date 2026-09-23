@@ -1,5 +1,5 @@
 {
-  "bytes_read": 30038,
+  "bytes_read": 30045,
   "content_hash": "sha256:2a8ad3ee40e4eb019b4113ca716433df2742abe644d54908746463e80d21a58f",
   "evidence_class": "commentary",
   "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -13,8 +13,8 @@
   "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
   "published_at": "2026-03-24",
   "publisher": "Y Combinator (Hacker News); Algolia operates the search index",
-  "response_sha256": "sha256:d211b22ed285b168aa89de9871363359620d1b472ec8458dd382afbf7afe0edc",
-  "retrieved_at": "2026-09-23T04:52:57Z",
+  "response_sha256": "sha256:4d322e9e27f4ed074dab4e7329aeb77372f44268e9b6b8c7a629ce3ac747e636",
+  "retrieved_at": "2026-09-23T11:48:37Z",
   "source_id": "hackernews",
   "source_name": "Hacker News API (via Algolia index)",
   "text": "Source: Hacker News API (via Algolia index) (https://hn.algolia.com/api/v1)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: EvidionAI – open-source multi-agent research system built on LangGraph\nThe record for EvidionAI – open-source multi-agent research system built on LangGraph reports: created_at 2026-03-24T22:48:42Z, points 1, comment count 1.\nThe record for EvidionAI – open-source multi-agent research system built on LangGraph reports: objectID 47510639.\nSource note: Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",

@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-09-23T04:53:08Z",
-  "items_new": 12,
+  "generated_at": "2026-09-23T11:48:47Z",
+  "items_new": 14,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-948013a3ff8b",
+  "run_id": "run-c5947eaf689c",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -77,28 +77,28 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ayan-saiyad/AgentMeter\nThe record for ayan-",
-          "identifier": "https://github.com/ayan-saiyad/AgentMeter",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: kowshi1119/multi-agent-autoqa\nThe record fo",
+          "identifier": "https://github.com/kowshi1119/multi-agent-autoqa",
           "published_at": "2026-09-23",
           "source_id": "github",
-          "title": "ayan-saiyad/AgentMeter",
-          "url": "https://github.com/ayan-saiyad/AgentMeter"
+          "title": "kowshi1119/multi-agent-autoqa",
+          "url": "https://github.com/kowshi1119/multi-agent-autoqa"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: KaolaBrother/kaola-project-runner\nThe recor",
-          "identifier": "https://github.com/KaolaBrother/kaola-project-runner",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Noxorigine/nox-origin\nThe record for Noxori",
+          "identifier": "https://github.com/Noxorigine/nox-origin",
           "published_at": "2026-09-23",
           "source_id": "github",
-          "title": "KaolaBrother/kaola-project-runner",
-          "url": "https://github.com/KaolaBrother/kaola-project-runner"
+          "title": "Noxorigine/nox-origin",
+          "url": "https://github.com/Noxorigine/nox-origin"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: TheHappyHermit/Autognosia\nThe record for Th",
-          "identifier": "https://github.com/TheHappyHermit/Autognosia",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: CyberPrince-glitch/Shopno-Portable-LLM\nThe ",
+          "identifier": "https://github.com/CyberPrince-glitch/Shopno-Portable-LLM",
           "published_at": "2026-09-23",
           "source_id": "github",
-          "title": "TheHappyHermit/Autognosia",
-          "url": "https://github.com/TheHappyHermit/Autognosia"
+          "title": "CyberPrince-glitch/Shopno-Portable-LLM",
+          "url": "https://github.com/CyberPrince-glitch/Shopno-Portable-LLM"
         }
       ],
       "request_params": {
@@ -129,8 +129,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-23T04:53:09.194\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:914e70bc0",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-23T11:48:48.466\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:60be7ef72",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -155,9 +155,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-09-22..2026-09-23 and dropped; 0 carried no readable date and were kept; 8 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-09-22..2026-09-23 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 8,
+      "items_new": 10,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -166,43 +166,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/experiential/0.7.108/",
+          "identifier": "https://pypi.org/project/itasca-mcp/0.10.0/",
           "published_at": "2026-09-23",
           "source_id": "pypi",
-          "title": "experiential 0.7.108",
-          "url": "https://pypi.org/project/experiential/0.7.108/"
+          "title": "itasca-mcp 0.10.0",
+          "url": "https://pypi.org/project/itasca-mcp/0.10.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/exp-gateway-native/0.3.99/",
+          "identifier": "https://pypi.org/project/clm-kernel/0.0.1/",
           "published_at": "2026-09-23",
           "source_id": "pypi",
-          "title": "exp-gateway-native 0.3.99",
-          "url": "https://pypi.org/project/exp-gateway-native/0.3.99/"
+          "title": "clm-kernel 0.0.1",
+          "url": "https://pypi.org/project/clm-kernel/0.0.1/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/pyoaev/3.260923.0/",
+          "identifier": "https://pypi.org/project/pypreservica/4.0.4/",
           "published_at": "2026-09-23",
           "source_id": "pypi",
-          "title": "pyoaev 3.260923.0",
-          "url": "https://pypi.org/project/pyoaev/3.260923.0/"
+          "title": "pyPreservica 4.0.4",
+          "url": "https://pypi.org/project/pypreservica/4.0.4/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/ovos-skill-ip/0.7.1a2/",
+          "identifier": "https://pypi.org/project/spaday-vega/0.1.1/",
           "published_at": "2026-09-23",
           "source_id": "pypi",
-          "title": "ovos-skill-ip 0.7.1a2",
-          "url": "https://pypi.org/project/ovos-skill-ip/0.7.1a2/"
+          "title": "spaday-vega 0.1.1",
+          "url": "https://pypi.org/project/spaday-vega/0.1.1/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/hyperi-ci/2.10.10/",
+          "identifier": "https://pypi.org/project/spaday-codemirror/0.1.1/",
           "published_at": "2026-09-23",
           "source_id": "pypi",
-          "title": "hyperi-ci 2.10.10",
-          "url": "https://pypi.org/project/hyperi-ci/2.10.10/"
+          "title": "spaday-codemirror 0.1.1",
+          "url": "https://pypi.org/project/spaday-codemirror/0.1.1/"
         }
       ],
       "request_params": {},

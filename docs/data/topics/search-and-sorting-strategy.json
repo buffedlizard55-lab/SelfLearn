@@ -921,7 +921,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-23T04:53:07Z",
+      "recorded_at": "2026-09-23T11:48:46Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-226c5106e9cb",
@@ -974,7 +974,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-23T04:53:07Z",
+      "recorded_at": "2026-09-23T11:48:46Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-515151e36c43",
@@ -1026,7 +1026,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-23T04:53:07Z",
+      "recorded_at": "2026-09-23T11:48:46Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-d738fd457549",
@@ -1078,7 +1078,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-23T04:53:07Z",
+      "recorded_at": "2026-09-23T11:48:46Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-98b8b5ce690a",
@@ -1135,7 +1135,7 @@
       "reasons": [
         "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
       ],
-      "recorded_at": "2026-09-23T04:53:07Z",
+      "recorded_at": "2026-09-23T11:48:46Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-e11c78d29de7",
@@ -3427,7 +3427,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2018-10-14",
-      "retrieved_at": "2026-09-23T04:53:06Z",
+      "retrieved_at": "2026-09-23T11:48:44Z",
       "source_name": "GitHub REST API",
       "title": "sbtali/SortAlgorithmsComparison",
       "url": "https://github.com/sbtali/SortAlgorithmsComparison"
@@ -3442,7 +3442,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2015-05-10",
-      "retrieved_at": "2026-09-23T04:53:06Z",
+      "retrieved_at": "2026-09-23T11:48:44Z",
       "source_name": "GitHub REST API",
       "title": "w32zhong/BTreeimplementation",
       "url": "https://github.com/w32zhong/BTreeimplementation"
@@ -3457,7 +3457,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2018-01-06",
-      "retrieved_at": "2026-09-23T04:53:06Z",
+      "retrieved_at": "2026-09-23T11:48:44Z",
       "source_name": "GitHub REST API",
       "title": "GroupAYECS765P/BDP-05-Large-scale-Clustering",
       "url": "https://github.com/GroupAYECS765P/BDP-05-Large-scale-Clustering"
@@ -3472,7 +3472,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2022-02-10",
-      "retrieved_at": "2026-09-23T04:53:06Z",
+      "retrieved_at": "2026-09-23T11:48:44Z",
       "source_name": "GitHub REST API",
       "title": "allenvox/sorting-algorithms-comparison",
       "url": "https://github.com/allenvox/sorting-algorithms-comparison"
@@ -3487,7 +3487,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2022-11-06",
-      "retrieved_at": "2026-09-23T04:53:06Z",
+      "retrieved_at": "2026-09-23T11:48:44Z",
       "source_name": "GitHub REST API",
       "title": "picoders1/Sorting-Countable-Integers--DSA",
       "url": "https://github.com/picoders1/Sorting-Countable-Integers--DSA"
@@ -3502,7 +3502,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-06-24",
-      "retrieved_at": "2026-09-23T04:53:06Z",
+      "retrieved_at": "2026-09-23T11:48:44Z",
       "source_name": "GitHub REST API",
       "title": "Anshsing/sorting-visualizer",
       "url": "https://github.com/Anshsing/sorting-visualizer"
@@ -3517,7 +3517,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2024-08-01",
-      "retrieved_at": "2026-09-23T04:53:06Z",
+      "retrieved_at": "2026-09-23T11:48:44Z",
       "source_name": "GitHub REST API",
       "title": "daley331/Sorting-Algorithms-Analysis",
       "url": "https://github.com/daley331/Sorting-Algorithms-Analysis"
@@ -3532,7 +3532,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2020-05-18",
-      "retrieved_at": "2026-09-23T04:53:06Z",
+      "retrieved_at": "2026-09-23T11:48:44Z",
       "source_name": "GitHub REST API",
       "title": "thedonat/Sorting-Algorithms-Comparison",
       "url": "https://github.com/thedonat/Sorting-Algorithms-Comparison"
@@ -3547,7 +3547,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2013-02-04",
-      "retrieved_at": "2026-09-23T04:53:06Z",
+      "retrieved_at": "2026-09-23T11:48:44Z",
       "source_name": "GitHub REST API",
       "title": "onuryilmaz-wip/ComparisonOfSortingAlgorithms",
       "url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms"
@@ -3562,7 +3562,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2024-10-13",
-      "retrieved_at": "2026-09-23T04:53:06Z",
+      "retrieved_at": "2026-09-23T11:48:44Z",
       "source_name": "GitHub REST API",
       "title": "0Kiprotich/SortingAlgorithms-Comparison-based-Sorting",
       "url": "https://github.com/0Kiprotich/SortingAlgorithms-Comparison-based-Sorting"
@@ -3581,13 +3581,13 @@
       "baseline": 16807.6,
       "best_value": 1726.4,
       "best_variant": "merge_sort",
-      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-_ujmwlv_/result.json",
+      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-y5r7pmk5/result.json",
       "error": "",
       "experiment_id": "sorting-comparisons-v1",
       "hypothesis": "On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either.",
       "method": "Deterministic in-process benchmark, 15 seeds per input profile, comparison counter per algorithm.",
       "metric": "mean element comparisons per run",
-      "ran_at": "2026-09-23T04:53:07Z",
+      "ran_at": "2026-09-23T11:48:46Z",
       "result_json": {
         "baseline": 16807.6,
         "baseline_name": "insertion_sort on shuffled input",
@@ -3635,9 +3635,9 @@
               "merge_sort": 1024
             },
             "mean_seconds": {
-              "heapsort": 0.00042144,
-              "insertion_sort": 0.00345213,
-              "merge_sort": 0.00029248
+              "heapsort": 0.00044404,
+              "insertion_sort": 0.00352928,
+              "merge_sort": 0.00029261
             },
             "min_comparisons": {
               "heapsort": 3106,
@@ -3657,9 +3657,9 @@
               "merge_sort": 1726.4
             },
             "mean_seconds": {
-              "heapsort": 0.00046059,
-              "insertion_sort": 0.00178147,
-              "merge_sort": 0.00040099
+              "heapsort": 0.0004884,
+              "insertion_sort": 0.00182264,
+              "merge_sort": 0.00040023
             },
             "min_comparisons": {
               "heapsort": 3278,
@@ -3679,9 +3679,9 @@
               "merge_sort": 1024
             },
             "mean_seconds": {
-              "heapsort": 0.00048326,
-              "insertion_sort": 3.022e-05,
-              "merge_sort": 0.00029276
+              "heapsort": 0.00050967,
+              "insertion_sort": 3.258e-05,
+              "merge_sort": 0.00028994
             },
             "min_comparisons": {
               "heapsort": 3452,
@@ -3714,7 +3714,7 @@
       "topic_id": "topic-search-and-sorting-strategy"
     }
   ],
-  "generated_at": "2026-09-23T04:53:13Z",
+  "generated_at": "2026-09-23T11:48:53Z",
   "questions": [
     {
       "id": "q-29c92c5dc0ff",
@@ -5149,14 +5149,14 @@
     {
       "claim_id": "q-012936aa0ff1",
       "claim_kind": "open question (gap)",
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "superseded": "Withdrawn 2026-09-23T04:53:10Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd.",
+      "recorded_at": "2026-09-23T11:48:47Z",
+      "superseded": "Withdrawn 2026-09-23T11:48:50Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-04fe27e07fbd.",
       "text": "The quantity reported in cl-04fe27e07fbd has no reference period in the quoted text. Over what period, and in what population, was it measured?"
     }
   ],
   "source_status": [
     {
-      "checked_at": "2026-09-23T04:53:06Z",
+      "checked_at": "2026-09-23T11:48:44Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -5172,7 +5172,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-23T04:53:07Z",
+      "checked_at": "2026-09-23T11:48:46Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "peer_reviewed",
       "evidence_rank": 4,
@@ -5190,7 +5190,7 @@
   ],
   "statistics": {
     "claims": 49,
-    "computed_at": "2026-09-23T04:53:13Z",
+    "computed_at": "2026-09-23T11:48:53Z",
     "documents": 10,
     "evidence_classes": [
       "primary_source",
@@ -5471,6 +5471,18 @@
     {
       "last_updated": "2026-09-23T04:53:08Z",
       "line": 195,
+      "status": "testing",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "last_updated": "2026-09-23T11:48:35Z",
+      "line": 199,
+      "status": "new",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "last_updated": "2026-09-23T11:48:47Z",
+      "line": 203,
       "status": "testing",
       "topic_id": "topic-search-and-sorting-strategy"
     }
@@ -6884,7 +6896,7 @@
   },
   "synthesis": [],
   "topic": {
-    "first_seen": "2026-09-23T04:52:55Z",
+    "first_seen": "2026-09-23T11:48:35Z",
     "keywords": [
       "algorithm",
       "sorting",
@@ -6894,7 +6906,7 @@
       "performance",
       "data structures"
     ],
-    "last_updated": "2026-09-23T04:53:08Z",
+    "last_updated": "2026-09-23T11:48:47Z",
     "notes": "The one seed question that matches the computational experiment catalogue, so the tournament's experimental criterion can be non-zero here.",
     "origin": "seed",
     "parent_topic_id": null,

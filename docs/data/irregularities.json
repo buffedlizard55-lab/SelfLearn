@@ -165,7 +165,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-23T04:52:58Z",
+    "created_at": "2026-09-23T11:48:38Z",
     "detail": "robots.txt rule 'Disallow: /' disallows /api/query; https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules ",
     "irregularity_id": "irr-2dbd1c79ac00",
     "resolution": "",
@@ -285,7 +285,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-23T04:53:10Z",
+    "created_at": "2026-09-23T11:48:50Z",
     "detail": "134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.",
     "irregularity_id": "irr-6218b1a3c625",
     "resolution": "",
@@ -525,6 +525,21 @@
     "url": "https://nvd.nist.gov/developers/vulnerabilities"
   },
   {
+    "created_at": "2026-09-23T11:48:50Z",
+    "detail": "These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.",
+    "irregularity_id": "irr-b59992f5dcf9",
+    "resolution": "",
+    "resolution_link": "",
+    "resolved": false,
+    "resolved_at": "",
+    "severity": "info",
+    "stage": "synthesis",
+    "suggested_action": "Review the retired statements section on the affected topic pages.",
+    "summary": "0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims",
+    "topic_id": "",
+    "url": null
+  },
+  {
     "created_at": "2026-09-22T00:22:28Z",
     "detail": "earthquake.usgs.gov unreachable: TLS/SSL connection has been closed (EOF) (_ssl.c:992). The window 2026-09-15..2026-09-22 was not polled, so items published in it will appear as new on a later run rather than being missed.",
     "irregularity_id": "irr-b9fce9a77ea5",
@@ -690,7 +705,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-23T04:53:08Z",
+    "created_at": "2026-09-23T11:48:47Z",
     "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: . The window 2026-09-16..2026-09-23 was not polled for this source.",
     "irregularity_id": "irr-e8c882a22d3f",
     "resolution": "",

@@ -39,5 +39,5 @@
   "text": "Source: SelfLearn library computation for topic-research-loop-scheduling\nQuestion: Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?\nThese statements are computed by the engine from its own records. They assert nothing about the world.\nStatements and the figures each was computed from:\nThis question is currently supported by 32 verified claim(s) drawn from 2 independent source(s). [figures: 32, 2]\nOf the claims recorded for this question, 100.0% passed full verification against their cited document; 0 were only partially supported and are marked as such on this page. [figures: 100.0%, 100.0, 0, 32]\nThe supporting documents span 2 evidence class(es) in the project hierarchy. [figures: 2]\nOf the documents cited here, 32 were retrieved live from their source and 0 are synthetic test fixtures, which are labelled wherever they appear. [figures: 32, 0]\n32 claim(s) for this question carry a quantified statement that was found verbatim in the cited document, which is what makes an experiment possible. [figures: 32]",
   "title": "Library computation for How should a research loop schedule and prioritise its own work?",
   "url": "",
-  "written_at": "2026-09-23T04:53:03Z"
+  "written_at": "2026-09-23T11:48:42Z"
 }
