@@ -982,7 +982,7 @@
       "citations": 0,
       "claims_proposed": 0,
       "claims_supported": 0,
-      "documents": 61,
+      "documents": 65,
       "evidence_class": "primary_source",
       "evidence_rank": 3,
       "partially_supported": 0,
@@ -1046,7 +1046,7 @@
   ],
   "status": [
     {
-      "checked_at": "2026-09-23T21:36:18Z",
+      "checked_at": "2026-09-24T05:00:03Z",
       "detail": "4 document(s) retrieved; 6 result(s) dropped as unrelated to the query",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -1062,7 +1062,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-23T21:36:19Z",
+      "checked_at": "2026-09-24T05:00:07Z",
       "detail": "9 document(s) retrieved; 1 result(s) dropped as unrelated to the query",
       "evidence_class": "commentary",
       "evidence_rank": 7,
@@ -1078,7 +1078,7 @@
       "url": "https://hn.algolia.com/api/v1/search"
     },
     {
-      "checked_at": "2026-09-23T21:36:20Z",
+      "checked_at": "2026-09-24T05:00:08Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -1094,7 +1094,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-23T21:36:20Z",
+      "checked_at": "2026-09-24T05:00:08Z",
       "detail": "robots.txt rule 'Disallow: /' disallows /api/query; https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules ",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -1110,7 +1110,7 @@
       "url": "https://export.arxiv.org/robots.txt"
     },
     {
-      "checked_at": "2026-09-23T21:36:20Z",
+      "checked_at": "2026-09-24T05:00:09Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "peer_reviewed",
       "evidence_rank": 4,
@@ -1126,7 +1126,7 @@
       "url": "https://api.crossref.org/works"
     },
     {
-      "checked_at": "2026-09-23T21:36:22Z",
+      "checked_at": "2026-09-24T05:00:10Z",
       "detail": "6 document(s) retrieved; 4 result(s) dropped as unrelated to the query",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -1142,7 +1142,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-23T21:36:22Z",
+      "checked_at": "2026-09-24T05:00:11Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "peer_reviewed",
       "evidence_rank": 4,
@@ -1158,7 +1158,7 @@
       "url": "https://api.crossref.org/works"
     },
     {
-      "checked_at": "2026-09-23T21:36:25Z",
+      "checked_at": "2026-09-24T05:00:14Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -1174,7 +1174,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-23T21:36:26Z",
+      "checked_at": "2026-09-24T05:00:15Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "peer_reviewed",
       "evidence_rank": 4,
