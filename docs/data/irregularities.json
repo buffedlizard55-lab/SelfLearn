@@ -210,7 +210,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-24T17:18:26Z",
+    "created_at": "2026-09-24T21:37:04Z",
     "detail": "robots.txt rule 'Disallow: /' disallows /api/query; https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules ",
     "irregularity_id": "irr-2dbd1c79ac00",
     "resolution": "",
@@ -330,7 +330,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-24T17:18:43Z",
+    "created_at": "2026-09-24T21:37:12Z",
     "detail": "134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.",
     "irregularity_id": "irr-6218b1a3c625",
     "resolution": "",
@@ -393,6 +393,21 @@
     "created_at": "2026-09-23T00:46:12Z",
     "detail": "These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.",
     "irregularity_id": "irr-6b9ba9d4bde9",
+    "resolution": "",
+    "resolution_link": "",
+    "resolved": false,
+    "resolved_at": "",
+    "severity": "info",
+    "stage": "synthesis",
+    "suggested_action": "Review the retired statements section on the affected topic pages.",
+    "summary": "0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims",
+    "topic_id": "",
+    "url": null
+  },
+  {
+    "created_at": "2026-09-24T21:37:12Z",
+    "detail": "These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.",
+    "irregularity_id": "irr-6fd4ade1471b",
     "resolution": "",
     "resolution_link": "",
     "resolved": false,
@@ -795,7 +810,7 @@
     "url": null
   },
   {
-    "created_at": "2026-09-24T17:18:39Z",
+    "created_at": "2026-09-24T21:37:11Z",
     "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: . The window 2026-09-17..2026-09-24 was not polled for this source.",
     "irregularity_id": "irr-e8c882a22d3f",
     "resolution": "",

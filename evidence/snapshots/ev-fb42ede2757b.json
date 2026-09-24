@@ -14,7 +14,7 @@
   "published_at": "2026-01-25",
   "publisher": "GitHub, Inc. (Microsoft)",
   "response_sha256": "sha256:a0d6bc88a17192e303098abb380e309a172030945dd59f14b9e8ef84df86f003",
-  "retrieved_at": "2026-09-24T17:18:26Z",
+  "retrieved_at": "2026-09-24T21:37:04Z",
   "source_id": "github",
   "source_name": "GitHub REST API",
   "text": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Prajwal-Nagaraj/Chatbot-Simulation-Workflow\nThe record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow reports: pushed_at 2026-01-25T06:48:24Z, stargazers_count 6, forks_count 0.\nThe record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow reports: language Python, open_issues_count 0.\nThe record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Agentic chatbot user simulation workflow to generate diverse and realistic personalities with conversations.\nThe record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Tests chatbots across multiple dimensions (off-topic handling, hallucination detection, safety, prompt extraction, financial advice) using a locally hosted open source LLM.\nThe record for Prajwal-Nagaraj/Chatbot-Simulation-Workflow states in its own description: Features a simple webapp, CLI tools, SQLite database storage.\nSource note: Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
