@@ -14,7 +14,7 @@
   "published_at": "2022-02-10",
   "publisher": "GitHub, Inc. (Microsoft)",
   "response_sha256": "sha256:b3af38f3d56e659344bb79d163bf85e282bb052e5adb31e22174adb1ab26b12f",
-  "retrieved_at": "2026-09-24T11:54:50Z",
+  "retrieved_at": "2026-09-24T17:18:36Z",
   "source_id": "github",
   "source_name": "GitHub REST API",
   "text": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: allenvox/sorting-algorithms-comparison\nThe record for allenvox/sorting-algorithms-comparison reports: pushed_at 2022-02-10T06:55:50Z, stargazers_count 1, forks_count 0.\nThe record for allenvox/sorting-algorithms-comparison reports: language C, topics algorithms; c; counting-sort; dsa; insertion-sort; qsort; sort; sorting; sorting-algorithms; sorting-algorithms-implemented, open_issues_count 0.\nThe record for allenvox/sorting-algorithms-comparison states in its own description: Implementation of quick-sort, insertion sort & counting sort in pure C, comparison between them\nSource note: Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",

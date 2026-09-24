@@ -58,5 +58,5 @@
   "text": "Source: cross-document synthesis for topic-research-loop-scheduling\nQuestion: Which published methods exist for deciding what an autonomous system should investigate next, and what do open implementations of those methods look like?\nThese statements combine figures that were already verified in the documents cited below.\nNo figure was averaged, summed or otherwise computed; a statement needing arithmetic is not written.\nStatements, their citations and the figures each was allowed to use:\ncl-f1535a686171 [agreement] cites cl-34785ec24933, cl-422018cead1f, cl-5a86c56f889c, cl-882c9c63ae70, cl-a0e918ece362, cl-a39b827e786b, cl-b758b39a74cb, cl-c2ac62f4b160, cl-c6ff1cae91a9, cl-d3e7cd2b784b, cl-e2a879ce1949; allowed figures: 0, 7, 2\ncl-3328b7d99d8f [agreement] cites cl-92ae15540483, cl-ef888b94be82; allowed figures: 14, 2, 2\ncl-acbe89830170 [agreement] cites cl-1f49f207b0ce, cl-99148575cd54, cl-a0e918ece362, cl-a59bec53438a, cl-d3e7cd2b784b; allowed figures: 3, 4, 2",
   "title": "Cross-document synthesis for How should a research loop schedule and prioritise its own work?",
   "url": "",
-  "written_at": "2026-09-24T11:54:48Z"
+  "written_at": "2026-09-24T17:18:34Z"
 }

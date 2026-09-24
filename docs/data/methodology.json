@@ -57,7 +57,7 @@
       "supported": 0.8
     },
     "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-    "ran_at": "2026-09-24T11:54:58Z",
+    "ran_at": "2026-09-24T17:18:46Z",
     "source": "state/calibration.json"
   }
 }
