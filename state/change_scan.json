@@ -15,6 +15,7 @@
       "crossref:10.1023/a:1010090027213",
       "crossref:10.1023/a:1010090405266",
       "crossref:10.1023/a:1010098623921",
+      "crossref:10.1023/a:1024145408578",
       "crossref:10.1023/b:agnt.0000018806.20944.ef",
       "crossref:10.1023/b:agnt.0000038027.29035.7c",
       "crossref:10.1038/s41598-024-59872-0",
@@ -79,6 +80,8 @@
       "github:https://github.com/SamarthDhage07/BearBull",
       "github:https://github.com/ScottColeSW/Void-Marauders",
       "github:https://github.com/Shreehari17/Intelligent-Research-agent",
+      "github:https://github.com/Skopaq-AI/skopaqtrader",
+      "github:https://github.com/StarAtNyte/evidra",
       "github:https://github.com/TheHappyHermit/Autognosia",
       "github:https://github.com/Tim-Projekt/ambidex",
       "github:https://github.com/Trustless-Work/agentic-escrow-research",
@@ -88,6 +91,7 @@
       "github:https://github.com/Worlda4363/ResearchForge-Autonomous-Multi-Agent-Research-System",
       "github:https://github.com/adolfousier/opencrabs",
       "github:https://github.com/api-evangelist/mount",
+      "github:https://github.com/areebkhanaimastery-maker/NEXUS",
       "github:https://github.com/ayan-saiyad/AgentMeter",
       "github:https://github.com/benswift/slop-university",
       "github:https://github.com/berlinguyinca/pi-engineering",
@@ -128,6 +132,7 @@
       "github:https://github.com/lichman0405/ravel",
       "github:https://github.com/lilyanstylish5850/PRAXIST",
       "github:https://github.com/lshaible/azure-observability-agent-demo",
+      "github:https://github.com/lukas/hexapod-orchestrator",
       "github:https://github.com/lzmd-arch/BioSNN-Plug",
       "github:https://github.com/marketfauna/bot-barometer",
       "github:https://github.com/mcleblanc711/whiskeyjack-bot",
@@ -137,6 +142,7 @@
       "github:https://github.com/nemuprojectofficial-glitch/n0-public",
       "github:https://github.com/nilswern/research-agent",
       "github:https://github.com/nitroIm/argus-core",
+      "github:https://github.com/oestradiol/Venus-Minerva",
       "github:https://github.com/openmake/openmake_llm",
       "github:https://github.com/outerloop-science/outerloop",
       "github:https://github.com/pedapudi/foe",
@@ -148,6 +154,7 @@
       "github:https://github.com/saketjha34/ResearchTube",
       "github:https://github.com/samcharles93/archie-core",
       "github:https://github.com/shchon11/shchon11.github.io",
+      "github:https://github.com/shimo4228/contemplative-agent",
       "github:https://github.com/simahanfeng007-lgtm/Tiangongzaowu-V3",
       "github:https://github.com/smilingstar78/BeyondPaper",
       "github:https://github.com/sutong-claude/EternalForge",
@@ -164,6 +171,7 @@
     ],
     "nvd": [
       "nvd:nvd-raw-sha256:2781cc2c9",
+      "nvd:nvd-raw-sha256:2c73530a0",
       "nvd:nvd-raw-sha256:60be7ef72",
       "nvd:nvd-raw-sha256:63738beef",
       "nvd:nvd-raw-sha256:65c57014f",
@@ -172,6 +180,7 @@
       "nvd:nvd-raw-sha256:a73ab91e2",
       "nvd:nvd-raw-sha256:a91af281a",
       "nvd:nvd-raw-sha256:c64b3bb09",
+      "nvd:nvd-raw-sha256:ca81cd23e",
       "nvd:nvd-raw-sha256:e55696e16"
     ],
     "pypi": [
@@ -183,10 +192,12 @@
       "pypi:https://pypi.org/project/alomancy/0.9.0/",
       "pypi:https://pypi.org/project/analitiq-cdk/0.4.0/",
       "pypi:https://pypi.org/project/ant-connect-py/2.0.12rc321/",
+      "pypi:https://pypi.org/project/argus-app-testing/0.1.1/",
       "pypi:https://pypi.org/project/asimov/0.8.0b1/",
       "pypi:https://pypi.org/project/atom-tools/1.0.2/",
       "pypi:https://pypi.org/project/attribution-suite/2.0.10/",
       "pypi:https://pypi.org/project/billwright/0.4.0/",
+      "pypi:https://pypi.org/project/biyoves/2.0.0/",
       "pypi:https://pypi.org/project/bluetti-modbus/0.30.4/",
       "pypi:https://pypi.org/project/bolt-anchors/0.3.0/",
       "pypi:https://pypi.org/project/cafein/0.26.0/",
@@ -194,6 +205,7 @@
       "pypi:https://pypi.org/project/christie-mseries/1.1.0/",
       "pypi:https://pypi.org/project/cinematlas/0.4.0/",
       "pypi:https://pypi.org/project/clm-kernel/0.0.1/",
+      "pypi:https://pypi.org/project/codemie-sdk-python/0.1.645/",
       "pypi:https://pypi.org/project/ddd-tool/0.11.0/",
       "pypi:https://pypi.org/project/ddtrace/4.13.3/",
       "pypi:https://pypi.org/project/dingofs/5.2.0/",
@@ -215,6 +227,7 @@
       "pypi:https://pypi.org/project/github2gerrit/2.3.0/",
       "pypi:https://pypi.org/project/graphs-haidangnguyenle/0.1.0/",
       "pypi:https://pypi.org/project/hyperi-ci/2.10.10/",
+      "pypi:https://pypi.org/project/igrep2/0.1.148/",
       "pypi:https://pypi.org/project/indic-language-utils/0.2.0/",
       "pypi:https://pypi.org/project/ipmg/2.2.0/",
       "pypi:https://pypi.org/project/iptocc/3.3.139/",
@@ -228,6 +241,7 @@
       "pypi:https://pypi.org/project/lfx-google/0.3.0/",
       "pypi:https://pypi.org/project/lfx/1.13.0.dev21/",
       "pypi:https://pypi.org/project/litert-cli/0.2.1/",
+      "pypi:https://pypi.org/project/llmgrid-rag/0.1.0a1/",
       "pypi:https://pypi.org/project/local-bigquery/0.3.1/",
       "pypi:https://pypi.org/project/lpdfio-lpdf/0.22.0/",
       "pypi:https://pypi.org/project/lwbgt/0.4.3/",
@@ -247,6 +261,7 @@
       "pypi:https://pypi.org/project/osint-toolbox-mcp/1.0.0/",
       "pypi:https://pypi.org/project/ovos-skill-ip/0.7.1a2/",
       "pypi:https://pypi.org/project/podcast-maker-ldxs/0.41.1/",
+      "pypi:https://pypi.org/project/polars-genson/0.7.8/",
       "pypi:https://pypi.org/project/prismqml/0.5.0.22/",
       "pypi:https://pypi.org/project/probe-research/0.179.4/",
       "pypi:https://pypi.org/project/project-memory-mcp/0.6.0b12/",
@@ -262,15 +277,19 @@
       "pypi:https://pypi.org/project/rebuno/0.21.0/",
       "pypi:https://pypi.org/project/sarj-iac-lint/0.15.11/",
       "pypi:https://pypi.org/project/sarj-sql-lint/0.17.5/",
+      "pypi:https://pypi.org/project/sayacode/3.0.0/",
       "pypi:https://pypi.org/project/sbxloop-worker/2.0.90/",
       "pypi:https://pypi.org/project/sbxloop/2.0.90/",
       "pypi:https://pypi.org/project/schemaingest/0.1.1/",
+      "pypi:https://pypi.org/project/secator/0.45.0/",
       "pypi:https://pypi.org/project/seetapsych-gaze-follow/0.0.4.post1/",
       "pypi:https://pypi.org/project/selkies/2.0.0/",
       "pypi:https://pypi.org/project/skcapstone/0.15.181/",
       "pypi:https://pypi.org/project/slimfaas-client/0.84.13/",
       "pypi:https://pypi.org/project/spaday-codemirror/0.1.1/",
       "pypi:https://pypi.org/project/spaday-vega/0.1.1/",
+      "pypi:https://pypi.org/project/stemma-graph/0.3.0/",
+      "pypi:https://pypi.org/project/stemma-studio/0.4.0/",
       "pypi:https://pypi.org/project/swampyer/3.1.20260922/",
       "pypi:https://pypi.org/project/thth/3.6.0/",
       "pypi:https://pypi.org/project/volcano-sdk-python/0.10.3/",
@@ -320,33 +339,33 @@
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-09-24T05:00:15Z",
+      "last_scan": "2026-09-24T11:54:52Z",
       "last_status": "scanned",
-      "scans": 18
+      "scans": 20
     },
     "github": {
-      "last_items": 5,
-      "last_scan": "2026-09-24T05:00:15Z",
+      "last_items": 10,
+      "last_scan": "2026-09-24T11:54:39Z",
       "last_status": "scanned",
-      "scans": 27
+      "scans": 28
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-09-24T05:00:15Z",
+      "last_scan": "2026-09-24T11:54:52Z",
       "last_status": "scanned",
-      "scans": 10
+      "scans": 12
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-09-24T05:00:15Z",
+      "last_scan": "2026-09-24T11:54:52Z",
       "last_status": "scanned",
-      "scans": 11
+      "scans": 13
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-09-24T05:00:15Z",
+      "last_scan": "2026-09-24T11:54:52Z",
       "last_status": "scanned",
-      "scans": 18
+      "scans": 20
     }
   }
 }

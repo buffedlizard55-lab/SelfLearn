@@ -36,5 +36,5 @@
   "text": "Source: cross-document synthesis for topic-autonomous-research-agents\nQuestion: What open-source implementations of autonomous research or reasoning agents exist, and what does their public repository activity show about maturity?\nThese statements combine figures that were already verified in the documents cited below.\nNo figure was averaged, summed or otherwise computed; a statement needing arithmetic is not written.\nStatements, their citations and the figures each was allowed to use:\ncl-186537ad9245 [agreement] cites cl-3875d311770a, cl-fc01db4f0a3b; allowed figures: 2, 2, 2\ncl-8737f188a55e [agreement] cites cl-5d482d19855b, cl-fc01db4f0a3b; allowed figures: 3, 2, 2",
   "title": "Cross-document synthesis for Autonomous research agents: which open implementations exist and how active are they?",
   "url": "",
-  "written_at": "2026-09-24T05:00:07Z"
+  "written_at": "2026-09-24T11:54:43Z"
 }
