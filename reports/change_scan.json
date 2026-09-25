@@ -1,17 +1,17 @@
 {
   "by_status": {
-    "error": 1,
+    "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-09-25T05:04:51Z",
-  "items_new": 3,
+  "generated_at": "2026-09-25T11:58:09Z",
+  "items_new": 5,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-7d0c97480dbf",
+  "run_id": "run-13582b6e11fb",
   "scans": [
     {
-      "detail": "HTTP 406: ",
+      "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
       "docs_url": "https://info.arxiv.org/help/api/user-manual.html",
       "items_new": 0,
       "items_out_of_window": 0,
@@ -30,7 +30,7 @@
       "request_url": "https://export.arxiv.org/api/query",
       "source_id": "arxiv",
       "source_name": "arXiv API",
-      "status": "error",
+      "status": "policy_refused",
       "window": {
         "days": 7,
         "first_scan": true,
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 1,
+      "items_new": 2,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,12 +77,20 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: smpn1kara4850/RL-AI-Latest\nThe record for s",
-          "identifier": "https://github.com/smpn1kara4850/RL-AI-Latest",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: BedooShery04/AI-Customer-Support-Platform\nT",
+          "identifier": "https://github.com/BedooShery04/AI-Customer-Support-Platform",
           "published_at": "2026-09-25",
           "source_id": "github",
-          "title": "smpn1kara4850/RL-AI-Latest",
-          "url": "https://github.com/smpn1kara4850/RL-AI-Latest"
+          "title": "BedooShery04/AI-Customer-Support-Platform",
+          "url": "https://github.com/BedooShery04/AI-Customer-Support-Platform"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: alekzonder/tariboy\nThe record for alekzonde",
+          "identifier": "https://github.com/alekzonder/tariboy",
+          "published_at": "2026-09-25",
+          "source_id": "github",
+          "title": "alekzonder/tariboy",
+          "url": "https://github.com/alekzonder/tariboy"
         }
       ],
       "request_params": {
@@ -113,8 +121,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 3\nstartIndex = 0\ntimestamp = 2026-09-25T05:04:52.438\ntotalResults = 3\nversion = 2.0\nvulnerabilities.0.cve.affected.0.affectedData.0.defaultStat",
-          "identifier": "nvd-raw-sha256:7a4248b0a",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 3\nstartIndex = 0\ntimestamp = 2026-09-25T11:58:11.378\ntotalResults = 3\nversion = 2.0\nvulnerabilities.0.cve.affected.0.affectedData.0.defaultStat",
+          "identifier": "nvd-raw-sha256:53eb0d26c",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -139,9 +147,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 1,
+      "items_new": 2,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -150,11 +158,19 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/kaparoo-python/0.15.0/",
+          "identifier": "https://pypi.org/project/hexio/0.0.4/",
           "published_at": "2026-09-25",
           "source_id": "pypi",
-          "title": "kaparoo-python 0.15.0",
-          "url": "https://pypi.org/project/kaparoo-python/0.15.0/"
+          "title": "hexio 0.0.4",
+          "url": "https://pypi.org/project/hexio/0.0.4/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/lilla-core/0.5.0/",
+          "published_at": "2026-09-25",
+          "source_id": "pypi",
+          "title": "lilla-core 0.5.0",
+          "url": "https://pypi.org/project/lilla-core/0.5.0/"
         }
       ],
       "request_params": {},

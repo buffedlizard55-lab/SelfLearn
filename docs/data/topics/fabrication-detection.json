@@ -779,7 +779,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-25T05:04:46Z",
+      "recorded_at": "2026-09-25T11:58:02Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-78627446b3ea",
@@ -832,7 +832,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-25T05:04:46Z",
+      "recorded_at": "2026-09-25T11:58:02Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-b4ce8a385c20",
@@ -885,7 +885,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-25T05:04:46Z",
+      "recorded_at": "2026-09-25T11:58:02Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-fc171e1b13c3",
@@ -937,7 +937,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-25T05:04:46Z",
+      "recorded_at": "2026-09-25T11:58:02Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-b870dcc194e5",
@@ -994,7 +994,7 @@
       "reasons": [
         "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
       ],
-      "recorded_at": "2026-09-25T05:04:46Z",
+      "recorded_at": "2026-09-25T11:58:02Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-ef843a21d7b8",
@@ -2982,7 +2982,7 @@
       "claim_a": "cl-87c1d0345e0e",
       "claim_b": "cl-9d035d5ab642",
       "contradiction_id": "con-5ddfe0dad53e",
-      "created_at": "2026-09-25T05:04:46Z",
+      "created_at": "2026-09-25T11:58:02Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (0 vs 5). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -2996,7 +2996,7 @@
       "claim_a": "cl-8faf22d0289e",
       "claim_b": "cl-ef6f3d3a8a5d",
       "contradiction_id": "con-96485a969ff6",
-      "created_at": "2026-09-25T05:04:46Z",
+      "created_at": "2026-09-25T11:58:02Z",
       "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (10, 2026, 21, 35, 4, 9 vs 0, 1, 20, 2025, 47, 52). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -3065,7 +3065,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-06-16",
-      "retrieved_at": "2026-09-25T05:04:46Z",
+      "retrieved_at": "2026-09-25T11:58:01Z",
       "source_name": "GitHub REST API",
       "title": "raesa-razeen/halo-hallucination-detector",
       "url": "https://github.com/raesa-razeen/halo-hallucination-detector"
@@ -3080,7 +3080,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-02-08",
-      "retrieved_at": "2026-09-25T05:04:46Z",
+      "retrieved_at": "2026-09-25T11:58:01Z",
       "source_name": "GitHub REST API",
       "title": "108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT",
       "url": "https://github.com/108charlotte/ChatGPT-Hallucination-Likelihood-Detection-from-Prompts-with-BERT"
@@ -3110,7 +3110,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2024-03-01",
-      "retrieved_at": "2026-09-25T05:04:46Z",
+      "retrieved_at": "2026-09-25T11:58:01Z",
       "source_name": "GitHub REST API",
       "title": "summarizebot/LLM-QualityGuard",
       "url": "https://github.com/summarizebot/LLM-QualityGuard"
@@ -3125,7 +3125,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-05-01",
-      "retrieved_at": "2026-09-25T05:04:46Z",
+      "retrieved_at": "2026-09-25T11:58:01Z",
       "source_name": "GitHub REST API",
       "title": "pypl0/Ombre",
       "url": "https://github.com/pypl0/Ombre"
@@ -3140,7 +3140,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2025-01-20",
-      "retrieved_at": "2026-09-25T05:04:46Z",
+      "retrieved_at": "2026-09-25T11:58:01Z",
       "source_name": "GitHub REST API",
       "title": "pranav-kural/llm-hallucination-detection-service",
       "url": "https://github.com/pranav-kural/llm-hallucination-detection-service"
@@ -3155,7 +3155,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2025-06-19",
-      "retrieved_at": "2026-09-25T05:04:46Z",
+      "retrieved_at": "2026-09-25T11:58:01Z",
       "source_name": "GitHub REST API",
       "title": "xiaojing29/HallucinationDetection",
       "url": "https://github.com/xiaojing29/HallucinationDetection"
@@ -3170,7 +3170,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-07-18",
-      "retrieved_at": "2026-09-25T05:04:46Z",
+      "retrieved_at": "2026-09-25T11:58:01Z",
       "source_name": "GitHub REST API",
       "title": "shobhasingh50915-create/Hallucination-Detection-in-Large-Language-Models",
       "url": "https://github.com/shobhasingh50915-create/Hallucination-Detection-in-Large-Language-Models"
@@ -3185,7 +3185,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-06-19",
-      "retrieved_at": "2026-09-25T05:04:46Z",
+      "retrieved_at": "2026-09-25T11:58:01Z",
       "source_name": "GitHub REST API",
       "title": "AyushBhandari03/Fact_Check_LLM",
       "url": "https://github.com/AyushBhandari03/Fact_Check_LLM"
@@ -3200,7 +3200,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-01-25",
-      "retrieved_at": "2026-09-25T05:04:46Z",
+      "retrieved_at": "2026-09-25T11:58:01Z",
       "source_name": "GitHub REST API",
       "title": "Prajwal-Nagaraj/Chatbot-Simulation-Workflow",
       "url": "https://github.com/Prajwal-Nagaraj/Chatbot-Simulation-Workflow"
@@ -3219,13 +3219,13 @@
       "baseline": 0.96,
       "best_value": 1.0,
       "best_variant": "support=0.8 partial=0.45 quote_chars=24.0",
-      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-h24t11_w/result.json",
+      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-yjvz6dmq/result.json",
       "error": "",
       "experiment_id": "verification-thresholds-v1",
       "hypothesis": "A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports.",
       "method": "Exhaustive sweep of 132 threshold combinations, evaluated against 26 hand-labelled claim/document pairs; selection is lexicographic on false supports, recall, F1, macro F1, distance from the documented default, then strictness.",
       "metric": "verdict accuracy on labelled cases",
-      "ran_at": "2026-09-25T05:04:47Z",
+      "ran_at": "2026-09-25T11:58:03Z",
       "result_json": {
         "baseline": 0.96,
         "baseline_name": "configured default thresholds support=0.8 partial=0.55 quote_chars=24.0",
@@ -3322,7 +3322,7 @@
       "topic_id": "topic-fabrication-detection"
     }
   ],
-  "generated_at": "2026-09-25T05:04:57Z",
+  "generated_at": "2026-09-25T11:58:17Z",
   "questions": [
     {
       "id": "q-a12323d8e08a",
@@ -5114,7 +5114,7 @@
   ],
   "source_status": [
     {
-      "checked_at": "2026-09-25T05:04:46Z",
+      "checked_at": "2026-09-25T11:58:01Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -5130,23 +5130,23 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-25T05:04:46Z",
-      "detail": "",
+      "checked_at": "2026-09-25T11:58:01Z",
+      "detail": "robots.txt rule 'Disallow: /' disallows /api/query; https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules ",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
-      "http_status": 406,
+      "http_status": null,
       "items": 0,
-      "live_status": "error",
+      "live_status": "robots_disallowed",
       "name": "arXiv API",
       "requires_key": false,
       "source_id": "arxiv",
       "topics": [
         "topic-fabrication-detection"
       ],
-      "url": "https://export.arxiv.org/api/query"
+      "url": "https://export.arxiv.org/robots.txt"
     },
     {
-      "checked_at": "2026-09-25T05:04:46Z",
+      "checked_at": "2026-09-25T11:58:02Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "peer_reviewed",
       "evidence_rank": 4,
@@ -5164,7 +5164,7 @@
   ],
   "statistics": {
     "claims": 44,
-    "computed_at": "2026-09-25T05:04:57Z",
+    "computed_at": "2026-09-25T11:58:17Z",
     "documents": 10,
     "evidence_classes": [
       "primary_source",
@@ -5541,6 +5541,18 @@
     {
       "last_updated": "2026-09-25T05:04:47Z",
       "line": 257,
+      "status": "testing",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "last_updated": "2026-09-25T11:57:59Z",
+      "line": 261,
+      "status": "new",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "last_updated": "2026-09-25T11:58:03Z",
+      "line": 265,
       "status": "testing",
       "topic_id": "topic-fabrication-detection"
     }
@@ -6740,7 +6752,7 @@
   },
   "synthesis": [],
   "topic": {
-    "first_seen": "2026-09-25T05:04:43Z",
+    "first_seen": "2026-09-25T11:57:59Z",
     "keywords": [
       "hallucination",
       "factuality",
@@ -6749,7 +6761,7 @@
       "attribution",
       "evidence"
     ],
-    "last_updated": "2026-09-25T05:04:47Z",
+    "last_updated": "2026-09-25T11:58:03Z",
     "notes": "Directly relevant to this project's own central problem: deciding whether a sentence is supported by a source.",
     "origin": "seed",
     "parent_topic_id": null,
@@ -6774,7 +6786,7 @@
     "topic_id": "topic-fabrication-detection"
   },
   "tournament": {
-    "_line": 119,
+    "_line": 123,
     "criterion_table": {
       "st-10aa70ec03d3": {
         "adversarial_survival": {
@@ -7179,7 +7191,7 @@
         }
       }
     },
-    "decided_at": "2026-09-25T05:04:47Z",
+    "decided_at": "2026-09-25T11:58:03Z",
     "notes": "The final was decided on the weighted criterion total; the margin is published below.",
     "ranking": [
       "st-7a6aef4c9544",
@@ -7202,13 +7214,7 @@
     "tournament_id": "tour-17c26f1cde16",
     "winner": "st-7a6aef4c9544"
   },
-  "unknowns": [
-    {
-      "answer": "These registered sources could not be reached, so their evidence is absent from this page: arxiv.",
-      "question": "What do we not know?",
-      "resolve_with": "Confirm network egress from the run environment, then re-run."
-    }
-  ],
+  "unknowns": [],
   "winner": {
     "persona": "F - Experimental",
     "score": 0.741,

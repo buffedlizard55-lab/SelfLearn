@@ -1,12 +1,12 @@
 # Irregularities for review
 
-Generated: 2026-09-25T05:04:58Z
+Generated: 2026-09-25T11:58:17Z
 
 This file is produced by the audit stage. It lists everything the engine could not
 reconcile on its own. Nothing here is a conclusion; each entry is a request for a human
 decision, with the evidence needed to make it.
 
-**Totals (open)** - error: 0, warning: 18, info: 32; resolved by a reviewer: 8 (error: 1, warning: 0, info: 7).
+**Totals (open)** - error: 0, warning: 18, info: 33; resolved by a reviewer: 8 (error: 1, warning: 0, info: 7).
 
 ## Stage: audit
 
@@ -140,9 +140,9 @@ decision, with the evidence needed to make it.
 - **id:** `irr-e8c882a22d3f`
 - **topic:** n/a
 - **link:** <https://export.arxiv.org/robots.txt>
-- **detail:** https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: . The window 2026-09-17..2026-09-24 was not polled for this source.
+- **detail:** https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: . The window 2026-09-18..2026-09-25 was not polled for this source.
 - **suggested action:** Register a route the operator's own rules permit, or leave the source unscanned.
-- **detected:** 2026-09-24T21:37:11Z
+- **detected:** 2026-09-25T11:58:09Z
 
 ### [WARNING] Change scan for github returned HTTP 403
 
@@ -171,7 +171,7 @@ decision, with the evidence needed to make it.
 - **link:** <https://export.arxiv.org/robots.txt>
 - **detail:** robots.txt rule 'Disallow: /' disallows /api/query; https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules 
 - **suggested action:** Read the operator's robots.txt and API documentation; the engine obeys RFC 9309 and does not work around a disallow rule. If the operator documents the route for API consumers, a reviewer can register a route the operator's own rules permit.
-- **detected:** 2026-09-24T21:37:04Z
+- **detected:** 2026-09-25T11:58:01Z
 
 ## Stage: audit
 
@@ -221,7 +221,7 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** 134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.
 - **suggested action:** Nothing to do unless a reviewer believes a retired statement was correct.
-- **detected:** 2026-09-25T05:04:58Z
+- **detected:** 2026-09-25T11:58:17Z
 
 ## Stage: change_scan
 
@@ -434,6 +434,14 @@ decision, with the evidence needed to make it.
 - **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
 - **suggested action:** Review the retired statements section on the affected topic pages.
 - **detected:** 2026-09-24T05:00:17Z
+
+### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-8a3fc3ac61b2`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-09-25T11:58:11Z
 
 ### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
 
