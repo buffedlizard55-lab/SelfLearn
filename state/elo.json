@@ -5,636 +5,6 @@
       "b": "persona-C",
       "criterion": "total",
       "outcome_a": 1.0,
-      "rating_a": 1569.48,
-      "rating_b": 1415.78,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-B",
-      "b": "persona-D",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1379.85,
-      "rating_b": 1595.67,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-B",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1380.36,
-      "rating_b": 1401.57,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-B",
-      "b": "persona-F",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1393.39,
-      "rating_b": 1624.11,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-B",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1401.9,
-      "rating_b": 1407.27,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1591.61,
-      "rating_b": 1405.63,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-F",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1600.36,
-      "rating_b": 1615.36,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1604.32,
-      "rating_b": 1403.31,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-E",
-      "b": "persona-F",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1417.95,
-      "rating_b": 1603.04,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-E",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1425.61,
-      "rating_b": 1395.65,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1606.76,
-      "rating_b": 1391.93,
-      "recorded_at": "2026-09-23T04:52:57Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1610.36,
-      "rating_b": 1388.33,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-A",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1617.42,
-      "rating_b": 1562.42,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-D",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1625.12,
-      "rating_b": 1596.62,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1628.97,
-      "rating_b": 1421.76,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1632.38,
-      "rating_b": 1398.49,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-C",
-      "b": "persona-A",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1400.03,
-      "rating_b": 1550.72,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-C",
-      "b": "persona-D",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1412.13,
-      "rating_b": 1584.52,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-C",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1420.35,
-      "rating_b": 1413.54,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-C",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1427.85,
-      "rating_b": 1390.99,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-D",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1559.5,
-      "rating_b": 1575.74,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1564.32,
-      "rating_b": 1408.72,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1568.63,
-      "rating_b": 1386.68,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1580.17,
-      "rating_b": 1404.29,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1584.12,
-      "rating_b": 1382.73,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-E",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1411.79,
-      "rating_b": 1375.23,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-C",
-      "criterion": "final",
-      "outcome_a": 1.0,
-      "rating_a": 1636.15,
-      "rating_b": 1424.08,
-      "recorded_at": "2026-09-23T04:53:00Z",
-      "topic_id": "topic-fabrication-detection"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-F",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1593.31,
-      "rating_b": 1626.96,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1596.86,
-      "rating_b": 1371.68,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-A",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1604.21,
-      "rating_b": 1561.28,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1608.4,
-      "rating_b": 1419.89,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1612.3,
-      "rating_b": 1407.89,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1629.95,
-      "rating_b": 1368.69,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-A",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1636.39,
-      "rating_b": 1554.84,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1639.96,
-      "rating_b": 1416.32,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1643.29,
-      "rating_b": 1404.56,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-B",
-      "b": "persona-A",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1372.61,
-      "rating_b": 1550.92,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-B",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1373.61,
-      "rating_b": 1415.32,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-B",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1374.32,
-      "rating_b": 1403.85,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1547.95,
-      "rating_b": 1418.29,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1544.81,
-      "rating_b": 1406.99,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-C",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1418.03,
-      "rating_b": 1407.25,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-F",
-      "criterion": "final",
-      "outcome_a": 1.0,
-      "rating_a": 1621.01,
-      "rating_b": 1634.58,
-      "recorded_at": "2026-09-23T04:53:05Z",
-      "topic_id": "topic-research-loop-scheduling"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-A",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1640.56,
-      "rating_b": 1538.83,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1644.04,
-      "rating_b": 1414.55,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-D",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1651.51,
-      "rating_b": 1613.54,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1654.66,
-      "rating_b": 1404.1,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1657.32,
-      "rating_b": 1371.66,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1544.08,
-      "rating_b": 1409.3,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-D",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1553.66,
-      "rating_b": 1603.96,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1558.41,
-      "rating_b": 1399.35,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1562.48,
-      "rating_b": 1367.59,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-C",
-      "b": "persona-D",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1421.37,
-      "rating_b": 1591.89,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-C",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1428.86,
-      "rating_b": 1391.86,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-C",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1435.46,
-      "rating_b": 1360.99,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1595.73,
-      "rating_b": 1388.02,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-D",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1599.02,
-      "rating_b": 1357.7,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-E",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1387.32,
-      "rating_b": 1358.4,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-F",
-      "b": "persona-A",
-      "criterion": "final",
-      "outcome_a": 1.0,
-      "rating_a": 1663.19,
-      "rating_b": 1556.61,
-      "recorded_at": "2026-09-23T04:53:08Z",
-      "topic_id": "topic-search-and-sorting-strategy"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-B",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1552.48,
-      "rating_b": 1362.53,
-      "recorded_at": "2026-09-23T11:48:37Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-D",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1553.55,
-      "rating_b": 1597.95,
-      "recorded_at": "2026-09-23T11:48:37Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-E",
-      "criterion": "total",
-      "outcome_a": 0.5,
-      "rating_a": 1549.99,
-      "rating_b": 1390.88,
-      "recorded_at": "2026-09-23T11:48:37Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-F",
-      "criterion": "total",
-      "outcome_a": 1.0,
-      "rating_a": 1560.51,
-      "rating_b": 1652.67,
-      "recorded_at": "2026-09-23T11:48:37Z",
-      "topic_id": "topic-autonomous-research-agents"
-    },
-    {
-      "a": "persona-A",
-      "b": "persona-C",
-      "criterion": "total",
-      "outcome_a": 1.0,
       "rating_a": 1565.75,
       "rating_b": 1430.22,
       "recorded_at": "2026-09-23T11:48:37Z",
@@ -4999,15 +4369,645 @@
       "rating_b": 1552.85,
       "recorded_at": "2026-09-24T21:37:11Z",
       "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1548.4,
+      "rating_b": 1339.02,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-D",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1549.55,
+      "rating_b": 1597.71,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1545.71,
+      "rating_b": 1371.61,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-F",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1556.84,
+      "rating_b": 1678.23,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1562.59,
+      "rating_b": 1450.84,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-B",
+      "b": "persona-D",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1344.08,
+      "rating_b": 1592.65,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-B",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1344.71,
+      "rating_b": 1370.98,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-B",
+      "b": "persona-F",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1358.66,
+      "rating_b": 1664.28,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-B",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1368.73,
+      "rating_b": 1440.77,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1588.14,
+      "rating_b": 1375.49,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-F",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1597.87,
+      "rating_b": 1654.55,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1602.48,
+      "rating_b": 1436.16,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-E",
+      "b": "persona-F",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1388.82,
+      "rating_b": 1641.22,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-E",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1397.9,
+      "rating_b": 1427.08,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1644.83,
+      "rating_b": 1423.47,
+      "recorded_at": "2026-09-25T05:04:45Z",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1648.33,
+      "rating_b": 1419.97,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-A",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1654.39,
+      "rating_b": 1556.53,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-D",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1661.2,
+      "rating_b": 1595.67,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1664.08,
+      "rating_b": 1395.02,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1666.55,
+      "rating_b": 1366.26,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-C",
+      "b": "persona-A",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1430.96,
+      "rating_b": 1545.54,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-C",
+      "b": "persona-D",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1442.49,
+      "rating_b": 1584.14,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-C",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1449.4,
+      "rating_b": 1388.11,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-C",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1455.52,
+      "rating_b": 1360.14,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-D",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1554.43,
+      "rating_b": 1575.25,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1558.87,
+      "rating_b": 1383.67,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1562.74,
+      "rating_b": 1356.27,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1579.24,
+      "rating_b": 1379.68,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1582.71,
+      "rating_b": 1352.8,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-E",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1387.06,
+      "rating_b": 1345.42,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-C",
+      "criterion": "final",
+      "outcome_a": 1.0,
+      "rating_a": 1670.21,
+      "rating_b": 1451.86,
+      "recorded_at": "2026-09-25T05:04:47Z",
+      "topic_id": "topic-fabrication-detection"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-F",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1592.68,
+      "rating_b": 1660.24,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1595.79,
+      "rating_b": 1342.31,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-A",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1603.03,
+      "rating_b": 1555.5,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1607.75,
+      "rating_b": 1447.14,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1611.26,
+      "rating_b": 1383.55,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1662.45,
+      "rating_b": 1340.1,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-A",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1668.06,
+      "rating_b": 1549.89,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1671.56,
+      "rating_b": 1443.64,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1674.12,
+      "rating_b": 1380.99,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-B",
+      "b": "persona-A",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1344.42,
+      "rating_b": 1545.57,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-B",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1346.64,
+      "rating_b": 1441.42,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-B",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1347.43,
+      "rating_b": 1380.2,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1543.24,
+      "rating_b": 1443.75,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1539.74,
+      "rating_b": 1383.7,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-C",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1442.38,
+      "rating_b": 1385.07,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-F",
+      "criterion": "final",
+      "outcome_a": 1.0,
+      "rating_a": 1620.69,
+      "rating_b": 1664.69,
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-A",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1669.93,
+      "rating_b": 1534.5,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1673.33,
+      "rating_b": 1438.98,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-D",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1680.13,
+      "rating_b": 1613.89,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1682.6,
+      "rating_b": 1382.6,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1684.63,
+      "rating_b": 1345.4,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-C",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1540.35,
+      "rating_b": 1433.13,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-D",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1550.02,
+      "rating_b": 1604.22,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1554.44,
+      "rating_b": 1378.18,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-A",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1558.13,
+      "rating_b": 1341.71,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-C",
+      "b": "persona-D",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1444.78,
+      "rating_b": 1592.57,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-C",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1451.26,
+      "rating_b": 1371.7,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-C",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1456.82,
+      "rating_b": 1336.15,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-E",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1596.07,
+      "rating_b": 1368.2,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-D",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 1.0,
+      "rating_a": 1599.0,
+      "rating_b": 1333.22,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-E",
+      "b": "persona-B",
+      "criterion": "total",
+      "outcome_a": 0.5,
+      "rating_a": 1367.4,
+      "rating_b": 1334.02,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
+    },
+    {
+      "a": "persona-F",
+      "b": "persona-A",
+      "criterion": "final",
+      "outcome_a": 1.0,
+      "rating_a": 1689.84,
+      "rating_b": 1552.92,
+      "recorded_at": "2026-09-25T05:04:51Z",
+      "topic_id": "topic-search-and-sorting-strategy"
     }
   ],
   "ratings": {
-    "persona-A": 1552.85,
-    "persona-B": 1334.57,
-    "persona-C": 1456.59,
-    "persona-D": 1598.86,
-    "persona-E": 1367.77,
-    "persona-F": 1689.36
+    "persona-A": 1552.92,
+    "persona-B": 1334.02,
+    "persona-C": 1456.82,
+    "persona-D": 1599.0,
+    "persona-E": 1367.4,
+    "persona-F": 1689.84
   },
-  "updated_at": "2026-09-24T21:37:11Z"
+  "updated_at": "2026-09-25T05:04:51Z"
 }

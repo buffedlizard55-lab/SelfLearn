@@ -1,17 +1,17 @@
 {
   "by_status": {
-    "policy_refused": 1,
+    "error": 1,
     "scanned": 5
   },
-  "generated_at": "2026-09-24T21:37:11Z",
-  "items_new": 10,
+  "generated_at": "2026-09-25T05:04:51Z",
+  "items_new": 3,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-222b4c051d06",
+  "run_id": "run-7d0c97480dbf",
   "scans": [
     {
-      "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
+      "detail": "HTTP 406: ",
       "docs_url": "https://info.arxiv.org/help/api/user-manual.html",
       "items_new": 0,
       "items_out_of_window": 0,
@@ -30,16 +30,16 @@
       "request_url": "https://export.arxiv.org/api/query",
       "source_id": "arxiv",
       "source_name": "arXiv API",
-      "status": "policy_refused",
+      "status": "error",
       "window": {
         "days": 7,
         "first_scan": true,
-        "since": "2026-09-17",
-        "until": "2026-09-24"
+        "since": "2026-09-18",
+        "until": "2026-09-25"
       }
     },
     {
-      "detail": "5 item(s) returned; 5 published before the window 2026-09-23..2026-09-24 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
+      "detail": "5 item(s) returned; 5 published before the window 2026-09-24..2026-09-25 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
       "items_new": 0,
       "items_out_of_window": 5,
@@ -49,7 +49,7 @@
       "mechanism": "Works reindexed at or after the given date",
       "new_items": [],
       "request_params": {
-        "filter": "from-index-date:2026-09-23",
+        "filter": "from-index-date:2026-09-24",
         "mailto": "selflearn@example.invalid",
         "query": "autonomous agent",
         "rows": 5,
@@ -62,14 +62,14 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-23",
-        "until": "2026-09-24"
+        "since": "2026-09-24",
+        "until": "2026-09-25"
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-23..2026-09-24 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 3,
+      "items_new": 1,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,34 +77,18 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: SHASHWAT-MISHRA-997/SMARAN.AI\nThe record fo",
-          "identifier": "https://github.com/SHASHWAT-MISHRA-997/SMARAN.AI",
-          "published_at": "2026-09-24",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: smpn1kara4850/RL-AI-Latest\nThe record for s",
+          "identifier": "https://github.com/smpn1kara4850/RL-AI-Latest",
+          "published_at": "2026-09-25",
           "source_id": "github",
-          "title": "SHASHWAT-MISHRA-997/SMARAN.AI",
-          "url": "https://github.com/SHASHWAT-MISHRA-997/SMARAN.AI"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: mobfoesteelo/prior-site\nThe record for mobf",
-          "identifier": "https://github.com/mobfoesteelo/prior-site",
-          "published_at": "2026-09-24",
-          "source_id": "github",
-          "title": "mobfoesteelo/prior-site",
-          "url": "https://github.com/mobfoesteelo/prior-site"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Vincamok/goproxify\nThe record for Vincamok/",
-          "identifier": "https://github.com/Vincamok/goproxify",
-          "published_at": "2026-09-24",
-          "source_id": "github",
-          "title": "Vincamok/goproxify",
-          "url": "https://github.com/Vincamok/goproxify"
+          "title": "smpn1kara4850/RL-AI-Latest",
+          "url": "https://github.com/smpn1kara4850/RL-AI-Latest"
         }
       ],
       "request_params": {
         "order": "desc",
         "per_page": 5,
-        "q": "autonomous agent pushed:>=2026-09-23",
+        "q": "autonomous agent pushed:>=2026-09-24",
         "sort": "updated"
       },
       "request_url": "https://api.github.com/search/repositories",
@@ -114,12 +98,12 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-23",
-        "until": "2026-09-24"
+        "since": "2026-09-24",
+        "until": "2026-09-25"
       }
     },
     {
-      "detail": "1 item(s) returned; 0 published before the window 2026-09-23..2026-09-24 and dropped; 1 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "1 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 1 carried no readable date and were kept; 1 not seen by this engine before.",
       "docs_url": "https://nvd.nist.gov/developers/vulnerabilities",
       "items_new": 1,
       "items_out_of_window": 0,
@@ -129,8 +113,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-24T21:37:12.247\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:1fa0a311b",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 3\nstartIndex = 0\ntimestamp = 2026-09-25T05:04:52.438\ntotalResults = 3\nversion = 2.0\nvulnerabilities.0.cve.affected.0.affectedData.0.defaultStat",
+          "identifier": "nvd-raw-sha256:7a4248b0a",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -139,8 +123,8 @@
       ],
       "request_params": {
         "keywordSearch": "autonomous agent",
-        "lastModEndDate": "2026-09-24T00:00:00.000+00:00",
-        "lastModStartDate": "2026-09-23T00:00:00.000+00:00",
+        "lastModEndDate": "2026-09-25T00:00:00.000+00:00",
+        "lastModStartDate": "2026-09-24T00:00:00.000+00:00",
         "resultsPerPage": 5
       },
       "request_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
@@ -150,14 +134,14 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-23",
-        "until": "2026-09-24"
+        "since": "2026-09-24",
+        "until": "2026-09-25"
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-09-23..2026-09-24 and dropped; 0 carried no readable date and were kept; 6 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 6,
+      "items_new": 1,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -166,43 +150,11 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/gridstate/1.10.5/",
-          "published_at": "2026-09-24",
+          "identifier": "https://pypi.org/project/kaparoo-python/0.15.0/",
+          "published_at": "2026-09-25",
           "source_id": "pypi",
-          "title": "gridstate 1.10.5",
-          "url": "https://pypi.org/project/gridstate/1.10.5/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/nbsite/0.10.0a7/",
-          "published_at": "2026-09-24",
-          "source_id": "pypi",
-          "title": "nbsite 0.10.0a7",
-          "url": "https://pypi.org/project/nbsite/0.10.0a7/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/megillah/2026.9.24.735/",
-          "published_at": "2026-09-24",
-          "source_id": "pypi",
-          "title": "megillah 2026.9.24.735",
-          "url": "https://pypi.org/project/megillah/2026.9.24.735/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/stapel-moderation/0.8.3/",
-          "published_at": "2026-09-24",
-          "source_id": "pypi",
-          "title": "stapel-moderation 0.8.3",
-          "url": "https://pypi.org/project/stapel-moderation/0.8.3/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/cmpnd/0.27.9/",
-          "published_at": "2026-09-24",
-          "source_id": "pypi",
-          "title": "cmpnd 0.27.9",
-          "url": "https://pypi.org/project/cmpnd/0.27.9/"
+          "title": "kaparoo-python 0.15.0",
+          "url": "https://pypi.org/project/kaparoo-python/0.15.0/"
         }
       ],
       "request_params": {},
@@ -213,12 +165,12 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-23",
-        "until": "2026-09-24"
+        "since": "2026-09-24",
+        "until": "2026-09-25"
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-23..2026-09-24 and dropped; 5 carried no readable date and were kept; 0 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 5 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
       "items_new": 0,
       "items_out_of_window": 0,
@@ -228,11 +180,11 @@
       "mechanism": "Earthquake events inside an explicit time window",
       "new_items": [],
       "request_params": {
-        "endtime": "2026-09-24",
+        "endtime": "2026-09-25",
         "format": "geojson",
         "limit": 5,
         "orderby": "time",
-        "starttime": "2026-09-23"
+        "starttime": "2026-09-24"
       },
       "request_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
       "source_id": "usgs_earthquake",
@@ -241,8 +193,8 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-23",
-        "until": "2026-09-24"
+        "since": "2026-09-24",
+        "until": "2026-09-25"
       }
     }
   ],

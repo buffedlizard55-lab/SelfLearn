@@ -975,7 +975,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-24T21:37:07Z",
+      "recorded_at": "2026-09-25T05:04:48Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-14c6231464ba",
@@ -1027,7 +1027,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-24T21:37:07Z",
+      "recorded_at": "2026-09-25T05:04:48Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-218a3db8595c",
@@ -1080,7 +1080,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-24T21:37:07Z",
+      "recorded_at": "2026-09-25T05:04:48Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-5f7ead482aa8",
@@ -1132,7 +1132,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-24T21:37:07Z",
+      "recorded_at": "2026-09-25T05:04:48Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-30d31bfbf26c",
@@ -1189,7 +1189,7 @@
       "reasons": [
         "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
       ],
-      "recorded_at": "2026-09-24T21:37:07Z",
+      "recorded_at": "2026-09-25T05:04:48Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-f030bcdfc70a",
@@ -1246,7 +1246,7 @@
       "reasons": [
         "All 2 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-24T21:37:07Z",
+      "recorded_at": "2026-09-25T05:04:48Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-3328b7d99d8f",
@@ -1306,7 +1306,7 @@
       "reasons": [
         "All 3 figure(s) and 0 date(s) appear in the 5 cited claim(s) drawn from 4 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-24T21:37:07Z",
+      "recorded_at": "2026-09-25T05:04:48Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-acbe89830170",
@@ -1372,7 +1372,7 @@
       "reasons": [
         "All 3 figure(s) and 0 date(s) appear in the 11 cited claim(s) drawn from 7 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-24T21:37:07Z",
+      "recorded_at": "2026-09-25T05:04:48Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-f1535a686171",
@@ -3010,7 +3010,7 @@
       "claim_a": "cl-5a86c56f889c",
       "claim_b": "cl-92ae15540483",
       "contradiction_id": "con-62b85df6338e",
-      "created_at": "2026-09-24T21:37:07Z",
+      "created_at": "2026-09-25T05:04:48Z",
       "detail": "Claims share 64% of their content tokens but contain disjoint numeric values (0, 19, 2, 2020, 25, 7 vs 14, 17, 2024, 39, 49, 6, 9). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -3038,7 +3038,7 @@
       "claim_a": "cl-34785ec24933",
       "claim_b": "cl-aae22a8bf2b6",
       "contradiction_id": "con-9e27fade0728",
-      "created_at": "2026-09-24T21:37:07Z",
+      "created_at": "2026-09-25T05:04:48Z",
       "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -3066,7 +3066,7 @@
       "claim_a": "cl-a39b827e786b",
       "claim_b": "cl-aae22a8bf2b6",
       "contradiction_id": "con-c3814afc1d32",
-      "created_at": "2026-09-24T21:37:07Z",
+      "created_at": "2026-09-25T05:04:48Z",
       "detail": "Claims share 67% of their content tokens but contain disjoint numeric values (0 vs 2). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -3080,7 +3080,7 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-d3e7cd2b784b",
       "contradiction_id": "con-d3df6c302896",
-      "created_at": "2026-09-24T21:37:07Z",
+      "created_at": "2026-09-25T05:04:48Z",
       "detail": "Claims share 57% of their content tokens but contain disjoint numeric values (2 vs 0, 3). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -3108,7 +3108,7 @@
       "claim_a": "cl-aae22a8bf2b6",
       "claim_b": "cl-c6ff1cae91a9",
       "contradiction_id": "con-f8b061b192ec",
-      "created_at": "2026-09-24T21:37:07Z",
+      "created_at": "2026-09-25T05:04:48Z",
       "detail": "Claims share 69% of their content tokens but contain disjoint numeric values (2 vs 0). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -3177,7 +3177,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2023-08-01",
-      "retrieved_at": "2026-09-24T21:37:07Z",
+      "retrieved_at": "2026-09-25T05:04:48Z",
       "source_name": "GitHub REST API",
       "title": "sleepingcat4/Active-learning",
       "url": "https://github.com/sleepingcat4/Active-learning"
@@ -3192,7 +3192,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2020-06-20",
-      "retrieved_at": "2026-09-24T21:37:07Z",
+      "retrieved_at": "2026-09-25T05:04:48Z",
       "source_name": "GitHub REST API",
       "title": "jmamath/active-learning",
       "url": "https://github.com/jmamath/active-learning"
@@ -3207,7 +3207,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2024-06-17",
-      "retrieved_at": "2026-09-24T21:37:07Z",
+      "retrieved_at": "2026-09-25T05:04:48Z",
       "source_name": "GitHub REST API",
       "title": "ablancha/gpsearch",
       "url": "https://github.com/ablancha/gpsearch"
@@ -3222,7 +3222,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-06-22",
-      "retrieved_at": "2026-09-24T21:37:07Z",
+      "retrieved_at": "2026-09-25T05:04:48Z",
       "source_name": "GitHub REST API",
       "title": "TibMont/PyALAF",
       "url": "https://github.com/TibMont/PyALAF"
@@ -3237,7 +3237,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2020-07-02",
-      "retrieved_at": "2026-09-24T21:37:07Z",
+      "retrieved_at": "2026-09-25T05:04:48Z",
       "source_name": "GitHub REST API",
       "title": "umbrellagong/gpsearch",
       "url": "https://github.com/umbrellagong/gpsearch"
@@ -3252,7 +3252,7 @@
       "is_live": true,
       "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
       "published_at": "2026-07-10",
-      "retrieved_at": "2026-09-24T21:37:07Z",
+      "retrieved_at": "2026-09-25T05:04:48Z",
       "source_name": "GitHub REST API",
       "title": "IsaH93/pil-active-learning-screening",
       "url": "https://github.com/IsaH93/pil-active-learning-screening"
@@ -3331,13 +3331,13 @@
       "baseline": 960.0,
       "best_value": 139.0205,
       "best_variant": "epsilon_greedy",
-      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-bnu5new_/result.json",
+      "command": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-bjmrpr1i/result.json",
       "error": "",
       "experiment_id": "scheduling-policies-v1",
       "hypothesis": "On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate keeps paying a cost proportional to the horizon.",
       "method": "100 independent trials of 4000 pulls per policy on arms with means [0.15, 0.25, 0.35, 0.45, 0.6]; pseudo-regret computed from the true mean of each pulled arm, so the metric has no reward noise.",
       "metric": "mean cumulative pseudo-regret",
-      "ran_at": "2026-09-24T21:37:08Z",
+      "ran_at": "2026-09-25T05:04:49Z",
       "result_json": {
         "arm_means": [
           0.15,
@@ -3429,7 +3429,7 @@
       "topic_id": "topic-research-loop-scheduling"
     }
   ],
-  "generated_at": "2026-09-24T21:37:16Z",
+  "generated_at": "2026-09-25T05:04:57Z",
   "questions": [
     {
       "id": "q-a7a594ff0997",
@@ -5389,14 +5389,14 @@
     {
       "claim_id": "q-c34e24cf4e97",
       "claim_kind": "open question (gap)",
-      "recorded_at": "2026-09-24T21:37:09Z",
-      "superseded": "Withdrawn 2026-09-24T21:37:12Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-05c6f4dc6499.",
+      "recorded_at": "2026-09-25T05:04:50Z",
+      "superseded": "Withdrawn 2026-09-25T05:04:52Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-05c6f4dc6499.",
       "text": "The quantity reported in cl-05c6f4dc6499 has no reference period in the quoted text. Over what period, and in what population, was it measured?"
     }
   ],
   "source_status": [
     {
-      "checked_at": "2026-09-24T21:37:07Z",
+      "checked_at": "2026-09-25T05:04:48Z",
       "detail": "6 document(s) retrieved; 4 result(s) dropped as unrelated to the query",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -5412,7 +5412,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-24T21:37:07Z",
+      "checked_at": "2026-09-25T05:04:48Z",
       "detail": "10 document(s) retrieved",
       "evidence_class": "peer_reviewed",
       "evidence_rank": 4,
@@ -5430,7 +5430,7 @@
   ],
   "statistics": {
     "claims": 40,
-    "computed_at": "2026-09-24T21:37:16Z",
+    "computed_at": "2026-09-25T05:04:57Z",
     "documents": 10,
     "evidence_classes": [
       "peer_reviewed",
@@ -5796,6 +5796,18 @@
     {
       "last_updated": "2026-09-24T21:37:09Z",
       "line": 250,
+      "status": "testing",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "last_updated": "2026-09-25T05:04:43Z",
+      "line": 254,
+      "status": "new",
+      "topic_id": "topic-research-loop-scheduling"
+    },
+    {
+      "last_updated": "2026-09-25T05:04:50Z",
+      "line": 258,
       "status": "testing",
       "topic_id": "topic-research-loop-scheduling"
     }
@@ -7315,7 +7327,7 @@
     }
   ],
   "topic": {
-    "first_seen": "2026-09-24T21:37:02Z",
+    "first_seen": "2026-09-25T05:04:43Z",
     "keywords": [
       "scheduling",
       "prioritisation",
@@ -7324,7 +7336,7 @@
       "research management",
       "bandit"
     ],
-    "last_updated": "2026-09-24T21:37:09Z",
+    "last_updated": "2026-09-25T05:04:50Z",
     "notes": "Tests whether the manager's scoring design matches published practice, or whether a published method is better.",
     "origin": "seed",
     "parent_topic_id": null,

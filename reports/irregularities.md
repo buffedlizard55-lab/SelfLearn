@@ -1,12 +1,12 @@
 # Irregularities for review
 
-Generated: 2026-09-24T21:37:17Z
+Generated: 2026-09-25T05:04:58Z
 
 This file is produced by the audit stage. It lists everything the engine could not
 reconcile on its own. Nothing here is a conclusion; each entry is a request for a human
 decision, with the evidence needed to make it.
 
-**Totals (open)** - error: 0, warning: 18, info: 31; resolved by a reviewer: 8 (error: 1, warning: 0, info: 7).
+**Totals (open)** - error: 0, warning: 18, info: 32; resolved by a reviewer: 8 (error: 1, warning: 0, info: 7).
 
 ## Stage: audit
 
@@ -24,9 +24,9 @@ decision, with the evidence needed to make it.
 
 - **id:** `irr-c7702daed02e`
 - **topic:** n/a
-- **detail:** Unavailable sources: github
+- **detail:** Unavailable sources: arxiv
 - **suggested action:** Confirm network egress from the runner, or accept snapshot replay for these sources.
-- **detected:** 2026-09-23T00:48:52Z
+- **detected:** 2026-09-25T05:04:52Z
 
 ### [WARNING] 5 source(s) were not reachable during this run
 
@@ -133,7 +133,7 @@ decision, with the evidence needed to make it.
 - **link:** <https://info.arxiv.org/help/api/user-manual.html>
 - **detail:** Request: https://export.arxiv.org/api/query with {"max_results": 5, "search_query": "all:autonomous agent", "sortBy": "submittedDate", "sortOrder": "descending", "start": 0}. Response: 
 - **suggested action:** Verify the filter against the source's documentation and update changes.py.
-- **detected:** 2026-09-22T21:25:05Z
+- **detected:** 2026-09-25T05:04:51Z
 
 ### [WARNING] Change scan for arxiv was refused by the operator's robots.txt
 
@@ -221,7 +221,7 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** 134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.
 - **suggested action:** Nothing to do unless a reviewer believes a retired statement was correct.
-- **detected:** 2026-09-24T21:37:17Z
+- **detected:** 2026-09-25T05:04:58Z
 
 ## Stage: change_scan
 
@@ -370,6 +370,14 @@ decision, with the evidence needed to make it.
 - **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
 - **suggested action:** Review the retired statements section on the affected topic pages.
 - **detected:** 2026-09-23T21:36:28Z
+
+### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-23b539efbd77`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-09-25T05:04:52Z
 
 ### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
 
