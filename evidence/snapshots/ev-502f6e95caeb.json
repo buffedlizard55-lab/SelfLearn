@@ -1,5 +1,5 @@
 {
-  "bytes_read": 30045,
+  "bytes_read": 30075,
   "content_hash": "sha256:df08633206dbde8fab6d39b92796c89e67a8d31d85b6672f8f81e6d4b12fce7b",
   "evidence_class": "commentary",
   "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -13,8 +13,8 @@
   "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
   "published_at": "2026-03-21",
   "publisher": "Y Combinator (Hacker News); Algolia operates the search index",
-  "response_sha256": "sha256:cd152cdc592ddbc18d3b247276c9b5292a224c1a1ad14b39443109e4958f341f",
-  "retrieved_at": "2026-09-25T11:58:00Z",
+  "response_sha256": "sha256:fe89af2e79098aea0ccce1ebf92664428f0dd8a113a4f1ef0ed391a78db042b7",
+  "retrieved_at": "2026-09-25T17:19:06Z",
   "source_id": "hackernews",
   "source_name": "Hacker News API (via Algolia index)",
   "text": "Source: Hacker News API (via Algolia index) (https://hn.algolia.com/api/v1)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Autonomous AI research agent with Overleaf sync\nThe record for Autonomous AI research agent with Overleaf sync reports: created_at 2026-03-21T12:39:59Z, points 3, comment count 2.\nThe record for Autonomous AI research agent with Overleaf sync reports: objectID 47466487.\nSource note: Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",

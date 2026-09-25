@@ -1,0 +1,23 @@
+{
+  "bytes_read": 58968,
+  "content_hash": "sha256:c5423b9b43ae1ad6df261c728a74b207ebc6d4f141afbc5e86fedbe826fe2eec",
+  "evidence_class": "primary_source",
+  "evidence_class_label": "Original data, official API response, official document or dataset.",
+  "evidence_id": "ev-4234fcf5235b",
+  "evidence_rank": 3,
+  "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: khoj-ai/khoj\nThe record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37497, forks_count 2495.\nThe record for khoj-ai/khoj reports: la",
+  "http_status": 200,
+  "is_fixture": false,
+  "is_live": true,
+  "license": "Repository content carries each repository's own licence",
+  "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+  "published_at": "2026-08-02",
+  "publisher": "GitHub, Inc. (Microsoft)",
+  "response_sha256": "sha256:5cb2c8c8e0311e5c4f34ae5ff68c932d4d325e2621d9d1a0c824eb6ab96d3ad7",
+  "retrieved_at": "2026-09-25T17:19:06Z",
+  "source_id": "github",
+  "source_name": "GitHub REST API",
+  "text": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: khoj-ai/khoj\nThe record for khoj-ai/khoj reports: pushed_at 2026-08-02T01:55:40Z, stargazers_count 37497, forks_count 2495.\nThe record for khoj-ai/khoj reports: language Python, license AGPL-3.0, topics agent; ai; assistant; chat; chatgpt; emacs; image-generation; llama3; llamacpp; llm; obsidian; obsidian-md; offline-llm; productivity; rag; research; self-hosted; semantic-search; stt; whatsapp-ai.\nThe record for khoj-ai/khoj reports: open_issues_count 153.\nThe record for khoj-ai/khoj states in its own description: Your AI second brain.\nThe record for khoj-ai/khoj states in its own description: Self-hostable.\nThe record for khoj-ai/khoj states in its own description: Get answers from the web or your docs.\nThe record for khoj-ai/khoj states in its own description: Build custom agents, schedule automations, do deep research.\nThe record for khoj-ai/khoj states in its own description: Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral).\nThe record for khoj-ai/khoj states in its own description: Get started - free.\nSource note: Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+  "title": "khoj-ai/khoj",
+  "url": "https://github.com/khoj-ai/khoj"
+}
