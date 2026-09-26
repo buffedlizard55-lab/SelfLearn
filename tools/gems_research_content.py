@@ -957,7 +957,7 @@ HYPOTHESES = [
         "status_detail": "The project's blocked, buffered, system-purged CV (0-overlap geometry "
         "recorded per fold) exists because of this; dense-vs-spaced measurements above all use it.",
         "sources": [
-            ("Reference notebook make_patches docstring", "https://github.com/drivendataorg/gems-prize-reference-solution/blob/main/unet-mc-cv-reference-solution.ipynb"),
+            ("Reference notebook, patch-split section (markdown cell 9 + make_patches)", "https://github.com/drivendataorg/gems-prize-reference-solution/blob/main/unet-mc-cv-reference-solution.ipynb"),
             ("cv_geometry_audit_2026-09-26.json", "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/cv_geometry_audit_2026-09-26.json"),
         ],
     },
@@ -1022,7 +1022,7 @@ CHANGELOG = [
             "1-band float32 template, all EPSG:32611 at 100 m, 3292x3730 - conforming to the official "
             "spec. The train->inference->validate pipeline is no longer blocked on data placement "
             "(training itself still needs a GPU machine).",
-            "Anchor verification: all twelve source anchors fetched and read on 2026-09-26 "
+            "Anchor verification: all eleven source anchors fetched and read on 2026-09-26 "
             "(including the two officially cited prior-art papers and the USGS QFF database page, "
             "whose current URL was found by search rather than assumed).",
             "Irregularities flagged (see index): PROJECT_BRIEF_GEMSDOE.md is absent from the "

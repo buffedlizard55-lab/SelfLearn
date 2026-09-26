@@ -44,7 +44,13 @@ from selflearn.fetch.changes import mechanism_table  # noqa: E402
 from selflearn.fetch.net import HttpClient, HttpError, NetworkUnavailable  # noqa: E402
 from selflearn.fetch.registry import REGISTRY  # noqa: E402
 
-PROSE_GLOBS = ("docs/*.md", "README.md", "reports/SUMMARY.md")
+PROSE_GLOBS = (
+    "docs/*.md",
+    "docs/research/*.md",
+    "docs/research/data/*.json",
+    "README.md",
+    "reports/SUMMARY.md",
+)
 URL_RE = re.compile(r"https?://[^\s\)\]>\"'`,]+")
 
 #: Links that are deliberately not fetched: they are examples, placeholders, or

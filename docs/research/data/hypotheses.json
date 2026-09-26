@@ -190,7 +190,7 @@
       "signature": "n/a - evaluation methodology",
       "sources": [
         [
-          "Reference notebook make_patches docstring",
+          "Reference notebook, patch-split section (markdown cell 9 + make_patches)",
           "https://github.com/drivendataorg/gems-prize-reference-solution/blob/main/unet-mc-cv-reference-solution.ipynb"
         ],
         [
