@@ -36,6 +36,7 @@ def tool(name: str):
 
 # ------------------------------------------------------------- topk identity
 
+@needs_entry
 def test_topk_hard_matches_canonical_entry_placement():
     """The ablation's topk_hard must be byte-identical to the entry's
     scripts/experiment.py::placements topk_hard — the yardstick only works if
@@ -75,6 +76,7 @@ def test_topk_hard_deterministic_and_in_range():
 
 # --------------------------------------------------------- trace keep identity
 
+@needs_entry
 def test_kept_trace_table_matches_canonical():
     sa = tool("shipping_axis_ablation")
     sys.path.insert(0, str(ENTRY / "src"))
