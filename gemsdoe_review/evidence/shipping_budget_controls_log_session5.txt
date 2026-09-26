@@ -1,0 +1,12 @@
+fold 0, seed 17: {'budget03_spacing1': 0.16976, 'budget03_spacing4': 0.20137, 'budget03_spacing5': 0.18687}
+fold 0, seed 29: {'budget03_spacing1': 0.17149, 'budget03_spacing4': 0.20145, 'budget03_spacing5': 0.18934}
+fold 0, seed 43: {'budget03_spacing1': 0.16615, 'budget03_spacing4': 0.20127, 'budget03_spacing5': 0.18928}
+fold 1, seed 17: {'budget03_spacing1': 0.15455, 'budget03_spacing4': 0.18402, 'budget03_spacing5': 0.17447}
+fold 1, seed 29: {'budget03_spacing1': 0.15397, 'budget03_spacing4': 0.18476, 'budget03_spacing5': 0.1716}
+fold 1, seed 43: {'budget03_spacing1': 0.15197, 'budget03_spacing4': 0.18239, 'budget03_spacing5': 0.17144}
+fold 2, seed 17: {'budget03_spacing1': 0.1894, 'budget03_spacing4': 0.22704, 'budget03_spacing5': 0.21461}
+fold 2, seed 29: {'budget03_spacing1': 0.20152, 'budget03_spacing4': 0.22693, 'budget03_spacing5': 0.21277}
+fold 2, seed 43: {'budget03_spacing1': 0.18405, 'budget03_spacing4': 0.2266, 'budget03_spacing5': 0.20939}
+fold 3, seed 17: {'budget03_spacing1': 0.17836, 'budget03_spacing4': 0.20235, 'budget03_spacing5': 0.18693}
+fold 3, seed 29: {'budget03_spacing1': 0.1771, 'budget03_spacing4': 0.20511, 'budget03_spacing5': 0.18879}
+fold 3, seed 43: {'budget03_spacing1': 0.16791, 'budget03_spacing4': 0.20113, 'budget03_spacing5': 0.18968}

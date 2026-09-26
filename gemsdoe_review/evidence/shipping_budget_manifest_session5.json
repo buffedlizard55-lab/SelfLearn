@@ -1,0 +1,97 @@
+{
+  "kind": "session-5 shipping-budget confirmation of the spacing-4 hypothesis",
+  "not_a_leaderboard_score": true,
+  "decision_rule": {
+    "H1_primary": "full88 spacing4 mean fold DTI > full88 dense(spacing1) mean AND full88 spacing4 > max(frozen null seeds) in every fold",
+    "H2_sensitivity": "sign(full88 spacing4 - full88 spacing1) positive on both alternative layouts",
+    "promotion": "only if H1 and H2 both hold; a pass is still not upload permission",
+    "gate_convention": "max over three frozen null seeds is a descriptive hurdle, not a confidence interval"
+  },
+  "design": {
+    "max_neg": 400000,
+    "iters": 300,
+    "seed": 7,
+    "configs": [
+      "raw19",
+      "full88",
+      "drop2"
+    ],
+    "primary_layout": {
+      "blocks": 2,
+      "folds": 4,
+      "buffer_px": 3
+    },
+    "sensitivity_layouts": [
+      {
+        "blocks": 3,
+        "folds": 4,
+        "buffer_px": 3
+      },
+      {
+        "blocks": 2,
+        "folds": 4,
+        "buffer_px": 5
+      }
+    ]
+  },
+  "entry": "/home/user/entry-src",
+  "tools": {
+    "audit_cv_geometry.py": "7dc84308c3037b9b97f5404f2e73b4ce936834d955a19ff26051be11dc6a8ec1",
+    "build_local_candidate.py": "03c67a24f144dd3a51b213cfa8169bac0df2426ced319030bcbacebf8c38b404",
+    "check_entry_docs.py": "ea6e93100ec9834d8318eeb402fb9489353b93c1e099c912bf6f3ba4ca90e413",
+    "current_geology_report.py": "c1305e89e8067e87f5f66cfa9257ed5a879b6151c9d5fd57fe1734032004ed4e",
+    "evaluate_emission_holdout.py": "f14c45b080be5b687ad1d756a26cc98e5bf6192e5ce8a4964558fd79d4ed23b4",
+    "experiment_proxy_cv.py": "d04e8cba98ad679864711ee3be0fb52ddf6835c266cd1aed3c90e5eec1aae396",
+    "feature_ablation_cv.py": "d4db7fa48be89a2ed76e13320cc0a690a77d1039452c5f874a476316f4cd1225",
+    "feature_priorities_audit.py": "cfac3a4ab23e9bef059f65710987e9faf4d36bcff261d49211839a04fb41e3c7",
+    "geology_dossier.py": "0216bd834af7f31d5758774c2deb39f51a9fa5cecfbb141df04eddddd6c05b32",
+    "geology_report.py": "5a575555c4168c36e41b4d8c191b6345ac8982d7d468146abdf4b5ed2847d55c",
+    "leaderboard_snapshot.py": "751496ba98e5db401b9905fff8e0bc8ee8832f0d7b877be73ee3c42a8e370580",
+    "masked_proxy_eval.py": "eae305073a481265b7cd8ad9c9c683f0953edb58f0a2b5a53a0c8d5f29c6de86",
+    "metric_claim_check.py": "5df2d0c7836c42056460e4d4607d94c900764e3f430232dbe0abbd59337dec08",
+    "ownership_live_audit.py": "b1a4bd9452c8a2742b370190892a071f21ca4c2a74e712fb103855566b340977",
+    "phase2_narrative.py": "669e385ae2969e53b4d69a71a3264cbfea10a9b481349e9f7f103d50814ac5f1",
+    "shipping_axis_ablation.py": "088d44863badd7e70c31877f1a6a95390d5d5504402af9297db24d251279d168",
+    "shipping_budget_confirmation.py": "c6ce293f928b43b74bc456d92bceda8e577b67c64580aff7fa2efc5f0cec9dfa",
+    "spatial_controls.py": "30eca7d7979728c9e94560d718ca9727bd0c3f5e171cb445e9dfc8a98dcf9886",
+    "spatial_system_cv.py": "e930214d5675439d0b3ddba04de0f821c13d3a95258881ba14c2807186ddc18e",
+    "summarize_spatial_cv.py": "3351ca42d759d35f0c918b5e4e4b5245f25206b444292aeb42acf3e019a52972",
+    "system_holdout_cv.py": "f84a1a6a0ce0e19b8cd3fba9633c6693b1463d93f56f10a7d1efdf5d43101b17",
+    "tilt_derivative_audit.py": "dcec3af801cd7954792f84da74ba88204ba8ae2ebc4f3e7039011b57842cb49a"
+  },
+  "geometry_primary": {
+    "path": "geometry_primary.json",
+    "sha256": "d04b356069c4d0521231542ef2ef18a8ae66a3cc35d434409873440af6740a30"
+  },
+  "geometry_sensitivity1": {
+    "path": "geometry_sensitivity1.json",
+    "sha256": "724a94355ec69c32a6200524354f52af35f4eb9f045036cc5a02f6834fb4e181"
+  },
+  "geometry_sensitivity2": {
+    "path": "geometry_sensitivity2.json",
+    "sha256": "5ccda3ca78332b010191427b47b4972b63c1b097c195240dca1499269c243c59"
+  },
+  "models_shipping": {
+    "path": "models_shipping.json",
+    "sha256": "bdf07e017f05f47742dfa4547c533d2e42f5632edead31a797eefb59a949c5f8",
+    "seconds": 789.6
+  },
+  "controls_shipping": {
+    "path": "controls_shipping.json",
+    "sha256": "3edbc434bba75126f45580a85d949bd2ee84ffc123b51aef88d28650b5c96d58"
+  },
+  "models_sensitivity1": {
+    "path": "models_sensitivity1.json",
+    "sha256": "27cba8126ad9a386cded9c63fa79622f5ceb17cd5a612caf281f8ebd2eb55728"
+  },
+  "models_sensitivity2": {
+    "path": "models_sensitivity2.json",
+    "sha256": "a95c2fc478ffe9ded2621b97c0bdc93d65af31c641683fc57b5439d65dae1028"
+  },
+  "comparison_shipping": {
+    "path": "comparison_shipping.json",
+    "sha256": "908dc178e5bfef32394713763cc10eed6d8929cec4d03ae5884b9748e7ac7f8a"
+  },
+  "complete": true,
+  "elapsed_seconds": 1536.2
+}

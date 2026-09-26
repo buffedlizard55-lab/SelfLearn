@@ -1,0 +1,9 @@
+raw19  budget03_spacing1    0.0696 / null 0.1722; all-fold gate False; equal budget True
+raw19  budget03_spacing4    0.2213 / null 0.2037; all-fold gate True; equal budget True
+raw19  budget03_spacing5    0.2056 / null 0.1904; all-fold gate True; equal budget False
+full88 budget03_spacing1    0.0925 / null 0.1722; all-fold gate False; equal budget True
+full88 budget03_spacing4    0.2345 / null 0.2037; all-fold gate True; equal budget True
+full88 budget03_spacing5    0.2100 / null 0.1904; all-fold gate True; equal budget False
+drop2  budget03_spacing1    0.0911 / null 0.1722; all-fold gate False; equal budget True
+drop2  budget03_spacing4    0.2344 / null 0.2037; all-fold gate True; equal budget True
+drop2  budget03_spacing5    0.2094 / null 0.1904; all-fold gate True; equal budget False

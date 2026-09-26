@@ -1,0 +1,17 @@
+3199 traces -> 40 exact systems
+fold 0: 15509 train positives, 29319 test positives
+fold 0 raw19: {'blanket': 0.0588, 'soft': 0.01451, 'budget03_spacing1': 0.05862, 'budget03_spacing4': 0.21582, 'budget03_spacing5': 0.20354}
+fold 0 full88: {'blanket': 0.0588, 'soft': 0.0168, 'budget03_spacing1': 0.08555, 'budget03_spacing4': 0.2311, 'budget03_spacing5': 0.2066}
+fold 0 drop2: {'blanket': 0.0588, 'soft': 0.01635, 'budget03_spacing1': 0.0855, 'budget03_spacing4': 0.23512, 'budget03_spacing5': 0.20625}
+fold 1: 33002 train positives, 12596 test positives
+fold 1 raw19: {'blanket': 0.04549, 'soft': 0.00416, 'budget03_spacing1': 0.08142, 'budget03_spacing4': 0.21853, 'budget03_spacing5': 0.18869}
+fold 1 full88: {'blanket': 0.04549, 'soft': 0.00686, 'budget03_spacing1': 0.08042, 'budget03_spacing4': 0.22985, 'budget03_spacing5': 0.19521}
+fold 1 drop2: {'blanket': 0.04549, 'soft': 0.00761, 'budget03_spacing1': 0.07657, 'budget03_spacing4': 0.23369, 'budget03_spacing5': 0.1958}
+fold 2: 16551 train positives, 9473 test positives
+fold 2 raw19: {'blanket': 0.08168, 'soft': 0.00325, 'budget03_spacing1': 0.06089, 'budget03_spacing4': 0.24168, 'budget03_spacing5': 0.22674}
+fold 2 full88: {'blanket': 0.08168, 'soft': 0.00351, 'budget03_spacing1': 0.07717, 'budget03_spacing4': 0.24943, 'budget03_spacing5': 0.22275}
+fold 2 drop2: {'blanket': 0.08168, 'soft': 0.0037, 'budget03_spacing1': 0.07361, 'budget03_spacing4': 0.24396, 'budget03_spacing5': 0.22398}
+fold 3: 31613 train positives, 9600 test positives
+fold 3 raw19: {'blanket': 0.05969, 'soft': 0.03767, 'budget03_spacing1': 0.07762, 'budget03_spacing4': 0.20902, 'budget03_spacing5': 0.20337}
+fold 3 full88: {'blanket': 0.05969, 'soft': 0.04536, 'budget03_spacing1': 0.12694, 'budget03_spacing4': 0.2276, 'budget03_spacing5': 0.21545}
+fold 3 drop2: {'blanket': 0.05969, 'soft': 0.04551, 'budget03_spacing1': 0.12892, 'budget03_spacing4': 0.22471, 'budget03_spacing5': 0.21166}

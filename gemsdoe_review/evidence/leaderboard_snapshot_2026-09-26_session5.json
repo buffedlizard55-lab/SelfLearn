@@ -1,0 +1,522 @@
+{
+  "_what_this_is": "Public leaderboard snapshot parsed from the verbatim transcript leaderboard_raw_2026-09-26_session5.md. Other participants' data only; no row is claimed as ours.",
+  "source_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/",
+  "transcript_sha256": "7155fac3f97d54840a8266813fa63414b3df46488680e7012d4b82c295fbf128",
+  "tool": "leaderboard_snapshot.py",
+  "rows_visible": 50,
+  "field_high": {
+    "rank": 1,
+    "participant": "DARD",
+    "score": 0.3049,
+    "submissions": 10,
+    "last_submission": "3d 19h ago"
+  },
+  "organizer_row": {
+    "rank": 14,
+    "participant": "doegemsDrivendata",
+    "score": 0.1847,
+    "submissions": 5,
+    "last_submission": "6d 14h ago"
+  },
+  "brief_attributed_scores_today": [
+    {
+      "brief_calls_it": "GEMSDOE1",
+      "score": 0.1563,
+      "rows_on_board_today": [
+        {
+          "rank": 24,
+          "participant": "extradr19",
+          "score": 0.1563,
+          "submissions": 2,
+          "last_submission": "1d 18h ago"
+        },
+        {
+          "rank": 25,
+          "participant": "SDCF9",
+          "score": 0.1563,
+          "submissions": 2,
+          "last_submission": "35min ago"
+        }
+      ],
+      "reading": "held by extradr19 (#24, 2 submission(s)), SDCF9 (#25, 2 submission(s))"
+    },
+    {
+      "brief_calls_it": "GEMSDOE2",
+      "score": 0.156,
+      "rows_on_board_today": [
+        {
+          "rank": 26,
+          "participant": "smashi34",
+          "score": 0.156,
+          "submissions": 1,
+          "last_submission": "1d ago"
+        }
+      ],
+      "reading": "held by smashi34 (#26, 1 submission(s))"
+    },
+    {
+      "brief_calls_it": "GEMSDOE3 (entrant A)",
+      "score": 0.1193,
+      "rows_on_board_today": [
+        {
+          "rank": 41,
+          "participant": "smrtdoog5",
+          "score": 0.1193,
+          "submissions": 1,
+          "last_submission": "1d ago"
+        }
+      ],
+      "reading": "held by smrtdoog5 (#41, 1 submission(s))"
+    },
+    {
+      "brief_calls_it": "GEMSDOE3 (entrant B)",
+      "score": 0.083,
+      "rows_on_board_today": [
+        {
+          "rank": 50,
+          "participant": "wbg1",
+          "score": 0.083,
+          "submissions": 2,
+          "last_submission": "1d ago"
+        }
+      ],
+      "reading": "held by wbg1 (#50, 2 submission(s))"
+    },
+    {
+      "brief_calls_it": "GEMSDOE3 (entrant C)",
+      "score": 0.1152,
+      "rows_on_board_today": [],
+      "reading": "NOT on the visible board today"
+    }
+  ],
+  "top_10": [
+    {
+      "rank": 1,
+      "participant": "DARD",
+      "score": 0.3049,
+      "submissions": 10,
+      "last_submission": "3d 19h ago"
+    },
+    {
+      "rank": 2,
+      "participant": "alexoktaba",
+      "score": 0.2993,
+      "submissions": 13,
+      "last_submission": "1d 18h ago"
+    },
+    {
+      "rank": 3,
+      "participant": "HardcoreTechGod",
+      "score": 0.2854,
+      "submissions": 6,
+      "last_submission": "1w 1d ago"
+    },
+    {
+      "rank": 4,
+      "participant": "mzoorob",
+      "score": 0.2843,
+      "submissions": 15,
+      "last_submission": "1d 17h ago"
+    },
+    {
+      "rank": 5,
+      "participant": "joeyfezster",
+      "score": 0.2589,
+      "submissions": 12,
+      "last_submission": "1d ago"
+    },
+    {
+      "rank": 6,
+      "participant": "GrigorSargsyan",
+      "score": 0.2504,
+      "submissions": 5,
+      "last_submission": "1d 18h ago"
+    },
+    {
+      "rank": 7,
+      "participant": "xiaofanhu",
+      "score": 0.2367,
+      "submissions": 2,
+      "last_submission": "1d 11h ago"
+    },
+    {
+      "rank": 8,
+      "participant": "exposed",
+      "score": 0.234,
+      "submissions": 12,
+      "last_submission": "18h 26min ago"
+    },
+    {
+      "rank": 9,
+      "participant": "hiii12345",
+      "score": 0.2262,
+      "submissions": 6,
+      "last_submission": "5h 45min ago"
+    },
+    {
+      "rank": 10,
+      "participant": "tchu",
+      "score": 0.222,
+      "submissions": 11,
+      "last_submission": "1d 13h ago"
+    }
+  ],
+  "rows": [
+    {
+      "rank": 1,
+      "participant": "DARD",
+      "score": 0.3049,
+      "submissions": 10,
+      "last_submission": "3d 19h ago"
+    },
+    {
+      "rank": 2,
+      "participant": "alexoktaba",
+      "score": 0.2993,
+      "submissions": 13,
+      "last_submission": "1d 18h ago"
+    },
+    {
+      "rank": 3,
+      "participant": "HardcoreTechGod",
+      "score": 0.2854,
+      "submissions": 6,
+      "last_submission": "1w 1d ago"
+    },
+    {
+      "rank": 4,
+      "participant": "mzoorob",
+      "score": 0.2843,
+      "submissions": 15,
+      "last_submission": "1d 17h ago"
+    },
+    {
+      "rank": 5,
+      "participant": "joeyfezster",
+      "score": 0.2589,
+      "submissions": 12,
+      "last_submission": "1d ago"
+    },
+    {
+      "rank": 6,
+      "participant": "GrigorSargsyan",
+      "score": 0.2504,
+      "submissions": 5,
+      "last_submission": "1d 18h ago"
+    },
+    {
+      "rank": 7,
+      "participant": "xiaofanhu",
+      "score": 0.2367,
+      "submissions": 2,
+      "last_submission": "1d 11h ago"
+    },
+    {
+      "rank": 8,
+      "participant": "exposed",
+      "score": 0.234,
+      "submissions": 12,
+      "last_submission": "18h 26min ago"
+    },
+    {
+      "rank": 9,
+      "participant": "hiii12345",
+      "score": 0.2262,
+      "submissions": 6,
+      "last_submission": "5h 45min ago"
+    },
+    {
+      "rank": 10,
+      "participant": "tchu",
+      "score": 0.222,
+      "submissions": 11,
+      "last_submission": "1d 13h ago"
+    },
+    {
+      "rank": 11,
+      "participant": "oshbocker",
+      "score": 0.2185,
+      "submissions": 15,
+      "last_submission": "2d 18h ago"
+    },
+    {
+      "rank": 12,
+      "participant": "moongrega",
+      "score": 0.2174,
+      "submissions": 10,
+      "last_submission": "2d 17h ago"
+    },
+    {
+      "rank": 13,
+      "participant": "Batik Shirt Brothers (rariwa, masterozone0617)",
+      "score": 0.1956,
+      "submissions": 11,
+      "last_submission": "2d 13h ago"
+    },
+    {
+      "rank": 14,
+      "participant": "doegemsDrivendata",
+      "score": 0.1847,
+      "submissions": 5,
+      "last_submission": "6d 14h ago"
+    },
+    {
+      "rank": 15,
+      "participant": "ndavis7",
+      "score": 0.1797,
+      "submissions": 2,
+      "last_submission": "22h 16min ago"
+    },
+    {
+      "rank": 16,
+      "participant": "ad3002",
+      "score": 0.177,
+      "submissions": 11,
+      "last_submission": "2d 3h ago"
+    },
+    {
+      "rank": 17,
+      "participant": "nsabaj",
+      "score": 0.1744,
+      "submissions": 3,
+      "last_submission": "16h 34min ago"
+    },
+    {
+      "rank": 18,
+      "participant": "jgaines",
+      "score": 0.1694,
+      "submissions": 12,
+      "last_submission": "1d 18h ago"
+    },
+    {
+      "rank": 19,
+      "participant": "dmitry_v",
+      "score": 0.1672,
+      "submissions": 3,
+      "last_submission": "1d 8h ago"
+    },
+    {
+      "rank": 20,
+      "participant": "hall4jm",
+      "score": 0.1642,
+      "submissions": 7,
+      "last_submission": "1h 35min ago"
+    },
+    {
+      "rank": 21,
+      "participant": "VictorCallejas",
+      "score": 0.1629,
+      "submissions": 1,
+      "last_submission": "1d 4h ago"
+    },
+    {
+      "rank": 22,
+      "participant": "Scotty77",
+      "score": 0.159,
+      "submissions": 5,
+      "last_submission": "3d 7h ago"
+    },
+    {
+      "rank": 23,
+      "participant": "fishnchips",
+      "score": 0.1587,
+      "submissions": 7,
+      "last_submission": "4d 21h ago"
+    },
+    {
+      "rank": 24,
+      "participant": "extradr19",
+      "score": 0.1563,
+      "submissions": 2,
+      "last_submission": "1d 18h ago"
+    },
+    {
+      "rank": 25,
+      "participant": "SDCF9",
+      "score": 0.1563,
+      "submissions": 2,
+      "last_submission": "35min ago"
+    },
+    {
+      "rank": 26,
+      "participant": "smashi34",
+      "score": 0.156,
+      "submissions": 1,
+      "last_submission": "1d ago"
+    },
+    {
+      "rank": 27,
+      "participant": "hudsonenterprises",
+      "score": 0.1543,
+      "submissions": 4,
+      "last_submission": "1d 7h ago"
+    },
+    {
+      "rank": 28,
+      "participant": "Aero",
+      "score": 0.15,
+      "submissions": 5,
+      "last_submission": "1w 1d ago"
+    },
+    {
+      "rank": 29,
+      "participant": "GeoTrace",
+      "score": 0.1498,
+      "submissions": 6,
+      "last_submission": "1w 2d ago"
+    },
+    {
+      "rank": 30,
+      "participant": "mlandry",
+      "score": 0.1481,
+      "submissions": 5,
+      "last_submission": "13h 11min ago"
+    },
+    {
+      "rank": 31,
+      "participant": "Milieunomics",
+      "score": 0.1466,
+      "submissions": 10,
+      "last_submission": "1w 3d ago"
+    },
+    {
+      "rank": 32,
+      "participant": "kbrodt",
+      "score": 0.1456,
+      "submissions": 10,
+      "last_submission": "6d 22h ago"
+    },
+    {
+      "rank": 33,
+      "participant": "syntropy-digital",
+      "score": 0.1433,
+      "submissions": 5,
+      "last_submission": "4d 18h ago"
+    },
+    {
+      "rank": 34,
+      "participant": "Beacon",
+      "score": 0.1407,
+      "submissions": 7,
+      "last_submission": "1w 3d ago"
+    },
+    {
+      "rank": 35,
+      "participant": "Waltz157",
+      "score": 0.1403,
+      "submissions": 9,
+      "last_submission": "3d 1h ago"
+    },
+    {
+      "rank": 36,
+      "participant": "Milieu",
+      "score": 0.1401,
+      "submissions": 6,
+      "last_submission": "1w 3d ago"
+    },
+    {
+      "rank": 37,
+      "participant": "joano",
+      "score": 0.135,
+      "submissions": 5,
+      "last_submission": "1w 4d ago"
+    },
+    {
+      "rank": 38,
+      "participant": "zeaal (vladee, ahome)",
+      "score": 0.135,
+      "submissions": 12,
+      "last_submission": "1w 4d ago"
+    },
+    {
+      "rank": 39,
+      "participant": "jorgeschmidt",
+      "score": 0.1256,
+      "submissions": 9,
+      "last_submission": "1w 3d ago"
+    },
+    {
+      "rank": 40,
+      "participant": "mtrpdx",
+      "score": 0.1219,
+      "submissions": 7,
+      "last_submission": "5d 2h ago"
+    },
+    {
+      "rank": 41,
+      "participant": "smrtdoog5",
+      "score": 0.1193,
+      "submissions": 1,
+      "last_submission": "1d ago"
+    },
+    {
+      "rank": 42,
+      "participant": "ahkarl13",
+      "score": 0.1148,
+      "submissions": 6,
+      "last_submission": "1w 5d ago"
+    },
+    {
+      "rank": 43,
+      "participant": "DBbun (kartoun)",
+      "score": 0.1119,
+      "submissions": 3,
+      "last_submission": "1w 4d ago"
+    },
+    {
+      "rank": 44,
+      "participant": "mctamro",
+      "score": 0.1007,
+      "submissions": 2,
+      "last_submission": "5d 4h ago"
+    },
+    {
+      "rank": 45,
+      "participant": "lfiaschi",
+      "score": 0.0982,
+      "submissions": 2,
+      "last_submission": "5d 6h ago"
+    },
+    {
+      "rank": 46,
+      "participant": "finding_true_north",
+      "score": 0.0966,
+      "submissions": 4,
+      "last_submission": "1w 1d ago"
+    },
+    {
+      "rank": 47,
+      "participant": "dreanarc",
+      "score": 0.0926,
+      "submissions": 4,
+      "last_submission": "3d 13h ago"
+    },
+    {
+      "rank": 48,
+      "participant": "ganesh_stemx",
+      "score": 0.0902,
+      "submissions": 7,
+      "last_submission": "5h 8min ago"
+    },
+    {
+      "rank": 49,
+      "participant": "tarabird90",
+      "score": 0.0878,
+      "submissions": 4,
+      "last_submission": "5d 23h ago"
+    },
+    {
+      "rank": 50,
+      "participant": "wbg1",
+      "score": 0.083,
+      "submissions": 2,
+      "last_submission": "1d ago"
+    }
+  ],
+  "reading": {
+    "field_high_unchanged": true,
+    "organizer_reference": 0.1847,
+    "owned_public_score": null,
+    "note": "No DrivenData account is connected to this workspace. GitHub ownership of the GEMS-named repositories does not identify a registration, so no row above is our score and none is used as a test arm of our own experiment."
+  }
+}
