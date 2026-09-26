@@ -1,0 +1,34 @@
+--- a/src/gems/cv.py
++++ b/src/gems/cv.py
+@@ -15,3 +15,3 @@
+-    of *training* (so no training pixel is within the kernel support of a scored
+-    pixel) and excluded from *scoring* (so the scored pixels are not influenced
+-    by test-block edges).
++    of *training* using a Euclidean disk (so no training pixel is within the
++    300 m kernel support of a scored pixel) and excluded from *scoring* (so the
++    scored pixels are not influenced by test-block edges).
+@@ -28,0 +29 @@
++from scipy import ndimage
+@@ -43 +44 @@
+-        pixel lies within the kernel support of a scored pixel. `score` is the
++        pixel lies within the Euclidean kernel support of a scored pixel. `score` is the
+@@ -62,0 +64,6 @@
++    """Dilation by a Euclidean disk, matching the metric's pixel-radius geometry.
++
++    A four-neighbour iterated cross uses Manhattan distance and misses the (2, 2)
++    corner at a 3 px radius: sqrt(8) < 3. That corner is still inside the
++    official 300 m kernel and must not be in training.
++    """
+@@ -65,9 +72,3 @@
+-    out = mask.copy()
+-    for _ in range(iterations):
+-        shifted = out.copy()
+-        shifted[1:, :] |= out[:-1, :]
+-        shifted[:-1, :] |= out[1:, :]
+-        shifted[:, 1:] |= out[:, :-1]
+-        shifted[:, :-1] |= out[:, 1:]
+-        out = shifted
+-    return out
++    yy, xx = np.ogrid[-iterations:iterations + 1, -iterations:iterations + 1]
++    disk = xx * xx + yy * yy <= iterations * iterations
++    return ndimage.binary_dilation(mask, structure=disk)

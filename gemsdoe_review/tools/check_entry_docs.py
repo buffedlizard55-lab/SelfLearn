@@ -52,7 +52,20 @@ def read_text(p: Path) -> str:
     return p.read_text(encoding="utf-8", errors="replace") if p.exists() else ""
 
 
+def board_score_locations(docs: dict[str, str], score: str) -> list[str]:
+    """Report exact mentions; do not match a longer number such as 0.15630.
+
+    Fail closed even if a name appears near a score: a human must verify attribution
+    rather than trusting the same prose that this guard is meant to check.
+    """
+    pattern = re.compile(rf"(?<![\d.]){re.escape(score)}(?!\d)")
+    return [f"{name}:{line_no}" for name, text in docs.items()
+            for line_no, line in enumerate(text.splitlines(), 1)
+            if pattern.search(line)]
+
+
 def main() -> int:
+    RESULTS.clear()
     ap = argparse.ArgumentParser()
     ap.add_argument("entry", help="path to a 6GEMSDOE checkout")
     ap.add_argument("--online", action="store_true",
@@ -176,14 +189,9 @@ def main() -> int:
     for score, who in [("0.1563", "extradr19"), ("0.1560", "smashi34"),
                        ("0.1193", "smrtdoog5"), ("0.1152", "SDCF9"),
                        ("0.0830", "wbg1")]:
-        check(score not in blob.replace("0.1563", "", 0) or True,
-              f"unclaimed-board-score-{score}",
-              f"attributed by the brief to {who}; present in this entry's prose: "
-              f"{score in blob}")
-        if score in blob:
-            check(False, f"board-score-adopted-{score}",
-                  f"the entry's prose states {score}, which belongs to participant "
-                  f"{who}; it must not be presented as this entry's score")
+        locations = board_score_locations(docs, score)
+        check(not locations, f"unclaimed-board-score-{score}",
+              f"another entrant ({who}); occurrences: {locations or 'none'}")
 
     check("1,652,883" in blob or "1652883" in blob, "prose-shipped-bytes",
           "the shipped file size is stated in the prose")
@@ -193,10 +201,11 @@ def main() -> int:
     if args.online:
         try:
             out = subprocess.run(
-                ["gh", "repo", "list", "buffedlizard55-lab", "--limit", "200",
-                 "--json", "name,diskUsage,pushedAt,hasPages"],
+                ["gh", "api", "users/buffedlizard55-lab/repos?per_page=100",
+                 "--paginate", "--jq", ".[] | {name, has_pages}"],
                 capture_output=True, text=True, check=True).stdout
-            live = {r["name"]: r for r in json.loads(out)}
+            live = {r["name"]: r for r in map(json.loads, out.splitlines())}
+            check(bool(live), "github-inventory", f"REST returned {len(live)} repositories")
         except Exception as exc:  # pragma: no cover
             check(False, "github-inventory", f"gh failed: {exc}")
             live = {}
@@ -204,9 +213,9 @@ def main() -> int:
         check(len(g) == 11, "account-repo-count",
               f"live inventory has {len(g)} GEMS-named repositories: "
               f"{sorted(g)}")
-        check(all(live[n].get("hasPages") for n in g), "account-pages",
+        check(bool(g) and all(live[n].get("has_pages") for n in g), "account-pages",
               "Pages enabled on: "
-              f"{sorted(n for n in g if live[n].get('hasPages'))}")
+              f"{sorted(n for n in g if live[n].get('has_pages'))}")
         for name in g:
             check(name in acct, f"account-table-{name}",
                   f"{name} listed in ACCOUNT_STATUS.md")

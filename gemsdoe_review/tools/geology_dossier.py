@@ -15,34 +15,37 @@ for each connected group of predicted pixels it reports
 
   * geometry            - pixel count, area, principal-axis length/width, strike,
                           elongation (how lineament-like the group actually is);
-  * diagnostics         - the group's median value in a named set of geophysical
-                          diagnostics, expressed as a PERCENTILE OF THE WHOLE
-                          SCORED FOOTPRINT so that bands with different units are
-                          comparable, with the fault-favourable direction of each
-                          diagnostic stated explicitly;
-  * agreement           - how many of six independent physical families (magnetic
-                          edge, gravity edge, slope break, strain, conductivity,
-                          seismicity) carry that group, each counting once;
+  * diagnostics         - the median over the group's ACTUALLY EMITTED pixels,
+                          compared to sampled valid pixels in the scored footprint
+                          (closing only defines component topology); the favourable
+                          direction of each diagnostic is explicit;
+  * agreement           - how many of six diagnostic families (not statistically
+                          independent measurements: magnetic edge, gravity edge,
+                          slope break, strain, conductivity, seismicity) have an
+                          extreme regional value, each counting once;
   * relation to the map - distance to the supplied catalogue, and how much of the
                           group sits within the 300 m metric kernel of a mapped
                           trace;
-  * local metric value  - what the published metric pays for these particular
-                          pixels on a crop, against the catalogue;
-  * tilt-depth          - a coarse depth-to-source estimate from the +45/-45
-                          degree tilt-derivative contours (Salem et al. 2007),
-                          reported in bins because 100 m sampling cannot support
-                          a precise number.
+  * metric              - NOT estimated locally; the hidden new-fault labels are
+                          unavailable and a catalogue-crop score would mislead;
+  * tilt-depth          - an explicit NOT ESTIMABLE flag: the supplied bands
+                          cannot support the required +/-45 degree contours.
 
-The *interpretation* is not generated here. `scripts/geology_report.py` renders
-`data/evidence/geology_dossier.md` from this JSON plus hand-written readings.
+These are measured diagnostics, NOT expert interpretations or confirmed faults.
+`current_geology_report.py` generates a separate cautious geological hypothesis
+and counterargument for every candidate from these measurements; expert review
+and high-resolution DEM validation remain outstanding.
 
-    python scripts/geology_dossier.py --pred data/evidence/runs/<run>/submission.tif
-    python scripts/geology_report.py
+    python scripts/geology_dossier.py --pred downloads/<submission>.tif \\
+        --fragment-out data/evidence/geology_fragments.csv
+    python scripts/current_geology_report.py --dossier data/evidence/geology_dossier.json --out data/evidence/geology_dossier.md
 """
 
 from __future__ import annotations
 
 import argparse
+import csv
+import hashlib
 import json
 import sys
 import time
@@ -56,7 +59,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
 from gems import features as F  # noqa: E402
-from gems import metric, spec  # noqa: E402
+from gems import metric, raster, spec  # noqa: E402
 
 KM2_PER_PX = (spec.PIXEL_SIZE_M / 1000.0) ** 2  # 0.01 km^2 per pixel
 
@@ -70,11 +73,14 @@ DIAGNOSTICS: list[tuple[str, str, str, str]] = [
     ("mag_hgm", "magnetic_edge", "high",
      "horizontal gradient of TMI - sharp magnetic contact"),
     ("mag_asa", "magnetic_edge", "high",
-     "analytic-signal amplitude sqrt(hg^2+vg^2) - magnetic edge, depth-insensitive"),
-    ("tdr_mag", "magnetic_edge", "extremity",
-     "tilt derivative atan2(vg,|hg|) - zero over the contact, +/-45 deg at depth edges"),
-    ("mgd", "magnetic_edge", "high",
-     "max horizontal gradient / analytic signal - compact edge detector"),
+     "sqrt(provided TMI hg² + vg²); almost the same as TMI hg on this grid"),
+    # The supplied tmi_vg is too small relative to hg for a physical tilt-depth
+    # reading. Keep the measurement for audit, but never count it as independent
+    # positive magnetic-edge evidence (see tilt_derivative_audit.json).
+    ("tdr_mag", "untrusted_tilt", "untrusted",
+     "atan2(tmi_vg, |tmi_hg|); NOT calibrated as a physical magnetic tilt"),
+    ("mgd", "untrusted_magnetic_ratio", "untrusted",
+     "tmi_hg / mag_asa; nearly constant because mag_asa ≈ tmi_hg"),
     ("rtp", "magnetic", "extremity", "reduced-to-pole magnetic anomaly"),
     ("iso_grav_anom", "gravity", "extremity", "isostatic gravity anomaly"),
     ("grav_hgm", "gravity_edge", "high",
@@ -94,8 +100,8 @@ DIAGNOSTICS: list[tuple[str, str, str, str]] = [
     ("geod_dilaterate", "strain", "high", "geodetic dilatation rate"),
     ("cond_surf", "conductivity", "high",
      "conductivity surface - clay alteration / fluid pathway proxy"),
-    ("depth_to_base_surf", "basin_depth", "high",
-     "depth to basement - thick sedimentary cover"),
+    ("depth_to_base_surf", "conductive_base_depth", "high",
+     "depth to conductive base surface (NOT a direct basement depth)"),
     ("ieq_n100a15", "seismicity", "high", "earthquake density/intensity"),
     ("deq_n100a15", "seismicity", "low", "distance to nearest earthquake"),
 ]
@@ -151,12 +157,12 @@ def build_diagnostics(features_path: Path) -> tuple[dict[str, np.ndarray], np.nd
         curv = F.curvature(bands["det_elev"], spec.PIXEL_SIZE_M)
         out["slope_of_slope"] = curv.slope_of_slope
         out["curv_total"] = curv.total
-        out["curv_plan"] = curv.profile
+        out["curv_plan"] = curv.plan  # profile is a different curvature axis
     return out, valid
 
 
 def percentile_of_medians(values: dict[str, np.ndarray], valid: np.ndarray,
-                          n_regional: int = 3_000_000, seed: int = 20
+                          n_regional: int = 750_000, seed: int = 20
                           ) -> dict[str, np.ndarray]:
     """For each diagnostic, the sorted sample of regional values used to turn a
     candidate median into a percentile. Sampling (rather than sorting 5.2M values
@@ -167,7 +173,14 @@ def percentile_of_medians(values: dict[str, np.ndarray], valid: np.ndarray,
         idx = rng.choice(idx, size=n_regional, replace=False)
     idx.sort()
     rows, cols = np.unravel_index(idx, valid.shape)
-    return {k: np.sort(v[rows, cols]) for k, v in values.items()}
+    out = {}
+    for k, v in values.items():
+        sample = v[rows, cols]
+        sample = sample[np.isfinite(sample)]
+        if sample.size == 0:
+            raise ValueError(f"no finite regional reference for diagnostic {k}")
+        out[k] = np.sort(sample)
+    return out
 
 
 def percentile(sorted_sample: np.ndarray, x: float) -> float:
@@ -186,10 +199,11 @@ def candidate_geometry(rows: np.ndarray, cols: np.ndarray) -> dict:
     vals, vecs = np.linalg.eigh(cov)
     order = np.argsort(vals)[::-1]
     vals, vecs = vals[order], vecs[:, order]
-    major = 4.0 * np.sqrt(max(vals[0], 0.0))   # ~2 sigma total length
+    major = 4.0 * np.sqrt(max(vals[0], 0.0))   # length of the +/-2 sigma PCA axis
     minor = 4.0 * np.sqrt(max(vals[1], 0.0))
     vx, vy = vecs[0, 0], vecs[1, 0]
-    az = float(np.degrees(np.arctan2(vx, vy)) % 180.0)
+    # Raster rows increase SOUTH; geographic north is negative row direction.
+    az = float(np.degrees(np.arctan2(vx, -vy)) % 180.0)
     return {
         "pixels": int(rows.size),
         "area_km2": round(float(rows.size) * KM2_PER_PX, 3),
@@ -225,17 +239,18 @@ def tilt_depth_bins(diag: dict[str, np.ndarray], rows: np.ndarray,
     supplied magnetic vertical-derivative band `tmi_vg` is ~256x smaller than
     `tmi_hg`, so the supplied-data tilt derivative never leaves +/-3.1 degrees
     (|TDR| >= 45 deg in 2.2e-5 of pixels) and the contours the method needs do not
-    exist. Rather than print a number that cannot be supported, this returns the
-    measurement and no depth.
+    are not reliably available as a bracket for geological depth inversion.
+    Rather than invent a number, this returns the measurement and no depth.
     """
     tdr = diag["tdr_mag"][rows, cols]
     tdr = tdr[np.isfinite(tdr)]
     frac = float((np.abs(tdr) >= 45.0).mean()) if tdr.size else float("nan")
     return {
         "status": "not estimable from the supplied bands",
-        "why": "the supplied magnetic tilt derivative reaches |TDR| >= 45 deg in "
-               f"{frac:.2e} of this candidate's pixels, so the +45/-45 contours the "
-               "method needs are absent (see data/evidence/tilt_derivative_audit.json)",
+        "why": "the uncalibrated magnetic tilt has |TDR| >= 45 deg on "
+               f"{frac:.2e} of this candidate's emitted pixels; this does not "
+               "establish trustworthy, bracketing +45/-45 degree contours "
+               "(see gemsdoe_review/evidence/tilt_derivative_audit.json)",
         "candidate_fraction_abs_tdr_ge_45": frac,
         "what_would_be_needed": "a magnetic vertical derivative that is not three "
                                 "orders of magnitude smaller than the horizontal "
@@ -252,11 +267,29 @@ def main() -> int:
     ap.add_argument("--pred", required=True)
     ap.add_argument("--min-pixels", type=int, default=200)
     ap.add_argument("--closing", type=int, default=5)
+    ap.add_argument("--regional-sample", type=int, default=750_000,
+                    help="fixed-seed regional percentile reference (sampled to bound RAM)")
     ap.add_argument("--out", default=str(REPO_ROOT / "data/evidence/geology_dossier.json"))
+    ap.add_argument("--fragment-out", type=Path,
+                    help="optional inventory of ALL components below min-pixels; "
+                         "these are too small for geological interpretation")
     args = ap.parse_args()
+    if args.regional_sample < 1 or args.min_pixels < 1 or args.closing < 1 or args.closing % 2 != 1:
+        ap.error("regional-sample and min-pixels must be positive; closing must be positive and odd")
 
     t0 = time.time()
     pred_path = Path(args.pred)
+    feature_path = REPO_ROOT / "data" / "training_features.tif"
+    label_path = REPO_ROOT / "data" / "labels.tif"
+    for name, path in (("training_features.tif", feature_path),
+                       ("labels.tif", label_path)):
+        pin = spec.PINS[name]
+        if (not path.is_file() or path.stat().st_size != pin["bytes"] or
+                raster.sha256_file(path) != pin["sha256"]):
+            raise SystemExit(f"STOP: official raster failed SHA-256 pin: {path}")
+    gate = raster.check_submission(pred_path)
+    if not gate.ok:
+        raise SystemExit("STOP: refusing to interpret an ungated raster:\n" + gate.text())
     sub = read_grid(pred_path)
     pred = np.isfinite(sub) & (sub > 0)
     labels = read_grid(REPO_ROOT / "data" / "labels.tif")
@@ -264,8 +297,9 @@ def main() -> int:
     print(f"[{time.time()-t0:5.1f}s] {pred_path.name}: {int(pred.sum()):,} predicted px, "
           f"{int((pred & catalogue).sum()):,} on the catalogue", flush=True)
 
-    diag, valid = build_diagnostics(REPO_ROOT / "data" / "training_features.tif")
-    regional = percentile_of_medians(diag, valid & np.isfinite(sub))
+    diag, valid = build_diagnostics(feature_path)
+    regional = percentile_of_medians(diag, valid & np.isfinite(sub),
+                                     n_regional=args.regional_sample)
     print(f"[{time.time()-t0:5.1f}s] diagnostics ready ({len(diag)} bands)", flush=True)
 
     # candidates = predicted pixels off the catalogue, closed, labelled
@@ -280,16 +314,80 @@ def main() -> int:
           f">= {args.min_pixels} px", flush=True)
 
     dist_to_cat = ndimage.distance_transform_edt(~catalogue, sampling=1.0)
-    dist_to_pred = ndimage.distance_transform_edt(~pred, sampling=1.0)
+
+    # Account for the BELOW-THRESHOLD positives, too. They were not screened
+    # for geology here; some may be narrow real lineaments. Inventory locations
+    # with an explicit 'not identified' status rather than calling discoveries.
+    fragment_info = None
+    if args.fragment_out is not None:
+        small = np.flatnonzero(sizes < args.min_pixels) + 1
+        boxes = ndimage.find_objects(lab)
+        fragments = []
+        x_projected, y_projected = [], []
+        with rasterio.open(label_path) as s:
+            transform, crs = s.transform, s.crs
+        for cid in small:
+            box = boxes[cid - 1]
+            if box is None:
+                raise ValueError(f"missing bounds for small component {cid}")
+            yy, xx = np.nonzero(lab[box] == cid)
+            yy += box[0].start
+            xx += box[1].start
+            emitted = off[yy, xx]
+            erows, ecols = yy[emitted], xx[emitted]
+            x, y = transform * (float(xx.mean()) + 0.5, float(yy.mean()) + 0.5)
+            x_projected.append(x)
+            y_projected.append(y)
+            fragments.append({
+                "component_id": int(cid), "closed_px": int(yy.size),
+                "emitted_px": int(erows.size),
+                "centroid_row": round(float(yy.mean()), 2),
+                "centroid_col": round(float(xx.mean()), 2),
+                "median_distance_to_known_m": (round(float(np.median(
+                    dist_to_cat[erows, ecols])) * spec.PIXEL_SIZE_M, 1)
+                    if erows.size else ""),
+                "assessment": f"below {args.min_pixels}-closed-px screen; "
+                              "NOT an identified fault; inspect shape, bands "
+                              "and 1m/field data",
+            })
+        from rasterio.warp import transform as warp_transform
+        longitudes, latitudes = (warp_transform(crs, "EPSG:4326", x_projected, y_projected)
+                                 if fragments else ([], []))
+        for r, lon, lat in zip(fragments, longitudes, latitudes):
+            r["centroid_lon"] = round(float(lon), 4)
+            r["centroid_lat"] = round(float(lat), 4)
+        args.fragment_out.parent.mkdir(parents=True, exist_ok=True)
+        with args.fragment_out.open("w", newline="") as fh:
+            writer = csv.DictWriter(fh, lineterminator="\n", fieldnames=(
+                "component_id", "closed_px", "emitted_px", "centroid_row",
+                "centroid_col", "centroid_lon", "centroid_lat",
+                "median_distance_to_known_m", "assessment"))
+            writer.writeheader()
+            writer.writerows(fragments)
+        unassigned = int((off & (lab == 0)).sum())
+        fragment_emitted = sum(r["emitted_px"] for r in fragments)
+        fragment_info = {"file": args.fragment_out.name,
+                         "sha256": hashlib.sha256(args.fragment_out.read_bytes()).hexdigest(),
+                         "components": len(fragments), "emitted_px": fragment_emitted,
+                         "emitted_lost_to_closing_px": unassigned,
+                         "reason": "below min-pixels; not an identified fault"}
 
     records = []
     for cid in keep:
         rows, cols = np.nonzero(lab == cid)
         rec = candidate_geometry(rows, cols)
         rec["candidate_id"] = int(cid)
+        # A closing bridges and FILLS pixels that were never predicted. Use the
+        # closed footprint for grouping/PCA but only emitted pixels for physical
+        # readings and distances. These are distinct counts by design.
+        was_emitted = off[rows, cols]
+        emitted_rows, emitted_cols = rows[was_emitted], cols[was_emitted]
+        if emitted_rows.size == 0:
+            raise ValueError(f"component {cid} contains no emitted predictions")
+        rec["emitted_pixels"] = int(emitted_rows.size)
         lon, lat = lonlat_of(rec["centroid_row"], rec["centroid_col"])
         rec["centroid_lonlat"] = [round(lon, 4), round(lat, 4)]
-        d = dist_to_cat[rows, cols]
+        d = dist_to_cat[emitted_rows, emitted_cols]
         rec["distance_to_catalogue_px"] = {
             "median": round(float(np.median(d)), 2),
             "mean": round(float(d.mean()), 2),
@@ -298,16 +396,17 @@ def main() -> int:
         rec["diagnostics"] = {}
         for name, (family, direction, desc) in {k: v for k, v in
                                                 ((d0[0], d0[1:]) for d0 in DIAGNOSTICS)}.items():
-            v = diag[name][rows, cols]
+            v = diag[name][emitted_rows, emitted_cols]
             v = v[np.isfinite(v)]
             if v.size == 0:
                 rec["diagnostics"][name] = None
                 continue
             med = float(np.median(v))
             pct = percentile(regional[name], med)
-            fav = (pct >= 0.9) if direction == "high" else (
-                (pct <= 0.1) if direction == "low" else (
-                    pct >= 0.9 or pct <= 0.1))
+            fav = (False if direction == "untrusted" else
+                   (pct >= 0.9) if direction == "high" else
+                   (pct <= 0.1) if direction == "low" else
+                   (pct >= 0.9 or pct <= 0.1))
             rec["diagnostics"][name] = {
                 "family": family, "description": desc,
                 "median_value": round(med, 6), "regional_percentile_median": round(pct, 4),
@@ -322,38 +421,37 @@ def main() -> int:
             "rule": "a family counts once when any of its diagnostics is in the "
                     "fault-favourable decile of the regional distribution",
         }
-        rec["tilt_depth"] = tilt_depth_bins(diag, rows, cols)
-        # what the published metric pays for exactly these pixels, on a crop
-        r0, r1 = max(0, rows.min() - 5), min(lab.shape[0], rows.max() + 6)
-        c0, c1 = max(0, cols.min() - 5), min(lab.shape[1], cols.max() + 6)
-        crop_pred = pred[r0:r1, c0:c1].astype(np.float64)
-        crop_truth = catalogue[r0:r1, c0:c1]
-        comp = metric.components(crop_pred, crop_truth)
-        rec["metric_local"] = {
-            "catalogue_pixels_in_crop": int(crop_truth.sum()),
-            "tp_w": round(comp.tp_w, 2), "fp_w": round(comp.fp_w, 2),
-            "fn_w": round(comp.fn_w, 2),
-            "dti_crop": round(comp.dti, 4),
-            "note": "the catalogue is the wrong population for the prize; this is "
-                    "a stability check on the pixels, not a score",
-        }
+        rec["tilt_depth"] = tilt_depth_bins(diag, emitted_rows, emitted_cols)
+        # A cropped catalogue DTI is NOT a fault diagnosis: that crop includes
+        # other components and is evaluated on the wrong population. Omit it.
         records.append(rec)
 
+    if fragment_info is not None:
+        large_emitted = sum(r["emitted_pixels"] for r in records)
+        assert large_emitted + fragment_info["emitted_px"] + fragment_info[
+            "emitted_lost_to_closing_px"] == int(off.sum()), (
+            "large, small and closing-lost emission counts do not reconcile")
     records.sort(key=lambda r: (-r["pixels"],))
     for i, r in enumerate(records, 1):
         r["rank_by_size"] = i
 
-    classes = {"halo": 0, "extension": 0, "isolated": 0}
+    classes = {"halo": 0, "near_trace": 0, "isolated": 0}
     for r in records:
         near = r["distance_to_catalogue_px"]["fraction_within_300m"]
-        cls = "halo" if near >= 0.75 else ("extension" if near >= 0.10 else "isolated")
+        # Distance is NOT evidence of an along-strike extension; avoid that
+        # geological label until the trend has been independently verified.
+        cls = "halo" if near >= 0.75 else ("near_trace" if near >= 0.10 else "isolated")
         r["class"] = cls
         classes[cls] += 1
 
     out = {
         "generated_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "generated_by": "scripts/geology_dossier.py",
+        "generated_by": "gemsdoe_review/tools/geology_dossier.py",
         "submission": pred_path.name,
+        "input_sha256": {"submission": raster.sha256_file(pred_path),
+                         "training_features": raster.sha256_file(
+                             REPO_ROOT / "data" / "training_features.tif"),
+                         "labels": raster.sha256_file(REPO_ROOT / "data" / "labels.tif")},
         "counts": {
             "predicted_pixels": int(pred.sum()),
             "predicted_on_catalogue": int((pred & catalogue).sum()),
@@ -365,11 +463,17 @@ def main() -> int:
             "candidates": int(keep.size),
             "class_counts": classes,
         },
+        "regional_sample": {"n_max": args.regional_sample, "seed": 20,
+                            "unit": "valid grid pixels, sampled without replacement"},
         "family_rule": "families: " + ", ".join(FAMILIES) +
-                       "; +45/-45 deg tilt contours give a coarse depth bin",
+                       "; untrusted magnetic tilt and nearly constant ratio do "
+                       "not vote; no defensible depth bin from supplied bands",
+        "fragment_inventory": fragment_info,
         "candidates": records,
     }
-    Path(args.out).write_text(json.dumps(out, indent=1) + "\n")
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(out, indent=1, allow_nan=False) + "\n")
     print(f"[{time.time()-t0:5.1f}s] wrote {args.out} ({len(records)} candidates)")
     return 0
 

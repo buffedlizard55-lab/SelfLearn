@@ -17,7 +17,8 @@
    "isolated": 67
   }
  },
- "family_rule": "families: magnetic_edge, gravity_edge, slope_break, strain, conductivity, seismicity; +45/-45 deg tilt contours give a coarse depth bin",
+ "archival_warning": "WITHDRAWN historical ens12 measurement, NOT the shipped raster. Old plan curvature, azimuth, tilt/depth claim and rank-based interpretation are unsafe. Do not cite as a discovered fault; use current_shipped_geology_2026-09-26.json instead.",
+ "family_rule": "families: magnetic_edge, gravity_edge, slope_break, strain, conductivity, seismicity; +45/-45 deg tilt contours give a coarse depth bin (INVALID HISTORICAL CLAIM; see archival_warning)",
  "candidates": [
   {
    "pixels": 21455,
