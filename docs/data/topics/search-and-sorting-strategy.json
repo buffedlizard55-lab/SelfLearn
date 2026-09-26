@@ -3714,7 +3714,7 @@
       "topic_id": "topic-search-and-sorting-strategy"
     }
   ],
-  "generated_at": "2026-09-25T21:41:28Z",
+  "generated_at": "2026-09-26T00:50:44Z",
   "questions": [
     {
       "id": "q-29c92c5dc0ff",
@@ -5190,7 +5190,7 @@
   ],
   "statistics": {
     "claims": 49,
-    "computed_at": "2026-09-25T21:41:28Z",
+    "computed_at": "2026-09-26T00:50:44Z",
     "documents": 10,
     "evidence_classes": [
       "primary_source",
