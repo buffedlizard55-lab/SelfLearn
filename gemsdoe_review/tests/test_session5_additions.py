@@ -338,9 +338,13 @@ def test_session3_patch_applies_to_the_entry_revision_and_fixes_the_dilation():
     small = patches / "cv_euclidean_buffer.patch"
     small_check = subprocess.run(["git", "apply", "--check", str(small)], cwd=ENTRY,
                                  capture_output=True, text=True)
+    # session 5 recorded the small patch as stale (historical record, kept) ...
     assert evidence["patches"]["cv_euclidean_buffer.patch"]["applies_cleanly"] is False
-    assert small_check.returncode == 1, \
-        "the small patch now applies cleanly; update the evidence and regenerate it"
+    # ... session 6 regenerated it against the same revision; it must now apply
+    s6 = read_evidence("entry_patch_verification_session6.json")
+    assert s6["entry_revision"] == "e2fe3f4"
+    assert s6["patches"]["cv_euclidean_buffer.patch"]["applies_cleanly"] is True
+    assert small_check.returncode == 0, small_check.stderr
 
 
 def test_shipping_decision_rule_is_predeclared_in_the_tool():

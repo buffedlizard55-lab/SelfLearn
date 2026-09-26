@@ -1,7 +1,10 @@
 # Geological reasoning for the session-5 spacing-4 candidate
 
 **Artifact:** `candidate_spacing4-topk03.tif` — sha256
-`f807dccf16869422bd17236833dd44082a0bb85d440c142740ee2cf28f2277c0`, 1,652,883 B,
+`f807dccf16869422bd17236833dd44082a0bb85d440c142740ee2cf28f2277c0`, 1,764,117 B
+(corrected in session 6: this line originally said 1,652,883 B, which is the *shipped*
+file's size; `candidate_spacing4_report_session5.json` and the session-6 byte-identical
+rebuild both record 1,764,117 B),
 155,021 positive pixels (3.00% of the 5,167,373-pixel footprint), **13/13 format gate
 PASS** (`evidence/submission_gate_candidate_session5.json`).
 **Not submitted, not published, not offered for download.** It lives in the session

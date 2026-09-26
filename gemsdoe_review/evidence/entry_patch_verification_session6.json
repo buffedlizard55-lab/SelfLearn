@@ -1,0 +1,12 @@
+{
+ "checked_utc": "2026-09-26T21:56:33Z",
+ "entry": "buffedlizard55-lab/6GEMSDOE",
+ "entry_revision": "e2fe3f4",
+ "method": "git apply --check against a clean checkout of e2fe3f4 (src/ unmodified)",
+ "patches": {
+  "cv_euclidean_buffer.patch": {"sha256": "eef9e16f89707f370b35cc2ac48261cacde8783a6c84d7cb1d09a5b410b8bf25", "applies_cleanly": true,
+    "note": "regenerated in session 6 as git diff -- src/gems/cv.py; session 5 recorded it stale (applies_cleanly false, evidence/entry_patch_verification_session5.json)",
+    "radius3_disk_check": {"pixels": 29, "corner_2_2_included": true, "corner_3_3_included": false}},
+  "session3_entry_full_2026-09-26.patch": {"sha256": "86f139b92dbe6152022fb367e28dae18b0a3f9a8aae66915e1edd491c1bd6b6f", "applies_cleanly": true}
+ }
+}

@@ -54,6 +54,56 @@ def load_module(name: str, path: Path):
     return module
 
 
+def make_get_X(mm, n_channels: int, fix: dict | None):
+    """Feature getter over the stack; optionally swaps in corrected gravity channels 25/26."""
+    def get_X(rows, cols):
+        X = np.asarray(mm[rows, cols, :n_channels], dtype=np.float32)
+        if fix is not None:
+            X[:, 25] = fix["asa"][rows, cols]
+            X[:, 26] = fix["tilt"][rows, cols]
+        return X
+    return get_X
+
+
+def train_model_X(get_X, gt, footprint, max_neg: int, seed: int = 7, iters: int = 300):
+    """Mirror of the entry's build_submission.train_model with a feature getter.
+
+    Same sampling, same HistGradientBoosting hyper-parameters; pinned against the
+    entry function by tests/test_session6_additions.py.
+    """
+    from sklearn.ensemble import HistGradientBoostingClassifier  # noqa: PLC0415
+    rng = np.random.default_rng(seed)
+    pos = np.flatnonzero((gt & footprint).ravel())
+    neg_pool = np.flatnonzero((~gt & footprint).ravel())
+    n_neg = min(neg_pool.size, max_neg)
+    neg = rng.choice(neg_pool, size=n_neg, replace=False)
+    sel = np.concatenate([pos, neg])
+    rows, cols = np.unravel_index(sel, gt.shape)
+    X = get_X(rows, cols)
+    y = gt.ravel()[sel].astype(np.uint8)
+    model = HistGradientBoostingClassifier(
+        max_iter=iters, learning_rate=0.08, max_leaf_nodes=31,
+        min_samples_leaf=40, l2_regularization=1.0, random_state=seed,
+        early_stopping=False)
+    model.fit(X, y)
+    return model, {"n_pos": int(pos.size), "n_neg": int(n_neg), "n_features": int(X.shape[1]),
+                   "max_iter": int(iters), "sample_weight": "none"}
+
+
+def predict_full_X(get_X, model, footprint, chunk_rows: int = 256):
+    """Mirror of the entry's build_submission.predict_full with a feature getter."""
+    h, w = footprint.shape
+    out = np.zeros((h, w), dtype=np.float32)
+    for r0 in range(0, h, chunk_rows):
+        r1 = min(r0 + chunk_rows, h)
+        block_fp = footprint[r0:r1]
+        if not block_fp.any():
+            continue
+        rows, cols = np.nonzero(block_fp)
+        out[r0 + rows, cols] = model.predict_proba(get_X(r0 + rows, cols))[:, 1].astype(np.float32)
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -66,6 +116,10 @@ def main() -> int:
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--spacing", type=int, default=4)
     ap.add_argument("--fraction", type=float, default=0.03)
+    ap.add_argument("--surface", choices=("raw", "kconv", "gauss3"), default="raw",
+                    help="label-free ranking surface (session 6); raw reproduces session 5 byte-for-byte")
+    ap.add_argument("--grav-fix", action="store_true",
+                    help="replace channels 25/26 with the corrected gravity ASA/tilt (session 6 G1)")
     ap.add_argument("--shipped", type=Path, default=None,
                     help="the canonical artifact to compare against "
                          "(default: <entry>/downloads/gems6_hgb88-topk03_33cec71ff0.tif)")
@@ -86,15 +140,30 @@ def main() -> int:
     gt = lab == 1
 
     import build_submission as bs  # noqa: PLC0415  (canonical trainer/predictor)
-    model, train_info = bs.train_model(entry / "data/evidence/features.f32.npy",
-                                      args.n_channels, gt, footprint, args.max_neg,
-                                      seed=args.seed, iters=args.iters)
-    print(f"[{time.time()-t0:6.1f}s] trained {train_info}", flush=True)
-    prob = bs.predict_full(entry / "data/evidence/features.f32.npy", model,
-                           footprint, args.n_channels)
+    stack = entry / "data/evidence/features.f32.npy"
+    grav_diag = None
+    if not args.grav_fix:
+        model, train_info = bs.train_model(stack, args.n_channels, gt, footprint, args.max_neg,
+                                          seed=args.seed, iters=args.iters)
+        print(f"[{time.time()-t0:6.1f}s] trained {train_info}", flush=True)
+        prob = bs.predict_full(stack, model, footprint, args.n_channels)
+    else:
+        nested = load_module("nested_policy_cv", TOOLS / "nested_policy_cv.py")
+        fix = nested.corrected_gravity(entry)
+        grav_diag = fix["diag"]
+        get_X = make_get_X(np.load(stack, mmap_mode="r"), args.n_channels, fix)
+        model, train_info = train_model_X(get_X, gt, footprint, args.max_neg,
+                                          seed=args.seed, iters=args.iters)
+        print(f"[{time.time()-t0:6.1f}s] trained (gravity-fixed 25/26) {train_info}", flush=True)
+        prob = predict_full_X(get_X, model, footprint)
     print(f"[{time.time()-t0:6.1f}s] predicted; max={prob.max():.4f}", flush=True)
 
-    placed = cvmod.budget_nodes(prob, footprint, fraction=args.fraction, spacing=args.spacing)
+    if args.surface == "raw":
+        ranking = prob
+    else:
+        nested = load_module("nested_policy_cv", TOOLS / "nested_policy_cv.py")
+        ranking = nested.make_surface(prob, footprint, args.surface)
+    placed = cvmod.budget_nodes(ranking, footprint, fraction=args.fraction, spacing=args.spacing)
     placed = np.where(footprint, placed, 0.0).astype(np.float32)
     out = scratch / f"candidate_{args.tag}.tif"
     raster.write_submission(placed, out, entry / "data/sample_submission.tif", footprint=footprint)
@@ -124,10 +193,12 @@ def main() -> int:
         "gate": report.as_dict(),
         "positive_pixels": int(new.sum()),
         "policy": {"placement": "budget_nodes probability-ordered suppression",
+                   "surface": args.surface,
                    "fraction": args.fraction, "spacing_px": args.spacing,
                    "minimum_separation": "Chebyshev spacing px",
                    "identical_training_to_shipped": True},
-        "training": train_info | {"seed": args.seed, "n_channels": args.n_channels},
+        "training": train_info | {"seed": args.seed, "n_channels": args.n_channels,
+                                  "grav_fix": bool(args.grav_fix), "grav_fix_diag": grav_diag},
         "shipped_artifact": {
             "path": str(shipped_path), "sha256": raster.sha256_file(shipped_path),
             "positive_pixels": int(shipped.sum()),

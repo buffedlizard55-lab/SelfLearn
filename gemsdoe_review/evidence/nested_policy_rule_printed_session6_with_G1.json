@@ -1,0 +1,52 @@
+{
+  "decision_rule": {
+    "selection": "for outer fold q choose argmax over the grid of the unweighted mean inner DTI over the three inner quadrants j != q (ties: first in surface, fraction, spacing order)",
+    "N1": "nested estimate (mean outer DTI of the inner-selected policies) > frozen policy raw/3%/s4 mean outer DTI",
+    "N2": "the inner-selected policy beats the frozen policy on >= 3 of 4 outer folds",
+    "N3": "the inner-selected policy beats the max of the three matched null seeds (same policy) on every outer fold",
+    "N4_stability": "the same surface is selected on >= 3 of 4 outer folds",
+    "adopt": "change the local candidate's policy only if N1, N2, N3 and N4 all hold; otherwise keep raw/3%/s4 and report the nested estimate as its honest generalisation number",
+    "F1_feature_arm": "separate pre-specified outer-only run with --n-channels 105 (the 17 label-free strain/seismicity/conductivity family-rank and agreement channels the shipped model does not use): adopt 105 only if its frozen-policy outer mean DTI > full88's AND it wins >= 3 of 4 outer folds",
+    "not_permission": "a pass is still not upload permission (registration, allowance and AI disclosure are human-only)"
+  },
+  "grid": {
+    "surfaces": [
+      "raw",
+      "kconv",
+      "gauss3"
+    ],
+    "fractions": [
+      0.01,
+      0.015,
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.06,
+      0.08
+    ],
+    "spacings": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "frozen": [
+      "raw",
+      0.03,
+      4
+    ],
+    "null_seeds": [
+      17,
+      29,
+      43
+    ]
+  },
+  "grav_fix_rule": {
+    "defect": "the supplied band iso_grav_anom_hg is the signed east-west derivative dG/dx (Spearman 0.95 vs numerical dG/dx, ~0 vs |grad G|), not the horizontal-gradient magnitude; the entry's grav_asa (channel 25) = sqrt(hg^2+vg^2) and grav_tilt (channel 26) = atan2(vg,|hg|) therefore ignore north-south gradients",
+    "G1_arm": "outer-only run, frozen policy raw/3%/s4, channels 25/26 replaced by sqrt(H^2+vg^2) and atan2(vg,H) with H = s*|grad G|, s = least-squares scale of hg on numerical dG/dx (so H is in the supplied hg units); everything else identical to full88",
+    "G1_adopt": "correctness fix, so adopt if NON-INFERIOR: G1 outer mean >= full88 outer mean - 0.005 AND no fold worse than full88 by more than 0.01; otherwise report and keep the shipped channels"
+  }
+}

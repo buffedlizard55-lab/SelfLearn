@@ -1,0 +1,5 @@
+[  310.2s] outer q0: frozen 0.2408
+[  558.4s] outer q1: frozen 0.2375
+[  691.5s] outer q2: frozen 0.2414
+[  826.1s] outer q3: frozen 0.2328
+EXIT 0
