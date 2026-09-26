@@ -1,0 +1,235 @@
+{
+  "checked_utc": "2026-09-26T18:03:48.584953+00:00",
+  "scope": "GitHub ownership is not DrivenData registration. No public score claimed.",
+  "repositories": [
+    {
+      "source": "https://api.github.com/repos/buffedlizard55-lab/SelfLearn",
+      "full_name": "buffedlizard55-lab/SelfLearn",
+      "owner_login": "buffedlizard55-lab",
+      "owner_id": 309556078,
+      "fork": false,
+      "has_pages": true,
+      "head_sha": "dde617a360947de07a41df148e4f5d1348c8a900",
+      "contributors": [
+        "arena-ai-coding-agent[bot]",
+        "buffedlizard55-lab",
+        "arena-agent"
+      ],
+      "api_permissions": {
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
+      }
+    },
+    {
+      "source": "https://api.github.com/repos/buffedlizard55-lab/GEMSDOE",
+      "full_name": "buffedlizard55-lab/GEMSDOE",
+      "owner_login": "buffedlizard55-lab",
+      "owner_id": 309556078,
+      "fork": false,
+      "has_pages": true,
+      "head_sha": "cceebbdcf9a7d2890bb0665defcb54dfc66ae452",
+      "contributors": [
+        "github-actions[bot]",
+        "buffedlizard55-lab",
+        "arena-ai-coding-agent[bot]",
+        "arena-agent"
+      ],
+      "api_permissions": {
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
+      }
+    },
+    {
+      "source": "https://api.github.com/repos/buffedlizard55-lab/GEMSDOE2",
+      "full_name": "buffedlizard55-lab/GEMSDOE2",
+      "owner_login": "buffedlizard55-lab",
+      "owner_id": 309556078,
+      "fork": false,
+      "has_pages": true,
+      "head_sha": "099b2d2e404dc12abac1be3cb4ba289b62898a5d",
+      "contributors": [
+        "github-actions[bot]",
+        "buffedlizard55-lab",
+        "arena-ai-coding-agent[bot]"
+      ],
+      "api_permissions": {
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
+      }
+    },
+    {
+      "source": "https://api.github.com/repos/buffedlizard55-lab/GEMSDOE3",
+      "full_name": "buffedlizard55-lab/GEMSDOE3",
+      "owner_login": "buffedlizard55-lab",
+      "owner_id": 309556078,
+      "fork": false,
+      "has_pages": true,
+      "head_sha": "512371de5d30162813803cdccbd4931ceeb065c7",
+      "contributors": [
+        "arena-ai-coding-agent[bot]",
+        "buffedlizard55-lab"
+      ],
+      "api_permissions": {
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
+      }
+    },
+    {
+      "source": "https://api.github.com/repos/buffedlizard55-lab/5GEMSDOE",
+      "full_name": "buffedlizard55-lab/5GEMSDOE",
+      "owner_login": "buffedlizard55-lab",
+      "owner_id": 309556078,
+      "fork": false,
+      "has_pages": true,
+      "head_sha": "6e8d28ba407b5d748de5b3e94635c41d95e35354",
+      "contributors": [
+        "github-actions[bot]",
+        "buffedlizard55-lab",
+        "arena-ai-coding-agent[bot]",
+        "arena-agent"
+      ],
+      "api_permissions": {
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
+      }
+    },
+    {
+      "source": "https://api.github.com/repos/buffedlizard55-lab/GEMSDOE4",
+      "full_name": "buffedlizard55-lab/GEMSDOE4",
+      "owner_login": "buffedlizard55-lab",
+      "owner_id": 309556078,
+      "fork": false,
+      "has_pages": true,
+      "head_sha": "1726ecadf1ce3c5462af9de19a8c66937a1ea33c",
+      "contributors": [
+        "github-actions[bot]",
+        "arena-ai-coding-agent[bot]",
+        "buffedlizard55-lab",
+        "arena-agent"
+      ],
+      "api_permissions": {
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
+      }
+    },
+    {
+      "source": "https://api.github.com/repos/buffedlizard55-lab/6GEMSDOE",
+      "full_name": "buffedlizard55-lab/6GEMSDOE",
+      "owner_login": "buffedlizard55-lab",
+      "owner_id": 309556078,
+      "fork": false,
+      "has_pages": true,
+      "head_sha": "e2fe3f41c6f5dd2dcb2fc91958ee67698f114ada",
+      "contributors": [
+        "arena-ai-coding-agent[bot]",
+        "buffedlizard55-lab"
+      ],
+      "api_permissions": {
+        "admin": false,
+        "maintain": false,
+        "push": false,
+        "triage": false,
+        "pull": false
+      }
+    }
+  ],
+  "permission_note": "API permissions are installation-scoped: SelfLearn git push dry-run succeeded even though API push=false; 6GEMSDOE remains outside the working repo/session branch and cannot be modified here. No attempt to push another branch/repo.",
+  "ownership_resolution": {
+    "5GEMSDOE": "Same GitHub owner as SelfLearn, non-fork. Historical project copy, not another registered experiment.",
+    "GEMSDOE4": "Same GitHub owner as SelfLearn, non-fork. Historical project copy, not another registered experiment.",
+    "6GEMSDOE": "Same GitHub owner as SelfLearn, non-fork. Single designated entry according to live site and ACCOUNT_STATUS.",
+    "drivendata": "UNVERIFIED: account identity, US eligibility, upload history and allowance require the existing account holder. Public GitHub evidence does not verify them."
+  },
+  "sites_visited_via": "fetch_page tool, full first chunks of all six sites. Direct Python HTTP to Pages failed TLS; no claim of independently downloading live TIFF bytes this session.",
+  "sites": [
+    {
+      "url": "https://buffedlizard55-lab.github.io/GEMSDOE/docs/index.html",
+      "finding": "browser ens12 artifact 7f00890a; not canonical"
+    },
+    {
+      "url": "https://buffedlizard55-lab.github.io/GEMSDOE2/docs/index.html",
+      "finding": "dual-family union f68e590f; still incorrectly calls 0.1563 the recall-union board score in upload advice"
+    },
+    {
+      "url": "https://buffedlizard55-lab.github.io/GEMSDOE3/docs/index.html",
+      "finding": "Pindrop k=4 three-file upload portfolio; not canonical"
+    },
+    {
+      "url": "https://buffedlizard55-lab.github.io/5GEMSDOE/docs/index.html",
+      "finding": "catalogue-hedge upload advice and zero-outside fallback still conflict with designated entry"
+    },
+    {
+      "url": "https://buffedlizard55-lab.github.io/GEMSDOE4/",
+      "finding": "combined artifact 237f0063 and upload advice; not canonical"
+    },
+    {
+      "url": "https://buffedlizard55-lab.github.io/6GEMSDOE/",
+      "finding": "single designated artifact 33cec71ff0; live upload instructions precede account check and still assert false independent hardening claim"
+    }
+  ],
+  "leaderboard": {
+    "source": "https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/",
+    "read_via": "fetch_page chunks 0,1,2",
+    "field_high": {
+      "participant": "DARD",
+      "score": 0.3049
+    },
+    "organizer_row": {
+      "participant": "doegemsDrivendata",
+      "score": 0.1847
+    },
+    "brief_scores": [
+      {
+        "participant": "extradr19",
+        "score": 0.1563
+      },
+      {
+        "participant": "smashi34",
+        "score": 0.156
+      },
+      {
+        "participant": "smrtdoog5",
+        "score": 0.1193
+      },
+      {
+        "participant": "SDCF9",
+        "score": 0.1152
+      },
+      {
+        "participant": "wbg1",
+        "score": 0.083
+      }
+    ],
+    "owned_score": null,
+    "warning": "Live cached chunks show rank inconsistencies, so no rank deltas inferred. No evidence links any participant row to this project."
+  },
+  "rules_sources": [
+    "https://docs.nlr.gov/docs/fy26osti/96647.pdf",
+    "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/",
+    "https://community.drivendata.org/t/11516/4"
+  ],
+  "actions": {
+    "new_repositories": 0,
+    "new_sites": 0,
+    "new_accounts": 0,
+    "submissions": 0
+  }
+}

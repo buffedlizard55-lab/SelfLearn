@@ -1,0 +1,70 @@
+{
+  "checked_utc": "2026-09-26T18:12:59.016938+00:00",
+  "entry_source": {
+    "url": "https://github.com/buffedlizard55-lab/6GEMSDOE/commit/e2fe3f41c6f5dd2dcb2fc91958ee67698f114ada",
+    "kind": "codeload source archive, no nested git checkout",
+    "archive_sha256": "7f5982b8fabb588f4be67e7cfd4ff0207f8026cc77b116c00abd915a962eb09a",
+    "scratch_only_patch": "gemsdoe_review/patches/session3_entry_full_2026-09-26.patch",
+    "patch_sha256": "86f139b92dbe6152022fb367e28dae18b0a3f9a8aae66915e1edd491c1bd6b6f"
+  },
+  "environment": {
+    "python": "3.11.2",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1",
+      "rasterio": "1.4.4",
+      "pytest": "9.1.1"
+    },
+    "experiment_threads": {
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2"
+    }
+  },
+  "sha256": {
+    "data/training_features.tif": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
+    "data/labels.tif": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+    "data/sample_submission.tif": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+    "data/evidence/features.f32.npy": "6159ab38f5a89cf7c08407aa83eeedfb64b608c95896008d22158a3726a75e1d",
+    "data/evidence/features_meta.json": "0d9d57ba36d68cd40f8db2cacf9dcbdec1ca2e09eadfc8abc63bc8fa1be760f3",
+    "data/evidence/rank_tables.json": "7c330dd48b43ad9367ec690519d987a06c616c5928c45d7d95d1921b29f688d4",
+    "scripts/build_features.py": "55cc41ffe4a763ca6ce478b7935d2e1b3adc39ae48809e6b82355dc662768011",
+    "src/gems/features.py": "28afbc460437da0cb80213332a6acf9fe36eb5a80154b7273e10efcf23a3a7e2",
+    "src/gems/metric.py": "dcfd654fa83e1d9c3f97b4e032ae3940bb2e608ee1a52e1a43c05ee4b9bbfd57",
+    "src/gems/raster.py": "4941d95f03caa80878c7c59a5b49b4e1d77199aa074380af88918ef8baac5370",
+    "scripts/build_submission.py": "31b40128b6f3def3deb6ef5fd08381afa2e04d5d63791f88586746858410c2cd",
+    "scripts/validate_submission.py": "99009dedb8048e1ea449477863da7c6fb20d26af8dbcb11cf7bd00d3aac866e8"
+  },
+  "verification": {
+    "official_pins": "3/3 matched",
+    "entry_pytest": {
+      "passed": 47,
+      "failed": 0
+    },
+    "review_pytest": {
+      "passed": 62,
+      "failed": 0,
+      "skipped": 1,
+      "skip_reason": "historical alternative metric source GEMSDOE_PRIOR_METRICS absent"
+    },
+    "selflearn_unittest": {
+      "passed": 189,
+      "failed": 0
+    },
+    "entry_docs_original_offline": "35/37 (mask clarification and geological dossier missing)",
+    "entry_docs_patched_offline": "37/37",
+    "entry_docs_patched_online": "50/50",
+    "site_deployment": "UNCHANGED; scratch verification is not publication",
+    "artifact_gate": "13/13 passed on canonical repo artifact; full sha in submission_gate_session4.json",
+    "poison_gate": "exit 1; values-in-0-1 still passes, NAN-INSIDE-FOOTPRINT fails",
+    "cv_geometry": "all zero misses in patched entry across 4/4,6/6,5/3,6/4 layouts",
+    "geology": "regenerated existing hash-bound dossier markdown byte-identically; 180 large components plus fragment inventory unchanged",
+    "training_generator": "not retrained end-to-end this session; existing writer roundtrip/refusal tests passed, canonical output revalidated",
+    "initial_harness_error": "Entry tests launched from SelfLearn root could not locate relative data/sample_submission.tif. Re-run from entry root passed 47/47."
+  },
+  "code_review_corrections": [
+    "Added matched-budget label-blind null controls: full blanket alone is too weak for sparse placement.",
+    "Spacing5 underfills; report actual counts and do not call that comparison equal-budget.",
+    "Fixed feature audit inheriting parent SelfLearn Git HEAD for an extracted entry archive; entry_commit now null, API source revision recorded separately."
+  ]
+}

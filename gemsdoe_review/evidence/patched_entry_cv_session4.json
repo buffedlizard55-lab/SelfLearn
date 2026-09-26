@@ -1,0 +1,107 @@
+{
+  "kind": "cv Euclidean-buffer audit, NOT fault scores",
+  "cv_sha256": "729278b2d4ade78f63326bc898e50b6aa767ff33cd1e9703e79af5c1a44e9834",
+  "grid_shape": [
+    3730,
+    3292
+  ],
+  "pixel_size_m": 100.0,
+  "radius_px": 3,
+  "method": "scipy EDT on complement of held-out fold; count train pixels at Euclidean distance <=3 px",
+  "caution": "Training-mask geometry only; actual catalogue sample and score not recomputed. Historical 4/4 and 6/6 may be unaffected even when other fold assignments have diagonal gaps.",
+  "layouts": {
+    "4x4/4folds": [
+      {
+        "fold": 0,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 1,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 2,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 3,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      }
+    ],
+    "6x6/6folds": [
+      {
+        "fold": 0,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 1,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 2,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 3,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 4,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 5,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      }
+    ],
+    "5x5/3folds": [
+      {
+        "fold": 0,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 1,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 2,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      }
+    ],
+    "6x6/4folds": [
+      {
+        "fold": 0,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 1,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 2,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 3,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      }
+    ]
+  }
+}
