@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEM-based structural geomorphology — GEMS Prize research</title>
+<meta name="description" content="Curvature and breaks-in-slope for scarp detection; what a subtle or partially buried scarp can look like in this terrain, and what the 1 m DEM adds over the 100 m stack.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../../static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128506;</text></svg>">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  } catch (e) { }
+})();
+</script>
+<script defer src="../../static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">GEMS Prize research <small>knowledge base · DrivenData competition 306 · one entity, one site</small></span>
+      <span class="muted small">verified 2026-09-26 · every claim links its source</span>
+    </div>
+    <nav class="site" aria-label="Research sections"><a href="../index.html">Research home</a><a href="../domains/potential-field.html">Potential-field</a><a href="../domains/geomorphology.html" aria-current="page">Geomorphology</a><a href="../domains/seismotectonics.html">Seismotectonics</a><a href="../domains/catalogue-gaps.html">Catalogue gaps</a><a href="../domains/prior-art.html">Prior art</a><a href="../domains/governance.html">Governance</a><a href="../hypotheses.html">Hypotheses</a><a href="../data-placement.html">Data</a><a href="../ai-usage-log.html">AI-usage log</a><a href="../changelog.html">Changelog</a><span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
+    <nav class="site" aria-label="Site"><a href="../../index.html">&larr; SelfLearn site overview</a><a href="../../links.html">Official links register</a><a href="../../review.html">For review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+<h1>DEM-based structural geomorphology</h1>
+<p class="lede">Curvature and breaks-in-slope for scarp detection; what a subtle or partially buried scarp can look like in this terrain, and what the 1 m DEM adds over the 100 m stack.</p>
+
+
+<div class="card" id="gm-1">
+  <h3>A 1 m DEM is provided by link, not in the stack <span class="muted small mono">#gm-1</span></h3>
+  <p><span class="badge ok">official source</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#provided-features" target="_blank" rel="noopener noreferrer">Problem description, Provided features</a></li><li><a href="https://www.nlr.gov/docs/fy26osti/96647.pdf" target="_blank" rel="noopener noreferrer">Rules PDF section 3.3</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>'In addition, you will find a CSV file called 1m_DEM_links.csv that contains links where DEM data at 1m resolution can be downloaded.' (problem description)</li><li>Rules 3.3: 'instructions will be provided for downloading USGS DEM elevation data at 1-m resolution for the GeoDAWN region.'</li><li>The About page records that airborne lidar was collected through the USGS 3D Elevation Program coordinated with the GeoDAWN surveys.</li></ul>
+  <p><strong>Why it matters here:</strong> The 100 m stack carries only detrended elevation and its slope. Scarp morphology (free face, crest base break, back-tilt) lives at metre scale; the 1 m DEM is the only source that can resolve it. Using it requires downloading and processing tiles - a real but bounded engineering cost.</p>
+  <p><strong>Confidence:</strong> High - official text, three places.</p>
+</div>
+<div class="card" id="gm-2">
+  <h3>Detrended-elevation slope is the strongest supplied topographic channel <span class="muted small mono">#gm-2</span></h3>
+  <p><span class="badge info">internal measurement</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md" target="_blank" rel="noopener noreferrer">gemsdoe_review SESSION6 item 2 (DEM curvature / slope break)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>Session 6 records slope_of_slope (the supplied slope of detrended elevation) as the strongest single topographic channel with univariate AUC 0.598 against mapped catalogue labels, and leaves curvature/break-in-slope derivatives already in the 88/105-channel feature set.</li></ul>
+  <p><strong>Why it matters here:</strong> Supports the hypothesis that topography contributes real signal even at 100 m, and that finer DEM derivatives are the natural extension rather than a new modality.</p>
+  <p><strong>Confidence:</strong> Medium - internal, single measurement chain, AUC is univariate and catalogue-relative.</p>
+</div>
+<div class="card" id="gm-3">
+  <h3>Published precedent: scarps mapped from elevation and slope data in this region <span class="muted small mono">#gm-3</span></h3>
+  <p><span class="badge">published paper</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2025/Hermant.pdf" target="_blank" rel="noopener noreferrer">Hermant, Kiersnowski & Bellanger 2025, Stanford Geothermal Workshop (officially cited on page/968)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>'Many faults induce local topographic variations (fault scarp) that can be mapped from elevation, slope or satellite imagery data' - stated for the Basin and Range / Walker Lane study area of the cited paper (northern central Nevada).</li><li>The same paper trains CNNs with lidar-derived labels and reports lidar coverage as a first-class input to fault mapping in Nevada.</li></ul>
+  <p><strong>Why it matters here:</strong> External, organiser-endorsed precedent that scarp expression in elevation data is a mapped, learnable signature in this exact region.</p>
+  <p><strong>Confidence:</strong> High - verbatim from the cited paper, read this session.</p>
+</div>
+<div class="card" id="gm-4">
+  <h3>What a partially buried scarp looks like here (working description, not a fact) <span class="muted small mono">#gm-4</span></h3>
+  <p><span class="badge info">internal measurement</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#performance-metric" target="_blank" rel="noopener noreferrer">Problem description (misalignment and rasterisation caveats)</a></li><li><a href="https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516/4" target="_blank" rel="noopener noreferrer">Forum thread 11516 post 4 (staff, on corrections near known traces)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>The official metric text itself warns that 'portions of the existing fault data may be misaligned from the true location of the surface fault, which is the prediction target' and that rasterisation is lossy near pixel boundaries.</li><li>Staff confirm that a new-fault label 'can indeed lie within 300m of a known fault trace' and that such pixels 'would constitute corrections or modifications to existing fault traces'.</li></ul>
+  <p><strong>Why it matters here:</strong> The realistic DEM signature of a catalogue gap is not a fresh 3 m scarp but: a subdued or segmented break-in-slope, a drainage-line deflection, or an offset of the mapped trace by tens to hundreds of metres. Hypotheses must score 'weak scarp plus structural agreement' rather than expecting sharp scarps everywhere.</p>
+  <p><strong>Confidence:</strong> Reasoning built on verified official statements; the geomorphic expectation itself is interpretation, marked as such.</p>
+</div>
+<p class="small muted"><a href="../hypotheses.html">Hypotheses fed by this domain &rarr;</a></p>
+</main>
+<footer class="site"><div class="wrap"><p class="small muted">Built by <span class="mono">tools/build_gems_research.py</span> from
+<span class="mono">tools/gems_research_content.py</span> — re-running it reproduces these pages byte for byte.
+Generative-AI use for this research is disclosed in the <a href="../ai-usage-log.html">AI-usage log</a> (rules &sect;3.2).
+No prediction file is generated, validated, or submitted anywhere in this section.</p></div></footer>
+</body>
+</html>

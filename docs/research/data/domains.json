@@ -1,0 +1,504 @@
+[
+  {
+    "entries": [
+      {
+        "claims": [
+          "Airborne magnetics and radiometrics over 51,857 sq km, 149,030 line-km, four acquisition blocks (Winnemucca, Fallon, Hawthorne, Tonopah), flown 2021-11-01 through 2022-11-20.",
+          "Area 1 (Clayton Valley, lithium focus) was flown to rank-1 specifications with 200 m line spacing; Area 2 (the geothermal-focused remainder) at 400 m line spacing; terrain-following flight at nominal 100-150 m (Area 1) / 150-200 m (Area 2) clearance.",
+          "Magnetic processing included diurnal and aircraft-field corrections, tie-line leveling, micro-leveling and IGRF removal; radiometric processing corrected for radon, Compton scattering and altitude."
+        ],
+        "confidence": "High - read from the primary data-release page.",
+        "id": "pf-1",
+        "kind": "official",
+        "relevance": "The line spacing sets the physical noise floor for any 100 m gradient or tilt product: in Area 2 the 400 m line spacing is coarser than the competition grid, so supplied gradients there are interpolated across flight-line gaps. Edge-detector hypotheses must expect anisotropic along-line vs cross-line noise, strongest in the south (Tonopah block).",
+        "sources": [
+          [
+            "GeoDAWN, USGS ScienceBase (DOI 10.5066/P93LGLVQ)",
+            "https://doi.org/10.5066/P93LGLVQ"
+          ]
+        ],
+        "title": "What the GeoDAWN survey physically measured"
+      },
+      {
+        "claims": [
+          "training_features.tif is a 19-band, float32, 100 m, EPSG:32611 GeoTIFF (3292x3730). The problem description lists the families: surface conductivity and depth to conductive base; detrended elevation and its slope; dilatation rate, shear strain rate and second invariant of the strain-rate tensor; isostatic gravity anomaly and its slope; reduced-to-pole magnetics, total magnetic intensity, vertical and horizontal slope of TMI, and top-of-crustal magnetic source depth; earthquake density.",
+          "The supplied raster has 19 bands and float32 samples - confirmed by direct header parse of the placed, hash-verified file on 2026-09-26."
+        ],
+        "confidence": "High - official list plus our own verified read of the bytes.",
+        "id": "pf-2",
+        "kind": "official",
+        "relevance": "Horizontal-gradient magnitude (HGM), analytic signal and tilt derivatives must be derived client-side from the supplied anomaly bands; only the raw slope-style bands are given. Any hypothesis about 'the tilt channel' is really about our own derivation from tmi or iso_grav_anom.",
+        "sources": [
+          [
+            "Problem description, Provided features",
+            "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#provided-features"
+          ],
+          [
+            "Our header read of the placed raster (scripts/prepare_data.py, 2026-09-26)",
+            "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/scripts/prepare_data.py"
+          ]
+        ],
+        "title": "Which derivative channels the competition actually supplies"
+      },
+      {
+        "claims": [
+          "On the sha-verified training_features.tif (4371c82e...), over 400,000 sampled pixels: Spearman(iso_grav_anom_hg, dG/dx) = 0.9485; Spearman(iso_grav_anom_hg, HGM) = -0.0002; Spearman(iso_grav_anom_slope, HGM) = 0.9604; Spearman(tmi_hg, HGM) = 0.9999999. Verdict recorded in the evidence file: iso_grav_anom_hg is the signed E-W derivative dG/dx, NOT |grad G|; iso_grav_anom_slope is the gradient magnitude; tmi_hg is the gradient magnitude."
+        ],
+        "confidence": "High for the measurement (label-free, sha-pinned, re-checkable); the band-naming intent of the organiser remains unexplained.",
+        "id": "pf-3",
+        "kind": "internal",
+        "relevance": "Any gravity 'edge' feature must use iso_grav_anom_slope (or derive |grad| from iso_grav_anom), not iso_grav_anom_hg. The magnetic band tmi_hg is safe. This was the session-6 correctness fix; measured transfer effect about +/-0.005 DTI on the mapped-catalogue CV.",
+        "sources": [
+          [
+            "gemsdoe_review/evidence/grav_hg_identity_session6.json (sha-pinned tool + input)",
+            "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/grav_hg_identity_session6.json"
+          ]
+        ],
+        "title": "The supplied gravity 'hg' band is a signed derivative, not a gradient magnitude"
+      },
+      {
+        "claims": [
+          "The 99th percentile of |tilt derivative| computed from the supplied magnetic bands is 3.08 degrees, far below the +/-45 degree contour the classic tilt-depth method requires; the TDR is computed from already-smoothed, line-leveled grids rather than the raw field."
+        ],
+        "confidence": "Medium-high - internal measurement, single-session, method assumption (that p99 3.08 deg implies the 45 deg contour is absent) stated but not independently replicated.",
+        "id": "pf-4",
+        "kind": "internal",
+        "relevance": "Do not spend effort on tilt-depth. Edge location (where TDR crosses zero) remains usable; depth estimation from these bands is not.",
+        "sources": [
+          [
+            "gemsdoe_review/gemsdoe_review/SESSION6.md (items 2 and 'still unverified')",
+            "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md"
+          ]
+        ],
+        "title": "Tilt-derivative depth estimation is blocked by the supplied bands"
+      },
+      {
+        "claims": [
+          "The official About page states that gravity and magnetic surveys 'help infer the presence of faults through density or magnetic anomalies', and that many GeoDAWN faults 'are hidden below the surface, requiring geophysical data to detect'."
+        ],
+        "confidence": "High - verbatim from the official page.",
+        "id": "pf-5",
+        "kind": "official",
+        "relevance": "Official confirmation that the buried-fault population is in scope and that potential-field layers are a primary detection modality - not just a supplementary channel.",
+        "sources": [
+          [
+            "About page (page/968), Additional information",
+            "https://www.drivendata.org/competitions/306/competition-doe-gems/page/968/#additional-information"
+          ]
+        ],
+        "title": "The organisers' own reading list endorses potential-field mapping"
+      }
+    ],
+    "flag": "",
+    "slug": "potential-field",
+    "summary": "Magnetic (RTP, TMI, gradients) and isostatic gravity layers, and what gradient-magnitude and tilt-derivative operators imply about buried structural contrasts in this specific survey.",
+    "title": "Potential-field geophysics"
+  },
+  {
+    "entries": [
+      {
+        "claims": [
+          "'In addition, you will find a CSV file called 1m_DEM_links.csv that contains links where DEM data at 1m resolution can be downloaded.' (problem description)",
+          "Rules 3.3: 'instructions will be provided for downloading USGS DEM elevation data at 1-m resolution for the GeoDAWN region.'",
+          "The About page records that airborne lidar was collected through the USGS 3D Elevation Program coordinated with the GeoDAWN surveys."
+        ],
+        "confidence": "High - official text, three places.",
+        "id": "gm-1",
+        "kind": "official",
+        "relevance": "The 100 m stack carries only detrended elevation and its slope. Scarp morphology (free face, crest base break, back-tilt) lives at metre scale; the 1 m DEM is the only source that can resolve it. Using it requires downloading and processing tiles - a real but bounded engineering cost.",
+        "sources": [
+          [
+            "Problem description, Provided features",
+            "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#provided-features"
+          ],
+          [
+            "Rules PDF section 3.3",
+            "https://www.nlr.gov/docs/fy26osti/96647.pdf"
+          ]
+        ],
+        "title": "A 1 m DEM is provided by link, not in the stack"
+      },
+      {
+        "claims": [
+          "Session 6 records slope_of_slope (the supplied slope of detrended elevation) as the strongest single topographic channel with univariate AUC 0.598 against mapped catalogue labels, and leaves curvature/break-in-slope derivatives already in the 88/105-channel feature set."
+        ],
+        "confidence": "Medium - internal, single measurement chain, AUC is univariate and catalogue-relative.",
+        "id": "gm-2",
+        "kind": "internal",
+        "relevance": "Supports the hypothesis that topography contributes real signal even at 100 m, and that finer DEM derivatives are the natural extension rather than a new modality.",
+        "sources": [
+          [
+            "gemsdoe_review SESSION6 item 2 (DEM curvature / slope break)",
+            "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md"
+          ]
+        ],
+        "title": "Detrended-elevation slope is the strongest supplied topographic channel"
+      },
+      {
+        "claims": [
+          "'Many faults induce local topographic variations (fault scarp) that can be mapped from elevation, slope or satellite imagery data' - stated for the Basin and Range / Walker Lane study area of the cited paper (northern central Nevada).",
+          "The same paper trains CNNs with lidar-derived labels and reports lidar coverage as a first-class input to fault mapping in Nevada."
+        ],
+        "confidence": "High - verbatim from the cited paper, read this session.",
+        "id": "gm-3",
+        "kind": "published",
+        "relevance": "External, organiser-endorsed precedent that scarp expression in elevation data is a mapped, learnable signature in this exact region.",
+        "sources": [
+          [
+            "Hermant, Kiersnowski & Bellanger 2025, Stanford Geothermal Workshop (officially cited on page/968)",
+            "https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2025/Hermant.pdf"
+          ]
+        ],
+        "title": "Published precedent: scarps mapped from elevation and slope data in this region"
+      },
+      {
+        "claims": [
+          "The official metric text itself warns that 'portions of the existing fault data may be misaligned from the true location of the surface fault, which is the prediction target' and that rasterisation is lossy near pixel boundaries.",
+          "Staff confirm that a new-fault label 'can indeed lie within 300m of a known fault trace' and that such pixels 'would constitute corrections or modifications to existing fault traces'."
+        ],
+        "confidence": "Reasoning built on verified official statements; the geomorphic expectation itself is interpretation, marked as such.",
+        "id": "gm-4",
+        "kind": "internal",
+        "relevance": "The realistic DEM signature of a catalogue gap is not a fresh 3 m scarp but: a subdued or segmented break-in-slope, a drainage-line deflection, or an offset of the mapped trace by tens to hundreds of metres. Hypotheses must score 'weak scarp plus structural agreement' rather than expecting sharp scarps everywhere.",
+        "sources": [
+          [
+            "Problem description (misalignment and rasterisation caveats)",
+            "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#performance-metric"
+          ],
+          [
+            "Forum thread 11516 post 4 (staff, on corrections near known traces)",
+            "https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516/4"
+          ]
+        ],
+        "title": "What a partially buried scarp looks like here (working description, not a fact)"
+      }
+    ],
+    "flag": "",
+    "slug": "geomorphology",
+    "summary": "Curvature and breaks-in-slope for scarp detection; what a subtle or partially buried scarp can look like in this terrain, and what the 1 m DEM adds over the 100 m stack.",
+    "title": "DEM-based structural geomorphology"
+  },
+  {
+    "entries": [
+      {
+        "claims": [
+          "The INGENIOUS regional compilation ships: 'Earthquake Density Models' ('independent and dependent earthquake density for the INGENIOUS study area'), 'Geodetic Shear and Dilation Models', and 'Electrical Conductance Maps - MT' estimated from a 3D model of the Great Basin at five depth ranges spanning 2 to 200 km (released as its own USGS DOI 10.5066/P9TWT2LU).",
+          "These are the provenance layers behind the competition's dilatation, shear strain, second invariant, earthquake density and conductivity bands."
+        ],
+        "confidence": "High - official data-release descriptions.",
+        "id": "st-1",
+        "kind": "official",
+        "relevance": "The strain and seismicity bands are model-derived regional products, not local measurements - their resolution and smoothing are inherited from geodetic solutions and catalogues, so they cannot localize at 100 m. They identify provinces, not traces.",
+        "sources": [
+          [
+            "INGENIOUS compilation, GDR submission 1391 (DOI 10.15121/1881483)",
+            "https://doi.org/10.15121/1881483"
+          ]
+        ],
+        "title": "Provenance of the strain, seismicity and conductivity bands"
+      },
+      {
+        "claims": [
+          "Session 6 records Spearman(strain, seismicity) = 0.77 - noted as 'largely one belt signal' - and univariate AUCs against mapped catalogue labels: independent earthquake density 0.583, dependent 0.560, conductivity 0.520."
+        ],
+        "confidence": "Medium - internal measurements, catalogue-relative AUCs.",
+        "id": "st-2",
+        "kind": "internal",
+        "relevance": "Strain and seismicity are largely one signal (the Central Nevada seismic belt). Conductivity is nearly orthogonal to everything else - weak alone, but it is the only supplied band sensing fluids/brines at depth, which is exactly the burial masking the catalogue-gap domain cares about.",
+        "sources": [
+          [
+            "gemsdoe_review SESSION6 item 2 (cross-reference bullet)",
+            "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md"
+          ]
+        ],
+        "title": "Measured agreement and disagreement between the families"
+      },
+      {
+        "claims": [
+          "The final prize round is scored against an expanded label set built by expert review of every submission: 'faults that you flagged, that experts confirm, become part of the map of the region.'"
+        ],
+        "confidence": "High for the scoring fact; the dossier design follows from it.",
+        "id": "st-3",
+        "kind": "internal",
+        "relevance": "A flag that rests on two independent families (e.g. a gravity edge that also aligns with a seismicity lineament) is a better expert-review candidate than a single-family edge, even at equal DTI. Cross-family agreement should be logged per candidate in the dossier, not folded into one blended score.",
+        "sources": [
+          [
+            "Problem description (two-round structure; final round rescoring)",
+            "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#competition-structure"
+          ]
+        ],
+        "title": "Where families agree vs disagree is itself information"
+      }
+    ],
+    "flag": "",
+    "slug": "seismotectonics",
+    "summary": "Strain-rate invariants, earthquake density and conductivity anomalies: where the independent families agree, where they disagree, and what each disagreement means.",
+    "title": "Seismotectonics and strain"
+  },
+  {
+    "entries": [
+      {
+        "claims": [
+          "'These data are compiled from thousands of journal articles, maps, theses, and other documents, as referenced herein.' The database was begun in earnest in 1993 under NEHRP 'with significant support from many State surveys'; the cooperators list is state geological surveys (Nevada Bureau of Mines and Geology among them).",
+          "Since 2017-01-12 USGS maintains 'a limited number of metadata fields'; the Database Search function was retired 2026-02-26 with legacy reports accessible through the interactive fault map."
+        ],
+        "confidence": "High - verbatim from the database's own page.",
+        "id": "cg-1",
+        "kind": "official",
+        "relevance": "Coverage therefore tracks where fieldwork, theses and state mapping happened - population corridors, parklands, mineral districts - not where faults are. This is the single most important structural fact about the catalogue: absence of a trace is evidence about mapping history, not about the fault.",
+        "sources": [
+          [
+            "USGS Quaternary Fault and Fold Database page",
+            "https://www.usgs.gov/natural-hazards/earthquake-hazards/faults"
+          ]
+        ],
+        "title": "The USGS database is a compilation of prior studies, not a systematic survey"
+      },
+      {
+        "claims": [
+          "'Quaternary Faults v1.zip - Shapefile (NAD83 Geographic) containing updated quaternary fault traces, ages, and slip rates for the INGENIOUS study area. Attributes conform to USGS Qfault Database schema.'",
+          "'Quaternary Faults v2.zip - This archive contains an updated version of the INGENIOUS quaternary fault compilation shapefile... It supersedes Quaternary Faults v1' (file dated 2023-06-27).",
+          "The competition labels come 'from the USGS quaternary fault maps and from INGENIOUS' (problem description), and rules 3.3 states training labels were 'obtained from the INGENIOUS project's Great Basin Regional Dataset Compilation'."
+        ],
+        "confidence": "High - official data-release text.",
+        "id": "cg-2",
+        "kind": "official",
+        "relevance": "The catalogue we train on is a merge of the USGS compilation with INGENIOUS updates - compiled twice, from inherited sources, with a visible revision history. Version lag is demonstrable (v1 superseded by v2 within the project's own lifetime), so 'the catalogue is a snapshot that lags the landscape' is grounded, not speculative.",
+        "sources": [
+          [
+            "INGENIOUS compilation, GDR submission 1391 (DOI 10.15121/1881483)",
+            "https://doi.org/10.15121/1881483"
+          ]
+        ],
+        "title": "INGENIOUS faults are an update-and-merge of the USGS schema, with version lag"
+      },
+      {
+        "claims": [
+          "'their accuracy and the homogeneity of mapping between the sub-regions/states is sometimes insufficient... This could create a bias between regions where fault mapping is robust and those where it is incomplete.'",
+          "'some areas where the geology has been mapped more precisely have an artificially higher fault density and accuracy than areas where geological and structural mapping has been done at a larger scale.'",
+          "Their Figure 2 documents 'regional variation in Quaternary fault mapping that is not only due to the geological context' and local discrepancies 'up to 400m' between USGS Quaternary faults and their own ground-truth labels in north-central Nevada."
+        ],
+        "confidence": "High - verbatim from the PDF, read this session.",
+        "id": "cg-3",
+        "kind": "published",
+        "relevance": "The strongest external support for the catalogue-gap thesis, and it is organiser-cited. It also gives a concrete magnitude for positional error (hundreds of metres) consistent with the official 300 m metric kernel.",
+        "sources": [
+          [
+            "Hermant et al. 2025 (cited on page/968)",
+            "https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2025/Hermant.pdf"
+          ]
+        ],
+        "title": "Published, organiser-cited evidence that mapping density is artificial"
+      },
+      {
+        "claims": [
+          "Asked directly which data sources, fault types and coverage the experts used, the staff reply is: 'We're not sharing details about the data sources, fault types, or coverage behind the test faults beyond what's in the problem description.'"
+        ],
+        "confidence": "High - verbatim staff statement.",
+        "id": "cg-4",
+        "kind": "forum",
+        "relevance": "No shortcut exists: the catalogue-gap model must be reasoned from the catalogue's own methodology and the geophysics, not from leaked test-set characteristics. Any competitor claiming knowledge of test-fault provenance is claiming something the organisers say they did not disclose.",
+        "sources": [
+          [
+            "Forum thread 11527, staff reply (chrisk-dd, 2026-09-23)",
+            "https://community.drivendata.org/t/how-were-the-new-test-faults-identified-data-sources-and-fault-types/11527/7"
+          ]
+        ],
+        "title": "The test-fault identification process is officially undisclosed"
+      },
+      {
+        "claims": [
+          "'Pixels corresponding to known USGS/INGENIOUS faults are masked / excluded from evaluation' in both rounds; 'The mask is indeed pixel-exact - it is identical to the provided set of training fault labels.'",
+          "'Only new-fault ground truth is considered for scoring purposes. A predicted pixel that is near a known fault trace but far from a new-fault ground truth pixel will be fully penalized.'",
+          "'A new-fault ground truth pixel can indeed lie within 300m of a known fault trace. Such pixels would constitute corrections or modifications to existing fault traces.'"
+        ],
+        "confidence": "High - verbatim staff statements.",
+        "id": "cg-5",
+        "kind": "forum",
+        "relevance": "Three direct design consequences: (1) reproducing known traces earns nothing; (2) splay/tip predictions hugging known traces carry real false-positive cost because no buffer shields them; (3) corrections of misaligned known traces are an explicitly stated target - and the published 400 m discrepancies (Hermant Fig. 2) show such corrections exist at scale.",
+        "sources": [
+          [
+            "Forum thread 11516, staff posts 2 and 4",
+            "https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516/4"
+          ]
+        ],
+        "title": "The scoring mask is pixel-exact and corrections are in scope"
+      },
+      {
+        "claims": [
+          "From how the catalogue was made (compilation of historical studies + partial update), four structural gap classes follow, each testable against the supplied layers: (a) basin-interior areas where young, fine-grained cover masks scarps and old fieldwork was sparse - detectable as low-relief + conductive cover + gravity lineaments; (b) high-relief remote ranges where access limited fieldwork - ruggedness + sparse catalogue density + magnetic/gravity edges; (c) along-strike continuations and splays beyond mapped tips - the mapping stopped, the structure did not; (d) misaligned traces needing correction - catalogue line offset from the actual scarp/edge by tens to hundreds of metres."
+        ],
+        "confidence": "Reasoned from verified facts; each class is a hypothesis, not a finding.",
+        "id": "cg-6",
+        "kind": "internal",
+        "relevance": "This is the working taxonomy for gap-hunting: each class pairs a catalogue-methodology reason with a detectable multi-layer signature, which is exactly what the final-round expert review rewards.",
+        "sources": [
+          [
+            "Compilation methodology facts in cg-1/cg-2; masking facts in cg-5; survey facts in pf-1",
+            "https://github.com/buffedlizard55-lab/SelfLearn/tree/main/docs/research"
+          ]
+        ],
+        "title": "Where the catalogue should structurally be incomplete (reasoned hypothesis set)"
+      }
+    ],
+    "flag": "highest-leverage domain - this is the scored target",
+    "slug": "catalogue-gaps",
+    "summary": "Read the INGENIOUS compilation and the USGS database as methodologies, not just as rasters: how were existing faults actually mapped, and where does that process structurally fail to look?",
+    "title": "Catalogue-gap reasoning"
+  },
+  {
+    "entries": [
+      {
+        "claims": [
+          "Open-access JGR Solid Earth paper (first published 2021-04-01): 'we have adopted a machine learning approach, namely a U-Net Convolutional Neural Network (CNN), to automate the identification and mapping of fractures and faults in optical images and topographic data', trained on 'a moderate amount of manually created fracture and fault maps of low resolution and basic quality'; the selected model MRef 'exhibits good generalization capacities'.",
+          "Officially listed in the competition About page's additional information."
+        ],
+        "confidence": "High - abstract read from the publisher page this session.",
+        "id": "pa-1",
+        "kind": "published",
+        "relevance": "Establishes that U-Net segmentation trained on imperfect, incomplete manual maps generalises across image types - directly relevant to training on the incomplete catalogue. Also a caution: its inputs are images/topography, not potential-field grids, so transfer to 19-band geophysics is unproven.",
+        "sources": [
+          [
+            "Mateo, L., Manighetti, I., Tarabalka, Y., et al. (2021), JGR Solid Earth 126, e2020JB021269, DOI 10.1029/2020JB021269",
+            "https://doi.org/10.1029/2020JB021269"
+          ]
+        ],
+        "title": "Mateo et al. 2021 - U-Net fault mapping in optical images and topography"
+      },
+      {
+        "claims": [
+          "TLS Geothermics' CNN approach 'using remote sensing images' produces regional fault prediction maps, motivated explicitly by USGS catalogue bias (see cg-3), with lidar coverage as an input and a study area in northern central Nevada."
+        ],
+        "confidence": "High - PDF read this session.",
+        "id": "pa-2",
+        "kind": "published",
+        "relevance": "The closest published analogue to this competition's task and region, by an industry group, officially cited by the organisers. Their stated motivation - correcting catalogue bias - is the catalogue-gap domain in one sentence.",
+        "sources": [
+          [
+            "Hermant, B., Kiersnowski, L., & Bellanger, M. (2025), 50th Stanford Geothermal Workshop (officially cited on page/968)",
+            "https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2025/Hermant.pdf"
+          ]
+        ],
+        "title": "Hermant et al. 2025 - CNN Quaternary fault mapping in the western USA"
+      },
+      {
+        "claims": [
+          "Single notebook, segmentation_models_pytorch U-Net on PyTorch; patches of 128 px; 5 Monte Carlo train/test splits; test_proportion 0.5; batch 32; 5 epochs; lr 1e-4; TverskyLoss with alpha=0.2, beta=0.8 (matching the metric); per-channel min-max normalisation to [0,1] with values < -1e38 set to NaN; random test patches zeroed in the global image 'so that there is no leakage between training and test datasets'; augmentations RandomResizedCrop/flips/30 deg rotation.",
+          "Output: the averaged probability map cropped to the label grid and written as one float32 GeoTIFF band with the label file's CRS and transform; the notebook notes 'it may be advantageous to threshold this map for better scoring' and plots a 0.1 threshold example.",
+          "Staff (thread 11529) confirm a known notebook defect: the printed band summary labels the single-band label raster 'Band 19' - 'in actuality, only one band'."
+        ],
+        "confidence": "High - read from the notebook source this session; interpretations of the weaknesses are ours and labelled as such.",
+        "id": "pa-3",
+        "kind": "official",
+        "relevance": "The baseline's specific weak points, each visible in its own code: (1) random patch splits on connected fault traces leak spatial context, so its internal validation overstates spatial generalisation; (2) min-max normalisation is outlier-driven; (3) 5 epochs with no threshold calibration ships an uncalibrated surface; (4) it never touches the 1 m DEM; (5) it treats the catalogue as complete truth, which the problem description explicitly says it is not.",
+        "sources": [
+          [
+            "drivendataorg/gems-prize-reference-solution",
+            "https://github.com/drivendataorg/gems-prize-reference-solution"
+          ]
+        ],
+        "title": "The reference solution, read from its own notebook (commit aebe92f)"
+      }
+    ],
+    "flag": "",
+    "slug": "prior-art",
+    "summary": "Published fault/lineament-extraction ML applicable to this feature stack, and the reference solution's specific design choices read from its own code.",
+    "title": "Prior art"
+  },
+  {
+    "entries": [
+      {
+        "claims": [
+          "Competition end date: Dec. 3, 2026, 11:59 p.m. UTC. Total prize pool $300,000: Initial Prize Round $50,000 (top 5, $10,000 each, private test set); Final Prize Round $250,000 (top 5 on the re-labeled dataset: $100k/$70k/$40k/$25k/$15k).",
+          "A single chosen submission is scored in both rounds; the choice must be made before the deadline 'without knowledge of your scores on the private test set' (rules 3.6.2)."
+        ],
+        "confidence": "High - official pages.",
+        "id": "go-1",
+        "kind": "official",
+        "relevance": "Time budget: about 10 weeks remain after 2026-09-26. Everything this agent produces should compound toward one blind submission choice.",
+        "sources": [
+          [
+            "Competition hub",
+            "https://www.drivendata.org/competitions/306/competition-doe-gems/"
+          ]
+        ],
+        "title": "Key dates and structure"
+      },
+      {
+        "claims": [
+          "'You can make multiple submissions, subject to the limits specified on the competition website (three submissions per week).' (3.2)",
+          "'each participating entity may submit... up to three per week... By the submission deadline, you must select only one set of predictions... Multiple finalized submissions are not allowed... individuals participating on a team will not be allowed to submit a separate final submission.' (3.4)"
+        ],
+        "confidence": "High - official rules text.",
+        "id": "go-2",
+        "kind": "official",
+        "relevance": "This agent never generates or uploads submissions (hard project constraint); the limits are tracked so downstream, gated processes stay compliant.",
+        "sources": [
+          [
+            "Rules PDF 3.2 and 3.4",
+            "https://www.nlr.gov/docs/fy26osti/96647.pdf"
+          ]
+        ],
+        "title": "Submission and feedback limits"
+      },
+      {
+        "claims": [
+          "Verbatim duty: 'you must indicate in the narrative (not included in the word count) the extent to which, if any, you used generative AI technology and how you used it to develop your submission'; competitors own 'the accuracy, authenticity, and authorship representations of your submission', with 'research misconduct resulting from fabrication, falsification, or plagiarism' named as the risk."
+        ],
+        "confidence": "High - verbatim rules text.",
+        "id": "go-3",
+        "kind": "official",
+        "relevance": "The reason the AI-usage log is a first-class site artifact built incrementally: the disclosure must be accurate at deadline, so it is written as the work happens, not reconstructed.",
+        "sources": [
+          [
+            "Rules PDF 3.2",
+            "https://www.nlr.gov/docs/fy26osti/96647.pdf"
+          ],
+          [
+            "This site's AI-usage log",
+            "../ai-usage-log.html"
+          ]
+        ],
+        "title": "Generative-AI disclosure duty (rules 3.2) and this project's compliance"
+      },
+      {
+        "claims": [
+          "Individual competitors must be U.S. citizens or permanent residents; teams need a U.S.-citizen/permanent-resident captain and members 'legally authorized to work in the United States'; private entities must be U.S.-incorporated with primary place of business in the U.S.; FFRDC-affiliated researchers may compete individually only without FFRDC resources (honourable mention only); non-DOE federal employees and entities are ineligible; MFTRP participants and FCOC-controlled entities are ineligible; registration includes a signed certification 'under penalty of perjury'."
+        ],
+        "confidence": "High - official rules text.",
+        "id": "go-4",
+        "kind": "official",
+        "relevance": "Standing trigger in this project's charter: if team composition or affiliations change, re-check 1.3 before anything else. Eligibility is 'subject to verification before prizes are awarded'.",
+        "sources": [
+          [
+            "Rules PDF 1.3",
+            "https://www.nlr.gov/docs/fy26osti/96647.pdf"
+          ]
+        ],
+        "title": "Eligibility (rules 1.3) and the re-confirmation trigger"
+      },
+      {
+        "claims": [
+          "2026-09-16/21: scoring mask is pixel-exact, known faults excluded in both rounds, corrections within 300 m are in scope (thread 11516).",
+          "2026-09-23: test-fault data sources/fault types/coverage not disclosed (thread 11527); reference-notebook 'Band 19' label is an acknowledged summary-string bug, the label raster has one band (thread 11529).",
+          "Open threads this session did not need to resolve: weekly-submission mechanics (11524), institutional limit (11526), paid external-data licence (11528), 'where do you draw the line' (11536), team-member eligibility homepage-vs-rules (11540), teammate interpretation as training labels (11543). Listed for the next pass."
+        ],
+        "confidence": "High for the three read threads; the rest are catalogued by title only.",
+        "id": "go-5",
+        "kind": "forum",
+        "relevance": "The ledger is the governance domain's output: anything time-sensitive or rule-changing lands here with its date.",
+        "sources": [
+          [
+            "GEMS Prize Challenge forum category",
+            "https://community.drivendata.org/c/gems-prize-challenge/111"
+          ]
+        ],
+        "title": "Errata and clarifications ledger (running)"
+      }
+    ],
+    "flag": "time-sensitive items tracked here",
+    "slug": "governance",
+    "summary": "Rules, deadlines, disclosure duties, eligibility triggers, and every official erratum or clarification worth tracking.",
+    "title": "Competition governance"
+  }
+]

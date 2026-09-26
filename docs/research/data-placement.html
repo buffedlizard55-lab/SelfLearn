@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data placement — GEMS Prize research</title>
+<meta name="description" content="How the official competition rasters were placed and hash-verified.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128506;</text></svg>">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  } catch (e) { }
+})();
+</script>
+<script defer src="../static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">GEMS Prize research <small>knowledge base · DrivenData competition 306 · one entity, one site</small></span>
+      <span class="muted small">verified 2026-09-26 · every claim links its source</span>
+    </div>
+    <nav class="site" aria-label="Research sections"><a href="index.html">Research home</a><a href="domains/potential-field.html">Potential-field</a><a href="domains/geomorphology.html">Geomorphology</a><a href="domains/seismotectonics.html">Seismotectonics</a><a href="domains/catalogue-gaps.html">Catalogue gaps</a><a href="domains/prior-art.html">Prior art</a><a href="domains/governance.html">Governance</a><a href="hypotheses.html">Hypotheses</a><a href="data-placement.html" aria-current="page">Data</a><a href="ai-usage-log.html">AI-usage log</a><a href="changelog.html">Changelog</a><span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
+    <nav class="site" aria-label="Site"><a href="../index.html">&larr; SelfLearn site overview</a><a href="../links.html">Official links register</a><a href="../review.html">For review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+<h1>Data placement &amp; provenance</h1>
+<p class="lede">The one-time blocker for the training pipeline was data placement. It is now cleared
+<em>in this repository</em>, with every byte accounted for. This page records exactly what happened and how to
+reproduce it.</p>
+
+<div class="banner ok"><strong>Status: placed and verified 2026-09-26.</strong>
+<code>bash scripts/download_competition_data.sh</code> placed the three official rasters and
+<code>python3 scripts/prepare_data.py</code> confirmed they match the official spec. Training itself still needs
+a GPU machine; nothing here generates a submission.</div>
+
+<h2>The three files (sha256-pinned)</h2>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">File</th><th scope="col">Role (official)</th><th scope="col">Bytes</th><th scope="col">sha256</th></tr></thead>
+<tbody>
+<tr><td><span class="mono">training_features.tif</span></td><td>the multiband feature GeoTIFF of the problem description</td><td>418,912,844</td><td class="mono small">4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5</td></tr>
+<tr><td><span class="mono">existing_faults.tif</span></td><td>training labels (rules &sect;3.3: from the INGENIOUS compilation)</td><td>425,830</td><td class="mono small">7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093</td></tr>
+<tr><td><span class="mono">example_submission.tif</span></td><td>the organiser submission template</td><td>1,599,597</td><td class="mono small">2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc</td></tr>
+</tbody></table></div>
+<p class="small muted">Pin provenance: recorded from the logged-in data tab by a runner-side inventory
+(2026-09-14, GEMSDOE <span class="mono">data/evidence/inventory.json</span>), re-stated identically in the GEMSDOE
+bridge manifest (2026-09-17) and the 8GEMSDOE placement script, and independently matching the
+<span class="mono">training_features_sha256</span> that gemsdoe_review session 6 measured its band identity test
+against. Three records, one pin set — and today's placed file matches it.</p>
+
+<h2>Inspection result (2026-09-26)</h2>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">File</th><th scope="col">Bands</th><th scope="col">dtype</th><th scope="col">Grid</th><th scope="col">CRS</th><th scope="col">Resolution</th><th scope="col">Spec check</th></tr></thead>
+<tbody>
+<tr><td>training_features.tif</td><td>19</td><td>float32</td><td>3292&times;3730</td><td>EPSG:32611</td><td>100 m</td><td><span class="badge ok">conforming</span></td></tr>
+<tr><td>existing_faults.tif</td><td>1</td><td>int8</td><td>3292&times;3730</td><td>EPSG:32611</td><td>100 m</td><td><span class="badge ok">conforming</span></td></tr>
+<tr><td>example_submission.tif</td><td>1</td><td>float32</td><td>3292&times;3730</td><td>EPSG:32611</td><td>100 m</td><td><span class="badge ok">conforming (single-band float32 template)</span></td></tr>
+</tbody></table></div>
+<p class="small muted">19 feature bands matches the problem description's feature list; the single-band label raster
+matches the staff clarification in forum thread 11529 (the notebook's "Band 19" printout is an acknowledged
+summary-string bug). Machine-readable inventory: <span class="mono">data/inventory.json</span> (gitignored with the
+rasters; the committed evidence copy is <span class="mono">evidence/gems/2026-09-26_data_placement.json</span>).</p>
+
+<h2>Sources used, in order</h2>
+<ol>
+<li>Files already in <span class="mono">data/</span> that pass the sha256 check (idempotent re-runs).</li>
+<li>The project's own <strong>git bridge</strong>: a sparse clone of <span class="mono">data/bridge</span> in the
+GEMSDOE repository — GitHub's 100 MB blob limit forces the 419 MB feature stack to be split into five parts, each
+of which is hash-checked before reassembly.</li>
+<li>The official data-tab mirrors (Dropbox links captured from the data tab), used only if the bridge fails and
+the machine has egress to the host. This sandbox blocks that host (see the irregularities register), so today's
+placement used source 2 (the bridge) — the mirrors stay in the script for unrestricted machines.</li>
+</ol>
+<p>The script never logs in to DrivenData, never stores credentials, never creates an account, and never writes a
+prediction GeoTIFF. <span class="mono">scripts/prepare_data.py</span> inspects headers only (pure standard
+library — this repository has no third-party dependencies).</p>
+
+<h2>Reproduce</h2>
+<pre>bash scripts/download_competition_data.sh   # places + sha256-verifies data/*.tif (exit 0 = verified)
+python3 scripts/prepare_data.py            # header-level inspection vs the official spec (exit 0 = conforming)</pre>
+<p class="small muted">After placement, the train&rarr;inference&rarr;validate pipeline is unblocked
+<em>modulo compute</em>: training needs a GPU machine; metric, losses and validation already run on CPU.</p>
+
+</main>
+<footer class="site"><div class="wrap"><p class="small muted">Built by <span class="mono">tools/build_gems_research.py</span> from
+<span class="mono">tools/gems_research_content.py</span> — re-running it reproduces these pages byte for byte.
+Generative-AI use for this research is disclosed in the <a href="ai-usage-log.html">AI-usage log</a> (rules &sect;3.2).
+No prediction file is generated, validated, or submitted anywhere in this section.</p></div></footer>
+</body>
+</html>

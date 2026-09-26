@@ -37,6 +37,7 @@ NAV = (
     ("documents.html", "Documents"),
     ("requirements.html", "Requirements"),
     ("review.html", "For review"),
+    ("research/index.html", "GEMS research"),
 )
 
 
@@ -1868,6 +1869,7 @@ def page_root_entry(data: dict[str, Any]) -> str:
         ("docs/documents.html", "Documents", "Design source, architecture, verification, limits, roadmap."),
         ("docs/requirements.html", "Requirements", "The brief traced line by line against the implementation."),
         ("docs/review.html", "For review", "Every unresolved irregularity, failure and contradiction."),
+        ("docs/research/index.html", "GEMS Prize research", "Verified research library and hypothesis backlog for the DOE GEMS Prize fault-mapping challenge."),
     )
     page_cards = "".join(
         f'<div class="card"><h3>{rel(href, label)}</h3><p class="sub">{esc(blurb)}</p></div>'

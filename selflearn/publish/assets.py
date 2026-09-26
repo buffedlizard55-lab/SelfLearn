@@ -151,6 +151,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
 .banner { border-radius: var(--radius); padding: .8rem 1rem; margin: 1rem 0; border: 1px solid var(--border); background: var(--surface); }
 .banner.warn { background: var(--warn-soft); border-color: var(--warn); color: var(--warn); }
 .banner.err { background: var(--err-soft); border-color: var(--err); color: var(--err); }
+.banner.ok { background: var(--ok-soft); border-color: var(--ok); color: var(--ok); }
 .banner.info { background: var(--info-soft); border-color: var(--info); color: var(--info); }
 .banner strong { color: inherit; }
 

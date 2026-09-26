@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prior art — GEMS Prize research</title>
+<meta name="description" content="Published fault/lineament-extraction ML applicable to this feature stack, and the reference solution's specific design choices read from its own code.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../../static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128506;</text></svg>">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  } catch (e) { }
+})();
+</script>
+<script defer src="../../static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">GEMS Prize research <small>knowledge base · DrivenData competition 306 · one entity, one site</small></span>
+      <span class="muted small">verified 2026-09-26 · every claim links its source</span>
+    </div>
+    <nav class="site" aria-label="Research sections"><a href="../index.html">Research home</a><a href="../domains/potential-field.html">Potential-field</a><a href="../domains/geomorphology.html">Geomorphology</a><a href="../domains/seismotectonics.html">Seismotectonics</a><a href="../domains/catalogue-gaps.html">Catalogue gaps</a><a href="../domains/prior-art.html" aria-current="page">Prior art</a><a href="../domains/governance.html">Governance</a><a href="../hypotheses.html">Hypotheses</a><a href="../data-placement.html">Data</a><a href="../ai-usage-log.html">AI-usage log</a><a href="../changelog.html">Changelog</a><span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
+    <nav class="site" aria-label="Site"><a href="../../index.html">&larr; SelfLearn site overview</a><a href="../../links.html">Official links register</a><a href="../../review.html">For review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+<h1>Prior art</h1>
+<p class="lede">Published fault/lineament-extraction ML applicable to this feature stack, and the reference solution's specific design choices read from its own code.</p>
+
+
+<div class="card" id="pa-1">
+  <h3>Mateo et al. 2021 - U-Net fault mapping in optical images and topography <span class="muted small mono">#pa-1</span></h3>
+  <p><span class="badge">published paper</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://doi.org/10.1029/2020JB021269" target="_blank" rel="noopener noreferrer">Mateo, L., Manighetti, I., Tarabalka, Y., et al. (2021), JGR Solid Earth 126, e2020JB021269, DOI 10.1029/2020JB021269</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>Open-access JGR Solid Earth paper (first published 2021-04-01): 'we have adopted a machine learning approach, namely a U-Net Convolutional Neural Network (CNN), to automate the identification and mapping of fractures and faults in optical images and topographic data', trained on 'a moderate amount of manually created fracture and fault maps of low resolution and basic quality'; the selected model MRef 'exhibits good generalization capacities'.</li><li>Officially listed in the competition About page's additional information.</li></ul>
+  <p><strong>Why it matters here:</strong> Establishes that U-Net segmentation trained on imperfect, incomplete manual maps generalises across image types - directly relevant to training on the incomplete catalogue. Also a caution: its inputs are images/topography, not potential-field grids, so transfer to 19-band geophysics is unproven.</p>
+  <p><strong>Confidence:</strong> High - abstract read from the publisher page this session.</p>
+</div>
+<div class="card" id="pa-2">
+  <h3>Hermant et al. 2025 - CNN Quaternary fault mapping in the western USA <span class="muted small mono">#pa-2</span></h3>
+  <p><span class="badge">published paper</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2025/Hermant.pdf" target="_blank" rel="noopener noreferrer">Hermant, B., Kiersnowski, L., & Bellanger, M. (2025), 50th Stanford Geothermal Workshop (officially cited on page/968)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>TLS Geothermics' CNN approach 'using remote sensing images' produces regional fault prediction maps, motivated explicitly by USGS catalogue bias (see cg-3), with lidar coverage as an input and a study area in northern central Nevada.</li></ul>
+  <p><strong>Why it matters here:</strong> The closest published analogue to this competition's task and region, by an industry group, officially cited by the organisers. Their stated motivation - correcting catalogue bias - is the catalogue-gap domain in one sentence.</p>
+  <p><strong>Confidence:</strong> High - PDF read this session.</p>
+</div>
+<div class="card" id="pa-3">
+  <h3>The reference solution, read from its own notebook (commit aebe92f) <span class="muted small mono">#pa-3</span></h3>
+  <p><span class="badge ok">official source</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://github.com/drivendataorg/gems-prize-reference-solution" target="_blank" rel="noopener noreferrer">drivendataorg/gems-prize-reference-solution</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>Single notebook, segmentation_models_pytorch U-Net on PyTorch; patches of 128 px; 5 Monte Carlo train/test splits; test_proportion 0.5; batch 32; 5 epochs; lr 1e-4; TverskyLoss with alpha=0.2, beta=0.8 (matching the metric); per-channel min-max normalisation to [0,1] with values < -1e38 set to NaN; random test patches zeroed in the global image 'so that there is no leakage between training and test datasets'; augmentations RandomResizedCrop/flips/30 deg rotation.</li><li>Output: the averaged probability map cropped to the label grid and written as one float32 GeoTIFF band with the label file's CRS and transform; the notebook notes 'it may be advantageous to threshold this map for better scoring' and plots a 0.1 threshold example.</li><li>Staff (thread 11529) confirm a known notebook defect: the printed band summary labels the single-band label raster 'Band 19' - 'in actuality, only one band'.</li></ul>
+  <p><strong>Why it matters here:</strong> The baseline's specific weak points, each visible in its own code: (1) random patch splits on connected fault traces leak spatial context, so its internal validation overstates spatial generalisation; (2) min-max normalisation is outlier-driven; (3) 5 epochs with no threshold calibration ships an uncalibrated surface; (4) it never touches the 1 m DEM; (5) it treats the catalogue as complete truth, which the problem description explicitly says it is not.</p>
+  <p><strong>Confidence:</strong> High - read from the notebook source this session; interpretations of the weaknesses are ours and labelled as such.</p>
+</div>
+<p class="small muted"><a href="../hypotheses.html">Hypotheses fed by this domain &rarr;</a></p>
+</main>
+<footer class="site"><div class="wrap"><p class="small muted">Built by <span class="mono">tools/build_gems_research.py</span> from
+<span class="mono">tools/gems_research_content.py</span> — re-running it reproduces these pages byte for byte.
+Generative-AI use for this research is disclosed in the <a href="../ai-usage-log.html">AI-usage log</a> (rules &sect;3.2).
+No prediction file is generated, validated, or submitted anywhere in this section.</p></div></footer>
+</body>
+</html>

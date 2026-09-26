@@ -1,0 +1,26 @@
+# GEMS Prize research — AI-usage log (rules §3.2)
+
+Dated, append-only. Rendered page: docs/research/ai-usage-log.html.
+
+## 2026-09-26 — Research-library session 7 (this site)
+
+Actor: Arena.ai Agent Mode autonomous agent (language-model-based), working unattended in the SelfLearn repository
+
+Tools used:
+- Arena page-fetch infrastructure: read the official competition hub, problem description, About page, rules mirror, rules PDF (4 chunks), forum category + raw threads 11516/11527/11529, reference-solution repo page, ScienceBase GeoDAWN item, GDR 1391 item, USGS QFF page, Mateo 2021 landing page, Hermant 2025 PDF, 6GEMSDOE site
+- git clone (read-only) of github.com/drivendataorg/gems-prize-reference-solution at HEAD aebe92f and of buffedlizard55-lab/GEMSDOE data/bridge via the placement script
+- GitHub REST API via gh (read-only): repo/Pages/contents listings for the buffedlizard55-lab org
+- Local file writes: scripts/, docs/research/, evidence/gems/, tool + JSON exports
+
+What was done:
+- Verified every source anchor line by line against the live official pages; recorded the register on this site with quotes
+- Placed and sha256-verified the three official competition rasters into data/ (no DrivenData login, no credentials, no account creation)
+- Wrote scripts/download_competition_data.sh and scripts/prepare_data.py (pure stdlib)
+- Built this research library: six domain pages, hypothesis backlog, changelog, this log
+- Created the pull request and merged it to this repository's main branch
+
+Explicitly not done:
+- No prediction file was generated, validated or submitted; no weekly submission slot was used; no DrivenData login occurred
+- No second site, repository or account was created; no competitor's data was used
+
+Compliance note (rules §3.2): Rules 3.2 requires the submission narrative to state the extent of generative-AI use and flags fabrication/falsification/plagiarism as the competitor's own risk. This log exists so that narrative can be written accurately: every research claim on this site cites a fetched official source or a committed, re-checkable measurement; quotes are verbatim; anything not traceable is marked unverified.

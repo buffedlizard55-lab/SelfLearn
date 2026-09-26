@@ -1,0 +1,32 @@
+[
+  {
+    "detail": "The session instruction says to read PROJECT_BRIEF_GEMSDOE.md 'in full before doing anything else'. No file of that name exists anywhere in this repository or its git history. The session proceeded on the mission text embedded in the instruction itself. If a brief file exists elsewhere, it should be committed and this section reconciled against it.",
+    "flag": "PROJECT_BRIEF_GEMSDOE.md does not exist",
+    "id": "IRR-1",
+    "status": "open - needs the account holder to supply or confirm the brief"
+  },
+  {
+    "detail": "Session materials variously cite www.nlr.gov and docs.nlr.gov for the rules PDF. Verified 2026-09-26: www.nlr.gov/docs/fy26osti/96647.pdf resolves (redirect) to docs.nlr.gov/docs/fy26osti/96647.pdf - one document, two host spellings. This site cites the www address as given and records the final address.",
+    "id": "IRR-2",
+    "status": "resolved (documented)",
+    "title": "Rules-PDF host spelling"
+  },
+  {
+    "detail": "buffedlizard55-lab currently holds twelve GEMS-named repositories, six of which serve GitHub Pages sites (GEMSDOE, GEMSDOE4, 5GEMSDOE, 6GEMSDOE, 7GEMSDOE, 8GEMSDOE, LEARNGEMSDOE among them). The charter for this agent says one registered entity and one site; the 6GEMSDOE site itself declares 'This repository is the one canonical entry' and flags the duplicates. Session-6 additionally flagged pushes to sibling repos outside its session window. Nothing here was created, pushed or duplicated; this research section lives in the existing SelfLearn site only.",
+    "id": "IRR-3",
+    "status": "open - account-holder cleanup decision (archiving duplicates)",
+    "title": "Multiple GEMS-named repositories/sites vs the one-entity charter"
+  },
+  {
+    "detail": "This sandbox's direct network can reach github.com and pypi.org only; drivendata.org, community.drivendata.org, usgs.gov, sciencebase.gov, nlr.gov, osti.gov, doi.org, openei.org and dropbox.com are blocked at the network layer. Consequences, handled openly: official-page verification used the platform's fetch infrastructure (recorded per anchor); the competition rasters were transported through the project's own sha256-pinned git bridge rather than the blocked mirrors; the mirror URLs remain in the placement script for machines with unrestricted egress.",
+    "id": "IRR-4",
+    "status": "mitigated (methods recorded; re-run tools/verify_links.py from a runner for a fresh machine-readable check)",
+    "title": "Sandbox egress vs source verification"
+  },
+  {
+    "detail": "Prior review sessions found the project brief's quoted leaderboard scores appearing under other accounts' names, and three accounts whose last submissions share one timestamp near the GEMSDOE3 site's three-file upload. Not verifiable from public pages; flagged, not interpreted. Carried forward unchanged - this session did no leaderboard scraping.",
+    "id": "IRR-5",
+    "status": "open (carried) - account-holder awareness only",
+    "title": "Brief-score accounts and synchronised submissions (carried from session 6)"
+  }
+]
