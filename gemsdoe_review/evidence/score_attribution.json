@@ -1,0 +1,84 @@
+{
+ "_what_this_is": "Resolution of every score the session brief attributes to one of this account's GEMS repositories. The finding: none of the five is a verified leaderboard score for this entry, and the entry's own documentation states that nothing has been uploaded. Two of the three GEMSDOE3 numbers do not exist anywhere in that repository's published site data, only as scalar DTI values inside a local cross-validation file.",
+ "_method": "1) read the public leaderboard; 2) grep every repository in the family for each number; 3) read what each repository says about its own upload state. No number below is inferred; each row names the file and line or the URL it came from.",
+ "leaderboard": {
+  "source_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/",
+  "retrieved_utc": "2026-09-26",
+  "rows_visible": 50,
+  "field_high": {"rank": 1, "participant": "DARD", "score": 0.3049, "submissions": 10},
+  "runners_up": [
+   {"rank": 2, "participant": "alexoktaba", "score": 0.2993},
+   {"rank": 3, "participant": "HardcoreTechGod", "score": 0.2854},
+   {"rank": 4, "participant": "mzoorob", "score": 0.2843},
+   {"rank": 5, "participant": "joeyfezster", "score": 0.2589}
+  ],
+  "organizer_account": {"rank": 14, "participant": "doegemsDrivendata", "score": 0.1847},
+  "reading": "the only local numbers this entry has are proxies; this board is the only real feedback channel and it costs one of the three weekly slots"
+ },
+ "brief_numbers": [
+  {
+   "brief_calls_it": "GEMSDOE1",
+   "brief_score": 0.1563,
+   "leaderboard_row": {"rank": 22, "participant": "extradr19", "score": 0.1563, "submissions": 1},
+   "corroboration": "GEMSDOE3/README.md records the same row independently: 'extradr19 **0.1563** (rank 21 of 25+ at that read, one submission) ... We do not know which file was behind that account's submission.'",
+   "verdict": "another participant, one submission, explicitly not identified with this entry by the family's own reading"
+  },
+  {
+   "brief_calls_it": "GEMSDOE2",
+   "brief_score": 0.1560,
+   "leaderboard_row": {"rank": 23, "participant": "smashi34", "score": 0.156, "submissions": 1},
+   "corroboration": "0.1560 is ALSO a local number inside the GEMSDOE repository: STATUS.md lines 1537, 1641 and 1833 quote 'unshaped 0.1560' as a mean held-out DTI. The two are within 0.0003 of each other.",
+   "verdict": "ambiguous between another participant's board score and this family's own local CV value; either way it is not a leaderboard score of a GEMSDOE repository"
+  },
+  {
+   "brief_calls_it": "GEMSDOE3 (1 of 3)",
+   "brief_score": 0.1193,
+   "leaderboard_row": {"rank": 39, "participant": "smrtdoog5", "score": 0.1193, "submissions": 1},
+   "corroboration": "GEMSDOE3/legacy/data/evidence/block_holdout/fold1_complement.json contains 'dti': 0.119346 and 0.119351 (local held-out values). GEMSDOE3/docs/data/*.json - the site's own published data - contain no occurrence of 0.1193.",
+   "verdict": "not a score of any file published on the GEMSDOE3 site"
+  },
+  {
+   "brief_calls_it": "GEMSDOE3 (2 of 3)",
+   "brief_score": 0.1152,
+   "leaderboard_row": {"rank": 40, "participant": "SDCF9", "score": 0.1152, "submissions": 1},
+   "corroboration": "GEMSDOE3/legacy/data/evidence/block_holdout/block_stratified.json has 'dti': 0.115217 (local). No occurrence under GEMSDOE3/docs/data/.",
+   "verdict": "not a score of any file published on the GEMSDOE3 site"
+  },
+  {
+   "brief_calls_it": "GEMSDOE3 (3 of 3)",
+   "brief_score": 0.0830,
+   "leaderboard_row": {"rank": 49, "participant": "wbg1", "score": 0.083, "submissions": 1},
+   "corroboration": "GEMSDOE3/legacy/data/evidence/block_holdout/fold1_complement.json has 'dti': 0.083001, 0.08307, 0.083082, 0.083046 (local). No occurrence under GEMSDOE3/docs/data/.",
+   "verdict": "not a score of any file published on the GEMSDOE3 site"
+  }
+ ],
+ "what_the_repositories_themselves_say_about_upload_state": [
+  {
+   "repo": "GEMSDOE3",
+   "file": "README.md",
+   "quote": "**Unscored.** No upload has been made. Only DrivenData can say whether any of these files beats 0.1563 or 0.3049.",
+   "meaning": "the three GEMSDOE3 files have no leaderboard score"
+  },
+  {
+   "repo": "6GEMSDOE",
+   "file": "ACCOUNT_STATUS.md",
+   "quote": "**No live submission is made from this sandbox.** It has no DrivenData session; the data tab redirects to `/accounts/login/`.",
+   "meaning": "the canonical entry has not uploaded either"
+  },
+  {
+   "repo": "6GEMSDOE",
+   "file": "SUBMISSION_GUIDE.md",
+   "quote": "| DrivenData account that is our official entry | `_to be filled by the account holder_` | ... | Submissions already used this week / total | `_unknown from this sandbox_` |",
+   "meaning": "which account is the entry, and how much of the weekly allowance is spent, are still human unknowns"
+  }
+ ],
+ "hazards_named_by_the_family_itself": {
+  "source": "6GEMSDOE/ACCOUNT_STATUS.md",
+  "quotes": [
+   "**Score contamination.** A leaderboard score obtained from another registration or another repo copy is not our data. Adopting it (or using it as an \"arm\" of a comparison) would misrepresent our single entry's performance.",
+   "**Submission multiplication.** Submitting the same underlying test from more than one site multiplies the three-per-week allowance, which is precisely what the limit forbids."
+  ],
+  "relevance": "these are exactly the failure modes the brief's score attributions would produce if they were adopted into the entry's narrative"
+ },
+ "conclusion": "This entry has no leaderboard-verified score. Every score that can be attached to it is a local proxy against the public catalogue or against the SGMC new-fault-like population, and the repositories that publish those numbers label them as such. Nothing in the family should be described as having scored 0.1563, 0.1560, 0.1193, 0.1152 or 0.0830."
+}

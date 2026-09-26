@@ -1,269 +1,221 @@
 #!/usr/bin/env python3
-"""Rule-correct local evaluation: the MASKED-catalogue proxy DTI.
+"""Score candidate submissions on the new-fault-like population, with and without
+the official mask rule, and sweep emission-width policies.
 
 WHY THIS EXISTS
 ---------------
-On 2026-09-26 this review verified, from DrivenData staff posts in the official
-forum topic 11516 (quoted verbatim in
-`evidence/scoring_rule_clarification.json`), three facts about how submissions
-are actually scored:
+1. Every quality number the 6GEMSDOE repository publishes is measured against
+   `labels.tif` — the faults the catalogue ALREADY contains. The competition's own
+   scoring note (community.drivendata.org/t/11516) says the scored faults are the ones
+   the catalogue does not contain, and that the catalogue pixels are removed from
+   evaluation before the metric is computed. `GEMSDOE/scripts/eval_proxy_catalogue.py`
+   scores on the right *population* (USGS SGMC faults absent from the labels, prepared
+   by `build_proxy_catalogue.py`) but with the catalogue pixels still counted as
+   false positives. This script implements the rule, so the numbers can be compared.
 
-  1. "Pixels corresponding to known USGS/INGENIOUS faults are masked / excluded
-     from evaluation, so they do not count towards penalty terms." The mask is
-     "pixel-exact - it is identical to the provided set of training fault
-     labels."
-  2. "Only new-fault ground truth is considered for scoring purposes. A predicted
-     pixel that is near a known fault trace but far from a new-fault ground
-     truth pixel will be fully penalized, i.e., the buffer does not apply to
-     known faults."
-  3. "A new-fault ground truth pixel can indeed lie within 300m of a known fault
-     trace. Such pixels would constitute corrections or modifications to existing
-     fault traces."
+2. The rule does not merely rescale the score: under it, mass sitting on a mapped
+   trace is free, and the optimal emission WIDTH changes. The shipped 6GEMSDOE file
+   emits thinned 1-px lines and no dilation. `--sweep-width` measures what widening
+   would do to the only score we can compute locally.
 
-The entry's own new-fault-like evaluation (`scripts/eval_proxy_catalogue.py` in
-the GEMSDOE repository, generated 2026-09-17) scores a prediction against USGS
-SGMC faults that the training labels do NOT contain. That is the right
-population — but it was written four days before the clarification and it
-implements the *unmasked* metric: predicted mass sitting exactly on a training
-label is charged as false-positive mass, which the platform does not do.
+WHAT THE NUMBER IS AND IS NOT
+-----------------------------
+It is a policy comparison on real mapped faults absent from the training labels. It is
+not a leaderboard prediction: the scored faults were chosen by experts from GeoDAWn
+geophysics, the SGMC faults were drawn by state-map geologists from surface mapping,
+and the proxy population is dominated by short segments (2,083 components, median
+12 px) while the scored set is likely to be longer structures. Directional comparisons
+between policies are the intended use; absolute values are not.
 
-The difference is not cosmetic. Under the unmasked proxy, copying the catalogue
-scores 0.0 and any emission that hugs the catalogue looks expensive. Under the
-rule the platform actually applies, catalogue pixels are FREE — they are simply
-deleted from the prediction before scoring — so a submission is never punished
-for covering them, and the only mass that costs anything is mass on pixels that
-are neither a training label nor within 300 m of a new-fault truth pixel.
-
-This script computes both, side by side, on the same truth, so the two
-evaluations can be compared directly:
-
-    unmasked : DTI(pred,              proxy_only_truth)
-    MASKED   : DTI(pred * ~labels,    proxy_only_truth)      <- the platform's rule
-
-Usage (paths are explicit; nothing is defaulted to a repo layout):
-
+USAGE
     python masked_proxy_eval.py \
-        --pred  /path/to/submission.tif \
-        --labels /path/to/labels.tif \
-        --proxy /path/to/proxy_catalogue.tif \
-        --out   /path/to/result.json
+        --pred /path/a.tif /path/b.tif --labels /path/labels.tif \
+        --proxy /path/proxy_catalogue.tif --sweep-width 0,1,2,3,4,6 \
+        --out evidence/masked_proxy_eval.json
 
-    # compare several predictions at once
-    python masked_proxy_eval.py --batch preds.json --out results.json
-
-`proxy` is a uint8 raster where 2 = a fault with no training label within 300 m
-(build it with the GEMSDOE repository's scripts/fetch_proxy_faults.py +
-scripts/build_proxy_catalogue.py; provenance and sha256 in its proxy_stats.json).
-
-WHAT IT DOES NOT DO
--------------------
-The SGMC proxy is a *population* stand-in, not the scored set, and the tool says
-so in its own docstring. Nothing here can predict a leaderboard position. What it
-can do — and what the decision it feeds needs — is rank two candidate
-submissions whose only difference is how they spend mass relative to the
-catalogue, which is exactly the axis the mask rule changes.
+`--metrics-src` must point at a checkout of the GEMSDOE repository, which is where the
+exact metric implementation (`GtContext`) lives; this script reuses it rather than
+re-deriving it, so the two agree by construction.
 """
 
 from __future__ import annotations
 
 import argparse
+import datetime as dt
+import hashlib
 import json
 import sys
 from pathlib import Path
 
 import numpy as np
 import rasterio
+from scipy.ndimage import binary_dilation
 
-ALPHA = 0.2
-BETA = 0.8
-RADIUS_PX = 3.0
-
-
-def shift_zero(arr: np.ndarray, dy: int, dx: int) -> np.ndarray:
-    out = np.zeros_like(arr)
-    h, w = arr.shape
-    ys_src = slice(max(0, -dy), h - max(0, dy))
-    ys_dst = slice(max(0, dy), h - max(0, -dy))
-    xs_src = slice(max(0, -dx), w - max(0, dx))
-    xs_dst = slice(max(0, dx), w - max(0, -dx))
-    out[ys_dst, xs_dst] = arr[ys_src, xs_src]
-    return out
-
-
-def kernel_offsets(radius_px: float = RADIUS_PX):
-    r = int(np.ceil(radius_px))
-    offs = []
-    for dy in range(-r, r + 1):
-        for dx in range(-r, r + 1):
-            d = float(np.hypot(dy, dx))
-            if d <= radius_px + 1e-12:
-                offs.append((dy, dx, d, max(1.0 - d / radius_px, 0.0)))
-    offs.sort(key=lambda t: (t[2], t[0], t[1]))
-    a = np.array(offs, dtype=np.float64)
-    return a[:, 0].astype(np.int64), a[:, 1].astype(np.int64), a[:, 3]
+RULE_SOURCE = ("https://community.drivendata.org/t/scoring-clarification-are-known-usgs-"
+               "ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516")
+RULE_QUOTES = {
+    "mask_excludes_catalogue": "Pixels corresponding to known USGS/INGENIOUS faults are masked / "
+                               "excluded from evaluation, so they do not count towards penalty terms.",
+    "mask_is_pixel_exact": "The mask is indeed pixel-exact - it is identical to the provided set of "
+                           "training fault labels.",
+    "no_buffer_for_known": "A predicted pixel that is near a known fault trace but far from a "
+                           "new-fault ground truth pixel will be fully penalized, i.e., the buffer "
+                           "does not apply to known faults.",
+    "truth_may_be_near_known": "A new-fault ground truth pixel can indeed lie within 300m of a known "
+                              "fault trace. Such pixels would constitute corrections or modifications "
+                              "to existing fault traces.",
+}
+CODE_ONLY = 2          # proxy raster: 2 = SGMC fault with no training label within R
+R_PIXELS = 3           # 300 m at 100 m pixels
 
 
-def best_weighted_prediction(pred: np.ndarray, radius_px: float = RADIUS_PX):
-    dy, dx, k = kernel_offsets(radius_px)
-    best = np.zeros_like(pred)
-    for d_y, d_x, kk in zip(dy, dx, k):
-        if kk <= 0.0:
-            continue
-        np.maximum(best, shift_zero(pred, int(d_y), int(d_x)) * kk, out=best)
-    return best
+def sha256(path: Path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
-def components(pred: np.ndarray, target: np.ndarray) -> dict:
-    """Official distance-weighted Tversky components (page 967), exactly."""
-    from scipy import ndimage
-
-    p = np.clip(np.asarray(pred, dtype=np.float64), 0.0, 1.0)
-    g = np.asarray(target).astype(bool)
-    n_gt = int(g.sum())
-    pos = p > 0.0
-    n_pos = int(pos.sum())
-    if n_gt == 0:
-        d_to_gt = np.zeros(p.shape)
-    else:
-        d_to_gt = ndimage.distance_transform_edt(~g, sampling=1.0)
-    k_nearest = np.maximum(1.0 - d_to_gt / RADIUS_PX, 0.0)
-    fp_w = float((p * (1.0 - k_nearest))[pos].sum()) if n_pos else 0.0
-    if n_gt == 0:
-        tp_w = fn_w = 0.0
-    else:
-        m = best_weighted_prediction(p)
-        mg = m[g]
-        tp_w = float(mg.sum())
-        fn_w = float((1.0 - mg).sum())
-    denom = tp_w + ALPHA * fp_w + BETA * fn_w
-    return {
-        "dti": float(tp_w / denom) if denom > 0 else 0.0,
-        "tp_w": tp_w, "fp_w": fp_w, "fn_w": fn_w,
-        "n_pos_pred": n_pos, "n_gt": n_gt,
-        "mass": float(p.sum()),
-    }
-
-
-def load(path: Path) -> np.ndarray:
-    with rasterio.open(path) as s:
-        return s.read(1)
-
-
-def evaluate(pred_path: Path, labels: np.ndarray, truth: np.ndarray,
-             truth_px: int, dilate: int = 0, restrict_off_catalogue: bool = False
-             ) -> dict:
-    from scipy import ndimage
-
-    pred = np.nan_to_num(load(pred_path).astype(np.float64), nan=0.0)
-    pred = np.clip(pred, 0.0, 1.0)
-    masked = labels == 1
-    out: dict = {
-        "pred": str(pred_path),
-        "emission_px": int((pred > 0).sum()),
-        "emission_on_catalogue_px": int(((pred > 0) & masked).sum()),
-    }
-    if dilate:
-        pred = np.where(ndimage.binary_dilation(pred > 0, iterations=dilate), 1.0, 0.0)
-        out["dilated_px"] = dilate
-        out["emission_px_after_dilation"] = int((pred > 0).sum())
-        out["emission_on_catalogue_px_after_dilation"] = int(((pred > 0) & masked).sum())
-    if restrict_off_catalogue:
-        pred = np.where(masked, 0.0, pred)
-        out["restricted_to_off_catalogue"] = True
-
-    # the platform's rule: predictions on masked (training-label) pixels are deleted
-    pred_masked = np.where(masked, 0.0, pred)
-
-    out["unmasked_proxy"] = components(pred, truth)
-    out["MASKED_proxy"] = components(pred_masked, truth)
-    out["truth_px"] = truth_px
-    out["mass_removed_by_mask"] = out["unmasked_proxy"]["mass"] - out["MASKED_proxy"]["mass"]
-    return out
+def disk(r: int) -> np.ndarray:
+    yy, xx = np.mgrid[-r:r + 1, -r:r + 1]
+    return (yy * yy + xx * xx) <= r * r
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--pred")
-    ap.add_argument("--batch", help="JSON list of {name, path, dilate?, off_catalogue_only?}")
-    ap.add_argument("--labels", required=True)
-    ap.add_argument("--proxy", required=True)
+    ap.add_argument("--pred", nargs="+", required=True)
+    ap.add_argument("--labels", required=True, help="the provided catalogue raster (the mask)")
+    ap.add_argument("--proxy", required=True, help="proxy catalogue; code 2 = new-fault-like")
     ap.add_argument("--out", required=True)
-    ap.add_argument("--dilate", type=int, default=0)
+    ap.add_argument("--metrics-src", default="/home/user/scratch/r1",
+                    help="checkout of the GEMSDOE repository (provides src.metrics)")
+    ap.add_argument("--sweep-width", default="0,1,2,3,4,6",
+                    help="dilation radii, in px, applied to the prediction before scoring")
+    ap.add_argument("--note", default=None)
     args = ap.parse_args()
-    if not args.pred and not args.batch:
-        ap.error("give --pred or --batch")
 
-    labels = load(Path(args.labels))
-    proxy = load(Path(args.proxy))
-    truth = proxy == 2
-    truth_px = int(truth.sum())
+    sys.path.insert(0, str(Path(args.metrics_src).resolve()))
+    from src.metrics import GtContext                                     # noqa: E402
 
-    # Sanity: the proxy code-2 pixels must be >R from every training label, else
-    # "the mask does not apply to known faults" would be doing work here.
-    from scipy import ndimage
-    d_to_labels = ndimage.distance_transform_edt(~(labels == 1))
-    assert d_to_labels[truth].min() > RADIUS_PX, (
-        "proxy code-2 pixels are not all beyond R from a training label; "
-        "this tool assumes they are")
+    lab = rasterio.open(args.labels).read(1)
+    catalogue = lab == 1
+    valid = lab != -1                      # the scored footprint
+    with rasterio.open(args.proxy) as s:
+        proxy = s.read(1)
+    truth = proxy == CODE_ONLY
+    print(f"truth (proxy-only) px = {int(truth.sum())};  catalogue px = {int(catalogue.sum())};  "
+          f"footprint px = {int(valid.sum())}", flush=True)
 
-    results: dict = {
-        "_what_this_is": "rule-correct (masked-catalogue) proxy evaluation, "
-                         "computed by tools/masked_proxy_eval.py",
-        "labels": args.labels, "proxy": args.proxy,
-        "truth_px": truth_px,
-        "rule": {
-            "source": "https://community.drivendata.org/t/11516 (staff, 2026-09-16 and 2026-09-21)",
-            "mask": "pixel-exact: identical to the provided training fault labels",
-            "unmasked_penalty": "a predicted pixel near a known fault but far from "
-                                "new-fault truth is fully penalized",
-            "truth": "proxy code 2 = SGMC faults with no training label within 300 m",
+    # The proxy is only meaningful if its pixels are genuinely absent from the labels.
+    from scipy.ndimage import distance_transform_edt
+    d_to_lab = distance_transform_edt(~catalogue)
+    bad = truth & (d_to_lab <= R_PIXELS)
+    assert not bad.any(), f"{int(bad.sum())} proxy pixels sit within {R_PIXELS} px of a label"
+
+    ctx = GtContext(truth, R_pixels=R_PIXELS)
+    fpw = ctx.fp_weight()                  # 1 - max_g k(d(x,g)); the per-pixel FP weight
+    assert ctx.n_gt == int(truth.sum())
+
+    widths = [int(w) for w in args.sweep_width.split(",")]
+    report: dict = {
+        "generated_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+        "generated_by": "gemsdoe_review/tools/masked_proxy_eval.py",
+        "purpose": "score candidate submissions on faults the training labels do not contain, "
+                   "under the official mask rule and without it, and sweep the emission width",
+        "rule_source": RULE_SOURCE,
+        "rule_quotes": RULE_QUOTES,
+        "metric": {"R_pixels": R_PIXELS, "R_meters": 300, "alpha": 0.2, "beta": 0.8},
+        "inputs": {
+            "labels": {"path": str(Path(args.labels).resolve()),
+                       "sha256": sha256(Path(args.labels)),
+                       "catalogue_px": int(catalogue.sum())},
+            "proxy": {"path": str(Path(args.proxy).resolve()),
+                      "sha256": sha256(Path(args.proxy)),
+                      "truth_px": int(truth.sum()),
+                      "footprint_px": int(valid.sum())},
         },
-        "metrics": {},
+        "rules": {
+            "raw": "the official metric as written: every predicted pixel counts towards FP_w",
+            "masked_fp": "FP_w excludes predicted pixels that fall on the catalogue mask "
+                         "(the mask is identical to the labels raster); TP_w unchanged",
+            "masked_both": "as masked_fp, and predictions on the mask are also removed before "
+                           "the TP_w credit is taken (a masked pixel cannot earn credit)",
+        },
+        "predictions": {},
+        "baselines": {},
+        "note": args.note,
     }
+    if args.note is None:
+        report.pop("note")
 
-    if args.pred:
-        results["metrics"][Path(args.pred).name] = evaluate(
-            Path(args.pred), labels, truth, truth_px, dilate=args.dilate)
-    if args.batch:
-        for item in json.loads(Path(args.batch).read_text()):
-            results["metrics"][item["name"]] = evaluate(
-                Path(item["path"]), labels, truth, truth_px,
-                dilate=int(item.get("dilate", 0)),
-                restrict_off_catalogue=bool(item.get("off_catalogue_only", False)))
+    def score(pred: np.ndarray) -> dict:
+        credit = ctx.credit_vector(pred)
+        tp = float(credit.sum())
+        fn = float(ctx.n_gt - tp)
+        out = {}
+        for rule in ("raw", "masked_fp", "masked_both"):
+            p = pred
+            if rule == "masked_both":
+                p = np.where(catalogue, 0.0, pred)
+                credit_r = ctx.credit_vector(p)
+                tp_r = float(credit_r.sum())
+                fn_r = float(ctx.n_gt - tp_r)
+            else:
+                tp_r, fn_r = tp, fn
+            pos = p > 0
+            if rule == "raw":
+                fp = float((p[pos] * fpw[pos]).sum())
+            else:
+                sel = pos & ~catalogue
+                fp = float((p[sel] * fpw[sel]).sum())
+            denom = tp_r + 0.2 * fp + 0.8 * fn_r + 1e-7
+            out[rule] = {"dti": tp_r / denom, "TP_w": tp_r, "FP_w": fp, "FN_w": fn_r,
+                         "emission_px": int(pos.sum())}
+        return out
 
-    # Two baselines that the mask rule makes interesting:
-    results["baselines"] = {}
-    results["baselines"]["catalogue_copy"] = evaluate_from_array(
-        (labels == 1).astype(np.float64), labels, truth, truth_px)
-    results["baselines"]["blanket_ones_inside_footprint"] = evaluate_from_array(
-        (labels != -1).astype(np.float64), labels, truth, truth_px)
+    # ---- baselines -------------------------------------------------------------
+    zeros = np.zeros(lab.shape, dtype=np.float32)
+    blanket = valid.astype(np.float32)
+    catcopy = catalogue.astype(np.float32)
+    for name, arr in (("zeros", zeros), ("blanket_ones_in_footprint", blanket),
+                      ("catalogue_copy", catcopy)):
+        report["baselines"][name] = score(arr)
+        print(f"  baseline {name:26s} raw DTI {report['baselines'][name]['raw']['dti']:.4f}")
 
-    Path(args.out).write_text(json.dumps(results, indent=2) + "\n")
+    # ---- candidates ------------------------------------------------------------
+    for path in args.pred:
+        p = Path(path)
+        with rasterio.open(p) as s:
+            pred = s.read(1).astype(np.float32)
+        pred = np.nan_to_num(pred, nan=0.0)
+        entry = {
+            "path": str(p.resolve()), "sha256": sha256(p), "bytes": p.stat().st_size,
+            "emitted_px": int((pred > 0).sum()),
+            "emitted_on_catalogue_px": int(((pred > 0) & catalogue).sum()),
+            "policy_sweep": {},
+        }
+        for w in widths:
+            arr = pred if w == 0 else binary_dilation(pred > 0, disk(w)).astype(np.float32)
+            entry["policy_sweep"][f"dilate{w}"] = score(arr)
+        entry["as_provided"] = entry["policy_sweep"]["dilate0"]
+        report["predictions"][p.name] = entry
+        best = max(entry["policy_sweep"].items(), key=lambda kv: kv[1]["masked_both"]["dti"])
+        print(f"  {p.name}")
+        print(f"      as-provided: raw {entry['as_provided']['raw']['dti']:.4f} | "
+              f"masked_fp {entry['as_provided']['masked_fp']['dti']:.4f} | "
+              f"masked_both {entry['as_provided']['masked_both']['dti']:.4f}")
+        for w in widths:
+            c = entry["policy_sweep"][f"dilate{w}"]["masked_both"]
+            print(f"      dilate{w}: masked_both DTI {c['dti']:.4f} "
+                  f"(TP_w {c['TP_w']:.0f}, FP_w {c['FP_w']:.0f}, px {c['emission_px']})")
+        print(f"      best under masked_both: {best[0]} at {best[1]['masked_both']['dti']:.4f}")
+
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(report, indent=1) + "\n")
     print(f"wrote {args.out}")
-    print(f"truth: {truth_px:,} px of proxy-only faults "
-          f"(all >{RADIUS_PX:g} px from every training label)")
-    for name, r in results["metrics"].items():
-        print(f"  {name:<48s} unmasked {r['unmasked_proxy']['dti']:.4f}  "
-              f"MASKED {r['MASKED_proxy']['dti']:.4f}  "
-              f"({r['emission_px']:,} px, {r['emission_on_catalogue_px']:,} on catalogue)")
-    for name, r in results["baselines"].items():
-        print(f"  [baseline] {name:<37s} unmasked {r['unmasked_proxy']['dti']:.4f}  "
-              f"MASKED {r['MASKED_proxy']['dti']:.4f}")
     return 0
-
-
-def evaluate_from_array(pred: np.ndarray, labels: np.ndarray, truth: np.ndarray,
-                        truth_px: int) -> dict:
-    pred = np.clip(np.nan_to_num(pred, nan=0.0), 0.0, 1.0)
-    masked = labels == 1
-    return {
-        "emission_px": int((pred > 0).sum()),
-        "emission_on_catalogue_px": int(((pred > 0) & masked).sum()),
-        "unmasked_proxy": components(pred, truth),
-        "MASKED_proxy": components(np.where(masked, 0.0, pred), truth),
-        "truth_px": truth_px,
-    }
 
 
 if __name__ == "__main__":
