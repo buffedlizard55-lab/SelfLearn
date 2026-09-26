@@ -1448,7 +1448,7 @@
     "Selection used 26 labelled case(s); false supports at the selected point: 0."
   ],
   "objective": "lexicographic: fewest false supports, then highest recall for 'supported', then highest F1 for 'supported', then highest macro F1, then the setting closest to the documented default, then the stricter support threshold",
-  "ran_at": "2026-09-25T21:41:28Z",
+  "ran_at": "2026-09-26T05:08:21Z",
   "selected": {
     "accuracy": 1.0,
     "all_cases": {

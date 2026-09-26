@@ -683,7 +683,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-25T21:41:12Z",
+      "recorded_at": "2026-09-26T05:08:10Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-661474e2276b",
@@ -735,7 +735,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-25T21:41:12Z",
+      "recorded_at": "2026-09-26T05:08:10Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-af231e4e8dd2",
@@ -788,7 +788,7 @@
       "reasons": [
         "All 2 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-25T21:41:12Z",
+      "recorded_at": "2026-09-26T05:08:10Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-b0597cb75f3a",
@@ -840,7 +840,7 @@
       "reasons": [
         "All 1 numeric literal(s) match the engine-computed context set."
       ],
-      "recorded_at": "2026-09-25T21:41:12Z",
+      "recorded_at": "2026-09-26T05:08:10Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-dc28e31745a0",
@@ -897,7 +897,7 @@
       "reasons": [
         "Derived statement contains figures the engine did not compute: 100%. Recomputation disagrees with the recorded context."
       ],
-      "recorded_at": "2026-09-25T21:41:12Z",
+      "recorded_at": "2026-09-26T05:08:10Z",
       "source_name": "SelfLearn library computation",
       "substance": {
         "claim_id": "cl-b274cc7763f8",
@@ -954,7 +954,7 @@
       "reasons": [
         "All 1 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-25T21:41:12Z",
+      "recorded_at": "2026-09-26T05:08:10Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-186537ad9245",
@@ -1011,7 +1011,7 @@
       "reasons": [
         "All 2 figure(s) and 0 date(s) appear in the 2 cited claim(s) drawn from 2 documents, or in the recorded document/source counts."
       ],
-      "recorded_at": "2026-09-25T21:41:12Z",
+      "recorded_at": "2026-09-26T05:08:10Z",
       "source_name": "Cross-document synthesis of cited claims",
       "substance": {
         "claim_id": "cl-8737f188a55e",
@@ -2349,7 +2349,7 @@
       "claim_a": "cl-13cf26e4fba9",
       "claim_b": "cl-6ac20344a641",
       "contradiction_id": "con-4fb8033a159c",
-      "created_at": "2026-09-25T21:41:12Z",
+      "created_at": "2026-09-26T05:08:10Z",
       "detail": "Claims share 56% of their content tokens but contain disjoint numeric values (102 vs 150). One of the two readings, the unit, or the time period differs.",
       "kind": "numeric",
       "resolution": "unresolved",
@@ -2558,7 +2558,7 @@
       "url": "https://github.com/khoj-ai/khoj"
     },
     {
-      "bytes_read": 30028,
+      "bytes_read": 29991,
       "content_hash": "sha256:df08633206dbde8fab6d39b92796c89e67a8d31d85b6672f8f81e6d4b12fce7b",
       "evidence_class": "commentary",
       "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -2567,13 +2567,13 @@
       "is_live": true,
       "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
       "published_at": "2026-03-21",
-      "retrieved_at": "2026-09-25T21:41:12Z",
+      "retrieved_at": "2026-09-26T05:08:10Z",
       "source_name": "Hacker News API (via Algolia index)",
       "title": "Autonomous AI research agent with Overleaf sync",
       "url": "https://github.com/nanoAgentTeam/research-claw"
     },
     {
-      "bytes_read": 30028,
+      "bytes_read": 29991,
       "content_hash": "sha256:1a13c8887f1fbb32cfe6b82a2543d0192d5153b2b4b7a4eb9946d6e6386f9645",
       "evidence_class": "commentary",
       "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -2582,7 +2582,7 @@
       "is_live": true,
       "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
       "published_at": "2026-04-21",
-      "retrieved_at": "2026-09-25T21:41:12Z",
+      "retrieved_at": "2026-09-26T05:08:10Z",
       "source_name": "Hacker News API (via Algolia index)",
       "title": "Deep Research Max: a step change for autonomous research agents",
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/"
@@ -2597,7 +2597,7 @@
     "What experiment would resolve it?"
   ],
   "experiments": [],
-  "generated_at": "2026-09-26T04:24:19Z",
+  "generated_at": "2026-09-26T05:08:22Z",
   "questions": [
     {
       "id": "q-906c573de2ab",
@@ -4627,14 +4627,14 @@
     {
       "claim_id": "q-3908709733c3",
       "claim_kind": "open question (gap)",
-      "recorded_at": "2026-09-25T21:41:12Z",
-      "superseded": "Withdrawn 2026-09-25T21:41:23Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-048f7bdbd6c3.",
+      "recorded_at": "2026-09-26T05:08:10Z",
+      "superseded": "Withdrawn 2026-09-26T05:08:18Z: a claim this record quotes has been superseded, so this record is not published as current. It remains in the library. Retired claim(s): cl-048f7bdbd6c3.",
       "text": "The quantity reported in cl-048f7bdbd6c3 has no reference period in the quoted text. Over what period, and in what population, was it measured?"
     }
   ],
   "source_status": [
     {
-      "checked_at": "2026-09-25T21:41:11Z",
+      "checked_at": "2026-09-26T05:08:09Z",
       "detail": "4 document(s) retrieved; 6 result(s) dropped as unrelated to the query",
       "evidence_class": "primary_source",
       "evidence_rank": 3,
@@ -4650,7 +4650,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "checked_at": "2026-09-25T21:41:12Z",
+      "checked_at": "2026-09-26T05:08:10Z",
       "detail": "9 document(s) retrieved; 1 result(s) dropped as unrelated to the query",
       "evidence_class": "commentary",
       "evidence_rank": 7,
@@ -4668,7 +4668,7 @@
   ],
   "statistics": {
     "claims": 33,
-    "computed_at": "2026-09-26T04:24:19Z",
+    "computed_at": "2026-09-26T05:08:22Z",
     "documents": 11,
     "evidence_classes": [
       "commentary",
@@ -5088,6 +5088,18 @@
     {
       "last_updated": "2026-09-25T21:41:12Z",
       "line": 280,
+      "status": "competing",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-26T05:08:08Z",
+      "line": 284,
+      "status": "new",
+      "topic_id": "topic-autonomous-research-agents"
+    },
+    {
+      "last_updated": "2026-09-26T05:08:10Z",
+      "line": 288,
       "status": "competing",
       "topic_id": "topic-autonomous-research-agents"
     }
@@ -6467,7 +6479,7 @@
     }
   ],
   "topic": {
-    "first_seen": "2026-09-25T21:41:10Z",
+    "first_seen": "2026-09-26T05:08:08Z",
     "keywords": [
       "autonomous agent",
       "research automation",
@@ -6476,7 +6488,7 @@
       "open source",
       "repository activity"
     ],
-    "last_updated": "2026-09-25T21:41:12Z",
+    "last_updated": "2026-09-26T05:08:10Z",
     "notes": "First seed question. Chosen because its evidence is repository metadata, which the engine can retrieve and quote verbatim.",
     "origin": "seed",
     "parent_topic_id": null,

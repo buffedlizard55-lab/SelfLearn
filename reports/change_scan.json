@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-09-25T21:41:21Z",
-  "items_new": 10,
+  "generated_at": "2026-09-26T05:08:16Z",
+  "items_new": 12,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-4f1a0d636372",
+  "run_id": "run-9dca057c7bd1",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -34,12 +34,12 @@
       "window": {
         "days": 7,
         "first_scan": true,
-        "since": "2026-09-18",
-        "until": "2026-09-25"
+        "since": "2026-09-19",
+        "until": "2026-09-26"
       }
     },
     {
-      "detail": "5 item(s) returned; 5 published before the window 2026-09-24..2026-09-25 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
+      "detail": "5 item(s) returned; 5 published before the window 2026-09-25..2026-09-26 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
       "items_new": 0,
       "items_out_of_window": 5,
@@ -49,7 +49,7 @@
       "mechanism": "Works reindexed at or after the given date",
       "new_items": [],
       "request_params": {
-        "filter": "from-index-date:2026-09-24",
+        "filter": "from-index-date:2026-09-25",
         "mailto": "selflearn@example.invalid",
         "query": "autonomous agent",
         "rows": 5,
@@ -62,14 +62,14 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-24",
-        "until": "2026-09-25"
+        "since": "2026-09-25",
+        "until": "2026-09-26"
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-25..2026-09-26 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 3,
+      "items_new": 1,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,34 +77,18 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: aiterrariumcontrol/terrarium-life\nThe recor",
-          "identifier": "https://github.com/aiterrariumcontrol/terrarium-life",
-          "published_at": "2026-09-25",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: DavidLauda/Pasokin\nThe record for DavidLaud",
+          "identifier": "https://github.com/DavidLauda/Pasokin",
+          "published_at": "2026-09-26",
           "source_id": "github",
-          "title": "aiterrariumcontrol/terrarium-life",
-          "url": "https://github.com/aiterrariumcontrol/terrarium-life"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: halilogia/Godot-AI-Sidebar\nThe record for h",
-          "identifier": "https://github.com/halilogia/Godot-AI-Sidebar",
-          "published_at": "2026-09-25",
-          "source_id": "github",
-          "title": "halilogia/Godot-AI-Sidebar",
-          "url": "https://github.com/halilogia/Godot-AI-Sidebar"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: akashgoudsidduluri/PrivAgent\nThe record for",
-          "identifier": "https://github.com/akashgoudsidduluri/PrivAgent",
-          "published_at": "2026-09-25",
-          "source_id": "github",
-          "title": "akashgoudsidduluri/PrivAgent",
-          "url": "https://github.com/akashgoudsidduluri/PrivAgent"
+          "title": "DavidLauda/Pasokin",
+          "url": "https://github.com/DavidLauda/Pasokin"
         }
       ],
       "request_params": {
         "order": "desc",
         "per_page": 5,
-        "q": "autonomous agent pushed:>=2026-09-24",
+        "q": "autonomous agent pushed:>=2026-09-25",
         "sort": "updated"
       },
       "request_url": "https://api.github.com/search/repositories",
@@ -114,12 +98,12 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-24",
-        "until": "2026-09-25"
+        "since": "2026-09-25",
+        "until": "2026-09-26"
       }
     },
     {
-      "detail": "1 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 1 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "1 item(s) returned; 0 published before the window 2026-09-25..2026-09-26 and dropped; 1 carried no readable date and were kept; 1 not seen by this engine before.",
       "docs_url": "https://nvd.nist.gov/developers/vulnerabilities",
       "items_new": 1,
       "items_out_of_window": 0,
@@ -129,8 +113,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 3\nstartIndex = 0\ntimestamp = 2026-09-25T21:41:22.443\ntotalResults = 3\nversion = 2.0\nvulnerabilities.0.cve.affected.0.affectedData.0.defaultStat",
-          "identifier": "nvd-raw-sha256:25e4c0424",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-26T05:08:17.817\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:6ff47e455",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -139,8 +123,8 @@
       ],
       "request_params": {
         "keywordSearch": "autonomous agent",
-        "lastModEndDate": "2026-09-25T00:00:00.000+00:00",
-        "lastModStartDate": "2026-09-24T00:00:00.000+00:00",
+        "lastModEndDate": "2026-09-26T00:00:00.000+00:00",
+        "lastModStartDate": "2026-09-25T00:00:00.000+00:00",
         "resultsPerPage": 5
       },
       "request_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
@@ -150,14 +134,14 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-24",
-        "until": "2026-09-25"
+        "since": "2026-09-25",
+        "until": "2026-09-26"
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 0 carried no readable date and were kept; 6 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-09-25..2026-09-26 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 6,
+      "items_new": 10,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -166,43 +150,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/sbxloop-worker/2.1.9/",
-          "published_at": "2026-09-25",
+          "identifier": "https://pypi.org/project/elenchus/0.8.4/",
+          "published_at": "2026-09-26",
           "source_id": "pypi",
-          "title": "sbxloop-worker 2.1.9",
-          "url": "https://pypi.org/project/sbxloop-worker/2.1.9/"
+          "title": "elenchus 0.8.4",
+          "url": "https://pypi.org/project/elenchus/0.8.4/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/sbxloop/2.1.9/",
-          "published_at": "2026-09-25",
+          "identifier": "https://pypi.org/project/ovos-bus-client/2.11.23a1/",
+          "published_at": "2026-09-26",
           "source_id": "pypi",
-          "title": "sbxloop 2.1.9",
-          "url": "https://pypi.org/project/sbxloop/2.1.9/"
+          "title": "ovos-bus-client 2.11.23a1",
+          "url": "https://pypi.org/project/ovos-bus-client/2.11.23a1/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/azurefunctions-agents-runtime/0.1.0b16/",
-          "published_at": "2026-09-25",
+          "identifier": "https://pypi.org/project/reforge-core/2.0.23/",
+          "published_at": "2026-09-26",
           "source_id": "pypi",
-          "title": "azurefunctions-agents-runtime 0.1.0b16",
-          "url": "https://pypi.org/project/azurefunctions-agents-runtime/0.1.0b16/"
+          "title": "reforge-core 2.0.23",
+          "url": "https://pypi.org/project/reforge-core/2.0.23/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/icloud-mcp-server/0.11.0/",
-          "published_at": "2026-09-25",
+          "identifier": "https://pypi.org/project/firmauy/1.17.2/",
+          "published_at": "2026-09-26",
           "source_id": "pypi",
-          "title": "icloud-mcp-server 0.11.0",
-          "url": "https://pypi.org/project/icloud-mcp-server/0.11.0/"
+          "title": "firmauy 1.17.2",
+          "url": "https://pypi.org/project/firmauy/1.17.2/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/mlflow-mongodb/0.1.0.dev0/",
-          "published_at": "2026-09-25",
+          "identifier": "https://pypi.org/project/odoo-addon-sale-timesheet-invoice-link/19.0.0.2.0.2/",
+          "published_at": "2026-09-26",
           "source_id": "pypi",
-          "title": "mlflow-mongodb 0.1.0.dev0",
-          "url": "https://pypi.org/project/mlflow-mongodb/0.1.0.dev0/"
+          "title": "odoo-addon-sale-timesheet-invoice-link 19.0.0.2.0.2",
+          "url": "https://pypi.org/project/odoo-addon-sale-timesheet-invoice-link/19.0.0.2.0.2/"
         }
       ],
       "request_params": {},
@@ -213,12 +197,12 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-24",
-        "until": "2026-09-25"
+        "since": "2026-09-25",
+        "until": "2026-09-26"
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-24..2026-09-25 and dropped; 5 carried no readable date and were kept; 0 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-25..2026-09-26 and dropped; 5 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
       "items_new": 0,
       "items_out_of_window": 0,
@@ -228,11 +212,11 @@
       "mechanism": "Earthquake events inside an explicit time window",
       "new_items": [],
       "request_params": {
-        "endtime": "2026-09-25",
+        "endtime": "2026-09-26",
         "format": "geojson",
         "limit": 5,
         "orderby": "time",
-        "starttime": "2026-09-24"
+        "starttime": "2026-09-25"
       },
       "request_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
       "source_id": "usgs_earthquake",
@@ -241,8 +225,8 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-24",
-        "until": "2026-09-25"
+        "since": "2026-09-25",
+        "until": "2026-09-26"
       }
     }
   ],
