@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-09-26T05:08:16Z",
-  "items_new": 12,
+  "generated_at": "2026-09-26T11:32:47Z",
+  "items_new": 10,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-9dca057c7bd1",
+  "run_id": "run-5dcc6d85bff1",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-25..2026-09-26 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-25..2026-09-26 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 1,
+      "items_new": 4,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,12 +77,36 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: DavidLauda/Pasokin\nThe record for DavidLaud",
-          "identifier": "https://github.com/DavidLauda/Pasokin",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: mrbehzadi-code/scie-builder\nThe record for ",
+          "identifier": "https://github.com/mrbehzadi-code/scie-builder",
           "published_at": "2026-09-26",
           "source_id": "github",
-          "title": "DavidLauda/Pasokin",
-          "url": "https://github.com/DavidLauda/Pasokin"
+          "title": "mrbehzadi-code/scie-builder",
+          "url": "https://github.com/mrbehzadi-code/scie-builder"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: orbi-build/orbi\nThe record for orbi-build/o",
+          "identifier": "https://github.com/orbi-build/orbi",
+          "published_at": "2026-09-26",
+          "source_id": "github",
+          "title": "orbi-build/orbi",
+          "url": "https://github.com/orbi-build/orbi"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: AgentsKit-io/agentskit\nThe record for Agent",
+          "identifier": "https://github.com/AgentsKit-io/agentskit",
+          "published_at": "2026-09-26",
+          "source_id": "github",
+          "title": "AgentsKit-io/agentskit",
+          "url": "https://github.com/AgentsKit-io/agentskit"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: mosaro0224/averis-protocol\nThe record for m",
+          "identifier": "https://github.com/mosaro0224/averis-protocol",
+          "published_at": "2026-09-26",
+          "source_id": "github",
+          "title": "mosaro0224/averis-protocol",
+          "url": "https://github.com/mosaro0224/averis-protocol"
         }
       ],
       "request_params": {
@@ -113,8 +137,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-26T05:08:17.817\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:6ff47e455",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-26T11:32:48.862\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:3e8f6a92c",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -139,9 +163,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-09-25..2026-09-26 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-09-25..2026-09-26 and dropped; 0 carried no readable date and were kept; 5 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 10,
+      "items_new": 5,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -150,43 +174,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/elenchus/0.8.4/",
+          "identifier": "https://pypi.org/project/streamlit-drawable-konva/0.4.0/",
           "published_at": "2026-09-26",
           "source_id": "pypi",
-          "title": "elenchus 0.8.4",
-          "url": "https://pypi.org/project/elenchus/0.8.4/"
+          "title": "streamlit-drawable-konva 0.4.0",
+          "url": "https://pypi.org/project/streamlit-drawable-konva/0.4.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/ovos-bus-client/2.11.23a1/",
+          "identifier": "https://pypi.org/project/operonx/1.8.0/",
           "published_at": "2026-09-26",
           "source_id": "pypi",
-          "title": "ovos-bus-client 2.11.23a1",
-          "url": "https://pypi.org/project/ovos-bus-client/2.11.23a1/"
+          "title": "operonx 1.8.0",
+          "url": "https://pypi.org/project/operonx/1.8.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/reforge-core/2.0.23/",
+          "identifier": "https://pypi.org/project/dataleak-guard/0.1.0/",
           "published_at": "2026-09-26",
           "source_id": "pypi",
-          "title": "reforge-core 2.0.23",
-          "url": "https://pypi.org/project/reforge-core/2.0.23/"
+          "title": "dataleak-guard 0.1.0",
+          "url": "https://pypi.org/project/dataleak-guard/0.1.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/firmauy/1.17.2/",
+          "identifier": "https://pypi.org/project/vordium/1.1.0/",
           "published_at": "2026-09-26",
           "source_id": "pypi",
-          "title": "firmauy 1.17.2",
-          "url": "https://pypi.org/project/firmauy/1.17.2/"
+          "title": "vordium 1.1.0",
+          "url": "https://pypi.org/project/vordium/1.1.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/odoo-addon-sale-timesheet-invoice-link/19.0.0.2.0.2/",
+          "identifier": "https://pypi.org/project/race-ai/0.1.1/",
           "published_at": "2026-09-26",
           "source_id": "pypi",
-          "title": "odoo-addon-sale-timesheet-invoice-link 19.0.0.2.0.2",
-          "url": "https://pypi.org/project/odoo-addon-sale-timesheet-invoice-link/19.0.0.2.0.2/"
+          "title": "race-ai 0.1.1",
+          "url": "https://pypi.org/project/race-ai/0.1.1/"
         }
       ],
       "request_params": {},
