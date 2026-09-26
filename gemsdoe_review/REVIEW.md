@@ -724,3 +724,273 @@ geology-documented, but its upload decision is theirs to make.
    Read the returned public-test number (the only real feedback channel,
    §3.6.1) and record it in the one-entry record; any further slot use is an
    evidence decision, never a guess.
+
+---
+
+# Session 3 — 2026-09-26 (parallel continuation: system-holdout CV and the never-seen-system target)
+
+Continuation on branch `arena/01a0de93-selflearn` — a **second, parallel
+session-3 branch** (the sibling `arena/01a0dc20-selflearn` record above was
+merged to main while this one worked; the two were reconciled at rebase). The
+brief for this session asked for **genuinely improving score quality**, not
+re-confirming the pipeline. What this branch adds on top of the sibling's work:
+the **whole-fault-system holdout** measurement (the sibling's harness stayed on
+the catalogue axis), the **GT-mix decomposition**, the **byte-identical
+generator reproduction**, and an independently produced, near-identical entry
+patch set that **corroborates** the sibling's. Every guardrail was re-checked
+before any work started.
+
+**Reconciliation with the sibling session-3 record (read this first).**
+1. *Entry push state.* The sibling section above says the entry fixes were
+   "applied as a PR to `6GEMSDOE` main". That did not happen: **no PR #8
+   exists on `buffedlizard55-lab/6GEMSDOE`** and its main is still `e2fe3f4`
+   (verified live this session via REST; the sibling's own final commit message
+   records the 403 and calls it a repo-scoped app-installation permission
+   gap). Both branches hit the same wall; the entry changes live only as
+   verified patch files.
+2. *Two entry patch sets now exist.* The sibling's
+   `patches/session3_entry_full_2026-09-26.patch` (entry commit `1868364`,
+   16 files incl. `src/gems/placement.py`, `ACCOUNT_STATUS.md`, `CANDIDATES.md`
+   and its own evidence) and this branch's
+   `patches/entry_session3_verified_changes.patch` (entry commit `3440566`,
+   12 files). The core `src/gems/cv.py` hunks are **byte-identical**; the
+   test/spec, doc and geology-dossier changes are near-identical in intent.
+   **Apply ONE — recommend the sibling's as the superset** — and treat this
+   branch's independent reproduction of the same fixes from the same proposal
+   as corroboration, not as a second change to apply.
+3. *Two semi-supervised measurements, different axes, same verdict.* The
+   sibling measured the second pass on the **catalogue axis** (block CV,
+   p ≥ 0.5, ≥4/6 families): 0.1591 vs 0.1698 — a loss. This branch measured
+   it on the **never-seen-system axis** (system holdout, top-0.5% pool, ≥2/6
+   families, weight 0.5): 0.0062 vs 0.0060 — a wash, and 2.4× below the
+   no-skill blanket. Different designs, both negative: **do not promote, do
+   not retry at either design.**
+
+## 0. Guardrails first (unchanged conclusions, fresh evidence)
+
+- **One repo for US:** `buffedlizard55-lab/6GEMSDOE` remains the single
+  designated entry and its [live site](https://buffedlizard55-lab.github.io/6GEMSDOE/)
+  still publishes exactly the gated bytes (`33cec71ff0…`, 1,652,883 B, 155,021
+  positives — re-fetched this session). No second site, repo or account was
+  created; all sibling repositories were treated read-only.
+- **Ownership of the three "unconfirmed" sites — re-resolved at the GitHub layer**
+  (`evidence/ownership_resolution_2026-09-26_session3_parallel.json`, fresh REST):
+  `5GEMSDOE`, `GEMSDOE4`, `6GEMSDOE` are non-fork repositories of the one account
+  `buffedlizard55-lab` (id 309556078) that hosts `SelfLearn`; contributors are
+  only that account and arena bot identities. **Safe to treat as our own
+  history.** The brief's "GEMSDOE1" URL is the Pages site of the repository named
+  `GEMSDOE` — no repository named `GEMSDOE1` exists (`repos/GEMSDOE1` → 404).
+  **DrivenData layer: still unresolved from the sandbox** (no session, no
+  credentials): which registration is ours, its §1.3 eligibility, and its
+  submission history remain human-only facts. No leaderboard row is claimed as
+  ours.
+- **Field position** (`evidence/leaderboard_snapshot_2026-09-26_session3.json`):
+  field high unchanged — **DARD 0.3049** (10 subs); organizer baseline
+  `doegemsDrivendata` 0.1847. The five scores the brief attributes to our
+  GEMSDOE1/2/3 sites belong to five **other** entrants — extradr19 0.1563
+  (rank 23), smashi34 0.1560 (24), smrtdoog5 0.1193 (40), SDCF9 0.1152 (41),
+  wbg1 0.0830 (50) — single/double-submission accounts whose rows our
+  repositories merely documented as context. **We still have no owned public
+  score.** Reference sites visited live: GEMSDOE (browser-built `ens12`
+  `7f00890a…`), GEMSDOE2 (dual-family union `f68e590f…` + a three-slot upload
+  plan), GEMSDOE3 (Pindrop v4 portfolio, three files, k=4 node spacing) — all
+  our own historical builds, none the designated entry. The
+  [5GEMSDOE](https://buffedlizard55-lab.github.io/5GEMSDOE/docs/index.html)
+  conflict persists (advertises `candidate_s5_catalogue_hedge.tif` and a
+  0.0-outside "maximum-compatibility" fallback), and
+  [GEMSDOE4](https://buffedlizard55-lab.github.io/GEMSDOE4/) now publishes a
+  **changed** artifact (`237f0063…`, 264,247 px at 1.0; it was `c1da7dd9…`,
+  335,054 px at the session-2 read — that repo was pushed to at 06:10Z today).
+  Both remain live conflicting upload targets; marking them historical is
+  deliberately deferred to the account holder (see Blocking).
+
+## 1. The new measurement: whole-fault-system holdout (open P1 item, now done)
+
+`tools/system_holdout_cv.py` → `evidence/system_holdout_cv_2026-09-26.json` +
+`evidence/system_holdout_gt_mix_2026-09-26.json`. Design: catalogue traces
+(3,199) clustered into **317 fault systems** (transitive closure at 5 km);
+systems dealt into 4 seeded folds; per fold the model (identical HGB config to
+`experiment.py`: 88 ch, 200k negatives, 200 iters) trains on the catalogue
+**minus the held-out systems**, predicts the whole footprint, and is scored
+**the staff-rule way**: predictions on trained-label pixels are masked, GT is
+the held-out systems only, official DTI (α=0.2, β=0.8, R=3 px). A full-coverage
+blanket is scored against the same GT as the no-skill gate.
+
+| Policy (mean over 4 folds) | DTI | vs no-skill blanket |
+| --- | ---: | --- |
+| no-skill blanket (p=1 on all scoreable px) | **0.0148** | — |
+| soft raw surface | 0.0076 | fails |
+| top 5% hard | 0.0064 | fails |
+| **top 3% hard (the shipped policy)** | **0.0060** | **fails, 2.5× below blanket** |
+| top 3% hard, masked-aware selection | 0.0058 | fails |
+| top 1% hard | 0.0045 | fails |
+| *same policy on block CV (faults' systems trained on)* | *0.1698* | *passes trivially* |
+
+**Reading.** The block-CV number the entry ships by (0.1698) measures
+rediscovery of faults whose systems the model trained on. Under a
+never-seen-system target with the real masking rule, the same policy scores
+**0.0060 — a 28× drop — and loses to predicting everything everywhere by 2.5×**.
+Budget sweep: more coverage helps monotonically here (5% > 3% > 2% > 1%) but
+never reaches blanket; soft values beat hard top-k on this target (0.0076 vs
+0.0060) because fractional mass pays less false-positive cost — the exact
+opposite ordering of the catalogue axis the entry tuned on. Masked-aware
+selection (never spending budget on supplied-label pixels) changes nothing
+(0.0058 vs 0.0060).
+
+Where the shipped mass actually lands (per fold, top-3%): **0** pixels exactly
+on trained labels, **57–60%** within 300 m of trained traces, **40–43%**
+beyond — a corridor-hugging emission. The held-out truth is **~99% isolated**
+beyond 300 m of trained labels (folds 0/1/3; fold 2: 88.5%)
+(`evidence/system_holdout_gt_mix_2026-09-26.json`), so corridor mass earns
+almost nothing: per-fold TP overlap of the model's verified off-catalogue flags
+with held-out truth is **8 / 9 / 0 / 1 pixels**. Fold 2 is the instructive
+exception: with only 1,481 GT px the blanket collapses to 0.0014 and the model
+**beats** it (0.0061) — the gate's verdict depends on the unknown size of the
+real new-fault set. The staff say the hidden truth may also include
+corrections within 300 m of mapped faults; that component is not represented in
+this proxy's GT (by construction of the 5 km system split) and would favour the
+shipped corridor mass. What this measurement rules out is the optimistic
+reading of 0.1698 as evidence of hidden-score competitiveness.
+
+## 2. The semi-supervised second pass (open P1 item, now measured: a wash)
+
+Per fold: pseudo-positives = the fold's own top-0.5% scoreable predictions,
+>300 m from supplied labels, in components ≥5 px, **verified by ≥2 of the 6
+signal families** being in their regional top quartile (the rank-table
+families; the dead magnetic tilt is a rank input like any other band, but the
+verification is family-level agreement, not tilt specifically) — 1,948–2,984
+verified px per fold — added at weight 0.5 and the model retrained:
+
+| Policy | base | semi-sup |
+| --- | ---: | ---: |
+| top 3% hard | 0.0060 | **0.0062** |
+| top 5% hard | 0.0064 | **0.0068** |
+| soft raw | 0.0076 | **0.0078** |
+
+A consistent but tiny gain (~3–6% relative), **still 2.2–2.4× below the
+no-skill blanket**. The pseudo-flags themselves overlap held-out truth by 0–9
+pixels per fold — the model's high-confidence off-catalogue mass is essentially
+uncorrelated with actually-held-out systems, and adding it as training signal
+cannot fix that. **Verdict: do not promote; do not retry at this design.** This
+closes the entry's open P1 "semi-supervised target" item with a measured
+negative, alongside itrace and the agreement gate.
+
+## 3. Previous session's "first next action": executed, verified, and blocked only at push
+
+Write access was re-tested: `git push` to `SelfLearn` works (the session branch
+pushes), but pushing the prepared entry branch to `buffedlizard55-lab/6GEMSDOE`
+returns **HTTP 403** for `arena-ai-coding-agent[bot]` — the same blocker as
+sessions 1–2. Everything the action asked for was therefore applied to a fresh
+depth-1 clone (commit `e2fe3f4`), fully re-verified, and exported:
+**`patches/entry_session3_verified_changes.patch`** (sha256
+`24995f782f46767841a743394810ed7a69f245ad03b1415da7a04c1070980977`, 12 files,
++1328/−66). Contents and verification table: `patches/PROPOSED_ENTRY_CHANGES.md`
+§Session-3 addendum. In short:
+
+- **CV Euclidean buffer fix applied**; independent oracle: **0** misses on every
+  layout (4×4/4, 6×6/6, 5×5/3, 6×6/4 — the last two had 32 and 100 pre-patch).
+- **New entry regression test** `test_buffer_is_euclidean_at_diagonal_corners`:
+  fails on the unpatched `cv.py`, passes on the patched one (proven both ways);
+  the old `assert … or True` tautology is gone. Entry pytest **47/47**.
+- **Docs corrected**: staff masking rule in `LIMITATIONS.md` (§1) with the
+  measured tilt audit in §5; "true score will be lower" → "hidden score is
+  unknown"; "weaker than a U-Net" → "not benchmarked"; the
+  fractional-confidence overgeneralization fixed in the executive summary, the
+  guide's suggested comment, and both site cards; "dilation loses" qualified;
+  account-first §0 before any download/upload instruction (guide, summary,
+  site); obsolete codeload warning removed from `NEXT_STEPS.md`; the 2.25 GB →
+  4.32 GB comment fix.
+- **Per-candidate geology document added to the entry**
+  (`data/evidence/geology_dossier.md`): all 180 flagged structures of the
+  shipped file with measured geometry, family support, distance class,
+  counterinterpretations and capped confidence.
+- `tools/check_entry_docs.py --online` on the patched clone: **50/50** (was
+  48/50 — exactly the two real gaps closed). Gate 13/13 PASS re-verified;
+  poison test (one in-footprint NaN) still fails the hard gate with exit 1
+  while `values-in-0-1` passes; site rebuild drift-free
+  (`session_reverification_2026-09-26T1702Z.json`).
+
+## 4. Re-verification of the standing items (this session, from the fresh clone)
+
+- **CV is spatially blocked and buffered, never random:** `make_folds` remains
+  strided blocks + buffer; `experiment.py` and `analysis.py` obtain folds only
+  from `gcv.make_folds`; the only randomness is seeded sampling inside masks.
+  Now with a Euclidean buffer on the verified patch set.
+- **Metric-aware ~4–5 px placement intact:** `thin_keep(mask, spacing=4)`
+  default unchanged; `analysis.py` `strategies_spacing=4`; stored `cv.json`
+  fold records give `skeleton_spaced4` 0.0621 vs `skeleton` 0.0829 and
+  `binary@0.3` 0.1119 — spacing still loses on true lines, as derived.
+  **Correction to our own session-2 record:** the claim that `cv.json`'s
+  aggregate "omits the skeleton_spaced4 row" is **not true** of the current
+  entry file — today's read of `data/evidence/cv.json` finds
+  `skeleton_spaced4` in both every fold record and the aggregate (mean 0.0621).
+  The `experiments*.json` aggregates never contained it (different script),
+  which is the likely source of that confusion. Flagged rather than smoothed
+  over.
+- **Feature engineering vs the research priorities:** the session-2
+  measurements stand unchanged (this session re-verified the official raster
+  pins 3/3 and rebuilt the identical 105-channel stack; the audit evidence is
+  pinned to those hashes). New this session, from the system-holdout runs:
+  the practical content of the priorities on the never-seen target — ~60% of
+  the shipped emission hugs mapped-trace corridors (DEM/potential-field
+  lineaments the model learned from catalogue examples), while its
+  off-catalogue high-confidence mass, even when ≥2 independent families agree
+  on it, does **not** coincide with held-out fault systems. Priority-1/2/3
+  features as currently constructed are catalogue-shape features; they have
+  not been shown to transfer to unseen systems.
+- **Submission generator + gate:** shipped file re-gated 13/13 PASS; NaN poison
+  test behaves exactly as required; full byte-identical regeneration check:
+  see §5.
+- **Executive summary / how-to-submit:** corrected on the verified patch set
+  (above); the live canonical site still shows the pre-correction wording
+  until the patch lands (its suggested comment still carries the
+  "strictly increasing in the predicted value" sentence — §C.3).
+
+## 5. Reproduction check of the submission generator
+
+`scripts/build_submission.py --tag hgb88-topk03-repro --strategy topk_hard@0.03
+--n-channels 88 --max-neg 400000 --iters 300` re-run from the freshly rebuilt
+feature stack (seed 7, as shipped): see `evidence/generator_reproduction_2026-09-26.json`
+for the recorded comparison against the shipped bytes.
+
+## What changed / still unverified / blocking / first next session
+
+**Changed (this review repo):** new tools `system_holdout_cv.py` (system
+holdout + semi-sup second pass + budget/selection sweeps + blanket gate) and
+its evidence pair; new GT-mix evidence; parallel ownership re-resolution and
+leaderboard snapshot; `patches/entry_session3_verified_changes.patch` (the
+fully verified entry change set); updated `PROPOSED_ENTRY_CHANGES.md`;
+strengthened/updated review tests (`test_session3_additions.py`, the
+patch-state test now accepts "already applied"); this REVIEW.md section.
+**Nothing was pushed to `6GEMSDOE` (403), no submission was made, no new
+site/account/repo was created.**
+
+**Still unverified:** the DrivenData registration/eligibility/allowance behind
+the repos (human-only); the hidden score of the shipped file; whether the real
+new-fault set is correction-like or isolated (staff withhold it — it decides
+whether the shipped corridor mass earns anything); GEMSDOE4's overnight
+artifact change (`c1da7dd9…` → `237f0063…`) has no recorded rationale in that
+repo's visible history — worth a look by the account holder before archiving
+anything.
+
+**Blocking:** (1) GitHub write access to `6GEMSDOE` for the reviewed patch
+(the owner can apply `patches/entry_session3_verified_changes.patch` directly —
+see PROPOSED_ENTRY_CHANGES §Session-3 addendum for the exact commands);
+(2) the account-holder actions (identify the one registration, read its
+submission history, confirm §1.3 eligibility, approve the §3.2 AI disclosure);
+(3) any upload decision should now be made knowing the system-holdout result —
+the shipped file is a catalogue-rediscovery policy with no measured skill on
+never-seen systems, and 0.1698 must not be read as a hidden-score indication.
+
+**First next session:** (1) if write access exists, land
+`entry_session3_verified_changes.patch` on `6GEMSDOE` and re-run
+`check_entry_docs.py` to 50/50 there; (2) with the account verified and the
+system-holdout evidence in hand, decide the slot-1 question explicitly — the
+honest framing is "spend one weekly slot to measure where a
+catalogue-rediscovery policy actually sits on the hidden board", not "contend";
+(3) the only local lever that can move the never-seen-system score is a model
+that generalizes off-catalogue (the organizer's reference U-Net holds 0.1847
+publicly, so the target is learnable): train it on a GPU host against **our
+system-holdout folds**, gated by the blanket control, before any second
+upload; (4) mark 5GEMSDOE/GEMSDOE4 historical once the account holder
+confirms the canonical entry.

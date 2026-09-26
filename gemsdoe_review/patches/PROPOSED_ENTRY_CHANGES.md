@@ -219,3 +219,82 @@ retained by closing). Real narrow faults could still be in this remainder.
 [format and metric](https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/),
 [staff on the mask](https://community.drivendata.org/t/11516/4),
 [staff on unknown test-fault provenance](https://community.drivendata.org/t/11527/7).
+
+## Session-3 addendum (2026-09-26, parallel branch) — changes APPLIED and VERIFIED on a scratch clone; push still denied
+
+**Read together with the sibling addendum above (same-day parallel session).**
+Two near-identical changesets were produced independently from the same
+session-2 proposal: the sibling's `session3_entry_full_2026-09-26.patch`
+(entry commit `1868364`; the superset — it additionally patches
+`src/gems/placement.py`, `ACCOUNT_STATUS.md`, `CANDIDATES.md` and carries its
+own ablation/semi-sup evidence) and this branch's
+`entry_session3_verified_changes.patch` (entry commit `3440566`). The core
+`src/gems/cv.py` hunks are byte-identical and the rest are near-identical in
+intent — **apply ONE, recommended: the sibling's superset**; this one is
+independent corroboration, not a second change. Also note one correction to
+the sibling addendum's body: its "APPLIED to `6GEMSDOE` this session … (PR to
+main; merge after verification)" did **not** happen — no PR #8 exists on
+`buffedlizard55-lab/6GEMSDOE` and entry main remains `e2fe3f4` (verified live
+via REST at rebase time; the sibling's own final commit records the 403).
+
+This session re-tested write access: `git push --dry-run` to `SelfLearn`
+succeeds, but an actual push of the prepared entry branch
+`arena/01a0de93-6gemsdoe` to `buffedlizard55-lab/6GEMSDOE` returned
+**HTTP 403** ("Permission denied to arena-ai-coding-agent[bot]") — the same
+blocker as sessions 1–2, and the same blocker the parallel branch hit. The
+git credential can write `SelfLearn` only.
+
+Everything below was therefore applied to a fresh depth-1 clone of `6GEMSDOE`
+(commit `e2fe3f4`), fully re-verified there, and exported as a single patch:
+
+- **Patch:** `patches/entry_session3_verified_changes.patch`
+  (sha256 `24995f782f46767841a743394810ed7a69f245ad03b1415da7a04c1070980977`,
+  12 files, +1328/−66), or as two commits on the scratch branch
+  (`3440566` + the re-verification record commit).
+
+**Verification performed on the patched clone (all from the fresh clone):**
+
+| Check | Result |
+| --- | --- |
+| `patches/cv_euclidean_buffer.patch` applied; independent Euclidean oracle (`tools/audit_cv_geometry.py`) | **0** train-mask pixels within 300 m on **every** layout (4×4/4, 6×6/6, 5×5/3, 6×6/4) — the 5×5/3 and 6×6/4 layouts had 32 and 100 before |
+| New regression test `test_buffer_is_euclidean_at_diagonal_corners` | **fails on the unpatched `cv.py`, passes on the patched one** (verified both ways via `git stash`); the old `assert … or True` tautology is gone |
+| Entry pytest | **47/47 PASS** (46 before + the new geometry test) |
+| `tools/check_entry_docs.py --online` | **50/50 PASS** (was 48/50; the two real gaps — LIMITATIONS masking rule, per-candidate geology document — are closed by this patch) |
+| Shipped-file gate `scripts/validate_submission.py` | **13/13 PASS**, sha256 `33cec71ff0…` unchanged, 155,021 positives, 0 in-footprint NaNs |
+| NaN poison test (one NaN injected inside the footprint) | `values-in-0-1` still PASSES, `NAN-INSIDE-FOOTPRINT` **FAILS**, exit 1 — the hard gate catches exactly the right condition |
+| Site rebuild after the prose fixes | deterministic, **drift-free** (`session_reverification_2026-09-26T1702Z.json`) |
+| Official raster pins | 3/3 sha256 verified from the committed bridge parts |
+
+**What the patch changes, in one line each:** the Euclidean CV buffer fix
+(§B); the masking-rule paragraph in `LIMITATIONS.md` (§C.1); the tilt/ASA
+qualifications with measured numbers and provenance links (§C.2); "true score
+will be lower" → "hidden score is unknown" (§C.3); the uniform-scaling vs
+hardening distinction in `EXECUTIVE_SUMMARY.md`, `SUBMISSION_GUIDE.md`, the
+suggested comment and both site cards (§C.3); the account-first §0 before any
+download/upload instruction in the guide, the executive summary and the site
+steps (§C.5); the obsolete codeload warning removed from `NEXT_STEPS.md` (§C.6);
+the 2.25 GB → 4.32 GB comment fix in `scripts/build_features.py` (§C.7); the
+"dilation loses" qualification on the site (§C.4); and
+`data/evidence/geology_dossier.md` — the per-candidate geological reasoning for
+all 180 flagged structures (§D / NEXT_STEPS item 9).
+
+**Still not done from this proposal (blocked):** §C.6's "mark 5GEMSDOE /
+GEMSDOE4 historical and remove their conflicting upload advice" — deliberately
+**not** attempted: it must wait for the account holder to confirm the one
+canonical registration first. The 5GEMSDOE site still advertises
+`candidate_s5_catalogue_hedge.tif` plus the 0.0-outside fallback, and the
+GEMSDOE4 site now publishes a *changed* artifact (`237f0063…`, 264,247 px at
+1.0 — it was `c1da7dd9…`, 335,054 px at the session-2 read; that repository was
+pushed to at 06:10Z today), so both conflicts persist live.
+
+**Apply when write access exists** (from a permitted working copy of the
+existing `6GEMSDOE` repository — do not create any new repository):
+
+```bash
+cd /path/to/6GEMSDOE
+git checkout -b arena/01a0de93-6gemsdoe
+git am /path/to/SelfLearn/gemsdoe_review/patches/entry_session3_verified_changes.patch
+python -m pytest tests/ -q                      # expect 47/47
+python scripts/validate_submission.py downloads/gems6_hgb88-topk03_33cec71ff0.tif
+python /path/to/SelfLearn/gemsdoe_review/tools/check_entry_docs.py . --online   # 50/50
+```

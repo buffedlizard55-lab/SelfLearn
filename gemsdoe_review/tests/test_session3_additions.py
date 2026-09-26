@@ -164,3 +164,152 @@ def test_entry_cv_is_patched_euclidean():
     dil = cv._dilate(score, 3)
     assert dil[2, 2], "(2,2) corner must be inside the Euclidean 3-px buffer"
     assert not dil[3, 3]
+
+
+# ---------------------------------------------------------------------------
+# Session-3 additions from the PARALLEL branch (arena/01a0de93-selflearn):
+# system-holdout evidence pins, toy-grid budget/selection semantics, and the
+# parallel ownership/leaderboard re-resolution records.
+# ---------------------------------------------------------------------------
+EVIDENCE = Path(__file__).resolve().parent.parent / "evidence"
+import json  # used by the parallel-branch evidence tests below
+
+# ---------------------------------------------------------------- toy grid
+
+def _toy_metric():
+    entry = os.environ.get("GEMSDOE_ENTRY_ROOT")
+    if not entry:
+        pytest.skip("set GEMSDOE_ENTRY_ROOT to the canonical entry checkout")
+    sys.path.insert(0, str(Path(entry).resolve() / "src"))
+    from gems import metric
+    return metric
+
+
+def test_score_rule_analogue_perfect_and_dead_cases():
+    """The staff-rule analogue: predictions on trained labels are masked; the
+    score is against the held-out systems only."""
+    metric = _toy_metric()
+    sh = tool("system_holdout_cv")
+    n = 40
+    footprint = np.zeros((n, n), dtype=bool)
+    footprint[5:35, 5:35] = True
+    trained = np.zeros((n, n), dtype=bool)
+    trained[10:12, 10:20] = True          # a 'supplied label' trace
+    held = np.zeros((n, n), dtype=bool)    # a 'new fault' line
+    held[25, 15:30] = True
+
+    # a perfect prediction exactly on the held-out fault, plus mass on the
+    # trained labels (which must be masked away, costing nothing)
+    prob = np.zeros((n, n), dtype=np.float32)
+    prob[25, 15:30] = 1.0
+    prob[10:12, 10:20] = 1.0
+    out = sh.score_rule_analogue(prob, held, trained, footprint, metric,
+                                 budgets=(0.05,))
+    # top-5% of scoreable pixels includes the held line: TP = 15, FP = rest
+    rec = out["topk_hard@0.05"]
+    assert rec["n_gt"] == 15
+    assert rec["tp_w"] == pytest.approx(15.0)
+    # soft raw must also be perfect where the probability is 1
+    assert out["soft_raw"]["dti"] == pytest.approx(1.0)
+
+    # dead case: ALL mass on trained labels only -> masked -> DTI = 0
+    prob_dead = np.zeros((n, n), dtype=np.float32)
+    prob_dead[10:12, 10:20] = 1.0
+    out2 = sh.score_rule_analogue(prob_dead, held, trained, footprint, metric,
+                                  budgets=(0.05,))
+    assert out2["soft_raw"]["dti"] == 0.0
+
+    # blanket control: p=1 everywhere scoreable; DTI must equal the analytic
+    # full-coverage value for this GT (c / (c + alpha*(1-c)) approximation is
+    # NOT exact on a discrete grid, so compare against the metric directly)
+    blanket = (footprint & ~trained).astype(np.float32)
+    ref = metric.components(blanket, held)
+    assert out["blanket_full"]["dti"] == pytest.approx(ref.dti)
+
+
+def test_topk_hard_respects_budget_and_mask():
+    sh = tool("system_holdout_cv")
+    n = 100
+    valid = np.zeros((n, n), dtype=bool)
+    valid[:50, :] = True                       # 5000 scoreable pixels
+    prob = np.zeros((n, n), dtype=np.float32)
+    prob[:50, :] = np.arange(5000, dtype=np.float32).reshape(50, 100) / 5000.0
+    sel = sh.topk_hard(prob, valid, 0.02) > 0
+    assert sel.sum() == 100                    # exactly 2% of 5000
+    assert not sel[~valid].any()               # never outside the valid mask
+    assert sel[:48].sum() == 0                 # the lowest-probability rows lose
+
+
+def test_build_systems_merges_nearby_traces_only():
+    sh = tool("system_holdout_cv")
+    tid = np.zeros((60, 60), dtype=np.int32)
+    tid[10, 5:25] = 1        # trace 1: a horizontal line
+    tid[11, 5:25] = 2        # trace 2: 1 px below -> same system at any thr
+    tid[50, 5:25] = 3        # trace 3: 40 px away -> separate at 25 px, same at 50
+    sysmap = sh.build_systems(tid, 3, threshold_m=1500.0)   # 15 px
+    assert sysmap[1] == sysmap[2]
+    assert sysmap[3] != sysmap[1]
+    sysmap2 = sh.build_systems(tid, 3, threshold_m=5000.0)  # 50 px
+    assert sysmap2[3] == sysmap2[1]
+
+
+# ---------------------------------------------------------------- evidence
+
+def test_system_holdout_evidence_present_and_shaped():
+    p = EVIDENCE / "system_holdout_cv_2026-09-26.json"
+    if not p.exists():
+        pytest.skip("evidence not generated in this checkout")
+    d = json.loads(p.read_text())
+    assert "NOT a leaderboard value" in d["_what_this_is"]
+    design = d["design"]
+    assert design["system_threshold_m"] == 5000.0
+    assert design["n_systems"] > 50
+    assert design["folds"] == 4
+    assert "supplied training-label pixels are masked" in design["scoring_rule"]
+    for fold in d["folds"]:
+        assert fold["n_held_gt_px"] > 0
+        assert "blanket_full" in fold["base"]
+        assert "topk_hard@0.03" in fold["base"]
+        assert "topk_hard_shipsel@0.03" in fold["base"]
+        # the no-skill gate number must be present for every fold
+        assert fold["base"]["blanket_full"]["dti"] >= 0.0
+    assert "aggregate_base" in d and d["aggregate_base"]
+    if "aggregate_semisup" in d and d["aggregate_semisup"]:
+        for fold in d["folds"]:
+            assert "pseudo" in fold
+            # pseudo-positives must be a strict subset of the footprint and
+            # at most the declared pool
+            assert fold["pseudo"]["verified_px"] <= fold["pseudo"]["pool_px"]
+
+
+def test_ownership_session3_resolution():
+    p = EVIDENCE / "ownership_resolution_2026-09-26_session3_parallel.json"
+    if not p.exists():
+        pytest.skip("evidence not generated in this checkout")
+    d = json.loads(p.read_text())
+    assert d["account"]["login"] == "buffedlizard55-lab"
+    assert d["account"]["id"] == 309556078
+    for name, r in d["repos"].items():
+        assert r["owner"] == "buffedlizard55-lab", name
+        assert r["fork"] is False, name
+        assert r["has_pages"] is True, name
+        for c in r["contributors"]:
+            assert c["login"] in ("buffedlizard55-lab",
+                                  "arena-ai-coding-agent[bot]",
+                                  "arena-agent", "github-actions[bot]",
+                                  "Arena Agent", "GEMSDOE agent"), (name, c)
+    assert d["_bottom_line"]["github_layer"].startswith("RESOLVED")
+    assert "STILL UNRESOLVED" in d["_bottom_line"]["drivendata_layer"]
+
+
+def test_leaderboard_snapshot_session3_claims_no_owned_score():
+    p = EVIDENCE / "leaderboard_snapshot_2026-09-26_session3.json"
+    if not p.exists():
+        pytest.skip("evidence not generated in this checkout")
+    d = json.loads(p.read_text())
+    assert d["field_high"]["score"] == 0.3049
+    assert d["field_high"]["participant"] == "DARD"
+    ours = {"buffedlizard55-lab", "6GEMSDOE", "GEMSDOE"}
+    for row in d["brief_attributed_scores_today"]:
+        assert row["participant"] not in ours
+    assert "no owned submission" in d["reading"] or "no owned public score" in d["reading"]

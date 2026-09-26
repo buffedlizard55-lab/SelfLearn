@@ -1,4 +1,4 @@
-# GEMSDOE review — 2026-09-26
+# GEMSDOE review — 2026-09-26 (sessions 1–3)
 
 Read `REVIEW.md` first; it is the deliverable, and every claim in it points at one of
 the files below.
@@ -23,7 +23,13 @@ the files below.
 | `evidence/geology_dossier.md` | those measurements rendered with hand-written geological readings and explicit confidences |
 | `tools/feature_priorities_audit.py` | session-2: measures priorities 1-3 of the brief on the official bytes (deterministic; byte-identical on re-run) |
 | `tools/phase2_narrative.py` | session-2: renders Phase-2-style narratives from the measured dossier; refuses unidentified bytes |
-| `tools/shipping_axis_ablation.py` | session-3: dead-channel ablation (full88/drop2/drop4) and the semi-supervised second pass (NEXT_STEPS P1.6 open item) on the canonical shipping-axis yardstick (4x4 blocked folds, 400k/300, seed 0); `full88` must reproduce 0.1698 or the run is void |
+| `tools/shipping_axis_ablation.py` | session-3 (sibling branch): dead-channel ablation (full88/drop2/drop4) and the semi-supervised second pass on the canonical shipping-axis yardstick (4x4 blocked folds, 400k/300, seed 0); `full88` must reproduce 0.1698 or the run is void |
+| `tools/system_holdout_cv.py` | session-3 (parallel branch): whole-fault-system holdout CV + semi-supervised second pass on the never-seen-system axis, scored with the staff masking rule, with budget/selection sweeps and a no-skill blanket gate |
+| `evidence/system_holdout_cv_2026-09-26.json` | session-3 (parallel): the system-holdout + semi-sup measurements (the shipped policy scores 0.0060 vs blanket 0.0148 on never-seen systems; the sibling's catalogue-axis semi-sup run is in `semisup_shipping_axis_2026-09-26.json`) |
+| `evidence/system_holdout_gt_mix_2026-09-26.json` | session-3 (parallel): correction-like vs isolated decomposition of each fold's held-out truth (~99% isolated) |
+| `evidence/ownership_resolution_2026-09-26_session3_parallel.json` | session-3 (parallel): fresh GitHub-layer ownership re-resolution of the GEMSDOE family (sibling resolution: `..._session3.json`) |
+| `evidence/leaderboard_snapshot_2026-09-26_session3.json` | session-3 (parallel): public leaderboard read; field high 0.3049; the five brief-attributed scores are other entrants |
+| `patches/entry_session3_verified_changes.patch` | session-3 (parallel): the CV-buffer fix + entry-docs corrections + geology dossier, applied and fully verified on a scratch clone; **cv.py hunks byte-identical to the sibling's `session3_entry_full_2026-09-26.patch`, which is the recommended one to apply (superset)** |
 | `tests/test_session2_additions.py` | session-2 regressions: AUC sanity, trend-band logic, narrative guards, evidence-file pins, patch dry-run |
 | `tests/test_session3_additions.py` | session-3 regressions: topk_hard / trace-keep byte-identity with the canonical entry harness, drop-config geometry, pseudo-mask region/off-catalogue constraints, evidence pins, patched-CV geometry |
 | `tools/*.py` | the six scripts that produced everything above; each prints what it measured and states what it does not measure |
