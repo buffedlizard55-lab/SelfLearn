@@ -9,8 +9,16 @@ is possible. The DrivenData
 registration/eligibility/weekly allowance and any owner-specific score are also
 unknown. Do not create a second entry/site/account or silently upload a scratch file.
 
-**Session-3 addendum (2026-09-26, later).** Write access to the existing
-`6GEMSDOE` repository is confirmed working from this session (previous entry
+**Session-3 addendum (2026-09-26, later).** *(Status at end of session, same
+day: the SelfLearn review changes merged to main as PR #15; the entry changes
+are committed locally on `arena/01a0dc20-6gemsdoe` @ `1868364` — the same
+changeset as the pre-restart `3411d3f`, rebuilt from this record — and saved
+as the single applicable patch `session3_entry_full_2026-09-26.patch`. The
+push to `6GEMSDOE` is denied (403 contents write) while the same token can
+push SelfLearn: a repo-scoped app-installation permission gap, flagged, not
+worked around.)* Write access to the existing
+`6GEMSDOE` repository was confirmed working earlier in this session (previous
+entry
 PRs #5–#7 were merged by the same bot identity; the `push=false` REST field is
 a bot-token artefact, not a real permission). The following were therefore
 **APPLIED to `6GEMSDOE` this session** on branch `arena/01a0dc20-6gemsdoe`
