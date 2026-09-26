@@ -1,0 +1,449 @@
+{
+ "generated_utc": "2026-09-26T00:52:09+00:00",
+ "generated_by": "gemsdoe_review/tools/masked_proxy_eval.py",
+ "purpose": "score candidate submissions on faults the training labels do not contain, under the official mask rule and without it, and sweep the emission width",
+ "rule_source": "https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516",
+ "rule_quotes": {
+  "mask_excludes_catalogue": "Pixels corresponding to known USGS/INGENIOUS faults are masked / excluded from evaluation, so they do not count towards penalty terms.",
+  "mask_is_pixel_exact": "The mask is indeed pixel-exact - it is identical to the provided set of training fault labels.",
+  "no_buffer_for_known": "A predicted pixel that is near a known fault trace but far from a new-fault ground truth pixel will be fully penalized, i.e., the buffer does not apply to known faults.",
+  "truth_may_be_near_known": "A new-fault ground truth pixel can indeed lie within 300m of a known fault trace. Such pixels would constitute corrections or modifications to existing fault traces."
+ },
+ "metric": {
+  "R_pixels": 3,
+  "R_meters": 300,
+  "alpha": 0.2,
+  "beta": 0.8
+ },
+ "inputs": {
+  "labels": {
+   "path": "/home/user/scratch/r1/data/labels.tif",
+   "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+   "catalogue_px": 60988
+  },
+  "proxy": {
+   "path": "/home/user/scratch/r1/data/evidence/proxy/proxy_catalogue.tif",
+   "sha256": "7563e187171f7210d70295f958b0b2714c1fa504afa35f9a4688fc99b1e1122a",
+   "truth_px": 61664,
+   "footprint_px": 5167373
+  }
+ },
+ "rules": {
+  "raw": "the official metric as written: every predicted pixel counts towards FP_w",
+  "masked_fp": "FP_w excludes predicted pixels that fall on the catalogue mask (the mask is identical to the labels raster); TP_w unchanged",
+  "masked_both": "as masked_fp, and predictions on the mask are also removed before the TP_w credit is taken (a masked pixel cannot earn credit)"
+ },
+ "predictions": {
+  "gems6_hgb88-topk03_33cec71ff0.tif": {
+   "path": "/home/user/out/gems6/downloads/gems6_hgb88-topk03_33cec71ff0.tif",
+   "sha256": "33cec71ff00b3f32d0d59c81c156f3f1488ffef46baa4b6499094e24ea1875ab",
+   "bytes": 1652883,
+   "emitted_px": 155021,
+   "emitted_on_catalogue_px": 23605,
+   "policy_sweep": {
+    "dilate0": {
+     "raw": {
+      "dti": 0.03274049102371815,
+      "TP_w": 2614.0445337172705,
+      "FP_w": 149936.63379928446,
+      "FN_w": 59049.95546628273,
+      "emission_px": 155021
+     },
+     "masked_fp": {
+      "dti": 0.03479809442433089,
+      "TP_w": 2614.0445337172705,
+      "FP_w": 126331.63379928448,
+      "FN_w": 59049.95546628273,
+      "emission_px": 155021
+     },
+     "masked_both": {
+      "dti": 0.03479809442433089,
+      "TP_w": 2614.0445337172705,
+      "FP_w": 126331.63379928448,
+      "FN_w": 59049.95546628273,
+      "emission_px": 131416
+     }
+    },
+    "dilate1": {
+     "raw": {
+      "dti": 0.03824597991058582,
+      "TP_w": 3796.460926753398,
+      "FP_w": 245869.10484633048,
+      "FN_w": 57867.539073246604,
+      "emission_px": 255112
+     },
+     "masked_fp": {
+      "dti": 0.040811578826225,
+      "TP_w": 3796.460926753398,
+      "FP_w": 214668.10484633048,
+      "FN_w": 57867.539073246604,
+      "emission_px": 255112
+     },
+     "masked_both": {
+      "dti": 0.040811578826225,
+      "TP_w": 3796.460926753398,
+      "FP_w": 214668.10484633048,
+      "FN_w": 57867.539073246604,
+      "emission_px": 223911
+     }
+    },
+    "dilate2": {
+     "raw": {
+      "dti": 0.04316670115354444,
+      "TP_w": 5061.368087582426,
+      "FP_w": 334541.01537966076,
+      "FN_w": 56602.63191241757,
+      "emission_px": 348066
+     },
+     "masked_fp": {
+      "dti": 0.04596351664572433,
+      "TP_w": 5061.368087582426,
+      "FP_w": 298868.01537966076,
+      "FN_w": 56602.63191241757,
+      "emission_px": 348066
+     },
+     "masked_both": {
+      "dti": 0.04596351664572433,
+      "TP_w": 5061.368087582426,
+      "FP_w": 298868.01537966076,
+      "FN_w": 56602.63191241757,
+      "emission_px": 312393
+     }
+    },
+    "dilate3": {
+     "raw": {
+      "dti": 0.048340887540495085,
+      "TP_w": 6722.351440800392,
+      "FP_w": 441928.64257790206,
+      "FN_w": 54941.64855919961,
+      "emission_px": 461015
+     },
+     "masked_fp": {
+      "dti": 0.05125485875617304,
+      "TP_w": 6722.351440800392,
+      "FP_w": 402398.64257790206,
+      "FN_w": 54941.64855919961,
+      "emission_px": 461015
+     },
+     "masked_both": {
+      "dti": 0.05125485875617304,
+      "TP_w": 6722.351440800392,
+      "FP_w": 402398.64257790206,
+      "FN_w": 54941.64855919961,
+      "emission_px": 421485
+     }
+    },
+    "dilate4": {
+     "raw": {
+      "dti": 0.05163767023485251,
+      "TP_w": 8178.678128619111,
+      "FP_w": 537094.7496918677,
+      "FN_w": 53485.32187138089,
+      "emission_px": 561248
+     },
+     "masked_fp": {
+      "dti": 0.05453750603251428,
+      "TP_w": 8178.678128619111,
+      "FP_w": 494986.74969186785,
+      "FN_w": 53485.32187138089,
+      "emission_px": 561248
+     },
+     "masked_both": {
+      "dti": 0.05453750603251428,
+      "TP_w": 8178.678128619111,
+      "FP_w": 494986.74969186785,
+      "FN_w": 53485.32187138089,
+      "emission_px": 519140
+     }
+    },
+    "dilate6": {
+     "raw": {
+      "dti": 0.05712887572314992,
+      "TP_w": 11550.238966503814,
+      "FP_w": 752687.0107511411,
+      "FN_w": 50113.76103349619,
+      "emission_px": 788287
+     },
+     "masked_fp": {
+      "dti": 0.05987010255136606,
+      "TP_w": 11550.238966503814,
+      "FP_w": 706402.0107511412,
+      "FN_w": 50113.76103349619,
+      "emission_px": 788287
+     },
+     "masked_both": {
+      "dti": 0.05987010255136606,
+      "TP_w": 11550.238966503814,
+      "FP_w": 706402.0107511412,
+      "FN_w": 50113.76103349619,
+      "emission_px": 742002
+     }
+    }
+   },
+   "as_provided": {
+    "raw": {
+     "dti": 0.03274049102371815,
+     "TP_w": 2614.0445337172705,
+     "FP_w": 149936.63379928446,
+     "FN_w": 59049.95546628273,
+     "emission_px": 155021
+    },
+    "masked_fp": {
+     "dti": 0.03479809442433089,
+     "TP_w": 2614.0445337172705,
+     "FP_w": 126331.63379928448,
+     "FN_w": 59049.95546628273,
+     "emission_px": 155021
+    },
+    "masked_both": {
+     "dti": 0.03479809442433089,
+     "TP_w": 2614.0445337172705,
+     "FP_w": 126331.63379928448,
+     "FN_w": 59049.95546628273,
+     "emission_px": 131416
+    }
+   }
+  },
+  "submission.tif": {
+   "path": "/home/user/scratch/r1/data/evidence/runs/local-sandbox-smoke/submission.tif",
+   "sha256": "b9f2bc4d7e63df5f79f28c941eb3d6077d8b89f2a03ff1bbe3ae96183c7d4fb6",
+   "bytes": 602678,
+   "emitted_px": 207906,
+   "emitted_on_catalogue_px": 2313,
+   "policy_sweep": {
+    "dilate0": {
+     "raw": {
+      "dti": 0.0864064724532918,
+      "TP_w": 7856.480322851169,
+      "FP_w": 200110.88872449973,
+      "FN_w": 53807.51967714883,
+      "emission_px": 207906
+     },
+     "masked_fp": {
+      "dti": 0.0868483331411314,
+      "TP_w": 7856.480322851169,
+      "FP_w": 197797.8887244997,
+      "FN_w": 53807.51967714883,
+      "emission_px": 207906
+     },
+     "masked_both": {
+      "dti": 0.0868483331411314,
+      "TP_w": 7856.480322851169,
+      "FP_w": 197797.8887244997,
+      "FN_w": 53807.51967714883,
+      "emission_px": 205593
+     }
+    },
+    "dilate1": {
+     "raw": {
+      "dti": 0.07184117741650738,
+      "TP_w": 12109.60058816064,
+      "FP_w": 584037.9992155195,
+      "FN_w": 49554.39941183936,
+      "emission_px": 606892
+     },
+     "masked_fp": {
+      "dti": 0.07243497320713328,
+      "TP_w": 12109.60058816064,
+      "FP_w": 577128.9992155195,
+      "FN_w": 49554.39941183936,
+      "emission_px": 606892
+     },
+     "masked_both": {
+      "dti": 0.07243497320713328,
+      "TP_w": 12109.60058816064,
+      "FP_w": 577128.9992155195,
+      "FN_w": 49554.39941183936,
+      "emission_px": 599983
+     }
+    },
+    "dilate2": {
+     "raw": {
+      "dti": 0.06656478068195931,
+      "TP_w": 16118.607533955299,
+      "FP_w": 947971.3281404919,
+      "FN_w": 45545.3924660447,
+      "emission_px": 985173
+     },
+     "masked_fp": {
+      "dti": 0.06719099228807635,
+      "TP_w": 16118.607533955299,
+      "FP_w": 936687.3281404919,
+      "FN_w": 45545.3924660447,
+      "emission_px": 985173
+     },
+     "masked_both": {
+      "dti": 0.06719099228807635,
+      "TP_w": 16118.607533955299,
+      "FP_w": 936687.3281404919,
+      "FN_w": 45545.3924660447,
+      "emission_px": 973889
+     }
+    },
+    "dilate3": {
+     "raw": {
+      "dti": 0.06365798325625831,
+      "TP_w": 21341.120797649677,
+      "FP_w": 1408235.7494563132,
+      "FN_w": 40322.87920235032,
+      "emission_px": 1464413
+     },
+     "masked_fp": {
+      "dti": 0.06430524300111108,
+      "TP_w": 21341.120797649677,
+      "FP_w": 1391363.7494563134,
+      "FN_w": 40322.87920235032,
+      "emission_px": 1464413
+     },
+     "masked_both": {
+      "dti": 0.06430524300111108,
+      "TP_w": 21341.120797649677,
+      "FP_w": 1391363.7494563134,
+      "FN_w": 40322.87920235032,
+      "emission_px": 1447541
+     }
+    },
+    "dilate4": {
+     "raw": {
+      "dti": 0.061978594287040736,
+      "TP_w": 24753.12239932925,
+      "FP_w": 1725499.8656203253,
+      "FN_w": 36910.87760067075,
+      "emission_px": 1794123
+     },
+     "masked_fp": {
+      "dti": 0.0626297602085984,
+      "TP_w": 24753.12239932925,
+      "FP_w": 1704737.8656203256,
+      "FN_w": 36910.87760067075,
+      "emission_px": 1794123
+     },
+     "masked_both": {
+      "dti": 0.0626297602085984,
+      "TP_w": 24753.12239932925,
+      "FP_w": 1704737.8656203256,
+      "FN_w": 36910.87760067075,
+      "emission_px": 1773361
+     }
+    },
+    "dilate6": {
+     "raw": {
+      "dti": 0.05983362607056527,
+      "TP_w": 32054.01635780811,
+      "FP_w": 2399885.4877822017,
+      "FN_w": 29609.98364219189,
+      "emission_px": 2495262
+     },
+     "masked_fp": {
+      "dti": 0.06048563274993209,
+      "TP_w": 32054.01635780811,
+      "FP_w": 2371011.4877822017,
+      "FN_w": 29609.98364219189,
+      "emission_px": 2495262
+     },
+     "masked_both": {
+      "dti": 0.06048563274993209,
+      "TP_w": 32054.01635780811,
+      "FP_w": 2371011.4877822017,
+      "FN_w": 29609.98364219189,
+      "emission_px": 2466388
+     }
+    }
+   },
+   "as_provided": {
+    "raw": {
+     "dti": 0.0864064724532918,
+     "TP_w": 7856.480322851169,
+     "FP_w": 200110.88872449973,
+     "FN_w": 53807.51967714883,
+     "emission_px": 207906
+    },
+    "masked_fp": {
+     "dti": 0.0868483331411314,
+     "TP_w": 7856.480322851169,
+     "FP_w": 197797.8887244997,
+     "FN_w": 53807.51967714883,
+     "emission_px": 207906
+    },
+    "masked_both": {
+     "dti": 0.0868483331411314,
+     "TP_w": 7856.480322851169,
+     "FP_w": 197797.8887244997,
+     "FN_w": 53807.51967714883,
+     "emission_px": 205593
+    }
+   }
+  }
+ },
+ "baselines": {
+  "zeros": {
+   "raw": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 0.0,
+    "FN_w": 61664.0,
+    "emission_px": 0
+   },
+   "masked_fp": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 0.0,
+    "FN_w": 61664.0,
+    "emission_px": 0
+   },
+   "masked_both": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 0.0,
+    "FN_w": 61664.0,
+    "emission_px": 0
+   }
+  },
+  "blanket_ones_in_footprint": {
+   "raw": {
+    "dti": 0.05850133094693036,
+    "TP_w": 61664.0,
+    "FP_w": 4961987.444452232,
+    "FN_w": 0.0,
+    "emission_px": 5167373
+   },
+   "masked_fp": {
+    "dti": 0.05918623407292135,
+    "TP_w": 61664.0,
+    "FP_w": 4900999.444452232,
+    "FN_w": 0.0,
+    "emission_px": 5167373
+   },
+   "masked_both": {
+    "dti": 0.05918623407292135,
+    "TP_w": 61664.0,
+    "FP_w": 4900999.444452232,
+    "FN_w": 0.0,
+    "emission_px": 5106385
+   }
+  },
+  "catalogue_copy": {
+   "raw": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 60988.0,
+    "FN_w": 61664.0,
+    "emission_px": 60988
+   },
+   "masked_fp": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 0.0,
+    "FN_w": 61664.0,
+    "emission_px": 60988
+   },
+   "masked_both": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 0.0,
+    "FN_w": 61664.0,
+    "emission_px": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,259 @@
+{
+  "_what_this_is": "ownership evidence for the GEMSDOE-family repositories, collected with read-only gh api calls on 2026-09-26",
+  "account": {
+    "login": "buffedlizard55-lab",
+    "id": 309556078,
+    "node_id": "U_kgDOEnNzbg",
+    "avatar_url": "https://avatars.githubusercontent.com/u/309556078?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/buffedlizard55-lab",
+    "html_url": "https://github.com/buffedlizard55-lab",
+    "followers_url": "https://api.github.com/users/buffedlizard55-lab/followers",
+    "following_url": "https://api.github.com/users/buffedlizard55-lab/following{/other_user}",
+    "gists_url": "https://api.github.com/users/buffedlizard55-lab/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/buffedlizard55-lab/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/buffedlizard55-lab/subscriptions",
+    "organizations_url": "https://api.github.com/users/buffedlizard55-lab/orgs",
+    "repos_url": "https://api.github.com/users/buffedlizard55-lab/repos",
+    "events_url": "https://api.github.com/users/buffedlizard55-lab/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/buffedlizard55-lab/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "name": null,
+    "company": null,
+    "blog": "",
+    "location": null,
+    "email": null,
+    "hireable": null,
+    "bio": null,
+    "twitter_username": null,
+    "public_repos": 86,
+    "public_gists": 0,
+    "followers": 0,
+    "following": 0,
+    "created_at": "2026-07-27T01:05:09Z",
+    "updated_at": "2026-08-19T17:07:30Z"
+  },
+  "repos": {
+    "GEMSDOE": {
+      "full_name": "buffedlizard55-lab/GEMSDOE",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-12T18:46:56Z",
+      "pushed_at": "2026-09-24T23:07:17Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 400811,
+      "commit_authors": [
+        "GEMSDOE agent <agent@arena.ai>",
+        "arena-agent <agent@arena.ai>",
+        "arena-agent <arena@local>",
+        "arena-ai-coding-agent[bot] <298482267+arena-ai-coding-agent[bot]@users.noreply.github.com>",
+        "buffedlizard55-lab <309556078+buffedlizard55-lab@users.noreply.github.com>",
+        "github-actions[bot] <41898282+arena-ai-coding-agent[bot]@users.noreply.github.com>",
+        "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+      ]
+    },
+    "GEMSDOE2": {
+      "full_name": "buffedlizard55-lab/GEMSDOE2",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-25T00:24:39Z",
+      "pushed_at": "2026-09-25T17:32:05Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 421640,
+      "commit_authors": [
+        "arena-ai-coding-agent[bot] <298482267+arena-ai-coding-agent[bot]@users.noreply.github.com>",
+        "buffedlizard55-lab <309556078+buffedlizard55-lab@users.noreply.github.com>",
+        "buffedlizard55-lab <buffedlizard55@gmail.com>",
+        "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+      ]
+    },
+    "GEMSDOE3": {
+      "full_name": "buffedlizard55-lab/GEMSDOE3",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-25T00:41:42Z",
+      "pushed_at": "2026-09-25T17:36:01Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 24765,
+      "commit_authors": [
+        "Arena Agent <agent@arena.ai>",
+        "arena-ai-coding-agent[bot] <298482267+arena-ai-coding-agent[bot]@users.noreply.github.com>",
+        "buffedlizard55-lab <309556078+buffedlizard55-lab@users.noreply.github.com>",
+        "buffedlizard55-lab <buffedlizard55@gmail.com>"
+      ]
+    },
+    "GEMSDOE4": {
+      "full_name": "buffedlizard55-lab/GEMSDOE4",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-25T18:16:35Z",
+      "pushed_at": "2026-09-25T21:03:01Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 55484,
+      "commit_authors": [
+        "GEMSDOE4 agent <agent@arena.local>",
+        "arena-ai-coding-agent[bot] <298482267+arena-ai-coding-agent[bot]@users.noreply.github.com>",
+        "buffedlizard55-lab <309556078+buffedlizard55-lab@users.noreply.github.com>",
+        "buffedlizard55-lab <buffedlizard55@gmail.com>",
+        "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+      ]
+    },
+    "5GEMSDOE": {
+      "full_name": "buffedlizard55-lab/5GEMSDOE",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-25T18:21:09Z",
+      "pushed_at": "2026-09-25T23:44:33Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 460609,
+      "commit_authors": [
+        "5GEMSDOE agent <agent@5gemsdoe.local>",
+        "arena-agent <arena-agent@users.noreply.github.com>",
+        "arena-ai-coding-agent[bot] <298482267+arena-ai-coding-agent[bot]@users.noreply.github.com>",
+        "buffedlizard55-lab <309556078+buffedlizard55-lab@users.noreply.github.com>",
+        "buffedlizard55-lab <buffedlizard55@gmail.com>",
+        "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+      ]
+    },
+    "6GEMSDOE": {
+      "full_name": "buffedlizard55-lab/6GEMSDOE",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-25T18:21:36Z",
+      "pushed_at": "2026-09-25T22:07:26Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 3194,
+      "commit_authors": [
+        "Arena Agent <agent@arena.ai>",
+        "arena-ai-coding-agent[bot] <298482267+arena-ai-coding-agent[bot]@users.noreply.github.com>",
+        "buffedlizard55-lab <309556078+buffedlizard55-lab@users.noreply.github.com>",
+        "buffedlizard55-lab <buffedlizard55@gmail.com>"
+      ]
+    },
+    "7GEMSDOE": {
+      "full_name": "buffedlizard55-lab/7GEMSDOE",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-25T18:22:01Z",
+      "pushed_at": "2026-09-25T18:22:03Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 0,
+      "commit_authors": [
+        "buffedlizard55-lab <buffedlizard55@gmail.com>"
+      ]
+    },
+    "8GEMSDOE": {
+      "full_name": "buffedlizard55-lab/8GEMSDOE",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-25T18:22:21Z",
+      "pushed_at": "2026-09-25T18:22:23Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 0,
+      "commit_authors": [
+        "buffedlizard55-lab <buffedlizard55@gmail.com>"
+      ]
+    },
+    "11GEMSDOE": {
+      "full_name": "buffedlizard55-lab/11GEMSDOE",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-25T18:33:56Z",
+      "pushed_at": "2026-09-25T18:33:58Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 0,
+      "commit_authors": [
+        "buffedlizard55-lab <buffedlizard55@gmail.com>"
+      ]
+    },
+    "SelfLearn": {
+      "full_name": "buffedlizard55-lab/SelfLearn",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-21T22:41:15Z",
+      "pushed_at": "2026-09-25T21:41:32Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 5093,
+      "commit_authors": [
+        "Arena agent <agent@arena.ai>",
+        "arena-agent <arena-agent@users.noreply.github.com>",
+        "arena-ai-coding-agent[bot] <298482267+arena-ai-coding-agent[bot]@users.noreply.github.com>",
+        "buffedlizard55-lab <309556078+buffedlizard55-lab@users.noreply.github.com>",
+        "buffedlizard55-lab <buffedlizard55@gmail.com>",
+        "selflearn-bot <selflearn-bot@users.noreply.github.com>"
+      ]
+    },
+    "MasterSelfLearn": {
+      "full_name": "buffedlizard55-lab/MasterSelfLearn",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-21T22:41:35Z",
+      "pushed_at": "2026-09-25T10:11:02Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 12484,
+      "commit_authors": [
+        "arena-agent <arena-agent@users.noreply.github.com>",
+        "arena-ai-coding-agent[bot] <298482267+arena-ai-coding-agent[bot]@users.noreply.github.com>",
+        "buffedlizard55-lab <309556078+buffedlizard55-lab@users.noreply.github.com>",
+        "buffedlizard55-lab <buffedlizard55@gmail.com>"
+      ]
+    },
+    "MasterSite": {
+      "full_name": "buffedlizard55-lab/MasterSite",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-12T00:16:13Z",
+      "pushed_at": "2026-09-25T04:24:44Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 1375,
+      "commit_authors": [
+        "Arena Agent <agent@arena.ai>",
+        "arena-agent <agent@arena.ai>",
+        "arena-agent <arena-agent@users.noreply.github.com>",
+        "arena-ai-coding-agent[bot] <298482267+arena-ai-coding-agent[bot]@users.noreply.github.com>",
+        "buffedlizard55-lab <309556078+buffedlizard55-lab@users.noreply.github.com>",
+        "buffedlizard55-lab <buffedlizard55@gmail.com>"
+      ]
+    },
+    "GEMSDOE9": {
+      "full_name": "buffedlizard55-lab/GEMSDOE9",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-25T18:31:01Z",
+      "pushed_at": "2026-09-25T18:31:02Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 0,
+      "commit_authors": [
+        "buffedlizard55-lab <buffedlizard55@gmail.com>"
+      ]
+    },
+    "GEMSDOE10": {
+      "full_name": "buffedlizard55-lab/GEMSDOE10",
+      "owner": "buffedlizard55-lab",
+      "fork": false,
+      "created_at": "2026-09-25T18:31:23Z",
+      "pushed_at": "2026-09-25T18:31:25Z",
+      "default_branch": "main",
+      "has_pages": true,
+      "size_kb": 0,
+      "commit_authors": [
+        "buffedlizard55-lab <buffedlizard55@gmail.com>"
+      ]
+    }
+  }
+}
