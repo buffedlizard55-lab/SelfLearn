@@ -1,0 +1,449 @@
+{
+  "kind": "local mapped-fault spatial transfer diagnostic; NOT a leaderboard score",
+  "promotion": "NOT APPROVED: reduced training budget, no independent confirmation, account gate unresolved",
+  "mean_convention": "unweighted fold mean (controls average seeds within each fold)",
+  "rows": [
+    {
+      "model": "raw19",
+      "policy": "budget03_spacing1",
+      "mean_dti": 0.05970813100749674,
+      "per_fold_dti": [
+        0.0567163586674266,
+        0.05993757395926205,
+        0.06189205291416745,
+        0.060286538489130834
+      ],
+      "null_mean_dti": 0.17218469156872157,
+      "per_fold_delta_vs_best_null_seed": [
+        -0.11476973967012585,
+        -0.09460743379566341,
+        -0.13962443637170174,
+        -0.11807818966970408
+      ],
+      "beats_all_null_seeds_every_fold": false,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "raw19",
+      "policy": "budget03_spacing4",
+      "mean_dti": 0.22582854124923202,
+      "per_fold_dti": [
+        0.21470786260527489,
+        0.22156856405118777,
+        0.25431885785654806,
+        0.2127188804839174
+      ],
+      "null_mean_dti": 0.20370041210268278,
+      "per_fold_delta_vs_best_null_seed": [
+        0.013254594681151671,
+        0.036810598400041916,
+        0.027275322548509562,
+        0.007613855167595357
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "raw19",
+      "policy": "budget03_spacing5",
+      "mean_dti": 0.2053830407643206,
+      "per_fold_dti": [
+        0.202753886880778,
+        0.18866689825470154,
+        0.22607710478609472,
+        0.20403427313570816
+      ],
+      "null_mean_dti": 0.19043023914192525,
+      "per_fold_delta_vs_best_null_seed": [
+        0.013414177382122444,
+        0.01420139188281977,
+        0.011471742353952097,
+        0.014351619782808106
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        66318,
+        37275,
+        15490,
+        21448
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          61930,
+          61976,
+          61933
+        ],
+        [
+          34712,
+          34776,
+          34675
+        ],
+        [
+          14404,
+          14445,
+          14383
+        ],
+        [
+          19972,
+          20058,
+          19963
+        ]
+      ],
+      "identical_actual_budget": false
+    },
+    {
+      "model": "full88",
+      "policy": "budget03_spacing1",
+      "mean_dti": 0.09347094902799226,
+      "per_fold_dti": [
+        0.08777388216129524,
+        0.08155005729106982,
+        0.07311082185283135,
+        0.13144903480677264
+      ],
+      "null_mean_dti": 0.17218469156872157,
+      "per_fold_delta_vs_best_null_seed": [
+        -0.08371221617625722,
+        -0.07299495046385565,
+        -0.12840566743303786,
+        -0.04691569335206228
+      ],
+      "beats_all_null_seeds_every_fold": false,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "full88",
+      "policy": "budget03_spacing4",
+      "mean_dti": 0.24355769282689319,
+      "per_fold_dti": [
+        0.23445850258204712,
+        0.24081495242191034,
+        0.26803715011513607,
+        0.23092016618847921
+      ],
+      "null_mean_dti": 0.20370041210268278,
+      "per_fold_delta_vs_best_null_seed": [
+        0.033005234657923904,
+        0.05605698677076448,
+        0.04099361480709757,
+        0.025815140872157166
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "full88",
+      "policy": "budget03_spacing5",
+      "mean_dti": 0.21053468075398252,
+      "per_fold_dti": [
+        0.2068724474193118,
+        0.19674309318690433,
+        0.22471991360568358,
+        0.21380326880403042
+      ],
+      "null_mean_dti": 0.19043023914192525,
+      "per_fold_delta_vs_best_null_seed": [
+        0.01753273792065624,
+        0.022277586815022565,
+        0.010114551173540959,
+        0.024120615451130367
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        65782,
+        37210,
+        15245,
+        21537
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          61930,
+          61976,
+          61933
+        ],
+        [
+          34712,
+          34776,
+          34675
+        ],
+        [
+          14404,
+          14445,
+          14383
+        ],
+        [
+          19972,
+          20058,
+          19963
+        ]
+      ],
+      "identical_actual_budget": false
+    },
+    {
+      "model": "drop2",
+      "policy": "budget03_spacing1",
+      "mean_dti": 0.09465417137971015,
+      "per_fold_dti": [
+        0.0878208033781353,
+        0.0848393432125554,
+        0.07433348653287282,
+        0.13162305239527708
+      ],
+      "null_mean_dti": 0.17218469156872157,
+      "per_fold_delta_vs_best_null_seed": [
+        -0.08366529495941716,
+        -0.06970566454237007,
+        -0.12718300275299638,
+        -0.04674167576355784
+      ],
+      "beats_all_null_seeds_every_fold": false,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "drop2",
+      "policy": "budget03_spacing4",
+      "mean_dti": 0.24387361758478046,
+      "per_fold_dti": [
+        0.2349229354222016,
+        0.24206974437739207,
+        0.26411639715774166,
+        0.2343853933817865
+      ],
+      "null_mean_dti": 0.20370041210268278,
+      "per_fold_delta_vs_best_null_seed": [
+        0.03346966749807839,
+        0.05731177872624621,
+        0.037072861849703154,
+        0.02928036806546444
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "drop2",
+      "policy": "budget03_spacing5",
+      "mean_dti": 0.21198833300137399,
+      "per_fold_dti": [
+        0.2052502448970712,
+        0.1978618350081871,
+        0.23042602892114933,
+        0.21441522317908826
+      ],
+      "null_mean_dti": 0.19043023914192525,
+      "per_fold_delta_vs_best_null_seed": [
+        0.015910535398415637,
+        0.023396328636305336,
+        0.015820666489006707,
+        0.02473256982618821
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        65616,
+        37227,
+        15253,
+        21504
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          61930,
+          61976,
+          61933
+        ],
+        [
+          34712,
+          34776,
+          34675
+        ],
+        [
+          14404,
+          14445,
+          14383
+        ],
+        [
+          19972,
+          20058,
+          19963
+        ]
+      ],
+      "identical_actual_budget": false
+    }
+  ],
+  "cautions": [
+    "Only spacing4 and dense spacing1 fill the same 3% budget; spacing5 underfills and is not an equal-actual-budget comparison.",
+    "Maximum over three null seeds is a descriptive hurdle, not a statistical confidence interval.",
+    "One geographic design and seed; catalogue truth differs from hidden new faults.",
+    "Do not choose drop2 for a tiny mean gain; its fold changes are mixed."
+  ],
+  "sources": {
+    "gemsdoe_review/evidence/spatial_system_ablation_session4.json": "38c1ef0ca6731d55520f9d66acae558f01db0b9b49338f04d959da014a1c03b5",
+    "gemsdoe_review/evidence/spatial_controls_session4.json": "679fcfddeeaee205f0cbc8ede7447cd8686c76b5b561c6f503fd222507a8a952"
+  }
+}

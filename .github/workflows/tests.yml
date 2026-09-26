@@ -99,10 +99,11 @@ jobs:
           if-no-files-found: warn
           retention-days: 90
       - name: Commit the register when an outcome changed
-        # Guarded twice: only on a push (a pull-request checkout cannot push), and
-        # only when a URL's outcome actually moved, so timings and timestamps do
-        # not turn every run into a commit. [skip ci] keeps it from re-triggering.
-        if: github.event_name == 'push'
+        # Write back only on main. A review-branch push must not mutate the
+        # PR head with a [skip ci] commit after checks started: that leaves
+        # the new head without checks. All branches still upload the report
+        # artifact above. Outcomes, not timings, decide whether main changes.
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           set -eu
           git config user.name "selflearn-bot"
@@ -125,3 +126,15 @@ jobs:
           fi
           git commit -m "Link register: outcomes re-checked from a runner with unrestricted egress [skip ci]"
           git push
+
+  gemsdoe-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - name: Install isolated scientific review dependencies
+        run: python -m pip install numpy scipy rasterio pytest
+      - name: Spatial validation and evidence regressions (no data downloads)
+        run: python -m pytest gemsdoe_review/tests/test_session4_spatial_cv.py -q
