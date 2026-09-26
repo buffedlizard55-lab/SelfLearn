@@ -1,0 +1,41 @@
+{
+  "_what_this_is": "Session-3 re-verification on a fresh read-only clone of buffedlizard55-lab/6GEMSDOE (commit e2fe3f4), 2026-09-26. Items 2 and 4 of the session-3 brief: CV geometry and the submission format gate.",
+  "clone": {
+    "repo": "buffedlizard55-lab/6GEMSDOE",
+    "head": "e2fe3f4",
+    "official_pins": "3/3 sha256 verified from the committed bridge (scripts/fetch_and_verify_data.py)",
+    "entry_pytest": "46/46 PASS on the unmodified clone (2026-09-26 ~05:16 UTC); 47/47 PASS on the patched copy (CV Euclidean fix + one new diagonal-corner test)"
+  },
+  "format_gate_shipped_file": {
+    "file": "downloads/gems6_hgb88-topk03_33cec71ff0.tif",
+    "sha256": "33cec71ff00b3f32d0d59c81c156f3f1488ffef46baa4b6499094e24ea1875ab",
+    "checks": "13/13 PASS (all hard)",
+    "stats": {
+      "total_pixels": 12279160,
+      "finite_pixels": 5167373,
+      "nan_pixels": 7111787,
+      "inf_pixels": 0,
+      "finite_min": 0.0,
+      "finite_max": 1.0,
+      "positive_pixels": 155021,
+      "nan_inside_footprint": 0,
+      "finite_outside_footprint": 0
+    },
+    "verdict": "HARD GATE PASSED, exit 0"
+  },
+  "poison_test": {
+    "what": "shipped file with exactly one NaN injected at a valid in-footprint pixel (1500,1500)",
+    "result": "values-in-0-1 still PASS (finite range [0.0,1.0]) but NAN-INSIDE-FOOTPRINT FAILS -> 'HARD GATE FAILED', exit 1",
+    "verdict": "the hard gate catches exactly the condition that makes the platform answer 'Predicted values must be in range [0, 1]'"
+  },
+  "cv_geometry": {
+    "cv_sha256_unmodified": "b0c451a919238c9d0e401e2b7678d1d75b9a05732b10b56127907a1e72172bc4",
+    "oracle": "scipy distance_transform_edt on the complement of each held-out fold; count of train-mask pixels at Euclidean distance <= 3.0 px (300 m)",
+    "unmodified_source": {},
+    "finding": "4x4/4-fold and 6x6/6-fold (the historical vertical-stripe layouts, incl. the shipped 0.1698 yardstick): 0 misses -> historical numbers not contaminated. 5x5/3-fold: 32 and 6x6/4-fold: 100 -> the Manhattan-vs-Euclidean gap is real for general layouts (patch applied to the entry this session; see REVIEW.md session 3).",
+    "patched_source_check": "47/47 entry tests PASS; patched training masks bit-identical to unpatched on 4x4/4 and 6x6/6 (so all historical CV numbers stand); patched oracle 0 misses on all four layouts."
+  },
+  "placement": {
+    "finding": "src/gems/placement.py unchanged: thin_keep(mask, spacing=4) default (the 4-5 px hypothesis, scored not asserted), breakeven_posterior derivation, topk_hard@0.03 shipped policy; module docstring keeps the uniform-rescaling-only identity and the FP counterexample."
+  }
+}
