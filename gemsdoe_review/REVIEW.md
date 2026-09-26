@@ -661,6 +661,29 @@ and locally verified (47/47 entry tests, 36/1 review suite, doc checker
 content checks all green); the push, PR and merge execute as soon as the
 token is valid again — first action in the next step if auth is back.
 
+**Outcome addendum (same day, later).** The token recovered for READ endpoints
+(rate_limit 200) but the sandbox was restarted in the meantime, wiping /tmp
+(the entry clone) and the venv. Everything was reconstructed from this repo:
+fresh depth-1 clone of 6GEMSDOE @ e2fe3f4, CV patch + test rewrite + all doc
+fixes re-applied exactly as recorded, re-verified (47/47, gate 13/13 + poison
+test, oracle 0 misses, bit-identical historical masks, docs 50/50), committed
+as **`1868364`** on `arena/01a0dc20-6gemsdoe` (the pre-restart `3411d3f` is
+lost from the object store; `1868364` is the same changeset rebuilt from the
+record). The complete changeset is also saved here as a single applicable
+patch: `patches/session3_entry_full_2026-09-26.patch` (16 file diffs).
+**SelfLearn:** pushed, **PR #15 opened and MERGED to main** (`86c79cf`), CI
+green (cycle/links/unit 3.10–3.12). **6GEMSDOE push: BLOCKED** — HTTP 403
+"Permission denied to arena-ai-coding-agent[bot]" on git push, POST /branches
+(404) and POST /pulls (403 "Resource not accessible by integration"),
+consistent across ~15 minutes of retries, while the **same token CAN push
+SelfLearn** (PR #15's branch pushed twice). This is a repo-scoped GitHub App
+installation permission gap on `6GEMSDOE` — flagged, not worked around (no
+fork, no second repo/site). The `selflearn-bot` automation also pushed its own
+docs commit (`4c19f55`) onto the session branch mid-flight; it was integrated
+once and then removed from the PR stack because it conflicts with main's
+`dfc40ad` on the same docs files (recorded as an irregularity of the
+automation's branching, not fixed here).
+
 **Still unverified:** the DrivenData registration/eligibility/allowance (account
 holder only); whether any upload has ever been made by the account; the hidden
 score of the shipped file (unknowable without spending a slot); the semisup and
@@ -668,19 +691,28 @@ ablation results against the *private* population (catalogue proxy only); the
 5GEMSDOE/GEMSDOE4 live conflicts (account-holder decision on archiving/rewriting
 those repos).
 
-**Blocking:** account-holder actions — identify the one registration, read its
-submission history, confirm §1.3 eligibility, decide on archiving the ten
-duplicate repos (the A.12 exposure), and approve the §3.2 AI-disclosure narrative.
-Until then the entry is format-complete, doc-complete (50/50) and
+**Blocking:** (a) GitHub write access to `6GEMSDOE` for the Arena bot —
+contents write denied (403 push / 404 branch / 403 PR) while the same token
+can push SelfLearn; the entry's PR/merge cannot execute until the app
+installation's permission on that repo is restored (account holder / Arena
+reconnect). (b) Account-holder actions — identify the one registration, read
+its submission history, confirm §1.3 eligibility, decide on archiving the ten
+duplicate repos (the A.12 exposure), and approve the §3.2 AI-disclosure
+narrative. Until then the entry is format-complete, doc-complete (50/50) and
 geology-documented, but its upload decision is theirs to make.
 
 **First next session:**
-1. **If the GitHub token is valid again:** push `arena/01a0dc20-6gemsdoe`
-   (`3411d3f`) to `6GEMSDOE`, open the PR to main, re-run the entry's 47 tests
-   + the doc checker + the Euclidean oracle from the pushed branch, and merge;
-   then push `arena/01a0dc20-selflearn` (`08dbece`) to `SelfLearn`, PR to main,
-   merge. (If the token is still 401, the account holder must reconnect GitHub
-   in Arena — same incident as session 2, which recovered.)
+1. **The SelfLearn side is DONE** (PR #15 merged to main, `86c79cf`). The only
+   remaining GitHub action is the entry: **push `arena/01a0dc20-6gemsdoe`
+   (`1868364`, locally in the workspace clone, or `patch -p1`
+   `patches/session3_entry_full_2026-09-26.patch` onto a fresh checkout of
+   main @ `e2fe3f4` if the workspace clone is gone)**, open the PR to 6GEMSDOE
+   main, re-run the entry's 47 tests + `check_entry_docs.py --online` + the
+   Euclidean oracle from the pushed branch, and merge. The push failed with
+   403 while the same token could push SelfLearn — the account holder must
+   restore `contents:write` (GitHub App installation) on `6GEMSDOE` or
+   reconnect GitHub in Arena with that scope; it is a repo-scoped permission
+   gap, not the transient 401 of earlier sessions.
 2. **Account-holder actions (unchanged from session 2):** identify the ONE
    DrivenData registration, read its submission history (this week's used
    slots), confirm §1.3 eligibility, decide on archiving the ten duplicate GEMS
