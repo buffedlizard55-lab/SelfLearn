@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
-"""Whole-fault-system holdout CV + semi-supervised second pass (session 3).
+"""RETIRED diagnostic — NOT spatially isolated CV (session-4 audit).
+
+Do not run for model selection. Use spatial_system_cv.py instead. Historical
+functions remain here solely to reproduce/explain archived session-3 evidence.
+The old split sampled training negatives in the scoring geography, pseudo-trained
+there too (sometimes with contradictory duplicate negatives), and omitted fault
+pixels in system clustering. The reported 317 systems are 40 with exact linkage.
+The quantitative 0.0060-vs-0.0148 conclusion is NOT a validated spatial-CV result.
+
+Original description (historical, superseded):
+Whole-fault-system holdout CV + semi-supervised second pass (session 3).
 
 WHAT THIS MEASURES
 ------------------
@@ -412,4 +422,6 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    print("RETIRED: this diagnostic is not spatially isolated CV. "
+          "Use spatial_system_cv.py; see SESSION4.md.", file=sys.stderr)
+    raise SystemExit(2)

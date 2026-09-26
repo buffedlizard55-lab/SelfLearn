@@ -1,3 +1,11 @@
+> **Session-4 status:** read [../SESSION4.md](../SESSION4.md) first. The recommended
+> session-3 superset patch was applied only to an ignored source archive and
+> rechecked (47 entry tests; docs 50/50 online). Entry main remains `e2fe3f4`;
+> no deployment happened. The new exact/block-purged CV and spacing-control
+> findings must be incorporated before any new generator policy is promoted.
+> Do not use the retired system-holdout numbers as a reason to upload or abandon
+> the model. This session only changes the existing SelfLearn review branch.
+
 # Proposed changes for the **one** entry: `buffedlizard55-lab/6GEMSDOE`
 
 Status 2026-09-26: **proposal, not applied to the canonical repository or submitted**.

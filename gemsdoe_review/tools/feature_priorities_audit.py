@@ -144,6 +144,18 @@ def tilt_stats(a: np.ndarray, finite: np.ndarray) -> dict:
     }
 
 
+def entry_git_head(entry: Path) -> str | None:
+    """Do not attribute an extracted source archive to its enclosing Git repo."""
+    entry = entry.resolve()
+    top = subprocess.run(["git", "rev-parse", "--show-toplevel"], cwd=entry,
+                         capture_output=True, text=True)
+    if top.returncode or Path(top.stdout.strip()).resolve() != entry:
+        return None
+    head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=entry,
+                          capture_output=True, text=True)
+    return head.stdout.strip() if head.returncode == 0 else None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--entry", type=Path, required=True)
@@ -158,8 +170,7 @@ def main() -> int:
     import rasterio  # entry dependency, audited environment
     from gems import spec
 
-    head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=entry,
-                          capture_output=True, text=True).stdout.strip()
+    head = entry_git_head(entry)
     raster_path = entry / "data" / "training_features.tif"
     labels_path = entry / "data" / "labels.tif"
     sample_path = entry / "data" / "sample_submission.tif"

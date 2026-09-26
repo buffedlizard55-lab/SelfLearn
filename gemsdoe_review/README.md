@@ -1,7 +1,17 @@
-# GEMSDOE review — 2026-09-26 (sessions 1–3)
+# GEMSDOE review — 2026-09-26 (sessions 1–4)
 
-Read `REVIEW.md` first; it is the deliverable, and every claim in it points at one of
-the files below.
+Read **[SESSION4.md](SESSION4.md) first** for the current handoff and corrected
+spatial experiment. `REVIEW.md` preserves the earlier sessions, including a now-retired
+whole-system diagnostic; its 0.0060/0.0148 conclusion is not clean spatial CV.
+
+Session 4 adds exact system clustering, block/system-purged CV, a raw19/full88/drop2
+comparison, genuine 4–5 px placement controls, label-blind matched-budget baselines,
+regression CI and refreshed format/ownership evidence. Full88 + spacing4 scores
+0.2436 locally vs matched random 0.2037; **neither is a leaderboard score**. No
+canonical artifact/site was changed. See `evidence/*session4.json` and the
+`spatial_system_cv.py`, `spatial_controls.py`, `summarize_spatial_cv.py` tools.
+
+Historical evidence index (consult SESSION4.md validity warnings first):
 
 | path | what it is |
 | --- | --- |

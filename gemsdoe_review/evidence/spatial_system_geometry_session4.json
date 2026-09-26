@@ -1,0 +1,157 @@
+{
+  "kind": "spatial-system-purged mapped-fault proxy; NOT a leaderboard score",
+  "design": {
+    "entry": "/home/user/SelfLearn/.cache/session4/6GEMSDOE-main",
+    "out": "gemsdoe_review/evidence/spatial_system_geometry_session4.json",
+    "audit_only": true,
+    "blocks": 2,
+    "folds": 4,
+    "buffer_px": 3,
+    "system_threshold_m": 5000,
+    "max_neg": 50000,
+    "iters": 100,
+    "seed": 7,
+    "configs": [
+      "raw19",
+      "full88",
+      "drop2"
+    ]
+  },
+  "official_sha256": {
+    "labels.tif": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+    "sample_submission.tif": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+    "training_features.tif": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5"
+  },
+  "tool_sha256": "e930214d5675439d0b3ddba04de0f821c13d3a95258881ba14c2807186ddc18e",
+  "n_traces": 3199,
+  "n_exact_systems": 40,
+  "folds": [
+    {
+      "fold": 0,
+      "geometry": {
+        "train_pixels": 2590979,
+        "score_pixels": 2449030,
+        "train_positive_pixels": 15509,
+        "score_positive_pixels": 29319,
+        "train_test_overlap": 0,
+        "train_pixels_within_buffer_of_score": 0,
+        "train_held_system_overlap": 0,
+        "shared_positive_systems": [],
+        "held_systems": [
+          1,
+          4,
+          6,
+          7,
+          8,
+          10,
+          13,
+          17,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          33
+        ],
+        "train_mask_sha256": "92b12b4d950c1ebec4c0ac5bd2fb421022c88b951dd1fbe7cb65a54eab44560e",
+        "score_mask_sha256": "80001a62799c5154ea481783ca5374aaa8608778df0130abf6d126f046feeee1"
+      },
+      "models": {}
+    },
+    {
+      "fold": 1,
+      "geometry": {
+        "train_pixels": 3684775,
+        "score_pixels": 1366431,
+        "train_positive_pixels": 33002,
+        "score_positive_pixels": 12596,
+        "train_test_overlap": 0,
+        "train_pixels_within_buffer_of_score": 0,
+        "train_held_system_overlap": 0,
+        "shared_positive_systems": [],
+        "held_systems": [
+          2,
+          3,
+          5,
+          9,
+          11,
+          12,
+          14,
+          15,
+          16,
+          18,
+          19,
+          20,
+          33
+        ],
+        "train_mask_sha256": "c1721755b02f98e4f0d294806a1f16ae7da49a60ceef81102be254c89beb07f9",
+        "score_mask_sha256": "e42f5f7b864fb1d2d215c7e8a08ae595374bbd0b3d1eee8b7116ac881630ace3"
+      },
+      "models": {}
+    },
+    {
+      "fold": 2,
+      "geometry": {
+        "train_pixels": 4340307,
+        "score_pixels": 564135,
+        "train_positive_pixels": 16551,
+        "score_positive_pixels": 9473,
+        "train_test_overlap": 0,
+        "train_pixels_within_buffer_of_score": 0,
+        "train_held_system_overlap": 0,
+        "shared_positive_systems": [],
+        "held_systems": [
+          30,
+          32,
+          33,
+          35,
+          36,
+          37
+        ],
+        "train_mask_sha256": "3040b6f34d04eba255b641f3ec16bb9f30e92889000ad0f8ec4622984e25303a",
+        "score_mask_sha256": "fb7a0bf1e2d3aa3824f9274b478e641f91a777560ef612e2cfa03beae27e7717"
+      },
+      "models": {}
+    },
+    {
+      "fold": 3,
+      "geometry": {
+        "train_pixels": 4232240,
+        "score_pixels": 787777,
+        "train_positive_pixels": 31613,
+        "score_positive_pixels": 9600,
+        "train_test_overlap": 0,
+        "train_pixels_within_buffer_of_score": 0,
+        "train_held_system_overlap": 0,
+        "shared_positive_systems": [],
+        "held_systems": [
+          31,
+          33,
+          34,
+          37,
+          38,
+          39,
+          40
+        ],
+        "train_mask_sha256": "df4129d30086277a04fc0bc88e6d60233be2fc6072cbd67dacef9a7e7fbf4d18",
+        "score_mask_sha256": "ca7f072ce70974511dae8b4bb0492511514ed664378b166e080ead539b31b95e"
+      },
+      "models": {}
+    }
+  ],
+  "limitations": [
+    "Quadrant boundary clipping excludes cross-boundary metric credit.",
+    "Test-touching systems can recur across folds; folds are not independent system replicates.",
+    "No pseudo-labels. Random sampling is within spatially isolated TRAIN negatives only.",
+    "Known catalogue faults are the proxy truth, not new expert faults.",
+    "Feature transforms use unlabeled whole-region context; CNN input windows need additional exclusion.",
+    "Reduced-budget diagnostic, not shipping-scale selection or evidence of hidden-score improvement."
+  ],
+  "complete": true,
+  "elapsed_seconds": 7.4
+}

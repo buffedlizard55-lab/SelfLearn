@@ -1,3 +1,10 @@
+> **Latest handoff: [SESSION4.md](SESSION4.md).** The session-3 system-holdout
+> diagnostic below is now retired: its negatives/pseudo-labels shared scoring
+> geography, and pixel-subsampled clustering produced 317 systems instead of 40.
+> Historical numbers remain for audit, **not valid spatial-CV conclusions**.
+> Session 4 repairs the evaluation and measures a positive feature/spacing signal
+> against matched-budget no-signal controls. No owned public score is verified.
+
 # GEMSDOE score-quality and entry review — 2026-09-26
 
 **Entry under review:** [`buffedlizard55-lab/6GEMSDOE`](https://github.com/buffedlizard55-lab/6GEMSDOE),

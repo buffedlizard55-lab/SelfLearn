@@ -869,5 +869,6 @@
       "n_folds": 4
     }
   },
-  "generated_utc": "2026-09-26T17:14:44Z"
+  "generated_utc": "2026-09-26T17:14:44Z",
+  "_session4_validity_warning": "RETIRED for model selection: training negatives and pseudo-labels share scoring geography; every-fourth-pixel clustering reports 317 systems versus 40 exact systems. Historical scores/GT decomposition preserved, not clean spatial CV. See SESSION4.md and spatial_system_geometry_session4.json."
 }
