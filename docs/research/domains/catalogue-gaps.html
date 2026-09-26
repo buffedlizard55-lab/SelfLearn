@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalogue-gap reasoning — GEMS Prize research</title>
+<meta name="description" content="Read the INGENIOUS compilation and the USGS database as methodologies, not just as rasters: how were existing faults actually mapped, and where does that process structurally fail to look?">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../../static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128506;</text></svg>">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  } catch (e) { }
+})();
+</script>
+<script defer src="../../static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">GEMS Prize research <small>knowledge base · DrivenData competition 306 · one entity, one site</small></span>
+      <span class="muted small">verified 2026-09-26 · every claim links its source</span>
+    </div>
+    <nav class="site" aria-label="Research sections"><a href="../index.html">Research home</a><a href="../domains/potential-field.html">Potential-field</a><a href="../domains/geomorphology.html">Geomorphology</a><a href="../domains/seismotectonics.html">Seismotectonics</a><a href="../domains/catalogue-gaps.html" aria-current="page">Catalogue gaps</a><a href="../domains/prior-art.html">Prior art</a><a href="../domains/governance.html">Governance</a><a href="../hypotheses.html">Hypotheses</a><a href="../data-placement.html">Data</a><a href="../ai-usage-log.html">AI-usage log</a><a href="../changelog.html">Changelog</a><span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
+    <nav class="site" aria-label="Site"><a href="../../index.html">&larr; SelfLearn site overview</a><a href="../../links.html">Official links register</a><a href="../../review.html">For review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+<h1>Catalogue-gap reasoning</h1>
+<p class="lede">Read the INGENIOUS compilation and the USGS database as methodologies, not just as rasters: how were existing faults actually mapped, and where does that process structurally fail to look?</p>
+<div class="banner warn"><strong>highest-leverage domain - this is the scored target</strong></div>
+
+<div class="card" id="cg-1">
+  <h3>The USGS database is a compilation of prior studies, not a systematic survey <span class="muted small mono">#cg-1</span></h3>
+  <p><span class="badge ok">official source</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://www.usgs.gov/natural-hazards/earthquake-hazards/faults" target="_blank" rel="noopener noreferrer">USGS Quaternary Fault and Fold Database page</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>'These data are compiled from thousands of journal articles, maps, theses, and other documents, as referenced herein.' The database was begun in earnest in 1993 under NEHRP 'with significant support from many State surveys'; the cooperators list is state geological surveys (Nevada Bureau of Mines and Geology among them).</li><li>Since 2017-01-12 USGS maintains 'a limited number of metadata fields'; the Database Search function was retired 2026-02-26 with legacy reports accessible through the interactive fault map.</li></ul>
+  <p><strong>Why it matters here:</strong> Coverage therefore tracks where fieldwork, theses and state mapping happened - population corridors, parklands, mineral districts - not where faults are. This is the single most important structural fact about the catalogue: absence of a trace is evidence about mapping history, not about the fault.</p>
+  <p><strong>Confidence:</strong> High - verbatim from the database's own page.</p>
+</div>
+<div class="card" id="cg-2">
+  <h3>INGENIOUS faults are an update-and-merge of the USGS schema, with version lag <span class="muted small mono">#cg-2</span></h3>
+  <p><span class="badge ok">official source</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://doi.org/10.15121/1881483" target="_blank" rel="noopener noreferrer">INGENIOUS compilation, GDR submission 1391 (DOI 10.15121/1881483)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>'Quaternary Faults v1.zip - Shapefile (NAD83 Geographic) containing updated quaternary fault traces, ages, and slip rates for the INGENIOUS study area. Attributes conform to USGS Qfault Database schema.'</li><li>'Quaternary Faults v2.zip - This archive contains an updated version of the INGENIOUS quaternary fault compilation shapefile... It supersedes Quaternary Faults v1' (file dated 2023-06-27).</li><li>The competition labels come 'from the USGS quaternary fault maps and from INGENIOUS' (problem description), and rules 3.3 states training labels were 'obtained from the INGENIOUS project's Great Basin Regional Dataset Compilation'.</li></ul>
+  <p><strong>Why it matters here:</strong> The catalogue we train on is a merge of the USGS compilation with INGENIOUS updates - compiled twice, from inherited sources, with a visible revision history. Version lag is demonstrable (v1 superseded by v2 within the project's own lifetime), so 'the catalogue is a snapshot that lags the landscape' is grounded, not speculative.</p>
+  <p><strong>Confidence:</strong> High - official data-release text.</p>
+</div>
+<div class="card" id="cg-3">
+  <h3>Published, organiser-cited evidence that mapping density is artificial <span class="muted small mono">#cg-3</span></h3>
+  <p><span class="badge">published paper</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2025/Hermant.pdf" target="_blank" rel="noopener noreferrer">Hermant et al. 2025 (cited on page/968)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>'their accuracy and the homogeneity of mapping between the sub-regions/states is sometimes insufficient... This could create a bias between regions where fault mapping is robust and those where it is incomplete.'</li><li>'some areas where the geology has been mapped more precisely have an artificially higher fault density and accuracy than areas where geological and structural mapping has been done at a larger scale.'</li><li>Their Figure 2 documents 'regional variation in Quaternary fault mapping that is not only due to the geological context' and local discrepancies 'up to 400m' between USGS Quaternary faults and their own ground-truth labels in north-central Nevada.</li></ul>
+  <p><strong>Why it matters here:</strong> The strongest external support for the catalogue-gap thesis, and it is organiser-cited. It also gives a concrete magnitude for positional error (hundreds of metres) consistent with the official 300 m metric kernel.</p>
+  <p><strong>Confidence:</strong> High - verbatim from the PDF, read this session.</p>
+</div>
+<div class="card" id="cg-4">
+  <h3>The test-fault identification process is officially undisclosed <span class="muted small mono">#cg-4</span></h3>
+  <p><span class="badge info">official forum</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://community.drivendata.org/t/how-were-the-new-test-faults-identified-data-sources-and-fault-types/11527/7" target="_blank" rel="noopener noreferrer">Forum thread 11527, staff reply (chrisk-dd, 2026-09-23)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>Asked directly which data sources, fault types and coverage the experts used, the staff reply is: 'We're not sharing details about the data sources, fault types, or coverage behind the test faults beyond what's in the problem description.'</li></ul>
+  <p><strong>Why it matters here:</strong> No shortcut exists: the catalogue-gap model must be reasoned from the catalogue's own methodology and the geophysics, not from leaked test-set characteristics. Any competitor claiming knowledge of test-fault provenance is claiming something the organisers say they did not disclose.</p>
+  <p><strong>Confidence:</strong> High - verbatim staff statement.</p>
+</div>
+<div class="card" id="cg-5">
+  <h3>The scoring mask is pixel-exact and corrections are in scope <span class="muted small mono">#cg-5</span></h3>
+  <p><span class="badge info">official forum</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516/4" target="_blank" rel="noopener noreferrer">Forum thread 11516, staff posts 2 and 4</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>'Pixels corresponding to known USGS/INGENIOUS faults are masked / excluded from evaluation' in both rounds; 'The mask is indeed pixel-exact - it is identical to the provided set of training fault labels.'</li><li>'Only new-fault ground truth is considered for scoring purposes. A predicted pixel that is near a known fault trace but far from a new-fault ground truth pixel will be fully penalized.'</li><li>'A new-fault ground truth pixel can indeed lie within 300m of a known fault trace. Such pixels would constitute corrections or modifications to existing fault traces.'</li></ul>
+  <p><strong>Why it matters here:</strong> Three direct design consequences: (1) reproducing known traces earns nothing; (2) splay/tip predictions hugging known traces carry real false-positive cost because no buffer shields them; (3) corrections of misaligned known traces are an explicitly stated target - and the published 400 m discrepancies (Hermant Fig. 2) show such corrections exist at scale.</p>
+  <p><strong>Confidence:</strong> High - verbatim staff statements.</p>
+</div>
+<div class="card" id="cg-6">
+  <h3>Where the catalogue should structurally be incomplete (reasoned hypothesis set) <span class="muted small mono">#cg-6</span></h3>
+  <p><span class="badge info">internal measurement</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://github.com/buffedlizard55-lab/SelfLearn/tree/main/docs/research" target="_blank" rel="noopener noreferrer">Compilation methodology facts in cg-1/cg-2; masking facts in cg-5; survey facts in pf-1</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>From how the catalogue was made (compilation of historical studies + partial update), four structural gap classes follow, each testable against the supplied layers: (a) basin-interior areas where young, fine-grained cover masks scarps and old fieldwork was sparse - detectable as low-relief + conductive cover + gravity lineaments; (b) high-relief remote ranges where access limited fieldwork - ruggedness + sparse catalogue density + magnetic/gravity edges; (c) along-strike continuations and splays beyond mapped tips - the mapping stopped, the structure did not; (d) misaligned traces needing correction - catalogue line offset from the actual scarp/edge by tens to hundreds of metres.</li></ul>
+  <p><strong>Why it matters here:</strong> This is the working taxonomy for gap-hunting: each class pairs a catalogue-methodology reason with a detectable multi-layer signature, which is exactly what the final-round expert review rewards.</p>
+  <p><strong>Confidence:</strong> Reasoned from verified facts; each class is a hypothesis, not a finding.</p>
+</div>
+<p class="small muted"><a href="../hypotheses.html">Hypotheses fed by this domain &rarr;</a></p>
+</main>
+<footer class="site"><div class="wrap"><p class="small muted">Built by <span class="mono">tools/build_gems_research.py</span> from
+<span class="mono">tools/gems_research_content.py</span> — re-running it reproduces these pages byte for byte.
+Generative-AI use for this research is disclosed in the <a href="../ai-usage-log.html">AI-usage log</a> (rules &sect;3.2).
+No prediction file is generated, validated, or submitted anywhere in this section.</p></div></footer>
+</body>
+</html>

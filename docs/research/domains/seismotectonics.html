@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seismotectonics and strain — GEMS Prize research</title>
+<meta name="description" content="Strain-rate invariants, earthquake density and conductivity anomalies: where the independent families agree, where they disagree, and what each disagreement means.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../../static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128506;</text></svg>">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  } catch (e) { }
+})();
+</script>
+<script defer src="../../static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">GEMS Prize research <small>knowledge base · DrivenData competition 306 · one entity, one site</small></span>
+      <span class="muted small">verified 2026-09-26 · every claim links its source</span>
+    </div>
+    <nav class="site" aria-label="Research sections"><a href="../index.html">Research home</a><a href="../domains/potential-field.html">Potential-field</a><a href="../domains/geomorphology.html">Geomorphology</a><a href="../domains/seismotectonics.html" aria-current="page">Seismotectonics</a><a href="../domains/catalogue-gaps.html">Catalogue gaps</a><a href="../domains/prior-art.html">Prior art</a><a href="../domains/governance.html">Governance</a><a href="../hypotheses.html">Hypotheses</a><a href="../data-placement.html">Data</a><a href="../ai-usage-log.html">AI-usage log</a><a href="../changelog.html">Changelog</a><span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
+    <nav class="site" aria-label="Site"><a href="../../index.html">&larr; SelfLearn site overview</a><a href="../../links.html">Official links register</a><a href="../../review.html">For review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+<h1>Seismotectonics and strain</h1>
+<p class="lede">Strain-rate invariants, earthquake density and conductivity anomalies: where the independent families agree, where they disagree, and what each disagreement means.</p>
+
+
+<div class="card" id="st-1">
+  <h3>Provenance of the strain, seismicity and conductivity bands <span class="muted small mono">#st-1</span></h3>
+  <p><span class="badge ok">official source</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://doi.org/10.15121/1881483" target="_blank" rel="noopener noreferrer">INGENIOUS compilation, GDR submission 1391 (DOI 10.15121/1881483)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>The INGENIOUS regional compilation ships: 'Earthquake Density Models' ('independent and dependent earthquake density for the INGENIOUS study area'), 'Geodetic Shear and Dilation Models', and 'Electrical Conductance Maps - MT' estimated from a 3D model of the Great Basin at five depth ranges spanning 2 to 200 km (released as its own USGS DOI 10.5066/P9TWT2LU).</li><li>These are the provenance layers behind the competition's dilatation, shear strain, second invariant, earthquake density and conductivity bands.</li></ul>
+  <p><strong>Why it matters here:</strong> The strain and seismicity bands are model-derived regional products, not local measurements - their resolution and smoothing are inherited from geodetic solutions and catalogues, so they cannot localize at 100 m. They identify provinces, not traces.</p>
+  <p><strong>Confidence:</strong> High - official data-release descriptions.</p>
+</div>
+<div class="card" id="st-2">
+  <h3>Measured agreement and disagreement between the families <span class="muted small mono">#st-2</span></h3>
+  <p><span class="badge info">internal measurement</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md" target="_blank" rel="noopener noreferrer">gemsdoe_review SESSION6 item 2 (cross-reference bullet)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>Session 6 records Spearman(strain, seismicity) = 0.77 - noted as 'largely one belt signal' - and univariate AUCs against mapped catalogue labels: independent earthquake density 0.583, dependent 0.560, conductivity 0.520.</li></ul>
+  <p><strong>Why it matters here:</strong> Strain and seismicity are largely one signal (the Central Nevada seismic belt). Conductivity is nearly orthogonal to everything else - weak alone, but it is the only supplied band sensing fluids/brines at depth, which is exactly the burial masking the catalogue-gap domain cares about.</p>
+  <p><strong>Confidence:</strong> Medium - internal measurements, catalogue-relative AUCs.</p>
+</div>
+<div class="card" id="st-3">
+  <h3>Where families agree vs disagree is itself information <span class="muted small mono">#st-3</span></h3>
+  <p><span class="badge info">internal measurement</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#competition-structure" target="_blank" rel="noopener noreferrer">Problem description (two-round structure; final round rescoring)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>The final prize round is scored against an expanded label set built by expert review of every submission: 'faults that you flagged, that experts confirm, become part of the map of the region.'</li></ul>
+  <p><strong>Why it matters here:</strong> A flag that rests on two independent families (e.g. a gravity edge that also aligns with a seismicity lineament) is a better expert-review candidate than a single-family edge, even at equal DTI. Cross-family agreement should be logged per candidate in the dossier, not folded into one blended score.</p>
+  <p><strong>Confidence:</strong> High for the scoring fact; the dossier design follows from it.</p>
+</div>
+<p class="small muted"><a href="../hypotheses.html">Hypotheses fed by this domain &rarr;</a></p>
+</main>
+<footer class="site"><div class="wrap"><p class="small muted">Built by <span class="mono">tools/build_gems_research.py</span> from
+<span class="mono">tools/gems_research_content.py</span> — re-running it reproduces these pages byte for byte.
+Generative-AI use for this research is disclosed in the <a href="../ai-usage-log.html">AI-usage log</a> (rules &sect;3.2).
+No prediction file is generated, validated, or submitted anywhere in this section.</p></div></footer>
+</body>
+</html>

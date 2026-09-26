@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hypothesis backlog — GEMS Prize research</title>
+<meta name="description" content="Hypothesis backlog with status for the GEMS Prize research project.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128506;</text></svg>">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  } catch (e) { }
+})();
+</script>
+<script defer src="../static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">GEMS Prize research <small>knowledge base · DrivenData competition 306 · one entity, one site</small></span>
+      <span class="muted small">verified 2026-09-26 · every claim links its source</span>
+    </div>
+    <nav class="site" aria-label="Research sections"><a href="index.html">Research home</a><a href="domains/potential-field.html">Potential-field</a><a href="domains/geomorphology.html">Geomorphology</a><a href="domains/seismotectonics.html">Seismotectonics</a><a href="domains/catalogue-gaps.html">Catalogue gaps</a><a href="domains/prior-art.html">Prior art</a><a href="domains/governance.html">Governance</a><a href="hypotheses.html" aria-current="page">Hypotheses</a><a href="data-placement.html">Data</a><a href="ai-usage-log.html">AI-usage log</a><a href="changelog.html">Changelog</a><span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
+    <nav class="site" aria-label="Site"><a href="../index.html">&larr; SelfLearn site overview</a><a href="../links.html">Official links register</a><a href="../review.html">For review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+<h1>Hypothesis backlog</h1>
+<p class="lede">What this project believes is worth testing to find faults the catalogue missed — each with the
+layer, the physical signature, the reasoning for why it should catch a <em>gap</em>, the expected effect on the
+distance-weighted Tversky index (DTI), the cost, and the current status. Rejected hypotheses stay here with the
+reason. All DTI numbers measured by this project are <strong>mapped-catalogue spatial-CV transfer proxies, not
+leaderboard scores</strong>; Phase 2 is judged by geologists reading exactly this style of reasoning.</p>
+
+<div class="card" id="H-G1">
+  <h3>H-G1 — Gravity edge = gradient magnitude, not the supplied hg band</h3>
+  <p><span class="badge ok">validated on spatial holdout</span></p>
+  <div class="grid two">
+    <div>
+      <p><strong>Layers:</strong> iso_grav_anom, iso_grav_anom_slope (channels 25/26 rebuilt)</p>
+      <p><strong>Physical signature:</strong> |grad G| edges along density contrasts; range-front and basin-edge lineaments</p>
+      <p><strong>Why a catalogue gap, not a known fault:</strong> Buried range-front faults produce gravity gradients where the surface shows no scarp; using the correct magnitude keeps those edges while the signed dG/dx band doubles counted edges and misplaces sign information.</p>
+    </div>
+    <div>
+      <p><strong>Expected DTI impact:</strong> +0.005 mapped-catalogue CV at 88 channels (session 6, 0.2397 vs 0.2345); neutral at 105 channels</p>
+      <p><strong>Cost:</strong> Trivial - channel rebuild, no new data</p>
+      <p><strong>Status detail:</strong> Passes non-inferiority on the pre-registered rule at 88 channels; at 105 channels it fails the fold clause by 0.0003. Adopted as a correctness fix, not a score lever.</p>
+      <p class="small"><strong>Evidence:</strong> <a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/grav_hg_identity_session6.json" target="_blank" rel="noopener noreferrer">grav_hg_identity_session6.json</a>, <a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md" target="_blank" rel="noopener noreferrer">SESSION6 item 2</a></p>
+    </div>
+  </div>
+</div>
+<div class="card" id="H-G2">
+  <h3>H-G2 — 105-channel feature set (adds dead-band replacements and curvature stack)</h3>
+  <p><span class="badge ok">validated on spatial holdout</span></p>
+  <div class="grid two">
+    <div>
+      <p><strong>Layers:</strong> full 19 official bands + derived HGM/ASA/tilt, multi-scale curvature, breaks-in-slope, structure-tensor lineaments</p>
+      <p><strong>Physical signature:</strong> richer edge/lineament geometry across scales</p>
+      <p><strong>Why a catalogue gap, not a known fault:</strong> More complete edge chemistry raises recall on subtle structural contrasts that the 19 raw bands under-specify.</p>
+    </div>
+    <div>
+      <p><strong>Expected DTI impact:</strong> +0.0074 mapped-catalogue CV (0.2419 vs 0.2345, 3/4 folds better, single seed)</p>
+      <p><strong>Cost:</strong> Low - engineering only</p>
+      <p><strong>Status detail:</strong> Adopted by pre-registered rule in session 6. Single seed - replication with seeds 11 and 13 is the standing caveat before treating 105>88 as settled.</p>
+      <p class="small"><strong>Evidence:</strong> <a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/feature_arm_105_session6.json" target="_blank" rel="noopener noreferrer">feature_arm_105_session6.json</a></p>
+    </div>
+  </div>
+</div>
+<div class="card" id="H-G3">
+  <h3>H-G3 — Tilt-derivative depth estimation from supplied bands</h3>
+  <p><span class="badge err">rejected</span></p>
+  <div class="grid two">
+    <div>
+      <p><strong>Layers:</strong> tmi, iso_grav_anom derivatives</p>
+      <p><strong>Physical signature:</strong> TDR +/-45 deg contours as depth estimators</p>
+      <p><strong>Why a catalogue gap, not a known fault:</strong> Would convert edges to depths, constraining which lineaments are shallow enough to be catalogue-scale faults.</p>
+    </div>
+    <div>
+      <p><strong>Expected DTI impact:</strong> None expected - infeasible</p>
+      <p><strong>Cost:</strong> Avoided</p>
+      <p><strong>Status detail:</strong> Supplied bands are line-levelled and smoothed: p99 |TDR| is 3.08 deg, so the 45 deg contour does not exist in these grids. Edge location stays usable; depth does not.</p>
+      <p class="small"><strong>Evidence:</strong> <a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md" target="_blank" rel="noopener noreferrer">SESSION6 item 2</a></p>
+    </div>
+  </div>
+</div>
+<div class="card" id="H-CG1">
+  <h3>H-CG1 — Buried-basin faults: conductive cover + gravity edge + low relief</h3>
+  <p><span class="badge">untested</span></p>
+  <div class="grid two">
+    <div>
+      <p><strong>Layers:</strong> surface conductivity, depth to conductive base, iso_grav_anom |grad|, detrended elevation slope</p>
+      <p><strong>Physical signature:</strong> low-relief basin interior where a gravity/magnetic lineament crosses high conductivity with shallow depth-to-base</p>
+      <p><strong>Why a catalogue gap, not a known fault:</strong> Class (a) of cg-6: young fine-grained cover masks scarps and historical fieldwork concentrated elsewhere; the catalogue's own compilation methodology predicts gaps exactly where cover hides expression and access was easy to avoid. Expert reviewers distinguishing 'geophysics-only' structures is officially in scope (page/968 explicitly says many faults are hidden below the surface).</p>
+    </div>
+    <div>
+      <p><strong>Expected DTI impact:</strong> Unknown until screened; candidate votes exist (gravity-edge + strain areas in session 6 dossiers)</p>
+      <p><strong>Cost:</strong> Low - supplied channels only</p>
+      <p><strong>Status detail:</strong> Needs the label-blind screen applied to a basin-mask variant, then a geology dossier per flag.</p>
+      <p class="small"><strong>Evidence:</strong> <a href="domains/catalogue-gaps.html" target="_blank" rel="noopener noreferrer">Catalogue-gap domain, entry cg-6</a>, <a href="https://doi.org/10.5066/P93LGLVQ" target="_blank" rel="noopener noreferrer">GeoDAWN survey specs (pf-1)</a></p>
+    </div>
+  </div>
+</div>
+<div class="card" id="H-CG2">
+  <h3>H-CG2 — Along-strike tip extensions and splays of mapped systems</h3>
+  <p><span class="badge">untested</span></p>
+  <div class="grid two">
+    <div>
+      <p><strong>Layers:</strong> all edge families + catalogue distance surface</p>
+      <p><strong>Physical signature:</strong> edge continuity beyond mapped tips; parallel splays 1-10 px off known traces</p>
+      <p><strong>Why a catalogue gap, not a known fault:</strong> Class (c): mapping stops at the mapped tip, the structure does not. BUT the staff-stated pixel-exact mask means near-trace false positives are fully penalised (no buffer applies to known faults), so this hypothesis only pays where continuity evidence is strong; corrections of misaligned traces (within 300 m) are explicitly in scope.</p>
+    </div>
+    <div>
+      <p><strong>Expected DTI impact:</strong> Two-sided: gains corrections, costs false splays. Needs an evidence gate (e.g. require >=2 families) before emitting near known traces</p>
+      <p><strong>Cost:</strong> Low</p>
+      <p><strong>Status detail:</strong> Design constraint derived from thread 11516/4; the session-6 label-blind screen already warns that most near-label flags are label-dependent (118 of 943 survive).</p>
+      <p class="small"><strong>Evidence:</strong> <a href="https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516/4" target="_blank" rel="noopener noreferrer">Forum 11516 post 4</a>, <a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/label_blind_corroboration_session6.json" target="_blank" rel="noopener noreferrer">label_blind_corroboration_session6.json</a></p>
+    </div>
+  </div>
+</div>
+<div class="card" id="H-CG3">
+  <h3>H-CG3 — Coverage-bias prior from external catalogue attributes</h3>
+  <p><span class="badge">untested</span></p>
+  <div class="grid two">
+    <div>
+      <p><strong>Layers:</strong> external: USGS QFaults GIS attributes (age, slip rate, study-reference metadata), INGENIOUS v1 vs v2 diff</p>
+      <p><strong>Physical signature:</strong> regions where the catalogue's own attributes are thin (old references, sparse slip-rate fields) and v1->v2 changed traces</p>
+      <p><strong>Why a catalogue gap, not a known fault:</strong> Class (a/b) detector built from the catalogue's methodology: attribute poverty marks places the compilation is stale. External data is explicitly encouraged (hub page) provided licences permit; both datasets are US public domain / CC-BY.</p>
+    </div>
+    <div>
+      <p><strong>Expected DTI impact:</strong> Unknown; priors feed sampling weights, not direct scores</p>
+      <p><strong>Cost:</strong> Medium - external data engineering + licence check</p>
+      <p><strong>Status detail:</strong> Blocked on nothing technical; needs a decision that the modelling line consumes priors (research-side only for now).</p>
+      <p class="small"><strong>Evidence:</strong> <a href="https://www.usgs.gov/natural-hazards/earthquake-hazards/faults" target="_blank" rel="noopener noreferrer">USGS QFF page + downloads</a>, <a href="https://doi.org/10.15121/1881483" target="_blank" rel="noopener noreferrer">INGENIOUS GDR 1391 (CC-BY 4.0)</a></p>
+    </div>
+  </div>
+</div>
+<div class="card" id="H-D1">
+  <h3>H-D1 — 1 m DEM scarp stack (curvature, break-in-slope, hillshade continuity)</h3>
+  <p><span class="badge">untested</span></p>
+  <div class="grid two">
+    <div>
+      <p><strong>Layers:</strong> 1m_DEM_links.csv tiles aggregated to 100 m; ridge/valley continuity along strike</p>
+      <p><strong>Physical signature:</strong> subdued scarps, deflected drainages, segmented free faces</p>
+      <p><strong>Why a catalogue gap, not a known fault:</strong> The only layer that resolves scarp morphology; published regional precedent (Hermant 2025) maps faults from elevation/slope with CNNs, and the organisers provide the links for exactly this purpose.</p>
+    </div>
+    <div>
+      <p><strong>Expected DTI impact:</strong> Unknown; likely helps the correction class (misplaced traces) most</p>
+      <p><strong>Cost:</strong> High - tile download, storage, processing</p>
+      <p><strong>Status detail:</strong> Deferred until the GPU modelling line is resourced; features alone justify the download.</p>
+      <p class="small"><strong>Evidence:</strong> <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#provided-features" target="_blank" rel="noopener noreferrer">Problem description, 1m_DEM_links.csv</a>, <a href="https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2025/Hermant.pdf" target="_blank" rel="noopener noreferrer">Hermant et al. 2025</a></p>
+    </div>
+  </div>
+</div>
+<div class="card" id="H-S1">
+  <h3>H-S1 — Cross-family consensus vote (edge + strain + seismicity alignment)</h3>
+  <p><span class="badge ok">validated on spatial holdout</span></p>
+  <div class="grid two">
+    <div>
+      <p><strong>Layers:</strong> gravity/magnetic edges, strain invariants, earthquake density</p>
+      <p><strong>Physical signature:</strong> multi-family lineament agreement</p>
+      <p><strong>Why a catalogue gap, not a known fault:</strong> Independent families agreeing on a structure is the strongest expert-review-friendly evidence; strain and seismicity are province-scale (Spearman 0.77 between them), so the vote should use them as province priors, not trace evidence.</p>
+    </div>
+    <div>
+      <p><strong>Expected DTI impact:</strong> DTI-neutral by design; targets final-round expert expansion instead</p>
+      <p><strong>Cost:</strong> Low</p>
+      <p><strong>Status detail:</strong> Partially - the session-6 label-blind screen shows only 118/943 flagged components survive without local labels; multi-family flags were mostly label-dependent. Conclusion: consensus must be computed label-blind and reported per candidate in the dossier, not blended into the score.</p>
+      <p class="small"><strong>Evidence:</strong> <a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/label_blind_corroboration_session6.json" target="_blank" rel="noopener noreferrer">label_blind_corroboration_session6.json</a>, <a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md" target="_blank" rel="noopener noreferrer">SESSION6 geology section</a></p>
+    </div>
+  </div>
+</div>
+<div class="card" id="H-P1">
+  <h3>H-P1 — Sparse placement (top-3% of footprint, spacing 4) over dense probability surface</h3>
+  <p><span class="badge ok">validated on spatial holdout</span></p>
+  <div class="grid two">
+    <div>
+      <p><strong>Layers:</strong> model probability surface + placement policy</p>
+      <p><strong>Physical signature:</strong> emission policy, not a new signal</p>
+      <p><strong>Why a catalogue gap, not a known fault:</strong> Under the pixel-exact mask and DTI's false-positive term, emitting confident sparse pixels beats a dense surface: the shipped dense file scored 0.0925 vs 0.2345 for raw/3%/spacing-4 on mapped-catalogue spatial CV, and dense fell below the matched random control.</p>
+    </div>
+    <div>
+      <p><strong>Expected DTI impact:</strong> +0.142 mapped-catalogue CV (largest single measured lever)</p>
+      <p><strong>Cost:</strong> None beyond policy code</p>
+      <p><strong>Status detail:</strong> Sessions 5 and 6; nested check kept the frozen policy. Numbers are catalogue-transfer proxies, not leaderboard scores - the mask explanation (11516) is why the dense policy was doomed.</p>
+      <p class="small"><strong>Evidence:</strong> <a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/spatial_comparison_shipping_session5.json" target="_blank" rel="noopener noreferrer">spatial_comparison_shipping_session5.json</a>, <a href="https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516/4" target="_blank" rel="noopener noreferrer">Forum 11516</a></p>
+    </div>
+  </div>
+</div>
+<div class="card" id="H-X1">
+  <h3>H-X1 — Reference-solution random patch splits overstate generalisation</h3>
+  <p><span class="badge ok">validated on spatial holdout</span></p>
+  <div class="grid two">
+    <div>
+      <p><strong>Layers:</strong> validation design</p>
+      <p><strong>Physical signature:</strong> n/a - evaluation methodology</p>
+      <p><strong>Why a catalogue gap, not a known fault:</strong> Connected fault traces span patches; random patch test sets share trace context with training patches. The notebook's own no-leakage claim holds for pixels, not for spatial autocorrelation.</p>
+    </div>
+    <div>
+      <p><strong>Expected DTI impact:</strong> Protects against a systematically optimistic local score</p>
+      <p><strong>Cost:</strong> Already paid</p>
+      <p><strong>Status detail:</strong> The project's blocked, buffered, system-purged CV (0-overlap geometry recorded per fold) exists because of this; dense-vs-spaced measurements above all use it.</p>
+      <p class="small"><strong>Evidence:</strong> <a href="https://github.com/drivendataorg/gems-prize-reference-solution/blob/main/unet-mc-cv-reference-solution.ipynb" target="_blank" rel="noopener noreferrer">Reference notebook make_patches docstring</a>, <a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/cv_geometry_audit_2026-09-26.json" target="_blank" rel="noopener noreferrer">cv_geometry_audit_2026-09-26.json</a></p>
+    </div>
+  </div>
+</div>
+
+</main>
+<footer class="site"><div class="wrap"><p class="small muted">Built by <span class="mono">tools/build_gems_research.py</span> from
+<span class="mono">tools/gems_research_content.py</span> — re-running it reproduces these pages byte for byte.
+Generative-AI use for this research is disclosed in the <a href="ai-usage-log.html">AI-usage log</a> (rules &sect;3.2).
+No prediction file is generated, validated, or submitted anywhere in this section.</p></div></footer>
+</body>
+</html>

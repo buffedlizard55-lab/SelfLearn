@@ -119,6 +119,21 @@ the full data behind every page is exported to `docs/data/`.
 
 The same documents are rendered into the site at `docs/documents.html`.
 
+## GEMS Prize research section
+
+`docs/research/` is the knowledge base for the DOE GEMS Prize challenge
+(DrivenData competition 306): a verified research library across six domains
+(potential-field geophysics, DEM geomorphology, seismotectonics,
+**catalogue-gap reasoning**, prior art, competition governance), a hypothesis
+backlog with statuses, the dated changelog, the rules-§3.2 AI-usage log, and
+the data-placement record. Every claim links a source fetched and read on its
+stated date, or a committed, sha-pinned measurement. Built idempotently by
+`tools/build_gems_research.py` from `tools/gems_research_content.py`. The
+section documents and reasons only — it never generates, validates, or submits
+prediction files. `scripts/download_competition_data.sh` +
+`scripts/prepare_data.py` place and inspect the official competition rasters
+(sha256-verified; no DrivenData login involved).
+
 ## Continuous operation
 
 The engine is a process, not a daemon: a cycle runs to completion. Continuity comes

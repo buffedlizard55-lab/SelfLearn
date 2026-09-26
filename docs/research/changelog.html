@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog — GEMS Prize research</title>
+<meta name="description" content="Dated changelog of the GEMS research knowledge base.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128506;</text></svg>">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  } catch (e) { }
+})();
+</script>
+<script defer src="../static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">GEMS Prize research <small>knowledge base · DrivenData competition 306 · one entity, one site</small></span>
+      <span class="muted small">verified 2026-09-26 · every claim links its source</span>
+    </div>
+    <nav class="site" aria-label="Research sections"><a href="index.html">Research home</a><a href="domains/potential-field.html">Potential-field</a><a href="domains/geomorphology.html">Geomorphology</a><a href="domains/seismotectonics.html">Seismotectonics</a><a href="domains/catalogue-gaps.html">Catalogue gaps</a><a href="domains/prior-art.html">Prior art</a><a href="domains/governance.html">Governance</a><a href="hypotheses.html">Hypotheses</a><a href="data-placement.html">Data</a><a href="ai-usage-log.html">AI-usage log</a><a href="changelog.html" aria-current="page">Changelog</a><span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
+    <nav class="site" aria-label="Site"><a href="../index.html">&larr; SelfLearn site overview</a><a href="../links.html">Official links register</a><a href="../review.html">For review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+<h1>Changelog</h1>
+<p class="lede">What this research section added, newest first. Resumable by design: each session appends its
+entry and commits, so an interrupted run leaves a clean state, and re-running the builder reproduces the same
+pages.</p>
+<div class="card"><h3>2026-09-26</h3><ul><li>Research section created: index, six domain libraries (potential-field, geomorphology, seismotectonics, catalogue-gaps, prior art, governance), hypothesis backlog (10 entries), anchor register (11 verified anchors), AI-usage log, this changelog, data-placement page.</li><li>PROJECT BLOCKER CLEARED: data placement completed in this repository. scripts/download_competition_data.sh placed all three official rasters from the project git bridge with per-part and whole-file sha256 verification (training_features.tif 4371c82e..., existing_faults.tif 7ba308cc..., example_submission.tif 2176d08e...); scripts/prepare_data.py read them back: 19-band float32 features, 1-band labels, 1-band float32 template, all EPSG:32611 at 100 m, 3292x3730 - conforming to the official spec. The train->inference->validate pipeline is no longer blocked on data placement (training itself still needs a GPU machine).</li><li>Anchor verification: all twelve source anchors fetched and read on 2026-09-26 (including the two officially cited prior-art papers and the USGS QFF database page, whose current URL was found by search rather than assumed).</li><li>Irregularities flagged (see index): PROJECT_BRIEF_GEMSDOE.md is absent from the repository and its git history; 'nlr.gov' resolves via redirect to 'docs.nlr.gov' for the rules PDF; six GEMS-named repositories currently publish sites while the project charter says one entity/one site; this sandbox's direct network egress blocks drivendata.org, usgs.gov, nlr.gov and dropbox.com, so official-page fetches used the platform's fetch infrastructure and byte transport used the GitHub git bridge.</li></ul></div>
+
+</main>
+<footer class="site"><div class="wrap"><p class="small muted">Built by <span class="mono">tools/build_gems_research.py</span> from
+<span class="mono">tools/gems_research_content.py</span> — re-running it reproduces these pages byte for byte.
+Generative-AI use for this research is disclosed in the <a href="ai-usage-log.html">AI-usage log</a> (rules &sect;3.2).
+No prediction file is generated, validated, or submitted anywhere in this section.</p></div></footer>
+</body>
+</html>

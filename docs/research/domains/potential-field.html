@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Potential-field geophysics — GEMS Prize research</title>
+<meta name="description" content="Magnetic (RTP, TMI, gradients) and isostatic gravity layers, and what gradient-magnitude and tilt-derivative operators imply about buried structural contrasts in this specific survey.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../../static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128506;</text></svg>">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  } catch (e) { }
+})();
+</script>
+<script defer src="../../static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">GEMS Prize research <small>knowledge base · DrivenData competition 306 · one entity, one site</small></span>
+      <span class="muted small">verified 2026-09-26 · every claim links its source</span>
+    </div>
+    <nav class="site" aria-label="Research sections"><a href="../index.html">Research home</a><a href="../domains/potential-field.html" aria-current="page">Potential-field</a><a href="../domains/geomorphology.html">Geomorphology</a><a href="../domains/seismotectonics.html">Seismotectonics</a><a href="../domains/catalogue-gaps.html">Catalogue gaps</a><a href="../domains/prior-art.html">Prior art</a><a href="../domains/governance.html">Governance</a><a href="../hypotheses.html">Hypotheses</a><a href="../data-placement.html">Data</a><a href="../ai-usage-log.html">AI-usage log</a><a href="../changelog.html">Changelog</a><span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
+    <nav class="site" aria-label="Site"><a href="../../index.html">&larr; SelfLearn site overview</a><a href="../../links.html">Official links register</a><a href="../../review.html">For review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+<h1>Potential-field geophysics</h1>
+<p class="lede">Magnetic (RTP, TMI, gradients) and isostatic gravity layers, and what gradient-magnitude and tilt-derivative operators imply about buried structural contrasts in this specific survey.</p>
+
+
+<div class="card" id="pf-1">
+  <h3>What the GeoDAWN survey physically measured <span class="muted small mono">#pf-1</span></h3>
+  <p><span class="badge ok">official source</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://doi.org/10.5066/P93LGLVQ" target="_blank" rel="noopener noreferrer">GeoDAWN, USGS ScienceBase (DOI 10.5066/P93LGLVQ)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>Airborne magnetics and radiometrics over 51,857 sq km, 149,030 line-km, four acquisition blocks (Winnemucca, Fallon, Hawthorne, Tonopah), flown 2021-11-01 through 2022-11-20.</li><li>Area 1 (Clayton Valley, lithium focus) was flown to rank-1 specifications with 200 m line spacing; Area 2 (the geothermal-focused remainder) at 400 m line spacing; terrain-following flight at nominal 100-150 m (Area 1) / 150-200 m (Area 2) clearance.</li><li>Magnetic processing included diurnal and aircraft-field corrections, tie-line leveling, micro-leveling and IGRF removal; radiometric processing corrected for radon, Compton scattering and altitude.</li></ul>
+  <p><strong>Why it matters here:</strong> The line spacing sets the physical noise floor for any 100 m gradient or tilt product: in Area 2 the 400 m line spacing is coarser than the competition grid, so supplied gradients there are interpolated across flight-line gaps. Edge-detector hypotheses must expect anisotropic along-line vs cross-line noise, strongest in the south (Tonopah block).</p>
+  <p><strong>Confidence:</strong> High - read from the primary data-release page.</p>
+</div>
+<div class="card" id="pf-2">
+  <h3>Which derivative channels the competition actually supplies <span class="muted small mono">#pf-2</span></h3>
+  <p><span class="badge ok">official source</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#provided-features" target="_blank" rel="noopener noreferrer">Problem description, Provided features</a></li><li><a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/scripts/prepare_data.py" target="_blank" rel="noopener noreferrer">Our header read of the placed raster (scripts/prepare_data.py, 2026-09-26)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>training_features.tif is a 19-band, float32, 100 m, EPSG:32611 GeoTIFF (3292x3730). The problem description lists the families: surface conductivity and depth to conductive base; detrended elevation and its slope; dilatation rate, shear strain rate and second invariant of the strain-rate tensor; isostatic gravity anomaly and its slope; reduced-to-pole magnetics, total magnetic intensity, vertical and horizontal slope of TMI, and top-of-crustal magnetic source depth; earthquake density.</li><li>The supplied raster has 19 bands and float32 samples - confirmed by direct header parse of the placed, hash-verified file on 2026-09-26.</li></ul>
+  <p><strong>Why it matters here:</strong> Horizontal-gradient magnitude (HGM), analytic signal and tilt derivatives must be derived client-side from the supplied anomaly bands; only the raw slope-style bands are given. Any hypothesis about 'the tilt channel' is really about our own derivation from tmi or iso_grav_anom.</p>
+  <p><strong>Confidence:</strong> High - official list plus our own verified read of the bytes.</p>
+</div>
+<div class="card" id="pf-3">
+  <h3>The supplied gravity 'hg' band is a signed derivative, not a gradient magnitude <span class="muted small mono">#pf-3</span></h3>
+  <p><span class="badge info">internal measurement</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/grav_hg_identity_session6.json" target="_blank" rel="noopener noreferrer">gemsdoe_review/evidence/grav_hg_identity_session6.json (sha-pinned tool + input)</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>On the sha-verified training_features.tif (4371c82e...), over 400,000 sampled pixels: Spearman(iso_grav_anom_hg, dG/dx) = 0.9485; Spearman(iso_grav_anom_hg, HGM) = -0.0002; Spearman(iso_grav_anom_slope, HGM) = 0.9604; Spearman(tmi_hg, HGM) = 0.9999999. Verdict recorded in the evidence file: iso_grav_anom_hg is the signed E-W derivative dG/dx, NOT |grad G|; iso_grav_anom_slope is the gradient magnitude; tmi_hg is the gradient magnitude.</li></ul>
+  <p><strong>Why it matters here:</strong> Any gravity 'edge' feature must use iso_grav_anom_slope (or derive |grad| from iso_grav_anom), not iso_grav_anom_hg. The magnetic band tmi_hg is safe. This was the session-6 correctness fix; measured transfer effect about +/-0.005 DTI on the mapped-catalogue CV.</p>
+  <p><strong>Confidence:</strong> High for the measurement (label-free, sha-pinned, re-checkable); the band-naming intent of the organiser remains unexplained.</p>
+</div>
+<div class="card" id="pf-4">
+  <h3>Tilt-derivative depth estimation is blocked by the supplied bands <span class="muted small mono">#pf-4</span></h3>
+  <p><span class="badge info">internal measurement</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md" target="_blank" rel="noopener noreferrer">gemsdoe_review/gemsdoe_review/SESSION6.md (items 2 and 'still unverified')</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>The 99th percentile of |tilt derivative| computed from the supplied magnetic bands is 3.08 degrees, far below the +/-45 degree contour the classic tilt-depth method requires; the TDR is computed from already-smoothed, line-leveled grids rather than the raw field.</li></ul>
+  <p><strong>Why it matters here:</strong> Do not spend effort on tilt-depth. Edge location (where TDR crosses zero) remains usable; depth estimation from these bands is not.</p>
+  <p><strong>Confidence:</strong> Medium-high - internal measurement, single-session, method assumption (that p99 3.08 deg implies the 45 deg contour is absent) stated but not independently replicated.</p>
+</div>
+<div class="card" id="pf-5">
+  <h3>The organisers' own reading list endorses potential-field mapping <span class="muted small mono">#pf-5</span></h3>
+  <p><span class="badge ok">official source</span></p>
+  <p><strong>Sources:</strong></p><ul><li><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/968/#additional-information" target="_blank" rel="noopener noreferrer">About page (page/968), Additional information</a></li></ul>
+  <p><strong>What it establishes (quotes verbatim where quoted):</strong></p><ul><li>The official About page states that gravity and magnetic surveys 'help infer the presence of faults through density or magnetic anomalies', and that many GeoDAWN faults 'are hidden below the surface, requiring geophysical data to detect'.</li></ul>
+  <p><strong>Why it matters here:</strong> Official confirmation that the buried-fault population is in scope and that potential-field layers are a primary detection modality - not just a supplementary channel.</p>
+  <p><strong>Confidence:</strong> High - verbatim from the official page.</p>
+</div>
+<p class="small muted"><a href="../hypotheses.html">Hypotheses fed by this domain &rarr;</a></p>
+</main>
+<footer class="site"><div class="wrap"><p class="small muted">Built by <span class="mono">tools/build_gems_research.py</span> from
+<span class="mono">tools/gems_research_content.py</span> — re-running it reproduces these pages byte for byte.
+Generative-AI use for this research is disclosed in the <a href="../ai-usage-log.html">AI-usage log</a> (rules &sect;3.2).
+No prediction file is generated, validated, or submitted anywhere in this section.</p></div></footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-usage log — GEMS Prize research</title>
+<meta name="description" content="Dated generative-AI usage log for rules 3.2 compliance.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128506;</text></svg>">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("selflearn-theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+  } catch (e) { }
+})();
+</script>
+<script defer src="../static/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <span class="brand">GEMS Prize research <small>knowledge base · DrivenData competition 306 · one entity, one site</small></span>
+      <span class="muted small">verified 2026-09-26 · every claim links its source</span>
+    </div>
+    <nav class="site" aria-label="Research sections"><a href="index.html">Research home</a><a href="domains/potential-field.html">Potential-field</a><a href="domains/geomorphology.html">Geomorphology</a><a href="domains/seismotectonics.html">Seismotectonics</a><a href="domains/catalogue-gaps.html">Catalogue gaps</a><a href="domains/prior-art.html">Prior art</a><a href="domains/governance.html">Governance</a><a href="hypotheses.html">Hypotheses</a><a href="data-placement.html">Data</a><a href="ai-usage-log.html" aria-current="page">AI-usage log</a><a href="changelog.html">Changelog</a><span class="spacer"></span><button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Light / dark</button></nav>
+    <nav class="site" aria-label="Site"><a href="../index.html">&larr; SelfLearn site overview</a><a href="../links.html">Official links register</a><a href="../review.html">For review</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+<h1>AI-usage log</h1>
+<p class="lede">A dated, append-only record of what generative AI did in this research project, kept as a
+first-class site artifact so the rules &sect;3.2 disclosure ("indicate in the narrative ... the extent to which,
+if any, you used generative AI technology and how you used it") can be written accurately at any moment —
+built incrementally, never reconstructed. Plain-text copy: <a href="ai-usage-log.md">ai-usage-log.md</a>.</p>
+
+<div class="card">
+  <h3>2026-09-26 — Research-library session 7 (this site)</h3>
+  <p><strong>Actor:</strong> Arena.ai Agent Mode autonomous agent (language-model-based), working unattended in the SelfLearn repository</p>
+  <p><strong>Tools used:</strong></p><ul><li>Arena page-fetch infrastructure: read the official competition hub, problem description, About page, rules mirror, rules PDF (4 chunks), forum category + raw threads 11516/11527/11529, reference-solution repo page, ScienceBase GeoDAWN item, GDR 1391 item, USGS QFF page, Mateo 2021 landing page, Hermant 2025 PDF, 6GEMSDOE site</li><li>git clone (read-only) of github.com/drivendataorg/gems-prize-reference-solution at HEAD aebe92f and of buffedlizard55-lab/GEMSDOE data/bridge via the placement script</li><li>GitHub REST API via gh (read-only): repo/Pages/contents listings for the buffedlizard55-lab org</li><li>Local file writes: scripts/, docs/research/, evidence/gems/, tool + JSON exports</li></ul>
+  <p><strong>What was done:</strong></p><ul><li>Verified every source anchor line by line against the live official pages; recorded the register on this site with quotes</li><li>Placed and sha256-verified the three official competition rasters into data/ (no DrivenData login, no credentials, no account creation)</li><li>Wrote scripts/download_competition_data.sh and scripts/prepare_data.py (pure stdlib)</li><li>Built this research library: six domain pages, hypothesis backlog, changelog, this log</li><li>Created the pull request and merged it to this repository's main branch</li></ul>
+  <p><strong>Explicitly not done:</strong></p><ul><li>No prediction file was generated, validated or submitted; no weekly submission slot was used; no DrivenData login occurred</li><li>No second site, repository or account was created; no competitor's data was used</li></ul>
+  <p><strong>Compliance note (rules &sect;3.2):</strong> Rules 3.2 requires the submission narrative to state the extent of generative-AI use and flags fabrication/falsification/plagiarism as the competitor's own risk. This log exists so that narrative can be written accurately: every research claim on this site cites a fetched official source or a committed, re-checkable measurement; quotes are verbatim; anything not traceable is marked unverified.</p>
+</div>
+
+</main>
+<footer class="site"><div class="wrap"><p class="small muted">Built by <span class="mono">tools/build_gems_research.py</span> from
+<span class="mono">tools/gems_research_content.py</span> — re-running it reproduces these pages byte for byte.
+Generative-AI use for this research is disclosed in the <a href="ai-usage-log.html">AI-usage log</a> (rules &sect;3.2).
+No prediction file is generated, validated, or submitted anywhere in this section.</p></div></footer>
+</body>
+</html>

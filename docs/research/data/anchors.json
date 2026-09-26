@@ -1,0 +1,93 @@
+{
+  "anchors": [
+    {
+      "id": "hub",
+      "key_quote": "The same submission is scored twice — once against a private expert-labeled test set for the Initial Prize Round, and again against an expanded label set built from expert review of all submissions for the Final Prize Round.",
+      "name": "Competition hub (DrivenData)",
+      "status": "fetched and read in full, 2026-09-26",
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
+      "what": "Live competition page: end date Dec. 3, 2026, 11:59 p.m. UTC; total prize pool $300,000 ($50,000 initial round split five ways, $250,000 final round: $100k/$70k/$40k/$25k/$15k); how-to-compete steps; eligibility summary; external-data encouragement; sponsor DOE Office of Geothermal with support from the National Lab of the Rockies (NLR)."
+    },
+    {
+      "id": "problem",
+      "key_quote": "While detailed, it is known that this set of faults is not complete and may even contain some inaccurate data.",
+      "name": "Problem description (page/967)",
+      "status": "fetched and read in full (2 chunks), 2026-09-26",
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/",
+      "what": "The authoritative task, dataset, metric and submission-format text: two-round structure; supplied rasters; the distance-weighted Tversky index with alpha=0.2, beta=0.8 and a 300 m triangular kernel, with worked example; submission format (EPSG:32611, 100 m, single float32 band in [0,1], NaN outside the training bounds)."
+    },
+    {
+      "id": "about",
+      "key_quote": "Most faults in the GeoDAWN region of Nevada are more subtle, and many are hidden below the surface, requiring geophysical data to detect.",
+      "name": "About / resources (page/968)",
+      "status": "fetched and read in full, 2026-09-26",
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/968/",
+      "what": "Sponsor and data background (GeoDAWN under EarthMRI with 3DEP lidar; DOE Office of Geothermal), an orientation to fault detection methods, and two officially cited prior-art papers (Mateo et al. 2021; Hermant et al. 2025)."
+    },
+    {
+      "id": "rules-mirror",
+      "key_quote": "Participation in this challenge is subject to the official GEMS Prize rules. Please review here. (link target: https://www.herox.com/GEMSPrize/resource/2274)",
+      "name": "Official rules page (DrivenData mirror)",
+      "status": "fetched and read in full, 2026-09-26",
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/rules/",
+      "what": "A one-line pointer page: the binding rules live in the official rules document hosted by the prize administrator (HeroX resource 2274, whose PDF is the NLR document below)."
+    },
+    {
+      "id": "rules-pdf",
+      "key_quote": "Using generative AI technology in the development of your prize submission is allowed. However, you must indicate in the narrative (not included in the word count) the extent to which, if any, you used generative AI technology and how you used it to develop your submission.",
+      "name": "Official rules PDF (NLR primary)",
+      "status": "fetched and read (4 of 7 chunks cover sections 1-3.6.5 and A.1 start), 2026-09-26",
+      "url": "https://www.nlr.gov/docs/fy26osti/96647.pdf",
+      "what": "'Geologic Enhanced Mapping System (GEMS) Prize Official Rules', September 2026. The www.nlr.gov address resolves to the same document at docs.nlr.gov/docs/fy26osti/96647.pdf. Sections read and quotable: 1.3 eligibility; 1.4 prize goals; 2 background (footnote 3 = GeoDAWN citation; footnote 4 = INGENIOUS citation); 3.2 process overview including the generative-AI disclosure duty; 3.3 training data; 3.4 feedback limits; 3.5 what to submit; 3.6.1-3.6.5 winner determination; Appendix A terms."
+    },
+    {
+      "id": "ref-sol",
+      "key_quote": "This repository contains a reference solution for the GEMS Prize Challenge. The benchmark is implemented in Python and uses standard libraries to provide a baseline for comparison with other solutions.",
+      "name": "Reference solution (drivendataorg/gems-prize-reference-solution)",
+      "status": "repository page fetched; notebook cloned from github.com and read cell by cell, 2026-09-26 (local copy verified by git clone of the published HEAD)",
+      "url": "https://github.com/drivendataorg/gems-prize-reference-solution",
+      "what": "The organisers' baseline: one commit (aebe92f, 2026-06-16), author Professor John Lipor (Portland State), a single notebook 'unet-mc-cv-reference-solution.ipynb'. Design read directly from the cloned notebook (see Prior art)."
+    },
+    {
+      "id": "forum",
+      "key_quote": "(chrisk-dd, thread 11516 post 2) Pixels corresponding to known USGS/INGENIOUS faults are masked / excluded from evaluation, so they do not count towards penalty terms.",
+      "name": "Competition forum (official clarifications)",
+      "status": "category page and raw thread dumps fetched, 2026-09-26",
+      "url": "https://community.drivendata.org/c/gems-prize-challenge/111",
+      "what": "Live category. Staff account chrisk-dd posts the official clarifications. Threads read in raw form this session: 11516 (scoring mask), 11527 (test-fault provenance), 11529 (label band count). Others catalogued by title: 11524 weekly submissions, 11526 institutional limit, 11528 paid external-data licence, 11536 'where do you draw the line', 11540 team-member eligibility, 11543 teammate's geological interpretation as training labels."
+    },
+    {
+      "id": "geodawn",
+      "key_quote": "The combined GeoDAWN area (consisting of a total of 149,030 line-km spanning an area of 51,857 sq km), was divided into four separate acquisition blocks (from north to south: Winnemucca, Fallon, Hawthorne, and Tonopah).",
+      "name": "GeoDAWN feature-data citation (DOI 10.5066/P93LGLVQ)",
+      "status": "DOI resolved; ScienceBase item fetched and read, 2026-09-26",
+      "url": "https://doi.org/10.5066/P93LGLVQ",
+      "what": "Resolves to USGS ScienceBase item 657e1d85d34e23d3533209f7: Glen, J.M.G., and Earney, T.E., 2024, GeoDAWN: Airborne magnetic and radiometric surveys of the northwestern Great Basin, Nevada and California. Publication date 2024-03-01; surveys flown 2021-11-01 to 2022-11-20 by EDCON-PRJ; 149,030 line-km over 51,857 sq km; four acquisition blocks (Winnemucca, Fallon, Hawthorne, Tonopah); Area 1 (Clayton Valley, lithium focus) rank-1 specs at 200 m line spacing, Area 2 (geothermal focus) 400 m; magnetic processing includes diurnal, aircraft-field, tie-line and micro-leveling corrections and IGRF removal."
+    },
+    {
+      "id": "ingenious",
+      "key_quote": "Shapefile (NAD83 Geographic) containing updated quaternary fault traces, ages, and slip rates for the INGENIOUS study area. Attributes conform to USGS Qfault Database schema.",
+      "name": "INGENIOUS label-data citation (DOI 10.15121/1881483)",
+      "status": "DOI resolved; GDR submission page fetched and read, 2026-09-26",
+      "url": "https://doi.org/10.15121/1881483",
+      "what": "Resolves to DOE Geothermal Data Repository submission 1391 (OpenEI), licence CC-BY 4.0, 'as is' disclaimer. Contains the Quaternary Faults v1 and v2 shapefiles (v2, qfaults_ingenious_nad83conus117_2023-06-27.zip, supersedes v1; attributes follow the USGS Qfault schema), earthquake density models, geodetic shear and dilation models, MT conductance maps, gravity and magnetics maps, heat flow, slip/dilation tendency, and other regional layers."
+    },
+    {
+      "id": "qfaults",
+      "key_quote": "These data are compiled from thousands of journal articles, maps, theses, and other documents, as referenced herein.",
+      "name": "USGS Quaternary Fault and Fold Database (existing-catalogue baseline)",
+      "status": "page found by search (URL not hardcoded from memory), fetched and read, 2026-09-26",
+      "url": "https://www.usgs.gov/natural-hazards/earthquake-hazards/faults",
+      "what": "The current official USGS page for the QFF database (found by search and fetch, not assumed). Whole-database citation: U.S. Geological Survey, 2020, Quaternary Fault and Fold Database for the Nation, DOI 10.5066/P9BCVRCK; interactive map DOI 10.5066/F7S75FJM; KMZ and GIS downloads at earthquake.usgs.gov/static/lfs/nshm/qfaults/. The Database Search function was retired 2026-02-26; legacy reports remain via the interactive fault map. Database methodology as stated there: established 1993 under NEHRP with state geological surveys, compiled from thousands of journal articles, maps, theses and other documents; since 2017-01-12 only a limited set of metadata fields is maintained."
+    },
+    {
+      "id": "competition-rasters",
+      "key_quote": "training_features.tif sha256 4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5 (matches the pin used by gemsdoe_review session 6 against the same bytes).",
+      "name": "Competition rasters (placed and hash-verified 2026-09-26)",
+      "status": "placed in this sandbox via the project git bridge on 2026-09-26; the DrivenData data tab itself requires login and was not logged into (by design of this agent)",
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/data/",
+      "what": "The three official rasters are now in this repository's data/ directory, every byte sha256-verified against pins that three independent project records state identically (GEMSDOE data/bridge/manifest.json, generated 2026-09-17 from a runner-side inventory taken 2026-09-14 from the logged-in data tab; the 8GEMSDOE download script; and the session-6 evidence file grav_hg_identity_session6.json, whose training_features_sha256 matches the file placed today). Read back today by scripts/prepare_data.py: training_features.tif = 19 bands, float32, 3292x3730, 100 m, EPSG:32611; existing_faults.tif = 1 band, int8, same grid; example_submission.tif = 1 band float32, same grid."
+    }
+  ],
+  "checked": "2026-09-26"
+}
