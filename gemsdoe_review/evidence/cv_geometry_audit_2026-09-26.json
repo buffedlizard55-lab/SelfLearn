@@ -1,0 +1,198 @@
+{
+  "kind": "cv Euclidean-buffer audit, NOT fault scores",
+  "cv_sha256": "b0c451a919238c9d0e401e2b7678d1d75b9a05732b10b56127907a1e72172bc4",
+  "grid_shape": [
+    3730,
+    3292
+  ],
+  "pixel_size_m": 100.0,
+  "radius_px": 3,
+  "method": "scipy EDT on complement of held-out fold; count train pixels at Euclidean distance <=3 px",
+  "caution": "Training-mask geometry only; actual catalogue sample and score not recomputed. Historical 4/4 and 6/6 may be unaffected even when other fold assignments have diagonal gaps.",
+  "layouts": {
+    "4x4/4folds": [
+      {
+        "fold": 0,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 1,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 2,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 3,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      }
+    ],
+    "6x6/6folds": [
+      {
+        "fold": 0,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 1,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 2,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 3,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 4,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      },
+      {
+        "fold": 5,
+        "potential_training_mask_pixels_inside_300m": 0,
+        "sample_coordinates_row_col": []
+      }
+    ],
+    "5x5/3folds": [
+      {
+        "fold": 0,
+        "potential_training_mask_pixels_inside_300m": 10,
+        "sample_coordinates_row_col": [
+          [
+            744,
+            1318
+          ],
+          [
+            747,
+            1974
+          ],
+          [
+            1490,
+            1977
+          ]
+        ]
+      },
+      {
+        "fold": 1,
+        "potential_training_mask_pixels_inside_300m": 11,
+        "sample_coordinates_row_col": [
+          [
+            744,
+            1977
+          ],
+          [
+            747,
+            657
+          ],
+          [
+            747,
+            2632
+          ]
+        ]
+      },
+      {
+        "fold": 2,
+        "potential_training_mask_pixels_inside_300m": 11,
+        "sample_coordinates_row_col": [
+          [
+            744,
+            660
+          ],
+          [
+            744,
+            2635
+          ],
+          [
+            747,
+            1315
+          ]
+        ]
+      }
+    ],
+    "6x6/4folds": [
+      {
+        "fold": 0,
+        "potential_training_mask_pixels_inside_300m": 25,
+        "sample_coordinates_row_col": [
+          [
+            620,
+            1096
+          ],
+          [
+            620,
+            1647
+          ],
+          [
+            623,
+            550
+          ]
+        ]
+      },
+      {
+        "fold": 1,
+        "potential_training_mask_pixels_inside_300m": 25,
+        "sample_coordinates_row_col": [
+          [
+            620,
+            1644
+          ],
+          [
+            620,
+            2196
+          ],
+          [
+            623,
+            547
+          ]
+        ]
+      },
+      {
+        "fold": 2,
+        "potential_training_mask_pixels_inside_300m": 25,
+        "sample_coordinates_row_col": [
+          [
+            620,
+            550
+          ],
+          [
+            620,
+            2193
+          ],
+          [
+            620,
+            2745
+          ]
+        ]
+      },
+      {
+        "fold": 3,
+        "potential_training_mask_pixels_inside_300m": 25,
+        "sample_coordinates_row_col": [
+          [
+            620,
+            547
+          ],
+          [
+            620,
+            1099
+          ],
+          [
+            620,
+            2742
+          ]
+        ]
+      }
+    ]
+  }
+}

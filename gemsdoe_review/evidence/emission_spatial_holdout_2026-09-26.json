@@ -1,0 +1,490 @@
+{
+  "generated_utc": "2026-09-26T03:36:31+00:00",
+  "kind": "spatial policy holdout on SGMC, NOT a leaderboard/public-CV score",
+  "method": "6GEMSDOE shipped emission, Euclidean dilation on full map, catalogue pixels removed, 4 vertical spatial blocks, 3px score-edge guard; pooled weighted terms rather than average of block DTI",
+  "official_sources": {
+    "metric": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#performance-metric",
+    "pixel_exact_known_mask": "https://community.drivendata.org/t/11516/4"
+  },
+  "inputs": {
+    "shipped_sha256": "33cec71ff00b3f32d0d59c81c156f3f1488ffef46baa4b6499094e24ea1875ab",
+    "labels_sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+    "sample_sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+    "proxy_sha256": "7563e187171f7210d70295f958b0b2714c1fa504afa35f9a4688fc99b1e1122a",
+    "proxy_code2_px": 61664,
+    "footprint_px": 5167373,
+    "shipped_gate": {
+      "ok": true,
+      "checks": 13
+    }
+  },
+  "warnings": [
+    "SGMC proxy is not the expert-labelled GeoDAWN fault population.",
+    "Proxy code 2 *excludes* faults within 300 m of known traces; it cannot evaluate the corrections/trace extensions organizers explicitly score.",
+    "Classifier fitted on all catalogue geography; only postprocessing was selected without looking at the eastern SGMC proxy labels.",
+    "Four vertical strips are heterogeneous, not four independent model fits."
+  ],
+  "no_skill_blanket": {
+    "folds": [
+      {
+        "fold": 0,
+        "scored_pixels": 910314,
+        "n_gt": 12003,
+        "emitted_px": 910314,
+        "tp_w": 12003.0,
+        "fp_w": 869144.9938356342,
+        "fn_w": 0.0,
+        "dti": 0.06459059838792865
+      },
+      {
+        "fold": 1,
+        "scored_pixels": 2040065,
+        "n_gt": 13236,
+        "emitted_px": 2040065,
+        "tp_w": 13236.0,
+        "fp_w": 1994115.0713767507,
+        "fn_w": 0.0,
+        "dti": 0.03212161253958662
+      },
+      {
+        "fold": 2,
+        "scored_pixels": 1487804,
+        "n_gt": 23468,
+        "emitted_px": 1487804,
+        "tp_w": 23468.0,
+        "fp_w": 1411015.578014689,
+        "fn_w": 0.0,
+        "dti": 0.07677532747476508
+      },
+      {
+        "fold": 3,
+        "scored_pixels": 623438,
+        "n_gt": 12338,
+        "emitted_px": 623438,
+        "tp_w": 12338.0,
+        "fp_w": 583901.0527830827,
+        "fn_w": 0.0,
+        "dti": 0.09555584721010676
+      }
+    ],
+    "tune": {
+      "scored_pixels": 2950379,
+      "n_gt": 25239,
+      "emitted_px": 2950379,
+      "tp_w": 25239.0,
+      "fp_w": 2863260.065212385,
+      "fn_w": 0.0,
+      "dti": 0.042213379109952744
+    },
+    "heldout": {
+      "scored_pixels": 2111242,
+      "n_gt": 35806,
+      "emitted_px": 2111242,
+      "tp_w": 35806.0,
+      "fp_w": 1994916.6307977717,
+      "fn_w": 0.0,
+      "dti": 0.08235252763967821
+    }
+  },
+  "widths": {
+    "dilate0": {
+      "full_emitted_px": 131416,
+      "folds": [
+        {
+          "fold": 0,
+          "scored_pixels": 910314,
+          "n_gt": 12003,
+          "emitted_px": 20779,
+          "tp_w": 447.5486719572358,
+          "fp_w": 19983.4967715824,
+          "fn_w": 11555.451328042764,
+          "dti": 0.03269497061780808
+        },
+        {
+          "fold": 1,
+          "scored_pixels": 2040065,
+          "n_gt": 13236,
+          "emitted_px": 62857,
+          "tp_w": 801.2822419061465,
+          "fp_w": 61021.22696179658,
+          "fn_w": 12434.717758093853,
+          "dti": 0.03490923647770946
+        },
+        {
+          "fold": 2,
+          "scored_pixels": 1487804,
+          "n_gt": 23468,
+          "emitted_px": 36781,
+          "tp_w": 915.2702624746992,
+          "fp_w": 35023.85794956291,
+          "fn_w": 22552.7297375253,
+          "dti": 0.03525392141173529
+        },
+        {
+          "fold": 3,
+          "scored_pixels": 623438,
+          "n_gt": 12338,
+          "emitted_px": 9900,
+          "tp_w": 416.51025041667623,
+          "fp_w": 9252.83671860438,
+          "fn_w": 11921.489749583323,
+          "dti": 0.035284712379722916
+        }
+      ],
+      "tune": {
+        "scored_pixels": 2950379,
+        "n_gt": 25239,
+        "emitted_px": 83636,
+        "tp_w": 1248.8309138633822,
+        "fp_w": 81004.72373337898,
+        "fn_w": 23990.16908613662,
+        "dti": 0.034082035630306325
+      },
+      "heldout": {
+        "scored_pixels": 2111242,
+        "n_gt": 35806,
+        "emitted_px": 46681,
+        "tp_w": 1331.7805128913753,
+        "fp_w": 44276.694668167285,
+        "fn_w": 34474.219487108625,
+        "dti": 0.03526354541534487
+      }
+    },
+    "dilate1": {
+      "full_emitted_px": 223516,
+      "folds": [
+        {
+          "fold": 0,
+          "scored_pixels": 910314,
+          "n_gt": 12003,
+          "emitted_px": 38384,
+          "tp_w": 676.9922260772026,
+          "fp_w": 36805.43968865437,
+          "fn_w": 11326.007773922798,
+          "dti": 0.039592767090870076
+        },
+        {
+          "fold": 1,
+          "scored_pixels": 2040065,
+          "n_gt": 13236,
+          "emitted_px": 101208,
+          "tp_w": 1114.4546701978904,
+          "fp_w": 98118.55075674961,
+          "fn_w": 12121.54532980211,
+          "dti": 0.0366170521974564
+        },
+        {
+          "fold": 2,
+          "scored_pixels": 1487804,
+          "n_gt": 23468,
+          "emitted_px": 63612,
+          "tp_w": 1341.5820246356216,
+          "fp_w": 60419.97594191812,
+          "fn_w": 22126.417975364377,
+          "dti": 0.04310066678934445
+        },
+        {
+          "fold": 3,
+          "scored_pixels": 623438,
+          "n_gt": 12338,
+          "emitted_px": 18230,
+          "tp_w": 614.0834328808337,
+          "fp_w": 16953.943317445355,
+          "fn_w": 11723.916567119166,
+          "dti": 0.04588188788143695
+        }
+      ],
+      "tune": {
+        "scored_pixels": 2950379,
+        "n_gt": 25239,
+        "emitted_px": 139592,
+        "tp_w": 1791.446896275093,
+        "fp_w": 134923.99044540396,
+        "fn_w": 23447.553103724906,
+        "dti": 0.03768746712496042
+      },
+      "heldout": {
+        "scored_pixels": 2111242,
+        "n_gt": 35806,
+        "emitted_px": 81842,
+        "tp_w": 1955.6654575164553,
+        "fp_w": 77373.91925936348,
+        "fn_w": 33850.33454248354,
+        "dti": 0.043936957025427124
+      }
+    },
+    "dilate2": {
+      "full_emitted_px": 311235,
+      "folds": [
+        {
+          "fold": 0,
+          "scored_pixels": 910314,
+          "n_gt": 12003,
+          "emitted_px": 56179,
+          "tp_w": 923.6551456777357,
+          "fp_w": 53735.35923722526,
+          "fn_w": 11079.344854322264,
+          "dti": 0.04498130028347351
+        },
+        {
+          "fold": 1,
+          "scored_pixels": 2040065,
+          "n_gt": 13236,
+          "emitted_px": 135731,
+          "tp_w": 1440.282269194499,
+          "fp_w": 131466.82331580366,
+          "fn_w": 11795.717730805502,
+          "dti": 0.03874828359662131
+        },
+        {
+          "fold": 2,
+          "scored_pixels": 1487804,
+          "n_gt": 23468,
+          "emitted_px": 89374,
+          "tp_w": 1796.9587892573686,
+          "fp_w": 84689.22292447783,
+          "fn_w": 21671.04121074263,
+          "dti": 0.049816392363738804
+        },
+        {
+          "fold": 3,
+          "scored_pixels": 623438,
+          "n_gt": 12338,
+          "emitted_px": 26918,
+          "tp_w": 832.0584980185863,
+          "fp_w": 24961.900259241986,
+          "fn_w": 11505.941501981413,
+          "dti": 0.055362824014315797
+        }
+      ],
+      "tune": {
+        "scored_pixels": 2950379,
+        "n_gt": 25239,
+        "emitted_px": 191910,
+        "tp_w": 2363.9374148722345,
+        "fp_w": 185202.18255302892,
+        "fn_w": 22875.062585127765,
+        "dti": 0.040966311614706215
+      },
+      "heldout": {
+        "scored_pixels": 2111242,
+        "n_gt": 35806,
+        "emitted_px": 116292,
+        "tp_w": 2629.017287275955,
+        "fp_w": 109651.12318371981,
+        "fn_w": 33176.98271272404,
+        "dti": 0.05144764547502998
+      }
+    },
+    "dilate3": {
+      "full_emitted_px": 419126,
+      "folds": [
+        {
+          "fold": 0,
+          "scored_pixels": 910314,
+          "n_gt": 12003,
+          "emitted_px": 78724,
+          "tp_w": 1247.0531675011734,
+          "fp_w": 75169.82292118392,
+          "fn_w": 10755.946832498827,
+          "dti": 0.050111083805311436
+        },
+        {
+          "fold": 1,
+          "scored_pixels": 2040065,
+          "n_gt": 13236,
+          "emitted_px": 176828,
+          "tp_w": 1839.646061295351,
+          "fp_w": 171108.33871913096,
+          "fn_w": 11396.35393870465,
+          "dti": 0.0407195957634236
+        },
+        {
+          "fold": 2,
+          "scored_pixels": 1487804,
+          "n_gt": 23468,
+          "emitted_px": 121071,
+          "tp_w": 2411.089856581043,
+          "fp_w": 114397.05386545873,
+          "fn_w": 21056.910143418958,
+          "dti": 0.05722157328116277
+        },
+        {
+          "fold": 3,
+          "scored_pixels": 623438,
+          "n_gt": 12338,
+          "emitted_px": 38274,
+          "tp_w": 1130.4870024984757,
+          "fp_w": 35403.77442338757,
+          "fn_w": 11207.512997501524,
+          "dti": 0.06581302898295481
+        }
+      ],
+      "tune": {
+        "scored_pixels": 2950379,
+        "n_gt": 25239,
+        "emitted_px": 255552,
+        "tp_w": 3086.6992287965245,
+        "fp_w": 246278.16164031488,
+        "fn_w": 22152.300771203474,
+        "dti": 0.04405531576301684
+      },
+      "heldout": {
+        "scored_pixels": 2111242,
+        "n_gt": 35806,
+        "emitted_px": 159345,
+        "tp_w": 3541.5768590795187,
+        "fp_w": 149800.8282888463,
+        "fn_w": 32264.42314092048,
+        "dti": 0.0597096771177947
+      }
+    },
+    "dilate4": {
+      "full_emitted_px": 515584,
+      "folds": [
+        {
+          "fold": 0,
+          "scored_pixels": 910314,
+          "n_gt": 12003,
+          "emitted_px": 99228,
+          "tp_w": 1521.8297341849147,
+          "fp_w": 94686.73484484144,
+          "fn_w": 10481.170265815086,
+          "dti": 0.05276049704221428
+        },
+        {
+          "fold": 1,
+          "scored_pixels": 2040065,
+          "n_gt": 13236,
+          "emitted_px": 212811,
+          "tp_w": 2178.020517830448,
+          "fp_w": 205820.7243144169,
+          "fn_w": 11057.979482169552,
+          "dti": 0.04173368604722968
+        },
+        {
+          "fold": 2,
+          "scored_pixels": 1487804,
+          "n_gt": 23468,
+          "emitted_px": 149334,
+          "tp_w": 2960.574941168004,
+          "fp_w": 140808.4970247881,
+          "fn_w": 20507.425058831996,
+          "dti": 0.062290893503163025
+        },
+        {
+          "fold": 3,
+          "scored_pixels": 623438,
+          "n_gt": 12338,
+          "emitted_px": 48896,
+          "tp_w": 1401.5866828331455,
+          "fp_w": 45151.75055206554,
+          "fn_w": 10936.413317166855,
+          "dti": 0.07307135990737225
+        }
+      ],
+      "tune": {
+        "scored_pixels": 2950379,
+        "n_gt": 25239,
+        "emitted_px": 312039,
+        "tp_w": 3699.850252015363,
+        "fp_w": 300507.45915925835,
+        "fn_w": 21539.149747984637,
+        "dti": 0.04565875248411435
+      },
+      "heldout": {
+        "scored_pixels": 2111242,
+        "n_gt": 35806,
+        "emitted_px": 198230,
+        "tp_w": 4362.16162400115,
+        "fp_w": 185960.24757685367,
+        "fn_w": 31443.83837599885,
+        "dti": 0.06539062486755488
+      }
+    },
+    "dilate6": {
+      "full_emitted_px": 735306,
+      "folds": [
+        {
+          "fold": 0,
+          "scored_pixels": 910314,
+          "n_gt": 12003,
+          "emitted_px": 146548,
+          "tp_w": 2150.9536145482043,
+          "fp_w": 139769.1054086226,
+          "fn_w": 9852.046385451795,
+          "dti": 0.05662429043324739
+        },
+        {
+          "fold": 1,
+          "scored_pixels": 2040065,
+          "n_gt": 13236,
+          "emitted_px": 293698,
+          "tp_w": 2904.804492150785,
+          "fp_w": 284067.31179112016,
+          "fn_w": 10331.195507849216,
+          "dti": 0.042728254898714145
+        },
+        {
+          "fold": 2,
+          "scored_pixels": 1487804,
+          "n_gt": 23468,
+          "emitted_px": 213153,
+          "tp_w": 4265.241290464532,
+          "fp_w": 200370.1521509437,
+          "fn_w": 19202.75870953547,
+          "dti": 0.07144280818784106
+        },
+        {
+          "fold": 3,
+          "scored_pixels": 623438,
+          "n_gt": 12338,
+          "emitted_px": 74186,
+          "tp_w": 2072.880038462992,
+          "fp_w": 68285.17021551216,
+          "fn_w": 10265.119961537008,
+          "dti": 0.08657919840717387
+        }
+      ],
+      "tune": {
+        "scored_pixels": 2950379,
+        "n_gt": 25239,
+        "emitted_px": 440246,
+        "tp_w": 5055.75810669899,
+        "fp_w": 423836.41719974275,
+        "fn_w": 20183.241893301012,
+        "dti": 0.04770949813850148
+      },
+      "heldout": {
+        "scored_pixels": 2111242,
+        "n_gt": 35806,
+        "emitted_px": 287339,
+        "tp_w": 6338.121328927524,
+        "fp_w": 268655.32236645586,
+        "fn_w": 29467.878671072474,
+        "dti": 0.07577543003606083
+      }
+    }
+  },
+  "decision": {
+    "selected_radius_px": 6,
+    "audit_pass": true,
+    "no_skill_pass": false,
+    "ready_for_external_test": false,
+    "selection_folds": [
+      0,
+      1
+    ],
+    "untouched_audit_folds": [
+      2,
+      3
+    ],
+    "criterion": "tune pooled DTI maximum (tie: smaller radius); must beat original on both eastern blocks and their pooled DTI",
+    "no_skill_gate_note": "Conservative post-readout safety gate added in review: must also beat no-skill blanket on the east. It is not a pre-registered independent test.",
+    "baseline_tune_dti": 0.034082035630306325,
+    "selected_tune_dti": 0.04770949813850148,
+    "baseline_audit_dti": 0.03526354541534487,
+    "selected_audit_dti": 0.07577543003606083,
+    "blanket_audit_dti": 0.08235252763967821
+  }
+}

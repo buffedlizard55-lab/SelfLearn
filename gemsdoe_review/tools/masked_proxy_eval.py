@@ -20,18 +20,18 @@ WHY THIS EXISTS
 
 WHAT THE NUMBER IS AND IS NOT
 -----------------------------
-It is a policy comparison on real mapped faults absent from the training labels. It is
-not a leaderboard prediction: the scored faults were chosen by experts from GeoDAWn
-geophysics, the SGMC faults were drawn by state-map geologists from surface mapping,
-and the proxy population is dominated by short segments (2,083 components, median
-12 px) while the scored set is likely to be longer structures. Directional comparisons
-between policies are the intended use; absolute values are not.
+It is a policy comparison on mapped USGS SGMC faults absent from the training
+labels, NOT a comparison on confirmed hidden faults or on corrections near known
+traces. DrivenData staff explicitly declined to disclose the hidden test-fault
+sources, types and coverage (https://community.drivendata.org/t/11527/7).
+Even directional comparisons are exploratory after repeated SGMC inspections;
+no absolute score or ranking should be projected onto the hidden set.
 
 USAGE
     python masked_proxy_eval.py \
         --pred /path/a.tif /path/b.tif --labels /path/labels.tif \
-        --proxy /path/proxy_catalogue.tif --sweep-width 0,1,2,3,4,6 \
-        --out evidence/masked_proxy_eval.json
+        --proxy /path/proxy_catalogue.tif --metrics-src /path/GEMSDOE \
+        --sweep-width 0,1,2,3,4,6 --out evidence/masked_proxy_eval.json
 
 `--metrics-src` must point at a checkout of the GEMSDOE repository, which is where the
 exact metric implementation (`GtContext`) lives; this script reuses it rather than
@@ -89,8 +89,8 @@ def main() -> int:
     ap.add_argument("--labels", required=True, help="the provided catalogue raster (the mask)")
     ap.add_argument("--proxy", required=True, help="proxy catalogue; code 2 = new-fault-like")
     ap.add_argument("--out", required=True)
-    ap.add_argument("--metrics-src", default="/home/user/scratch/r1",
-                    help="checkout of the GEMSDOE repository (provides src.metrics)")
+    ap.add_argument("--metrics-src", required=True,
+                    help="read-only GEMSDOE source snapshot providing src.metrics")
     ap.add_argument("--sweep-width", default="0,1,2,3,4,6",
                     help="dilation radii, in px, applied to the prediction before scoring")
     ap.add_argument("--note", default=None)

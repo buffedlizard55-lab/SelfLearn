@@ -1,0 +1,275 @@
+{
+ "generated_utc": "2026-09-26T03:38:56+00:00",
+ "generated_by": "gemsdoe_review/tools/masked_proxy_eval.py",
+ "purpose": "score candidate submissions on faults the training labels do not contain, under the official mask rule and without it, and sweep the emission width",
+ "rule_source": "https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516",
+ "rule_quotes": {
+  "mask_excludes_catalogue": "Pixels corresponding to known USGS/INGENIOUS faults are masked / excluded from evaluation, so they do not count towards penalty terms.",
+  "mask_is_pixel_exact": "The mask is indeed pixel-exact - it is identical to the provided set of training fault labels.",
+  "no_buffer_for_known": "A predicted pixel that is near a known fault trace but far from a new-fault ground truth pixel will be fully penalized, i.e., the buffer does not apply to known faults.",
+  "truth_may_be_near_known": "A new-fault ground truth pixel can indeed lie within 300m of a known fault trace. Such pixels would constitute corrections or modifications to existing fault traces."
+ },
+ "metric": {
+  "R_pixels": 3,
+  "R_meters": 300,
+  "alpha": 0.2,
+  "beta": 0.8
+ },
+ "inputs": {
+  "labels": {
+   "path": "/tmp/gems_entry/data/labels.tif",
+   "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+   "catalogue_px": 60988
+  },
+  "proxy": {
+   "path": "/tmp/gems_entry/data/proxy_catalogue.tif",
+   "sha256": "7563e187171f7210d70295f958b0b2714c1fa504afa35f9a4688fc99b1e1122a",
+   "truth_px": 61664,
+   "footprint_px": 5167373
+  }
+ },
+ "rules": {
+  "raw": "the official metric as written: every predicted pixel counts towards FP_w",
+  "masked_fp": "FP_w excludes predicted pixels that fall on the catalogue mask (the mask is identical to the labels raster); TP_w unchanged",
+  "masked_both": "as masked_fp, and predictions on the mask are also removed before the TP_w credit is taken (a masked pixel cannot earn credit)"
+ },
+ "predictions": {
+  "gems6_hgb88-topk03_33cec71ff0.tif": {
+   "path": "/tmp/gems_entry/downloads/gems6_hgb88-topk03_33cec71ff0.tif",
+   "sha256": "33cec71ff00b3f32d0d59c81c156f3f1488ffef46baa4b6499094e24ea1875ab",
+   "bytes": 1652883,
+   "emitted_px": 155021,
+   "emitted_on_catalogue_px": 23605,
+   "policy_sweep": {
+    "dilate0": {
+     "raw": {
+      "dti": 0.03274049102371815,
+      "TP_w": 2614.0445337172705,
+      "FP_w": 149936.63379928446,
+      "FN_w": 59049.95546628273,
+      "emission_px": 155021
+     },
+     "masked_fp": {
+      "dti": 0.03479809442433089,
+      "TP_w": 2614.0445337172705,
+      "FP_w": 126331.63379928448,
+      "FN_w": 59049.95546628273,
+      "emission_px": 155021
+     },
+     "masked_both": {
+      "dti": 0.03479809442433089,
+      "TP_w": 2614.0445337172705,
+      "FP_w": 126331.63379928448,
+      "FN_w": 59049.95546628273,
+      "emission_px": 131416
+     }
+    }
+   },
+   "as_provided": {
+    "raw": {
+     "dti": 0.03274049102371815,
+     "TP_w": 2614.0445337172705,
+     "FP_w": 149936.63379928446,
+     "FN_w": 59049.95546628273,
+     "emission_px": 155021
+    },
+    "masked_fp": {
+     "dti": 0.03479809442433089,
+     "TP_w": 2614.0445337172705,
+     "FP_w": 126331.63379928448,
+     "FN_w": 59049.95546628273,
+     "emission_px": 155021
+    },
+    "masked_both": {
+     "dti": 0.03479809442433089,
+     "TP_w": 2614.0445337172705,
+     "FP_w": 126331.63379928448,
+     "FN_w": 59049.95546628273,
+     "emission_px": 131416
+    }
+   }
+  },
+  "gems6_experiment_drop2_topk05.tif": {
+   "path": "/tmp/gems_entry/gems6_experiment_drop2_topk05.tif",
+   "sha256": "cf62c32b686ee536393cafecc0d4beda65e8fb0c3ef6a752422746eb2915d5d2",
+   "bytes": 1723180,
+   "emitted_px": 258369,
+   "emitted_on_catalogue_px": 32426,
+   "policy_sweep": {
+    "dilate0": {
+     "raw": {
+      "dti": 0.04244586196851762,
+      "TP_w": 4249.483563913252,
+      "FP_w": 249671.4121368829,
+      "FN_w": 57414.51643608675,
+      "emission_px": 258369
+     },
+     "masked_fp": {
+      "dti": 0.045385831821890134,
+      "TP_w": 4249.483563913252,
+      "FP_w": 217245.4121368829,
+      "FN_w": 57414.51643608675,
+      "emission_px": 258369
+     },
+     "masked_both": {
+      "dti": 0.045385831821890134,
+      "TP_w": 4249.483563913252,
+      "FP_w": 217245.4121368829,
+      "FN_w": 57414.51643608675,
+      "emission_px": 225943
+     }
+    }
+   },
+   "as_provided": {
+    "raw": {
+     "dti": 0.04244586196851762,
+     "TP_w": 4249.483563913252,
+     "FP_w": 249671.4121368829,
+     "FN_w": 57414.51643608675,
+     "emission_px": 258369
+    },
+    "masked_fp": {
+     "dti": 0.045385831821890134,
+     "TP_w": 4249.483563913252,
+     "FP_w": 217245.4121368829,
+     "FN_w": 57414.51643608675,
+     "emission_px": 258369
+    },
+    "masked_both": {
+     "dti": 0.045385831821890134,
+     "TP_w": 4249.483563913252,
+     "FP_w": 217245.4121368829,
+     "FN_w": 57414.51643608675,
+     "emission_px": 225943
+    }
+   }
+  },
+  "gems6_experiment_drop2_topk05_w3.tif": {
+   "path": "/tmp/gems_entry/gems6_experiment_drop2_topk05_w3.tif",
+   "sha256": "1f551a93c6764acfe75bead7fdf9d1432c251e5dd4edde2b9fefc97c672d8cda",
+   "bytes": 1831635,
+   "emitted_px": 678009,
+   "emitted_on_catalogue_px": 47388,
+   "policy_sweep": {
+    "dilate0": {
+     "raw": {
+      "dti": 0.05423890076755036,
+      "TP_w": 9829.754447344556,
+      "FP_w": 649667.7910924281,
+      "FN_w": 51834.24555265544,
+      "emission_px": 678009
+     },
+     "masked_fp": {
+      "dti": 0.05723188650495049,
+      "TP_w": 9829.754447344556,
+      "FP_w": 602279.7910924281,
+      "FN_w": 51834.24555265544,
+      "emission_px": 678009
+     },
+     "masked_both": {
+      "dti": 0.05723188650495049,
+      "TP_w": 9829.754447344556,
+      "FP_w": 602279.7910924281,
+      "FN_w": 51834.24555265544,
+      "emission_px": 630621
+     }
+    }
+   },
+   "as_provided": {
+    "raw": {
+     "dti": 0.05423890076755036,
+     "TP_w": 9829.754447344556,
+     "FP_w": 649667.7910924281,
+     "FN_w": 51834.24555265544,
+     "emission_px": 678009
+    },
+    "masked_fp": {
+     "dti": 0.05723188650495049,
+     "TP_w": 9829.754447344556,
+     "FP_w": 602279.7910924281,
+     "FN_w": 51834.24555265544,
+     "emission_px": 678009
+    },
+    "masked_both": {
+     "dti": 0.05723188650495049,
+     "TP_w": 9829.754447344556,
+     "FP_w": 602279.7910924281,
+     "FN_w": 51834.24555265544,
+     "emission_px": 630621
+    }
+   }
+  }
+ },
+ "baselines": {
+  "zeros": {
+   "raw": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 0.0,
+    "FN_w": 61664.0,
+    "emission_px": 0
+   },
+   "masked_fp": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 0.0,
+    "FN_w": 61664.0,
+    "emission_px": 0
+   },
+   "masked_both": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 0.0,
+    "FN_w": 61664.0,
+    "emission_px": 0
+   }
+  },
+  "blanket_ones_in_footprint": {
+   "raw": {
+    "dti": 0.05850133094693036,
+    "TP_w": 61664.0,
+    "FP_w": 4961987.444452232,
+    "FN_w": 0.0,
+    "emission_px": 5167373
+   },
+   "masked_fp": {
+    "dti": 0.05918623407292135,
+    "TP_w": 61664.0,
+    "FP_w": 4900999.444452232,
+    "FN_w": 0.0,
+    "emission_px": 5167373
+   },
+   "masked_both": {
+    "dti": 0.05918623407292135,
+    "TP_w": 61664.0,
+    "FP_w": 4900999.444452232,
+    "FN_w": 0.0,
+    "emission_px": 5106385
+   }
+  },
+  "catalogue_copy": {
+   "raw": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 60988.0,
+    "FN_w": 61664.0,
+    "emission_px": 60988
+   },
+   "masked_fp": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 0.0,
+    "FN_w": 61664.0,
+    "emission_px": 60988
+   },
+   "masked_both": {
+    "dti": 0.0,
+    "TP_w": 0.0,
+    "FP_w": 0.0,
+    "FN_w": 61664.0,
+    "emission_px": 0
+   }
+  }
+ },
+ "note": "Post-selection diagnostic on reused SGMC code-2 proxy; NOT an independent holdout or hidden score"
+}
