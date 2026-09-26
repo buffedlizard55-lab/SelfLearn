@@ -1,10 +1,21 @@
-# GEMSDOE review — 2026-09-26 (sessions 1–5)
+# GEMSDOE review — 2026-09-26 (sessions 1–6)
 
-Read **[SESSION5.md](SESSION5.md) first** for the current handoff. `SESSION4.md`
-records the previous phase (its spacing-4 number was measured at 10% of the shipping
-budget and has been superseded by the session-5 re-measurement below). `REVIEW.md`
+Read **[SESSION6.md](SESSION6.md) first** for the current handoff; [SESSION5.md](SESSION5.md)
+is the previous one. `SESSION4.md` records an earlier phase (its spacing-4 number was
+measured at 10% of the shipping budget and superseded in session 5). `REVIEW.md`
 preserves sessions 1–3, including a now-retired whole-system diagnostic whose
 0.0060/0.0148 conclusion is not clean spatial CV.
+
+Session 6, in brief:
+- **Nested policy check:** keep raw / 3% / spacing 4. The nested gain was coverage, not
+  skill.
+- **Gravity bug:** the supplied `iso_grav_anom_hg` is dG/dx, not |∇G|. This affects the
+  entry's channels 25/26 and the session-5 dossier's gravity-edge votes. It is a
+  correctness fix; measured score effect ±0.005.
+- **105 channels adopted by rule:** 0.2419 vs 0.2345, 3/4 folds, single seed.
+- **Label-blind screen:** only about 12% of flagged components survive it, and none of
+  session 5's named multi-family flags does.
+- **Nothing submitted, created or pushed to any GEMS repository.**
 
 Session 5 re-ran session 4's open question **at the shipping budget** (400k negatives /
 300 iterations), on freshly rebuilt official bytes, with the pre-specified
@@ -105,3 +116,11 @@ Historical evidence index (consult SESSION4.md validity warnings first):
 Nothing here is a leaderboard score. The only local measurements of the new-fault-like
 population are the `masked_proxy_eval*` and `proxy_cv_fold0` files, and they are
 explicitly proxies: USGS SGMC surface mapping, not the competition's expert labels.
+| `evidence/nested_policy_cv_session6.json` (+ `_log`, `nested_policy_rule_printed_session6*.json`) | session 6: strictly nested placement-policy check; verdict keep raw/3%/s4 (N3, N4 fail) |
+| `evidence/feature_arm_105_session6.json` | session 6: F1, 105 vs 88 channels (0.2419 vs 0.2345, adopted by rule) |
+| `evidence/grav_fix_arm_session6.json`, `grav_fix_arm_105_session6.json` | session 6: G1 (88 + gravity fix, passes) and G1b (105 + fix, fails fold clause) |
+| `evidence/grav_hg_identity_session6.json` | session 6: `iso_grav_anom_hg` is dG/dx, not \|∇G\|; `iso_grav_anom_slope` is \|∇G\| |
+| `evidence/spacing4_candidate_geology_gravfix_session6.json`, `spacing4_candidate_ch105_geology_session6.json` | session 6: gravity-corrected dossiers of the 88- and 105-channel candidates |
+| `evidence/label_blind_corroboration_session6.json`, `..._ch105_session6.json`, `candidate_robustness_session6.md` | session 6: label-blind screen and hand reasoning per flagged candidate |
+| `evidence/candidate_ch105_report_session6.json` | session 6: gate + overlap report of the 105-channel candidate (bytes in scratch only) |
+| `evidence/ownership_resolution_2026-09-26_session6.json`, `leaderboard_raw_2026-09-26_session6.md` | session 6: ownership audit and leaderboard capture |

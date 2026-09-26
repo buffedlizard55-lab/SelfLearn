@@ -306,3 +306,86 @@ python -m pytest tests/ -q                      # expect 47/47
 python scripts/validate_submission.py downloads/gems6_hgb88-topk03_33cec71ff0.tif
 python /path/to/SelfLearn/gemsdoe_review/tools/check_entry_docs.py . --online   # 50/50
 ```
+
+## Session-6 addendum (2026-09-26): two code fixes and corrected published text
+
+Nothing in this section has been applied to 6GEMSDOE. The session-6 sandbox token for
+GitHub was invalid, and the entry repository is not ours to push to from here. Every
+number below is a spatial-CV transfer proxy (exact-system-purged 2×2 quadrants, 300 m
+Euclidean buffer, 400k negatives / 300 iterations, seed 7). **None is a leaderboard score.**
+
+### F. Gravity channels 25/26 are computed from the wrong band (correctness bug)
+
+`iso_grav_anom_hg` is the **signed east-west derivative** dG/dx, not the horizontal-gradient
+magnitude. On 400,000 valid pixels (footprint eroded 2 px), its Spearman correlation is
+0.95 with numerical dG/dx, 0.03 with dG/dy and −0.0002 with |∇G|, and 49% of values are
+negative. The supplied `iso_grav_anom_slope` *is* |∇G| (0.96). By contrast `tmi_hg` *is*
+|∇TMI| (1.0), so every magnetic channel is fine. Evidence:
+`evidence/grav_hg_identity_session6.json`, tool `tools/grav_band_identity.py`.
+
+Affected lines at e2fe3f4:
+
+* `scripts/build_features.py:166-170`: `grav_asa = sqrt(ghg²+gvg²)`, `grav_tilt = atan2(gvg,|ghg|)`
+  (these are the shipped channels 25/26);
+* `src/gems/features.py:330-333`: the same in the full-grid path.
+
+`grav_hgm_computed`, computed from the gravity band itself, is correct and unaffected.
+
+Proposed change (in the `derived()` tile path, and the same in `features.py`):
+
+```python
+ggx, ggy = F.derivatives(bands["iso_grav_anom"])           # per metre, NaN-propagating
+H = GRAV_HG_SCALE * np.sqrt(ggx * ggx + ggy * ggy)         # |grad G| in the supplied hg's units
+out["grav_asa"] = np.sqrt(H * H + gvg * gvg)
+out["grav_tilt"] = F.tilt_angle(gvg, H)
+# GRAV_HG_SCALE = 935.98: least-squares slope of iso_grav_anom_hg on numerical dG/dx over the
+# valid footprint (session 6). A per-km unit conversion would be 1000; the fitted value was
+# the one measured.
+```
+
+Measured effect (outer folds, frozen policy raw / 3% / spacing 4). The rule was printed
+before running, at 21:00:51Z (`evidence/nested_policy_rule_printed_session6_with_G1.json`):
+
+| arm | q0 | q1 | q2 | q3 | mean |
+|---|---|---|---|---|---|
+| full88 (shipped channels) | 0.2311 | 0.2298 | 0.2494 | 0.2276 | 0.2345 |
+| G1: full88 + gravity fix | 0.2337 | 0.2406 | 0.2472 | 0.2371 | **0.2397** |
+| F1: 105 channels | 0.2376 | 0.2379 | 0.2488 | 0.2431 | **0.2419** |
+| G1b: 105 + gravity fix | 0.2408 | 0.2375 | 0.2414 | 0.2328 | **0.2381** |
+
+G1 passes its non-inferiority rule (mean ≥ full88 − 0.005 and no fold worse by more than
+0.01; its worst fold is −0.0022) and in fact wins 3 of 4 folds. It also helps at a 1.5%
+budget (0.1880 vs 0.1822) and dense (0.0946 vs 0.0925). **At 105 channels, however, the fix does not pass** (G1b, pre-registered at 21:14:37Z, after
+F1's result and before G1b ran). Its mean of 0.2381 is within 0.005 of 0.2419, but fold q3 is
+worse by 0.0103, beyond the 0.01 limit. The likely reason is redundancy: the stack already
+contains correctly computed gravity gradient and tilt channels built from the gravity band
+itself (27 `grav_hgm_computed`, 57–59 `hgm_iso_grav_anom_s*`, 72/74 `tdr_iso_grav_anom_s*`).
+Channels 25/26 therefore add little whether they are right or wrong, and ±0.005 is within
+single-seed noise. **Recommend F for correctness and honest channel naming, not as a score
+improvement.** The research-priority claim that "gravity tilt is weak (AUC 0.484)" was
+measured on the miscomputed channel 26 and should be withdrawn. The correct tilt channels
+72/74 exist and were in the model all along. The fix requires a feature rebuild
+(the features sha changes). That is expected and must be re-pinned. It is not a data change.
+
+### G. Euclidean CV buffer (regenerated)
+
+`patches/cv_euclidean_buffer.patch` was stale. It is now a real `git diff` of
+`src/gems/cv.py` against **e2fe3f4**, and `git apply --check` passes. It replaces the
+4-neighbour iterated dilation (Manhattan: it leaves the (2,2) corner, √8 < 3 px, in
+training) with a Euclidean disk. A radius-3 check gives 29 px; the (2,2) corner is in
+and (3,3) is out.
+
+### H. Published-text corrections (item 5; proposed wording, not applied)
+
+| where | current claim | problem | proposed text |
+|---|---|---|---|
+| `SUBMISSION_GUIDE.md`, site methodology | DTI is "strictly increasing in the predicted value, so fractional confidence gives score away" | Refuted in session 5 (`evidence/metric_claim_check_session5.json`): hardening a remote low-probability false positive to 1 *lowers* DTI | "Uniformly rescaling every probability does not change the ranking; whether hard 0/1 output beats fractional output is an empirical question we tested only on held-out catalogue faults." |
+| `SUBMISSION_GUIDE.md` | "300 m buffer" | the entry's `cv.py` buffer is a 4-neighbour (Manhattan) dilation, not a 300 m disk | "a 3-pixel 4-neighbour buffer (a 300 m Euclidean buffer is proposed in `cv_euclidean_buffer.patch`)" |
+| guide / executive summary | recommends the dense `topk_hard@0.03` file with "proxy 0.1698" | 0.1698 is catalogue CV on the entry's own (unpurged) folds. Under whole-system purging the dense policy scores 0.0925, **below** the matched-budget random control 0.1722, and spaced placement scores 0.2345 (88 ch), 0.2397 (gravity fix), 0.2419 (105 ch) | "0.1698 is a held-out *catalogue* proxy on non-purged folds, not a leaderboard estimate. Under whole-system purging the dense policy falls below a random control at the same budget (review evidence), so the hidden score is unknown." |
+| guide | upload steps come before any account confirmation | order | put account-holder confirmation (one registration, eligibility, weekly allowance, §3.2 AI disclosure) **before** step 1 |
+| site | "4×4 blocks" | **accurate** for the entry's `cv.py` (`make_folds(n_blocks=4, n_folds=4)`); left unchanged | add: "blocks are not purged by fault system; see review for a system-purged check" |
+| site | "11 repositories" | there are 12 GEMS-named repositories under `buffedlizard55-lab` (LEARNGEMSDOE added; `evidence/ownership_resolution_2026-09-26_session6.json`) | "12 repositories" |
+
+Order of application (account holder, from a permitted 6GEMSDOE working copy): G →
+re-run the entry's tests → F with a feature rebuild and re-pin → the text in H.
+Never create a new repository or site for this.

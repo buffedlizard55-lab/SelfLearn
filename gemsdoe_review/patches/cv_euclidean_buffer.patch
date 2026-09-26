@@ -1,25 +1,38 @@
+diff --git a/src/gems/cv.py b/src/gems/cv.py
+index 41a6eca..1bc874d 100644
 --- a/src/gems/cv.py
 +++ b/src/gems/cv.py
-@@ -15,3 +15,3 @@
+@@ -12,8 +12,8 @@ Design:
+   * Folds are formed by dealing blocks in a strided pattern so that each fold's
+     blocks are spread over the region rather than clustered in one corner.
+   * A BUFFER of `buffer_px` pixels around every held-out block is also held out
 -    of *training* (so no training pixel is within the kernel support of a scored
 -    pixel) and excluded from *scoring* (so the scored pixels are not influenced
--    by test-block edges).
 +    of *training* using a Euclidean disk (so no training pixel is within the
-+    300 m kernel support of a scored pixel) and excluded from *scoring* (so the
-+    scored pixels are not influenced by test-block edges).
-@@ -28,0 +29 @@
++    300 m kernel support of a scored pixel) and excluded from *scoring* (so the scored pixels are not influenced
+     by test-block edges).
+   * Because the target is unmapped faults, we also report the score with the
+     catalogued faults removed from the ground truth inside the held-out blocks
+@@ -26,6 +26,7 @@ from __future__ import annotations
+ from dataclasses import dataclass
+ 
+ import numpy as np
 +from scipy import ndimage
-@@ -43 +44 @@
--        pixel lies within the kernel support of a scored pixel. `score` is the
-+        pixel lies within the Euclidean kernel support of a scored pixel. `score` is the
-@@ -62,0 +64,6 @@
+ 
+ 
+ @dataclass
+@@ -60,17 +61,17 @@ class Folds:
+ 
+ 
+ def _dilate(mask: np.ndarray, iterations: int) -> np.ndarray:
 +    """Dilation by a Euclidean disk, matching the metric's pixel-radius geometry.
 +
-+    A four-neighbour iterated cross uses Manhattan distance and misses the (2, 2)
-+    corner at a 3 px radius: sqrt(8) < 3. That corner is still inside the
++    A four-neighbour iterated cross uses Manhattan distance and misses e.g. the
++    (2, 2) corner at a 3 px radius: sqrt(8) < 3. That corner is still inside the
 +    official 300 m kernel and must not be in training.
 +    """
-@@ -65,9 +72,3 @@
+     if iterations <= 0:
+         return mask
 -    out = mask.copy()
 -    for _ in range(iterations):
 -        shifted = out.copy()
@@ -32,3 +45,6 @@
 +    yy, xx = np.ogrid[-iterations:iterations + 1, -iterations:iterations + 1]
 +    disk = xx * xx + yy * yy <= iterations * iterations
 +    return ndimage.binary_dilation(mask, structure=disk)
+ 
+ 
+ def make_folds(n_blocks: int = 4, n_folds: int = 4, buffer_px: int = 3) -> Folds:

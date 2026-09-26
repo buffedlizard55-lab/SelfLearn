@@ -137,8 +137,8 @@ jobs:
       - name: Install isolated scientific review dependencies
         run: python -m pip install numpy scipy rasterio pytest
       - name: Spatial validation and evidence regressions (no data downloads)
-        # Session-4 and session-5 files only: the earlier session files contain
+        # Session-4, -5 and -6 files only: the earlier session files contain
         # entry-rooted oracles that are EXPECTED to fail without a patched entry
         # checkout (they encode the unpatched Euclidean-buffer defect), so they
         # are run locally against the entry, not in a job that has no entry.
-        run: python -m pytest gemsdoe_review/tests/test_session4_spatial_cv.py gemsdoe_review/tests/test_session5_additions.py -q
+        run: python -m pytest gemsdoe_review/tests/test_session4_spatial_cv.py gemsdoe_review/tests/test_session5_additions.py gemsdoe_review/tests/test_session6_additions.py -q

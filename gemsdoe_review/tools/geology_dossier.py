@@ -83,9 +83,14 @@ DIAGNOSTICS: list[tuple[str, str, str, str]] = [
      "tmi_hg / mag_asa; nearly constant because mag_asa ≈ tmi_hg"),
     ("rtp", "magnetic", "extremity", "reduced-to-pole magnetic anomaly"),
     ("iso_grav_anom", "gravity", "extremity", "isostatic gravity anomaly"),
+    # Session 6: the supplied iso_grav_anom_hg is the SIGNED east-west derivative
+    # dG/dx (Spearman 0.95 with numerical dG/dx, ~0 with |grad G|), so it cannot be
+    # read as "high = contact". The supplied iso_grav_anom_slope IS the gradient
+    # magnitude (Spearman 0.96 with |grad G|); see grav_hg_identity_session6.json.
     ("grav_hgm", "gravity_edge", "high",
-     "horizontal gradient of the isostatic gravity anomaly - density contact"),
-    ("grav_asa", "gravity_edge", "high", "analytic-signal amplitude of gravity"),
+     "supplied iso_grav_anom_slope = |horizontal gradient| of isostatic gravity - density contact"),
+    ("grav_asa", "gravity_edge", "high",
+     "sqrt(|grad G|^2 + vg^2), |grad G| in the supplied hg units (session-6 correction)"),
     ("det_elev", "topography", "extremity",
      "detrended elevation - positive = high ground"),
     ("elev_hgm", "topography_edge", "high",
@@ -115,7 +120,7 @@ DERIVED = {
     "mag_asa": "tmi_asa_computed",
     "mgd": "mag_mgd",
     "tdr_mag": "tdr_mag",
-    "grav_hgm": "iso_grav_anom_hg",
+    "grav_hgm": "iso_grav_anom_slope",
     "grav_asa": "grav_asa",
     "elev_hgm": "det_elev_hgm_computed",
     "slope_of_slope": "slope_of_slope",
@@ -141,11 +146,16 @@ def build_diagnostics(features_path: Path) -> tuple[dict[str, np.ndarray], np.nd
                 "depth_to_base_surf", "ieq_n100a15", "deq_n100a15"):
         out[key] = bands[key]
     out["mag_hgm"] = bands["tmi_hg"]
-    out["grav_hgm"] = bands["iso_grav_anom_hg"]
-    # analytic signal from the provided horizontal gradient
+    out["grav_hgm"] = bands["iso_grav_anom_slope"]
+    # analytic signal from the provided horizontal gradient (tmi_hg IS |grad TMI|)
     out["mag_asa"] = np.sqrt(bands["tmi_hg"] ** 2 + bands["tmi_vg"] ** 2)
-    out["grav_asa"] = np.sqrt(bands["iso_grav_anom_hg"] ** 2
-                              + bands["iso_grav_anom_vg"] ** 2)
+    # gravity: iso_grav_anom_hg is only dG/dx, so rebuild |grad G| numerically and
+    # express it in the supplied hg units before combining with vg
+    ggy, ggx = np.gradient(bands["iso_grav_anom"].astype(np.float64), spec.PIXEL_SIZE_M)
+    ok = valid & np.isfinite(ggx) & np.isfinite(bands["iso_grav_anom_hg"])
+    scale = float((bands["iso_grav_anom_hg"][ok] * ggx[ok]).sum() / (ggx[ok] ** 2).sum())
+    out["grav_asa"] = np.sqrt((scale * np.hypot(ggx, ggy)) ** 2
+                              + bands["iso_grav_anom_vg"].astype(np.float64) ** 2)
     with np.errstate(invalid="ignore", divide="ignore"):
         out["mgd"] = bands["tmi_hg"] / np.where(out["mag_asa"] > 0,
                                                 out["mag_asa"], np.nan)

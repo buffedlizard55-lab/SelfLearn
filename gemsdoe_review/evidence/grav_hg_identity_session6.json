@@ -1,0 +1,30 @@
+{
+ "kind": "band identity test; label-free",
+ "training_features_sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
+ "tool_sha256": "a904de2d46f868d7f2fcb2ecd45db74fd50695d3fa0c8b8f9eac425e345d5031",
+ "bands": [
+  "iso_grav_anom",
+  "iso_grav_anom_hg",
+  "iso_grav_anom_vg",
+  "iso_grav_anom_slope",
+  "tmi",
+  "tmi_hg"
+ ],
+ "stats": {
+  "n_sample": 400000,
+  "hg_frac_negative": 0.490625,
+  "spearman_hg_vs_HGM": -0.00016710832954783315,
+  "spearman_abs_hg_vs_HGM": 0.7112712149478193,
+  "spearman_hg_vs_dGdx": 0.9485484384295396,
+  "spearman_hg_vs_dGdy": 0.027204301145003492,
+  "spearman_slope_vs_HGM": 0.9604341413864456,
+  "spearman_hg_vs_vg": 0.047001960804969004,
+  "tmi_check_spearman_tmi_hg_vs_HGM": 0.999999941538011
+ },
+ "verdict": {
+  "iso_grav_anom_hg_is": "signed E-W derivative dG/dx, NOT |grad G|",
+  "iso_grav_anom_slope_is_HGM": true,
+  "tmi_hg_is_HGM": true,
+  "consequence": "the entry's grav_asa = sqrt(hg^2+vg^2) and grav_tilt = atan2(vg,|hg|) (channels 25/26) ignore the N-S gradient; tmi-derived channels are unaffected"
+ }
+}
