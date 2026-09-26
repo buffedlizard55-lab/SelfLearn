@@ -1,0 +1,262 @@
+{
+  "kind": "feature-priority audit on official bytes; proxy AUCs against the MAPPED catalogue, never hidden-score predictions",
+  "entry_root": "/tmp/gems_entry",
+  "entry_commit": "e2fe3f41c6f5dd2dcb2fc91958ee67698f114ada",
+  "features_raster_sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
+  "features_raster_sha256_matches_pin": true,
+  "pixel_size_m": 100.0,
+  "n_catalogue_positive_pixels": 60988,
+  "sampling": {
+    "positives": "all catalogue positive pixels finite in the compared channels (per-section n reported)",
+    "far_background": "footprint pixels >1000 m from any catalogue pixel, n<=60000, seed 7",
+    "halo_band": "300-1000 m ring, descriptive only, never pooled"
+  },
+  "A_potential_field_gradient_tilt": {
+    "mag_tilt_raw": {
+      "abs_percentiles_deg": {
+        "p50": 0.2444,
+        "p90": 0.897,
+        "p99": 3.0766,
+        "p99.9": 9.7164
+      },
+      "share_abs_gt_45deg": 2.2074576439223657e-05,
+      "share_abs_gt_30deg": 8.035920370419138e-05,
+      "n_finite": 5164312
+    },
+    "tdr_tmi_s1.5": {
+      "abs_percentiles_deg": {
+        "p50": 40.4099,
+        "p90": 72.3248,
+        "p99": 84.7166,
+        "p99.9": 88.3242
+      },
+      "share_abs_gt_45deg": 0.43971888950646604,
+      "share_abs_gt_30deg": 0.6338361858468833,
+      "n_finite": 5098778
+    },
+    "tdr_tmi_s3.0": {
+      "abs_percentiles_deg": {
+        "p50": 40.3401,
+        "p90": 72.3095,
+        "p99": 84.7742,
+        "p99.9": 88.3705
+      },
+      "share_abs_gt_45deg": 0.43886256261736273,
+      "share_abs_gt_30deg": 0.6330695254286985,
+      "n_finite": 5054309
+    },
+    "grav_tilt_raw": {
+      "abs_percentiles_deg": {
+        "p50": 38.1273,
+        "p90": 78.4162,
+        "p99": 88.8382,
+        "p99.9": 89.8832
+      },
+      "share_abs_gt_45deg": 0.4216278954486096,
+      "share_abs_gt_30deg": 0.5985380046751629,
+      "n_finite": 5164312
+    },
+    "mag_asa_vs_abs_tmi_hg_pearson_r": 1.0,
+    "grav_asa_vs_abs_isograv_hg_pearson_r": 0.840748,
+    "scale_contrast_median_abs": {
+      "tmi_vg_over_tmi_hg": 0.004266243893653154,
+      "isograv_vg_over_isograv_hg": 0.784869909286499
+    },
+    "auc_pos_vs_far_bg": {
+      "mag_tilt_abs": {
+        "auc_pos_vs_far_bg": 0.4999,
+        "separation": 0.5001,
+        "polarity": "-",
+        "n_pos": 60894,
+        "n_bg": 60000
+      },
+      "tdr_tmi_s1.5_abs": {
+        "auc_pos_vs_far_bg": 0.4998,
+        "separation": 0.5002,
+        "polarity": "-",
+        "n_pos": 59802,
+        "n_bg": 59214
+      },
+      "tdr_tmi_s3.0_abs": {
+        "auc_pos_vs_far_bg": 0.4987,
+        "separation": 0.5013,
+        "polarity": "-",
+        "n_pos": 58996,
+        "n_bg": 58717
+      },
+      "grav_tilt_abs": {
+        "auc_pos_vs_far_bg": 0.4843,
+        "separation": 0.5157,
+        "polarity": "-",
+        "n_pos": 60894,
+        "n_bg": 60000
+      },
+      "mag_asa": {
+        "auc_pos_vs_far_bg": 0.5351,
+        "separation": 0.5351,
+        "polarity": "+",
+        "n_pos": 60894,
+        "n_bg": 60000
+      },
+      "grav_asa": {
+        "auc_pos_vs_far_bg": 0.535,
+        "separation": 0.535,
+        "polarity": "+",
+        "n_pos": 60894,
+        "n_bg": 60000
+      }
+    }
+  },
+  "B_dem_curvature_slope_break": {
+    "auc_pos_vs_far_bg": {
+      "det_elev_slope_official": {
+        "auc_pos_vs_far_bg": 0.5661,
+        "separation": 0.5661,
+        "polarity": "+",
+        "n_pos": 57101,
+        "n_bg": 60000,
+        "halo_median": 4.33096981048584
+      },
+      "slope_computed": {
+        "auc_pos_vs_far_bg": 0.5737,
+        "separation": 0.5737,
+        "polarity": "+",
+        "n_pos": 57101,
+        "n_bg": 60000,
+        "halo_median": 0.06726139783859253
+      },
+      "slope_of_slope_raw": {
+        "auc_pos_vs_far_bg": 0.5776,
+        "separation": 0.5776,
+        "polarity": "+",
+        "n_pos": 57101,
+        "n_bg": 60000,
+        "halo_median": 0.00015475868713110685
+      },
+      "slope_of_slope_s1.5": {
+        "auc_pos_vs_far_bg": 0.5892,
+        "separation": 0.5892,
+        "polarity": "+",
+        "n_pos": 57101,
+        "n_bg": 60000,
+        "halo_median": 0.05994538962841034
+      },
+      "slope_of_slope_s3.0": {
+        "auc_pos_vs_far_bg": 0.5979,
+        "separation": 0.5979,
+        "polarity": "+",
+        "n_pos": 57101,
+        "n_bg": 60000,
+        "halo_median": 0.056892331689596176
+      },
+      "curv_total_abs_laplacian": {
+        "auc_pos_vs_far_bg": 0.5558,
+        "separation": 0.5558,
+        "polarity": "+",
+        "n_pos": 57101,
+        "n_bg": 60000,
+        "halo_median": 0.00040368956979364157
+      },
+      "CANDIDATE_slope_break_abs_s1_s6": {
+        "auc_pos_vs_far_bg": 0.5641,
+        "separation": 0.5641,
+        "polarity": "+",
+        "n_pos": 57101,
+        "n_bg": 60000,
+        "halo_median": 0.017272457480430603
+      },
+      "CANDIDATE_slope_break_rel_s1_s6": {
+        "auc_pos_vs_far_bg": 0.5135,
+        "separation": 0.5135,
+        "polarity": "+",
+        "n_pos": 57101,
+        "n_bg": 60000,
+        "halo_median": 0.21576234698295593
+      }
+    },
+    "spearman_candidates_vs_shipped_on_far_bg": {
+      "slope_break_abs_s1_s6": {
+        "slope_of_slope_raw": 0.7005,
+        "slope_of_slope_s1.5": 0.7079,
+        "slope_of_slope_s3.0": 0.7024,
+        "curv_total_abs_laplacian": 0.6397,
+        "slope_computed": 0.7086
+      },
+      "slope_break_rel_s1_s6": {
+        "slope_of_slope_raw": -0.0066,
+        "slope_of_slope_s1.5": -0.0977,
+        "slope_of_slope_s3.0": -0.0878,
+        "curv_total_abs_laplacian": -0.0284,
+        "slope_computed": -0.0947
+      }
+    },
+    "note": "candidate two-scale slope-break channels are NOT in the 88-channel stack; AUC here is catalogue-proxy signal presence only; `slope_of_slope_*` are |grad| of the smoothed slope and curv_total_abs_laplacian is |r+t| as in gems.features.curvature"
+  },
+  "C_cross_reference_families": {
+    "per_band_auc_pos_vs_far_bg": {
+      "strain": {
+        "geod_2ndinv": {
+          "auc_pos_vs_far_bg": 0.5838,
+          "separation": 0.5838,
+          "polarity": "+",
+          "n_pos": 60894,
+          "n_bg": 60000
+        },
+        "geod_shearrate": {
+          "auc_pos_vs_far_bg": 0.5806,
+          "separation": 0.5806,
+          "polarity": "+",
+          "n_pos": 60894,
+          "n_bg": 60000
+        },
+        "geod_dilaterate": {
+          "auc_pos_vs_far_bg": 0.5326,
+          "separation": 0.5326,
+          "polarity": "+",
+          "n_pos": 60894,
+          "n_bg": 60000
+        }
+      },
+      "conductivity": {
+        "cond_surf": {
+          "auc_pos_vs_far_bg": 0.4794,
+          "separation": 0.5206,
+          "polarity": "-",
+          "n_pos": 60894,
+          "n_bg": 60000
+        },
+        "depth_to_base_surf": {
+          "auc_pos_vs_far_bg": 0.5135,
+          "separation": 0.5135,
+          "polarity": "+",
+          "n_pos": 60894,
+          "n_bg": 60000
+        }
+      },
+      "seismicity": {
+        "ieq_n100a15": {
+          "auc_pos_vs_far_bg": 0.5831,
+          "separation": 0.5831,
+          "polarity": "+",
+          "n_pos": 60894,
+          "n_bg": 60000
+        },
+        "deq_n100a15": {
+          "auc_pos_vs_far_bg": 0.4396,
+          "separation": 0.5604,
+          "polarity": "-",
+          "n_pos": 60894,
+          "n_bg": 60000
+        }
+      }
+    },
+    "n_pos": 60894,
+    "n_bg": 60000,
+    "note": "abs-AUC = separation in either tail; deq negated so larger means closer to earthquakes",
+    "lead_band_spearman_on_positives": {
+      "strain|conductivity": -0.2203,
+      "strain|seismicity": 0.7724,
+      "conductivity|seismicity": -0.1368
+    }
+  }
+}

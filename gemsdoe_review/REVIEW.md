@@ -249,3 +249,182 @@ seek **new independent fault validation / expert geologic review** before
 considering a scratch raster. Re-run the exact format gate on whichever bytes the
 verified account eventually selects. Do not present any local proxy as a public
 score, or upload just to test a speculation.
+
+---
+
+# Session 2 — 2026-09-26 (later)
+
+Continuation on branch `arena/01a0dc0b-selflearn` (PR #13 merged). The brief's
+seven items were re-worked from a **fresh read-only clone** of
+`buffedlizard55-lab/6GEMSDOE` (commit `e2fe3f41c6f5…`, rasters re-placed from the
+committed bridge and re-pinned 3/3). GitHub authentication works again this
+session (the previous session's HTTP 401 is resolved; authenticated as
+`arena-ai-coding-agent[bot]`, which is also a commit author on all GEMS-family
+repositories). Nothing was submitted, registered, created or uploaded; all
+sibling repositories were treated read-only.
+
+## Re-verification (all from the fresh clone)
+
+| Check | Result |
+| --- | --- |
+| Format gate on shipped `gems6_hgb88-topk03_33cec71ff0.tif` | **13/13 PASS**, sha256 `33cec71ff0…` matches, 155,021 positives, 5,167,373 finite, 0 in-footprint NaNs, finite range [0.0, 1.0], EPSG:32611, 100 m, transform `(100, 0, 243350, 0, -100, 4508550)` |
+| **Poison test** (one NaN injected inside the footprint) | `NAN-INSIDE-FOOTPRINT=1` → **HARD GATE FAILED, exit 1** while the finite [0,1] check still passed — the hard gate behaves exactly as required |
+| Official raster pins | 3/3 sha256 verified from the committed bridge parts |
+| Entry pytest | **46/46 PASS**; site rebuild **drift-free** |
+| Session record | `data/evidence/session_reverification_2026-09-26T0452Z.json` (in the entry clone) |
+
+## CV: blocked, buffered, never random — re-confirmed
+
+`src/gems/cv.py::make_folds` remains strided **spatial blocks** with a 3-px
+buffer; `scripts/experiment.py` and `scripts/analysis.py` both obtain folds only
+from `gcv.make_folds`; the only random draws anywhere are seeded *sampling*
+inside masks (never a split). The known defect is unchanged and real:
+`_dilate` is a 4-neighbour Manhattan diamond, and on a fresh clone the
+independent Euclidean oracle again measured **0** training-mask pixels inside
+300 m for the historical 4×4/4-fold and 6×6/6-fold (vertical-stripe) layouts
+but **32** for a 5×5/3-fold and **100** for a 6×6/4-fold layout
+(`cv.py` sha256 unchanged: `b0c451a9…`). `patches/cv_euclidean_buffer.patch`
+still applies cleanly (`--dry-run` PASS) and was re-tested on a separate copy:
+patched oracle → **0 misses on every layout**; patched entry → **46/46**; review
+regressions on patched copy → **20 passed, 1 skipped** (the unpatched entry
+fails exactly the two non-stripe geometry cases, as documented). The canonical
+repository is **still unpatched** — forward-looking fix, no retrospective score
+change.
+
+## Metric-aware placement (~4–5 px) — intact and measured
+
+`src/gems/placement.py` keeps `thin_keep(mask, spacing)` with default
+`spacing=4` (the brief's 4–5 px hypothesis) and the module derives, rather than
+asserts, the metric consequences. `scripts/analysis.py` scores it by default
+(`strategies_spacing=4`). From the entry's own stored blocked folds
+(`data/evidence/cv.json`, per-fold records): mean DTI **`skeleton_spaced4`
+0.0621** vs `skeleton` 0.0829 and `binary@0.3` 0.1119 — the 4–5 px spacing
+*loses* on true lines exactly as the module's derivation predicts, and the
+shipped policy (`topk_hard@0.03`, a dense 3% budget) is consistent with that
+measurement. Gap found and noted: `cv.json`'s **aggregate** section omits the
+`skeleton_spaced4` row although every fold record contains it (computed here
+from the fold records; nothing was rewritten in the entry).
+
+## Feature engineering vs the research priorities — new measurements
+
+`tools/feature_priorities_audit.py` →
+`evidence/feature_priorities_audit_2026-09-26.{json,md}` (official bytes, pin
+match; positives = all 60,988 catalogue pixels; control = 60,000 px **> 1 km
+from any catalogue pixel**, seed 7; byte-identical on re-run):
+
+1. **HGM/tilt (priority 1).** The raw magnetic tilt reproduces the stored audit
+   *exactly* (|TDR| p99 3.077°, ≥45° on 2.2e-5 of pixels → dead) and `mag_asa`
+   is still r = 1.000000 with `|tmi_hg|`. **New:** the shipped *smoothed* tilts
+   `tdr_tmi_s1.5/s3.0` are angle-active (p50 ≈ 40°) yet carry **no catalogue
+   separation** (AUC 0.4998 / 0.4987). Gravity tilt is angle-active and mildly
+   anti-separated (AUC 0.4843). No magnetic-tilt variant separates mapped
+   faults in either session.
+2. **Curvature / breaks in slope (priority 2).** Shipped break channels
+   separate weakly but consistently (best: `slope_of_slope_s3.0`, AUC 0.5979).
+   **Two new candidate two-scale slope-break channels** (|G₁−G₆| of slope,
+   absolute and relative) were measured and **lose**: 0.5641 (redundant,
+   Spearman 0.64–0.71 with the shipped channels) and 0.5135 (≈ noise).
+   Negative result recorded so nobody re-adds them on this proxy.
+3. **Cross-referencing (priority 3).** Strain bands AUC 0.53–0.58, seismicity
+   0.58/0.56, conductivity ≈ 0.52 with a **negative** sign at faults. At
+   catalogue pixels, strain (`geod_2ndinv`) and earthquake density
+   (`ieq_n100a15`) have **Spearman ρ = 0.77** — the "agreeing independent
+   signals" are measurably *not* independent; Phase-2 text should cite at most
+   potential-field edges + one strain/seismicity block + conductivity with its
+   measured negative sign.
+
+## Per-candidate geological reasoning (NEXT_STEPS #9)
+
+`tools/phase2_narrative.py` →
+`evidence/phase2_candidate_narratives_2026-09-26.{json,md}`: for **all 180**
+≥200-closed-px groups of the shipped file, a composed narrative from measured
+fields only — PCA geometry, azimuth read against the cited Walker-Lane /
+Basin-and-Range trend families (framed by the competition About page, USGS
+DDS-58 ch. I, USGS OFR 67-11 and the USGS normal-fault FAQ), favourable-decile
+family support (untrusted tilt/ratio excluded from voting), distance class with
+the staff masking consequence, tilt-depth status (**not estimable** — no depth
+is claimed anywhere), a counterinterpretation, and a confidence tier capped at
+"provisional". Measured headline: agreement histogram {0 fam: 66, 1: 81, 2: 27,
+3: 6} — **no candidate reaches the provisional tier**; the shipped file is a
+broad anomaly surface, not a validated line list. Renderer guarded by
+`tests/test_session2_additions.py` (refuses a dossier without the submission
+sha256; untrusted diagnostics can never count as support; class-specific
+masking sentences).
+
+## Ownership of the three "unconfirmed" sites — resolved at the GitHub layer
+
+`evidence/ownership_resolution_2026-09-26_session2.json` (fresh REST + live
+fetches). **GitHub layer: RESOLVED.** `5GEMSDOE`, `GEMSDOE4`, `6GEMSDOE` are
+all non-fork repositories of the one account `buffedlizard55-lab` (id
+309556078) that hosts `SelfLearn`; their commit histories contain only this
+account's identities plus the arena bot identities (incl. the very identity
+authenticated this session). They are alternative builds/copies of one project
+— safe to treat as **our own history**, none is another entrant.
+**DrivenData layer: STILL UNRESOLVED from the sandbox** — no session exists
+here, so the registration identity, §1.3 eligibility ("for US" status) and the
+weekly allowance remain human-only facts. Nothing was uploaded and no
+leaderboard row is claimed as ours.
+
+Live-site sanity check (same evidence file): the designated
+[6GEMSDOE site](https://buffedlizard55-lab.github.io/6GEMSDOE/) still publishes
+exactly the re-gated bytes (hash prefix and pixel count match). The conflicts
+flagged last session **persist live**:
+[5GEMSDOE](https://buffedlizard55-lab.github.io/5GEMSDOE/docs/index.html) still
+advertises `candidate_s5_catalogue_hedge.tif` ("what to upload next") and a
+"maximum-compatibility" 0.0-outside/no-NaN fallback;
+[GEMSDOE4](https://buffedlizard55-lab.github.io/GEMSDOE4/) publishes a third
+distinct artifact (`c1da7dd9…`, 335,054 px at 1.0, union-of-5 policy).
+Additionally, the 6GEMSDOE site's suggested submission comment still contains
+the "strictly increasing in the predicted value, so fractional confidence gives
+score away" wording that `patches/PROPOSED_ENTRY_CHANGES.md` §C.3 corrects
+(the entry's own `placement.py` derives the uniform-scaling-only identity and
+the review's tests hold a hardening counterexample).
+
+## Field position (public leaderboard, read 2026-09-26)
+
+Top **DARD 0.3049** (10 subs). The five brief-attributed scores again map to
+five distinct single-submission entrants, now at ranks **23 / 24 / 40 / 41 /
+50** (extradr19 0.1563, smashi34 0.1560, smrtdoog5 0.1193, SDCF9 0.1152, wbg1
+0.0830) — the field above them grew (new accounts at ranks 6–13). **We still
+have no owned public score**; the entry's own numbers remain blocked-CV 0.1698
+against the catalogue and 0.03–0.08 on the SGMC masked proxy, neither of which
+is board-comparable.
+
+## Rules re-check (official PDF fetched this session)
+
+`https://www.nlr.gov/docs/fy26osti/96647.pdf` (September 2026; the DrivenData
+[rules page](https://www.drivendata.org/competitions/306/competition-doe-gems/rules/)
+points to the HeroX mirror `resource/2274`): §3.4 "up to three per week" and
+one final submission per participating entity; §3.5 one submission across both
+prize rounds; §3.6.2 the final choice must be made without private-score
+knowledge; §3.2 generative-AI use must be declared in the narrative (outside
+the word count) — the draft sits in the entry's `NARRATIVES.md` awaiting the
+account holder. The entry doc checker still reports **48/50** with the same two
+real gaps (`LIMITATIONS.md` lacks the staff masking rule; the per-candidate
+geology document exists in *this* review workspace, not yet in the entry
+repository).
+
+## What changed / still unverified / blocking / next
+
+**Changed (this review workspace only):** new audit tool + evidence pair
+(feature priorities), new narrative tool + evidence pair (Phase-2 narratives),
+fresh ownership-resolution evidence, new regression tests
+(`test_session2_additions.py`), session-2 section in this file, README and
+proposal addenda. **Nothing in the canonical entry, no submission, no new
+site/account/repo.**
+
+**Still unverified:** the DrivenData registration/eligibility/allowance behind
+the repos; whether any upload has ever been made by the account; the hidden
+score of the shipped file (unknowable without spending a slot); the patch is
+applied only to a scratch copy.
+
+**Blocking:** account-holder actions only (identify the one registration, read
+its submission history, confirm §1.3 eligibility, then apply the patch + doc
+fixes to the entry and decide the upload).
+
+**First next session:** with the account verified, apply
+`patches/cv_euclidean_buffer.patch` + `PROPOSED_ENTRY_CHANGES.md` to
+`6GEMSDOE` (write access re-test first: REST still reports `push=false` for the
+integration), copy `phase2_candidate_narratives_2026-09-26.md` into the entry
+as the per-candidate geology document, re-run `check_entry_docs.py` to 50/50,
+and only then weigh spending slot 1 on the shipped file.

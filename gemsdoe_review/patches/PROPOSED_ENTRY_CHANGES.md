@@ -9,6 +9,22 @@ is possible. The DrivenData
 registration/eligibility/weekly allowance and any owner-specific score are also
 unknown. Do not create a second entry/site/account or silently upload a scratch file.
 
+**Session-2 addendum (later the same day).** GitHub auth works again
+(authenticated as `arena-ai-coding-agent[bot]`); REST still reports
+`push=false` on `SelfLearn` and `6GEMSDOE`, so these changes still cannot be
+applied from here. Re-verified against a fresh clone: the CV patch still
+dry-run-applies and fixes every layout (0 oracle misses) with the entry's 46
+tests passing on the patched copy; `check_entry_docs.py --online` still reports
+48/50 with the same two gaps (masking rule; per-candidate geology document — a
+candidate for that document now exists at
+`evidence/phase2_candidate_narratives_2026-09-26.md`). The live 6GEMSDOE site's
+suggested submission comment still carries the §C.3 overgeneralization
+("strictly increasing … fractional confidence gives score away"), and the
+5GEMSDOE / GEMSDOE4 sites still advertise their own artifacts and (for
+5GEMSDOE) the 0.0-outside fallback — §C.6 remains necessary. Evidence:
+`evidence/ownership_resolution_2026-09-26_session2.json`,
+`REVIEW.md` session-2 section.
+
 ## A. P0: do **not** promote either scratch candidate
 
 Evidence, **SGMC surface-fault proxy only**, not official hidden labels:
