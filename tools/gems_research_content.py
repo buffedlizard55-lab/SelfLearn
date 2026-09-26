@@ -120,6 +120,10 @@ ANCHORS = [
         "key_quote": "The combined GeoDAWN area (consisting of a total of 149,030 line-km spanning an "
         "area of 51,857 sq km), was divided into four separate acquisition blocks (from north to south: "
         "Winnemucca, Fallon, Hawthorne, and Tonopah).",
+        "citation": "Glen, J.M.G., and Earney, T.E., 2024, GeoDAWN: Airborne magnetic and radiometric "
+        "surveys of the northwestern Great Basin, Nevada and California: U.S. Geological Survey data "
+        "release, https://doi.org/10.5066/P93LGLVQ (as printed on the ScienceBase item and in rules "
+        "footnote 3).",
         "status": "DOI resolved; ScienceBase item fetched and read, 2026-09-26",
     },
     {
@@ -133,6 +137,12 @@ ANCHORS = [
         "maps, gravity and magnetics maps, heat flow, slip/dilation tendency, and other regional layers.",
         "key_quote": "Shapefile (NAD83 Geographic) containing updated quaternary fault traces, ages, and "
         "slip rates for the INGENIOUS study area. Attributes conform to USGS Qfault Database schema.",
+        "citation": "Ayling, B., J. Faulds, A. Morales Rivera, R. Koehler, C. Kreemer, E. Mlawsky, M. "
+        "Coolbaugh, R. Micander, C. dePolo, K. Kraal, N. Wagoner, D. Siler, J. DeAngelo, J. Glen, J. "
+        "Peacock, J. Batir, E. Gentry, C. Berti, Z. Lifton, A. Clark, S. Kirby, C. Hardwick, and E. "
+        "Kleber. 2022. INGENIOUS - Great Basin Regional Dataset Compilation. [Data set]. Geothermal "
+        "Data Repository. GBCGE, NBMG, UNR. https://doi.org/10.15121/1881483 (rules footnote 4, "
+        "verbatim).",
         "status": "DOI resolved; GDR submission page fetched and read, 2026-09-26",
     },
     {
@@ -1031,6 +1041,30 @@ CHANGELOG = [
             "charter says one entity/one site; this sandbox's direct network egress blocks "
             "drivendata.org, usgs.gov, nlr.gov and dropbox.com, so official-page fetches used the "
             "platform's fetch infrastructure and byte transport used the GitHub git bridge.",
+        ],
+    },
+    {
+        "date": "2026-09-26 (later passes, same session)",
+        "items": [
+            "Pass 2 (review) found and fixed: section-nav depth-prefix bug and missing favicon on all "
+            "rendered pages; stale root-index card (hand-applied to match the updated template); "
+            "anchor-count wording; a reference-notebook attribution imprecision; missing .banner.ok "
+            "style (added to the publisher STYLESHEET and the committed CSS); link checker did not "
+            "scan the new section (now scans docs/research/*.md and docs/research/data/*.json); "
+            "15 new tests pinning all of it.",
+            "Pass 3 (re-check against the original mission): full formal citations (Ayling et al. "
+            "2022 author list; Glen & Earney 2024) added to the data anchors from the rules "
+            "footnotes verbatim; key quotes surfaced on the anchor table; every internal number "
+            "re-verified against its committed evidence file (105-channel folds recompute to 0.2419; "
+            "dense 0.0925; gravity-band Spearman set; label-blind 118/943). No unsubstantiated "
+            "claim found; no hallucinated source found.",
+            "What's next (highest value first): (1) replicate the 105>88 channel result with seeds "
+            "11 and 13 on a GPU machine (modelling line, gated); (2) build the basin/coverage-gap "
+            "screen from H-CG1 with a label-blind corroboration pass; (3) download the 1 m DEM "
+            "tiles on an unrestricted machine and prototype the scarp stack (H-D1); (4) account "
+            "holder: resolve the duplicate GEMS repositories (IRR-3) and supply PROJECT_BRIEF "
+            "(IRR-1); (5) runner-side link-check refresh so reports/link_check.json covers the new "
+            "citations from an unrestricted machine.",
         ],
     },
 ]

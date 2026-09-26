@@ -57,6 +57,7 @@
       "what": "Live category. Staff account chrisk-dd posts the official clarifications. Threads read in raw form this session: 11516 (scoring mask), 11527 (test-fault provenance), 11529 (label band count). Others catalogued by title: 11524 weekly submissions, 11526 institutional limit, 11528 paid external-data licence, 11536 'where do you draw the line', 11540 team-member eligibility, 11543 teammate's geological interpretation as training labels."
     },
     {
+      "citation": "Glen, J.M.G., and Earney, T.E., 2024, GeoDAWN: Airborne magnetic and radiometric surveys of the northwestern Great Basin, Nevada and California: U.S. Geological Survey data release, https://doi.org/10.5066/P93LGLVQ (as printed on the ScienceBase item and in rules footnote 3).",
       "id": "geodawn",
       "key_quote": "The combined GeoDAWN area (consisting of a total of 149,030 line-km spanning an area of 51,857 sq km), was divided into four separate acquisition blocks (from north to south: Winnemucca, Fallon, Hawthorne, and Tonopah).",
       "name": "GeoDAWN feature-data citation (DOI 10.5066/P93LGLVQ)",
@@ -65,6 +66,7 @@
       "what": "Resolves to USGS ScienceBase item 657e1d85d34e23d3533209f7: Glen, J.M.G., and Earney, T.E., 2024, GeoDAWN: Airborne magnetic and radiometric surveys of the northwestern Great Basin, Nevada and California. Publication date 2024-03-01; surveys flown 2021-11-01 to 2022-11-20 by EDCON-PRJ; 149,030 line-km over 51,857 sq km; four acquisition blocks (Winnemucca, Fallon, Hawthorne, Tonopah); Area 1 (Clayton Valley, lithium focus) rank-1 specs at 200 m line spacing, Area 2 (geothermal focus) 400 m; magnetic processing includes diurnal, aircraft-field, tie-line and micro-leveling corrections and IGRF removal."
     },
     {
+      "citation": "Ayling, B., J. Faulds, A. Morales Rivera, R. Koehler, C. Kreemer, E. Mlawsky, M. Coolbaugh, R. Micander, C. dePolo, K. Kraal, N. Wagoner, D. Siler, J. DeAngelo, J. Glen, J. Peacock, J. Batir, E. Gentry, C. Berti, Z. Lifton, A. Clark, S. Kirby, C. Hardwick, and E. Kleber. 2022. INGENIOUS - Great Basin Regional Dataset Compilation. [Data set]. Geothermal Data Repository. GBCGE, NBMG, UNR. https://doi.org/10.15121/1881483 (rules footnote 4, verbatim).",
       "id": "ingenious",
       "key_quote": "Shapefile (NAD83 Geographic) containing updated quaternary fault traces, ages, and slip rates for the INGENIOUS study area. Attributes conform to USGS Qfault Database schema.",
       "name": "INGENIOUS label-data citation (DOI 10.15121/1881483)",

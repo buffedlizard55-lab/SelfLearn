@@ -154,7 +154,9 @@ def index_page() -> str:
     anchor_rows = "".join(
         f'<tr><td><strong>{a["name"]}</strong><div class="small muted">{a["status"]}</div></td>'
         f'<td><a href="{a["url"]}" target="_blank" rel="noopener noreferrer">{a["url"]}</a></td>'
-        f'<td class="small">{a["what"]}</td></tr>'
+        f'<td class="small">{a["what"]}'
+        + (f'<div class="small muted"><strong>Citation:</strong> {a["citation"]}</div>' if a.get("citation") else "")
+        + f'<div class="small"><strong>Key quote:</strong> &ldquo;{a["key_quote"]}&rdquo;</div></td></tr>'
         for a in C.ANCHORS
     )
     irr_rows = "".join(
