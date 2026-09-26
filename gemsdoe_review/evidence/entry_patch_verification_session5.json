@@ -1,0 +1,45 @@
+{
+  "_what_this_is": "session-5 re-verification that the verified session-3 entry patch still applies to revision e2fe3f4 and still fixes the CV dilation defect, plus the state of the patches directory",
+  "collected_utc": "2026-09-26T19:37:07Z",
+  "entry_revision": "e2fe3f4",
+  "unpatched": {
+    "review_suite": "3 failed, 71 passed, 2 skipped",
+    "failures": [
+      "tests/test_review_regressions.py::test_cv_excludes_full_euclidean_metric_kernel[5-3-shape1]",
+      "tests/test_review_regressions.py::test_cv_excludes_full_euclidean_metric_kernel[6-4-shape2]",
+      "tests/test_review_regressions.py::test_entry_cv_is_patched_euclidean"
+    ],
+    "cause": "src/gems/cv.py dilates with a Manhattan (4-neighbour) iterated cross, so a 3 px buffer misses the (2,2) corner at radius sqrt(8) < 3"
+  },
+  "patches": {
+    "session3_entry_full_2026-09-26.patch": {
+      "git_apply_check_exit": 0,
+      "applies_cleanly": true,
+      "note": "recommended superset: 16 modified files plus 5 new evidence files"
+    },
+    "cv_euclidean_buffer.patch": {
+      "git_apply_check_exit": 1,
+      "applies_cleanly": false,
+      "note": "DEFECT: does not apply with 'git apply' on e2fe3f4 (docstring context drift); applies with 'patch -p1 --fuzz=3'. Should be regenerated from e2fe3f4."
+    },
+    "entry_session3_verified_changes.patch": {
+      "note": "narrower earlier variant; the full patch supersedes it"
+    }
+  },
+  "after_applying_session3_entry_full": {
+    "review_suite": "75 passed, 1 skipped",
+    "entry_own_pytest": "47 passed, exit 0",
+    "entry_doc_check_offline": "37/37 checks passed",
+    "patched_dilate_disk_pixel_counts": {
+      "1": 5,
+      "2": 13,
+      "3": 29,
+      "4": 49,
+      "6": 113,
+      "9": 169
+    },
+    "patched_dilate_includes_radius3_corner_22": true
+  },
+  "reverted": "entry clone restored to a pristine e2fe3f4 (git checkout -- . ; git clean -fd)",
+  "push": "still impossible from this identity (HTTP 403 for arena-ai-coding-agent[bot])"
+}

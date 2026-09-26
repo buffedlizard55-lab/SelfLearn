@@ -1,0 +1,34 @@
+{
+  "_what_this_is": "session-5 re-run of the shipped artifact's geological dossier, to prove the byte-pinned reasoning still reproduces from the pinned official rasters",
+  "collected_utc": "2026-09-26T19:26:41Z",
+  "artifact": "gems6_hgb88-topk03_33cec71ff0.tif",
+  "input_sha256": {
+    "submission": "33cec71ff00b3f32d0d59c81c156f3f1488ffef46baa4b6499094e24ea1875ab",
+    "training_features": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
+    "labels": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093"
+  },
+  "counts": {
+    "predicted_pixels": 155021,
+    "predicted_on_catalogue": 23605,
+    "predicted_off_catalogue": 131416,
+    "catalogue_pixels": 60988,
+    "closing_px": 5,
+    "min_pixels": 200,
+    "components": 2589,
+    "candidates": 180,
+    "class_counts": {
+      "halo": 92,
+      "near_trace": 87,
+      "isolated": 1
+    }
+  },
+  "reproduced": {
+    "dossier_json_identical_except_generated_utc_and_fragment_filename": true,
+    "fragment_inventory_only_differs_by_filename": true,
+    "fragment_csv_sha256_identical": true,
+    "rendered_markdown_sha256_after_normalising_the_fragment_link": "285002cf04e34c757c35ce91c327d700fcf6b7f4f14a2a4fca6f7f8db501c2a4",
+    "committed_markdown_sha256": "285002cf04e34c757c35ce91c327d700fcf6b7f4f14a2a4fca6f7f8db501c2a4",
+    "rendered_markdown_byte_identical": true
+  },
+  "note": "The dossier JSON is not re-committed: it is byte-identical to the committed current_shipped_geology_2026-09-26.json apart from its own generated_utc and the fragment-inventory filename passed on the command line. The evidence of reproduction is this record plus the two hashes above."
+}

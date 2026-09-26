@@ -1,0 +1,45 @@
+# Entry offline doc check — 2026-09-26 session 5 (canonical 6GEMSDOE at e2fe3f4, pre-patch)
+# command: python gemsdoe_review/tools/check_entry_docs.py /home/user/entry-src
+
+[PASS] shipped-file-present            gems6_hgb88-topk03_33cec71ff0.tif
+[PASS] shipped-file-sha256             report 33cec71ff00b3f32…  actual 33cec71ff00b3f32…
+[PASS] shipped-file-bytes              report 1652883  actual 1652883
+[PASS] gate-recheck                    all checks PASS
+[PASS] positive-pixels                 measured 155021, documented 155,021
+[PASS] finite-pixels-equal-footprint   measured 5167373, pinned 5167373
+[PASS] no-nan-inside-footprint         measured 0
+[PASS] value-range                     [0.0, 1.0]
+[PASS] report-channels                 submission_report n_channels = 88
+[PASS] pin-training_features.tif       418912844 B, 4371c82e3b8339b8… vs pin 418912844 B, 4371c82e3b8339b8…
+[PASS] pin-labels.tif                  425830 B, 7ba308ccdc4418b3… vs pin 425830 B, 7ba308ccdc4418b3…
+[PASS] pin-sample_submission.tif       1599597 B, 2176d08e485aa2cd… vs pin 1599597 B, 2176d08e485aa2cd…
+[PASS] manifest-training_features.tif  hash matches the spec pin
+[PASS] manifest-labels.tif             hash matches the spec pin
+[PASS] manifest-sample_submission.tif  hash matches the spec pin
+[PASS] manifest-bridge-parts           5 parts listed
+[PASS] prose-number-0.1698             shipped blocked-CV mean DTI: found in data/evidence/*.json (shipped blocked-CV mean DTI)
+[PASS] prose-number-0.1119             previous blocked-CV mean DTI: found in data/evidence/*.json (previous blocked-CV mean DTI)
+[PASS] prose-number-0.175              5% budget on the full catalogue: found in data/evidence/*.json (5% budget on the full catalogue)
+[PASS] prose-number-0.1589             2% budget on the full catalogue: found in data/evidence/*.json (2% budget on the full catalogue)
+[PASS] prose-number-0.1278             3% budget at 50% of traces: found in data/evidence/*.json (3% budget at 50% of traces)
+[PASS] prose-number-0.0631             3% budget at 25% of traces: found in data/evidence/*.json (3% budget at 25% of traces)
+[PASS] prose-number-0.1628             extended config without the extra channels: found in data/evidence/*.json (extended config without the extra channels)
+[PASS] prose-number-0.1637             best lineament post-processing variant: found in data/evidence/*.json (best lineament post-processing variant)
+[PASS] token-33cec71ff0                shipped sha prefix: present in the prose
+[PASS] token-5,167,373                 footprint: present in the prose
+[PASS] token-60,988                    catalogue positives: present in the prose
+[PASS] unclaimed-board-score-0.1563    another entrant (extradr19); occurrences: none
+[PASS] unclaimed-board-score-0.1560    another entrant (smashi34); occurrences: none
+[PASS] unclaimed-board-score-0.1193    another entrant (smrtdoog5); occurrences: none
+[PASS] unclaimed-board-score-0.1152    another entrant (SDCF9); occurrences: none
+[PASS] unclaimed-board-score-0.0830    another entrant (wbg1); occurrences: none
+[PASS] prose-shipped-bytes             the shipped file size is stated in the prose
+[PASS] account-table-prose             ACCOUNT_STATUS.md states the repository count (not re-verified; run with --online)
+[FAIL] limitations-cover-masking       LIMITATIONS.md discusses the masking rule verified 2026-09-26
+[PASS] next-steps-present              NEXT_STEPS.md
+[FAIL] geology-dossier-present         the per-candidate geological write-up exists (NEXT_STEPS item 9)
+
+35/37 checks passed
+
+ENTRY DOCS DO NOT MATCH THE ARTIFACTS — fix before uploading.
+EXIT=1

@@ -1,5 +1,14 @@
 # Session 4 — spatial validation repair and a measured placement improvement
 
+> **Superseded by [SESSION5.md](SESSION5.md).** This phase measured the spacing-4
+> gain at a *reduced* training budget (HGB, 100 iterations, up to 50k negatives,
+> seed 7 + fold — not the shipped 400k/300 configuration) and asked for the
+> shipping-budget re-measurement as its first next step. Session 5 did that:
+> full88 + spacing4 is **0.2345** mean fold DTI at the shipping budget (dense
+> 0.0925, matched-budget null 0.1722), the sign holds on both pre-specified
+> sensitivities, and drop2 is confirmed a wash. The session-4 headline (0.2436) is
+> retained here only as the low-budget measurement it was.
+
 2026-09-26 · review workspace `buffedlizard55-lab/SelfLearn` · designated entry
 [`buffedlizard55-lab/6GEMSDOE`](https://github.com/buffedlizard55-lab/6GEMSDOE)
 

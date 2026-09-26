@@ -1,0 +1,449 @@
+{
+  "kind": "local mapped-fault spatial transfer diagnostic; NOT a leaderboard score",
+  "promotion": "NOT APPROVED: reduced training budget, no independent confirmation, account gate unresolved",
+  "mean_convention": "unweighted fold mean (controls average seeds within each fold)",
+  "rows": [
+    {
+      "model": "raw19",
+      "policy": "budget03_spacing1",
+      "mean_dti": 0.06963690268529882,
+      "per_fold_dti": [
+        0.05862190657723977,
+        0.0814198214639882,
+        0.06088807253800956,
+        0.07761781016195772
+      ],
+      "null_mean_dti": 0.17218469156872157,
+      "per_fold_delta_vs_best_null_seed": [
+        -0.11286419176031269,
+        -0.07312518629093727,
+        -0.14062841674785964,
+        -0.1007469179968772
+      ],
+      "beats_all_null_seeds_every_fold": false,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "raw19",
+      "policy": "budget03_spacing4",
+      "mean_dti": 0.2212623495481727,
+      "per_fold_dti": [
+        0.2158180188512983,
+        0.21853173915767932,
+        0.2416835095994106,
+        0.20901613058430255
+      ],
+      "null_mean_dti": 0.20370041210268278,
+      "per_fold_delta_vs_best_null_seed": [
+        0.014364750927175096,
+        0.03377377350653346,
+        0.014639974291372093,
+        0.003911105267980497
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "raw19",
+      "policy": "budget03_spacing5",
+      "mean_dti": 0.20558333308637824,
+      "per_fold_dti": [
+        0.2035393486254539,
+        0.1886887768032889,
+        0.22673629668044715,
+        0.203368910236323
+      ],
+      "null_mean_dti": 0.19043023914192525,
+      "per_fold_delta_vs_best_null_seed": [
+        0.014199639126798336,
+        0.014223270431407142,
+        0.012130934248304526,
+        0.013686256883422954
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        65961,
+        37111,
+        15398,
+        21445
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          61930,
+          61976,
+          61933
+        ],
+        [
+          34712,
+          34776,
+          34675
+        ],
+        [
+          14404,
+          14445,
+          14383
+        ],
+        [
+          19972,
+          20058,
+          19963
+        ]
+      ],
+      "identical_actual_budget": false
+    },
+    {
+      "model": "full88",
+      "policy": "budget03_spacing1",
+      "mean_dti": 0.09252032987506625,
+      "per_fold_dti": [
+        0.08554758847911048,
+        0.08042200284388526,
+        0.07717442625884013,
+        0.12693730191842917
+      ],
+      "null_mean_dti": 0.17218469156872157,
+      "per_fold_delta_vs_best_null_seed": [
+        -0.08593850985844198,
+        -0.07412300491104021,
+        -0.12434206302702908,
+        -0.05142742624040575
+      ],
+      "beats_all_null_seeds_every_fold": false,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "full88",
+      "policy": "budget03_spacing4",
+      "mean_dti": 0.23449360450009432,
+      "per_fold_dti": [
+        0.2310955942490309,
+        0.2298494945972169,
+        0.24943413548297255,
+        0.227595193671157
+      ],
+      "null_mean_dti": 0.20370041210268278,
+      "per_fold_delta_vs_best_null_seed": [
+        0.02964232632490768,
+        0.04509152894607105,
+        0.02239060017493405,
+        0.022490168354834944
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "full88",
+      "policy": "budget03_spacing5",
+      "mean_dti": 0.20999942163228458,
+      "per_fold_dti": [
+        0.20659577880236338,
+        0.19520798038523837,
+        0.22274890434689695,
+        0.21544502299463958
+      ],
+      "null_mean_dti": 0.19043023914192525,
+      "per_fold_delta_vs_best_null_seed": [
+        0.01725606930370782,
+        0.020742474013356604,
+        0.008143541914754332,
+        0.02576236964173953
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        65468,
+        36727,
+        15158,
+        21385
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          61930,
+          61976,
+          61933
+        ],
+        [
+          34712,
+          34776,
+          34675
+        ],
+        [
+          14404,
+          14445,
+          14383
+        ],
+        [
+          19972,
+          20058,
+          19963
+        ]
+      ],
+      "identical_actual_budget": false
+    },
+    {
+      "model": "drop2",
+      "policy": "budget03_spacing1",
+      "mean_dti": 0.09114683293927403,
+      "per_fold_dti": [
+        0.08549815139308982,
+        0.07656762588869047,
+        0.07360593679695425,
+        0.1289156176783616
+      ],
+      "null_mean_dti": 0.17218469156872157,
+      "per_fold_delta_vs_best_null_seed": [
+        -0.08598794694446264,
+        -0.077977381866235,
+        -0.12791055248891497,
+        -0.04944911048047332
+      ],
+      "beats_all_null_seeds_every_fold": false,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "drop2",
+      "policy": "budget03_spacing4",
+      "mean_dti": 0.23436903427008657,
+      "per_fold_dti": [
+        0.23511702637426185,
+        0.23368770990726365,
+        0.24396072032389718,
+        0.22471068047492362
+      ],
+      "null_mean_dti": 0.20370041210268278,
+      "per_fold_delta_vs_best_null_seed": [
+        0.03366375845013864,
+        0.04892974425611779,
+        0.016917185015858677,
+        0.019605655158601576
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        73471,
+        40993,
+        16924,
+        23633
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          73471,
+          73471,
+          73471
+        ],
+        [
+          40993,
+          40993,
+          40993
+        ],
+        [
+          16924,
+          16924,
+          16924
+        ],
+        [
+          23633,
+          23633,
+          23633
+        ]
+      ],
+      "identical_actual_budget": true
+    },
+    {
+      "model": "drop2",
+      "policy": "budget03_spacing5",
+      "mean_dti": 0.2094203541914337,
+      "per_fold_dti": [
+        0.2062470839327039,
+        0.19579789303416806,
+        0.2239799270973353,
+        0.21165651270152755
+      ],
+      "null_mean_dti": 0.19043023914192525,
+      "per_fold_delta_vs_best_null_seed": [
+        0.016907374434048356,
+        0.02133238666228629,
+        0.00937456466519268,
+        0.0219738593486275
+      ],
+      "beats_all_null_seeds_every_fold": true,
+      "model_emitted_pixels_per_fold": [
+        65655,
+        36773,
+        15195,
+        21364
+      ],
+      "null_emitted_pixels_per_fold_seed": [
+        [
+          61930,
+          61976,
+          61933
+        ],
+        [
+          34712,
+          34776,
+          34675
+        ],
+        [
+          14404,
+          14445,
+          14383
+        ],
+        [
+          19972,
+          20058,
+          19963
+        ]
+      ],
+      "identical_actual_budget": false
+    }
+  ],
+  "cautions": [
+    "Only spacing4 and dense spacing1 fill the same 3% budget; spacing5 underfills and is not an equal-actual-budget comparison.",
+    "Maximum over three null seeds is a descriptive hurdle, not a statistical confidence interval.",
+    "One geographic design and seed; catalogue truth differs from hidden new faults.",
+    "Do not choose drop2 for a tiny mean gain; its fold changes are mixed."
+  ],
+  "sources": {
+    "/home/user/scratch/session5/models_shipping.json": "bdf07e017f05f47742dfa4547c533d2e42f5632edead31a797eefb59a949c5f8",
+    "/home/user/scratch/session5/controls_shipping.json": "3edbc434bba75126f45580a85d949bd2ee84ffc123b51aef88d28650b5c96d58"
+  }
+}

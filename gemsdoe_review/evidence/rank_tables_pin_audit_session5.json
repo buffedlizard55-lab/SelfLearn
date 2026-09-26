@@ -1,0 +1,19 @@
+{
+  "kind": "audit of a recorded hash pin; NOT a leaderboard score",
+  "entry": "/home/user/entry-src",
+  "pinned_rank_tables_sha256": "64a62c3b3e9925ba19a43276af1d931863d81906d26f0b06c8fb74f3fe53c0ae",
+  "meta_file_on_disk_now": "64a62c3b3e9925ba19a43276af1d931863d81906d26f0b06c8fb74f3fe53c0ae",
+  "rebuilt_rank_tables_sha256": {
+    "before": "b946b86dc0a497358c8e22d42138152f2b618cfb665b133ddb2ada9547f1e8de",
+    "after": "b6dee442cdff13faa4628ff99a340861d5e37558a1d286fb7ff93c516526455e"
+  },
+  "built_utc": {
+    "before": "2026-09-26T18:33:17Z",
+    "after": "2026-09-26T18:54:35Z"
+  },
+  "content_identical_ignoring_built_utc": true,
+  "normalised_sha256": "3af5745d11470d6610b69b869416daf9d8ccef1467ccdb96dd4d2af2986e3c71",
+  "raster_pin_reproduced": true,
+  "finding": "The rank-table CONTENT is deterministic (two independent builds are identical once `built_utc` is removed), but the FILE hash is not: `scripts/build_rank_tables.py` writes `built_utc` into the JSON, so `rank_tables_sha256` can never be reproduced by a re-run and the value recorded in features_meta.json (64a62c3b...) is unreproducible by construction. The pin that IS reproducible is the official raster's sha256, which `RankTables.check_sha` enforces. A hash pin that cannot be re-derived is not a verification, so this field should either be dropped or computed over the timestamp-free content.",
+  "impact": "Low for correctness (the raster pin still gates the build) but it makes the 'hash-verified' claim in the entry's docs stronger than the evidence for this one field. Reported as an irregularity rather than smoothed over."
+}

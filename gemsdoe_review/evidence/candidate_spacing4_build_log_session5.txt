@@ -1,0 +1,36 @@
+[  42.8s] trained {'n_pos': 60988, 'n_neg': 400000, 'n_features': 88, 'max_iter': 300, 'sample_weight': 'none'}
+[ 165.6s] predicted; max=0.9326
+SUBMISSION FORMAT GATE: PASS
+----------------------------
+[PASS] file-exists: 1764117 bytes
+[PASS] single-band: band count = 1
+[PASS] dtype-float32: dtype = float32
+[PASS] crs-epsg32611: CRS = EPSG:32611 (epsg 32611)
+[PASS] resolution-100m: resolution = (100.0, 100.0)
+[PASS] shape: shape = (3730, 3292), expected (3730, 3292)
+[PASS] geotransform: transform = (100.0, 0.0, 243350.0, 0.0, -100.0, 4508550.0)
+[PASS] nodata-nan: declared nodata = nan
+[PASS] values-in-0-1: finite range = [0.0, 1.0]
+[PASS] no-inf: inf pixels = 0
+[PASS] template-verified: official sample submission sha256 ok, footprint = 5167373 px
+[PASS] NAN-INSIDE-FOOTPRINT: 0 non-finite pixels inside the scored footprint (this is the exact condition that makes the submission form answer 'Predicted values must be in range [0, 1]')
+[PASS] footprint-matches-official: 0 finite pixels outside the official footprint (use --allow-footprint-subset for experiments only)
+
+stats: total_pixels=12279160, finite_pixels=5167373, nan_pixels=7111787, inf_pixels=0, declared_sha256=f807dccf16869422bd17236833dd44082a0bb85d440c142740ee2cf28f2277c0, finite_min=0.0, finite_max=1.0, positive_pixels=155021, nan_inside_footprint=0, finite_outside_footprint=0
+{
+  "sha256": "f807dccf16869422bd17236833dd44082a0bb85d440c142740ee2cf28f2277c0",
+  "positive_pixels": 155021,
+  "gate_ok": true,
+  "pixel_overlap_with_shipped": {
+    "both": 12828,
+    "only_new": 142193,
+    "only_shipped": 142193,
+    "union": 297214,
+    "jaccard": 0.04316082014979106
+  },
+  "catalogue_dti": {
+    "IN_SAMPLE_warning": "the catalogue is the training target, so these two numbers are in-sample and are NOT the blocked-CV estimate",
+    "new_candidate": 0.31534616089510165,
+    "shipped": 0.42720436673930867
+  }
+}

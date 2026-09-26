@@ -1,15 +1,72 @@
-# GEMSDOE review — 2026-09-26 (sessions 1–4)
+# GEMSDOE review — 2026-09-26 (sessions 1–5)
 
-Read **[SESSION4.md](SESSION4.md) first** for the current handoff and corrected
-spatial experiment. `REVIEW.md` preserves the earlier sessions, including a now-retired
-whole-system diagnostic; its 0.0060/0.0148 conclusion is not clean spatial CV.
+Read **[SESSION5.md](SESSION5.md) first** for the current handoff. `SESSION4.md`
+records the previous phase (its spacing-4 number was measured at 10% of the shipping
+budget and has been superseded by the session-5 re-measurement below). `REVIEW.md`
+preserves sessions 1–3, including a now-retired whole-system diagnostic whose
+0.0060/0.0148 conclusion is not clean spatial CV.
 
-Session 4 adds exact system clustering, block/system-purged CV, a raw19/full88/drop2
-comparison, genuine 4–5 px placement controls, label-blind matched-budget baselines,
-regression CI and refreshed format/ownership evidence. Full88 + spacing4 scores
-0.2436 locally vs matched random 0.2037; **neither is a leaderboard score**. No
-canonical artifact/site was changed. See `evidence/*session4.json` and the
-`spatial_system_cv.py`, `spatial_controls.py`, `summarize_spatial_cv.py` tools.
+Session 5 re-ran session 4's open question **at the shipping budget** (400k negatives /
+300 iterations), on freshly rebuilt official bytes, with the pre-specified
+exact-system-purged 4-fold CV, three frozen label-blind null seeds at the same emitted
+budget, and two pre-specified layout/buffer sensitivities. The hypothesis holds:
+**full88 + 4-px spacing scores 0.2345 mean fold DTI against 0.0925 for the dense
+policy the shipped artifact uses, and 0.2345 clears every null seed in every fold**,
+while the dense policy (0.0925) falls **below** the matched-budget random control
+(0.1722). Sensitivities keep the sign (3×3 blocks: 0.2203 vs 0.0907; 5 px buffer:
+0.2435 vs 0.0965). Engineered features beat raw19 at both policies; drop2 is a wash.
+**Neither number is a leaderboard score.** No canonical artifact, site, account or
+submission was changed; one local candidate GeoTIFF was built, gated 13/13, read
+geologically and left in the session scratch directory.
+
+## Session-5 evidence index
+
+| path | what it is |
+| --- | --- |
+| `evidence/spatial_system_models_shipping_session5.json` | the shipping-budget CV: 3 feature sets × dense/spacing4/spacing5, per fold and per system |
+| `evidence/spatial_controls_shipping_session5.json` | the three frozen label-blind null seeds at the identical emitted budget (dense/s4/s5) |
+| `evidence/spatial_comparison_shipping_session5.json` | the H1/H2 verdict against the pre-specified rule |
+| `evidence/spatial_system_models_sens1_session5.json`, `..._sens2_session5.json` | the two pre-specified sensitivities (3×3 blocks/3 px; 2×2 blocks/5 px) |
+| `evidence/spatial_system_geometry_session5.json` | per-fold isolation for all three layouts: 0 overlap, 0 buffered training pixels, 0 shared positive systems, 40 exact systems / 3,199 traces |
+| `evidence/shipping_budget_manifest_session5.json` | what was run, on which bytes, with which seeds, and what is out of scope |
+| `evidence/feature_priorities_session5.json` | priorities 1–3 re-measured on rebuilt bytes: dead tilt, duplicated ASA, slope-break candidate channels, strain/seismicity/conductivity cross-reference |
+| `evidence/submission_gate_session5.json` | shipped artifact: 13/13 PASS, EPSG:32611, 100 m, 3730×3292, values [0,1], 0 NaN in footprint |
+| `evidence/nan_poison_session5.json` | one in-footprint NaN in a copy: everything else passes, `NAN-INSIDE-FOOTPRINT` fails, exit 1 |
+| `evidence/submission_gate_candidate_session5.json` | the same gate on the session-5 local candidate: 13/13 PASS, 155,021 px, sha256 `f807dccf…` |
+| `evidence/candidate_spacing4_report_session5.json` | how the candidate was built: same model, only the placement policy changed; 4,106 px on catalogue vs 23,605 shipped; Jaccard 0.043 |
+| `evidence/spacing4_candidate_geology_2026-09-26.json` | the candidate's per-component dossier: all 943 components ≥200 px, 21 diagnostics each, no depth claim |
+| `evidence/spacing4_candidate_geology_2026-09-26.md` | that dossier rendered with hypothesis / counterinterpretation / capped confidence per component |
+| `evidence/spacing4_candidate_geology_session5.md` | the hand-written reading: what the policy change does to the geology, plus six named candidates with their measurements and competing interpretations |
+| `evidence/shipped_geology_rerun_session5.json` | the shipped artifact's dossier re-rendered from pinned bytes: byte-identical to the committed one (MD `285002cf…`, fragments `a202e84c…`) |
+| `evidence/entry_patch_verification_session5.json` | the session-3 patch re-applied to `e2fe3f4`: 75 review + 47 entry tests green, offline doc check 37/37, true disk in `_dilate`; flags that `cv_euclidean_buffer.patch` no longer applies with `git apply` |
+| `evidence/ownership_resolution_2026-09-26_session5.json` | live ownership audit: one account, 0 forks, 12 GEMS-named repositories — **and `LEARNGEMSDOE`, created 2026-09-26T18:18Z during the session window** |
+| `evidence/leaderboard_raw_2026-09-26_session5.md`, `leaderboard_snapshot_..._session5.json` | verbatim leaderboard transcript + parse: 50 rows, field high DARD 0.3049, organizer 0.1847 (#14) |
+| `evidence/live_site_claims_2026-09-26_session5.md` | all six reference sites re-read, with the claims that are unsupported |
+| `evidence/metric_claim_check_session5.json` | uniform rescaling is monotone; the entry's published "hardening always helps" sentence is false (0.998 → 0.833) |
+| `evidence/rank_tables_pin_audit_session5.json` | two independent rank-table builds differ only by `built_utc`; the pinned hash can never be re-derived |
+| `evidence/entry_docs_offline_session5.txt`, `..._online_session5.txt` | doc check on the unpatched entry: 35/37 offline, 47/51 online (two failures from the 12th repository) |
+| `evidence/session_reverification_2026-09-26_session5.json` | the entry's own re-verification: gate 13/13, rasters 3/3, pytest 46/46, site drift-free |
+| `tools/shipping_budget_confirmation.py` | the session-5 driver: prints its decision rule before running, then measures it |
+| `tools/build_spaced_candidate.py` | builds, gates and reports a local candidate from the shipping model |
+| `tools/ownership_live_audit.py` | read-only GitHub audit of the GEMSDOE family |
+| `tools/leaderboard_snapshot.py` | parses a verbatim leaderboard transcript into rows + attribution |
+| `tools/metric_claim_check.py` | re-measures the published metric claims against the entry's own metric |
+| `tools/rank_tables_pin_audit.py` | rebuilds the rank tables twice and reports what the pin does and does not pin |
+| `tests/test_session5_additions.py` | 17 regressions: metric oracles, budget oracles, evidence pins, per-layout CV isolation, patch dry-run |
+
+## Session-4 evidence (superseded by the session-5 shipping-budget re-measurement)
+
+| path | what it is |
+| --- | --- |
+| `evidence/spatial_system_ablation_session4.json` | the reduced-budget CV models (100 iters, up to 50k negatives, 40 exact systems / 3,199 traces): dense 0.0935 / spacing4 0.2436 / spacing5 0.2105 for full88 |
+| `evidence/spatial_controls_session4.json` | the three frozen label-blind null seeds at that budget (dense 0.1722, s4 0.2037, s5 0.1904) |
+| `evidence/spatial_comparison_session4.json` | session-4 verdict; the shipping-budget re-measurement it asked for is `spatial_comparison_shipping_session5.json` |
+| `evidence/spatial_system_geometry_session4.json` | session-4 fold isolation (superseded by `spatial_system_geometry_session5.json`, which covers three layouts) |
+| `evidence/spatial_system_ablation_session4.json` (same file) | the raw19/full88/drop2 ablation at that budget — drop2's +0.0003 was noise, confirmed in session 5 |
+| `evidence/submission_gate_session4.json`, `nan_poison_session4.json` | 13/13 + the NaN-inside-footprint hard gate, session-4 copies |
+| `evidence/feature_priorities_session4.json` | priorities 1–3 measured at reduced budget; re-measured in `feature_priorities_session5.json` |
+| `evidence/patched_entry_cv_session4.json` | the Euclidean-buffer patch applied and verified on a scratch clone (re-verified session 5) |
+| `evidence/live_audit_session4.json`, `reverification_session4.json` | session-4 ownership audit and re-verification |
 
 Historical evidence index (consult SESSION4.md validity warnings first):
 
