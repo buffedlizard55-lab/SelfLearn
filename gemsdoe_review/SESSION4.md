@@ -267,6 +267,18 @@ Official sources re-read:
 - Proxy evidence cannot establish private/public performance; no claimed discovered
   faults, calibrated depths or prize competitiveness. Format validity is not skill.
 
+### PR verification irregularity (resolved in workflow configuration)
+
+[SelfLearn PR #19](https://github.com/buffedlizard55-lab/SelfLearn/pull/19)
+passed all six CI jobs on the implementation commit. The pre-existing link job
+then appended a generated-only `[skip ci]` commit to the review branch, leaving
+the new PR head without checks. That generated link/site refresh was inspected
+and retained. Manual workflow dispatch was denied (GitHub integration HTTP 403).
+The workflow now writes link updates back **only on main**; review branches still
+upload reports as artifacts, but cannot mutate the head they are checking.
+The corrective push triggers ordinary PR CI; its final outcome and merge are
+reported in the session response/PR, not presumed here.
+
 ## What changed / unverified / blocking / first next session
 
 **Changed:** repaired spatial/system validation; retired unsafe diagnostic execution;
