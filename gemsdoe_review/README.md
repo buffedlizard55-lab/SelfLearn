@@ -14,12 +14,18 @@ the files below.
 | `evidence/masked_proxy_eval.json` | the same population scored the rule-correct way, raw vs masked, plus a dilation sweep over four candidate artifacts and two no-skill baselines |
 | `evidence/masked_proxy_eval_all.json` | every candidate artifact found across the repository family, with a warning on each one that is circular |
 | `evidence/proxy_cv_fold0.json` | four-fold blocked CV scored on the new-fault population: 48-channel vs 88-channel stacks, with and without dilation |
+| `evidence/session3_reverification_2026-09-26.json` | session-3: fresh-clone re-verification — gate 13/13 + poison test, pytest 46/46 (47/47 patched), Euclidean oracle (0 historical / 32+100 non-stripe misses), placement integrity |
+| `evidence/ownership_resolution_2026-09-26_session3.json` | session-3: live re-resolution of the three "unconfirmed" sites (all `buffedlizard55-lab`, GitHub layer RESOLVED; DrivenData layer still account-holder-only) + fresh leaderboard read (field high DARD 0.3049; brief scores at ranks 23/24/40/41/50) |
+| `evidence/ablation_shipping_axis_2026-09-26.json` | session-3: full88/drop2/drop4 on the shipping axis (round-2 yardstick), incl. trace-reduced GT; `full88` reproduces the 0.1698 decision number |
+| `evidence/semisup_shipping_axis_2026-09-26.json` | session-3: semi-supervised second pass (verified pseudo-positives, NEXT_STEPS P1.6) vs the canonical fold models, same folds/placement |
 | `evidence/tilt_derivative_audit.json` | the magnetic tilt-derivative channel audit: a dead channel, a duplicated channel, and a candidate replacement |
 | `evidence/geology_dossier.json` | per-candidate measurements for all 193 flagged structures (5-px closing, ≥ 200 px) |
 | `evidence/geology_dossier.md` | those measurements rendered with hand-written geological readings and explicit confidences |
 | `tools/feature_priorities_audit.py` | session-2: measures priorities 1-3 of the brief on the official bytes (deterministic; byte-identical on re-run) |
 | `tools/phase2_narrative.py` | session-2: renders Phase-2-style narratives from the measured dossier; refuses unidentified bytes |
+| `tools/shipping_axis_ablation.py` | session-3: dead-channel ablation (full88/drop2/drop4) and the semi-supervised second pass (NEXT_STEPS P1.6 open item) on the canonical shipping-axis yardstick (4x4 blocked folds, 400k/300, seed 0); `full88` must reproduce 0.1698 or the run is void |
 | `tests/test_session2_additions.py` | session-2 regressions: AUC sanity, trend-band logic, narrative guards, evidence-file pins, patch dry-run |
+| `tests/test_session3_additions.py` | session-3 regressions: topk_hard / trace-keep byte-identity with the canonical entry harness, drop-config geometry, pseudo-mask region/off-catalogue constraints, evidence pins, patched-CV geometry |
 | `tools/*.py` | the six scripts that produced everything above; each prints what it measured and states what it does not measure |
 | `patches/PROPOSED_ENTRY_CHANGES.md` | the changes that belong in `buffedlizard55-lab/6GEMSDOE`, which this session cannot push to (HTTP 403) |
 

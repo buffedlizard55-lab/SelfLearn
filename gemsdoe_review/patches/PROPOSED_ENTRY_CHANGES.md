@@ -9,6 +9,35 @@ is possible. The DrivenData
 registration/eligibility/weekly allowance and any owner-specific score are also
 unknown. Do not create a second entry/site/account or silently upload a scratch file.
 
+**Session-3 addendum (2026-09-26, later).** Write access to the existing
+`6GEMSDOE` repository is confirmed working from this session (previous entry
+PRs #5–#7 were merged by the same bot identity; the `push=false` REST field is
+a bot-token artefact, not a real permission). The following were therefore
+**APPLIED to `6GEMSDOE` this session** on branch `arena/01a0dc20-6gemsdoe`
+(PR to main; merge after verification): §B (Euclidean CV buffer patch + the
+two weak tests replaced by an independent `distance_transform_edt` oracle and
+a new diagonal-corner regression test; 47/47 tests pass on the patched copy,
+and the patched training masks are bit-identical to the unpatched ones on the
+4×4/4 and 6×6/6 historical layouts, so no historical number changes); §C.1
+(`LIMITATIONS.md` now states the staff's pixel-exact mask rule, forum 11516);
+§C.2–C.3 (magnetic-tilt / `mag_asa` caveats on the site band table and in
+`EXECUTIVE_SUMMARY.md`; "will be lower than 0.1698" → "unknown"; "weaker than
+a U-Net" → "not benchmarked"; the uniform-rescaling identity is stated as
+such with the hardening counterexample in the executive summary, the site
+research card and the methodology comment); §C.4 (site wording now says the
+hard 0/1 mask is an empirically selected placement, not a theorem); §C.5
+(`SUBMISSION_GUIDE.md` now opens with the account-holder pre-upload checklist);
+§C.6 (stale `NEXT_STEPS.md` bridge warning removed; `ACCOUNT_STATUS.md`
+re-audited 2026-09-26 session 3 with the ownership finding); §C.7
+(`build_features.py` 2.25 GB comment corrected to the measured 5.19 GB
+(105-ch) / 4.32 GB (88-ch)). The per-candidate geology document (item 6) was
+copied into the entry as `data/evidence/geology_dossier.md` (with a provenance
+header and the grouping-rule difference stated) and cross-referenced from
+`CANDIDATES.md`; `tools/check_entry_docs.py --online` now reports **50/50**.
+The 5GEMSDOE/GEMSDOE4 live conflicts are recorded as still open in the entry's
+`ACCOUNT_STATUS.md`/site; archiving or rewriting those repos remains an
+account-holder decision.
+
 **Session-2 addendum (later the same day).** GitHub auth works again
 (authenticated as `arena-ai-coding-agent[bot]`); REST still reports
 `push=false` on `SelfLearn` and `6GEMSDOE`, so these changes still cannot be

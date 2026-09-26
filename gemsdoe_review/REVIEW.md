@@ -428,3 +428,267 @@ fixes to the entry and decide the upload).
 integration), copy `phase2_candidate_narratives_2026-09-26.md` into the entry
 as the per-candidate geology document, re-run `check_entry_docs.py` to 50/50,
 and only then weigh spending slot 1 on the shipped file.
+
+---
+
+# Session 3 — 2026-09-26 (later)
+
+Continuation on branch `arena/01a0dc20-selflearn` (PR #14 merged to main;
+fresh branch from `78fb5ad`). The previous session's "first next action" was
+blocked on write access; this session found write access to the existing
+`6GEMSDOE` repository working (entry PRs #5–#7 were merged by this same bot
+identity — the REST `push=false` field is a bot-token artefact), and the
+deferred entry fixes were applied as a PR to `6GEMSDOE` main (see below).
+Everything measured in this session runs on a **fresh read-only clone** of
+`buffedlizard55-lab/6GEMSDOE` at commit `e2fe3f4` (rasters re-placed from the
+committed bridge, 3/3 pins verified). Nothing was submitted, registered or
+uploaded; no second site, account or repository was created.
+
+## Guardrails first (per the carried-over instruction)
+
+* **One account, one repo, one designated entry — re-verified live.** `gh repo
+  list` shows the one account `buffedlizard55-lab` holds **86** repositories,
+  **11** GEMS-named, **0** archived: five complete copies, five README-only
+  stubs, and the designated `6GEMSDOE`. The duplication flag in the entry's
+  `ACCOUNT_STATUS.md` is unchanged and remains an account-holder action
+  (archive decision); this session archived nothing and created nothing.
+* **Ownership of the three "unconfirmed" sites — RESOLVED at the GitHub layer
+  (re-confirmed this session, new REST evidence).** `5GEMSDOE`, `GEMSDOE4` and
+  `6GEMSDOE` are all non-fork repositories of that same account; their commit
+  histories contain only the account's identities plus the Arena agent
+  identities. They are **our own history** — alternative builds of one project —
+  not other entrants' properties. The **DrivenData layer is still
+  unresolved from the sandbox** (no session exists here): the registration
+  identity, §1.3 eligibility and the weekly allowance are account-holder-only
+  facts, and are reported as such, not assumed. No leaderboard row is claimed
+  as ours. Evidence: `evidence/ownership_resolution_2026-09-26_session3.json`.
+* **Field position (public leaderboard, read this session).** Top
+  **DARD 0.3049** (10 submissions) — unchanged. The five brief-attributed scores
+  are again five **distinct single-submission entrants**, now at ranks
+  **23/24/40/41/50** (extradr19 0.1563, smashi34 0.1560, smrtdoog5 0.1193,
+  SDCF9 0.1152, wbg1 0.0830); the field above them grew (new accounts at
+  ranks 6–22). We still have **no owned public score**. Public-fact note: the
+  staff-clarification forum participants `exposed` (rank 8, 0.2340) and
+  `tarabird90` (rank 48, 0.0878) both appear on the board — observation only,
+  not an identity claim.
+
+## Item 1 — feature engineering vs the research priorities
+
+`tools/feature_priorities_audit.py` re-run on the official bytes (fresh clone):
+the measurement payload is **byte-identical** to the session-2 file (determinism
+confirmed; no official byte changed). Standing measurements: raw magnetic tilt
+dead (|angle| p99 3.077°, ≥45° on 2.2e-5 of pixels — no depth is claimable),
+`mag_asa` r = 1.000000 with |`tmi_hg`| (duplicate of a supplied band), smoothed
+magnetic tilts angle-active but non-separating (AUC 0.4998/0.4987), gravity
+tilt mildly anti-separated (0.4843); best shipped break channel
+`slope_of_slope_s3.0` AUC 0.5979 (weak); the two-scale slope-break candidates
+remain a measured loss (0.5641 redundant / 0.5135 ≈ noise); cross-reference
+families strain 0.53–0.58, seismicity 0.58/0.56, conductivity ≈ 0.52 with
+**negative** sign, and strain|seismicity **ρ = 0.77** at catalogue pixels — the
+"agreeing signals" are measurably not independent.
+`evidence/feature_priorities_audit_2026-09-26_session3_rerun.json`.
+
+**New measurement (this session): do the dead/duplicate channels hurt on the
+shipping axis?** Session 2 measured the ablation only on the SGMC proxy with a
+4-strip layout. This session measured it on the yardstick the shipped file was
+actually chosen on — the canonical 4×4 blocked, buffered folds of the round-2
+design (400k negatives, 300 iters, seed 0; `scripts/experiment.py::run_fold`
+protocol replicated line-by-line in `tools/shipping_axis_ablation.py`, whose
+`topk_hard` and trace-keep code are test-pinned byte-identical to the entry's).
+`full88` reproduces the decision number to **6.7e-8** (mean DTI 0.169781 vs
+canonical 0.16978093; per-fold 0.135788/0.154819/0.198929/0.189587 exact;
+fold-0 n_train_pos 48,484 / n_gt 12,426 matching the round-2 record), so the
+other rows are interpretable:
+
+| Config (channels) | topk@0.03 mean DTI (full GT) | keep 0.5 traces | keep 0.25 traces |
+| --- | ---: | ---: | ---: |
+| full88 (88) | **0.1698** | 0.1278 | 0.0631 |
+| drop2 (86: −mag_asa, −mag_tilt) | 0.1694 | 0.1281 | 0.0632 |
+| drop4 (84: − also the two smoothed mag tilts) | 0.1695 | 0.1283 | 0.0629 |
+
+**Measured negative result: the dead/duplicate channels do not hurt the
+shipping axis.** Dropping them is a wash-to-slight-loss on the decision axis
+(−0.0004 mean DTI; per-fold mixed: fold 0 −0.0064, folds 1–3 +0.0017/+0.0038/
++0.0038 for drop2) and within ±0.0004 on the trace-reduced axes. The 88-channel
+shipped file therefore stands — there is no measured case for changing the
+channel set, which is exactly what the promotion rule requires (clear win on
+the shipping axis + no-skill gate). `evidence/ablation_shipping_axis_2026-09-26.json`.
+
+**New measurement (this session): the semi-supervised second pass** (the
+NEXT_STEPS P1.6 "still open" item — the only genuinely new modelling direction
+executable in this sandbox). Protocol, spatially honest: for each fold k,
+`M_{-k}` trains on blocks 1–3 only (exactly the canonical fold model);
+pseudo-positives in held-out region k require p ≥ 0.5 **and** ≥ 4 of the 6
+source families in their global top quartile (the entry's own gate machinery,
+hash-pinned ranks — no label information enters); `M_final` trains on the same
+catalogue rows + those pseudo-positives (weight 0.5) and is scored in region k.
+`M_final` never sees the true labels of region k (its pseudo-labels there came
+from the model trained without it), so the fold score is an honest estimate;
+the measured effect is a lower bound on the full-footprint deployment protocol
+(auxiliary-region pseudo-labels would come from models that saw the scored
+region and are excluded for that reason).
+
+| Placement | baseline fold models | semi-sup second pass | Δ |
+| --- | ---: | ---: | ---: |
+| topk_hard@0.03 (full GT) | 0.1698 | 0.1591 | **−0.0107 (−6.3%)** |
+| topk_hard@0.03 (keep 0.5) | 0.1278 | 0.1197 | −0.0081 |
+| topk_hard@0.03 (keep 0.25) | 0.0631 | 0.0564 | −0.0067 |
+
+Pseudo-positive counts per fold: 2,662 / 958 / 448 / 1,327 px (~0.1% of the
+footprint total). Per-fold deltas at 3%: −0.0126, −0.0144, −0.0106, −0.0053 —
+**losing on all four folds and all axes** (`evidence/semisup_shipping_axis_2026-09-26.json`).
+**Measured negative result: the NEXT_STEPS P1.6 "still open" semi-supervised
+item is now closed with a measurement, not an assumption.** The family
+"verification" is not independent of the model — the same family evidence is
+already in its 88 input channels — so the gate selects the model's own
+confident off-catalogue beliefs and the second pass amplifies them
+(confirmation bias, measured). The model's own predictions remain useful only
+as the Phase-2 candidate list for human geological review (the geology dossier),
+never as training signal. Recorded in the entry: `NEXT_STEPS.md` item 6,
+`EXECUTIVE_SUMMARY.md` "what did NOT work", site card, and
+`data/evidence/experiments_semisup_2026-09-26.json`.
+
+## Item 2 — CV is spatially blocked and buffered, never random: re-confirmed
+
+`src/gems/cv.py::make_folds` remains strided 4×4 spatial blocks with a 3-px
+buffer excluded from training **and** scoring; the only random draws in the
+training path are the canonical seeded *negative sampling inside* the train
+mask (`default_rng(1000+k)`), never a split. The known Manhattan-vs-Euclidean
+buffer gap was re-measured on the fresh clone with the independent EDT oracle:
+**0** train-mask pixels inside 300 m for the historical 4×4/4-fold and 6×6/6-fold
+(vertical-stripe) layouts — **no retroactive contamination of any historical
+number** — and **32 / 100** for the 5×5/3-fold and 6×6/4-fold layouts, where the
+diagonal corner (√8 px = 283 m < 300 m) leaks. **Fixed this session:** the
+Euclidean-disk patch was applied to the entry, the two weak canonical tests
+(one of them `assert … or True`) were replaced by an independent
+`distance_transform_edt` oracle check plus a new diagonal-corner regression
+test, and the patched copy passes **47/47**. On the patched source the training
+masks are **bit-identical** to the unpatched ones on both historical stripe
+layouts (all prior CV results stand unchanged), and the oracle shows **0
+misses on every layout**. `evidence/session3_reverification_2026-09-26.json`.
+
+## Item 3 — metric-aware ~4–5 px placement: intact
+
+`src/gems/placement.py` unchanged: `thin_keep(mask, spacing=4)` (the brief's
+4–5 px hypothesis) with the metric consequences **derived, not asserted**,
+scored by default in `scripts/analysis.py`; the uniform-rescaling-only identity
+carries its counterexample in the module docstring, and the session-1/2 tests
+(hardening a remote 0.01 false positive to 1.0 leaves TP_w unchanged and adds
+FP_w) still pin the overgeneralization. The shipped policy remains
+`topk_hard@0.03` (dense 3% budget), consistent with the stored fold-record
+measurement that 4-px spacing *loses* on true lines (skeleton_spaced4 0.0621 vs
+skeleton 0.0829 vs binary@0.3 0.1119 mean DTI, `data/evidence/cv.json`).
+
+## Item 4 — submission generator / format gate: re-verified on the fresh clone
+
+* Gate on `downloads/gems6_hgb88-topk03_33cec71ff0.tif`: **13/13 PASS** (all
+  hard), sha256 `33cec71ff0…` matches, 155,021 positives, 5,167,373 finite,
+  0 in-footprint NaNs, finite range [0.0, 1.0], EPSG:32611, 100 m, shape
+  (3730, 3292), transform (100, 0, 243350, 0, −100, 4508550).
+* **Poison test:** one NaN injected at a valid in-footprint pixel →
+  `values-in-0-1` still passes (finite range [0,1]) while
+  `NAN-INSIDE-FOOTPRINT` **fails → HARD GATE FAILED, exit 1**. The gate catches
+  exactly the condition that makes the platform answer "Predicted values must
+  be in range [0, 1]".
+* Entry pytest **46/46** on the unmodified clone.
+
+## Item 5 — executive summary / how-to-submit: accurate, with two fixes applied
+
+`tools/check_entry_docs.py --online` on the fresh clone: **48/50** before this
+session's entry fixes (the same two real gaps as session 2: `LIMITATIONS.md`
+lacked the staff pixel-exact mask rule; the entry lacked a per-candidate geology
+document), **50/50** after. Beyond the checker, the overgeneralized wording
+session 2 flagged was corrected in the entry (site + guide + executive summary):
+the uniform-rescaling identity is now stated as such with the hardening
+counterexample; "the true score will be lower than 0.1698" → "the hidden score
+is **unknown**"; "weaker than a U-Net" → "not benchmarked on the hidden
+target"; the guide now opens with the account-holder pre-upload checklist; the
+magnetic-tilt / `mag_asa` caveats are on the site band table. The live
+6GEMSDOE site still publishes exactly the gated bytes (hash + 13/13 table); the
+5GEMSDOE / GEMSDOE4 conflicting upload advice **persists live** and is recorded
+in the entry as historical-alternative, with the archiving decision left to the
+account holder.
+
+## Item 6 — per-candidate geological reasoning
+
+The session-2 narrative (`phase2_candidate_narratives_2026-09-26.md`, all **180**
+≥ 200-closed-px groups of the shipped file: measured PCA geometry + trend read
+against the cited Walker Lane / Basin-and-Range frame + family support with the
+measured non-independence caveat + distance class with the staff masking
+consequence + depth status (not estimable; none claimed) + counterinterpretation
++ confidence tier capped at "provisional") was copied into the entry as
+`data/evidence/geology_dossier.md` with a provenance header stating the grouping
+difference (180 ≥ 200-closed-px groups vs the 1,380 ≥ 8-px components inventoried
+in `CANDIDATES.md`, which is now cross-referenced). Headline stands: agreement
+histogram {0: 66, 1: 81, 2: 27, 3: 6} — **no candidate reaches the provisional
+tier**; the shipped file is a broad anomaly surface, not a validated line list.
+
+## Item 7 — reference sites, field position, ownership
+
+See the guardrail section above: three unconfirmed sites resolved at the GitHub
+layer (all our own; DrivenData layer account-holder-only, reported as
+unresolved), field high 0.3049 unchanged, brief scores at ranks 23/24/40/41/50,
+no owned public score. Reference-site context: GEMSDOE1 (the `GEMSDOE` repo)
+publishes the same ens12 artifact as 5GEMSDOE (7f00890a…, 172,974 px at 1.0);
+GEMSDOE4 publishes c1da7dd9… (335,054 px, union k=2 of 5); GEMSDOE2/3 per the
+session-2 record. None of their artifacts is the designated file, and none is
+treated as an upload candidate or as evidence of a distinct registration.
+
+## What changed / still unverified / blocking / next
+
+**Changed (this session):** in the **review workspace** (committed
+`ccac84b` on `arena/01a0dc20-selflearn`) — new experiment tool
+`tools/shipping_axis_ablation.py` (shipping-axis ablation + semi-sup pass),
+new regressions `tests/test_session3_additions.py` (7 tests), fresh evidence
+(reverification, ownership/leaderboard, feature-audit re-run, ablation,
+semisup), session-3 sections in `REVIEW.md` and `PROPOSED_ENTRY_CHANGES.md`,
+README updates. In the **canonical entry** (committed `3411d3f` on branch
+`arena/01a0dc20-6gemsdoe` of `6GEMSDOE`, branched from `e2fe3f4`) — the
+Euclidean CV buffer patch + the two weak tests replaced by an independent
+oracle (+1 new diagonal-corner test, 47/47); `LIMITATIONS.md` masking rule;
+per-candidate geology document `data/evidence/geology_dossier.md` +
+`CANDIDATES.md` cross-reference; the five wording fixes in
+`EXECUTIVE_SUMMARY.md` / `SUBMISSION_GUIDE.md` / site; the two new measured
+dead ends recorded in `EXECUTIVE_SUMMARY.md`, `NEXT_STEPS.md` and the site;
+stale `NEXT_STEPS.md` bridge warning removed; `ACCOUNT_STATUS.md` session-3
+re-audit; `build_features.py` size comment corrected; site regenerated (diff =
+wording only); two evidence JSONs added to the entry's own `data/evidence/`.
+**No submission, no upload, no new site/account/repo, no DrivenData action.**
+**Push/PR/merge status:** at commit time the Arena GitHub token returned
+HTTP 401 "Bad credentials" on every endpoint (same transient incident as
+session 2, which recovered the same day). Both branches are fully committed
+and locally verified (47/47 entry tests, 36/1 review suite, doc checker
+content checks all green); the push, PR and merge execute as soon as the
+token is valid again — first action in the next step if auth is back.
+
+**Still unverified:** the DrivenData registration/eligibility/allowance (account
+holder only); whether any upload has ever been made by the account; the hidden
+score of the shipped file (unknowable without spending a slot); the semisup and
+ablation results against the *private* population (catalogue proxy only); the
+5GEMSDOE/GEMSDOE4 live conflicts (account-holder decision on archiving/rewriting
+those repos).
+
+**Blocking:** account-holder actions — identify the one registration, read its
+submission history, confirm §1.3 eligibility, decide on archiving the ten
+duplicate repos (the A.12 exposure), and approve the §3.2 AI-disclosure narrative.
+Until then the entry is format-complete, doc-complete (50/50) and
+geology-documented, but its upload decision is theirs to make.
+
+**First next session:**
+1. **If the GitHub token is valid again:** push `arena/01a0dc20-6gemsdoe`
+   (`3411d3f`) to `6GEMSDOE`, open the PR to main, re-run the entry's 47 tests
+   + the doc checker + the Euclidean oracle from the pushed branch, and merge;
+   then push `arena/01a0dc20-selflearn` (`08dbece`) to `SelfLearn`, PR to main,
+   merge. (If the token is still 401, the account holder must reconnect GitHub
+   in Arena — same incident as session 2, which recovered.)
+2. **Account-holder actions (unchanged from session 2):** identify the ONE
+   DrivenData registration, read its submission history (this week's used
+   slots), confirm §1.3 eligibility, decide on archiving the ten duplicate GEMS
+   repos (the A.12 exposure), approve the §3.2 AI-disclosure narrative.
+3. **Then** spend slot 1 on the **shipped file** — the session-3 measurements
+   show no prepared candidate wins the shipping axis (channel ablation: wash;
+   semi-sup: clear loss), so the designated 88-channel file
+   (`gems6_hgb88-topk03_33cec71ff0.tif`, 13/13 gate) stands as the upload.
+   Read the returned public-test number (the only real feedback channel,
+   §3.6.1) and record it in the one-entry record; any further slot use is an
+   evidence decision, never a guess.

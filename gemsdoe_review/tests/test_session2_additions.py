@@ -169,13 +169,36 @@ def test_session2_evidence_files_parse_and_carry_pins():
         "buffedlizard55-lab"
 
 
-def test_cv_patch_still_applies_to_entry_copy():
-    """The patch dry-runs against the audited entry checkout (if provided)."""
+def test_entry_cv_buffer_is_euclidean_or_patch_applies():
+    """Invariant for the entry checkout (if provided).
+
+    Session 3 applied the Euclidean-disk patch to the canonical entry, so the
+    expected state is a Euclidean buffer. For an older unpatched checkout the
+    patch must at least dry-run cleanly so it can still be applied. Either way,
+    the (2,2) diagonal corner (sqrt(8) px, inside the 300 m kernel) must be
+    excluded once the entry carries the fix.
+    """
     entry = os.environ.get("GEMSDOE_ENTRY_ROOT")
     if not entry:
         pytest.skip("set GEMSDOE_ENTRY_ROOT to the canonical entry checkout")
+    cv_file = Path(entry) / "src" / "gems" / "cv.py"
+    has_euclidean = "ogrid" in cv_file.read_text() and \
+        "binary_dilation" in cv_file.read_text()
+    if has_euclidean:
+        # The fix is present: the buffer must exclude the diagonal corner.
+        sys.path.insert(0, str(Path(entry) / "src"))
+        import importlib
+        cv = importlib.import_module("gems.cv")
+        importlib.reload(cv)
+        score = np.zeros((9, 9), dtype=bool)
+        score[0, 0] = True
+        dil = cv._dilate(score, 3)
+        assert dil[2, 2], "patched buffer must exclude the (2,2) corner"
+        assert not dil[3, 3]
+        return
     patch = Path(__file__).resolve().parents[1] / "patches" / \
         "cv_euclidean_buffer.patch"
     r = subprocess.run(["patch", "-p1", "--dry-run", "-i", str(patch)],
                        cwd=entry, capture_output=True, text=True)
-    assert r.returncode == 0, r.stdout + r.stderr
+    assert r.returncode == 0, \
+        f"entry is not patched and the patch does not dry-run: {r.stdout}{r.stderr}"
