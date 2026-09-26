@@ -1,0 +1,67 @@
+{
+ "_what_this_is": "Session-2 resolution evidence for the three sites the 2026-09-26 brief called 'ownership unconfirmed' (5GEMSDOE, GEMSDOE4, 6GEMSDOE), re-collected live on 2026-09-26 with read-only GitHub REST calls and page fetches. Companion to evidence/ownership_audit.json (same day, earlier).",
+ "_bottom_line": {
+  "github_layer": "RESOLVED: all three repositories belong to the ONE GitHub account (buffedlizard55-lab, id 309556078) that also hosts SelfLearn. They are non-fork, first-party builds - alternative sites/copies of one project, not other entrants' properties.",
+  "drivendata_layer": "STILL UNRESOLVED FROM THE SANDBOX: no DrivenData session exists here, so the registration (if any) linked to these repositories, its eligibility (rules sec 1.3) and its remaining weekly allowance cannot be read. Only the account holder can close this; nothing in this session claims any leaderboard row as ours.",
+  "consequence": "Safe to treat all three sites as OUR OWN history (each a different build of the same project). NOT safe to treat any of their artifacts as interchangeable upload candidates: only 6GEMSDOE is the designated single entry, and its docs/mark that status."
+ },
+ "github_evidence_2026_09_26": {
+  "account": {"login": "buffedlizard55-lab", "id": 309556078, "url": "https://github.com/buffedlizard55-lab"},
+  "repos": {
+   "5GEMSDOE": {"owner": "buffedlizard55-lab", "fork": false, "has_pages": true, "created_at": "2026-09-25T18:21:09Z", "pushed_at": "2026-09-25T23:44:33Z",
+    "commit_authors_last100": {"41898282+github-actions[bot]": 22, "309556078+buffedlizard55-lab": 5, "arena-agent@users.noreply.github.com": 4, "agent@5gemsdoe.local": 4, "298482267+arena-ai-coding-agent[bot]": 4, "buffedlizard55@gmail.com": 1}},
+   "GEMSDOE4": {"owner": "buffedlizard55-lab", "fork": false, "has_pages": true, "created_at": "2026-09-25T18:16:35Z", "pushed_at": "2026-09-26T03:24:28Z",
+    "commit_authors_last100": {"41898282+github-actions[bot]": 16, "agent@arena.local": 12, "298482267+arena-ai-coding-agent[bot]": 8, "309556078+buffedlizard55-lab": 4, "buffedlizard55@gmail.com": 2, "arena-agent@users.noreply.github.com": 1}},
+   "6GEMSDOE": {"owner": "buffedlizard55-lab", "fork": false, "has_pages": true, "created_at": "2026-09-25T18:21:36Z", "pushed_at": "2026-09-26T04:28:31Z", "default_branch": "main",
+    "commit_authors_last100": {"298482267+arena-ai-coding-agent[bot]": 7, "309556078+buffedlizard55-lab": 5, "agent@arena.ai": 2, "buffedlizard55@gmail.com": 1}}
+  },
+  "note": "The same arena-ai-coding-agent[bot] identity (id 298482267) authenticated this session against SelfLearn appears as a commit author on all three repositories; every author identity in all three histories maps to the same operator account. No third-party forks or foreign authors appear."
+ },
+ "live_site_content_2026_09_26": {
+  "designated_entry": {
+   "site": "https://buffedlizard55-lab.github.io/6GEMSDOE/",
+   "framing": "ONE file for ONE entry; hard format gate; download listed as gems6_hgb88-topk03_33cec71ff0.tif (1,652,883 B, sha256 33cec71ff00b3f32d0d59c81c156f3f1...); 13/13 gate table; 155,021 positive pixels; carries an 'Account / repo status - FLAGGED FOR REVIEW' section disclosing the 11-repository duplication.",
+   "verified_against_local_bytes": "the live download hash prefix and pixel count match the local shipped file re-gated this session (13/13 PASS, 155,021 positives, 0 in-footprint NaNs)."
+  },
+  "site_5GEMSDOE": {
+   "site": "https://buffedlizard55-lab.github.io/5GEMSDOE/docs/index.html",
+   "artifact": "browser-built pixels of data/evidence/runs/ens12-adopted-floor0.1-w0/submission.tif, pinned sha256 7f00890a62878d61..., 172,974 px at 1.0",
+   "still_live_advice_flagged_last_session": "a 'What to upload next (site 5 candidate)' panel advertising candidate_s5_catalogue_hedge.tif (610.2 KB, 227,507 px = shipped field + 54,533 catalogue pixels) labelled 'S5-A ... measures the masking rule', and a third button building a 'maximum-compatibility' .tif with 0.0 outside and NO NaN/nodata tag.",
+   "why_it_matters": "this is a DIFFERENT artifact from the designated entry's file, and the 0.0-outside fallback contradicts the official submission format ('NaN outside the footprint', per the official template both sites themselves quote). Conflict persists live on 2026-09-26."
+  },
+  "site_GEMSDOE4": {
+   "site": "https://buffedlizard55-lab.github.io/GEMSDOE4/",
+   "artifact": "browser-built pixels of data/evidence/combined/submission.tif, pinned sha256 c1da7dd9c44e0538..., 335,054 px at 1.0, policy 'union k=2 of 5 members; probability members floored at t0=0.180482, dilated 0 px'; a 'new-fault-first' line supervised partly on SGMC proxy labels.",
+   "why_it_matters": "a third distinct artifact and strategy on the same account. Format-conformed per its own gate text, but it is not the designated entry's content-addressed file."
+  }
+ },
+ "leaderboard_2026_09_26": {
+  "source_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/",
+  "field_high": {"rank": 1, "participant": "DARD", "score": 0.3049, "submissions": 10},
+  "brief_scores_relocated": [
+   {"participant": "extradr19", "score": 0.1563, "submissions": 1, "rank_now": 23},
+   {"participant": "smashi34", "score": 0.1560, "submissions": 1, "rank_now": 24},
+   {"participant": "smrtdoog5", "score": 0.1193, "submissions": 1, "rank_now": 40},
+   {"participant": "SDCF9", "score": 0.1152, "submissions": 1, "rank_now": 41},
+   {"participant": "wbg1", "score": 0.0830, "submissions": 1, "rank_now": 50}
+  ],
+  "reading": "same five distinct single-submission entrants as the earlier snapshot; their ranks moved down by one (22/23/39/40/49 -> 23/24/40/41/50) as the field above them grew - the earlier snapshot's rows 2-5 are unchanged but new accounts now sit at ranks 6-13 (e.g. GrigorSargsyan 0.2504, xiaofanhu 0.2367, exposed 0.2340, hiii12345 0.2255). STILL no evidence any of the five is a registration of this project, and none may be claimed as ours. The field where an owned public score would land is 0.0830 (rank 50) to 0.3049 (rank 1); our only numbers remain local proxies (catalogue blocked-CV 0.1698; SGMC-masked proxy values 0.03-0.08), which are NOT board-comparable."
+ },
+ "rules_sources_checked_this_session": {
+  "official_rules_pdf": {
+   "url": "https://www.nlr.gov/docs/fy26osti/96647.pdf",
+   "title_as_fetched": "Geologic Enhanced Mapping System (GEMS) Prize Official Rules, SEPTEMBER 2026",
+   "sec_3_4_feedback": "each participating entity may submit ... up to three per week; must select only one set of predictions as the final submission; 'Multiple finalized submissions are not allowed.'",
+   "sec_3_5_what_to_submit": "'Before the end of the competition, you must choose only one submission for evaluation across both prize rounds.'",
+   "sec_3_6_2": "the final choice must be made 'without knowledge of your scores on the private test set'.",
+   "sec_3_2_process": "generative AI use is allowed but MUST be indicated in the narrative (outside the word count), stating the extent and how it was used.",
+   "labels_source": "USGS Quaternary Fault and Fold Database plus newly identified faults labeled by experts at the National Laboratory of the Rockies (NLR) and USGS.",
+   "drivendata_rules_landing": "https://www.drivendata.org/competitions/306/competition-doe-gems/rules/ points to https://www.herox.com/GEMSPrize/resource/2274 as the official rules location."
+  }
+ },
+ "guardrail_status_this_session": {
+  "one_account_one_repo": "no repository, site, page or account was created or registered; no submission was made; the single designated entry remains buffedlizard55-lab/6GEMSDOE with its single designated site.",
+  "no_foreign_score_adopted": "the five brief-attributed scores are reported as other participants' rows with links; none entered any local file, narrative or comparison as an 'arm'.",
+  "work": "read-only with respect to the competition and all sibling repositories; writes only inside the SelfLearn review workspace on this session's branch."
+ }
+}

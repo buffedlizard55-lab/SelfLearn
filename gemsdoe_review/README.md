@@ -17,6 +17,9 @@ the files below.
 | `evidence/tilt_derivative_audit.json` | the magnetic tilt-derivative channel audit: a dead channel, a duplicated channel, and a candidate replacement |
 | `evidence/geology_dossier.json` | per-candidate measurements for all 193 flagged structures (5-px closing, ≥ 200 px) |
 | `evidence/geology_dossier.md` | those measurements rendered with hand-written geological readings and explicit confidences |
+| `tools/feature_priorities_audit.py` | session-2: measures priorities 1-3 of the brief on the official bytes (deterministic; byte-identical on re-run) |
+| `tools/phase2_narrative.py` | session-2: renders Phase-2-style narratives from the measured dossier; refuses unidentified bytes |
+| `tests/test_session2_additions.py` | session-2 regressions: AUC sanity, trend-band logic, narrative guards, evidence-file pins, patch dry-run |
 | `tools/*.py` | the six scripts that produced everything above; each prints what it measured and states what it does not measure |
 | `patches/PROPOSED_ENTRY_CHANGES.md` | the changes that belong in `buffedlizard55-lab/6GEMSDOE`, which this session cannot push to (HTTP 403) |
 
