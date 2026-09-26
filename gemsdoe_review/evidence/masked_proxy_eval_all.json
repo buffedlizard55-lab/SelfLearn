@@ -1,0 +1,437 @@
+{
+  "_what_this_is": "rule-correct (masked-catalogue) proxy evaluation, computed by tools/masked_proxy_eval.py",
+  "labels": "/home/user/out/gems6/data/labels.tif",
+  "proxy": "/home/user/scratch/r1/data/evidence/proxy/proxy_catalogue.tif",
+  "truth_px": 61664,
+  "rule": {
+    "source": "https://community.drivendata.org/t/11516 (staff, 2026-09-16 and 2026-09-21)",
+    "mask": "pixel-exact: identical to the provided training fault labels",
+    "unmasked_penalty": "a predicted pixel near a known fault but far from new-fault truth is fully penalized",
+    "truth": "proxy code 2 = SGMC faults with no training label within 300 m"
+  },
+  "metrics": {
+    "35042805806-experiment": {
+      "pred": "/home/user/scratch/r1/data/evidence/runs/35042805806-experiment/submission.tif",
+      "emission_px": 21492,
+      "emission_on_catalogue_px": 2593,
+      "unmasked_proxy": {
+        "dti": 0.02468539312880902,
+        "tp_w": 1324.080709684919,
+        "fp_w": 20211.05215496741,
+        "fn_w": 60339.91929031508,
+        "n_pos_pred": 21492,
+        "n_gt": 61664,
+        "mass": 21492.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.024926393408790732,
+        "tp_w": 1324.080709684919,
+        "fp_w": 17618.05215496741,
+        "fn_w": 60339.91929031508,
+        "n_pos_pred": 18899,
+        "n_gt": 61664,
+        "mass": 18899.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 2593.0
+    },
+    "35042805806": {
+      "pred": "/home/user/scratch/r1/data/evidence/runs/35042805806/submission.tif",
+      "emission_px": 21492,
+      "emission_on_catalogue_px": 2593,
+      "unmasked_proxy": {
+        "dti": 0.02468539312880902,
+        "tp_w": 1324.080709684919,
+        "fp_w": 20211.05215496741,
+        "fn_w": 60339.91929031508,
+        "n_pos_pred": 21492,
+        "n_gt": 61664,
+        "mass": 21492.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.024926393408790732,
+        "tp_w": 1324.080709684919,
+        "fp_w": 17618.05215496741,
+        "fn_w": 60339.91929031508,
+        "n_pos_pred": 18899,
+        "n_gt": 61664,
+        "mass": 18899.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 2593.0
+    },
+    "ens12-adopted-floor0.1-w0": {
+      "pred": "/home/user/scratch/r1/data/evidence/runs/ens12-adopted-floor0.1-w0/submission.tif",
+      "emission_px": 172974,
+      "emission_on_catalogue_px": 6455,
+      "unmasked_proxy": {
+        "dti": 0.0998593862294909,
+        "tp_w": 8378.119828821162,
+        "fp_w": 164461.74055865733,
+        "fn_w": 53285.88017117884,
+        "n_pos_pred": 172974,
+        "n_gt": 61664,
+        "mass": 172974.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.10141998809708015,
+        "tp_w": 8378.119828821162,
+        "fp_w": 158006.74055865733,
+        "fn_w": 53285.88017117884,
+        "n_pos_pred": 166519,
+        "n_gt": 61664,
+        "mass": 166519.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 6455.0
+    },
+    "local-sandbox-smoke": {
+      "pred": "/home/user/scratch/r1/data/evidence/runs/local-sandbox-smoke/submission.tif",
+      "emission_px": 207906,
+      "emission_on_catalogue_px": 2313,
+      "unmasked_proxy": {
+        "dti": 0.08640647245338684,
+        "tp_w": 7856.480322851169,
+        "fp_w": 200110.88872449973,
+        "fn_w": 53807.51967714883,
+        "n_pos_pred": 207906,
+        "n_gt": 61664,
+        "mass": 207906.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.0868483331412274,
+        "tp_w": 7856.480322851169,
+        "fp_w": 197797.8887244997,
+        "fn_w": 53807.51967714883,
+        "n_pos_pred": 205593,
+        "n_gt": 61664,
+        "mass": 205593.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 2313.0
+    },
+    "coverage-v3-fusion-20260925T054015Z-3ccf68834a.tif": {
+      "pred": "/home/user/scratch/r3/docs/downloads/coverage-v3-fusion-20260925T054015Z-3ccf68834a.tif",
+      "emission_px": 246258,
+      "emission_on_catalogue_px": 0,
+      "unmasked_proxy": {
+        "dti": 0.6521046031648107,
+        "tp_w": 61664.0,
+        "fp_w": 164487.5810286471,
+        "fn_w": 0.0,
+        "n_pos_pred": 246258,
+        "n_gt": 61664,
+        "mass": 246258.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.6521046031648107,
+        "tp_w": 61664.0,
+        "fp_w": 164487.5810286471,
+        "fn_w": 0.0,
+        "n_pos_pred": 246258,
+        "n_gt": 61664,
+        "mass": 246258.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 0.0
+    },
+    "coverage-v3-ml-20260925T054017Z-92d5062aea.tif": {
+      "pred": "/home/user/scratch/r3/docs/downloads/coverage-v3-ml-20260925T054017Z-92d5062aea.tif",
+      "emission_px": 195126,
+      "emission_on_catalogue_px": 0,
+      "unmasked_proxy": {
+        "dti": 0.3183696958623272,
+        "tp_w": 27959.41762683643,
+        "fp_w": 164487.58102864714,
+        "fn_w": 33704.58237316356,
+        "n_pos_pred": 195126,
+        "n_gt": 61664,
+        "mass": 195126.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.3183696958623272,
+        "tp_w": 27959.41762683643,
+        "fp_w": 164487.58102864714,
+        "fn_w": 33704.58237316356,
+        "n_pos_pred": 195126,
+        "n_gt": 61664,
+        "mass": 195126.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 0.0
+    },
+    "coverage-v3-wide-20260925T054019Z-0ac095a7ed.tif": {
+      "pred": "/home/user/scratch/r3/docs/downloads/coverage-v3-wide-20260925T054019Z-0ac095a7ed.tif",
+      "emission_px": 624025,
+      "emission_on_catalogue_px": 0,
+      "unmasked_proxy": {
+        "dti": 0.22192097585977935,
+        "tp_w": 38233.67213382901,
+        "fp_w": 576535.7065556315,
+        "fn_w": 23430.327866170992,
+        "n_pos_pred": 624025,
+        "n_gt": 61664,
+        "mass": 624025.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.22192097585977935,
+        "tp_w": 38233.67213382901,
+        "fp_w": 576535.7065556315,
+        "fn_w": 23430.327866170992,
+        "n_pos_pred": 624025,
+        "n_gt": 61664,
+        "mass": 624025.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 0.0
+    },
+    "gapfinder-v2-fusion-20260925T045011Z-682a7bbbfe.tif": {
+      "pred": "/home/user/scratch/r3/docs/downloads/gapfinder-v2-fusion-20260925T045011Z-682a7bbbfe.tif",
+      "emission_px": 229468,
+      "emission_on_catalogue_px": 0,
+      "unmasked_proxy": {
+        "dti": 0.6774850984593737,
+        "tp_w": 61664.0,
+        "fp_w": 146774.88061232812,
+        "fn_w": 0.0,
+        "n_pos_pred": 229468,
+        "n_gt": 61664,
+        "mass": 229468.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.6774850984593737,
+        "tp_w": 61664.0,
+        "fp_w": 146774.88061232812,
+        "fn_w": 0.0,
+        "n_pos_pred": 229468,
+        "n_gt": 61664,
+        "mass": 229468.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 0.0
+    },
+    "gapfinder-v2-ml-20260925T045012Z-73e97f79f6.tif": {
+      "pred": "/home/user/scratch/r3/docs/downloads/gapfinder-v2-ml-20260925T045012Z-73e97f79f6.tif",
+      "emission_px": 178548,
+      "emission_on_catalogue_px": 0,
+      "unmasked_proxy": {
+        "dti": 0.33661201221195747,
+        "tp_w": 28398.57218315103,
+        "fp_w": 146774.8806123281,
+        "fn_w": 33265.42781684897,
+        "n_pos_pred": 178548,
+        "n_gt": 61664,
+        "mass": 178548.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.33661201221195747,
+        "tp_w": 28398.57218315103,
+        "fp_w": 146774.8806123281,
+        "fn_w": 33265.42781684897,
+        "n_pos_pred": 178548,
+        "n_gt": 61664,
+        "mass": 178548.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 0.0
+    },
+    "gapfinder-v2-sgmc-gap-20260925T045014Z-7251c22bb4.tif": {
+      "pred": "/home/user/scratch/r3/docs/downloads/gapfinder-v2-sgmc-gap-20260925T045014Z-7251c22bb4.tif",
+      "emission_px": 61664,
+      "emission_on_catalogue_px": 0,
+      "unmasked_proxy": {
+        "dti": 1.0,
+        "tp_w": 61664.0,
+        "fp_w": 0.0,
+        "fn_w": 0.0,
+        "n_pos_pred": 61664,
+        "n_gt": 61664,
+        "mass": 61664.0
+      },
+      "MASKED_proxy": {
+        "dti": 1.0,
+        "tp_w": 61664.0,
+        "fp_w": 0.0,
+        "fn_w": 0.0,
+        "n_pos_pred": 61664,
+        "n_gt": 61664,
+        "mass": 61664.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 0.0
+    },
+    "pindrop-v4-discovery-20260925T152423Z-37f9d5b855.tif": {
+      "pred": "/home/user/scratch/r3/docs/downloads/pindrop-v4-discovery-20260925T152423Z-37f9d5b855.tif",
+      "emission_px": 155021,
+      "emission_on_catalogue_px": 0,
+      "unmasked_proxy": {
+        "dti": 0.23961979178439427,
+        "tp_w": 19852.163366975616,
+        "fp_w": 147734.81754751928,
+        "fn_w": 41811.83663302439,
+        "n_pos_pred": 155021,
+        "n_gt": 61664,
+        "mass": 155021.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.23961979178439427,
+        "tp_w": 19852.163366975616,
+        "fp_w": 147734.81754751928,
+        "fn_w": 41811.83663302439,
+        "n_pos_pred": 155021,
+        "n_gt": 61664,
+        "mass": 155021.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 0.0
+    },
+    "pindrop-v4-nodes-20260925T152420Z-f347b70daa.tif": {
+      "pred": "/home/user/scratch/r3/docs/downloads/pindrop-v4-nodes-20260925T152420Z-f347b70daa.tif",
+      "emission_px": 155021,
+      "emission_on_catalogue_px": 0,
+      "unmasked_proxy": {
+        "dti": 0.23434878994299677,
+        "tp_w": 19403.433262320083,
+        "fp_w": 147926.77223589894,
+        "fn_w": 42260.56673767991,
+        "n_pos_pred": 155021,
+        "n_gt": 61664,
+        "mass": 155021.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.23434878994299677,
+        "tp_w": 19403.433262320083,
+        "fp_w": 147926.77223589894,
+        "fn_w": 42260.56673767991,
+        "n_pos_pred": 155021,
+        "n_gt": 61664,
+        "mass": 155021.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 0.0
+    },
+    "pindrop-v4-ridge-20260925T152422Z-4e03fc9705.tif": {
+      "pred": "/home/user/scratch/r3/docs/downloads/pindrop-v4-ridge-20260925T152422Z-4e03fc9705.tif",
+      "emission_px": 155021,
+      "emission_on_catalogue_px": 0,
+      "unmasked_proxy": {
+        "dti": 0.301768382969181,
+        "tp_w": 24174.983575793533,
+        "fp_w": 129724.29226074884,
+        "fn_w": 37489.016424206464,
+        "n_pos_pred": 155021,
+        "n_gt": 61664,
+        "mass": 155021.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.301768382969181,
+        "tp_w": 24174.983575793533,
+        "fp_w": 129724.29226074884,
+        "fn_w": 37489.016424206464,
+        "n_pos_pred": 155021,
+        "n_gt": 61664,
+        "mass": 155021.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 0.0
+    },
+    "riftline-context-distance-20260925T011817Z-7b6010637a.tif": {
+      "pred": "/home/user/scratch/r3/docs/downloads/riftline-context-distance-20260925T011817Z-7b6010637a.tif",
+      "emission_px": 352506,
+      "emission_on_catalogue_px": 13386,
+      "unmasked_proxy": {
+        "dti": 0.1303199599944558,
+        "tp_w": 15567.650842942458,
+        "fp_w": 335062.09278392605,
+        "fn_w": 46096.34915705754,
+        "n_pos_pred": 352506,
+        "n_gt": 61664,
+        "mass": 352506.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.13330756703406524,
+        "tp_w": 15567.650842942458,
+        "fp_w": 321676.09278392605,
+        "fn_w": 46096.34915705754,
+        "n_pos_pred": 339120,
+        "n_gt": 61664,
+        "mass": 339120.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 13386.0
+    },
+    "6GEMSDOE gold": {
+      "pred": "/home/user/out/gems6/downloads/gems6_hgb88-topk03_33cec71ff0.tif",
+      "emission_px": 155021,
+      "emission_on_catalogue_px": 23605,
+      "unmasked_proxy": {
+        "dti": 0.03274049102375916,
+        "tp_w": 2614.0445337172705,
+        "fp_w": 149936.63379928446,
+        "fn_w": 59049.95546628273,
+        "n_pos_pred": 155021,
+        "n_gt": 61664,
+        "mass": 155021.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.034798094424377216,
+        "tp_w": 2614.0445337172705,
+        "fp_w": 126331.63379928448,
+        "fn_w": 59049.95546628273,
+        "n_pos_pred": 131416,
+        "n_gt": 61664,
+        "mass": 131416.0
+      },
+      "truth_px": 61664,
+      "mass_removed_by_mask": 23605.0
+    }
+  },
+  "baselines": {
+    "catalogue_copy": {
+      "emission_px": 60988,
+      "emission_on_catalogue_px": 60988,
+      "unmasked_proxy": {
+        "dti": 0.0,
+        "tp_w": 0.0,
+        "fp_w": 60988.0,
+        "fn_w": 61664.0,
+        "n_pos_pred": 60988,
+        "n_gt": 61664,
+        "mass": 60988.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.0,
+        "tp_w": 0.0,
+        "fp_w": 0.0,
+        "fn_w": 61664.0,
+        "n_pos_pred": 0,
+        "n_gt": 61664,
+        "mass": 0.0
+      },
+      "truth_px": 61664
+    },
+    "blanket_ones_inside_footprint": {
+      "emission_px": 5167373,
+      "emission_on_catalogue_px": 60988,
+      "unmasked_proxy": {
+        "dti": 0.0585013309469359,
+        "tp_w": 61664.0,
+        "fp_w": 4961987.444452232,
+        "fn_w": 0.0,
+        "n_pos_pred": 5167373,
+        "n_gt": 61664,
+        "mass": 5167373.0
+      },
+      "MASKED_proxy": {
+        "dti": 0.05918623407292703,
+        "tp_w": 61664.0,
+        "fp_w": 4900999.444452232,
+        "fn_w": 0.0,
+        "n_pos_pred": 5106385,
+        "n_gt": 61664,
+        "mass": 5106385.0
+      },
+      "truth_px": 61664
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "_what_this_is": "public leaderboard rows of the DOE GEMS Prize Challenge, read from https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/ on 2026-09-26. Read-only, no sign-in required.",
+  "_why_it_matters": "the session brief attributes five scores to this account's repositories (GEMSDOE1 0.1563, GEMSDOE2 0.1560, GEMSDOE3 0.1193/0.0830/0.1152). Every one of those five numbers resolves to a DIFFERENT DrivenData participant account with exactly ONE submission. None of them can be shown to be this entry's account, and none of them can be used as our own score.",
+  "source_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/",
+  "retrieved_utc": "2026-09-26",
+  "rows_visible": 50,
+  "field_high": {"rank": 1, "participant": "DARD", "best_public_score": 0.3049, "submissions": 10},
+  "rows_matching_the_brief": [
+    {"rank": 22, "participant": "extradr19", "best_public_score": 0.1563, "submissions": 1, "brief_calls_it": "GEMSDOE1"},
+    {"rank": 23, "participant": "smashi34",  "best_public_score": 0.1560, "submissions": 1, "brief_calls_it": "GEMSDOE2"},
+    {"rank": 39, "participant": "smrtdoog5", "best_public_score": 0.1193, "submissions": 1, "brief_calls_it": "GEMSDOE3 (file 1 of 3)"},
+    {"rank": 40, "participant": "SDCF9",     "best_public_score": 0.1152, "submissions": 1, "brief_calls_it": "GEMSDOE3 (file 2 of 3)"},
+    {"rank": 49, "participant": "wbg1",      "best_public_score": 0.0830, "submissions": 1, "brief_calls_it": "GEMSDOE3 (file 3 of 3)"}
+  ],
+  "context_rows": [
+    {"rank": 2, "participant": "alexoktaba", "best_public_score": 0.2993, "submissions": 13},
+    {"rank": 3, "participant": "HardcoreTechGod", "best_public_score": 0.2854, "submissions": 6},
+    {"rank": 4, "participant": "mzoorob", "best_public_score": 0.2843, "submissions": 15},
+    {"rank": 5, "participant": "joeyfezster", "best_public_score": 0.2589, "submissions": 12},
+    {"rank": 17, "participant": "jgaines", "best_public_score": 0.1694, "submissions": 11},
+    {"rank": 18, "participant": "dmitry_v", "best_public_score": 0.1672, "submissions": 2},
+    {"rank": 20, "participant": "Scotty77", "best_public_score": 0.1590, "submissions": 5},
+    {"rank": 35, "participant": "joano", "best_public_score": 0.1350, "submissions": 5},
+    {"rank": 42, "participant": "DBbun", "best_public_score": 0.1119, "submissions": 3}
+  ],
+  "medians_visible": {
+    "rank_25": 0.1500,
+    "rank_50_last_visible": 0.0811,
+    "note": "computed from the 50 visible rows only; the page renders the full table client-side, so this is what was read, not an official statistic."
+  }
+}

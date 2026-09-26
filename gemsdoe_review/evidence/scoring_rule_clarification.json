@@ -1,0 +1,57 @@
+{
+  "_what_this_is": "the official scoring-rule clarification this session verified, quoted verbatim from the DrivenData community forum (GEMS Prize Challenge category). Read 2026-09-26. This is staff-written text, not an inference.",
+  "topic_url": "https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516",
+  "topic_json_url": "https://community.drivendata.org/t/11516.json",
+  "topic_id": 11516,
+  "posts_count": 4,
+  "posts": [
+    {
+      "post_number": 1,
+      "username": "exposed",
+      "created_at": "2026-09-15T13:22:56.967Z",
+      "role": "participant question",
+      "url": "https://community.drivendata.org/t/11516/1",
+      "quote": "If a submission predicts the known USGS/INGENIOUS fault traces (which we are asked to train on), do those predictions count as false positives, or are pixels near known faults masked out / excluded from the FP term when scoring against the new-fault labels?"
+    },
+    {
+      "post_number": 2,
+      "username": "chrisk-dd",
+      "name": "Chris Kucharczyk",
+      "role": "DrivenData Staff (flair: drivendata-staff, admin, moderator)",
+      "created_at": "2026-09-16T18:58:28.338Z",
+      "url": "https://community.drivendata.org/t/11516/2",
+      "quote_verbatim": [
+        "Pixels corresponding to known USGS/INGENIOUS faults are masked / excluded from evaluation, so they do not count towards penalty terms.",
+        "Re-evaluation will also mask/exclude the existing USGS/INGENIOUS faults.",
+        "We'll consider changing the description, but for scoring purposes it should not matter whether these known faults are included with predictions or not."
+      ]
+    },
+    {
+      "post_number": 3,
+      "username": "tarabird90",
+      "created_at": "2026-09-20T21:24:20.476Z",
+      "role": "participant follow-up",
+      "url": "https://community.drivendata.org/t/11516/3",
+      "quote": "Is the mask pixel-exact - only the rasterized known-fault pixels themselves - or does it extend a buffer around them (for example the 300 m / 3 px kernel support)? ... Under a pixel-exact mask, predicting those corridors costs real false-positive mass. Under a buffered mask, the same predictions are free."
+    },
+    {
+      "post_number": 4,
+      "username": "chrisk-dd",
+      "name": "Chris Kucharczyk",
+      "role": "DrivenData Staff",
+      "created_at": "2026-09-21T07:25:04.785Z",
+      "url": "https://community.drivendata.org/t/11516/4",
+      "quote_verbatim": [
+        "The mask is indeed pixel-exact - it is identical to the provided set of training fault labels.",
+        "Only new-fault ground truth is considered for scoring purposes. A predicted pixel that is near a known fault trace but far from a new-fault ground truth pixel will be fully penalized, i.e., the buffer does not apply to known faults.",
+        "A new-fault ground truth pixel can indeed lie within 300m of a known fault trace. Such pixels would constitute corrections or modifications to existing fault traces. Identifying these corrections is one outcome we are aiming for as part of this competition. Such corrections may already exist in the new-fault set, and may also exist in the final round evaluation set."
+      ]
+    }
+  ],
+  "consequences_for_this_entry": [
+    "The mask is the provided label raster ('existing_faults.tif' = data/labels.tif, 60,988 px). Those pixels are excluded from evaluation: predicting them is neither rewarded nor penalized.",
+    "A predicted pixel 1-3 px from a mapped trace is FULLY penalized (alpha * (1-k) with no nearby new-fault truth) - the 300 m buffer does not apply to known faults.",
+    "New-fault truth CAN sit within 300 m of a mapped trace (corrections/extensions are an explicit target), so thin along-strike corridors are not worthless - but the local catalogue-based proxy cannot price them.",
+    "The entry's blocked-CV proxy scores predictions that hug the catalogue as nearly free (k ~ 1 -> 1-k ~ 0), which is exactly the structure that dominates its emission (68.2% of its 131,416 off-catalogue predicted pixels are within 300 m of a mapped trace). The proxy is therefore optimistic on precisely the pixels this submission spends most of its budget on."
+  ]
+}
