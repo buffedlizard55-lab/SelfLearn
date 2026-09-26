@@ -1,0 +1,32 @@
+{
+ "_what_this_is": "Decomposition of each system-holdout fold's ground truth into 'correction-like' pixels (within 300 m / 3 px of a TRAINED catalogue label, the population staff say is in scope) and 'isolated' pixels (beyond 300 m of any trained label). No model involved; pure geometry of the fold split.",
+ "fold_0": {
+  "held_gt_px": 25419,
+  "correction_like_px": 252,
+  "isolated_px": 25167,
+  "correction_like_pct": 0.99
+ },
+ "fold_1": {
+  "held_gt_px": 23981,
+  "correction_like_px": 222,
+  "isolated_px": 23759,
+  "correction_like_pct": 0.93
+ },
+ "fold_2": {
+  "held_gt_px": 1481,
+  "correction_like_px": 171,
+  "isolated_px": 1310,
+  "correction_like_pct": 11.55
+ },
+ "fold_3": {
+  "held_gt_px": 10107,
+  "correction_like_px": 156,
+  "isolated_px": 9951,
+  "correction_like_pct": 1.54
+ },
+ "total": {
+  "correction_like_px": 801,
+  "isolated_px": 60187,
+  "correction_like_pct": 1.31
+ }
+}

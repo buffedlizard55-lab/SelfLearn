@@ -1,0 +1,186 @@
+{
+ "_what_this_is": "Session-3 parallel continuation (2026-09-26, second arena branch; the sibling file ownership_resolution_2026-09-26_session3.json is the earlier same-day resolution from the other branch) re-confirmation of GEMSDOE-family ownership at the GitHub layer, via fresh authenticated REST calls. The authenticated identity is the arena bot app (gh auth status: arena-ai-coding-agent[bot]); GET /user is not permitted for this token, so the identity is recorded from gh auth status rather than the API.",
+ "account": {
+  "login": "buffedlizard55-lab",
+  "id": 309556078,
+  "type": "User"
+ },
+ "repos": {
+  "GEMSDOE": {
+   "full_name": "buffedlizard55-lab/GEMSDOE",
+   "owner": "buffedlizard55-lab",
+   "owner_id": 309556078,
+   "fork": false,
+   "has_pages": true,
+   "private": false,
+   "default_branch": "main",
+   "pushed_at": "2026-09-24T23:07:17Z",
+   "contributors": [
+    {
+     "login": "github-actions[bot]",
+     "type": "Bot"
+    },
+    {
+     "login": "buffedlizard55-lab",
+     "type": "User"
+    },
+    {
+     "login": "arena-ai-coding-agent[bot]",
+     "type": "Bot"
+    },
+    {
+     "login": "arena-agent",
+     "type": "User"
+    }
+   ]
+  },
+  "GEMSDOE2": {
+   "full_name": "buffedlizard55-lab/GEMSDOE2",
+   "owner": "buffedlizard55-lab",
+   "owner_id": 309556078,
+   "fork": false,
+   "has_pages": true,
+   "private": false,
+   "default_branch": "main",
+   "pushed_at": "2026-09-25T17:32:05Z",
+   "contributors": [
+    {
+     "login": "github-actions[bot]",
+     "type": "Bot"
+    },
+    {
+     "login": "buffedlizard55-lab",
+     "type": "User"
+    },
+    {
+     "login": "arena-ai-coding-agent[bot]",
+     "type": "Bot"
+    }
+   ]
+  },
+  "GEMSDOE3": {
+   "full_name": "buffedlizard55-lab/GEMSDOE3",
+   "owner": "buffedlizard55-lab",
+   "owner_id": 309556078,
+   "fork": false,
+   "has_pages": true,
+   "private": false,
+   "default_branch": "main",
+   "pushed_at": "2026-09-25T17:36:01Z",
+   "contributors": [
+    {
+     "login": "arena-ai-coding-agent[bot]",
+     "type": "Bot"
+    },
+    {
+     "login": "buffedlizard55-lab",
+     "type": "User"
+    }
+   ]
+  },
+  "5GEMSDOE": {
+   "full_name": "buffedlizard55-lab/5GEMSDOE",
+   "owner": "buffedlizard55-lab",
+   "owner_id": 309556078,
+   "fork": false,
+   "has_pages": true,
+   "private": false,
+   "default_branch": "main",
+   "pushed_at": "2026-09-25T23:44:33Z",
+   "contributors": [
+    {
+     "login": "github-actions[bot]",
+     "type": "Bot"
+    },
+    {
+     "login": "buffedlizard55-lab",
+     "type": "User"
+    },
+    {
+     "login": "arena-ai-coding-agent[bot]",
+     "type": "Bot"
+    },
+    {
+     "login": "arena-agent",
+     "type": "User"
+    }
+   ]
+  },
+  "GEMSDOE4": {
+   "full_name": "buffedlizard55-lab/GEMSDOE4",
+   "owner": "buffedlizard55-lab",
+   "owner_id": 309556078,
+   "fork": false,
+   "has_pages": true,
+   "private": false,
+   "default_branch": "main",
+   "pushed_at": "2026-09-26T06:10:35Z",
+   "contributors": [
+    {
+     "login": "github-actions[bot]",
+     "type": "Bot"
+    },
+    {
+     "login": "arena-ai-coding-agent[bot]",
+     "type": "Bot"
+    },
+    {
+     "login": "buffedlizard55-lab",
+     "type": "User"
+    },
+    {
+     "login": "arena-agent",
+     "type": "User"
+    }
+   ]
+  },
+  "6GEMSDOE": {
+   "full_name": "buffedlizard55-lab/6GEMSDOE",
+   "owner": "buffedlizard55-lab",
+   "owner_id": 309556078,
+   "fork": false,
+   "has_pages": true,
+   "private": false,
+   "default_branch": "main",
+   "pushed_at": "2026-09-26T04:28:31Z",
+   "contributors": [
+    {
+     "login": "arena-ai-coding-agent[bot]",
+     "type": "Bot"
+    },
+    {
+     "login": "buffedlizard55-lab",
+     "type": "User"
+    }
+   ]
+  },
+  "SelfLearn": {
+   "full_name": "buffedlizard55-lab/SelfLearn",
+   "owner": "buffedlizard55-lab",
+   "owner_id": 309556078,
+   "fork": false,
+   "has_pages": true,
+   "private": false,
+   "default_branch": "main",
+   "pushed_at": "2026-09-26T16:52:37Z",
+   "contributors": [
+    {
+     "login": "arena-ai-coding-agent[bot]",
+     "type": "Bot"
+    },
+    {
+     "login": "buffedlizard55-lab",
+     "type": "User"
+    },
+    {
+     "login": "arena-agent",
+     "type": "User"
+    }
+   ]
+  }
+ },
+ "_bottom_line": {
+  "github_layer": "RESOLVED (re-confirmed this session): every GEMSDOE-family repository checked is a non-fork repository owned by the one account buffedlizard55-lab (id 309556078) that hosts SelfLearn. The brief's 'GEMSDOE1' URL is the Pages site of the repository named GEMSDOE (no repository named GEMSDOE1 exists; repos/GEMSDOE1 returns 404).",
+  "drivendata_layer": "STILL UNRESOLVED from the sandbox: no DrivenData session exists here, so which registration (if any) is ours, its eligibility, and its submission history remain human-only facts. No leaderboard row is claimed as ours."
+ }
+}
