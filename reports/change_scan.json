@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-09-27T17:04:40Z",
-  "items_new": 4,
+  "generated_at": "2026-09-27T21:27:48Z",
+  "items_new": 14,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-ad74281c19a5",
+  "run_id": "run-bceaa54a43ce",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-26..2026-09-27 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-26..2026-09-27 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 3,
+      "items_new": 4,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,28 +77,36 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ardelleinternecine541/agentic-ai-patterns\nT",
-          "identifier": "https://github.com/ardelleinternecine541/agentic-ai-patterns",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Unknown384-come/agent-runner\nThe record for",
+          "identifier": "https://github.com/Unknown384-come/agent-runner",
           "published_at": "2026-09-27",
           "source_id": "github",
-          "title": "ardelleinternecine541/agentic-ai-patterns",
-          "url": "https://github.com/ardelleinternecine541/agentic-ai-patterns"
+          "title": "Unknown384-come/agent-runner",
+          "url": "https://github.com/Unknown384-come/agent-runner"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Hack23/riksdagsmonitor\nThe record for Hack2",
-          "identifier": "https://github.com/Hack23/riksdagsmonitor",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: YoussElo/autonomous-ai-agent\nThe record for",
+          "identifier": "https://github.com/YoussElo/autonomous-ai-agent",
           "published_at": "2026-09-27",
           "source_id": "github",
-          "title": "Hack23/riksdagsmonitor",
-          "url": "https://github.com/Hack23/riksdagsmonitor"
+          "title": "YoussElo/autonomous-ai-agent",
+          "url": "https://github.com/YoussElo/autonomous-ai-agent"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: dhyabi2/agent-runtime\nThe record for dhyabi",
-          "identifier": "https://github.com/dhyabi2/agent-runtime",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: xalgorix/xalgorix\nThe record for xalgorix/x",
+          "identifier": "https://github.com/xalgorix/xalgorix",
           "published_at": "2026-09-27",
           "source_id": "github",
-          "title": "dhyabi2/agent-runtime",
-          "url": "https://github.com/dhyabi2/agent-runtime"
+          "title": "xalgorix/xalgorix",
+          "url": "https://github.com/xalgorix/xalgorix"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Vulkgryph/Forge\nThe record for Vulkgryph/Fo",
+          "identifier": "https://github.com/Vulkgryph/Forge",
+          "published_at": "2026-09-27",
+          "source_id": "github",
+          "title": "Vulkgryph/Forge",
+          "url": "https://github.com/Vulkgryph/Forge"
         }
       ],
       "request_params": {
@@ -129,8 +137,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-27T17:04:41.761\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:2b2fc5da8",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-27T21:27:49.192\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:23571a716",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -155,15 +163,56 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-09-26..2026-09-27 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-09-26..2026-09-27 and dropped; 0 carried no readable date and were kept; 9 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 0,
+      "items_new": 9,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
       "items_undated": 0,
       "mechanism": "Newly created releases, newest first, as published in the Latest Updates Feed",
-      "new_items": [],
+      "new_items": [
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/cowork-server/0.26.9.27.1/",
+          "published_at": "2026-09-27",
+          "source_id": "pypi",
+          "title": "cowork-server 0.26.9.27.1",
+          "url": "https://pypi.org/project/cowork-server/0.26.9.27.1/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/conquest2a/0.4.0/",
+          "published_at": "2026-09-27",
+          "source_id": "pypi",
+          "title": "conquest2a 0.4.0",
+          "url": "https://pypi.org/project/conquest2a/0.4.0/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/vasp-step/2026.9.27/",
+          "published_at": "2026-09-27",
+          "source_id": "pypi",
+          "title": "vasp-step 2026.9.27",
+          "url": "https://pypi.org/project/vasp-step/2026.9.27/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/semsift/0.0.1/",
+          "published_at": "2026-09-27",
+          "source_id": "pypi",
+          "title": "semsift 0.0.1",
+          "url": "https://pypi.org/project/semsift/0.0.1/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/bemade-odoo-mcp/0.1.0a5/",
+          "published_at": "2026-09-27",
+          "source_id": "pypi",
+          "title": "bemade-odoo-mcp 0.1.0a5",
+          "url": "https://pypi.org/project/bemade-odoo-mcp/0.1.0a5/"
+        }
+      ],
       "request_params": {},
       "request_url": "https://pypi.org/rss/updates.xml",
       "source_id": "pypi",
