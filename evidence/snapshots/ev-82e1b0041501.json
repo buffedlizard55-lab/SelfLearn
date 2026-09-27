@@ -1,5 +1,5 @@
 {
-  "bytes_read": 30056,
+  "bytes_read": 30075,
   "content_hash": "sha256:f18248bf8b694936ec03641cd78192dbd56e89f7ca8cb9269095d631aebca74f",
   "evidence_class": "commentary",
   "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -13,8 +13,8 @@
   "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
   "published_at": "2009-03-13",
   "publisher": "Y Combinator (Hacker News); Algolia operates the search index",
-  "response_sha256": "sha256:69fe4748d580865b8e0e7a4435793f1d9028c433e1b365efff7f480529d9de57",
-  "retrieved_at": "2026-09-27T05:26:32Z",
+  "response_sha256": "sha256:9c0275c792d4e5f9a5933ab27dd34c12e278bbc96523eaf899e492f823dd4c29",
+  "retrieved_at": "2026-09-27T12:11:49Z",
   "source_id": "hackernews",
   "source_name": "Hacker News API (via Algolia index)",
   "text": "Source: Hacker News API (via Algolia index) (https://hn.algolia.com/api/v1)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Manuela Veloso Wins Autonomous Agents Research Award - Carnegie Mellon University\nThe record for Manuela Veloso Wins Autonomous Agents Research Award - Carnegie Mellon University reports: created_at 2009-03-13T23:27:32Z, points 2, comment count 0.\nThe record for Manuela Veloso Wins Autonomous Agents Research Award - Carnegie Mellon University reports: objectID 515448.\nSource note: Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
