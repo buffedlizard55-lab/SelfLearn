@@ -1,5 +1,5 @@
 {
-  "bytes_read": 29992,
+  "bytes_read": 30004,
   "content_hash": "sha256:1a13c8887f1fbb32cfe6b82a2543d0192d5153b2b4b7a4eb9946d6e6386f9645",
   "evidence_class": "commentary",
   "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -13,8 +13,8 @@
   "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
   "published_at": "2026-04-21",
   "publisher": "Y Combinator (Hacker News); Algolia operates the search index",
-  "response_sha256": "sha256:72038c88e514bb38d09b790a59f188dd8249ce3fdd150bad41b204bf0f2e0d1c",
-  "retrieved_at": "2026-09-28T05:33:17Z",
+  "response_sha256": "sha256:9052c974d2a920e9e0764a26c5b735f504e6d9eea0042c25f179549ce4f75f95",
+  "retrieved_at": "2026-09-28T14:08:11Z",
   "source_id": "hackernews",
   "source_name": "Hacker News API (via Algolia index)",
   "text": "Source: Hacker News API (via Algolia index) (https://hn.algolia.com/api/v1)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Deep Research Max: a step change for autonomous research agents\nThe record for Deep Research Max: a step change for autonomous research agents reports: created_at 2026-04-21T16:30:01Z, points 9, comment count 0.\nThe record for Deep Research Max: a step change for autonomous research agents reports: objectID 47851065.\nSource note: Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
