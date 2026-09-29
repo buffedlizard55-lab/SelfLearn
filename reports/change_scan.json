@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-09-29T13:04:52Z",
-  "items_new": 17,
+  "generated_at": "2026-09-29T22:23:40Z",
+  "items_new": 6,
   "items_out_of_window": 4,
   "items_returned": 26,
   "items_seen": 22,
-  "run_id": "run-afddde29cfc9",
+  "run_id": "run-ffd8fe521ad2",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -39,24 +39,15 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 4 published before the window 2026-09-28..2026-09-29 and dropped; 1 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "5 item(s) returned; 4 published before the window 2026-09-28..2026-09-29 and dropped; 1 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
-      "items_new": 1,
+      "items_new": 0,
       "items_out_of_window": 4,
       "items_returned": 5,
       "items_seen": 1,
       "items_undated": 1,
       "mechanism": "Works reindexed at or after the given date",
-      "new_items": [
-        {
-          "excerpt": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Simulating Autonomous Agent in Connecte",
-          "identifier": "10.70675/30509701z9a29z4beezbb15zeb1797051d75",
-          "published_at": null,
-          "source_id": "crossref",
-          "title": "Simulating Autonomous Agent in Connected Virtual Environments",
-          "url": "https://doi.org/10.70675/30509701z9a29z4beezbb15zeb1797051d75"
-        }
-      ],
+      "new_items": [],
       "request_params": {
         "filter": "from-index-date:2026-09-28",
         "mailto": "selflearn@example.invalid",
@@ -76,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-28..2026-09-29 and dropped; 0 carried no readable date and were kept; 5 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-28..2026-09-29 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 5,
+      "items_new": 4,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -86,44 +77,36 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: vaishnavipatwari/autonomous-insurance-claim",
-          "identifier": "https://github.com/vaishnavipatwari/autonomous-insurance-claims-agent",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: sp4chi/log-incident-classifier-v3\nThe recor",
+          "identifier": "https://github.com/sp4chi/log-incident-classifier-v3",
           "published_at": "2026-09-29",
           "source_id": "github",
-          "title": "vaishnavipatwari/autonomous-insurance-claims-agent",
-          "url": "https://github.com/vaishnavipatwari/autonomous-insurance-claims-agent"
+          "title": "sp4chi/log-incident-classifier-v3",
+          "url": "https://github.com/sp4chi/log-incident-classifier-v3"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: NVIDIA/OpenShell\nThe record for NVIDIA/Open",
-          "identifier": "https://github.com/NVIDIA/OpenShell",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: darnellwashingtonjr94-art/Monad-Quantum-Res",
+          "identifier": "https://github.com/darnellwashingtonjr94-art/Monad-Quantum-Resistant-X",
           "published_at": "2026-09-29",
           "source_id": "github",
-          "title": "NVIDIA/OpenShell",
-          "url": "https://github.com/NVIDIA/OpenShell"
+          "title": "darnellwashingtonjr94-art/Monad-Quantum-Resistant-X",
+          "url": "https://github.com/darnellwashingtonjr94-art/Monad-Quantum-Resistant-X"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: pom11/hscc\nThe record for pom11/hscc report",
-          "identifier": "https://github.com/pom11/hscc",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: evalvitals/evalrx\nThe record for evalvitals",
+          "identifier": "https://github.com/evalvitals/evalrx",
           "published_at": "2026-09-29",
           "source_id": "github",
-          "title": "pom11/hscc",
-          "url": "https://github.com/pom11/hscc"
+          "title": "evalvitals/evalrx",
+          "url": "https://github.com/evalvitals/evalrx"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ZeroDayEvil/ai-security-tool\nThe record for",
-          "identifier": "https://github.com/ZeroDayEvil/ai-security-tool",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: SergeyS81/news-digest-agent\nThe record for ",
+          "identifier": "https://github.com/SergeyS81/news-digest-agent",
           "published_at": "2026-09-29",
           "source_id": "github",
-          "title": "ZeroDayEvil/ai-security-tool",
-          "url": "https://github.com/ZeroDayEvil/ai-security-tool"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: NVIDIA/elements\nThe record for NVIDIA/eleme",
-          "identifier": "https://github.com/NVIDIA/elements",
-          "published_at": "2026-09-29",
-          "source_id": "github",
-          "title": "NVIDIA/elements",
-          "url": "https://github.com/NVIDIA/elements"
+          "title": "SergeyS81/news-digest-agent",
+          "url": "https://github.com/SergeyS81/news-digest-agent"
         }
       ],
       "request_params": {
@@ -154,8 +137,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-29T13:04:54.234\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:6d823284f",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-29T22:23:41.740\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:75e9603dc",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -180,9 +163,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-09-28..2026-09-29 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-09-28..2026-09-29 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 10,
+      "items_new": 1,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -191,43 +174,11 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/inteligenciartificial/0.0.8/",
+          "identifier": "https://pypi.org/project/honeybee-energy/1.126.0/",
           "published_at": "2026-09-29",
           "source_id": "pypi",
-          "title": "inteligenciartificial 0.0.8",
-          "url": "https://pypi.org/project/inteligenciartificial/0.0.8/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/ellf-broker-sdk/11.0.0/",
-          "published_at": "2026-09-29",
-          "source_id": "pypi",
-          "title": "ellf-broker-sdk 11.0.0",
-          "url": "https://pypi.org/project/ellf-broker-sdk/11.0.0/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/fingerprint-pro-server-api-sdk/8.15.1/",
-          "published_at": "2026-09-29",
-          "source_id": "pypi",
-          "title": "fingerprint-pro-server-api-sdk 8.15.1",
-          "url": "https://pypi.org/project/fingerprint-pro-server-api-sdk/8.15.1/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/ellf-pam-sdk/51.1.0/",
-          "published_at": "2026-09-29",
-          "source_id": "pypi",
-          "title": "ellf-pam-sdk 51.1.0",
-          "url": "https://pypi.org/project/ellf-pam-sdk/51.1.0/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/gridstate/1.12.0/",
-          "published_at": "2026-09-29",
-          "source_id": "pypi",
-          "title": "gridstate 1.12.0",
-          "url": "https://pypi.org/project/gridstate/1.12.0/"
+          "title": "honeybee-energy 1.126.0",
+          "url": "https://pypi.org/project/honeybee-energy/1.126.0/"
         }
       ],
       "request_params": {},
