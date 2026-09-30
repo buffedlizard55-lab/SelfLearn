@@ -1,5 +1,5 @@
 {
-  "bytes_read": 12388,
+  "bytes_read": 12767,
   "content_hash": "sha256:c31ff29588f70797ef734ded7e9072393c8e892bfd65f1696b1a629187c6e826",
   "evidence_class": "peer_reviewed",
   "evidence_class_label": "Peer-reviewed publication indexed by a DOI registry or PubMed.",
@@ -13,8 +13,8 @@
   "notes": "The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",
   "published_at": "2015-01-01",
   "publisher": "Crossref (DOI registration agency, not-for-profit)",
-  "response_sha256": "sha256:790eb14709b656dad9cb17d4a766388d37530a3a2cb5fa8bd222e4e2b05f3a79",
-  "retrieved_at": "2026-09-29T22:23:37Z",
+  "response_sha256": "sha256:a22495befd97ef3b3f07b689fe4d0ff886587ae6cc0fec4dc58b06e6727f87d0",
+  "retrieved_at": "2026-09-30T05:42:53Z",
   "source_id": "crossref",
   "source_name": "Crossref REST API",
   "text": "Source: Crossref REST API (https://api.crossref.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Active reward learning with a novel acquisition function\nThe record for Active reward learning with a novel acquisition function reports: DOI 10.1007/s10514-015-9454-z, date 2015, venue Autonomous Robots.\nThe record for Active reward learning with a novel acquisition function reports: type journal-article, publisher.username Springer Science and Business Media LLC, citation count 33.\nThe record for Active reward learning with a novel acquisition function reports: authors ORCID: https://orcid.org/0000-0001-7065-5326; authenticated-orcid: false; given: Christian; family: Daniel; sequence: first; role: role: author; vocabulary: crossref; given: Oliver; family: Kroemer; sequence: additional; role: role: author; vocabulary: crossref; given: Malte; family: Viering; sequence: additional; role: role: author; vocabulary: crossref; given: Jan; family: Metz; sequence: additional; role: role: author; vocabulary: crossref; given: Jan; family: Peters; sequence: additional; role: role: author; vocabulary: crossref.\nSource note: The DOI registration agency. A DOI found here is a durable identifier for the record of the work itself.",

@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-09-29T22:23:40Z",
-  "items_new": 6,
+  "generated_at": "2026-09-30T05:42:56Z",
+  "items_new": 5,
   "items_out_of_window": 4,
   "items_returned": 26,
   "items_seen": 22,
-  "run_id": "run-ffd8fe521ad2",
+  "run_id": "run-8da679d8958a",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -34,12 +34,12 @@
       "window": {
         "days": 7,
         "first_scan": true,
-        "since": "2026-09-22",
-        "until": "2026-09-29"
+        "since": "2026-09-23",
+        "until": "2026-09-30"
       }
     },
     {
-      "detail": "5 item(s) returned; 4 published before the window 2026-09-28..2026-09-29 and dropped; 1 carried no readable date and were kept; 0 not seen by this engine before.",
+      "detail": "5 item(s) returned; 4 published before the window 2026-09-29..2026-09-30 and dropped; 1 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
       "items_new": 0,
       "items_out_of_window": 4,
@@ -49,7 +49,7 @@
       "mechanism": "Works reindexed at or after the given date",
       "new_items": [],
       "request_params": {
-        "filter": "from-index-date:2026-09-28",
+        "filter": "from-index-date:2026-09-29",
         "mailto": "selflearn@example.invalid",
         "query": "autonomous agent",
         "rows": 5,
@@ -62,12 +62,12 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-28",
-        "until": "2026-09-29"
+        "since": "2026-09-29",
+        "until": "2026-09-30"
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-28..2026-09-29 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-29..2026-09-30 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
       "items_new": 4,
       "items_out_of_window": 0,
@@ -77,42 +77,42 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: sp4chi/log-incident-classifier-v3\nThe recor",
-          "identifier": "https://github.com/sp4chi/log-incident-classifier-v3",
-          "published_at": "2026-09-29",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: CherryHQ/cherry-studio\nThe record for Cherr",
+          "identifier": "https://github.com/CherryHQ/cherry-studio",
+          "published_at": "2026-09-30",
           "source_id": "github",
-          "title": "sp4chi/log-incident-classifier-v3",
-          "url": "https://github.com/sp4chi/log-incident-classifier-v3"
+          "title": "CherryHQ/cherry-studio",
+          "url": "https://github.com/CherryHQ/cherry-studio"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: darnellwashingtonjr94-art/Monad-Quantum-Res",
-          "identifier": "https://github.com/darnellwashingtonjr94-art/Monad-Quantum-Resistant-X",
-          "published_at": "2026-09-29",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: OrderofChaos33/SINCOR2\nThe record for Order",
+          "identifier": "https://github.com/OrderofChaos33/SINCOR2",
+          "published_at": "2026-09-30",
           "source_id": "github",
-          "title": "darnellwashingtonjr94-art/Monad-Quantum-Resistant-X",
-          "url": "https://github.com/darnellwashingtonjr94-art/Monad-Quantum-Resistant-X"
+          "title": "OrderofChaos33/SINCOR2",
+          "url": "https://github.com/OrderofChaos33/SINCOR2"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: evalvitals/evalrx\nThe record for evalvitals",
-          "identifier": "https://github.com/evalvitals/evalrx",
-          "published_at": "2026-09-29",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: spelech/AgenticEngineeringToolbelt\nThe reco",
+          "identifier": "https://github.com/spelech/AgenticEngineeringToolbelt",
+          "published_at": "2026-09-30",
           "source_id": "github",
-          "title": "evalvitals/evalrx",
-          "url": "https://github.com/evalvitals/evalrx"
+          "title": "spelech/AgenticEngineeringToolbelt",
+          "url": "https://github.com/spelech/AgenticEngineeringToolbelt"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: SergeyS81/news-digest-agent\nThe record for ",
-          "identifier": "https://github.com/SergeyS81/news-digest-agent",
-          "published_at": "2026-09-29",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: CadenLenz/agentic-trading-manager\nThe recor",
+          "identifier": "https://github.com/CadenLenz/agentic-trading-manager",
+          "published_at": "2026-09-30",
           "source_id": "github",
-          "title": "SergeyS81/news-digest-agent",
-          "url": "https://github.com/SergeyS81/news-digest-agent"
+          "title": "CadenLenz/agentic-trading-manager",
+          "url": "https://github.com/CadenLenz/agentic-trading-manager"
         }
       ],
       "request_params": {
         "order": "desc",
         "per_page": 5,
-        "q": "autonomous agent pushed:>=2026-09-28",
+        "q": "autonomous agent pushed:>=2026-09-29",
         "sort": "updated"
       },
       "request_url": "https://api.github.com/search/repositories",
@@ -122,12 +122,12 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-28",
-        "until": "2026-09-29"
+        "since": "2026-09-29",
+        "until": "2026-09-30"
       }
     },
     {
-      "detail": "1 item(s) returned; 0 published before the window 2026-09-28..2026-09-29 and dropped; 1 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "1 item(s) returned; 0 published before the window 2026-09-29..2026-09-30 and dropped; 1 carried no readable date and were kept; 1 not seen by this engine before.",
       "docs_url": "https://nvd.nist.gov/developers/vulnerabilities",
       "items_new": 1,
       "items_out_of_window": 0,
@@ -137,8 +137,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-29T22:23:41.740\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:75e9603dc",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-09-30T05:42:57.795\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:c1abb2a3a",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -147,8 +147,8 @@
       ],
       "request_params": {
         "keywordSearch": "autonomous agent",
-        "lastModEndDate": "2026-09-29T00:00:00.000+00:00",
-        "lastModStartDate": "2026-09-28T00:00:00.000+00:00",
+        "lastModEndDate": "2026-09-30T00:00:00.000+00:00",
+        "lastModStartDate": "2026-09-29T00:00:00.000+00:00",
         "resultsPerPage": 5
       },
       "request_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
@@ -158,29 +158,20 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-28",
-        "until": "2026-09-29"
+        "since": "2026-09-29",
+        "until": "2026-09-30"
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-09-28..2026-09-29 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-09-29..2026-09-30 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 1,
+      "items_new": 0,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
       "items_undated": 0,
       "mechanism": "Newly created releases, newest first, as published in the Latest Updates Feed",
-      "new_items": [
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/honeybee-energy/1.126.0/",
-          "published_at": "2026-09-29",
-          "source_id": "pypi",
-          "title": "honeybee-energy 1.126.0",
-          "url": "https://pypi.org/project/honeybee-energy/1.126.0/"
-        }
-      ],
+      "new_items": [],
       "request_params": {},
       "request_url": "https://pypi.org/rss/updates.xml",
       "source_id": "pypi",
@@ -189,12 +180,12 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-28",
-        "until": "2026-09-29"
+        "since": "2026-09-29",
+        "until": "2026-09-30"
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-28..2026-09-29 and dropped; 5 carried no readable date and were kept; 0 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-29..2026-09-30 and dropped; 5 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
       "items_new": 0,
       "items_out_of_window": 0,
@@ -204,11 +195,11 @@
       "mechanism": "Earthquake events inside an explicit time window",
       "new_items": [],
       "request_params": {
-        "endtime": "2026-09-29",
+        "endtime": "2026-09-30",
         "format": "geojson",
         "limit": 5,
         "orderby": "time",
-        "starttime": "2026-09-28"
+        "starttime": "2026-09-29"
       },
       "request_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
       "source_id": "usgs_earthquake",
@@ -217,8 +208,8 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-09-28",
-        "until": "2026-09-29"
+        "since": "2026-09-29",
+        "until": "2026-09-30"
       }
     }
   ],
