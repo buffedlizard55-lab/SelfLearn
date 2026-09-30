@@ -21,6 +21,7 @@
       "crossref:10.1016/j.robot.2019.04.007",
       "crossref:10.1016/j.robot.2022.104224",
       "crossref:10.1016/j.robot.2026.105718",
+      "crossref:10.1023/a:1008984727548",
       "crossref:10.1023/a:1010046623013",
       "crossref:10.1023/a:1010071910869",
       "crossref:10.1023/a:1010084620690",
@@ -64,7 +65,9 @@
       "crossref:10.3390/foods12122407",
       "crossref:10.3390/foods14020258",
       "crossref:10.3390/foods14152723",
+      "crossref:10.3390/horticulturae11080940",
       "crossref:10.3390/ijms232416047",
+      "crossref:10.3390/ijms25115632",
       "crossref:10.3390/ijms25189973",
       "crossref:10.3390/ijms252312928",
       "crossref:10.3390/ijms26073233",
@@ -113,6 +116,7 @@
       "github:https://github.com/AmlanShanker/Autonomous-Universal-Research-Agent---AURA",
       "github:https://github.com/AndyHuang1984/ai-agent-portfolio",
       "github:https://github.com/Anni27-hub/DevSprint",
+      "github:https://github.com/Armoredweb/AN-chatNcodex-WorkFlow",
       "github:https://github.com/Bandito-coder/hermes-software-agents",
       "github:https://github.com/BedooShery04/AI-Customer-Support-Platform",
       "github:https://github.com/Bigmanmarsh/yieldwire",
@@ -132,6 +136,7 @@
       "github:https://github.com/Enayat-Hassani/Yavar-Extension",
       "github:https://github.com/EvolutionDeep/murmur",
       "github:https://github.com/GenesisClawbot/burnboard",
+      "github:https://github.com/HP-Hari/Researchify-AI",
       "github:https://github.com/Hack23/riksdagsmonitor",
       "github:https://github.com/HillClimbBench/hillclimbbench.github.io",
       "github:https://github.com/HuseyinAts/kiro2",
@@ -186,6 +191,7 @@
       "github:https://github.com/Science-Discovery/Aether",
       "github:https://github.com/ScottColeSW/Void-Marauders",
       "github:https://github.com/Septa-Serpenta-Seraph/agent-observatory",
+      "github:https://github.com/SergeyGer/AlphaAgent",
       "github:https://github.com/SergeyS81/news-digest-agent",
       "github:https://github.com/Shark6slayer/autonomous-research-intelligence",
       "github:https://github.com/Shivam-Fl/autonomous-growth-os",
@@ -299,6 +305,7 @@
       "github:https://github.com/krapcys1-maker/nothing-is-accidental-agent",
       "github:https://github.com/kuwa2005/oimo",
       "github:https://github.com/kvncaldwll/autonomous-economic-research-agent",
+      "github:https://github.com/lahkiri/vara",
       "github:https://github.com/lanking-hub/pi-research-loop",
       "github:https://github.com/leandre755/HIVE-MIND",
       "github:https://github.com/lfeld3/Remote-Guidance-of-a-Mothership-Daughtership-Formation-for-Asteroid-Exploration",
@@ -313,6 +320,7 @@
       "github:https://github.com/malcolmjohnsonbuisness-prog/autonomous-agent-experiment-30",
       "github:https://github.com/marketfauna/bot-barometer",
       "github:https://github.com/martex-dev/aurelis",
+      "github:https://github.com/maureendoylespare/maureendoylespare",
       "github:https://github.com/mcleblanc711/whiskeyjack-bot",
       "github:https://github.com/meghmavani/Clio",
       "github:https://github.com/mingming715/MyResearchHub",
@@ -379,6 +387,7 @@
       "github:https://github.com/triad-loom-research-lab/spirit-tech-alignment",
       "github:https://github.com/tuhin0329/kolkata-traffic-collection",
       "github:https://github.com/uknwplayer/ground-relay",
+      "github:https://github.com/unknown-user-status/jules-agentic-ai",
       "github:https://github.com/vaishnavipatwari/autonomous-insurance-claims-agent",
       "github:https://github.com/vrajpal-jhala/langgraph-harness",
       "github:https://github.com/waguriagentic/waguriagentic",
@@ -431,6 +440,7 @@
       "nvd:nvd-raw-sha256:7a4248b0a",
       "nvd:nvd-raw-sha256:7dab5931f",
       "nvd:nvd-raw-sha256:8be3b20c3",
+      "nvd:nvd-raw-sha256:8ee752678",
       "nvd:nvd-raw-sha256:914e70bc0",
       "nvd:nvd-raw-sha256:93d9ccbda",
       "nvd:nvd-raw-sha256:95e2ad7e2",
@@ -442,6 +452,7 @@
       "nvd:nvd-raw-sha256:bba67a0c1",
       "nvd:nvd-raw-sha256:c1abb2a3a",
       "nvd:nvd-raw-sha256:c64b3bb09",
+      "nvd:nvd-raw-sha256:ca6dd7550",
       "nvd:nvd-raw-sha256:ca81cd23e",
       "nvd:nvd-raw-sha256:cecc2d8ac",
       "nvd:nvd-raw-sha256:d3408d619",
@@ -464,6 +475,7 @@
       "pypi:https://pypi.org/project/agent-mandates/0.1.0/",
       "pypi:https://pypi.org/project/agenthatch/1.0.16/",
       "pypi:https://pypi.org/project/agloom/1.0.0/",
+      "pypi:https://pypi.org/project/agt-agent/0.30.12/",
       "pypi:https://pypi.org/project/ai-agent-gateway-cli/0.8.0/",
       "pypi:https://pypi.org/project/ai-agent-gateway/0.21.0/",
       "pypi:https://pypi.org/project/ai-editor-tree-engine/1.0.159/",
@@ -540,6 +552,7 @@
       "pypi:https://pypi.org/project/covener/0.10.2/",
       "pypi:https://pypi.org/project/cowork-server/0.26.9.27.1/",
       "pypi:https://pypi.org/project/cowork-server/0.26.9.27.1rc4/",
+      "pypi:https://pypi.org/project/cowork-server/0.26.9.30.1rc5/",
       "pypi:https://pypi.org/project/cozy-runtime/0.18.33/",
       "pypi:https://pypi.org/project/crystalline/0.2.4/",
       "pypi:https://pypi.org/project/csim/4.0.1/",
@@ -593,6 +606,11 @@
       "pypi:https://pypi.org/project/fastmcp-pvl-core/9.0.1/",
       "pypi:https://pypi.org/project/favella1/1.2.0/",
       "pypi:https://pypi.org/project/fdu/0.1.0/",
+      "pypi:https://pypi.org/project/feagi-bv-linux/2.6.2/",
+      "pypi:https://pypi.org/project/feagi-bv-macos-arm64/2.6.2/",
+      "pypi:https://pypi.org/project/feagi-bv-macos-x86-64/2.6.2/",
+      "pypi:https://pypi.org/project/feagi-bv-windows/2.6.2/",
+      "pypi:https://pypi.org/project/feagi-bv/2.6.2/",
       "pypi:https://pypi.org/project/feather-framework/0.9.31/",
       "pypi:https://pypi.org/project/filament-py/0.3.0/",
       "pypi:https://pypi.org/project/files-com/1.6.486/",
@@ -600,6 +618,8 @@
       "pypi:https://pypi.org/project/firmauy/1.17.2/",
       "pypi:https://pypi.org/project/flowpad/0.2.180/",
       "pypi:https://pypi.org/project/forcefield-step/2026.9.27/",
+      "pypi:https://pypi.org/project/forjio-locavello/0.1.1/",
+      "pypi:https://pypi.org/project/forjio-secronna/0.1.1/",
       "pypi:https://pypi.org/project/formant/1.374.0/",
       "pypi:https://pypi.org/project/foundationforecast/0.1.10/",
       "pypi:https://pypi.org/project/fprime-xtce/0.1.5/",
@@ -621,6 +641,7 @@
       "pypi:https://pypi.org/project/gridstate/1.10.5/",
       "pypi:https://pypi.org/project/gridstate/1.12.0/",
       "pypi:https://pypi.org/project/groundrails/1.1.2/",
+      "pypi:https://pypi.org/project/haashi/1.1.0/",
       "pypi:https://pypi.org/project/halter/0.0.1/",
       "pypi:https://pypi.org/project/haute/0.5.2/",
       "pypi:https://pypi.org/project/haystack-algenta/0.1.4/",
@@ -689,6 +710,7 @@
       "pypi:https://pypi.org/project/maibot-dashboard/1.7.5/",
       "pypi:https://pypi.org/project/mammoth-cli/2.0.70/",
       "pypi:https://pypi.org/project/manim-3d/0.1.0/",
+      "pypi:https://pypi.org/project/markdownee/0.8.6/",
       "pypi:https://pypi.org/project/market-data-normalizer/1.48.0/",
       "pypi:https://pypi.org/project/marqetive-lib/0.33.0/",
       "pypi:https://pypi.org/project/matrx-graph/0.2.208/",
@@ -719,6 +741,7 @@
       "pypi:https://pypi.org/project/nbase-converter/0.0.5/",
       "pypi:https://pypi.org/project/nbinlineai/0.1.1/",
       "pypi:https://pypi.org/project/nbsite/0.10.0a7/",
+      "pypi:https://pypi.org/project/neosian/1.0.3/",
       "pypi:https://pypi.org/project/net-mesh/0.38.1/",
       "pypi:https://pypi.org/project/netbox-bgp/0.20.1/",
       "pypi:https://pypi.org/project/netbox-data-import/2.6.0/",
@@ -772,6 +795,7 @@
       "pypi:https://pypi.org/project/pulumi-pulumiservice/1.4.0a1790182559/",
       "pypi:https://pypi.org/project/pxr-kind/26.8/",
       "pypi:https://pypi.org/project/py-pluto/1.2.5/",
+      "pypi:https://pypi.org/project/pybes3/0.5.4/",
       "pypi:https://pypi.org/project/pybls21/5.2.0/",
       "pypi:https://pypi.org/project/pydantic-ai-algenta/0.1.4/",
       "pypi:https://pypi.org/project/pydantic-ai-server/0.8.1/",
@@ -849,6 +873,7 @@
       "pypi:https://pypi.org/project/straw-queue/0.1.2/",
       "pypi:https://pypi.org/project/streamlit-drawable-konva/0.4.0/",
       "pypi:https://pypi.org/project/streepjescode/1.0.0/",
+      "pypi:https://pypi.org/project/svtplay-dl/4.199/",
       "pypi:https://pypi.org/project/swampyer/3.1.20260922/",
       "pypi:https://pypi.org/project/tasktiger-admin/0.4.3/",
       "pypi:https://pypi.org/project/telekinesis-ai/0.3.14/",
@@ -877,6 +902,7 @@
       "pypi:https://pypi.org/project/typed-gguf/0.3.0/",
       "pypi:https://pypi.org/project/uacp-interop/0.9.0/",
       "pypi:https://pypi.org/project/ucbc/0.1.2/",
+      "pypi:https://pypi.org/project/urun-cli/0.7.4/",
       "pypi:https://pypi.org/project/vasp-step/2026.9.27/",
       "pypi:https://pypi.org/project/vergefy-client/0.33.0/",
       "pypi:https://pypi.org/project/vision-calibration/0.9.0/",
@@ -898,7 +924,8 @@
       "pypi:https://pypi.org/project/zalf-django-geonode-mapstore-client/5.0.1.post42/",
       "pypi:https://pypi.org/project/zc-mailhub/0.1.1/",
       "pypi:https://pypi.org/project/zentorch-weekly/2.14.0.1.dev20260916/",
-      "pypi:https://pypi.org/project/zotero-local-mcp/0.4.1/"
+      "pypi:https://pypi.org/project/zotero-local-mcp/0.4.1/",
+      "pypi:https://pypi.org/project/zrules-py/0.1.2/"
     ],
     "usgs_earthquake": [
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026stogux",
@@ -1013,33 +1040,33 @@
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-09-30T12:46:09Z",
+      "last_scan": "2026-09-30T22:24:35Z",
       "last_status": "scanned",
-      "scans": 64
+      "scans": 66
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-09-30T12:46:09Z",
+      "last_scan": "2026-09-30T22:24:35Z",
       "last_status": "scanned",
-      "scans": 70
+      "scans": 72
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-09-30T12:46:09Z",
+      "last_scan": "2026-09-30T22:24:35Z",
       "last_status": "scanned",
-      "scans": 56
+      "scans": 58
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-09-30T12:46:09Z",
+      "last_scan": "2026-09-30T22:24:35Z",
       "last_status": "scanned",
-      "scans": 57
+      "scans": 59
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-09-30T12:46:09Z",
+      "last_scan": "2026-09-30T22:24:35Z",
       "last_status": "scanned",
-      "scans": 64
+      "scans": 66
     }
   }
 }
