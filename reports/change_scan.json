@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-01T06:09:49Z",
-  "items_new": 5,
+  "generated_at": "2026-10-01T13:29:10Z",
+  "items_new": 7,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-54a528b6f749",
+  "run_id": "run-c32ebdfdb538",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-09-30..2026-10-01 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-09-30..2026-10-01 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 3,
+      "items_new": 2,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,28 +77,20 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: hakuramasam/thirdeye-ai\nThe record for haku",
-          "identifier": "https://github.com/hakuramasam/thirdeye-ai",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: shapirags27-cyber/phorva\nThe record for sha",
+          "identifier": "https://github.com/shapirags27-cyber/phorva",
           "published_at": "2026-10-01",
           "source_id": "github",
-          "title": "hakuramasam/thirdeye-ai",
-          "url": "https://github.com/hakuramasam/thirdeye-ai"
+          "title": "shapirags27-cyber/phorva",
+          "url": "https://github.com/shapirags27-cyber/phorva"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ALN-web/AgentOS\nThe record for ALN-web/Agen",
-          "identifier": "https://github.com/ALN-web/AgentOS",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: YajurvaMaharana/SchemeSetu-Bharat\nThe recor",
+          "identifier": "https://github.com/YajurvaMaharana/SchemeSetu-Bharat",
           "published_at": "2026-10-01",
           "source_id": "github",
-          "title": "ALN-web/AgentOS",
-          "url": "https://github.com/ALN-web/AgentOS"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: albert392392/albert392392\nThe record for al",
-          "identifier": "https://github.com/albert392392/albert392392",
-          "published_at": "2026-10-01",
-          "source_id": "github",
-          "title": "albert392392/albert392392",
-          "url": "https://github.com/albert392392/albert392392"
+          "title": "YajurvaMaharana/SchemeSetu-Bharat",
+          "url": "https://github.com/YajurvaMaharana/SchemeSetu-Bharat"
         }
       ],
       "request_params": {
@@ -129,8 +121,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 2\nstartIndex = 0\ntimestamp = 2026-10-01T06:09:51.567\ntotalResults = 2\nversion = 2.0\nvulnerabilities.0.cve.affected.0.affectedData.0.product = R",
-          "identifier": "nvd-raw-sha256:82d675210",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 2\nstartIndex = 0\ntimestamp = 2026-10-01T13:29:11.824\ntotalResults = 2\nversion = 2.0\nvulnerabilities.0.cve.affected.0.affectedData.0.product = R",
+          "identifier": "nvd-raw-sha256:c64dda39d",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -155,9 +147,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-09-30..2026-10-01 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-09-30..2026-10-01 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 1,
+      "items_new": 4,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -166,11 +158,35 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/geode-conversion/6.7.6/",
+          "identifier": "https://pypi.org/project/voss/0.7.0/",
           "published_at": "2026-10-01",
           "source_id": "pypi",
-          "title": "Geode-Conversion 6.7.6",
-          "url": "https://pypi.org/project/geode-conversion/6.7.6/"
+          "title": "voss 0.7.0",
+          "url": "https://pypi.org/project/voss/0.7.0/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/cjk-data-profiling/0.1.2/",
+          "published_at": "2026-10-01",
+          "source_id": "pypi",
+          "title": "cjk-data-profiling 0.1.2",
+          "url": "https://pypi.org/project/cjk-data-profiling/0.1.2/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/fulkruma/0.5.0/",
+          "published_at": "2026-10-01",
+          "source_id": "pypi",
+          "title": "fulkruma 0.5.0",
+          "url": "https://pypi.org/project/fulkruma/0.5.0/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/tidas-sdk/0.3.0/",
+          "published_at": "2026-10-01",
+          "source_id": "pypi",
+          "title": "tidas-sdk 0.3.0",
+          "url": "https://pypi.org/project/tidas-sdk/0.3.0/"
         }
       ],
       "request_params": {},
