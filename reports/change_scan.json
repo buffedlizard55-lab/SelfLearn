@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-02T05:52:20Z",
+  "generated_at": "2026-10-02T12:49:11Z",
   "items_new": 13,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-9b8eef1e14b9",
+  "run_id": "run-f582c780f197",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-01..2026-10-02 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-01..2026-10-02 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 2,
+      "items_new": 4,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,20 +77,36 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: tanmaydhakite/TaskPilot-AI\nThe record for t",
-          "identifier": "https://github.com/tanmaydhakite/TaskPilot-AI",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: millw14/merrymen\nThe record for millw14/mer",
+          "identifier": "https://github.com/millw14/merrymen",
           "published_at": "2026-10-02",
           "source_id": "github",
-          "title": "tanmaydhakite/TaskPilot-AI",
-          "url": "https://github.com/tanmaydhakite/TaskPilot-AI"
+          "title": "millw14/merrymen",
+          "url": "https://github.com/millw14/merrymen"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: sh4lu-z/Syntiox-CORE\nThe record for sh4lu-z",
-          "identifier": "https://github.com/sh4lu-z/Syntiox-CORE",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: wassname/pi-goals\nThe record for wassname/p",
+          "identifier": "https://github.com/wassname/pi-goals",
           "published_at": "2026-10-02",
           "source_id": "github",
-          "title": "sh4lu-z/Syntiox-CORE",
-          "url": "https://github.com/sh4lu-z/Syntiox-CORE"
+          "title": "wassname/pi-goals",
+          "url": "https://github.com/wassname/pi-goals"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: kaiizer777/hulchul-assignment\nThe record fo",
+          "identifier": "https://github.com/kaiizer777/hulchul-assignment",
+          "published_at": "2026-10-02",
+          "source_id": "github",
+          "title": "kaiizer777/hulchul-assignment",
+          "url": "https://github.com/kaiizer777/hulchul-assignment"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: rvegajr/cloud-agents\nThe record for rvegajr",
+          "identifier": "https://github.com/rvegajr/cloud-agents",
+          "published_at": "2026-10-02",
+          "source_id": "github",
+          "title": "rvegajr/cloud-agents",
+          "url": "https://github.com/rvegajr/cloud-agents"
         }
       ],
       "request_params": {
@@ -121,8 +137,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-02T05:52:21.861\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:193853e12",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-02T12:49:12.932\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:ef16be9d3",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -147,9 +163,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-01..2026-10-02 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-01..2026-10-02 and dropped; 0 carried no readable date and were kept; 8 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 10,
+      "items_new": 8,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -158,43 +174,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/emmy-ml/0.3.16/",
+          "identifier": "https://pypi.org/project/countries-dictionary/9.0.3/",
           "published_at": "2026-10-02",
           "source_id": "pypi",
-          "title": "emmy-ml 0.3.16",
-          "url": "https://pypi.org/project/emmy-ml/0.3.16/"
+          "title": "countries-dictionary 9.0.3",
+          "url": "https://pypi.org/project/countries-dictionary/9.0.3/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/cwn-crewai-trust-gate/0.3.0/",
+          "identifier": "https://pypi.org/project/loci-tools/0.2.68/",
           "published_at": "2026-10-02",
           "source_id": "pypi",
-          "title": "cwn-crewai-trust-gate 0.3.0",
-          "url": "https://pypi.org/project/cwn-crewai-trust-gate/0.3.0/"
+          "title": "loci-tools 0.2.68",
+          "url": "https://pypi.org/project/loci-tools/0.2.68/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/jupyterlab-advanced-html-viewer-extension/1.0.26/",
+          "identifier": "https://pypi.org/project/bird-crop/0.1.6/",
           "published_at": "2026-10-02",
           "source_id": "pypi",
-          "title": "jupyterlab-advanced-html-viewer-extension 1.0.26",
-          "url": "https://pypi.org/project/jupyterlab-advanced-html-viewer-extension/1.0.26/"
+          "title": "bird-crop 0.1.6",
+          "url": "https://pypi.org/project/bird-crop/0.1.6/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/cdpd/0.1.0/",
+          "identifier": "https://pypi.org/project/mkdocs-decision-records/3.1.1/",
           "published_at": "2026-10-02",
           "source_id": "pypi",
-          "title": "cdpd 0.1.0",
-          "url": "https://pypi.org/project/cdpd/0.1.0/"
+          "title": "mkdocs-decision-records 3.1.1",
+          "url": "https://pypi.org/project/mkdocs-decision-records/3.1.1/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/cwn-llama-index-trust-gate/0.3.0/",
+          "identifier": "https://pypi.org/project/roadgen/0.7.0/",
           "published_at": "2026-10-02",
           "source_id": "pypi",
-          "title": "cwn-llama-index-trust-gate 0.3.0",
-          "url": "https://pypi.org/project/cwn-llama-index-trust-gate/0.3.0/"
+          "title": "roadgen 0.7.0",
+          "url": "https://pypi.org/project/roadgen/0.7.0/"
         }
       ],
       "request_params": {},
