@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-04T06:05:13Z",
-  "items_new": 13,
+  "generated_at": "2026-10-04T12:34:13Z",
+  "items_new": 16,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-2e28a69439c7",
+  "run_id": "run-30b75c1b3e23",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-03..2026-10-04 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-03..2026-10-04 and dropped; 0 carried no readable date and were kept; 5 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 2,
+      "items_new": 5,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,20 +77,44 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Manablaq/aegis-genlayer\nThe record for Mana",
-          "identifier": "https://github.com/Manablaq/aegis-genlayer",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: mmxrealQQ/bobai-buyburn\nThe record for mmxr",
+          "identifier": "https://github.com/mmxrealQQ/bobai-buyburn",
           "published_at": "2026-10-04",
           "source_id": "github",
-          "title": "Manablaq/aegis-genlayer",
-          "url": "https://github.com/Manablaq/aegis-genlayer"
+          "title": "mmxrealQQ/bobai-buyburn",
+          "url": "https://github.com/mmxrealQQ/bobai-buyburn"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: jaewhi-park/GARAGISTE\nThe record for jaewhi",
-          "identifier": "https://github.com/jaewhi-park/GARAGISTE",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: vijaygla/autonomous-agent\nThe record for vi",
+          "identifier": "https://github.com/vijaygla/autonomous-agent",
           "published_at": "2026-10-04",
           "source_id": "github",
-          "title": "jaewhi-park/GARAGISTE",
-          "url": "https://github.com/jaewhi-park/GARAGISTE"
+          "title": "vijaygla/autonomous-agent",
+          "url": "https://github.com/vijaygla/autonomous-agent"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: 8gi-foundation/8gent-code\nThe record for 8g",
+          "identifier": "https://github.com/8gi-foundation/8gent-code",
+          "published_at": "2026-10-04",
+          "source_id": "github",
+          "title": "8gi-foundation/8gent-code",
+          "url": "https://github.com/8gi-foundation/8gent-code"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Ekmsi8525/agentsmith\nThe record for Ekmsi85",
+          "identifier": "https://github.com/Ekmsi8525/agentsmith",
+          "published_at": "2026-10-04",
+          "source_id": "github",
+          "title": "Ekmsi8525/agentsmith",
+          "url": "https://github.com/Ekmsi8525/agentsmith"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Nazlicanuysal/Cooperative-Multiagent-System",
+          "identifier": "https://github.com/Nazlicanuysal/Cooperative-Multiagent-Systems",
+          "published_at": "2026-10-04",
+          "source_id": "github",
+          "title": "Nazlicanuysal/Cooperative-Multiagent-Systems",
+          "url": "https://github.com/Nazlicanuysal/Cooperative-Multiagent-Systems"
         }
       ],
       "request_params": {
@@ -121,8 +145,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-04T06:05:14.538\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:a7a24d418",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-04T12:34:15.232\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:eddbe467e",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -158,43 +182,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/fux-engine/3.0.0a10/",
+          "identifier": "https://pypi.org/project/thalovant-skill-interaction-modes/0.1.9/",
           "published_at": "2026-10-04",
           "source_id": "pypi",
-          "title": "fux-engine 3.0.0a10",
-          "url": "https://pypi.org/project/fux-engine/3.0.0a10/"
+          "title": "thalovant-skill-interaction-modes 0.1.9",
+          "url": "https://pypi.org/project/thalovant-skill-interaction-modes/0.1.9/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/hebbrix/2.6.1/",
+          "identifier": "https://pypi.org/project/tungsten-meta-leads/0.1.0/",
           "published_at": "2026-10-04",
           "source_id": "pypi",
-          "title": "hebbrix 2.6.1",
-          "url": "https://pypi.org/project/hebbrix/2.6.1/"
+          "title": "tungsten-meta-leads 0.1.0",
+          "url": "https://pypi.org/project/tungsten-meta-leads/0.1.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/spendlensai/0.1.8/",
+          "identifier": "https://pypi.org/project/tungsten-leads/0.1.0/",
           "published_at": "2026-10-04",
           "source_id": "pypi",
-          "title": "spendlensai 0.1.8",
-          "url": "https://pypi.org/project/spendlensai/0.1.8/"
+          "title": "tungsten-leads 0.1.0",
+          "url": "https://pypi.org/project/tungsten-leads/0.1.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/mcp-gee-sweet/0.9.1/",
+          "identifier": "https://pypi.org/project/thumbforge/0.1.1/",
           "published_at": "2026-10-04",
           "source_id": "pypi",
-          "title": "mcp-gee-sweet 0.9.1",
-          "url": "https://pypi.org/project/mcp-gee-sweet/0.9.1/"
+          "title": "thumbforge 0.1.1",
+          "url": "https://pypi.org/project/thumbforge/0.1.1/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/ocel/0.0.1/",
+          "identifier": "https://pypi.org/project/tungsten-admin/0.1.3/",
           "published_at": "2026-10-04",
           "source_id": "pypi",
-          "title": "ocel 0.0.1",
-          "url": "https://pypi.org/project/ocel/0.0.1/"
+          "title": "tungsten-admin 0.1.3",
+          "url": "https://pypi.org/project/tungsten-admin/0.1.3/"
         }
       ],
       "request_params": {},
