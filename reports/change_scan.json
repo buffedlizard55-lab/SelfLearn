@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-06T00:12:20Z",
-  "items_new": 3,
+  "generated_at": "2026-10-06T06:34:49Z",
+  "items_new": 14,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-20aaf07c392d",
+  "run_id": "run-0e94ac096504",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-05..2026-10-06 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-05..2026-10-06 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 2,
+      "items_new": 3,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,20 +77,28 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: hsndm566/autoapply-sa\nThe record for hsndm5",
-          "identifier": "https://github.com/hsndm566/autoapply-sa",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: l4ci/rota\nThe record for l4ci/rota reports:",
+          "identifier": "https://github.com/l4ci/rota",
           "published_at": "2026-10-06",
           "source_id": "github",
-          "title": "hsndm566/autoapply-sa",
-          "url": "https://github.com/hsndm566/autoapply-sa"
+          "title": "l4ci/rota",
+          "url": "https://github.com/l4ci/rota"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: koogle/age-of-agents\nThe record for koogle/",
-          "identifier": "https://github.com/koogle/age-of-agents",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: YuanYeYouTao/Yuki\nThe record for YuanYeYouT",
+          "identifier": "https://github.com/YuanYeYouTao/Yuki",
           "published_at": "2026-10-06",
           "source_id": "github",
-          "title": "koogle/age-of-agents",
-          "url": "https://github.com/koogle/age-of-agents"
+          "title": "YuanYeYouTao/Yuki",
+          "url": "https://github.com/YuanYeYouTao/Yuki"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: nastechresearch/Jafta\nThe record for nastec",
+          "identifier": "https://github.com/nastechresearch/Jafta",
+          "published_at": "2026-10-06",
+          "source_id": "github",
+          "title": "nastechresearch/Jafta",
+          "url": "https://github.com/nastechresearch/Jafta"
         }
       ],
       "request_params": {
@@ -121,8 +129,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-06T00:12:20.782\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:c78707e4d",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-06T06:34:50.117\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:f0669e3e8",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -147,15 +155,56 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-05..2026-10-06 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-05..2026-10-06 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 0,
+      "items_new": 10,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
       "items_undated": 0,
       "mechanism": "Newly created releases, newest first, as published in the Latest Updates Feed",
-      "new_items": [],
+      "new_items": [
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/dagz/0.2.292.dev20261006093318/",
+          "published_at": "2026-10-06",
+          "source_id": "pypi",
+          "title": "dagz 0.2.292.dev20261006093318",
+          "url": "https://pypi.org/project/dagz/0.2.292.dev20261006093318/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/puntersedge-mcp/0.4.3/",
+          "published_at": "2026-10-06",
+          "source_id": "pypi",
+          "title": "puntersedge-mcp 0.4.3",
+          "url": "https://pypi.org/project/puntersedge-mcp/0.4.3/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/polymarket-us/2.3.0/",
+          "published_at": "2026-10-06",
+          "source_id": "pypi",
+          "title": "polymarket-us 2.3.0",
+          "url": "https://pypi.org/project/polymarket-us/2.3.0/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/topo-tools/0.17.0/",
+          "published_at": "2026-10-06",
+          "source_id": "pypi",
+          "title": "topo-tools 0.17.0",
+          "url": "https://pypi.org/project/topo-tools/0.17.0/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/seleniumboot-mcp/0.8.0/",
+          "published_at": "2026-10-06",
+          "source_id": "pypi",
+          "title": "seleniumboot-mcp 0.8.0",
+          "url": "https://pypi.org/project/seleniumboot-mcp/0.8.0/"
+        }
+      ],
       "request_params": {},
       "request_url": "https://pypi.org/rss/updates.xml",
       "source_id": "pypi",
