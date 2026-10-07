@@ -92,6 +92,7 @@
       "crossref:10.3390/buildings15162908",
       "crossref:10.3390/coatings15010077",
       "crossref:10.3390/d18010017",
+      "crossref:10.3390/electronics14061142",
       "crossref:10.3390/f16081280",
       "crossref:10.3390/fermentation11100551",
       "crossref:10.3390/foods12122407",
@@ -239,6 +240,7 @@
       "github:https://github.com/LH434534/bsky-agent-24x7",
       "github:https://github.com/LiberoNuvola/Carob-Three-Project",
       "github:https://github.com/LouPineWays/Loop-Dee-Loup",
+      "github:https://github.com/LunchBox951/pokeemerald-rs",
       "github:https://github.com/Mabolla/technocore-task-relay",
       "github:https://github.com/Manablaq/aegis-genlayer",
       "github:https://github.com/MarimerLLC/rockbot",
@@ -390,6 +392,7 @@
       "github:https://github.com/dineshkumar-mb/Brand-os-multi-agent",
       "github:https://github.com/division-sh/swarm",
       "github:https://github.com/djlex83/zoetron",
+      "github:https://github.com/dollan9/papersniper-ai-hardening",
       "github:https://github.com/doresternutatory21/ex_autoresearch",
       "github:https://github.com/dp-web4/4-lab",
       "github:https://github.com/dp-web4/SAGE",
@@ -471,6 +474,7 @@
       "github:https://github.com/mailgoatai/mailgoat",
       "github:https://github.com/malcolmjohnsonbuisness-prog/autonomous-agent-experiment-30",
       "github:https://github.com/marketfauna/bot-barometer",
+      "github:https://github.com/markintux/mktux-harness",
       "github:https://github.com/martex-dev/aurelis",
       "github:https://github.com/maureendoylespare/maureendoylespare",
       "github:https://github.com/mcleblanc711/whiskeyjack-bot",
@@ -616,6 +620,7 @@
       "nvd:nvd-raw-sha256:2c73530a0",
       "nvd:nvd-raw-sha256:2c7597352",
       "nvd:nvd-raw-sha256:2c9490449",
+      "nvd:nvd-raw-sha256:2fb581f9b",
       "nvd:nvd-raw-sha256:32218a842",
       "nvd:nvd-raw-sha256:362f73ab7",
       "nvd:nvd-raw-sha256:3821bd6cd",
@@ -631,6 +636,7 @@
       "nvd:nvd-raw-sha256:4e2627364",
       "nvd:nvd-raw-sha256:4eee42bf9",
       "nvd:nvd-raw-sha256:53eb0d26c",
+      "nvd:nvd-raw-sha256:5993b3739",
       "nvd:nvd-raw-sha256:5ee970c49",
       "nvd:nvd-raw-sha256:5fe72132a",
       "nvd:nvd-raw-sha256:60be2bb9d",
@@ -712,6 +718,7 @@
       "pypi:https://pypi.org/project/agent-doc/0.35.461/",
       "pypi:https://pypi.org/project/agent-inbox/1.7.0/",
       "pypi:https://pypi.org/project/agent-mandates/0.1.0/",
+      "pypi:https://pypi.org/project/agentglow/0.4.9/",
       "pypi:https://pypi.org/project/agenthatch/1.0.16/",
       "pypi:https://pypi.org/project/agenthub-client/0.1.0/",
       "pypi:https://pypi.org/project/agenticdome-python-sdk/1.2.36/",
@@ -739,6 +746,11 @@
       "pypi:https://pypi.org/project/almond-mcp/0.7.0rc2/",
       "pypi:https://pypi.org/project/alomancy/0.9.0/",
       "pypi:https://pypi.org/project/alphaengine/0.9.4/",
+      "pypi:https://pypi.org/project/amesa-cli-dev/0.42.4.dev3/",
+      "pypi:https://pypi.org/project/amesa-core-dev/0.42.4.dev3/",
+      "pypi:https://pypi.org/project/amesa-dev/0.42.4.dev3/",
+      "pypi:https://pypi.org/project/amesa-inference-dev/0.42.4.dev3/",
+      "pypi:https://pypi.org/project/amesa-train-dev/0.42.4.dev3/",
       "pypi:https://pypi.org/project/amp-client/0.1.0/",
       "pypi:https://pypi.org/project/an/0.1.112/",
       "pypi:https://pypi.org/project/an/0.1.157/",
@@ -761,6 +773,8 @@
       "pypi:https://pypi.org/project/astrocyte-ingestion-kafka/0.17.0/",
       "pypi:https://pypi.org/project/astrocyte-ingestion-redis/0.17.0/",
       "pypi:https://pypi.org/project/astrocyte-integration-tavus/0.17.0/",
+      "pypi:https://pypi.org/project/atlan-application-sdk-conformance/0.44.0/",
+      "pypi:https://pypi.org/project/atlan-application-sdk/3.43.0/",
       "pypi:https://pypi.org/project/atom-tools/1.0.2/",
       "pypi:https://pypi.org/project/attribution-suite/2.0.10/",
       "pypi:https://pypi.org/project/attune-project-api/26.9.3/",
@@ -1044,6 +1058,7 @@
       "pypi:https://pypi.org/project/kratosromapplication/10.4.4/",
       "pypi:https://pypi.org/project/kratosshallowwaterapplication/10.4.4/",
       "pypi:https://pypi.org/project/labmcp-ble-health/0.1.0/",
+      "pypi:https://pypi.org/project/lado/0.27.0/",
       "pypi:https://pypi.org/project/lalsuite/7.26.16.1.dev20261007/",
       "pypi:https://pypi.org/project/landlockpy/0.2.0/",
       "pypi:https://pypi.org/project/langchain-algenta/0.2.1/",
@@ -1111,6 +1126,7 @@
       "pypi:https://pypi.org/project/mcpgawk/0.1.64/",
       "pypi:https://pypi.org/project/mcpp-bin/2026.10.1.2/",
       "pypi:https://pypi.org/project/mdast-cli/2026.9.3/",
+      "pypi:https://pypi.org/project/mdns-filoxy/1.1.0/",
       "pypi:https://pypi.org/project/medharness/0.38.1/",
       "pypi:https://pypi.org/project/medharness/0.55.0/",
       "pypi:https://pypi.org/project/megillah/2026.9.24.735/",
@@ -1183,6 +1199,7 @@
       "pypi:https://pypi.org/project/ok-script/2.0.8/",
       "pypi:https://pypi.org/project/okfsmith/0.5.2/",
       "pypi:https://pypi.org/project/omnimarket/0.4.282/",
+      "pypi:https://pypi.org/project/omniplc/0.55.5/",
       "pypi:https://pypi.org/project/onekommafive/1.0.3/",
       "pypi:https://pypi.org/project/onepipeline-cli/0.44.2/",
       "pypi:https://pypi.org/project/onepipeline-cli/0.58.0/",
@@ -1190,6 +1207,7 @@
       "pypi:https://pypi.org/project/openbb-cli/2.0.0/",
       "pypi:https://pypi.org/project/openfisca-tunisia/0.117/",
       "pypi:https://pypi.org/project/opengeode-geosciences/9.8.0/",
+      "pypi:https://pypi.org/project/openkos/0.5.3/",
       "pypi:https://pypi.org/project/openmates/0.22.0a0/",
       "pypi:https://pypi.org/project/openmeter/1.0.0a1264/",
       "pypi:https://pypi.org/project/openrewrite-static-analysis/0.3.0.dev20260924171436/",
@@ -1211,6 +1229,7 @@
       "pypi:https://pypi.org/project/pdfalive/0.17.0/",
       "pypi:https://pypi.org/project/periapsis/0.99.0/",
       "pypi:https://pypi.org/project/phistory/0.2.0/",
+      "pypi:https://pypi.org/project/phonlab/0.0.65/",
       "pypi:https://pypi.org/project/pipdash/1.1.4/",
       "pypi:https://pypi.org/project/pixelazer-tl/1.0.3/",
       "pypi:https://pypi.org/project/plugin-scanner/3.20.0/",
@@ -1309,6 +1328,8 @@
       "pypi:https://pypi.org/project/rsna-anonymizer/19.1.0.dev2/",
       "pypi:https://pypi.org/project/safestream-redactor/0.4.0/",
       "pypi:https://pypi.org/project/sagemaker-serve/1.23.0/",
+      "pypi:https://pypi.org/project/sagemaker/2.257.7/",
+      "pypi:https://pypi.org/project/sagemaker/3.24.0/",
       "pypi:https://pypi.org/project/sarj-iac-lint/0.15.11/",
       "pypi:https://pypi.org/project/sarj-sql-lint/0.17.5/",
       "pypi:https://pypi.org/project/sarj-standards/8.2.9/",
@@ -1407,6 +1428,7 @@
       "pypi:https://pypi.org/project/tidequant/0.5.94/",
       "pypi:https://pypi.org/project/tinyshed-tinystore/0.1.0rc5/",
       "pypi:https://pypi.org/project/tkinterweb-tkhtml/2.2.1/",
+      "pypi:https://pypi.org/project/tollbooth-dpyc/0.98.0/",
       "pypi:https://pypi.org/project/topo-tools/0.17.0/",
       "pypi:https://pypi.org/project/tptools/0.6.13/",
       "pypi:https://pypi.org/project/track-4dgs/0.7.4/",
@@ -1502,6 +1524,7 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026ttlabs",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026tvgiug",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026tvhjdv",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026tvhrve",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/av94442426",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/av94442431",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/av94444236",
@@ -1653,39 +1676,40 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714111362",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714114281",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714116541",
-      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714116571"
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714116571",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714117171"
     ]
   },
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-10-07T13:37:49Z",
+      "last_scan": "2026-10-07T23:13:12Z",
       "last_status": "scanned",
-      "scans": 106
+      "scans": 108
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-10-07T13:37:49Z",
+      "last_scan": "2026-10-07T23:13:12Z",
       "last_status": "scanned",
-      "scans": 111
+      "scans": 112
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-10-07T13:37:49Z",
+      "last_scan": "2026-10-07T23:13:12Z",
       "last_status": "scanned",
-      "scans": 98
+      "scans": 100
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-10-07T13:37:49Z",
+      "last_scan": "2026-10-07T23:13:12Z",
       "last_status": "scanned",
-      "scans": 99
+      "scans": 101
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-10-07T13:37:49Z",
+      "last_scan": "2026-10-07T23:13:12Z",
       "last_status": "scanned",
-      "scans": 106
+      "scans": 108
     }
   }
 }
