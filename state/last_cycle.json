@@ -2,11 +2,11 @@
   "counts": {
     "attacks": 960,
     "claims": 300,
-    "documents": 293,
+    "documents": 299,
     "experiments": 5,
-    "http_requests": 13,
+    "http_requests": 15,
     "metadata_claims": 45,
-    "questions": 1300,
+    "questions": 1330,
     "strategies": 222,
     "substantive_claims": 119,
     "synthesis_claims": 5,
@@ -17,17 +17,17 @@
   "irregularities": {
     "by_severity": {
       "error": 0,
-      "info": 70,
+      "info": 71,
       "warning": 18
     },
-    "open": 88,
+    "open": 89,
     "resolved": 8,
     "resolved_by_severity": {
       "error": 1,
       "info": 7,
       "warning": 0
     },
-    "total": 96
+    "total": 97
   },
   "mode": "live",
   "notes": [
@@ -42,7 +42,7 @@
     "topic-research-loop-scheduling: 0 new claim(s) from 16 document(s); 6 candidate(s); 27 attack(s).",
     "topic-search-and-sorting-strategy: 0 new claim(s) from 20 document(s); 6 candidate(s); 30 attack(s).",
     "3 candidate topic(s) scored from the retrieved documents; 0 promoted to the topic list.",
-    "Change scan: 5 item(s) seen for the first time across 5 source(s); 5 question(s) derived."
+    "Change scan: 4 item(s) seen for the first time across 5 source(s); 4 question(s) derived."
   ],
   "plan": {
     "budget": {
@@ -63,7 +63,7 @@
       "topic-research-loop-scheduling: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
       "topic-search-and-sorting-strategy: cannot measure attention for this question. Those components are excluded from the score rather than defaulted."
     ],
-    "run_id": "run-01bbb4dee45f",
+    "run_id": "run-53ab14cf657f",
     "scores": [
       {
         "basis": [
@@ -83,7 +83,7 @@
           "testability": 0.8919
         },
         "details": {
-          "newest_document_age_days": 40.8
+          "newest_document_age_days": 41.3
         },
         "topic_id": "topic-autonomous-research-agents",
         "total": 0.4447,
@@ -109,7 +109,7 @@
           "testability": 0.7571
         },
         "details": {
-          "newest_document_age_days": 15.8
+          "newest_document_age_days": 16.3
         },
         "topic_id": "topic-fabrication-detection",
         "total": 0.3845,
@@ -135,7 +135,7 @@
           "testability": 0.8533
         },
         "details": {
-          "newest_document_age_days": 88.8
+          "newest_document_age_days": 89.3
         },
         "topic_id": "topic-research-loop-scheduling",
         "total": 0.346,
@@ -161,7 +161,7 @@
           "testability": 0.8519
         },
         "details": {
-          "newest_document_age_days": 104.8
+          "newest_document_age_days": 105.3
         },
         "topic_id": "topic-search-and-sorting-strategy",
         "total": 0.33,
@@ -205,7 +205,7 @@
     },
     "tasks": [
       {
-        "created_at": "2026-10-06T18:31:06Z",
+        "created_at": "2026-10-07T06:14:37Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -218,11 +218,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-31f90d8451bf",
+        "task_id": "task-755104abc4d5",
         "topic_id": "topic-autonomous-research-agents"
       },
       {
-        "created_at": "2026-10-06T18:31:06Z",
+        "created_at": "2026-10-07T06:14:37Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -235,11 +235,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-44cee778914b",
+        "task_id": "task-83b2c8fef134",
         "topic_id": "topic-fabrication-detection"
       },
       {
-        "created_at": "2026-10-06T18:31:06Z",
+        "created_at": "2026-10-07T06:14:37Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -251,11 +251,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-8f01bd91b7b5",
+        "task_id": "task-2e3257110f6b",
         "topic_id": "topic-research-loop-scheduling"
       },
       {
-        "created_at": "2026-10-06T18:31:06Z",
+        "created_at": "2026-10-07T06:14:37Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -266,13 +266,13 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-e14953a9d47c",
+        "task_id": "task-952fe75a241d",
         "topic_id": "topic-search-and-sorting-strategy"
       }
     ]
   },
   "published": [],
-  "run_id": "run-01bbb4dee45f",
+  "run_id": "run-53ab14cf657f",
   "sources": {
     "checked": 9,
     "credential_required": [],
