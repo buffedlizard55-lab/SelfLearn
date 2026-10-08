@@ -1,14 +1,14 @@
 # SelfLearn summary
 
-Generated 2026-10-07T23:13:31Z from the stored library. Nothing in this file is written by hand.
+Generated 2026-10-08T06:18:19Z from the stored library. Nothing in this file is written by hand.
 
 ## What the library holds
 
 - 11 question(s) under research
 - 300 claim(s): 290 supported, 0 needing review, 10 rejected
-- 307 retrieved document(s) stored and hashed
+- 311 retrieved document(s) stored and hashed
 - 222 competing candidate(s) with 960 recorded criticism(s)
-- 1373 derived open question(s), 5 experiment(s) run
+- 1401 derived open question(s), 5 experiment(s) run
 - 12 contradiction(s) awaiting a human decision
 
 Verification thresholds in force: supported at coverage 0.8, partially supported at 0.45, verbatim quote minimum 24.0 characters (state/calibration.json).
@@ -145,7 +145,7 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports. — status completed · verdict accuracy on labelled cases: baseline 0.96 -> best 1.0 (support=0.8 partial=0.45 quote_chars=24.0) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-u_a4w24_/result.json
+- A threshold pair exists that reproduces every human label in the labelled verification case set with zero false supports. — status completed · verdict accuracy on labelled cases: baseline 0.96 -> best 1.0 (support=0.8 partial=0.45 quote_chars=24.0) · /opt/hostedtoolcache/Python/3.11.17/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/verification_thresholds.py --seed 0 --out /tmp/selflearn-exp-uje8caqr/result.json
 
 ## How should a research loop schedule and prioritise its own work?
 
@@ -200,7 +200,7 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate kee — status completed · mean cumulative pseudo-regret: baseline 960.0 -> best 139.0205 (epsilon_greedy) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-r0gib0im/result.json
+- On a 5-armed Bernoulli bandit with fixed means over 4000 pulls, UCB1 and epsilon-greedy (epsilon=0.1) both accumulate less pseudo-regret than round-robin, UCB1's regret grows sublinearly, and a fixed exploration rate kee — status completed · mean cumulative pseudo-regret: baseline 960.0 -> best 139.0205 (epsilon_greedy) · /opt/hostedtoolcache/Python/3.11.17/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/scheduling_policies.py --seed 5 --out /tmp/selflearn-exp-5ox0l34s/result.json
 
 ## Sorting and search strategies: which is most efficient in practice, and how does the choice scale?
 
@@ -241,11 +241,11 @@ These are shown because the engine records what it refused to accept as well as 
 
 ### Experiments (1)
 
-- On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either. — status completed · mean element comparisons per run: baseline 16807.6 -> best 1726.4 (merge_sort) · /opt/hostedtoolcache/Python/3.11.16/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-e6hn2_6i/result.json
+- On a shuffled array of 256 distinct integers, merge sort and heapsort use fewer element comparisons than insertion sort; on an already sorted array of the same size, insertion sort uses fewer comparisons than either. — status completed · mean element comparisons per run: baseline 16807.6 -> best 1726.4 (merge_sort) · /opt/hostedtoolcache/Python/3.11.17/x64/bin/python3 /home/runner/work/SelfLearn/SelfLearn/experiments/sorting_comparisons.py --seed 7 --out /tmp/selflearn-exp-6jjq6cpz/result.json
 
 ## Waiting for review
 
-91 open irregularit(ies): info 73, warning 18
+92 open irregularit(ies): info 74, warning 18
 
 - [info] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims — synthesis · Review the retired statements section on the affected topic pages.
 - [info] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims — synthesis · Review the retired statements section on the affected topic pages.
