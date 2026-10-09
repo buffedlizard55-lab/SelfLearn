@@ -1,5 +1,5 @@
 {
-  "bytes_read": 102633,
+  "bytes_read": 102631,
   "content_hash": "sha256:0e4eea96baa9211048d3bea8c286c7aade4d0173cc577c2a280c7b4b3f2169a3",
   "evidence_class": "primary_source",
   "evidence_class_label": "Original data, official API response, official document or dataset.",
@@ -13,8 +13,8 @@
   "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
   "published_at": "2026-06-16",
   "publisher": "GitHub, Inc. (Microsoft)",
-  "response_sha256": "sha256:e33e1aab79b8acb655cf29b92c17c3085d79038a623a6507aa449166bdef2eba",
-  "retrieved_at": "2026-10-09T13:32:40Z",
+  "response_sha256": "sha256:97e0aff686d24a76aaa99c810118cbb509c17249949df43d64ee1c30b240acc4",
+  "retrieved_at": "2026-10-09T22:49:05Z",
   "source_id": "github",
   "source_name": "GitHub REST API",
   "text": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: raesa-razeen/halo-hallucination-detector\nThe record for raesa-razeen/halo-hallucination-detector reports: pushed_at 2026-06-16T21:50:30Z, stargazers_count 0, forks_count 0.\nThe record for raesa-razeen/halo-hallucination-detector reports: language Python, topics hallucination-detection; legal-nlp; llm; nlp; python; research, open_issues_count 0.\nThe record for raesa-razeen/halo-hallucination-detector states in its own description: Open-source hallucination detection framework for legal and high-stakes documents.\nThe record for raesa-razeen/halo-hallucination-detector states in its own description: Implements Legal Fidelity Score from published ICCIC-2025 research.\nSource note: Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
