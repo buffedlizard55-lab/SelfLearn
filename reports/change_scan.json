@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-10T12:44:27Z",
-  "items_new": 15,
+  "generated_at": "2026-10-10T21:55:30Z",
+  "items_new": 11,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-dee3737e7faf",
+  "run_id": "run-e06100f68634",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -77,36 +77,36 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: sortie-ai/sortie\nThe record for sortie-ai/s",
-          "identifier": "https://github.com/sortie-ai/sortie",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: coe0718/diaktoros\nThe record for coe0718/di",
+          "identifier": "https://github.com/coe0718/diaktoros",
           "published_at": "2026-10-10",
           "source_id": "github",
-          "title": "sortie-ai/sortie",
-          "url": "https://github.com/sortie-ai/sortie"
+          "title": "coe0718/diaktoros",
+          "url": "https://github.com/coe0718/diaktoros"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: pullboard-dev/pullboard\nThe record for pull",
-          "identifier": "https://github.com/pullboard-dev/pullboard",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ackness/covel\nThe record for ackness/covel ",
+          "identifier": "https://github.com/ackness/covel",
           "published_at": "2026-10-10",
           "source_id": "github",
-          "title": "pullboard-dev/pullboard",
-          "url": "https://github.com/pullboard-dev/pullboard"
+          "title": "ackness/covel",
+          "url": "https://github.com/ackness/covel"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: AbdullahAlsmadi/auto-cti\nThe record for Abd",
-          "identifier": "https://github.com/AbdullahAlsmadi/auto-cti",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: DuongNAD/DuongNAD\nThe record for DuongNAD/D",
+          "identifier": "https://github.com/DuongNAD/DuongNAD",
           "published_at": "2026-10-10",
           "source_id": "github",
-          "title": "AbdullahAlsmadi/auto-cti",
-          "url": "https://github.com/AbdullahAlsmadi/auto-cti"
+          "title": "DuongNAD/DuongNAD",
+          "url": "https://github.com/DuongNAD/DuongNAD"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: DocMorphic/plite\nThe record for DocMorphic/",
-          "identifier": "https://github.com/DocMorphic/plite",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: AGI-expert/AGIeX\nThe record for AGI-expert/",
+          "identifier": "https://github.com/AGI-expert/AGIeX",
           "published_at": "2026-10-10",
           "source_id": "github",
-          "title": "DocMorphic/plite",
-          "url": "https://github.com/DocMorphic/plite"
+          "title": "AGI-expert/AGIeX",
+          "url": "https://github.com/AGI-expert/AGIeX"
         }
       ],
       "request_params": {
@@ -137,8 +137,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-10T12:44:28.942\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:0cf726f2b",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-10T21:55:32.345\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:0a087609b",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -163,9 +163,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-09..2026-10-10 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-09..2026-10-10 and dropped; 0 carried no readable date and were kept; 6 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 10,
+      "items_new": 6,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -174,43 +174,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/sphinx-lumina-theme/2.9.2/",
+          "identifier": "https://pypi.org/project/gtfs-rt-kit/0.1.0/",
           "published_at": "2026-10-10",
           "source_id": "pypi",
-          "title": "sphinx-lumina-theme 2.9.2",
-          "url": "https://pypi.org/project/sphinx-lumina-theme/2.9.2/"
+          "title": "gtfs-rt-kit 0.1.0",
+          "url": "https://pypi.org/project/gtfs-rt-kit/0.1.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/pgserver-extend/0.0.2/",
+          "identifier": "https://pypi.org/project/slxd-coursekit/0.1.2/",
           "published_at": "2026-10-10",
           "source_id": "pypi",
-          "title": "pgserver-extend 0.0.2",
-          "url": "https://pypi.org/project/pgserver-extend/0.0.2/"
+          "title": "slxd-coursekit 0.1.2",
+          "url": "https://pypi.org/project/slxd-coursekit/0.1.2/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/maibot-dashboard/1.8.4.dev20261010501/",
+          "identifier": "https://pypi.org/project/plexer-cli/0.1.4/",
           "published_at": "2026-10-10",
           "source_id": "pypi",
-          "title": "maibot-dashboard 1.8.4.dev20261010501",
-          "url": "https://pypi.org/project/maibot-dashboard/1.8.4.dev20261010501/"
+          "title": "plexer-cli 0.1.4",
+          "url": "https://pypi.org/project/plexer-cli/0.1.4/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/onekommafive/1.1.7/",
+          "identifier": "https://pypi.org/project/judgeman/0.1.2/",
           "published_at": "2026-10-10",
           "source_id": "pypi",
-          "title": "onekommafive 1.1.7",
-          "url": "https://pypi.org/project/onekommafive/1.1.7/"
+          "title": "judgeman 0.1.2",
+          "url": "https://pypi.org/project/judgeman/0.1.2/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/fers/0.1.98/",
+          "identifier": "https://pypi.org/project/wirk-mcp/0.4.7/",
           "published_at": "2026-10-10",
           "source_id": "pypi",
-          "title": "FERS 0.1.98",
-          "url": "https://pypi.org/project/fers/0.1.98/"
+          "title": "wirk-mcp 0.4.7",
+          "url": "https://pypi.org/project/wirk-mcp/0.4.7/"
         }
       ],
       "request_params": {},
