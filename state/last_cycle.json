@@ -2,11 +2,11 @@
   "counts": {
     "attacks": 960,
     "claims": 300,
-    "documents": 347,
+    "documents": 350,
     "experiments": 5,
     "http_requests": 13,
     "metadata_claims": 45,
-    "questions": 1624,
+    "questions": 1643,
     "strategies": 222,
     "substantive_claims": 119,
     "synthesis_claims": 5,
@@ -17,17 +17,17 @@
   "irregularities": {
     "by_severity": {
       "error": 0,
-      "info": 83,
+      "info": 84,
       "warning": 18
     },
-    "open": 101,
+    "open": 102,
     "resolved": 8,
     "resolved_by_severity": {
       "error": 1,
       "info": 7,
       "warning": 0
     },
-    "total": 109
+    "total": 110
   },
   "mode": "live",
   "notes": [
@@ -63,7 +63,7 @@
       "topic-research-loop-scheduling: cannot measure attention for this question. Those components are excluded from the score rather than defaulted.",
       "topic-search-and-sorting-strategy: cannot measure attention for this question. Those components are excluded from the score rather than defaulted."
     ],
-    "run_id": "run-0c5646616b76",
+    "run_id": "run-c339af0fefd9",
     "scores": [
       {
         "basis": [
@@ -83,7 +83,7 @@
           "testability": 0.8919
         },
         "details": {
-          "newest_document_age_days": 45.3
+          "newest_document_age_days": 45.5
         },
         "topic_id": "topic-autonomous-research-agents",
         "total": 0.4447,
@@ -109,7 +109,7 @@
           "testability": 0.7571
         },
         "details": {
-          "newest_document_age_days": 20.3
+          "newest_document_age_days": 20.5
         },
         "topic_id": "topic-fabrication-detection",
         "total": 0.3845,
@@ -135,7 +135,7 @@
           "testability": 0.8533
         },
         "details": {
-          "newest_document_age_days": 93.3
+          "newest_document_age_days": 93.5
         },
         "topic_id": "topic-research-loop-scheduling",
         "total": 0.346,
@@ -161,7 +161,7 @@
           "testability": 0.8519
         },
         "details": {
-          "newest_document_age_days": 109.3
+          "newest_document_age_days": 109.5
         },
         "topic_id": "topic-search-and-sorting-strategy",
         "total": 0.33,
@@ -205,7 +205,7 @@
     },
     "tasks": [
       {
-        "created_at": "2026-10-11T06:01:21Z",
+        "created_at": "2026-10-11T13:04:03Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -218,11 +218,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-8fdb9198193c",
+        "task_id": "task-954efdf38182",
         "topic_id": "topic-autonomous-research-agents"
       },
       {
-        "created_at": "2026-10-11T06:01:21Z",
+        "created_at": "2026-10-11T13:04:03Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -235,11 +235,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-8e20c11f4342",
+        "task_id": "task-6813bf61f3d9",
         "topic_id": "topic-fabrication-detection"
       },
       {
-        "created_at": "2026-10-11T06:01:21Z",
+        "created_at": "2026-10-11T13:04:03Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -251,11 +251,11 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-be8865c6d1f3",
+        "task_id": "task-8059f807bca4",
         "topic_id": "topic-research-loop-scheduling"
       },
       {
-        "created_at": "2026-10-11T06:01:21Z",
+        "created_at": "2026-10-11T13:04:03Z",
         "kind": "research",
         "payload": {
           "sources": [
@@ -266,13 +266,13 @@
         },
         "priority": 1.0,
         "status": "queued",
-        "task_id": "task-1237b603c09c",
+        "task_id": "task-f3da74846324",
         "topic_id": "topic-search-and-sorting-strategy"
       }
     ]
   },
   "published": [],
-  "run_id": "run-0c5646616b76",
+  "run_id": "run-c339af0fefd9",
   "sources": {
     "checked": 9,
     "credential_required": [],

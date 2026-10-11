@@ -12,6 +12,7 @@
       "crossref:10.1007/s10458-013-9241-1",
       "crossref:10.1007/s10458-019-09408-y",
       "crossref:10.1007/s10458-019-09409-x",
+      "crossref:10.1007/s10458-019-09433-x",
       "crossref:10.1007/s10458-023-09633-6",
       "crossref:10.1007/s10458-024-09649-6",
       "crossref:10.1007/s11164-024-05321-6",
@@ -87,6 +88,7 @@
       "crossref:10.3390/aerospace9080460",
       "crossref:10.3390/agriculture14050690",
       "crossref:10.3390/agriculture14050772",
+      "crossref:10.3390/agriculture14081246",
       "crossref:10.3390/agriculture14101702",
       "crossref:10.3390/agriculture14112070",
       "crossref:10.3390/agriculture15040424",
@@ -382,6 +384,7 @@
       "github:https://github.com/ZeroDayEvil/ai-security-tool",
       "github:https://github.com/ZinebMEFTAH/stationf-outreach-agent",
       "github:https://github.com/a11ign/agent-org",
+      "github:https://github.com/aHappend/aHappend.github.io",
       "github:https://github.com/aayushbhatta230-ux/jarvis-ai-agent",
       "github:https://github.com/aayushpoudel877-collab/Autonomous-AI-Research-Intelligence-Platform",
       "github:https://github.com/abhishek021091/CrowdSimNextGen",
@@ -440,6 +443,7 @@
       "github:https://github.com/coe0718/diaktoros",
       "github:https://github.com/contraruta/betarag-",
       "github:https://github.com/cpravetz/stage7",
+      "github:https://github.com/cryptomanxxx/debatt-ai-orchestrator",
       "github:https://github.com/ctklutznick/Company_Curator",
       "github:https://github.com/darnellwashingtonjr94-art/Monad-Quantum-Resistant-X",
       "github:https://github.com/darrowz/eimemory",
@@ -477,6 +481,7 @@
       "github:https://github.com/fh1m/mongla_ws",
       "github:https://github.com/fisher-admin/stock-report",
       "github:https://github.com/floitsch/pcb-maker",
+      "github:https://github.com/flyoung588/flyoung588",
       "github:https://github.com/fmogensen/ASF",
       "github:https://github.com/forumevi/hermes-self-healing-context",
       "github:https://github.com/fullsend-ai/fullsend",
@@ -557,6 +562,7 @@
       "github:https://github.com/meghmavani/Clio",
       "github:https://github.com/millw14/merrymen",
       "github:https://github.com/mingming715/MyResearchHub",
+      "github:https://github.com/mmlong818/ai-pulse",
       "github:https://github.com/mmxrealQQ/bobai-buyburn",
       "github:https://github.com/mobfoesteelo/prior-site",
       "github:https://github.com/mogons/noraz-agent",
@@ -628,6 +634,7 @@
       "github:https://github.com/shchon11/shchon11.github.io",
       "github:https://github.com/shimo4228/contemplative-agent",
       "github:https://github.com/shivayachjaat-dev/ai-skills-booster",
+      "github:https://github.com/shlokbam/DailyDiff",
       "github:https://github.com/shubhro2002/Remedy-Agent",
       "github:https://github.com/simahanfeng007-lgtm/Tiangongzaowu-V3",
       "github:https://github.com/sinanalekar/c-ra",
@@ -687,6 +694,7 @@
       "github:https://github.com/yyardi/Meridian",
       "github:https://github.com/zarak-khan-tech/UniNexus-AI",
       "github:https://github.com/zeikar/hyperclaude",
+      "github:https://github.com/zhex0121/unsw-battlecode-portfolio",
       "github:https://github.com/zongxin1993/OnlyAlpha"
     ],
     "nvd": [
@@ -719,7 +727,9 @@
       "nvd:nvd-raw-sha256:2c9490449",
       "nvd:nvd-raw-sha256:2ebf98ea6",
       "nvd:nvd-raw-sha256:2fb581f9b",
+      "nvd:nvd-raw-sha256:31cf4ef45",
       "nvd:nvd-raw-sha256:32218a842",
+      "nvd:nvd-raw-sha256:338e9b2e9",
       "nvd:nvd-raw-sha256:362f73ab7",
       "nvd:nvd-raw-sha256:3821bd6cd",
       "nvd:nvd-raw-sha256:396d9d759",
@@ -837,6 +847,7 @@
       "pypi:https://pypi.org/project/agent-engine-sdk/0.11.8/",
       "pypi:https://pypi.org/project/agent-inbox/1.7.0/",
       "pypi:https://pypi.org/project/agent-mandates/0.1.0/",
+      "pypi:https://pypi.org/project/agent-tune-kit/1.1.0/",
       "pypi:https://pypi.org/project/agentaix/0.1.0/",
       "pypi:https://pypi.org/project/agentglow/0.4.9/",
       "pypi:https://pypi.org/project/agenthatch/1.0.16/",
@@ -857,6 +868,7 @@
       "pypi:https://pypi.org/project/aiocomexio/0.5.0/",
       "pypi:https://pypi.org/project/aiohpprinter/1.0.0/",
       "pypi:https://pypi.org/project/airbyte/0.70.0/",
+      "pypi:https://pypi.org/project/airlock-sandbox/0.6.0/",
       "pypi:https://pypi.org/project/aislop/0.17.0/",
       "pypi:https://pypi.org/project/aitoolsblocklist/1.1.1/",
       "pypi:https://pypi.org/project/aitun/4.12.5/",
@@ -984,6 +996,7 @@
       "pypi:https://pypi.org/project/codemie-mcp-datasources/0.1.663/",
       "pypi:https://pypi.org/project/codemie-sdk-python/0.1.645/",
       "pypi:https://pypi.org/project/codimate/0.2.0/",
+      "pypi:https://pypi.org/project/codontrace/0.3.0b30/",
       "pypi:https://pypi.org/project/comate-agent-sdk/0.12.12/",
       "pypi:https://pypi.org/project/compilerlens/0.1.1/",
       "pypi:https://pypi.org/project/concealer/1.0.0/",
@@ -1193,6 +1206,7 @@
       "pypi:https://pypi.org/project/indic-language-utils/0.2.0/",
       "pypi:https://pypi.org/project/inillucent/2.5.3/",
       "pypi:https://pypi.org/project/inklet/4.4.1/",
+      "pypi:https://pypi.org/project/inps/1.21/",
       "pypi:https://pypi.org/project/inteligenciartificial/0.0.8/",
       "pypi:https://pypi.org/project/ipmg/2.2.0/",
       "pypi:https://pypi.org/project/iptocc/3.3.139/",
@@ -1313,6 +1327,7 @@
       "pypi:https://pypi.org/project/medharness/0.38.1/",
       "pypi:https://pypi.org/project/medharness/0.55.0/",
       "pypi:https://pypi.org/project/megillah/2026.9.24.735/",
+      "pypi:https://pypi.org/project/meikipop/2.0.6/",
       "pypi:https://pypi.org/project/meisai-checker/0.449.0/",
       "pypi:https://pypi.org/project/memcell/0.1.4/",
       "pypi:https://pypi.org/project/memocat-mcp/1.1.6/",
@@ -1435,6 +1450,7 @@
       "pypi:https://pypi.org/project/pgserver-extend/0.0.2/",
       "pypi:https://pypi.org/project/phistory/0.2.0/",
       "pypi:https://pypi.org/project/phonlab/0.0.65/",
+      "pypi:https://pypi.org/project/pillow-lunasvg/0.1.1/",
       "pypi:https://pypi.org/project/pipdash/1.1.4/",
       "pypi:https://pypi.org/project/pixelazer-tl/1.0.3/",
       "pypi:https://pypi.org/project/pkpdsim/0.2.0/",
@@ -1558,6 +1574,7 @@
       "pypi:https://pypi.org/project/routeval/0.1.0/",
       "pypi:https://pypi.org/project/rp-python-sdk/1.5.3/",
       "pypi:https://pypi.org/project/rsna-anonymizer/19.1.0.dev2/",
+      "pypi:https://pypi.org/project/rust-mdbook/0.5.4/",
       "pypi:https://pypi.org/project/safestream-redactor/0.4.0/",
       "pypi:https://pypi.org/project/sagemaker-serve/1.23.0/",
       "pypi:https://pypi.org/project/sagemaker/2.257.7/",
@@ -1602,6 +1619,7 @@
       "pypi:https://pypi.org/project/signalflow/0.6.0/",
       "pypi:https://pypi.org/project/simba-mcp/0.7.0/",
       "pypi:https://pypi.org/project/simdref/0.0.6/",
+      "pypi:https://pypi.org/project/simind-python-connector/1.1.0/",
       "pypi:https://pypi.org/project/simpleaible/1.2.0/",
       "pypi:https://pypi.org/project/simpleapps-com-augur-api/2026.9.4/",
       "pypi:https://pypi.org/project/simpleapps-com-augur-mcp/2026.9.4/",
@@ -1674,6 +1692,7 @@
       "pypi:https://pypi.org/project/tgai-go/1.0.0/",
       "pypi:https://pypi.org/project/tha-snowflake-runner/0.4.0/",
       "pypi:https://pypi.org/project/thalovant-skill-interaction-modes/0.1.9/",
+      "pypi:https://pypi.org/project/thalovant/0.9.6/",
       "pypi:https://pypi.org/project/the-mill/0.5.13/",
       "pypi:https://pypi.org/project/the-mill/0.5.6/",
       "pypi:https://pypi.org/project/thth/3.6.0/",
@@ -1711,6 +1730,7 @@
       "pypi:https://pypi.org/project/uiprotect/23.0.0/",
       "pypi:https://pypi.org/project/undoc/0.22.0/",
       "pypi:https://pypi.org/project/unswbc/1.2.11/",
+      "pypi:https://pypi.org/project/unvibecode/0.3.11/",
       "pypi:https://pypi.org/project/urun-cli/0.7.4/",
       "pypi:https://pypi.org/project/useshards/0.1.1/",
       "pypi:https://pypi.org/project/valeryverkhoturov-wb-api-client/1.20261010.0/",
@@ -1736,6 +1756,7 @@
       "pypi:https://pypi.org/project/wallatag/0.1.0/",
       "pypi:https://pypi.org/project/wasm-cli/3.1.13/",
       "pypi:https://pypi.org/project/wavin-sentio-connect/0.4.1/",
+      "pypi:https://pypi.org/project/web-posture-check/0.4.0/",
       "pypi:https://pypi.org/project/webpilot-cli/0.2.5/",
       "pypi:https://pypi.org/project/webpilot-engine/2.0.4/",
       "pypi:https://pypi.org/project/whaxon/0.8.1/",
@@ -2004,33 +2025,33 @@
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-10-11T06:01:31Z",
+      "last_scan": "2026-10-11T13:04:10Z",
       "last_status": "scanned",
-      "scans": 128
+      "scans": 130
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-10-11T06:01:31Z",
+      "last_scan": "2026-10-11T13:04:10Z",
       "last_status": "scanned",
-      "scans": 132
+      "scans": 134
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-10-11T06:01:31Z",
+      "last_scan": "2026-10-11T13:04:10Z",
       "last_status": "scanned",
-      "scans": 120
+      "scans": 122
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-10-11T06:01:31Z",
+      "last_scan": "2026-10-11T13:04:10Z",
       "last_status": "scanned",
-      "scans": 121
+      "scans": 123
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-10-11T06:01:31Z",
+      "last_scan": "2026-10-11T13:04:10Z",
       "last_status": "scanned",
-      "scans": 128
+      "scans": 130
     }
   }
 }
