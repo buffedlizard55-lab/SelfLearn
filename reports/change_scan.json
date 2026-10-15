@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-15T11:46:51Z",
-  "items_new": 14,
+  "generated_at": "2026-10-15T17:14:37Z",
+  "items_new": 3,
   "items_out_of_window": 7,
   "items_returned": 26,
   "items_seen": 19,
-  "run_id": "run-ff96e81f0bcf",
+  "run_id": "run-c39214657060",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-14..2026-10-15 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-14..2026-10-15 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 3,
+      "items_new": 2,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,28 +77,20 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: heaven-hm/cheat-agent\nThe record for heaven",
-          "identifier": "https://github.com/heaven-hm/cheat-agent",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: abheeshudhungana-source/riffs-agent\nThe rec",
+          "identifier": "https://github.com/abheeshudhungana-source/riffs-agent",
           "published_at": "2026-10-15",
           "source_id": "github",
-          "title": "heaven-hm/cheat-agent",
-          "url": "https://github.com/heaven-hm/cheat-agent"
+          "title": "abheeshudhungana-source/riffs-agent",
+          "url": "https://github.com/abheeshudhungana-source/riffs-agent"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Baldozz/fpl-agent\nThe record for Baldozz/fp",
-          "identifier": "https://github.com/Baldozz/fpl-agent",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: thomas-m-brown/straddle\nThe record for thom",
+          "identifier": "https://github.com/thomas-m-brown/straddle",
           "published_at": "2026-10-15",
           "source_id": "github",
-          "title": "Baldozz/fpl-agent",
-          "url": "https://github.com/Baldozz/fpl-agent"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: AriyaSrfZ/maverick-agent-os\nThe record for ",
-          "identifier": "https://github.com/AriyaSrfZ/maverick-agent-os",
-          "published_at": "2026-10-15",
-          "source_id": "github",
-          "title": "AriyaSrfZ/maverick-agent-os",
-          "url": "https://github.com/AriyaSrfZ/maverick-agent-os"
+          "title": "thomas-m-brown/straddle",
+          "url": "https://github.com/thomas-m-brown/straddle"
         }
       ],
       "request_params": {
@@ -129,8 +121,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-15T11:46:52.130\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:801b0686c",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-15T17:14:38.539\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:77e34dcac",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -155,56 +147,15 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-14..2026-10-15 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-14..2026-10-15 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 10,
+      "items_new": 0,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
       "items_undated": 0,
       "mechanism": "Newly created releases, newest first, as published in the Latest Updates Feed",
-      "new_items": [
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/aidev-wxbot/3.0.0/",
-          "published_at": "2026-10-15",
-          "source_id": "pypi",
-          "title": "aidev-wxbot 3.0.0",
-          "url": "https://pypi.org/project/aidev-wxbot/3.0.0/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/aidev-bkplugin/3.0.0/",
-          "published_at": "2026-10-15",
-          "source_id": "pypi",
-          "title": "aidev-bkplugin 3.0.0",
-          "url": "https://pypi.org/project/aidev-bkplugin/3.0.0/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/xtr-logging-contracts/4.0.3/",
-          "published_at": "2026-10-15",
-          "source_id": "pypi",
-          "title": "xtr-logging-contracts 4.0.3",
-          "url": "https://pypi.org/project/xtr-logging-contracts/4.0.3/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/aidev-agent/3.0.0/",
-          "published_at": "2026-10-15",
-          "source_id": "pypi",
-          "title": "aidev-agent 3.0.0",
-          "url": "https://pypi.org/project/aidev-agent/3.0.0/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/xtr-scheduler/4.0.3/",
-          "published_at": "2026-10-15",
-          "source_id": "pypi",
-          "title": "xtr-scheduler 4.0.3",
-          "url": "https://pypi.org/project/xtr-scheduler/4.0.3/"
-        }
-      ],
+      "new_items": [],
       "request_params": {},
       "request_url": "https://pypi.org/rss/updates.xml",
       "source_id": "pypi",
