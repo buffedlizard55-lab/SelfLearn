@@ -1,5 +1,5 @@
 {
-  "bytes_read": 30037,
+  "bytes_read": 30045,
   "content_hash": "sha256:da768d462b0108f3b6d8e8d74f15cc2372fc5595af7f28c55c9b75bb41411241",
   "evidence_class": "commentary",
   "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -13,8 +13,8 @@
   "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
   "published_at": "2026-01-31",
   "publisher": "Y Combinator (Hacker News); Algolia operates the search index",
-  "response_sha256": "sha256:ce265762a3e18df2eddfa12dd2ce5c4de7117b3b64a1ed4d4245462effe1353e",
-  "retrieved_at": "2026-10-14T21:53:52Z",
+  "response_sha256": "sha256:3d1d6682c8d65a112abdc242eb25ca7c5cae6abb8bffcf4e95c1fd6198c4ef95",
+  "retrieved_at": "2026-10-15T04:54:38Z",
   "source_id": "hackernews",
   "source_name": "Hacker News API (via Algolia index)",
   "text": "Source: Hacker News API (via Algolia index) (https://hn.algolia.com/api/v1)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Show HN: Agent Tinman – Autonomous failure discovery for LLM systems\nThe record for Show HN: Agent Tinman – Autonomous failure discovery for LLM systems reports: created_at 2026-01-31T18:47:22Z, points 4, comment count 0.\nThe record for Show HN: Agent Tinman – Autonomous failure discovery for LLM systems reports: objectID 46839444.\nSource note: Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
