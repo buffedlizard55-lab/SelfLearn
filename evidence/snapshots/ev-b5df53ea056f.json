@@ -1,5 +1,5 @@
 {
-  "bytes_read": 30041,
+  "bytes_read": 30045,
   "content_hash": "sha256:8fa37db2003c5c1ed7074d49afcb17c4b4fc9f2597011ee9b8832015e4d28402",
   "evidence_class": "commentary",
   "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -13,8 +13,8 @@
   "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
   "published_at": "2026-02-10",
   "publisher": "Y Combinator (Hacker News); Algolia operates the search index",
-  "response_sha256": "sha256:b65604c6aed957369fcda03746b796376914235a15681dddb67a63a8513724fc",
-  "retrieved_at": "2026-10-16T16:55:00Z",
+  "response_sha256": "sha256:bde68c67f13722495d33d857558e5c4b1f209edfa4d1038696de36fa24254960",
+  "retrieved_at": "2026-10-16T21:24:58Z",
   "source_id": "hackernews",
   "source_name": "Hacker News API (via Algolia index)",
   "text": "Source: Hacker News API (via Algolia index) (https://hn.algolia.com/api/v1)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Show HN: Axiom – Open-source AI research agent that runs locally (C#, Ollama)\nThe record for Show HN: Axiom – Open-source AI research agent that runs locally (C#, Ollama) reports: created_at 2026-02-10T01:27:27Z, points 1, comment count 0.\nThe record for Show HN: Axiom – Open-source AI research agent that runs locally (C#, Ollama) reports: objectID 46954141.\nSource note: Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",

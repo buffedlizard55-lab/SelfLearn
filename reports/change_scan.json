@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-16T16:55:15Z",
-  "items_new": 15,
+  "generated_at": "2026-10-16T21:25:05Z",
+  "items_new": 9,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-bc031cc09a76",
+  "run_id": "run-a4ed355c1d39",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -77,36 +77,36 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: 1888-Labs/Mandate\nThe record for 1888-Labs/",
-          "identifier": "https://github.com/1888-Labs/Mandate",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: nightqueue/nightqueue\nThe record for nightq",
+          "identifier": "https://github.com/nightqueue/nightqueue",
           "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "1888-Labs/Mandate",
-          "url": "https://github.com/1888-Labs/Mandate"
+          "title": "nightqueue/nightqueue",
+          "url": "https://github.com/nightqueue/nightqueue"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: marzneshin-os/marzneshin-agent-os\nThe recor",
-          "identifier": "https://github.com/marzneshin-os/marzneshin-agent-os",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: lunadigitaloperations-bot/luna-autonomous-a",
+          "identifier": "https://github.com/lunadigitaloperations-bot/luna-autonomous-agent",
           "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "marzneshin-os/marzneshin-agent-os",
-          "url": "https://github.com/marzneshin-os/marzneshin-agent-os"
+          "title": "lunadigitaloperations-bot/luna-autonomous-agent",
+          "url": "https://github.com/lunadigitaloperations-bot/luna-autonomous-agent"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: anandtudu078/agent-cart\nThe record for anan",
-          "identifier": "https://github.com/anandtudu078/agent-cart",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Echo-Merlini/verifiable-agents\nThe record f",
+          "identifier": "https://github.com/Echo-Merlini/verifiable-agents",
           "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "anandtudu078/agent-cart",
-          "url": "https://github.com/anandtudu078/agent-cart"
+          "title": "Echo-Merlini/verifiable-agents",
+          "url": "https://github.com/Echo-Merlini/verifiable-agents"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: egagofur/ai-engineering-loop\nThe record for",
-          "identifier": "https://github.com/egagofur/ai-engineering-loop",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: swedishembedded/splinter\nThe record for swe",
+          "identifier": "https://github.com/swedishembedded/splinter",
           "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "egagofur/ai-engineering-loop",
-          "url": "https://github.com/egagofur/ai-engineering-loop"
+          "title": "swedishembedded/splinter",
+          "url": "https://github.com/swedishembedded/splinter"
         }
       ],
       "request_params": {
@@ -137,8 +137,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-16T16:55:17.240\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:d5c39efb5",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-16T21:25:07.379\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:693d3fd75",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -163,9 +163,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-15..2026-10-16 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-15..2026-10-16 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 10,
+      "items_new": 4,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -174,43 +174,35 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/murmur-dictation/0.2.0/",
+          "identifier": "https://pypi.org/project/oxn/0.2.1/",
           "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "murmur-dictation 0.2.0",
-          "url": "https://pypi.org/project/murmur-dictation/0.2.0/"
+          "title": "oxn 0.2.1",
+          "url": "https://pypi.org/project/oxn/0.2.1/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/mywebscrcpy-sdk/1.26.1/",
+          "identifier": "https://pypi.org/project/mcp-server-lint/0.27.2/",
           "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "mywebscrcpy-sdk 1.26.1",
-          "url": "https://pypi.org/project/mywebscrcpy-sdk/1.26.1/"
+          "title": "mcp-server-lint 0.27.2",
+          "url": "https://pypi.org/project/mcp-server-lint/0.27.2/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/devlaunch/0.62.0/",
+          "identifier": "https://pypi.org/project/quantconnect-stubs/18189/",
           "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "devlaunch 0.62.0",
-          "url": "https://pypi.org/project/devlaunch/0.62.0/"
+          "title": "quantconnect-stubs 18189",
+          "url": "https://pypi.org/project/quantconnect-stubs/18189/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/malojaserver/3.2.8/",
+          "identifier": "https://pypi.org/project/mcp-elm/1.0.41/",
           "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "malojaserver 3.2.8",
-          "url": "https://pypi.org/project/malojaserver/3.2.8/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/vis-agent/0.2.52.dev7742/",
-          "published_at": "2026-10-16",
-          "source_id": "pypi",
-          "title": "vis-agent 0.2.52.dev7742",
-          "url": "https://pypi.org/project/vis-agent/0.2.52.dev7742/"
+          "title": "mcp-elm 1.0.41",
+          "url": "https://pypi.org/project/mcp-elm/1.0.41/"
         }
       ],
       "request_params": {},

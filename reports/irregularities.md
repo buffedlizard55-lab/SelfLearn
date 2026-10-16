@@ -1,12 +1,12 @@
 # Irregularities for review
 
-Generated: 2026-10-16T16:55:50Z
+Generated: 2026-10-16T21:25:50Z
 
 This file is produced by the audit stage. It lists everything the engine could not
 reconcile on its own. Nothing here is a conclusion; each entry is a request for a human
 decision, with the evidence needed to make it.
 
-**Totals (open)** - error: 0, warning: 18, info: 101; resolved by a reviewer: 8 (error: 1, warning: 0, info: 7).
+**Totals (open)** - error: 0, warning: 18, info: 102; resolved by a reviewer: 8 (error: 1, warning: 0, info: 7).
 
 ## Stage: audit
 
@@ -142,7 +142,7 @@ decision, with the evidence needed to make it.
 - **link:** <https://export.arxiv.org/robots.txt>
 - **detail:** https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: . The window 2026-10-09..2026-10-16 was not polled for this source.
 - **suggested action:** Register a route the operator's own rules permit, or leave the source unscanned.
-- **detected:** 2026-10-16T16:55:15Z
+- **detected:** 2026-10-16T21:25:05Z
 
 ### [WARNING] Change scan for github returned HTTP 403
 
@@ -171,7 +171,7 @@ decision, with the evidence needed to make it.
 - **link:** <https://export.arxiv.org/robots.txt>
 - **detail:** robots.txt rule 'Disallow: /' disallows /api/query; https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules 
 - **suggested action:** Read the operator's robots.txt and API documentation; the engine obeys RFC 9309 and does not work around a disallow rule. If the operator documents the route for API consumers, a reviewer can register a route the operator's own rules permit.
-- **detected:** 2026-10-16T16:55:01Z
+- **detected:** 2026-10-16T21:24:59Z
 
 ## Stage: audit
 
@@ -221,7 +221,7 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** 134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.
 - **suggested action:** Nothing to do unless a reviewer believes a retired statement was correct.
-- **detected:** 2026-10-16T16:55:50Z
+- **detected:** 2026-10-16T21:25:50Z
 
 ## Stage: change_scan
 
@@ -434,6 +434,14 @@ decision, with the evidence needed to make it.
 - **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
 - **suggested action:** Review the retired statements section on the affected topic pages.
 - **detected:** 2026-09-27T17:04:42Z
+
+### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-19d7a702726a`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-10-16T21:25:07Z
 
 ### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
 

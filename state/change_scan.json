@@ -305,6 +305,7 @@
       "github:https://github.com/Docdavkitty/the-agent-report",
       "github:https://github.com/Domer-Rover/gerbil-software",
       "github:https://github.com/DuongNAD/DuongNAD",
+      "github:https://github.com/Echo-Merlini/verifiable-agents",
       "github:https://github.com/Ekco-S64QTN6/Kaiagotchi",
       "github:https://github.com/Ekmsi8525/agentsmith",
       "github:https://github.com/ElenaRevicheva/AIPA_AITCF",
@@ -439,6 +440,7 @@
       "github:https://github.com/ThurubilliSaiManoj2026/autonomous-experiment-planner",
       "github:https://github.com/Tim-Projekt/ambidex",
       "github:https://github.com/Tolgakabadayi/auto-clip-studio",
+      "github:https://github.com/TranBaDat2607/PDFusion",
       "github:https://github.com/TrueFurina/SecAutoMind-src",
       "github:https://github.com/Trustless-Work/agentic-escrow-research",
       "github:https://github.com/TurniXXD/watcher-agents",
@@ -582,6 +584,7 @@
       "github:https://github.com/f-o-x11/dreaming-press",
       "github:https://github.com/fadhilfathi/ai-devsecops-command-center",
       "github:https://github.com/feedback-loop-ai/brokkr",
+      "github:https://github.com/felipemelendez/llm-orchestrator",
       "github:https://github.com/fh1m/mongla_ws",
       "github:https://github.com/fisher-admin/stock-report",
       "github:https://github.com/floitsch/pcb-maker",
@@ -679,6 +682,7 @@
       "github:https://github.com/lrnolivia/loew-runner",
       "github:https://github.com/lshaible/azure-observability-agent-demo",
       "github:https://github.com/lukas/hexapod-orchestrator",
+      "github:https://github.com/lunadigitaloperations-bot/luna-autonomous-agent",
       "github:https://github.com/luoy16002-svg/casefile",
       "github:https://github.com/lzmd-arch/BioSNN-Plug",
       "github:https://github.com/magnusfroste/flowwink",
@@ -723,6 +727,7 @@
       "github:https://github.com/neuralmagic/crucible",
       "github:https://github.com/nhunsaker/handoff-assignments-202609",
       "github:https://github.com/nidhisansare0402/autonomous-research-agent",
+      "github:https://github.com/nightqueue/nightqueue",
       "github:https://github.com/nilswern/research-agent",
       "github:https://github.com/nitroIm/argus-core",
       "github:https://github.com/nvkudva/aeon",
@@ -808,6 +813,7 @@
       "github:https://github.com/svenmanimala/career-pilot",
       "github:https://github.com/swapnil604/wildwing-icicle",
       "github:https://github.com/swarmrelay/openagentforum",
+      "github:https://github.com/swedishembedded/splinter",
       "github:https://github.com/t20071/AI-Adoption-Assessment",
       "github:https://github.com/taha16112001/alpasim",
       "github:https://github.com/takecchi/alteroid",
@@ -923,6 +929,7 @@
       "nvd:nvd-raw-sha256:65c57014f",
       "nvd:nvd-raw-sha256:673630db1",
       "nvd:nvd-raw-sha256:6907a7707",
+      "nvd:nvd-raw-sha256:693d3fd75",
       "nvd:nvd-raw-sha256:6afa5d978",
       "nvd:nvd-raw-sha256:6d823284f",
       "nvd:nvd-raw-sha256:6ff47e455",
@@ -988,6 +995,7 @@
       "nvd:nvd-raw-sha256:cfb427d30",
       "nvd:nvd-raw-sha256:d1c7d9e43",
       "nvd:nvd-raw-sha256:d3408d619",
+      "nvd:nvd-raw-sha256:d35a7030a",
       "nvd:nvd-raw-sha256:d37ef74a4",
       "nvd:nvd-raw-sha256:d5134bc4c",
       "nvd:nvd-raw-sha256:d5c39efb5",
@@ -1055,6 +1063,7 @@
       "pypi:https://pypi.org/project/agent-wiki-cli/2.5.0/",
       "pypi:https://pypi.org/project/agent-workflow-ui/1.8.0/",
       "pypi:https://pypi.org/project/agentaix/0.1.0/",
+      "pypi:https://pypi.org/project/agentcomms-secure/0.2.0/",
       "pypi:https://pypi.org/project/agentglow/0.4.9/",
       "pypi:https://pypi.org/project/agenthatch/1.0.16/",
       "pypi:https://pypi.org/project/agenthub-client/0.1.0/",
@@ -1069,6 +1078,7 @@
       "pypi:https://pypi.org/project/ai-agent-gateway-cli/0.8.0/",
       "pypi:https://pypi.org/project/ai-agent-gateway/0.21.0/",
       "pypi:https://pypi.org/project/ai-editor-tree-engine/1.0.159/",
+      "pypi:https://pypi.org/project/ai4rag/0.24.0/",
       "pypi:https://pypi.org/project/aicp-cli/0.12.0/",
       "pypi:https://pypi.org/project/aidev-agent/3.0.0/",
       "pypi:https://pypi.org/project/aidev-bkplugin/3.0.0/",
@@ -1086,6 +1096,7 @@
       "pypi:https://pypi.org/project/aislop/0.17.0/",
       "pypi:https://pypi.org/project/aitoolsblocklist/1.1.1/",
       "pypi:https://pypi.org/project/aitun/4.12.5/",
+      "pypi:https://pypi.org/project/al-dic/1.0.0/",
       "pypi:https://pypi.org/project/al-dvc/0.9.1/",
       "pypi:https://pypi.org/project/alberta-buck/0.3.0/",
       "pypi:https://pypi.org/project/alethech/0.4.0/",
@@ -1200,6 +1211,7 @@
       "pypi:https://pypi.org/project/boschshcpy/0.6.13/",
       "pypi:https://pypi.org/project/boyle/0.2.1/",
       "pypi:https://pypi.org/project/braindecode/1.8.1.dev169692045/",
+      "pypi:https://pypi.org/project/bubo/0.28.4/",
       "pypi:https://pypi.org/project/build-artifact-registry/0.2.1/",
       "pypi:https://pypi.org/project/buildbard/1.9.0/",
       "pypi:https://pypi.org/project/buildgen/0.4.3/",
@@ -1400,6 +1412,7 @@
       "pypi:https://pypi.org/project/falsepass/0.3.1/",
       "pypi:https://pypi.org/project/farms/0.1.29/",
       "pypi:https://pypi.org/project/fastmcp-pvl-core/9.0.1/",
+      "pypi:https://pypi.org/project/fastretry/0.5.1/",
       "pypi:https://pypi.org/project/favella1/1.2.0/",
       "pypi:https://pypi.org/project/fdu/0.1.0/",
       "pypi:https://pypi.org/project/feagi-bv-linux/2.6.2/",
@@ -1452,6 +1465,7 @@
       "pypi:https://pypi.org/project/fux-engine/3.0.0a10/",
       "pypi:https://pypi.org/project/galaga/2.0.0b3/",
       "pypi:https://pypi.org/project/gangmu-rules/2026.10.11/",
+      "pypi:https://pypi.org/project/gedcomkit/0.1.18/",
       "pypi:https://pypi.org/project/generic-audio-transcriber/0.1.0/",
       "pypi:https://pypi.org/project/geode-conversion/6.7.6/",
       "pypi:https://pypi.org/project/getmac/1.0.0b0/",
@@ -1491,6 +1505,7 @@
       "pypi:https://pypi.org/project/haystack-algenta/0.1.4/",
       "pypi:https://pypi.org/project/hebbrix/2.6.1/",
       "pypi:https://pypi.org/project/helm-mcp/0.5.0/",
+      "pypi:https://pypi.org/project/hexiel/0.3.22/",
       "pypi:https://pypi.org/project/hexio/0.0.4/",
       "pypi:https://pypi.org/project/hibral/0.3.0/",
       "pypi:https://pypi.org/project/hive-ide/1.0.94/",
@@ -1655,9 +1670,11 @@
       "pypi:https://pypi.org/project/matrx-scheduler/0.3.371/",
       "pypi:https://pypi.org/project/matrx-seo/0.1.370/",
       "pypi:https://pypi.org/project/mcp-api-test/0.2.1/",
+      "pypi:https://pypi.org/project/mcp-elm/1.0.41/",
       "pypi:https://pypi.org/project/mcp-gee-sweet/0.9.1/",
       "pypi:https://pypi.org/project/mcp-gee-sweet/0.9.2.dev315/",
       "pypi:https://pypi.org/project/mcp-library-search/0.3.0/",
+      "pypi:https://pypi.org/project/mcp-server-lint/0.27.2/",
       "pypi:https://pypi.org/project/mcp-upload/0.3.1/",
       "pypi:https://pypi.org/project/mcpgawk/0.1.64/",
       "pypi:https://pypi.org/project/mcpp-bin/2026.10.1.2/",
@@ -1813,6 +1830,7 @@
       "pypi:https://pypi.org/project/ovos-bus-client/2.11.23a1/",
       "pypi:https://pypi.org/project/ovos-chromadb-embeddings-plugin/0.3.0a6/",
       "pypi:https://pypi.org/project/ovos-skill-ip/0.7.1a2/",
+      "pypi:https://pypi.org/project/oxn/0.2.1/",
       "pypi:https://pypi.org/project/page-validation/0.10.0/",
       "pypi:https://pypi.org/project/pairmux/1.0.0/",
       "pypi:https://pypi.org/project/palmimo-sdk/0.1.3/",
@@ -1850,6 +1868,7 @@
       "pypi:https://pypi.org/project/policyengine-household-api/0.33.1/",
       "pypi:https://pypi.org/project/policyengine-uk/2.111.0/",
       "pypi:https://pypi.org/project/polign-db/0.7.4/",
+      "pypi:https://pypi.org/project/polign-recall/0.20.1/",
       "pypi:https://pypi.org/project/pollard/1.6.2/",
       "pypi:https://pypi.org/project/polymarket-us/2.3.0/",
       "pypi:https://pypi.org/project/pondra/0.22.2/",
@@ -1938,6 +1957,7 @@
       "pypi:https://pypi.org/project/qtsurfer-api-client/0.126.1/",
       "pypi:https://pypi.org/project/quadkit-http/0.0.43/",
       "pypi:https://pypi.org/project/quadkit-monitor/0.0.43/",
+      "pypi:https://pypi.org/project/quantconnect-stubs/18189/",
       "pypi:https://pypi.org/project/quantex/0.6.7/",
       "pypi:https://pypi.org/project/quantilica-cli/0.11.0/",
       "pypi:https://pypi.org/project/quantmindoss/0.1.1/",
@@ -1980,6 +2000,7 @@
       "pypi:https://pypi.org/project/rj-core/0.1.1/",
       "pypi:https://pypi.org/project/roadgen/0.7.0/",
       "pypi:https://pypi.org/project/roadmodel/0.2.48/",
+      "pypi:https://pypi.org/project/roboto/0.61.0/",
       "pypi:https://pypi.org/project/robovast-client/2.2.1/",
       "pypi:https://pypi.org/project/robovast-cluster/2.2.1/",
       "pypi:https://pypi.org/project/robovast-nav/2.2.1/",
@@ -2184,6 +2205,7 @@
       "pypi:https://pypi.org/project/tungsten-admin/0.1.3/",
       "pypi:https://pypi.org/project/tungsten-leads/0.1.0/",
       "pypi:https://pypi.org/project/tungsten-meta-leads/0.1.0/",
+      "pypi:https://pypi.org/project/turbo-quant-memory/0.31.0/",
       "pypi:https://pypi.org/project/turbojev/0.29.2/",
       "pypi:https://pypi.org/project/turingdb/3.0.1/",
       "pypi:https://pypi.org/project/txt2ebook/0.1.214/",
@@ -2570,39 +2592,40 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714119472",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714119482",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714120142",
-      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714120152"
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714120152",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714120722"
     ]
   },
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-10-16T16:55:15Z",
+      "last_scan": "2026-10-16T21:25:05Z",
       "last_status": "scanned",
-      "scans": 164
+      "scans": 166
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-10-16T16:55:15Z",
+      "last_scan": "2026-10-16T21:25:05Z",
       "last_status": "scanned",
-      "scans": 168
+      "scans": 170
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-10-16T16:55:15Z",
+      "last_scan": "2026-10-16T21:25:05Z",
       "last_status": "scanned",
-      "scans": 156
+      "scans": 158
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-10-16T16:55:15Z",
+      "last_scan": "2026-10-16T21:25:05Z",
       "last_status": "scanned",
-      "scans": 157
+      "scans": 159
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-10-16T16:55:15Z",
+      "last_scan": "2026-10-16T21:25:05Z",
       "last_status": "scanned",
-      "scans": 164
+      "scans": 166
     }
   }
 }
