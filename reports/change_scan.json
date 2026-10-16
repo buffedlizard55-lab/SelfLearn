@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-16T11:41:28Z",
+  "generated_at": "2026-10-16T16:55:15Z",
   "items_new": 15,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-c20e23fa8c10",
+  "run_id": "run-bc031cc09a76",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -77,36 +77,36 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Akane12936/vessel-browser\nThe record for Ak",
-          "identifier": "https://github.com/Akane12936/vessel-browser",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: 1888-Labs/Mandate\nThe record for 1888-Labs/",
+          "identifier": "https://github.com/1888-Labs/Mandate",
           "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "Akane12936/vessel-browser",
-          "url": "https://github.com/Akane12936/vessel-browser"
+          "title": "1888-Labs/Mandate",
+          "url": "https://github.com/1888-Labs/Mandate"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ildus650-pixel/aeon\nThe record for ildus650",
-          "identifier": "https://github.com/ildus650-pixel/aeon",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: marzneshin-os/marzneshin-agent-os\nThe recor",
+          "identifier": "https://github.com/marzneshin-os/marzneshin-agent-os",
           "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "ildus650-pixel/aeon",
-          "url": "https://github.com/ildus650-pixel/aeon"
+          "title": "marzneshin-os/marzneshin-agent-os",
+          "url": "https://github.com/marzneshin-os/marzneshin-agent-os"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ashlrai/phantom\nThe record for ashlrai/phan",
-          "identifier": "https://github.com/ashlrai/phantom",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: anandtudu078/agent-cart\nThe record for anan",
+          "identifier": "https://github.com/anandtudu078/agent-cart",
           "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "ashlrai/phantom",
-          "url": "https://github.com/ashlrai/phantom"
+          "title": "anandtudu078/agent-cart",
+          "url": "https://github.com/anandtudu078/agent-cart"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: d-hinders/Haven-AI\nThe record for d-hinders",
-          "identifier": "https://github.com/d-hinders/Haven-AI",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: egagofur/ai-engineering-loop\nThe record for",
+          "identifier": "https://github.com/egagofur/ai-engineering-loop",
           "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "d-hinders/Haven-AI",
-          "url": "https://github.com/d-hinders/Haven-AI"
+          "title": "egagofur/ai-engineering-loop",
+          "url": "https://github.com/egagofur/ai-engineering-loop"
         }
       ],
       "request_params": {
@@ -137,8 +137,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-16T11:41:29.715\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:320f77dd7",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-16T16:55:17.240\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:d5c39efb5",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -174,43 +174,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/clm-kernel/0.0.7/",
+          "identifier": "https://pypi.org/project/murmur-dictation/0.2.0/",
           "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "clm-kernel 0.0.7",
-          "url": "https://pypi.org/project/clm-kernel/0.0.7/"
+          "title": "murmur-dictation 0.2.0",
+          "url": "https://pypi.org/project/murmur-dictation/0.2.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/dimavpn/0.1.1/",
+          "identifier": "https://pypi.org/project/mywebscrcpy-sdk/1.26.1/",
           "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "dimavpn 0.1.1",
-          "url": "https://pypi.org/project/dimavpn/0.1.1/"
+          "title": "mywebscrcpy-sdk 1.26.1",
+          "url": "https://pypi.org/project/mywebscrcpy-sdk/1.26.1/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/home-assistant-frontend/20260930.4/",
+          "identifier": "https://pypi.org/project/devlaunch/0.62.0/",
           "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "home-assistant-frontend 20260930.4",
-          "url": "https://pypi.org/project/home-assistant-frontend/20260930.4/"
+          "title": "devlaunch 0.62.0",
+          "url": "https://pypi.org/project/devlaunch/0.62.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/mkdocs-webis/0.1.2/",
+          "identifier": "https://pypi.org/project/malojaserver/3.2.8/",
           "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "mkdocs-webis 0.1.2",
-          "url": "https://pypi.org/project/mkdocs-webis/0.1.2/"
+          "title": "malojaserver 3.2.8",
+          "url": "https://pypi.org/project/malojaserver/3.2.8/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/omnimarket/0.4.315/",
+          "identifier": "https://pypi.org/project/vis-agent/0.2.52.dev7742/",
           "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "omnimarket 0.4.315",
-          "url": "https://pypi.org/project/omnimarket/0.4.315/"
+          "title": "vis-agent 0.2.52.dev7742",
+          "url": "https://pypi.org/project/vis-agent/0.2.52.dev7742/"
         }
       ],
       "request_params": {},
