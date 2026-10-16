@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-15T21:37:33Z",
-  "items_new": 7,
-  "items_out_of_window": 6,
+  "generated_at": "2026-10-16T04:47:18Z",
+  "items_new": 11,
+  "items_out_of_window": 5,
   "items_returned": 26,
-  "items_seen": 20,
-  "run_id": "run-20311b29456c",
+  "items_seen": 21,
+  "run_id": "run-1d4db1bda21b",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -34,12 +34,12 @@
       "window": {
         "days": 7,
         "first_scan": true,
-        "since": "2026-10-08",
-        "until": "2026-10-15"
+        "since": "2026-10-09",
+        "until": "2026-10-16"
       }
     },
     {
-      "detail": "5 item(s) returned; 5 published before the window 2026-10-14..2026-10-15 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
+      "detail": "5 item(s) returned; 5 published before the window 2026-10-15..2026-10-16 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
       "items_new": 0,
       "items_out_of_window": 5,
@@ -49,7 +49,7 @@
       "mechanism": "Works reindexed at or after the given date",
       "new_items": [],
       "request_params": {
-        "filter": "from-index-date:2026-10-14",
+        "filter": "from-index-date:2026-10-15",
         "mailto": "selflearn@example.invalid",
         "query": "autonomous agent",
         "rows": 5,
@@ -62,14 +62,14 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-10-14",
-        "until": "2026-10-15"
+        "since": "2026-10-15",
+        "until": "2026-10-16"
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-14..2026-10-15 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-15..2026-10-16 and dropped; 0 carried no readable date and were kept; 5 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 4,
+      "items_new": 5,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,42 +77,50 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: michaelvereb/ai-ui\nThe record for michaelve",
-          "identifier": "https://github.com/michaelvereb/ai-ui",
-          "published_at": "2026-10-15",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: zariffromlatif/life-forge\nThe record for za",
+          "identifier": "https://github.com/zariffromlatif/life-forge",
+          "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "michaelvereb/ai-ui",
-          "url": "https://github.com/michaelvereb/ai-ui"
+          "title": "zariffromlatif/life-forge",
+          "url": "https://github.com/zariffromlatif/life-forge"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: paololeidi/streaming-rag-java\nThe record fo",
-          "identifier": "https://github.com/paololeidi/streaming-rag-java",
-          "published_at": "2026-10-15",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: gfrancodev/overdrive\nThe record for gfranco",
+          "identifier": "https://github.com/gfrancodev/overdrive",
+          "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "paololeidi/streaming-rag-java",
-          "url": "https://github.com/paololeidi/streaming-rag-java"
+          "title": "gfrancodev/overdrive",
+          "url": "https://github.com/gfrancodev/overdrive"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: hritekuthaiah/pids\nThe record for hritekuth",
-          "identifier": "https://github.com/hritekuthaiah/pids",
-          "published_at": "2026-10-15",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: apache/magpie\nThe record for apache/magpie ",
+          "identifier": "https://github.com/apache/magpie",
+          "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "hritekuthaiah/pids",
-          "url": "https://github.com/hritekuthaiah/pids"
+          "title": "apache/magpie",
+          "url": "https://github.com/apache/magpie"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: kirk-keel/witsml-agent\nThe record for kirk-",
-          "identifier": "https://github.com/kirk-keel/witsml-agent",
-          "published_at": "2026-10-15",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Zhiyilang/gemmapilot\nThe record for Zhiyila",
+          "identifier": "https://github.com/Zhiyilang/gemmapilot",
+          "published_at": "2026-10-16",
           "source_id": "github",
-          "title": "kirk-keel/witsml-agent",
-          "url": "https://github.com/kirk-keel/witsml-agent"
+          "title": "Zhiyilang/gemmapilot",
+          "url": "https://github.com/Zhiyilang/gemmapilot"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: kkkqkx123/wf-agent\nThe record for kkkqkx123",
+          "identifier": "https://github.com/kkkqkx123/wf-agent",
+          "published_at": "2026-10-16",
+          "source_id": "github",
+          "title": "kkkqkx123/wf-agent",
+          "url": "https://github.com/kkkqkx123/wf-agent"
         }
       ],
       "request_params": {
         "order": "desc",
         "per_page": 5,
-        "q": "autonomous agent pushed:>=2026-10-14",
+        "q": "autonomous agent pushed:>=2026-10-15",
         "sort": "updated"
       },
       "request_url": "https://api.github.com/search/repositories",
@@ -122,12 +130,12 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-10-14",
-        "until": "2026-10-15"
+        "since": "2026-10-15",
+        "until": "2026-10-16"
       }
     },
     {
-      "detail": "1 item(s) returned; 0 published before the window 2026-10-14..2026-10-15 and dropped; 1 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "1 item(s) returned; 0 published before the window 2026-10-15..2026-10-16 and dropped; 1 carried no readable date and were kept; 1 not seen by this engine before.",
       "docs_url": "https://nvd.nist.gov/developers/vulnerabilities",
       "items_new": 1,
       "items_out_of_window": 0,
@@ -137,8 +145,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-15T21:37:34.843\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:c61e7bdf7",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-16T04:47:19.157\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:81cb3f0c4",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -147,8 +155,8 @@
       ],
       "request_params": {
         "keywordSearch": "autonomous agent",
-        "lastModEndDate": "2026-10-15T00:00:00.000+00:00",
-        "lastModStartDate": "2026-10-14T00:00:00.000+00:00",
+        "lastModEndDate": "2026-10-16T00:00:00.000+00:00",
+        "lastModStartDate": "2026-10-15T00:00:00.000+00:00",
         "resultsPerPage": 5
       },
       "request_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
@@ -158,14 +166,14 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-10-14",
-        "until": "2026-10-15"
+        "since": "2026-10-15",
+        "until": "2026-10-16"
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-14..2026-10-15 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-15..2026-10-16 and dropped; 0 carried no readable date and were kept; 5 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 2,
+      "items_new": 5,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -174,19 +182,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/barndoor/2.12.0.dev202610152135/",
-          "published_at": "2026-10-15",
+          "identifier": "https://pypi.org/project/huckleberry-api/0.4.8/",
+          "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "barndoor 2.12.0.dev202610152135",
-          "url": "https://pypi.org/project/barndoor/2.12.0.dev202610152135/"
+          "title": "huckleberry-api 0.4.8",
+          "url": "https://pypi.org/project/huckleberry-api/0.4.8/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/cfabric-mcp/0.2.0rc1/",
-          "published_at": "2026-10-15",
+          "identifier": "https://pypi.org/project/unmaskip/0.1.0/",
+          "published_at": "2026-10-16",
           "source_id": "pypi",
-          "title": "cfabric-mcp 0.2.0rc1",
-          "url": "https://pypi.org/project/cfabric-mcp/0.2.0rc1/"
+          "title": "unmaskip 0.1.0",
+          "url": "https://pypi.org/project/unmaskip/0.1.0/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/afar/0.7.0/",
+          "published_at": "2026-10-16",
+          "source_id": "pypi",
+          "title": "afar 0.7.0",
+          "url": "https://pypi.org/project/afar/0.7.0/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/datanonymous/0.1.0rc2/",
+          "published_at": "2026-10-16",
+          "source_id": "pypi",
+          "title": "datanonymous 0.1.0rc2",
+          "url": "https://pypi.org/project/datanonymous/0.1.0rc2/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/qtool-py/0.4.1/",
+          "published_at": "2026-10-16",
+          "source_id": "pypi",
+          "title": "qtool-py 0.4.1",
+          "url": "https://pypi.org/project/qtool-py/0.4.1/"
         }
       ],
       "request_params": {},
@@ -197,26 +229,26 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-10-14",
-        "until": "2026-10-15"
+        "since": "2026-10-15",
+        "until": "2026-10-16"
       }
     },
     {
-      "detail": "5 item(s) returned; 1 published before the window 2026-10-14..2026-10-15 and dropped; 4 carried no readable date and were kept; 0 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-15..2026-10-16 and dropped; 5 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
       "items_new": 0,
-      "items_out_of_window": 1,
+      "items_out_of_window": 0,
       "items_returned": 5,
-      "items_seen": 4,
-      "items_undated": 4,
+      "items_seen": 5,
+      "items_undated": 5,
       "mechanism": "Earthquake events inside an explicit time window",
       "new_items": [],
       "request_params": {
-        "endtime": "2026-10-15",
+        "endtime": "2026-10-16",
         "format": "geojson",
         "limit": 5,
         "orderby": "time",
-        "starttime": "2026-10-14"
+        "starttime": "2026-10-15"
       },
       "request_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
       "source_id": "usgs_earthquake",
@@ -225,8 +257,8 @@
       "window": {
         "days": 1,
         "first_scan": false,
-        "since": "2026-10-14",
-        "until": "2026-10-15"
+        "since": "2026-10-15",
+        "until": "2026-10-16"
       }
     }
   ],
