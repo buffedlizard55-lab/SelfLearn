@@ -14,6 +14,7 @@
       "crossref:10.1007/s10458-012-9192-y",
       "crossref:10.1007/s10458-013-9220-6",
       "crossref:10.1007/s10458-013-9241-1",
+      "crossref:10.1007/s10458-016-9326-8",
       "crossref:10.1007/s10458-019-09408-y",
       "crossref:10.1007/s10458-019-09409-x",
       "crossref:10.1007/s10458-019-09421-1",
@@ -241,6 +242,7 @@
     "github": [
       "github:https://github.com/001eander/ASTER",
       "github:https://github.com/0sec-labs/0",
+      "github:https://github.com/1337isnot1337/erdos-99",
       "github:https://github.com/1888-Labs/Mandate",
       "github:https://github.com/4citeB4U/LeeWay-Agent-Skills",
       "github:https://github.com/535417/autonomous-ai-agent",
@@ -642,6 +644,7 @@
       "github:https://github.com/ildus650-pixel/aeon",
       "github:https://github.com/industrial-platform-ai/industrial-platform-agent-tools",
       "github:https://github.com/insuredeskbhopal/Nexora",
+      "github:https://github.com/internetdozero/orquestra",
       "github:https://github.com/itsOmidKarami/kraft",
       "github:https://github.com/itsoumya-d/certiflow-ai",
       "github:https://github.com/ivGAMER200/Nexus",
@@ -858,6 +861,7 @@
       "github:https://github.com/tuhin0329/kolkata-traffic-collection",
       "github:https://github.com/udonwebdev/omnia",
       "github:https://github.com/uknwplayer/ground-relay",
+      "github:https://github.com/unicity-sphere/sphere-sdk",
       "github:https://github.com/univerdread/crux-lab",
       "github:https://github.com/unknown-user-status/jules-agentic-ai",
       "github:https://github.com/upwindchange/Autai",
@@ -877,6 +881,7 @@
       "github:https://github.com/willyfh/hidden-consensus-loud-disagreement",
       "github:https://github.com/wind-listen-rain/scientisttwo-lite",
       "github:https://github.com/windskyther/AutoScholar",
+      "github:https://github.com/wolverin0/openmax",
       "github:https://github.com/xalgorix/xalgorix",
       "github:https://github.com/xanstomper/mochi",
       "github:https://github.com/xndanius/while-you-sleep",
@@ -935,6 +940,7 @@
       "nvd:nvd-raw-sha256:3d800933f",
       "nvd:nvd-raw-sha256:3d934dc06",
       "nvd:nvd-raw-sha256:3e8f6a92c",
+      "nvd:nvd-raw-sha256:40b09ee7f",
       "nvd:nvd-raw-sha256:4195870e7",
       "nvd:nvd-raw-sha256:42297e7b5",
       "nvd:nvd-raw-sha256:43aa4d0b4",
@@ -973,6 +979,7 @@
       "nvd:nvd-raw-sha256:81d1ec02e",
       "nvd:nvd-raw-sha256:82d675210",
       "nvd:nvd-raw-sha256:82d7bd679",
+      "nvd:nvd-raw-sha256:837359a8b",
       "nvd:nvd-raw-sha256:85b017b31",
       "nvd:nvd-raw-sha256:865743f85",
       "nvd:nvd-raw-sha256:8be3b20c3",
@@ -1444,8 +1451,10 @@
       "pypi:https://pypi.org/project/exactref/0.0.1/",
       "pypi:https://pypi.org/project/execsql2/2.22.9/",
       "pypi:https://pypi.org/project/exewatchmcp/0.1.1/",
+      "pypi:https://pypi.org/project/exp-gateway-native/0.3.151/",
       "pypi:https://pypi.org/project/exp-gateway-native/0.3.99/",
       "pypi:https://pypi.org/project/experiential/0.7.108/",
+      "pypi:https://pypi.org/project/experiential/0.7.192/",
       "pypi:https://pypi.org/project/exsclaim/2.5.2/",
       "pypi:https://pypi.org/project/extended-json-schema-validator/0.16.1/",
       "pypi:https://pypi.org/project/ezdwg/0.16.2/",
@@ -1454,6 +1463,7 @@
       "pypi:https://pypi.org/project/fair-llm/0.6.4/",
       "pypi:https://pypi.org/project/falsepass/0.3.1/",
       "pypi:https://pypi.org/project/farms/0.1.29/",
+      "pypi:https://pypi.org/project/fast-math-rs/0.1.0/",
       "pypi:https://pypi.org/project/fastmcp-pvl-core/9.0.1/",
       "pypi:https://pypi.org/project/fastretry/0.5.1/",
       "pypi:https://pypi.org/project/favella1/1.2.0/",
@@ -1560,6 +1570,7 @@
       "pypi:https://pypi.org/project/homeassistant-repl/0.7.0/",
       "pypi:https://pypi.org/project/homeassistant-stubs/2026.9.4/",
       "pypi:https://pypi.org/project/homebrewlibra/0.2.24/",
+      "pypi:https://pypi.org/project/homelabscribe/0.2.0/",
       "pypi:https://pypi.org/project/honeybee-energy/1.126.0/",
       "pypi:https://pypi.org/project/horde-engine/7.11.3/",
       "pypi:https://pypi.org/project/horology/1.5.0/",
@@ -1868,6 +1879,7 @@
       "pypi:https://pypi.org/project/onepipeline-api-cli/0.30.1/",
       "pypi:https://pypi.org/project/onepipeline-cli/0.44.2/",
       "pypi:https://pypi.org/project/onepipeline-cli/0.58.0/",
+      "pypi:https://pypi.org/project/onepipeline-cli/0.75.0/",
       "pypi:https://pypi.org/project/onp-node/0.1.2/",
       "pypi:https://pypi.org/project/ontocraft-check/0.6.0/",
       "pypi:https://pypi.org/project/open-harness-scopelens/0.2.2/",
@@ -2097,6 +2109,7 @@
       "pypi:https://pypi.org/project/sahu65/1.1.0/",
       "pypi:https://pypi.org/project/sakazuki-beats-shanks/1.1.9/",
       "pypi:https://pypi.org/project/samstars/0.2.0/",
+      "pypi:https://pypi.org/project/sandd/0.2.1/",
       "pypi:https://pypi.org/project/sarj-iac-lint/0.15.11/",
       "pypi:https://pypi.org/project/sarj-sql-lint/0.17.5/",
       "pypi:https://pypi.org/project/sarj-standards/8.2.9/",
@@ -2157,6 +2170,7 @@
       "pypi:https://pypi.org/project/sing-tun/0.9.7.dev0/",
       "pypi:https://pypi.org/project/skcapstone/0.15.181/",
       "pypi:https://pypi.org/project/skillery-cli/0.5.91/",
+      "pypi:https://pypi.org/project/skillgate-ai/0.7.1/",
       "pypi:https://pypi.org/project/skills-tree/1.85.0/",
       "pypi:https://pypi.org/project/sklarstad-storefront-mcp/0.1.6/",
       "pypi:https://pypi.org/project/slife/0.10.1/",
@@ -2249,6 +2263,7 @@
       "pypi:https://pypi.org/project/thalovant/0.9.6/",
       "pypi:https://pypi.org/project/the-mill/0.5.13/",
       "pypi:https://pypi.org/project/the-mill/0.5.6/",
+      "pypi:https://pypi.org/project/thermal-conductivity-step/2026.10.17/",
       "pypi:https://pypi.org/project/thth/3.6.0/",
       "pypi:https://pypi.org/project/thumbforge/0.1.1/",
       "pypi:https://pypi.org/project/thwip-cli/1.13.1/",
@@ -2313,6 +2328,8 @@
       "pypi:https://pypi.org/project/vention-sim-grpc-py-sdk/0.1.16/",
       "pypi:https://pypi.org/project/vergefy-client/0.33.0/",
       "pypi:https://pypi.org/project/vibeharness-mas/0.6.0/",
+      "pypi:https://pypi.org/project/victor-ai/0.13.0/",
+      "pypi:https://pypi.org/project/victor-native/0.13.0/",
       "pypi:https://pypi.org/project/vinerai/0.1.0/",
       "pypi:https://pypi.org/project/virtualdesktop/1.2.0/",
       "pypi:https://pypi.org/project/vis-agent/0.2.52.dev7742/",
@@ -2338,6 +2355,7 @@
       "pypi:https://pypi.org/project/webpilot-engine/2.0.4/",
       "pypi:https://pypi.org/project/whaxon/0.8.1/",
       "pypi:https://pypi.org/project/whimsy/0.1.0/",
+      "pypi:https://pypi.org/project/whyline-relay/0.2.38/",
       "pypi:https://pypi.org/project/wickra-copilot/0.1.4/",
       "pypi:https://pypi.org/project/wickra-screener/0.2.0/",
       "pypi:https://pypi.org/project/wildberries-sdk/0.1.172/",
@@ -2347,6 +2365,7 @@
       "pypi:https://pypi.org/project/wr-common-lib/0.2.12/",
       "pypi:https://pypi.org/project/xblocks-contrib/1.0.7/",
       "pypi:https://pypi.org/project/xgfalclient/0.3.1/",
+      "pypi:https://pypi.org/project/xgrep-search/0.8.0/",
       "pypi:https://pypi.org/project/xlide-mcp/1.2.0/",
       "pypi:https://pypi.org/project/xobjects/0.7.2/",
       "pypi:https://pypi.org/project/xrootd/6.2.0/",
@@ -2367,6 +2386,7 @@
       "pypi:https://pypi.org/project/zclaudia-gateway/0.2.1/",
       "pypi:https://pypi.org/project/zeal-builder/0.5.3/",
       "pypi:https://pypi.org/project/zebflow/0.11.4/",
+      "pypi:https://pypi.org/project/zensical-slides/1.0.1/",
       "pypi:https://pypi.org/project/zentorch-weekly/2.14.0.1.dev20260916/",
       "pypi:https://pypi.org/project/zoo-framework/0.14.2b0/",
       "pypi:https://pypi.org/project/zoo-mcp/0.28.10/",
@@ -2695,33 +2715,33 @@
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-10-17T15:50:03Z",
+      "last_scan": "2026-10-17T20:50:51Z",
       "last_status": "scanned",
-      "scans": 172
+      "scans": 174
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-10-17T15:50:03Z",
+      "last_scan": "2026-10-17T20:50:51Z",
       "last_status": "scanned",
-      "scans": 176
+      "scans": 178
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-10-17T15:50:03Z",
+      "last_scan": "2026-10-17T20:50:51Z",
       "last_status": "scanned",
-      "scans": 164
+      "scans": 166
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-10-17T15:50:03Z",
+      "last_scan": "2026-10-17T20:50:51Z",
       "last_status": "scanned",
-      "scans": 165
+      "scans": 167
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-10-17T15:50:03Z",
+      "last_scan": "2026-10-17T20:50:51Z",
       "last_status": "scanned",
-      "scans": 172
+      "scans": 174
     }
   }
 }

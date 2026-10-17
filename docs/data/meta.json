@@ -4,7 +4,7 @@
     "fixture_documents": 0,
     "irregularity_counts": {
       "error": 0,
-      "info": 105,
+      "info": 106,
       "warning": 18
     },
     "resolved_contradictions": 0,
@@ -16,15 +16,15 @@
     "attacks": 960,
     "claims": 300,
     "contradictions": 12,
-    "discoveries": 1617,
-    "documents": 422,
+    "discoveries": 1630,
+    "documents": 426,
     "experiments": 5,
     "failures": 31,
-    "irregularities": 131,
-    "questions": 2155,
+    "irregularities": 132,
+    "questions": 2174,
     "strategies": 222,
     "topics": 4
   },
-  "generated_at": "2026-10-17T15:51:00Z",
-  "run_id": "run-0b623fa09a13"
+  "generated_at": "2026-10-17T20:51:49Z",
+  "run_id": "run-26272b159b45"
 }
