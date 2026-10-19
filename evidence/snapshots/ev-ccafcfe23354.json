@@ -1,0 +1,23 @@
+{
+  "bytes_read": 58966,
+  "content_hash": "sha256:660a0774d3b6126e5ad4b21cfff6e17e727c7958a7c14643e6d073b60d418f3e",
+  "evidence_class": "primary_source",
+  "evidence_class_label": "Original data, official API response, official document or dataset.",
+  "evidence_id": "ev-ccafcfe23354",
+  "evidence_rank": 3,
+  "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: assafelovic/gpt-researcher\nThe record for assafelovic/gpt-researcher reports: pushed_at 2026-10-10T22:03:53Z, stargazers_count 30163, forks_count 4290.\nThe record ",
+  "http_status": 200,
+  "is_fixture": false,
+  "is_live": true,
+  "license": "Repository content carries each repository's own licence",
+  "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+  "published_at": "2026-10-10",
+  "publisher": "GitHub, Inc. (Microsoft)",
+  "response_sha256": "sha256:4de919de558ec6396b2cba882ebeb7336f1d691fd053956b7804dd3a1b6b5c23",
+  "retrieved_at": "2026-10-19T04:59:09Z",
+  "source_id": "github",
+  "source_name": "GitHub REST API",
+  "text": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: assafelovic/gpt-researcher\nThe record for assafelovic/gpt-researcher reports: pushed_at 2026-10-10T22:03:53Z, stargazers_count 30163, forks_count 4290.\nThe record for assafelovic/gpt-researcher reports: language Python, license Apache-2.0, topics agent; ai; automation; deepresearch; llms; mcp; mcp-server; python; research; search; webscraping.\nThe record for assafelovic/gpt-researcher reports: open_issues_count 42.\nThe record for assafelovic/gpt-researcher states in its own description: An autonomous agent that conducts deep research on any data using any LLM providers\nSource note: Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+  "title": "assafelovic/gpt-researcher",
+  "url": "https://github.com/assafelovic/gpt-researcher"
+}
