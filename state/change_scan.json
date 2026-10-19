@@ -36,6 +36,7 @@
       "crossref:10.1007/s42243-024-01398-w",
       "crossref:10.1007/s43684-022-00023-5",
       "crossref:10.1007/s43684-022-00045-z",
+      "crossref:10.1016/j.atres.2025.08.001",
       "crossref:10.1016/j.atres.2025.09.002",
       "crossref:10.1016/j.atres.2025.10.001",
       "crossref:10.1016/j.atres.2025.12.002",
@@ -260,6 +261,7 @@
       "github:https://github.com/0sec-labs/0",
       "github:https://github.com/1337isnot1337/erdos-99",
       "github:https://github.com/1888-Labs/Mandate",
+      "github:https://github.com/1919-14/CLARITY",
       "github:https://github.com/4citeB4U/LeeWay-Agent-Skills",
       "github:https://github.com/535417/autonomous-ai-agent",
       "github:https://github.com/7id0o/ruflo",
@@ -412,6 +414,7 @@
       "github:https://github.com/Nikhildusa07/AURA-Autonomous-Universal-Reasoning-Agent",
       "github:https://github.com/Nikhildusa07/NOVIA-AI-Research-Laboratory",
       "github:https://github.com/Nithishreddy-6453/AURA---Autonomous-Unified-Response-Agent",
+      "github:https://github.com/NolReaction/alfa-automl-agent",
       "github:https://github.com/Noxorigine/nox-origin",
       "github:https://github.com/NullLabTests/AlgoLab",
       "github:https://github.com/Oleksii-debug/AutoTrade",
@@ -705,6 +708,7 @@
       "github:https://github.com/jin-s13/awesome-auto-research-hub",
       "github:https://github.com/jj-link/autonomous-research-lab",
       "github:https://github.com/joaoloureiro-dev/-atlas-trading-engine",
+      "github:https://github.com/jonshaw199/deputy",
       "github:https://github.com/josemanuelm9203/rumi",
       "github:https://github.com/joshipriyanshu125/deep_research_ai",
       "github:https://github.com/joshuatochinwachi/Yield-Sage",
@@ -887,6 +891,7 @@
       "github:https://github.com/sp4chi/log-incident-classifier-v3",
       "github:https://github.com/spelech/AgenticEngineeringToolbelt",
       "github:https://github.com/spoonman136668-ai/FORGE",
+      "github:https://github.com/sshdw/Nexora",
       "github:https://github.com/strikersam/autonomous-ai-agency",
       "github:https://github.com/studyzhige-ui/Epivra",
       "github:https://github.com/subsaharan-metallic807/hexstrike_augment",
@@ -967,6 +972,7 @@
       "nvd:nvd-raw-sha256:193853e12",
       "nvd:nvd-raw-sha256:1a84a6e36",
       "nvd:nvd-raw-sha256:1bd6ac4ef",
+      "nvd:nvd-raw-sha256:1d10af04c",
       "nvd:nvd-raw-sha256:1d7cdfd55",
       "nvd:nvd-raw-sha256:1e8c44e2f",
       "nvd:nvd-raw-sha256:1fa0a311b",
@@ -1014,6 +1020,7 @@
       "nvd:nvd-raw-sha256:4ed135d15",
       "nvd:nvd-raw-sha256:4eee42bf9",
       "nvd:nvd-raw-sha256:53eb0d26c",
+      "nvd:nvd-raw-sha256:5530a396a",
       "nvd:nvd-raw-sha256:5993b3739",
       "nvd:nvd-raw-sha256:5ee970c49",
       "nvd:nvd-raw-sha256:5fe72132a",
@@ -1168,6 +1175,7 @@
       "pypi:https://pypi.org/project/agent-inbox/1.7.0/",
       "pypi:https://pypi.org/project/agent-intern/0.33.0/",
       "pypi:https://pypi.org/project/agent-mandates/0.1.0/",
+      "pypi:https://pypi.org/project/agent-nebula-platform/5.0.0/",
       "pypi:https://pypi.org/project/agent-therapy/0.1.1/",
       "pypi:https://pypi.org/project/agent-tune-kit/1.1.0/",
       "pypi:https://pypi.org/project/agent-wiki-cli/2.5.0/",
@@ -1347,6 +1355,7 @@
       "pypi:https://pypi.org/project/capt-hook/12.86.0/",
       "pypi:https://pypi.org/project/capt-hook/12.91.2/",
       "pypi:https://pypi.org/project/capture-runtime-client/0.6.1/",
+      "pypi:https://pypi.org/project/capyy/0.5.3/",
       "pypi:https://pypi.org/project/castletool/0.5.0a1/",
       "pypi:https://pypi.org/project/catbench/1.1.6/",
       "pypi:https://pypi.org/project/catence-console/0.2.1b18/",
@@ -1578,6 +1587,7 @@
       "pypi:https://pypi.org/project/files-com/1.6.486/",
       "pypi:https://pypi.org/project/files-com/1.6.507/",
       "pypi:https://pypi.org/project/filez4eva/5.2.0/",
+      "pypi:https://pypi.org/project/fin-assist/0.4.2/",
       "pypi:https://pypi.org/project/fingerprint-pro-server-api-sdk/8.15.1/",
       "pypi:https://pypi.org/project/firmauy/1.17.2/",
       "pypi:https://pypi.org/project/fizzl/0.3.0/",
@@ -1757,6 +1767,7 @@
       "pypi:https://pypi.org/project/lalsuite/7.26.16.1.dev20261007/",
       "pypi:https://pypi.org/project/landlockpy/0.2.0/",
       "pypi:https://pypi.org/project/langchain-algenta/0.2.1/",
+      "pypi:https://pypi.org/project/langchain-contextfetch/0.1.1/",
       "pypi:https://pypi.org/project/langchain-mycelia-signal/3.0.1/",
       "pypi:https://pypi.org/project/langchain-urlpipe/0.2.0/",
       "pypi:https://pypi.org/project/langflow-base/1.13.0.dev21/",
@@ -1789,6 +1800,8 @@
       "pypi:https://pypi.org/project/litert-converter/0.5.0.dev20261006/",
       "pypi:https://pypi.org/project/livia-python/1.22.9771.10447/",
       "pypi:https://pypi.org/project/llama-index-llms-anthropic/0.12.2/",
+      "pypi:https://pypi.org/project/llama-index-readers-contextfetch/0.1.0/",
+      "pypi:https://pypi.org/project/llama-index-tools-contextfetch/0.1.0/",
       "pypi:https://pypi.org/project/llamaindex-algenta/0.2.5/",
       "pypi:https://pypi.org/project/llm-host-guard/0.5.0/",
       "pypi:https://pypi.org/project/llm-ide-rules/0.21.1/",
@@ -1799,6 +1812,8 @@
       "pypi:https://pypi.org/project/local-bigquery/0.3.1/",
       "pypi:https://pypi.org/project/local-embed/0.3.1/",
       "pypi:https://pypi.org/project/loci-tools/0.2.68/",
+      "pypi:https://pypi.org/project/logbrew-django/0.1.8/",
+      "pypi:https://pypi.org/project/logbrew-flask/0.1.7/",
       "pypi:https://pypi.org/project/loglensai/0.13.1/",
       "pypi:https://pypi.org/project/logspecter/1.1.0/",
       "pypi:https://pypi.org/project/loki-mode-sdk/11.17.20/",
@@ -2113,6 +2128,7 @@
       "pypi:https://pypi.org/project/psls/2.0/",
       "pypi:https://pypi.org/project/psyke/1.0.4.dev70/",
       "pypi:https://pypi.org/project/pulumi-aws/7.49.0/",
+      "pypi:https://pypi.org/project/pulumi-fly-machines/0.0.14/",
       "pypi:https://pypi.org/project/pulumi-lagoon/0.5.6/",
       "pypi:https://pypi.org/project/pulumi-null/0.3.0a1791267512/",
       "pypi:https://pypi.org/project/pulumi-osano/0.2.1/",
@@ -2153,6 +2169,7 @@
       "pypi:https://pypi.org/project/pyknic-todo/0.0.6/",
       "pypi:https://pypi.org/project/pyknic/0.0.4/",
       "pypi:https://pypi.org/project/pymidiinstrumentdefs/0.1.13/",
+      "pypi:https://pypi.org/project/pymobiledevice3/11.39.0/",
       "pypi:https://pypi.org/project/pymodcs/0.27.0/",
       "pypi:https://pypi.org/project/pyoaev/3.260923.0/",
       "pypi:https://pypi.org/project/pypatchmatch/2.2.0b3/",
@@ -2816,6 +2833,7 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/tx2026ueznej",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/tx2026ugtrii",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/tx2026umexzb",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/tx2026uocxhn",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us6000twzp",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us6000txha",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us6000txhl",
@@ -2903,33 +2921,33 @@
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-10-19T13:37:26Z",
+      "last_scan": "2026-10-19T22:37:34Z",
       "last_status": "scanned",
-      "scans": 186
+      "scans": 188
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-10-19T13:37:26Z",
+      "last_scan": "2026-10-19T22:37:34Z",
       "last_status": "scanned",
-      "scans": 190
+      "scans": 192
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-10-19T13:37:26Z",
+      "last_scan": "2026-10-19T22:37:34Z",
       "last_status": "scanned",
-      "scans": 178
+      "scans": 180
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-10-19T13:37:26Z",
+      "last_scan": "2026-10-19T22:37:34Z",
       "last_status": "scanned",
-      "scans": 179
+      "scans": 181
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-10-19T13:37:26Z",
+      "last_scan": "2026-10-19T22:37:34Z",
       "last_status": "scanned",
-      "scans": 186
+      "scans": 188
     }
   }
 }

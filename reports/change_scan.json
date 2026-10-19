@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-19T13:37:26Z",
-  "items_new": 12,
+  "generated_at": "2026-10-19T22:37:34Z",
+  "items_new": 3,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-efe88abd7d26",
+  "run_id": "run-bd366a899a7b",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-18..2026-10-19 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-18..2026-10-19 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 1,
+      "items_new": 2,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,12 +77,20 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: DariuszNewecki/CORE\nThe record for DariuszN",
-          "identifier": "https://github.com/DariuszNewecki/CORE",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: sshdw/Nexora\nThe record for sshdw/Nexora re",
+          "identifier": "https://github.com/sshdw/Nexora",
           "published_at": "2026-10-19",
           "source_id": "github",
-          "title": "DariuszNewecki/CORE",
-          "url": "https://github.com/DariuszNewecki/CORE"
+          "title": "sshdw/Nexora",
+          "url": "https://github.com/sshdw/Nexora"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: jonshaw199/deputy\nThe record for jonshaw199",
+          "identifier": "https://github.com/jonshaw199/deputy",
+          "published_at": "2026-10-19",
+          "source_id": "github",
+          "title": "jonshaw199/deputy",
+          "url": "https://github.com/jonshaw199/deputy"
         }
       ],
       "request_params": {
@@ -113,8 +121,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 1\nstartIndex = 0\ntimestamp = 2026-10-19T13:37:28.427\ntotalResults = 1\nversion = 2.0\nvulnerabilities.0.cve.affected.0.affectedData.0.product = R",
-          "identifier": "nvd-raw-sha256:040805232",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 1\nstartIndex = 0\ntimestamp = 2026-10-19T22:37:35.665\ntotalResults = 1\nversion = 2.0\nvulnerabilities.0.cve.affected.0.affectedData.0.product = R",
+          "identifier": "nvd-raw-sha256:1d10af04c",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -139,56 +147,15 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-18..2026-10-19 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-18..2026-10-19 and dropped; 0 carried no readable date and were kept; 0 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 10,
+      "items_new": 0,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
       "items_undated": 0,
       "mechanism": "Newly created releases, newest first, as published in the Latest Updates Feed",
-      "new_items": [
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/sqlite-graph-memory/0.3.1/",
-          "published_at": "2026-10-19",
-          "source_id": "pypi",
-          "title": "sqlite-graph-memory 0.3.1",
-          "url": "https://pypi.org/project/sqlite-graph-memory/0.3.1/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/odus/0.0.20/",
-          "published_at": "2026-10-19",
-          "source_id": "pypi",
-          "title": "odus 0.0.20",
-          "url": "https://pypi.org/project/odus/0.0.20/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/spintax-core/0.8.0/",
-          "published_at": "2026-10-19",
-          "source_id": "pypi",
-          "title": "spintax-core 0.8.0",
-          "url": "https://pypi.org/project/spintax-core/0.8.0/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/netbluemind5/5.7.3258/",
-          "published_at": "2026-10-19",
-          "source_id": "pypi",
-          "title": "netbluemind5 5.7.3258",
-          "url": "https://pypi.org/project/netbluemind5/5.7.3258/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/autovision-framework/0.3.2/",
-          "published_at": "2026-10-19",
-          "source_id": "pypi",
-          "title": "autovision-framework 0.3.2",
-          "url": "https://pypi.org/project/autovision-framework/0.3.2/"
-        }
-      ],
+      "new_items": [],
       "request_params": {},
       "request_url": "https://pypi.org/rss/updates.xml",
       "source_id": "pypi",
