@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-20T12:00:58Z",
-  "items_new": 13,
+  "generated_at": "2026-10-20T17:28:15Z",
+  "items_new": 8,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-1e4d87693a79",
+  "run_id": "run-f1f8f18b4e11",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-19..2026-10-20 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-19..2026-10-20 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 2,
+      "items_new": 3,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,20 +77,28 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: aentrepreneur/nexus-one\nThe record for aent",
-          "identifier": "https://github.com/aentrepreneur/nexus-one",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: petrunin-platon/HeroWarsBot\nThe record for ",
+          "identifier": "https://github.com/petrunin-platon/HeroWarsBot",
           "published_at": "2026-10-20",
           "source_id": "github",
-          "title": "aentrepreneur/nexus-one",
-          "url": "https://github.com/aentrepreneur/nexus-one"
+          "title": "petrunin-platon/HeroWarsBot",
+          "url": "https://github.com/petrunin-platon/HeroWarsBot"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ShrikarT/line\nThe record for ShrikarT/line ",
-          "identifier": "https://github.com/ShrikarT/line",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: PoiesisAI/PoiesisAI.github.io\nThe record fo",
+          "identifier": "https://github.com/PoiesisAI/PoiesisAI.github.io",
           "published_at": "2026-10-20",
           "source_id": "github",
-          "title": "ShrikarT/line",
-          "url": "https://github.com/ShrikarT/line"
+          "title": "PoiesisAI/PoiesisAI.github.io",
+          "url": "https://github.com/PoiesisAI/PoiesisAI.github.io"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: rothko76/shomer\nThe record for rothko76/sho",
+          "identifier": "https://github.com/rothko76/shomer",
+          "published_at": "2026-10-20",
+          "source_id": "github",
+          "title": "rothko76/shomer",
+          "url": "https://github.com/rothko76/shomer"
         }
       ],
       "request_params": {
@@ -121,8 +129,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-20T12:01:00.313\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:9b505f420",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-20T17:28:16.196\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:2cead8fe3",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -147,9 +155,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-19..2026-10-20 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-19..2026-10-20 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 10,
+      "items_new": 4,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -158,43 +166,35 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/vention-grpc-py-sdk/0.0.81/",
+          "identifier": "https://pypi.org/project/contaix/0.0.28/",
           "published_at": "2026-10-20",
           "source_id": "pypi",
-          "title": "vention-grpc-py-sdk 0.0.81",
-          "url": "https://pypi.org/project/vention-grpc-py-sdk/0.0.81/"
+          "title": "contaix 0.0.28",
+          "url": "https://pypi.org/project/contaix/0.0.28/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/just-go/0.1.6/",
+          "identifier": "https://pypi.org/project/lemonaid-inbox/0.124.0/",
           "published_at": "2026-10-20",
           "source_id": "pypi",
-          "title": "just-go 0.1.6",
-          "url": "https://pypi.org/project/just-go/0.1.6/"
+          "title": "lemonaid-inbox 0.124.0",
+          "url": "https://pypi.org/project/lemonaid-inbox/0.124.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/epythet/0.2.20/",
+          "identifier": "https://pypi.org/project/il-audit/1.0.32/",
           "published_at": "2026-10-20",
           "source_id": "pypi",
-          "title": "epythet 0.2.20",
-          "url": "https://pypi.org/project/epythet/0.2.20/"
+          "title": "il-audit 1.0.32",
+          "url": "https://pypi.org/project/il-audit/1.0.32/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/aidong-aeval/0.1.0/",
+          "identifier": "https://pypi.org/project/xemu-perf-tester/0.4.1/",
           "published_at": "2026-10-20",
           "source_id": "pypi",
-          "title": "aidong-aeval 0.1.0",
-          "url": "https://pypi.org/project/aidong-aeval/0.1.0/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/backloggd-py/0.1.0/",
-          "published_at": "2026-10-20",
-          "source_id": "pypi",
-          "title": "backloggd-py 0.1.0",
-          "url": "https://pypi.org/project/backloggd-py/0.1.0/"
+          "title": "xemu-perf-tester 0.4.1",
+          "url": "https://pypi.org/project/xemu-perf-tester/0.4.1/"
         }
       ],
       "request_params": {},
