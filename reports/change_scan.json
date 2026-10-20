@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-20T05:09:19Z",
-  "items_new": 12,
+  "generated_at": "2026-10-20T12:00:58Z",
+  "items_new": 13,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-55a7fbd8142a",
+  "run_id": "run-1e4d87693a79",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-19..2026-10-20 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-19..2026-10-20 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 1,
+      "items_new": 2,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,12 +77,20 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: gosha003/solar_farm_seller_automation\nThe r",
-          "identifier": "https://github.com/gosha003/solar_farm_seller_automation",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: aentrepreneur/nexus-one\nThe record for aent",
+          "identifier": "https://github.com/aentrepreneur/nexus-one",
           "published_at": "2026-10-20",
           "source_id": "github",
-          "title": "gosha003/solar_farm_seller_automation",
-          "url": "https://github.com/gosha003/solar_farm_seller_automation"
+          "title": "aentrepreneur/nexus-one",
+          "url": "https://github.com/aentrepreneur/nexus-one"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ShrikarT/line\nThe record for ShrikarT/line ",
+          "identifier": "https://github.com/ShrikarT/line",
+          "published_at": "2026-10-20",
+          "source_id": "github",
+          "title": "ShrikarT/line",
+          "url": "https://github.com/ShrikarT/line"
         }
       ],
       "request_params": {
@@ -113,8 +121,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-20T05:09:20.814\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:d2cb04c76",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-20T12:01:00.313\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:9b505f420",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -150,43 +158,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/piot-fixture-zzz-python-sdist/0.0.1792471654/",
+          "identifier": "https://pypi.org/project/vention-grpc-py-sdk/0.0.81/",
           "published_at": "2026-10-20",
           "source_id": "pypi",
-          "title": "piot-fixture-zzz-python-sdist 0.0.1792471654",
-          "url": "https://pypi.org/project/piot-fixture-zzz-python-sdist/0.0.1792471654/"
+          "title": "vention-grpc-py-sdk 0.0.81",
+          "url": "https://pypi.org/project/vention-grpc-py-sdk/0.0.81/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/pal-code/0.1.3/",
+          "identifier": "https://pypi.org/project/just-go/0.1.6/",
           "published_at": "2026-10-20",
           "source_id": "pypi",
-          "title": "pal-code 0.1.3",
-          "url": "https://pypi.org/project/pal-code/0.1.3/"
+          "title": "just-go 0.1.6",
+          "url": "https://pypi.org/project/just-go/0.1.6/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/piot-fixture-zzz-python-no-rust-fp/0.0.1792471656/",
+          "identifier": "https://pypi.org/project/epythet/0.2.20/",
           "published_at": "2026-10-20",
           "source_id": "pypi",
-          "title": "piot-fixture-zzz-python-no-rust-fp 0.0.1792471656",
-          "url": "https://pypi.org/project/piot-fixture-zzz-python-no-rust-fp/0.0.1792471656/"
+          "title": "epythet 0.2.20",
+          "url": "https://pypi.org/project/epythet/0.2.20/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/piot-fixture-zzz-python-no-rust/0.0.1792471647/",
+          "identifier": "https://pypi.org/project/aidong-aeval/0.1.0/",
           "published_at": "2026-10-20",
           "source_id": "pypi",
-          "title": "piot-fixture-zzz-python-no-rust 0.0.1792471647",
-          "url": "https://pypi.org/project/piot-fixture-zzz-python-no-rust/0.0.1792471647/"
+          "title": "aidong-aeval 0.1.0",
+          "url": "https://pypi.org/project/aidong-aeval/0.1.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/piot-fixture-zzz-python-maturin/0.0.1792471652/",
+          "identifier": "https://pypi.org/project/backloggd-py/0.1.0/",
           "published_at": "2026-10-20",
           "source_id": "pypi",
-          "title": "piot-fixture-zzz-python-maturin 0.0.1792471652",
-          "url": "https://pypi.org/project/piot-fixture-zzz-python-maturin/0.0.1792471652/"
+          "title": "backloggd-py 0.1.0",
+          "url": "https://pypi.org/project/backloggd-py/0.1.0/"
         }
       ],
       "request_params": {},
