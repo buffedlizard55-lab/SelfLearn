@@ -1,23 +1,23 @@
 {
   "by_status": {
-    "200": 149,
+    "200": 147,
     "400": 1,
     "401": 2,
     "403": 11,
     "404": 3,
     "422": 1,
-    "unreachable": 3
+    "unreachable": 5
   },
   "checked": 170,
-  "failed": 21,
-  "generated_at": "2026-10-20T21:54:33Z",
+  "failed": 23,
+  "generated_at": "2026-10-21T05:08:09Z",
   "label": "local machine",
   "note": "Status and final URL only; page content is not asserted here. `label` names the machine that ran the check, because a host with restricted egress reports 'unreachable' for hosts it cannot reach, which is a property of the machine and is recorded as such rather than being read as a broken link.",
-  "ok": 149,
+  "ok": 147,
   "results": [
     {
       "bytes": 232986,
-      "elapsed_seconds": 0.55,
+      "elapsed_seconds": 0.72,
       "error": "",
       "field": "docs_url",
       "final_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
@@ -29,7 +29,7 @@
     },
     {
       "bytes": 148822,
-      "elapsed_seconds": 0.32,
+      "elapsed_seconds": 0.41,
       "error": "",
       "field": "docs_url",
       "final_url": "https://info.arxiv.org/help/api/user-manual.html",
@@ -41,7 +41,7 @@
     },
     {
       "bytes": 80412,
-      "elapsed_seconds": 0.4,
+      "elapsed_seconds": 0.3,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
@@ -52,7 +52,7 @@
       "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/"
     },
     {
-      "elapsed_seconds": 0.25,
+      "elapsed_seconds": 0.04,
       "error": "unreachable: dataservices.imf.org unreachable: [Errno -2] Name or service not known",
       "field": "citation",
       "final_url": "http://dataservices.imf.org/REST/SDMX_JSON.svc",
@@ -64,7 +64,7 @@
     },
     {
       "bytes": 72482,
-      "elapsed_seconds": 0.72,
+      "elapsed_seconds": 0.76,
       "error": "",
       "field": "citation",
       "final_url": "https://api.crossref.org/works",
@@ -75,7 +75,7 @@
       "url": "https://api.crossref.org/works"
     },
     {
-      "elapsed_seconds": 0.1,
+      "elapsed_seconds": 0.23,
       "error": "{\"message\":\"Validation Failed\",\"errors\":[{\"resource\":\"Search\",\"field\":\"q\",\"code\":\"missing\"}],\"documentation_url\":\"https://docs.github.com/v3/search\",\"status\":\"422\"}",
       "field": "citation",
       "final_url": "https://api.github.com/search/repositories",
@@ -86,7 +86,7 @@
       "url": "https://api.github.com/search/repositories"
     },
     {
-      "elapsed_seconds": 8.73,
+      "elapsed_seconds": 7.66,
       "error": "unreachable: all 3 attempts failed for https://api.imf.org/: HTTP 502 for https://api.imf.org/",
       "field": "citation",
       "final_url": "https://api.imf.org/",
@@ -97,7 +97,7 @@
       "url": "https://api.imf.org/"
     },
     {
-      "elapsed_seconds": 0.34,
+      "elapsed_seconds": 0.22,
       "error": "{ \"statusCode\": 404, \"message\": \"Resource not found\" }",
       "field": "citation",
       "final_url": "https://api.imf.org/external/sdmx",
@@ -109,7 +109,7 @@
     },
     {
       "bytes": 1752,
-      "elapsed_seconds": 0.37,
+      "elapsed_seconds": 0.18,
       "error": "",
       "field": "citation",
       "final_url": "https://api.semanticscholar.org/api-docs/",
@@ -121,7 +121,7 @@
     },
     {
       "bytes": 16894,
-      "elapsed_seconds": 0.16,
+      "elapsed_seconds": 0.21,
       "error": "",
       "field": "citation",
       "final_url": "https://api.stackexchange.com/docs/authentication",
@@ -132,7 +132,7 @@
       "url": "https://api.stackexchange.com/docs/authentication"
     },
     {
-      "elapsed_seconds": 0.29,
+      "elapsed_seconds": 0.2,
       "error": "{\"message\":\"Missing Authentication Token\"}",
       "field": "citation",
       "final_url": "https://api.uspto.gov/api/v1",
@@ -143,7 +143,7 @@
       "url": "https://api.uspto.gov/api/v1"
     },
     {
-      "elapsed_seconds": 0.95,
+      "elapsed_seconds": 0.99,
       "error": "{\"message\":\"Unauthorized\"}",
       "field": "citation",
       "final_url": "https://api.uspto.gov/api/v1/datasets/products/search",
@@ -154,7 +154,7 @@
       "url": "https://api.uspto.gov/api/v1/datasets/products/search"
     },
     {
-      "elapsed_seconds": 1.0,
+      "elapsed_seconds": 0.99,
       "error": "{\"message\":\"Unauthorized\"}",
       "field": "citation",
       "final_url": "https://api.uspto.gov/api/v1/patent/applications/search",
@@ -166,7 +166,7 @@
     },
     {
       "bytes": 6879,
-      "elapsed_seconds": 0.18,
+      "elapsed_seconds": 0.17,
       "error": "",
       "field": "citation",
       "final_url": "https://buffedlizard55-lab.github.io/SelfLearn/",
@@ -177,8 +177,8 @@
       "url": "https://buffedlizard55-lab.github.io/SelfLearn/"
     },
     {
-      "bytes": 116813,
-      "elapsed_seconds": 1.07,
+      "bytes": 116703,
+      "elapsed_seconds": 1.0,
       "error": "",
       "field": "citation",
       "final_url": "https://buffedlizard55-lab.github.io/SelfLearn/docs/links.html",
@@ -189,8 +189,8 @@
       "url": "https://buffedlizard55-lab.github.io/SelfLearn/docs/links.html"
     },
     {
-      "bytes": 77483,
-      "elapsed_seconds": 1.03,
+      "bytes": 77726,
+      "elapsed_seconds": 1.07,
       "error": "",
       "field": "citation",
       "final_url": "https://buffedlizard55-lab.github.io/SelfLearn/docs/sources.html#policy",
@@ -201,7 +201,7 @@
       "url": "https://buffedlizard55-lab.github.io/SelfLearn/docs/sources.html#policy"
     },
     {
-      "elapsed_seconds": 0.05,
+      "elapsed_seconds": 0.06,
       "error": "<html>\n  <head>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <style global>body{font-family:Arial,Helvetica,sans-serif}.container{align-items:center;display:flex;flex",
       "field": "citation",
       "final_url": "https://chatgpt.com/backend-api/share/6ab1612a-2f14-83e8-9de6-808d21a48e53",
@@ -212,8 +212,8 @@
       "url": "https://chatgpt.com/backend-api/share/6ab1612a-2f14-83e8-9de6-808d21a48e53"
     },
     {
-      "bytes": 702270,
-      "elapsed_seconds": 1.54,
+      "bytes": 703568,
+      "elapsed_seconds": 1.61,
       "error": "",
       "field": "citation",
       "final_url": "https://chatgpt.com/share/6ab1612a-2f14-83e8-9de6-808d21a48e53",
@@ -225,7 +225,7 @@
     },
     {
       "bytes": 40454,
-      "elapsed_seconds": 0.74,
+      "elapsed_seconds": 0.56,
       "error": "",
       "field": "citation",
       "final_url": "https://community.drivendata.org/c/gems-prize-challenge/111",
@@ -237,7 +237,7 @@
     },
     {
       "bytes": 24086,
-      "elapsed_seconds": 0.58,
+      "elapsed_seconds": 0.82,
       "error": "",
       "field": "citation",
       "final_url": "https://community.drivendata.org/t/how-were-the-new-test-faults-identified-data-sources-and-fault-types/11527/7",
@@ -249,7 +249,7 @@
     },
     {
       "bytes": 24942,
-      "elapsed_seconds": 1.0,
+      "elapsed_seconds": 1.02,
       "error": "",
       "field": "citation",
       "final_url": "https://community.drivendata.org/t/scoring-clarification-are-known-usgs-ingenious-faults-masked-when-scoring-and-are-they-in-the-final-round-label-set/11516/4",
@@ -261,7 +261,7 @@
     },
     {
       "bytes": 20666,
-      "elapsed_seconds": 0.45,
+      "elapsed_seconds": 0.35,
       "error": "",
       "field": "citation",
       "final_url": "https://data.uspto.gov/apis/bulk-data/download",
@@ -285,7 +285,7 @@
     },
     {
       "bytes": 20666,
-      "elapsed_seconds": 1.01,
+      "elapsed_seconds": 1.0,
       "error": "",
       "field": "citation",
       "final_url": "https://data.uspto.gov/documents/documents/ODP-API-Query-Spec.pdf",
@@ -297,7 +297,7 @@
     },
     {
       "bytes": 20666,
-      "elapsed_seconds": 0.93,
+      "elapsed_seconds": 0.96,
       "error": "",
       "field": "citation",
       "final_url": "https://data.uspto.gov/home",
@@ -309,7 +309,7 @@
     },
     {
       "bytes": 20666,
-      "elapsed_seconds": 0.99,
+      "elapsed_seconds": 1.0,
       "error": "",
       "field": "citation",
       "final_url": "https://data.uspto.gov/support/transition-guide/patentsview",
@@ -321,7 +321,7 @@
     },
     {
       "bytes": 41246,
-      "elapsed_seconds": 0.21,
+      "elapsed_seconds": 0.22,
       "error": "",
       "field": "citation",
       "final_url": "https://doaj.org/api/v4/swagger.json",
@@ -332,7 +332,7 @@
       "url": "https://doaj.org/api/v4/swagger.json"
     },
     {
-      "elapsed_seconds": 1.05,
+      "elapsed_seconds": 1.01,
       "error": "<!DOCTYPE html>\n<html dir=\"ltr\" lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, minimum-scale=1\">\n    <title>\n    \n    404: Not fou",
       "field": "citation",
       "final_url": "https://doaj.org/apply-for-api-key/",
@@ -344,7 +344,7 @@
     },
     {
       "bytes": 343307,
-      "elapsed_seconds": 0.47,
+      "elapsed_seconds": 0.41,
       "error": "",
       "field": "citation",
       "final_url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
@@ -356,7 +356,7 @@
     },
     {
       "bytes": 337075,
-      "elapsed_seconds": 0.91,
+      "elapsed_seconds": 1.38,
       "error": "",
       "field": "citation",
       "final_url": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
@@ -368,7 +368,7 @@
     },
     {
       "bytes": 63028,
-      "elapsed_seconds": 0.14,
+      "elapsed_seconds": 0.19,
       "error": "",
       "field": "citation",
       "final_url": "https://docs.pypi.org/api/",
@@ -380,7 +380,7 @@
     },
     {
       "bytes": 124578,
-      "elapsed_seconds": 1.06,
+      "elapsed_seconds": 0.98,
       "error": "",
       "field": "citation",
       "final_url": "https://docs.pypi.org/api/json/",
@@ -392,7 +392,7 @@
     },
     {
       "bytes": 28750,
-      "elapsed_seconds": 0.54,
+      "elapsed_seconds": 0.43,
       "error": "",
       "field": "citation",
       "final_url": "https://api.crossref.org/v1/works/10.1029%2F2020JB021269/transform",
@@ -403,20 +403,19 @@
       "url": "https://doi.org/10.1029/2020JB021269"
     },
     {
-      "bytes": 30311,
-      "elapsed_seconds": 7.28,
-      "error": "",
+      "elapsed_seconds": 10.81,
+      "error": "unreachable: all 3 attempts failed for https://doi.org/10.15121/1881483: HTTP 429 for https://doi.org/10.15121/1881483",
       "field": "citation",
-      "final_url": "https://www.osti.gov/servlets/purl/1881483/",
+      "final_url": "https://doi.org/10.15121/1881483",
       "group": "prose",
-      "ok": true,
+      "ok": false,
       "source_id": "anchors.json",
-      "status": 200,
+      "status": null,
       "url": "https://doi.org/10.15121/1881483"
     },
     {
       "bytes": 50497,
-      "elapsed_seconds": 1.02,
+      "elapsed_seconds": 1.05,
       "error": "",
       "field": "citation",
       "final_url": "https://www.sciencebase.gov/catalog/item/657e1d85d34e23d3533209f7",
@@ -428,7 +427,7 @@
     },
     {
       "bytes": 4243,
-      "elapsed_seconds": 0.34,
+      "elapsed_seconds": 0.52,
       "error": "",
       "field": "citation",
       "final_url": "https://api.crossref.org/v1/works/10.70675%2Fb5ee8192zdc38z4512zb3e5zfb1c66f5e409/transform",
@@ -439,19 +438,18 @@
       "url": "https://doi.org/10.70675/b5ee8192zdc38z4512zb3e5zfb1c66f5e409"
     },
     {
-      "bytes": 24521484,
-      "elapsed_seconds": 3.22,
-      "error": "",
+      "elapsed_seconds": 2.27,
+      "error": "unreachable: unexpected transport failure for https://earthquake.usgs.gov/fdsnws/event/1/query: IncompleteRead(1332016 bytes read)",
       "field": "citation",
       "final_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
       "group": "prose",
-      "ok": true,
+      "ok": false,
       "source_id": "SOURCES.md",
-      "status": 200,
+      "status": null,
       "url": "https://earthquake.usgs.gov/fdsnws/event/1/query"
     },
     {
-      "elapsed_seconds": 0.16,
+      "elapsed_seconds": 0.21,
       "error": "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns:opensearch=\"http://a9.com/-/spec/opensearch/1.1/\" xmlns:arxiv=\"http://arxiv.org/schemas/atom\" xmlns=\"http://www.w3.org/2005/Atom\">\n  <id>https://arxi",
       "field": "citation",
       "final_url": "https://export.arxiv.org/api/query",
@@ -462,8 +460,8 @@
       "url": "https://export.arxiv.org/api/query"
     },
     {
-      "bytes": 93031,
-      "elapsed_seconds": 0.14,
+      "bytes": 93041,
+      "elapsed_seconds": 0.43,
       "error": "",
       "field": "citation",
       "final_url": "https://fred.stlouisfed.org/docs/api/fred/series_search.html",
@@ -474,8 +472,8 @@
       "url": "https://fred.stlouisfed.org/docs/api/fred/series_search.html"
     },
     {
-      "bytes": 391719,
-      "elapsed_seconds": 0.6,
+      "bytes": 391668,
+      "elapsed_seconds": 0.92,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/Prajwal-Nagaraj/Chatbot-Simulation-Workflow",
@@ -486,8 +484,8 @@
       "url": "https://github.com/Prajwal-Nagaraj/Chatbot-Simulation-Workflow"
     },
     {
-      "bytes": 348602,
-      "elapsed_seconds": 0.81,
+      "bytes": 348542,
+      "elapsed_seconds": 0.85,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/SamuelSchmidgall/AgentLaboratory",
@@ -498,7 +496,7 @@
       "url": "https://github.com/SamuelSchmidgall/AgentLaboratory"
     },
     {
-      "bytes": 494087,
+      "bytes": 494030,
       "elapsed_seconds": 0.97,
       "error": "",
       "field": "citation",
@@ -510,8 +508,8 @@
       "url": "https://github.com/assafelovic/gpt-researcher"
     },
     {
-      "bytes": 313543,
-      "elapsed_seconds": 1.31,
+      "bytes": 313487,
+      "elapsed_seconds": 1.05,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md",
@@ -522,8 +520,8 @@
       "url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/SESSION6.md"
     },
     {
-      "bytes": 302944,
-      "elapsed_seconds": 0.76,
+      "bytes": 302887,
+      "elapsed_seconds": 0.94,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/cv_geometry_audit_2026-09-26.json",
@@ -534,8 +532,8 @@
       "url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/cv_geometry_audit_2026-09-26.json"
     },
     {
-      "bytes": 1146574,
-      "elapsed_seconds": 1.05,
+      "bytes": 1146527,
+      "elapsed_seconds": 1.14,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/feature_arm_105_session6.json",
@@ -546,8 +544,8 @@
       "url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/feature_arm_105_session6.json"
     },
     {
-      "bytes": 240962,
-      "elapsed_seconds": 0.84,
+      "bytes": 240902,
+      "elapsed_seconds": 0.77,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/grav_hg_identity_session6.json",
@@ -558,8 +556,8 @@
       "url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/grav_hg_identity_session6.json"
     },
     {
-      "bytes": 1057410,
-      "elapsed_seconds": 1.12,
+      "bytes": 1057359,
+      "elapsed_seconds": 1.24,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/label_blind_corroboration_session6.json",
@@ -570,8 +568,8 @@
       "url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/label_blind_corroboration_session6.json"
     },
     {
-      "bytes": 398304,
-      "elapsed_seconds": 0.9,
+      "bytes": 398249,
+      "elapsed_seconds": 0.8,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/spatial_comparison_shipping_session5.json",
@@ -582,8 +580,8 @@
       "url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/gemsdoe_review/evidence/spatial_comparison_shipping_session5.json"
     },
     {
-      "bytes": 289082,
-      "elapsed_seconds": 1.0,
+      "bytes": 289009,
+      "elapsed_seconds": 0.97,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/scripts/prepare_data.py",
@@ -594,7 +592,7 @@
       "url": "https://github.com/buffedlizard55-lab/SelfLearn/blob/main/scripts/prepare_data.py"
     },
     {
-      "bytes": 226304,
+      "bytes": 226243,
       "elapsed_seconds": 1.03,
       "error": "",
       "field": "citation",
@@ -606,8 +604,8 @@
       "url": "https://github.com/buffedlizard55-lab/SelfLearn/tree/main/docs/research"
     },
     {
-      "bytes": 237249,
-      "elapsed_seconds": 1.13,
+      "bytes": 237197,
+      "elapsed_seconds": 1.16,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/daley331/Sorting-Algorithms-Analysis",
@@ -618,8 +616,8 @@
       "url": "https://github.com/daley331/Sorting-Algorithms-Analysis"
     },
     {
-      "bytes": 263245,
-      "elapsed_seconds": 0.84,
+      "bytes": 263188,
+      "elapsed_seconds": 0.88,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/drivendataorg/gems-prize-reference-solution",
@@ -630,8 +628,8 @@
       "url": "https://github.com/drivendataorg/gems-prize-reference-solution"
     },
     {
-      "bytes": 214543,
-      "elapsed_seconds": 1.06,
+      "bytes": 214492,
+      "elapsed_seconds": 1.09,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/drivendataorg/gems-prize-reference-solution/blob/main/unet-mc-cv-reference-solution.ipynb",
@@ -642,8 +640,8 @@
       "url": "https://github.com/drivendataorg/gems-prize-reference-solution/blob/main/unet-mc-cv-reference-solution.ipynb"
     },
     {
-      "bytes": 332359,
-      "elapsed_seconds": 0.96,
+      "bytes": 332308,
+      "elapsed_seconds": 0.93,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/khoj-ai/khoj",
@@ -654,8 +652,8 @@
       "url": "https://github.com/khoj-ai/khoj"
     },
     {
-      "bytes": 229923,
-      "elapsed_seconds": 1.11,
+      "bytes": 229867,
+      "elapsed_seconds": 1.0,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms",
@@ -666,8 +664,8 @@
       "url": "https://github.com/onuryilmaz-wip/ComparisonOfSortingAlgorithms"
     },
     {
-      "bytes": 297572,
-      "elapsed_seconds": 1.03,
+      "bytes": 297516,
+      "elapsed_seconds": 1.0,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/pypl0/Ombre",
@@ -678,8 +676,8 @@
       "url": "https://github.com/pypl0/Ombre"
     },
     {
-      "bytes": 289322,
-      "elapsed_seconds": 1.01,
+      "bytes": 289258,
+      "elapsed_seconds": 1.13,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/raesa-razeen/halo-hallucination-detector",
@@ -690,8 +688,8 @@
       "url": "https://github.com/raesa-razeen/halo-hallucination-detector"
     },
     {
-      "bytes": 248876,
-      "elapsed_seconds": 1.02,
+      "bytes": 248819,
+      "elapsed_seconds": 1.0,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/sleepingcat4/Active-learning",
@@ -702,8 +700,8 @@
       "url": "https://github.com/sleepingcat4/Active-learning"
     },
     {
-      "bytes": 319972,
-      "elapsed_seconds": 0.93,
+      "bytes": 319916,
+      "elapsed_seconds": 0.82,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/virattt/dexter",
@@ -714,8 +712,8 @@
       "url": "https://github.com/virattt/dexter"
     },
     {
-      "bytes": 341619,
-      "elapsed_seconds": 0.97,
+      "bytes": 341567,
+      "elapsed_seconds": 1.08,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/w32zhong/BTreeimplementation",
@@ -726,8 +724,8 @@
       "url": "https://github.com/w32zhong/BTreeimplementation"
     },
     {
-      "bytes": 291429,
-      "elapsed_seconds": 1.07,
+      "bytes": 291378,
+      "elapsed_seconds": 1.14,
       "error": "",
       "field": "citation",
       "final_url": "https://github.com/xiaojing29/HallucinationDetection",
@@ -739,7 +737,7 @@
     },
     {
       "bytes": 2453,
-      "elapsed_seconds": 0.15,
+      "elapsed_seconds": 0.21,
       "error": "",
       "field": "citation",
       "final_url": "https://nvd.nist.gov/developers/api-workflows",
@@ -751,7 +749,7 @@
     },
     {
       "bytes": 2453,
-      "elapsed_seconds": 1.0,
+      "elapsed_seconds": 0.94,
       "error": "",
       "field": "citation",
       "final_url": "https://nvd.nist.gov/general/news/api-20-announcements",
@@ -763,7 +761,7 @@
     },
     {
       "bytes": 3072200,
-      "elapsed_seconds": 0.37,
+      "elapsed_seconds": 0.39,
       "error": "",
       "field": "citation",
       "final_url": "https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2025/Hermant.pdf",
@@ -775,7 +773,7 @@
     },
     {
       "bytes": 325,
-      "elapsed_seconds": 0.04,
+      "elapsed_seconds": 0.02,
       "error": "",
       "field": "citation",
       "final_url": "https://pypi.org/robots.txt",
@@ -786,8 +784,8 @@
       "url": "https://pypi.org/robots.txt"
     },
     {
-      "bytes": 15542,
-      "elapsed_seconds": 1.01,
+      "bytes": 14703,
+      "elapsed_seconds": 1.02,
       "error": "",
       "field": "citation",
       "final_url": "https://pypi.org/rss/packages.xml",
@@ -798,8 +796,8 @@
       "url": "https://pypi.org/rss/packages.xml"
     },
     {
-      "bytes": 40175,
-      "elapsed_seconds": 1.03,
+      "bytes": 32085,
+      "elapsed_seconds": 0.99,
       "error": "",
       "field": "citation",
       "final_url": "https://pypi.org/rss/updates.xml",
@@ -811,7 +809,7 @@
     },
     {
       "bytes": 7462,
-      "elapsed_seconds": 0.06,
+      "elapsed_seconds": 0.07,
       "error": "",
       "field": "citation",
       "final_url": "https://registry.npmjs.org/robots.txt",
@@ -823,7 +821,7 @@
     },
     {
       "bytes": 4260284,
-      "elapsed_seconds": 14.9,
+      "elapsed_seconds": 30.28,
       "error": "",
       "field": "citation",
       "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
@@ -835,7 +833,7 @@
     },
     {
       "bytes": 301138,
-      "elapsed_seconds": 0.51,
+      "elapsed_seconds": 0.5,
       "error": "",
       "field": "citation",
       "final_url": "https://www.census.gov/data/developers/guidance/api-user-guide.API_Key.html",
@@ -847,7 +845,7 @@
     },
     {
       "bytes": 36402,
-      "elapsed_seconds": 0.64,
+      "elapsed_seconds": 0.29,
       "error": "",
       "field": "citation",
       "final_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
@@ -859,7 +857,7 @@
     },
     {
       "bytes": 9921,
-      "elapsed_seconds": 0.85,
+      "elapsed_seconds": 1.27,
       "error": "",
       "field": "citation",
       "final_url": "https://www.drivendata.org/accounts/login/?next=/competitions/306/competition-doe-gems/data/",
@@ -871,7 +869,7 @@
     },
     {
       "bytes": 48472,
-      "elapsed_seconds": 0.76,
+      "elapsed_seconds": 0.7,
       "error": "",
       "field": "citation",
       "final_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/",
@@ -883,7 +881,7 @@
     },
     {
       "bytes": 48472,
-      "elapsed_seconds": 1.13,
+      "elapsed_seconds": 1.14,
       "error": "",
       "field": "citation",
       "final_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#competition-structure",
@@ -895,7 +893,7 @@
     },
     {
       "bytes": 48472,
-      "elapsed_seconds": 1.1,
+      "elapsed_seconds": 1.03,
       "error": "",
       "field": "citation",
       "final_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#performance-metric",
@@ -907,7 +905,7 @@
     },
     {
       "bytes": 48472,
-      "elapsed_seconds": 1.06,
+      "elapsed_seconds": 0.87,
       "error": "",
       "field": "citation",
       "final_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#provided-features",
@@ -919,7 +917,7 @@
     },
     {
       "bytes": 36207,
-      "elapsed_seconds": 0.74,
+      "elapsed_seconds": 0.93,
       "error": "",
       "field": "citation",
       "final_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/968/",
@@ -931,7 +929,7 @@
     },
     {
       "bytes": 36207,
-      "elapsed_seconds": 1.17,
+      "elapsed_seconds": 1.03,
       "error": "",
       "field": "citation",
       "final_url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/968/#additional-information",
@@ -954,8 +952,8 @@
       "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/rules/"
     },
     {
-      "bytes": 93869,
-      "elapsed_seconds": 0.21,
+      "bytes": 93880,
+      "elapsed_seconds": 0.28,
       "error": "",
       "field": "citation",
       "final_url": "https://www.herox.com/GEMSPrize/resource/2274",
@@ -967,7 +965,7 @@
     },
     {
       "bytes": 455140,
-      "elapsed_seconds": 1.13,
+      "elapsed_seconds": 1.08,
       "error": "",
       "field": "citation",
       "final_url": "https://docs.nlr.gov/docs/fy26osti/96647.pdf",
@@ -979,7 +977,7 @@
     },
     {
       "bytes": 82367,
-      "elapsed_seconds": 0.28,
+      "elapsed_seconds": 0.19,
       "error": "",
       "field": "citation",
       "final_url": "https://www.rfc-editor.org/rfc/rfc9309.html",
@@ -991,7 +989,7 @@
     },
     {
       "bytes": 25265,
-      "elapsed_seconds": 0.89,
+      "elapsed_seconds": 0.97,
       "error": "",
       "field": "citation",
       "final_url": "https://www.rfc-editor.org/rfc/rfc9309.txt",
@@ -1003,7 +1001,7 @@
     },
     {
       "bytes": 175709,
-      "elapsed_seconds": 15.5,
+      "elapsed_seconds": 18.78,
       "error": "",
       "field": "citation",
       "final_url": "https://www.usgs.gov/programs/earthquake-hazards/faults",
@@ -1015,7 +1013,7 @@
     },
     {
       "bytes": 16728,
-      "elapsed_seconds": 0.15,
+      "elapsed_seconds": 0.52,
       "error": "",
       "field": "license_url",
       "final_url": "https://about.zenodo.org/policies/",
@@ -1027,7 +1025,7 @@
     },
     {
       "bytes": 10287,
-      "elapsed_seconds": 0.3,
+      "elapsed_seconds": 0.27,
       "error": "",
       "field": "key_url",
       "final_url": "https://api.census.gov/data/key_signup.html",
@@ -1039,7 +1037,7 @@
     },
     {
       "bytes": 4737,
-      "elapsed_seconds": 0.17,
+      "elapsed_seconds": 0.24,
       "error": "",
       "field": "docs_url",
       "final_url": "https://api.nasa.gov/",
@@ -1051,7 +1049,7 @@
     },
     {
       "bytes": 4737,
-      "elapsed_seconds": 0.91,
+      "elapsed_seconds": 0.93,
       "error": "",
       "field": "key_url",
       "final_url": "https://api.nasa.gov/#signUp",
@@ -1063,7 +1061,7 @@
     },
     {
       "bytes": 77494,
-      "elapsed_seconds": 0.15,
+      "elapsed_seconds": 0.19,
       "error": "",
       "field": "docs_url",
       "final_url": "https://api.stackexchange.com/docs",
@@ -1075,7 +1073,7 @@
     },
     {
       "bytes": 85825,
-      "elapsed_seconds": 0.3,
+      "elapsed_seconds": 0.18,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.mediawiki.org/wiki/Wikimedia_APIs",
@@ -1087,7 +1085,7 @@
     },
     {
       "bytes": 94247,
-      "elapsed_seconds": 0.16,
+      "elapsed_seconds": 0.21,
       "error": "",
       "field": "license_url",
       "final_url": "https://clinicaltrials.gov/about-site/terms-conditions",
@@ -1099,7 +1097,7 @@
     },
     {
       "bytes": 94247,
-      "elapsed_seconds": 0.99,
+      "elapsed_seconds": 0.97,
       "error": "",
       "field": "docs_url",
       "final_url": "https://clinicaltrials.gov/data-api/api",
@@ -1134,7 +1132,7 @@
     },
     {
       "bytes": 20666,
-      "elapsed_seconds": 0.36,
+      "elapsed_seconds": 0.27,
       "error": "",
       "field": "key_url",
       "final_url": "https://data.uspto.gov/apikey/key-reveal",
@@ -1146,7 +1144,7 @@
     },
     {
       "bytes": 20666,
-      "elapsed_seconds": 1.01,
+      "elapsed_seconds": 1.05,
       "error": "",
       "field": "docs_url",
       "final_url": "https://data.uspto.gov/apis/getting-started",
@@ -1158,7 +1156,7 @@
     },
     {
       "bytes": 20666,
-      "elapsed_seconds": 1.02,
+      "elapsed_seconds": 1.01,
       "error": "",
       "field": "license_url",
       "final_url": "https://data.uspto.gov/support/faq",
@@ -1170,7 +1168,7 @@
     },
     {
       "bytes": 17119,
-      "elapsed_seconds": 0.29,
+      "elapsed_seconds": 0.4,
       "error": "",
       "field": "license_url",
       "final_url": "https://datacatalog.worldbank.org/public-licenses",
@@ -1181,7 +1179,7 @@
       "url": "https://datacatalog.worldbank.org/public-licenses"
     },
     {
-      "elapsed_seconds": 0.88,
+      "elapsed_seconds": 0.58,
       "error": "403 - Forbidden | Access to this page is forbidden.\n",
       "field": "license_url",
       "final_url": "https://datacite.org/legal/",
@@ -1192,7 +1190,7 @@
       "url": "https://datacite.org/legal/"
     },
     {
-      "elapsed_seconds": 0.2,
+      "elapsed_seconds": 0.21,
       "error": "unreachable: datahelp.imf.org unreachable: [Errno -2] Name or service not known",
       "field": "docs_url",
       "final_url": "https://datahelp.imf.org/knowledgebase/articles/667681-json-restful-web-service",
@@ -1204,7 +1202,7 @@
     },
     {
       "bytes": 223009,
-      "elapsed_seconds": 0.52,
+      "elapsed_seconds": 0.69,
       "error": "",
       "field": "docs_url",
       "final_url": "https://datahelpdesk.worldbank.org/knowledgebase/topics/125589",
@@ -1216,7 +1214,7 @@
     },
     {
       "bytes": 191492,
-      "elapsed_seconds": 0.39,
+      "elapsed_seconds": 0.55,
       "error": "",
       "field": "docs_url",
       "final_url": "https://developers.zenodo.org/",
@@ -1228,7 +1226,7 @@
     },
     {
       "bytes": 75495,
-      "elapsed_seconds": 0.24,
+      "elapsed_seconds": 0.25,
       "error": "",
       "field": "docs_url",
       "final_url": "https://doaj.org/api/v3/docs",
@@ -1240,7 +1238,7 @@
     },
     {
       "bytes": 75258,
-      "elapsed_seconds": 1.02,
+      "elapsed_seconds": 1.01,
       "error": "",
       "field": "key_url",
       "final_url": "https://doaj.org/api/v4/docs",
@@ -1252,7 +1250,7 @@
     },
     {
       "bytes": 61865,
-      "elapsed_seconds": 2.38,
+      "elapsed_seconds": 1.02,
       "error": "",
       "field": "license_url",
       "final_url": "https://doaj.org/terms/",
@@ -1264,7 +1262,7 @@
     },
     {
       "bytes": 412026,
-      "elapsed_seconds": 1.5,
+      "elapsed_seconds": 1.52,
       "error": "",
       "field": "docs_url",
       "final_url": "https://docs.github.com/en/rest",
@@ -1276,7 +1274,7 @@
     },
     {
       "bytes": 328047,
-      "elapsed_seconds": 0.25,
+      "elapsed_seconds": 0.29,
       "error": "",
       "field": "license_url",
       "final_url": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api",
@@ -1288,7 +1286,7 @@
     },
     {
       "bytes": 568197,
-      "elapsed_seconds": 0.32,
+      "elapsed_seconds": 0.31,
       "error": "",
       "field": "license_url",
       "final_url": "https://docs.npmjs.com/policies/open-source-terms/",
@@ -1300,7 +1298,7 @@
     },
     {
       "bytes": 490272,
-      "elapsed_seconds": 0.97,
+      "elapsed_seconds": 1.13,
       "error": "",
       "field": "terms_url",
       "final_url": "https://docs.npmjs.com/policies/terms/",
@@ -1312,7 +1310,7 @@
     },
     {
       "bytes": 20753,
-      "elapsed_seconds": 0.23,
+      "elapsed_seconds": 0.49,
       "error": "",
       "field": "docs_url",
       "final_url": "https://help.openalex.org/",
@@ -1324,7 +1322,7 @@
     },
     {
       "bytes": 40090,
-      "elapsed_seconds": 1.04,
+      "elapsed_seconds": 0.81,
       "error": "",
       "field": "license_url",
       "final_url": "https://help.openalex.org/api/authentication/",
@@ -1336,7 +1334,7 @@
     },
     {
       "bytes": 53469,
-      "elapsed_seconds": 0.07,
+      "elapsed_seconds": 0.23,
       "error": "",
       "field": "docs_url",
       "final_url": "https://docs.pypi.org/api/feeds/",
@@ -1348,7 +1346,7 @@
     },
     {
       "bytes": 34773,
-      "elapsed_seconds": 0.14,
+      "elapsed_seconds": 0.58,
       "error": "",
       "field": "docs_url",
       "final_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
@@ -1359,8 +1357,8 @@
       "url": "https://earthquake.usgs.gov/fdsnws/event/1/"
     },
     {
-      "bytes": 177861,
-      "elapsed_seconds": 1.19,
+      "bytes": 179413,
+      "elapsed_seconds": 1.02,
       "error": "",
       "field": "license_url",
       "final_url": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
@@ -1371,8 +1369,8 @@
       "url": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice"
     },
     {
-      "bytes": 201520,
-      "elapsed_seconds": 1.39,
+      "bytes": 201351,
+      "elapsed_seconds": 1.14,
       "error": "",
       "field": "docs_url",
       "final_url": "https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-getting-started",
@@ -1383,8 +1381,8 @@
       "url": "https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-getting-started"
     },
     {
-      "bytes": 152858,
-      "elapsed_seconds": 0.29,
+      "bytes": 152856,
+      "elapsed_seconds": 0.53,
       "error": "",
       "field": "license_url",
       "final_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
@@ -1395,8 +1393,8 @@
       "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use"
     },
     {
-      "bytes": 37243,
-      "elapsed_seconds": 0.44,
+      "bytes": 37253,
+      "elapsed_seconds": 0.52,
       "error": "",
       "field": "docs_url",
       "final_url": "https://fred.stlouisfed.org/docs/api/fred/",
@@ -1407,8 +1405,8 @@
       "url": "https://fred.stlouisfed.org/docs/api/fred/"
     },
     {
-      "bytes": 132255,
-      "elapsed_seconds": 0.66,
+      "bytes": 132265,
+      "elapsed_seconds": 0.54,
       "error": "",
       "field": "license_url",
       "final_url": "https://fred.stlouisfed.org/legal/",
@@ -1419,8 +1417,8 @@
       "url": "https://fred.stlouisfed.org/legal/"
     },
     {
-      "bytes": 30971,
-      "elapsed_seconds": 0.52,
+      "bytes": 30961,
+      "elapsed_seconds": 0.89,
       "error": "",
       "field": "key_url",
       "final_url": "https://fredaccount.stlouisfed.org/login/secure/",
@@ -1431,8 +1429,8 @@
       "url": "https://fredaccount.stlouisfed.org/apikeys"
     },
     {
-      "bytes": 304086,
-      "elapsed_seconds": 0.36,
+      "bytes": 304033,
+      "elapsed_seconds": 0.65,
       "error": "",
       "field": "docs_url",
       "final_url": "https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md",
@@ -1443,8 +1441,8 @@
       "url": "https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md"
     },
     {
-      "bytes": 266129,
-      "elapsed_seconds": 0.93,
+      "bytes": 266067,
+      "elapsed_seconds": 0.99,
       "error": "",
       "field": "docs_url",
       "final_url": "https://github.com/npm/registry/blob/main/docs/download-counts.md",
@@ -1455,7 +1453,7 @@
       "url": "https://github.com/npm/registry/blob/main/docs/download-counts.md"
     },
     {
-      "bytes": 49441,
+      "bytes": 49379,
       "elapsed_seconds": 0.93,
       "error": "",
       "field": "key_url",
@@ -1468,7 +1466,7 @@
     },
     {
       "bytes": 15262,
-      "elapsed_seconds": 0.15,
+      "elapsed_seconds": 0.14,
       "error": "",
       "field": "docs_url",
       "final_url": "https://google.github.io/osv.dev/api/",
@@ -1480,7 +1478,7 @@
     },
     {
       "bytes": 2383,
-      "elapsed_seconds": 0.11,
+      "elapsed_seconds": 0.1,
       "error": "",
       "field": "docs_url",
       "final_url": "https://hn.algolia.com/api",
@@ -1492,7 +1490,7 @@
     },
     {
       "bytes": 82559,
-      "elapsed_seconds": 0.28,
+      "elapsed_seconds": 0.18,
       "error": "",
       "field": "docs_url",
       "final_url": "https://info.arxiv.org/help/api/index.html",
@@ -1504,7 +1502,7 @@
     },
     {
       "bytes": 102246,
-      "elapsed_seconds": 1.06,
+      "elapsed_seconds": 1.03,
       "error": "",
       "field": "license_url",
       "final_url": "https://info.arxiv.org/help/license/index.html",
@@ -1516,7 +1514,7 @@
     },
     {
       "bytes": 2453,
-      "elapsed_seconds": 0.15,
+      "elapsed_seconds": 0.25,
       "error": "",
       "field": "key_url",
       "final_url": "https://nvd.nist.gov/developers/request-an-api-key",
@@ -1528,7 +1526,7 @@
     },
     {
       "bytes": 2453,
-      "elapsed_seconds": 0.99,
+      "elapsed_seconds": 1.31,
       "error": "",
       "field": "docs_url",
       "final_url": "https://nvd.nist.gov/developers/vulnerabilities",
@@ -1540,7 +1538,7 @@
     },
     {
       "bytes": 11846,
-      "elapsed_seconds": 0.24,
+      "elapsed_seconds": 0.33,
       "error": "",
       "field": "docs_url",
       "final_url": "https://openlibrary.org/developers/api",
@@ -1552,7 +1550,7 @@
     },
     {
       "bytes": 13453,
-      "elapsed_seconds": 0.51,
+      "elapsed_seconds": 0.35,
       "error": "",
       "field": "license_url",
       "final_url": "https://google.github.io/osv.dev/",
@@ -1564,7 +1562,7 @@
     },
     {
       "bytes": 87275,
-      "elapsed_seconds": 0.12,
+      "elapsed_seconds": 0.22,
       "error": "",
       "field": "license_url",
       "final_url": "https://policies.python.org/pypi.org/Terms-of-Service/",
@@ -1575,8 +1573,8 @@
       "url": "https://policies.python.org/pypi.org/Terms-of-Service/"
     },
     {
-      "bytes": 21336,
-      "elapsed_seconds": 0.16,
+      "bytes": 21330,
+      "elapsed_seconds": 0.22,
       "error": "",
       "field": "license_url",
       "final_url": "https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access",
@@ -1587,8 +1585,8 @@
       "url": "https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access"
     },
     {
-      "bytes": 21306,
-      "elapsed_seconds": 0.93,
+      "bytes": 21302,
+      "elapsed_seconds": 0.87,
       "error": "",
       "field": "docs_url",
       "final_url": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
@@ -1600,7 +1598,7 @@
     },
     {
       "bytes": 52640,
-      "elapsed_seconds": 1.12,
+      "elapsed_seconds": 0.56,
       "error": "",
       "field": "key_url",
       "final_url": "https://stackapps.com/users/login?returnurl=/applications",
@@ -1612,7 +1610,7 @@
     },
     {
       "bytes": 127846,
-      "elapsed_seconds": 0.13,
+      "elapsed_seconds": 0.19,
       "error": "",
       "field": "license_url",
       "final_url": "https://stackoverflow.com/legal/terms-of-service/public",
@@ -1623,8 +1621,8 @@
       "url": "https://stackoverflow.com/legal/terms-of-service/public"
     },
     {
-      "bytes": 347652,
-      "elapsed_seconds": 0.12,
+      "bytes": 347603,
+      "elapsed_seconds": 0.09,
       "error": "",
       "field": "docs_url",
       "final_url": "https://support.datacite.org/docs/api",
@@ -1636,7 +1634,7 @@
     },
     {
       "bytes": 23511,
-      "elapsed_seconds": 0.85,
+      "elapsed_seconds": 0.63,
       "error": "",
       "field": "docs_url",
       "final_url": "https://techdocs.gbif.org/en/openapi/",
@@ -1648,7 +1646,7 @@
     },
     {
       "bytes": 6235,
-      "elapsed_seconds": 0.77,
+      "elapsed_seconds": 1.4,
       "error": "",
       "field": "docs_url",
       "final_url": "https://unstats.un.org/sdgapi/swagger/",
@@ -1660,7 +1658,7 @@
     },
     {
       "bytes": 302680,
-      "elapsed_seconds": 0.37,
+      "elapsed_seconds": 0.42,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.census.gov/data/developers/about/terms-of-service.html",
@@ -1672,7 +1670,7 @@
     },
     {
       "bytes": 388093,
-      "elapsed_seconds": 1.13,
+      "elapsed_seconds": 1.09,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.census.gov/data/developers/data-sets.html",
@@ -1683,7 +1681,7 @@
       "url": "https://www.census.gov/data/developers/data-sets.html"
     },
     {
-      "elapsed_seconds": 0.07,
+      "elapsed_seconds": 0.14,
       "error": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;cisa&#46;gov&#47;about&#47;website&#45;policies\" on thi",
       "field": "license_url",
       "final_url": "https://www.cisa.gov/about/website-policies",
@@ -1694,7 +1692,7 @@
       "url": "https://www.cisa.gov/about/website-policies"
     },
     {
-      "elapsed_seconds": 0.99,
+      "elapsed_seconds": 0.9,
       "error": "<HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;www&#46;cisa&#46;gov&#47;known&#45;exploited&#45;vulnerabilitie",
       "field": "docs_url",
       "final_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
@@ -1706,7 +1704,7 @@
     },
     {
       "bytes": 70728,
-      "elapsed_seconds": 0.37,
+      "elapsed_seconds": 0.32,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
@@ -1718,7 +1716,7 @@
     },
     {
       "bytes": 52515,
-      "elapsed_seconds": 0.2,
+      "elapsed_seconds": 0.32,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.eia.gov/about/copyrights_reuse.php",
@@ -1730,7 +1728,7 @@
     },
     {
       "bytes": 127368,
-      "elapsed_seconds": 0.95,
+      "elapsed_seconds": 0.83,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.eia.gov/opendata/documentation.php",
@@ -1742,7 +1740,7 @@
     },
     {
       "bytes": 49315,
-      "elapsed_seconds": 1.03,
+      "elapsed_seconds": 0.95,
       "error": "",
       "field": "key_url",
       "final_url": "https://www.eia.gov/opendata/register.php",
@@ -1753,7 +1751,7 @@
       "url": "https://www.eia.gov/opendata/register.php"
     },
     {
-      "elapsed_seconds": 0.31,
+      "elapsed_seconds": 0.11,
       "error": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam",
       "field": "license_url",
       "final_url": "https://www.gbif.org/terms",
@@ -1764,7 +1762,7 @@
       "url": "https://www.gbif.org/terms"
     },
     {
-      "elapsed_seconds": 0.3,
+      "elapsed_seconds": 0.37,
       "error": "{\n            \"error\":\"Blob not found\"\n        }",
       "field": "license_url",
       "final_url": "https://www.imf.org/en/About/terms",
@@ -1775,8 +1773,8 @@
       "url": "https://www.imf.org/en/About/terms"
     },
     {
-      "bytes": 315757,
-      "elapsed_seconds": 0.29,
+      "bytes": 316004,
+      "elapsed_seconds": 0.25,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
@@ -1788,7 +1786,7 @@
     },
     {
       "bytes": 5115026,
-      "elapsed_seconds": 1.42,
+      "elapsed_seconds": 1.21,
       "error": "",
       "field": "key_url",
       "final_url": "https://account.ncbi.nlm.nih.gov/?back_url=https%3A//account.ncbi.nlm.nih.gov/settings/",
@@ -1799,8 +1797,8 @@
       "url": "https://www.ncbi.nlm.nih.gov/account/settings/"
     },
     {
-      "bytes": 21295,
-      "elapsed_seconds": 0.08,
+      "bytes": 21291,
+      "elapsed_seconds": 0.09,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.ncbi.nlm.nih.gov/books/NBK25497/",
@@ -1812,7 +1810,7 @@
     },
     {
       "bytes": 38936,
-      "elapsed_seconds": 1.25,
+      "elapsed_seconds": 1.06,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
@@ -1824,7 +1822,7 @@
     },
     {
       "bytes": 13942,
-      "elapsed_seconds": 0.38,
+      "elapsed_seconds": 0.4,
       "error": "",
       "field": "key_url",
       "final_url": "https://www.ncdc.noaa.gov/cdo-web/token",
@@ -1836,7 +1834,7 @@
     },
     {
       "bytes": 57224,
-      "elapsed_seconds": 0.49,
+      "elapsed_seconds": 0.44,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.ncei.noaa.gov/cdo-web/webservices/v2",
@@ -1848,7 +1846,7 @@
     },
     {
       "bytes": 79188,
-      "elapsed_seconds": 0.33,
+      "elapsed_seconds": 0.73,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.nist.gov/copyrights-disclaimers",
@@ -1859,7 +1857,7 @@
       "url": "https://www.nist.gov/oism/copyrights"
     },
     {
-      "elapsed_seconds": 0.15,
+      "elapsed_seconds": 0.14,
       "error": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML><HEAD><META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=iso-8859-1\">\n<TITLE>ERROR",
       "field": "license_url",
       "final_url": "https://www.noaa.gov/information-technology/open-data-dissemination",
@@ -1870,7 +1868,7 @@
       "url": "https://www.noaa.gov/information-technology/open-data-dissemination"
     },
     {
-      "elapsed_seconds": 0.29,
+      "elapsed_seconds": 0.09,
       "error": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam",
       "field": "license_url",
       "final_url": "https://www.oecd.org/termsandconditions/",
@@ -1882,7 +1880,7 @@
     },
     {
       "bytes": 56921,
-      "elapsed_seconds": 0.41,
+      "elapsed_seconds": 0.43,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.rcsb.org/pages/policies",
@@ -1893,7 +1891,7 @@
       "url": "https://www.rcsb.org/pages/policies"
     },
     {
-      "elapsed_seconds": 0.05,
+      "elapsed_seconds": 0.14,
       "error": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T",
       "field": "license_url",
       "final_url": "https://www.sec.gov/privacy#dissemination",
@@ -1904,7 +1902,7 @@
       "url": "https://www.sec.gov/privacy#dissemination"
     },
     {
-      "elapsed_seconds": 1.14,
+      "elapsed_seconds": 0.94,
       "error": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T",
       "field": "docs_url",
       "final_url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
@@ -1916,7 +1914,7 @@
     },
     {
       "bytes": 38434,
-      "elapsed_seconds": 0.16,
+      "elapsed_seconds": 0.42,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.semanticscholar.org/product/api",
@@ -1928,7 +1926,7 @@
     },
     {
       "bytes": 46124,
-      "elapsed_seconds": 0.97,
+      "elapsed_seconds": 0.72,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.semanticscholar.org/product/api/license",
@@ -1940,7 +1938,7 @@
     },
     {
       "bytes": 93843,
-      "elapsed_seconds": 0.29,
+      "elapsed_seconds": 0.85,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.un.org/en/about-us/terms-of-use",
@@ -1952,7 +1950,7 @@
     },
     {
       "bytes": 6577,
-      "elapsed_seconds": 0.85,
+      "elapsed_seconds": 0.76,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.uniprot.org/help/api",
@@ -1964,7 +1962,7 @@
     },
     {
       "bytes": 6577,
-      "elapsed_seconds": 0.75,
+      "elapsed_seconds": 1.05,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.uniprot.org/help/license",
@@ -1976,7 +1974,7 @@
     },
     {
       "bytes": 88994,
-      "elapsed_seconds": 18.3,
+      "elapsed_seconds": 5.46,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
@@ -1988,7 +1986,7 @@
     },
     {
       "bytes": 41679,
-      "elapsed_seconds": 0.19,
+      "elapsed_seconds": 0.35,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.weather.gov/disclaimer",
@@ -1999,8 +1997,8 @@
       "url": "https://www.weather.gov/disclaimer"
     },
     {
-      "bytes": 50518,
-      "elapsed_seconds": 1.17,
+      "bytes": 50507,
+      "elapsed_seconds": 0.97,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.weather.gov/documentation/services-web-api",
@@ -2012,7 +2010,7 @@
     },
     {
       "bytes": 89528,
-      "elapsed_seconds": 0.83,
+      "elapsed_seconds": 0.24,
       "error": "",
       "field": "license_url",
       "final_url": "https://www.who.int/about/policies/publishing/copyright",
@@ -2024,7 +2022,7 @@
     },
     {
       "bytes": 95612,
-      "elapsed_seconds": 0.71,
+      "elapsed_seconds": 0.99,
       "error": "",
       "field": "docs_url",
       "final_url": "https://www.who.int/data/gho/info/gho-odata-api",
