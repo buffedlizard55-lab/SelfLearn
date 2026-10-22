@@ -1,5 +1,5 @@
 {
-  "bytes_read": 30045,
+  "bytes_read": 29993,
   "content_hash": "sha256:00e152de2ee8ce501c6c319f0770f388045d8158b2635b8c4c39027ec56b5865",
   "evidence_class": "commentary",
   "evidence_class_label": "Expert commentary, editorial, blog post by a named practitioner.",
@@ -13,8 +13,8 @@
   "notes": "Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",
   "published_at": "2012-02-09",
   "publisher": "Y Combinator (Hacker News); Algolia operates the search index",
-  "response_sha256": "sha256:404e2d7a697f98d5b2d63ffd2c33370da1104dfc650e7b31bf6ec0459dfcfdc5",
-  "retrieved_at": "2026-10-22T05:12:00Z",
+  "response_sha256": "sha256:2168da317c93d7da9692770045befad82e86ba356bf9d4d05f3db5c9b34a81f2",
+  "retrieved_at": "2026-10-22T12:17:07Z",
   "source_id": "hackernews",
   "source_name": "Hacker News API (via Algolia index)",
   "text": "Source: Hacker News API (via Algolia index) (https://hn.algolia.com/api/v1)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Autonomous agents research award winner\nThe record for Autonomous agents research award winner reports: created_at 2012-02-09T05:15:58Z, points 1, comment count 0.\nThe record for Autonomous agents research award winner reports: objectID 3569928.\nSource note: Used ONLY as an attention/trend signal. Forum commentary is never grounds for a factual claim.",

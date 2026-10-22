@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-22T05:12:08Z",
+  "generated_at": "2026-10-22T12:17:17Z",
   "items_new": 14,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-bc445c7f0547",
+  "run_id": "run-d15de0d258ed",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -77,28 +77,28 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: toprakahmetaydogmus/TZeroAlgorithm\nThe reco",
-          "identifier": "https://github.com/toprakahmetaydogmus/TZeroAlgorithm",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: jackin-project/jackin\nThe record for jackin",
+          "identifier": "https://github.com/jackin-project/jackin",
           "published_at": "2026-10-22",
           "source_id": "github",
-          "title": "toprakahmetaydogmus/TZeroAlgorithm",
-          "url": "https://github.com/toprakahmetaydogmus/TZeroAlgorithm"
+          "title": "jackin-project/jackin",
+          "url": "https://github.com/jackin-project/jackin"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Artistical-Intelligence/hivemind-assembly\nT",
-          "identifier": "https://github.com/Artistical-Intelligence/hivemind-assembly",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: martin-francois/symphony-trello\nThe record ",
+          "identifier": "https://github.com/martin-francois/symphony-trello",
           "published_at": "2026-10-22",
           "source_id": "github",
-          "title": "Artistical-Intelligence/hivemind-assembly",
-          "url": "https://github.com/Artistical-Intelligence/hivemind-assembly"
+          "title": "martin-francois/symphony-trello",
+          "url": "https://github.com/martin-francois/symphony-trello"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Snaehath/autonomous-local-system-agent\nThe ",
-          "identifier": "https://github.com/Snaehath/autonomous-local-system-agent",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Masngo/omniinspect-ai\nThe record for Masngo",
+          "identifier": "https://github.com/Masngo/omniinspect-ai",
           "published_at": "2026-10-22",
           "source_id": "github",
-          "title": "Snaehath/autonomous-local-system-agent",
-          "url": "https://github.com/Snaehath/autonomous-local-system-agent"
+          "title": "Masngo/omniinspect-ai",
+          "url": "https://github.com/Masngo/omniinspect-ai"
         }
       ],
       "request_params": {
@@ -129,8 +129,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-22T05:12:09.380\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:dd0857875",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-22T12:17:18.805\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:a38a5a182",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -166,43 +166,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/arduino-installer/3.0.0/",
+          "identifier": "https://pypi.org/project/managerpythonclient/0.0.14/",
           "published_at": "2026-10-22",
           "source_id": "pypi",
-          "title": "arduino-installer 3.0.0",
-          "url": "https://pypi.org/project/arduino-installer/3.0.0/"
+          "title": "ManagerPythonClient 0.0.14",
+          "url": "https://pypi.org/project/managerpythonclient/0.0.14/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/pyiron-workflow-assyst/0.2.0/",
+          "identifier": "https://pypi.org/project/victron-vrm/0.1.14/",
           "published_at": "2026-10-22",
           "source_id": "pypi",
-          "title": "pyiron-workflow-assyst 0.2.0",
-          "url": "https://pypi.org/project/pyiron-workflow-assyst/0.2.0/"
+          "title": "victron-vrm 0.1.14",
+          "url": "https://pypi.org/project/victron-vrm/0.1.14/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/roombapy-prime-tools/0.8.2/",
+          "identifier": "https://pypi.org/project/odoo-addon-project-task-stage-state/19.0.1.2.0/",
           "published_at": "2026-10-22",
           "source_id": "pypi",
-          "title": "roombapy-prime-tools 0.8.2",
-          "url": "https://pypi.org/project/roombapy-prime-tools/0.8.2/"
+          "title": "odoo-addon-project-task-stage-state 19.0.1.2.0",
+          "url": "https://pypi.org/project/odoo-addon-project-task-stage-state/19.0.1.2.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/esp32-installer/3.0.0/",
+          "identifier": "https://pypi.org/project/langchain-pidgeon/0.1.0/",
           "published_at": "2026-10-22",
           "source_id": "pypi",
-          "title": "esp32-installer 3.0.0",
-          "url": "https://pypi.org/project/esp32-installer/3.0.0/"
+          "title": "langchain-pidgeon 0.1.0",
+          "url": "https://pypi.org/project/langchain-pidgeon/0.1.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/stirrup/0.2.1/",
+          "identifier": "https://pypi.org/project/mcp-authscan/1.1.0/",
           "published_at": "2026-10-22",
           "source_id": "pypi",
-          "title": "stirrup 0.2.1",
-          "url": "https://pypi.org/project/stirrup/0.2.1/"
+          "title": "mcp-authscan 1.1.0",
+          "url": "https://pypi.org/project/mcp-authscan/1.1.0/"
         }
       ],
       "request_params": {},
