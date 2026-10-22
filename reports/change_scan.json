@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-22T17:30:41Z",
-  "items_new": 12,
+  "generated_at": "2026-10-22T21:53:27Z",
+  "items_new": 13,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-0bc82325196e",
+  "run_id": "run-39840403fe1e",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -77,20 +77,20 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: LiegeAgents/LiegeAgentsApp\nThe record for L",
-          "identifier": "https://github.com/LiegeAgents/LiegeAgentsApp",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: nathanflrs/Milan-Capital\nThe record for nat",
+          "identifier": "https://github.com/nathanflrs/Milan-Capital",
           "published_at": "2026-10-22",
           "source_id": "github",
-          "title": "LiegeAgents/LiegeAgentsApp",
-          "url": "https://github.com/LiegeAgents/LiegeAgentsApp"
+          "title": "nathanflrs/Milan-Capital",
+          "url": "https://github.com/nathanflrs/Milan-Capital"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: ajithvnr2001/hermes-agent-vertex-cloudflare",
-          "identifier": "https://github.com/ajithvnr2001/hermes-agent-vertex-cloudflare",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: jarohull-ai/jfp-edge-radar\nThe record for j",
+          "identifier": "https://github.com/jarohull-ai/jfp-edge-radar",
           "published_at": "2026-10-22",
           "source_id": "github",
-          "title": "ajithvnr2001/hermes-agent-vertex-cloudflare",
-          "url": "https://github.com/ajithvnr2001/hermes-agent-vertex-cloudflare"
+          "title": "jarohull-ai/jfp-edge-radar",
+          "url": "https://github.com/jarohull-ai/jfp-edge-radar"
         }
       ],
       "request_params": {
@@ -121,8 +121,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-22T17:30:42.785\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:b4342223c",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-22T21:53:28.594\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:1773bfca7",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -147,9 +147,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-21..2026-10-22 and dropped; 0 carried no readable date and were kept; 9 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-21..2026-10-22 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 9,
+      "items_new": 10,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -158,43 +158,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/segcraft/0.1.7/",
+          "identifier": "https://pypi.org/project/ruletree/2026.10.22.215231/",
           "published_at": "2026-10-22",
           "source_id": "pypi",
-          "title": "segcraft 0.1.7",
-          "url": "https://pypi.org/project/segcraft/0.1.7/"
+          "title": "RuleTree 2026.10.22.215231",
+          "url": "https://pypi.org/project/ruletree/2026.10.22.215231/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/auth0-diagnostics-mcp/0.1.0/",
+          "identifier": "https://pypi.org/project/scc-firewall-manager-sdk/1.23.458/",
           "published_at": "2026-10-22",
           "source_id": "pypi",
-          "title": "auth0-diagnostics-mcp 0.1.0",
-          "url": "https://pypi.org/project/auth0-diagnostics-mcp/0.1.0/"
+          "title": "scc-firewall-manager-sdk 1.23.458",
+          "url": "https://pypi.org/project/scc-firewall-manager-sdk/1.23.458/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/city-cli/0.9.45/",
+          "identifier": "https://pypi.org/project/vivarium-engine/5.17.1/",
           "published_at": "2026-10-22",
           "source_id": "pypi",
-          "title": "city-cli 0.9.45",
-          "url": "https://pypi.org/project/city-cli/0.9.45/"
+          "title": "vivarium-engine 5.17.1",
+          "url": "https://pypi.org/project/vivarium-engine/5.17.1/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/city-sdk/0.9.45/",
+          "identifier": "https://pypi.org/project/win-llmtop/0.3.0/",
           "published_at": "2026-10-22",
           "source_id": "pypi",
-          "title": "city-sdk 0.9.45",
-          "url": "https://pypi.org/project/city-sdk/0.9.45/"
+          "title": "win-llmtop 0.3.0",
+          "url": "https://pypi.org/project/win-llmtop/0.3.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/spothinta-api/3.0.0/",
+          "identifier": "https://pypi.org/project/atlan-application-sdk-conformance/0.52.0/",
           "published_at": "2026-10-22",
           "source_id": "pypi",
-          "title": "spothinta-api 3.0.0",
-          "url": "https://pypi.org/project/spothinta-api/3.0.0/"
+          "title": "atlan-application-sdk-conformance 0.52.0",
+          "url": "https://pypi.org/project/atlan-application-sdk-conformance/0.52.0/"
         }
       ],
       "request_params": {},
