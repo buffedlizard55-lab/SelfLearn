@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-23T12:06:04Z",
-  "items_new": 12,
+  "generated_at": "2026-10-23T17:28:22Z",
+  "items_new": 6,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-84bbfb947df2",
+  "run_id": "run-259b45e716b0",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-22..2026-10-23 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-22..2026-10-23 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 1,
+      "items_new": 3,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,12 +77,28 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: JawadulHadi/pitchfire\nThe record for Jawadu",
-          "identifier": "https://github.com/JawadulHadi/pitchfire",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: lapht/OpenBlogAgent\nThe record for lapht/Op",
+          "identifier": "https://github.com/lapht/OpenBlogAgent",
           "published_at": "2026-10-23",
           "source_id": "github",
-          "title": "JawadulHadi/pitchfire",
-          "url": "https://github.com/JawadulHadi/pitchfire"
+          "title": "lapht/OpenBlogAgent",
+          "url": "https://github.com/lapht/OpenBlogAgent"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: api-evangelist/champ-ai\nThe record for api-",
+          "identifier": "https://github.com/api-evangelist/champ-ai",
+          "published_at": "2026-10-23",
+          "source_id": "github",
+          "title": "api-evangelist/champ-ai",
+          "url": "https://github.com/api-evangelist/champ-ai"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: secwexen/aapp-mart\nThe record for secwexen/",
+          "identifier": "https://github.com/secwexen/aapp-mart",
+          "published_at": "2026-10-23",
+          "source_id": "github",
+          "title": "secwexen/aapp-mart",
+          "url": "https://github.com/secwexen/aapp-mart"
         }
       ],
       "request_params": {
@@ -113,8 +129,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 1\nstartIndex = 0\ntimestamp = 2026-10-23T12:06:05.853\ntotalResults = 1\nversion = 2.0\nvulnerabilities.0.cve.affected.0.affectedData.0.product = a",
-          "identifier": "nvd-raw-sha256:d36d5876e",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 1\nstartIndex = 0\ntimestamp = 2026-10-23T17:28:22.988\ntotalResults = 1\nversion = 2.0\nvulnerabilities.0.cve.affected.0.affectedData.0.product = a",
+          "identifier": "nvd-raw-sha256:62c2696f6",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -139,9 +155,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-22..2026-10-23 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-22..2026-10-23 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 10,
+      "items_new": 2,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -150,43 +166,19 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/uk-building-math/1.0.0/",
+          "identifier": "https://pypi.org/project/remnawave-client/3.4.7/",
           "published_at": "2026-10-23",
           "source_id": "pypi",
-          "title": "uk-building-math 1.0.0",
-          "url": "https://pypi.org/project/uk-building-math/1.0.0/"
+          "title": "remnawave-client 3.4.7",
+          "url": "https://pypi.org/project/remnawave-client/3.4.7/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/aadc-mcp/0.1.1/",
+          "identifier": "https://pypi.org/project/richapi/0.5.0/",
           "published_at": "2026-10-23",
           "source_id": "pypi",
-          "title": "aadc-mcp 0.1.1",
-          "url": "https://pypi.org/project/aadc-mcp/0.1.1/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/gisweb-tenants/1.6.7/",
-          "published_at": "2026-10-23",
-          "source_id": "pypi",
-          "title": "gisweb-tenants 1.6.7",
-          "url": "https://pypi.org/project/gisweb-tenants/1.6.7/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/fwshift/0.40.16/",
-          "published_at": "2026-10-23",
-          "source_id": "pypi",
-          "title": "fwshift 0.40.16",
-          "url": "https://pypi.org/project/fwshift/0.40.16/"
-        },
-        {
-          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/skilleter-thingy/0.5.10/",
-          "published_at": "2026-10-23",
-          "source_id": "pypi",
-          "title": "skilleter-thingy 0.5.10",
-          "url": "https://pypi.org/project/skilleter-thingy/0.5.10/"
+          "title": "richapi 0.5.0",
+          "url": "https://pypi.org/project/richapi/0.5.0/"
         }
       ],
       "request_params": {},
