@@ -92,6 +92,7 @@
       "crossref:10.1023/a:1010046623013",
       "crossref:10.1023/a:1010071910869",
       "crossref:10.1023/a:1010084620690",
+      "crossref:10.1023/a:1010085828122",
       "crossref:10.1023/a:1010090027213",
       "crossref:10.1023/a:1010090405266",
       "crossref:10.1023/a:1010091302035",
@@ -284,6 +285,7 @@
       "crossref:10.61703/re-ps-vyt-711-24-3",
       "crossref:10.65109/czdc3237",
       "crossref:10.65109/jbed8552",
+      "crossref:10.65109/kewv3606",
       "crossref:10.65109/pjmr3016",
       "crossref:10.65109/rruu9650",
       "crossref:10.70675/30509701z9a29z4beezbb15zeb1797051d75"
@@ -531,6 +533,7 @@
       "github:https://github.com/SergeyS81/news-digest-agent",
       "github:https://github.com/Shadowell/HyperTrade",
       "github:https://github.com/Shark6slayer/autonomous-research-intelligence",
+      "github:https://github.com/Shekhar609/Marketing-Ai-Agent-",
       "github:https://github.com/ShinkaUwU/claude-plays-tockers-trials",
       "github:https://github.com/Shivam-Fl/autonomous-growth-os",
       "github:https://github.com/Shreehari17/Intelligent-Research-agent",
@@ -783,6 +786,7 @@
       "github:https://github.com/hcipengm/cogneva",
       "github:https://github.com/hdu-ailab/EasyResearch",
       "github:https://github.com/heaven-hm/cheat-agent",
+      "github:https://github.com/hemadevihema/Autonomous-Research-Platform",
       "github:https://github.com/hennergimpel/Automated_Research_002_Advertising_Revenue",
       "github:https://github.com/henryzhangpku/autonomous-quant-researcher",
       "github:https://github.com/hermeum/hermeum",
@@ -1000,6 +1004,7 @@
       "github:https://github.com/sashakolpakov/math_gkm",
       "github:https://github.com/satkasatchik45-bit/agentsatka-bot",
       "github:https://github.com/saurabhNibble/multi-agent-research",
+      "github:https://github.com/scaleresearch/hypothesisloop",
       "github:https://github.com/seaborndan/game-concepts",
       "github:https://github.com/secwexen/aapp-mart",
       "github:https://github.com/senti67/Athena",
@@ -1313,9 +1318,11 @@
       "nvd:nvd-raw-sha256:effba40b0",
       "nvd:nvd-raw-sha256:f0021f5e6",
       "nvd:nvd-raw-sha256:f0669e3e8",
+      "nvd:nvd-raw-sha256:f113557f4",
       "nvd:nvd-raw-sha256:f25bec049",
       "nvd:nvd-raw-sha256:f48e5afb8",
       "nvd:nvd-raw-sha256:fa8d35037",
+      "nvd:nvd-raw-sha256:fb0978075",
       "nvd:nvd-raw-sha256:fbc8c14c0",
       "nvd:nvd-raw-sha256:fc75e7e11",
       "nvd:nvd-raw-sha256:fdc3d9a84",
@@ -1564,6 +1571,8 @@
       "pypi:https://pypi.org/project/boschshcpy/0.6.13/",
       "pypi:https://pypi.org/project/boyle/0.2.1/",
       "pypi:https://pypi.org/project/braindecode/1.8.1.dev169692045/",
+      "pypi:https://pypi.org/project/braindecode/1.8.1.dev182197904/",
+      "pypi:https://pypi.org/project/brainiac-cli/0.20.47/",
       "pypi:https://pypi.org/project/browser-workspace/0.4.15/",
       "pypi:https://pypi.org/project/bubo/0.28.4/",
       "pypi:https://pypi.org/project/build-artifact-registry/0.2.1/",
@@ -1680,6 +1689,7 @@
       "pypi:https://pypi.org/project/csim/4.0.1/",
       "pypi:https://pypi.org/project/cswap-pin/0.1.315/",
       "pypi:https://pypi.org/project/cuda-pathfinder/1.8.4/",
+      "pypi:https://pypi.org/project/cuid2/2.0.3/",
       "pypi:https://pypi.org/project/current-data-py/0.1.12/",
       "pypi:https://pypi.org/project/cursory/2.1.0/",
       "pypi:https://pypi.org/project/curupira-plugins/0.1.0/",
@@ -1749,6 +1759,7 @@
       "pypi:https://pypi.org/project/discussion-helper/0.3.0/",
       "pypi:https://pypi.org/project/dj-telegram-bot/0.1.6/",
       "pypi:https://pypi.org/project/django-dbs/0.7.0/",
+      "pypi:https://pypi.org/project/django-due/0.10.0/",
       "pypi:https://pypi.org/project/django-listmonk-mailer/0.1.0/",
       "pypi:https://pypi.org/project/django-ninja-aio-crud/3.0.0/",
       "pypi:https://pypi.org/project/django-resaas/0.0.634/",
@@ -2005,6 +2016,7 @@
       "pypi:https://pypi.org/project/il-audit/1.0.32/",
       "pypi:https://pypi.org/project/imervue-dev/1.0.26/",
       "pypi:https://pypi.org/project/impact/1.2.0rc6/",
+      "pypi:https://pypi.org/project/imperal-mcp/0.6.2/",
       "pypi:https://pypi.org/project/inbox-jev/0.1.0/",
       "pypi:https://pypi.org/project/incident-io/1.5.0/",
       "pypi:https://pypi.org/project/incolume-py-changelog/1.4.0/",
@@ -2398,6 +2410,7 @@
       "pypi:https://pypi.org/project/ontocraft-check/0.6.0/",
       "pypi:https://pypi.org/project/open-harness-scopelens/0.2.2/",
       "pypi:https://pypi.org/project/open-harness-suite/0.3.7/",
+      "pypi:https://pypi.org/project/open-source-repository-sampler/0.2.1/",
       "pypi:https://pypi.org/project/open-voicefilter-lite/0.1.0/",
       "pypi:https://pypi.org/project/openapi-client-codegen/0.3.2/",
       "pypi:https://pypi.org/project/openapiart/0.3.44/",
@@ -2446,6 +2459,7 @@
       "pypi:https://pypi.org/project/papyrus-newsroom/2.0.0.dev32/",
       "pypi:https://pypi.org/project/parisaocr/0.5.0/",
       "pypi:https://pypi.org/project/pb2/0.7.5/",
+      "pypi:https://pypi.org/project/pdb2pqr/3.8.0/",
       "pypi:https://pypi.org/project/pdfalive/0.17.0/",
       "pypi:https://pypi.org/project/peachpayments-partner-marshmallow/2.1.0/",
       "pypi:https://pypi.org/project/peerhub/0.18.0/",
@@ -2684,6 +2698,7 @@
       "pypi:https://pypi.org/project/ru-legal-skills-mcp/0.3.1/",
       "pypi:https://pypi.org/project/rulestamp-stema-kisei-lint/1.0.4/",
       "pypi:https://pypi.org/project/ruletree/2026.10.22.215231/",
+      "pypi:https://pypi.org/project/rust-bpe-tokenizer/0.1.2/",
       "pypi:https://pypi.org/project/rust-mdbook/0.5.4/",
       "pypi:https://pypi.org/project/rustuya-local/0.1.0.dev7/",
       "pypi:https://pypi.org/project/sadc-cft/7.0.2/",
@@ -2742,10 +2757,12 @@
       "pypi:https://pypi.org/project/sequence-ai/0.41.0/",
       "pypi:https://pypi.org/project/sequence-base/0.3.14/",
       "pypi:https://pypi.org/project/sequence-base/0.4.28/",
+      "pypi:https://pypi.org/project/sequence-base/0.4.32/",
       "pypi:https://pypi.org/project/seren-margin/5.0.0/",
       "pypi:https://pypi.org/project/serverlex/1.1.0/",
       "pypi:https://pypi.org/project/servicedna/0.2.0/",
       "pypi:https://pypi.org/project/servo-client/0.7.5/",
+      "pypi:https://pypi.org/project/sessionmemory/0.12.0/",
       "pypi:https://pypi.org/project/sharedbox/0.5.0/",
       "pypi:https://pypi.org/project/shelp-llm/0.5.0/",
       "pypi:https://pypi.org/project/sibyl-memory-client/0.9.0/",
@@ -3489,33 +3506,33 @@
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-10-24T16:15:36Z",
+      "last_scan": "2026-10-24T21:05:21Z",
       "last_status": "scanned",
-      "scans": 226
+      "scans": 228
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-10-24T16:15:36Z",
+      "last_scan": "2026-10-24T21:05:21Z",
       "last_status": "scanned",
-      "scans": 230
+      "scans": 232
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-10-24T16:15:36Z",
+      "last_scan": "2026-10-24T21:05:21Z",
       "last_status": "scanned",
-      "scans": 218
+      "scans": 220
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-10-24T16:15:36Z",
+      "last_scan": "2026-10-24T21:05:21Z",
       "last_status": "scanned",
-      "scans": 219
+      "scans": 221
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-10-24T16:15:36Z",
+      "last_scan": "2026-10-24T21:05:21Z",
       "last_status": "scanned",
-      "scans": 226
+      "scans": 228
     }
   }
 }
