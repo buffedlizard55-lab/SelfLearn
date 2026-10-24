@@ -289,6 +289,7 @@
     ],
     "github": [
       "github:https://github.com/001eander/ASTER",
+      "github:https://github.com/0pStack/Scalar-CommonsV5",
       "github:https://github.com/0sec-labs/0",
       "github:https://github.com/0xFE1C/AI-Trading",
       "github:https://github.com/123456170/-Autonomous-Research-Team",
@@ -302,6 +303,7 @@
       "github:https://github.com/7id0o/ruflo",
       "github:https://github.com/8gi-foundation/8gent-code",
       "github:https://github.com/9TEVE-O/Research_Repo",
+      "github:https://github.com/ADAPT-Chase/striker",
       "github:https://github.com/AGI-expert/AGIeX",
       "github:https://github.com/AI-x-Medicine-Agents/AI-x-Medicine-Research-Agent",
       "github:https://github.com/AKHILGOUDA28/Autonomous-AI-Research-and-Fact-Verification-Agent",
@@ -397,6 +399,7 @@
       "github:https://github.com/HP-Hari/Researchify-AI",
       "github:https://github.com/Hack23/riksdagsmonitor",
       "github:https://github.com/HadeedAhsan/ResearchLab-AI",
+      "github:https://github.com/HamzaIlyas/stillwright",
       "github:https://github.com/HanielUlises/Epistemic-Robotics",
       "github:https://github.com/HariomAutomation/nova-ide",
       "github:https://github.com/HillClimbBench/hillclimbbench.github.io",
@@ -430,6 +433,7 @@
       "github:https://github.com/LH434534/bluesky-agent",
       "github:https://github.com/LH434534/bsky-agent-24x7",
       "github:https://github.com/Lallalchambugongmarak/autonomous-ai-career-copilot",
+      "github:https://github.com/Lemon2312/ai-research-automation",
       "github:https://github.com/LeparaLaMapara/trading-research-engine",
       "github:https://github.com/Lexus2016/hermes-agent-evolution",
       "github:https://github.com/LiberoNuvola/Carob-Three-Project",
@@ -437,6 +441,7 @@
       "github:https://github.com/LouPineWays/Loop-Dee-Loup",
       "github:https://github.com/LunchBox951/pokeemerald-rs",
       "github:https://github.com/Mabolla/technocore-task-relay",
+      "github:https://github.com/MallaManoj/OmniIntel-Autonomous-Multi-Agent-Research-Predictive-Intelligence-Engine",
       "github:https://github.com/Manablaq/aegis-genlayer",
       "github:https://github.com/Mann-Patel85/AgenticMarketer-Automated-Marketing-Intelligence",
       "github:https://github.com/MarimerLLC/rockbot",
@@ -497,6 +502,7 @@
       "github:https://github.com/RSoulatIOHK/qed-colony",
       "github:https://github.com/RajdeepDas012/codex-cerebrum",
       "github:https://github.com/Ramki-2010/JARVIS",
+      "github:https://github.com/RapierCraftStudios/ForgeDock",
       "github:https://github.com/RedRookAI/keep-research-preview",
       "github:https://github.com/Rhutvik-pachghare1999/autonomous-drone-safety-architecture",
       "github:https://github.com/Rotterdam-Autonomous-Systems-Lab/genesis",
@@ -728,6 +734,7 @@
       "github:https://github.com/egagofur/ai-engineering-loop",
       "github:https://github.com/eli-w-king/autonomous-output-skills",
       "github:https://github.com/elihuvillaraus/skills",
+      "github:https://github.com/elixpo/crumb.elixpo",
       "github:https://github.com/elizaOS/eliza",
       "github:https://github.com/elsaadani40-pixel/Orient",
       "github:https://github.com/enochochieng/Awesome-World-Models",
@@ -1087,6 +1094,7 @@
       "github:https://github.com/zeikar/hyperclaude",
       "github:https://github.com/zeroclaw-labs/zeroclaw",
       "github:https://github.com/zhex0121/unsw-battlecode-portfolio",
+      "github:https://github.com/znzsofficial/neko-life",
       "github:https://github.com/zongxin1993/OnlyAlpha",
       "github:https://github.com/zzhang82/ambu-runtime-agents"
     ],
@@ -1191,6 +1199,7 @@
       "nvd:nvd-raw-sha256:7cbef62ee",
       "nvd:nvd-raw-sha256:7d1b1c308",
       "nvd:nvd-raw-sha256:7dab5931f",
+      "nvd:nvd-raw-sha256:7f1e0009b",
       "nvd:nvd-raw-sha256:7ff0d9b4f",
       "nvd:nvd-raw-sha256:801b0686c",
       "nvd:nvd-raw-sha256:81cb3f0c4",
@@ -1225,6 +1234,7 @@
       "nvd:nvd-raw-sha256:a7a24d418",
       "nvd:nvd-raw-sha256:a9048416d",
       "nvd:nvd-raw-sha256:a91af281a",
+      "nvd:nvd-raw-sha256:acc0a7d2d",
       "nvd:nvd-raw-sha256:b1e91d136",
       "nvd:nvd-raw-sha256:b4342223c",
       "nvd:nvd-raw-sha256:b52a9c08a",
@@ -1435,6 +1445,7 @@
       "pypi:https://pypi.org/project/anthracite/2.0.1/",
       "pypi:https://pypi.org/project/anton-agent/2.26.9.28.1rc3/",
       "pypi:https://pypi.org/project/anycall-py/0.5.0/",
+      "pypi:https://pypi.org/project/aperta/0.4.3a0/",
       "pypi:https://pypi.org/project/apify-client/3.2.2b5/",
       "pypi:https://pypi.org/project/apiverve-texttocolor/1.2.2/",
       "pypi:https://pypi.org/project/apiverve-thesaurus/1.2.2/",
@@ -1735,6 +1746,7 @@
       "pypi:https://pypi.org/project/djangocloud-cli/0.1.21/",
       "pypi:https://pypi.org/project/djinnml/1.2.1/",
       "pypi:https://pypi.org/project/djust/1.2.1rc2/",
+      "pypi:https://pypi.org/project/dnsmasq-webconf/0.4.0/",
       "pypi:https://pypi.org/project/doclens/1.2.41/",
       "pypi:https://pypi.org/project/docpress/1.4.12/",
       "pypi:https://pypi.org/project/document-quality/0.1.0/",
@@ -1883,6 +1895,7 @@
       "pypi:https://pypi.org/project/generic-audio-transcriber/0.1.0/",
       "pypi:https://pypi.org/project/geode-conversion/6.7.6/",
       "pypi:https://pypi.org/project/geode-simplex/11.7.13rc1/",
+      "pypi:https://pypi.org/project/geospark-ai/0.10.0/",
       "pypi:https://pypi.org/project/getmac/1.0.0b0/",
       "pypi:https://pypi.org/project/gettext-translator-ollama/0.1.0/",
       "pypi:https://pypi.org/project/gges/0.0.10/",
@@ -2324,6 +2337,7 @@
       "pypi:https://pypi.org/project/nyshporka/0.18.6/",
       "pypi:https://pypi.org/project/nyshporka/0.18.8/",
       "pypi:https://pypi.org/project/oarepo-rdm/9.1.0/",
+      "pypi:https://pypi.org/project/obey-cli/0.1.0/",
       "pypi:https://pypi.org/project/ocel/0.0.1/",
       "pypi:https://pypi.org/project/ocr-cleaner/0.1.0/",
       "pypi:https://pypi.org/project/octopus-sensing-plux/1.0.0/",
@@ -2519,6 +2533,7 @@
       "pypi:https://pypi.org/project/pybroswer/0.3.2/",
       "pypi:https://pypi.org/project/pycarlo/0.15.407/",
       "pypi:https://pypi.org/project/pyceles/0.6.0/",
+      "pypi:https://pypi.org/project/pycheck-neuron/1.0.6/",
       "pypi:https://pypi.org/project/pycontextfold/0.1.0/",
       "pypi:https://pypi.org/project/pycsr-business-analytics-report/0.1.3/",
       "pypi:https://pypi.org/project/pydantic-ai-algenta/0.1.4/",
@@ -2559,6 +2574,8 @@
       "pypi:https://pypi.org/project/pyspark-inspect/0.6.0/",
       "pypi:https://pypi.org/project/pytagmanager/0.3.3/",
       "pypi:https://pypi.org/project/pytest-databricks-lakeflow/0.13.0/",
+      "pypi:https://pypi.org/project/pytest-obligation/0.16.1/",
+      "pypi:https://pypi.org/project/python-agent-harness/1.5.6.6/",
       "pypi:https://pypi.org/project/python-sdk-remote/0.0.221b4266.post18402/",
       "pypi:https://pypi.org/project/pythonautomatalibrary/1.0.5/",
       "pypi:https://pypi.org/project/pythonlabtools/2.0.1/",
@@ -2750,6 +2767,7 @@
       "pypi:https://pypi.org/project/smqtk-dataprovider/0.20.0/",
       "pypi:https://pypi.org/project/smriti-memcore/1.4.28/",
       "pypi:https://pypi.org/project/smritikosh/0.4.0/",
+      "pypi:https://pypi.org/project/snowddl/0.70.1/",
       "pypi:https://pypi.org/project/snulbug/0.2.2/",
       "pypi:https://pypi.org/project/socials-mcp/0.1.0/",
       "pypi:https://pypi.org/project/socketsecurity/2.10.12/",
@@ -2834,6 +2852,10 @@
       "pypi:https://pypi.org/project/tensward/0.3.9/",
       "pypi:https://pypi.org/project/teradataml/20.0.0.12/",
       "pypi:https://pypi.org/project/term-sparkline/0.2.0/",
+      "pypi:https://pypi.org/project/termpaws-backend/0.9.41/",
+      "pypi:https://pypi.org/project/termpaws-daemon/0.9.41/",
+      "pypi:https://pypi.org/project/termpaws-frontend/0.9.41/",
+      "pypi:https://pypi.org/project/termpaws/0.9.41/",
       "pypi:https://pypi.org/project/terp-cap-eventbus/0.28.0/",
       "pypi:https://pypi.org/project/terp-cap-files/0.28.0/",
       "pypi:https://pypi.org/project/terp-cap-groups/0.28.0/",
@@ -3109,6 +3131,8 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026uxaeih",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026uyvfpd",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026vaqhjv",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026vaqovq",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026vaqtor",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026vaqutc",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/aka2026varwvn",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/av93068239",
@@ -3437,33 +3461,33 @@
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-10-24T04:57:24Z",
+      "last_scan": "2026-10-24T11:22:24Z",
       "last_status": "scanned",
-      "scans": 222
+      "scans": 224
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-10-24T04:57:24Z",
+      "last_scan": "2026-10-24T11:22:24Z",
       "last_status": "scanned",
-      "scans": 226
+      "scans": 228
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-10-24T04:57:24Z",
+      "last_scan": "2026-10-24T11:22:24Z",
       "last_status": "scanned",
-      "scans": 214
+      "scans": 216
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-10-24T04:57:24Z",
+      "last_scan": "2026-10-24T11:22:24Z",
       "last_status": "scanned",
-      "scans": 215
+      "scans": 217
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-10-24T04:57:24Z",
+      "last_scan": "2026-10-24T11:22:24Z",
       "last_status": "scanned",
-      "scans": 222
+      "scans": 224
     }
   }
 }
