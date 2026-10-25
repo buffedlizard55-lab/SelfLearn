@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-25T04:59:43Z",
-  "items_new": 4,
+  "generated_at": "2026-10-25T11:54:40Z",
+  "items_new": 9,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-0327b771166a",
+  "run_id": "run-ef6a2d33e1e9",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-24..2026-10-25 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-24..2026-10-25 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 2,
+      "items_new": 4,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,20 +77,36 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: LilMGenius/full-self-working\nThe record for",
-          "identifier": "https://github.com/LilMGenius/full-self-working",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: indigokarasu/custodian\nThe record for indig",
+          "identifier": "https://github.com/indigokarasu/custodian",
           "published_at": "2026-10-25",
           "source_id": "github",
-          "title": "LilMGenius/full-self-working",
-          "url": "https://github.com/LilMGenius/full-self-working"
+          "title": "indigokarasu/custodian",
+          "url": "https://github.com/indigokarasu/custodian"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: nitecon/amux\nThe record for nitecon/amux re",
-          "identifier": "https://github.com/nitecon/amux",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: SRIVISHNUGV-DEV/Portcullis\nThe record for S",
+          "identifier": "https://github.com/SRIVISHNUGV-DEV/Portcullis",
           "published_at": "2026-10-25",
           "source_id": "github",
-          "title": "nitecon/amux",
-          "url": "https://github.com/nitecon/amux"
+          "title": "SRIVISHNUGV-DEV/Portcullis",
+          "url": "https://github.com/SRIVISHNUGV-DEV/Portcullis"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: thepallavjha1/Self_Improving_Trading_Engine",
+          "identifier": "https://github.com/thepallavjha1/Self_Improving_Trading_Engine",
+          "published_at": "2026-10-25",
+          "source_id": "github",
+          "title": "thepallavjha1/Self_Improving_Trading_Engine",
+          "url": "https://github.com/thepallavjha1/Self_Improving_Trading_Engine"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: mraltafshaikh08-cmd/Jarvis-Office\nThe recor",
+          "identifier": "https://github.com/mraltafshaikh08-cmd/Jarvis-Office",
+          "published_at": "2026-10-25",
+          "source_id": "github",
+          "title": "mraltafshaikh08-cmd/Jarvis-Office",
+          "url": "https://github.com/mraltafshaikh08-cmd/Jarvis-Office"
         }
       ],
       "request_params": {
@@ -121,8 +137,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-25T04:59:45.229\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:01c786386",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-25T11:54:41.473\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:b57f2bfba",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -147,9 +163,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-24..2026-10-25 and dropped; 0 carried no readable date and were kept; 1 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-24..2026-10-25 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 1,
+      "items_new": 4,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -158,11 +174,35 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/code-coordinator/0.5.666/",
+          "identifier": "https://pypi.org/project/transcribenpy/1.0.5/",
           "published_at": "2026-10-25",
           "source_id": "pypi",
-          "title": "code-coordinator 0.5.666",
-          "url": "https://pypi.org/project/code-coordinator/0.5.666/"
+          "title": "TranscribeNPy 1.0.5",
+          "url": "https://pypi.org/project/transcribenpy/1.0.5/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/cellarbrain/0.3.9/",
+          "published_at": "2026-10-25",
+          "source_id": "pypi",
+          "title": "cellarbrain 0.3.9",
+          "url": "https://pypi.org/project/cellarbrain/0.3.9/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/cdx-manager/0.22.0/",
+          "published_at": "2026-10-25",
+          "source_id": "pypi",
+          "title": "cdx-manager 0.22.0",
+          "url": "https://pypi.org/project/cdx-manager/0.22.0/"
+        },
+        {
+          "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
+          "identifier": "https://pypi.org/project/invenio-theme-tuw/2026.1.9/",
+          "published_at": "2026-10-25",
+          "source_id": "pypi",
+          "title": "Invenio-Theme-TUW 2026.1.9",
+          "url": "https://pypi.org/project/invenio-theme-tuw/2026.1.9/"
         }
       ],
       "request_params": {},
