@@ -6,6 +6,7 @@
       "crossref:10.1007/979-8-8688-3150-8_3",
       "crossref:10.1007/979-8-8688-3150-8_7",
       "crossref:10.1007/s00404-025-07983-y",
+      "crossref:10.1007/s00530-024-01447-0",
       "crossref:10.1007/s10342-025-01792-3",
       "crossref:10.1007/s10458-005-2631-2",
       "crossref:10.1007/s10458-005-6825-4",
@@ -177,6 +178,7 @@
       "crossref:10.3390/ani15070954",
       "crossref:10.3390/ani15101424",
       "crossref:10.3390/ani15101480",
+      "crossref:10.3390/ani15111532",
       "crossref:10.3390/antiox13111377",
       "crossref:10.3390/antiox14010045",
       "crossref:10.3390/app13042184",
@@ -288,6 +290,7 @@
       "crossref:10.65109/kewv3606",
       "crossref:10.65109/pjmr3016",
       "crossref:10.65109/rruu9650",
+      "crossref:10.65109/vuia1313",
       "crossref:10.70675/30509701z9a29z4beezbb15zeb1797051d75"
     ],
     "github": [
@@ -441,6 +444,7 @@
       "github:https://github.com/Lexus2016/hermes-agent-evolution",
       "github:https://github.com/LiberoNuvola/Carob-Three-Project",
       "github:https://github.com/LiegeAgents/LiegeAgentsApp",
+      "github:https://github.com/LilMGenius/full-self-working",
       "github:https://github.com/LouPineWays/Loop-Dee-Loup",
       "github:https://github.com/LunchBox951/pokeemerald-rs",
       "github:https://github.com/Mabolla/technocore-task-relay",
@@ -937,6 +941,7 @@
       "github:https://github.com/nilswern/research-agent",
       "github:https://github.com/nimisha064/my-portfolio",
       "github:https://github.com/nini1972/prime_frontier",
+      "github:https://github.com/nitecon/amux",
       "github:https://github.com/nitroIm/argus-core",
       "github:https://github.com/norabble/continuous-research",
       "github:https://github.com/nvkudva/aeon",
@@ -997,6 +1002,7 @@
       "github:https://github.com/saifulislamamiyo/guardrail-trader",
       "github:https://github.com/saketjha34/ResearchTube",
       "github:https://github.com/samcharles93/archie-core",
+      "github:https://github.com/sameer10237/Research-Agent",
       "github:https://github.com/sammeng5232/perpetuum",
       "github:https://github.com/sanafirdouse2323-glitch/sana-ai-agent-security-trustworthy-ai-portfolio",
       "github:https://github.com/sandyreda898-oss/AI-Data-Analyst-Agent-Platform",
@@ -1112,6 +1118,7 @@
     "nvd": [
       "nvd:nvd-raw-sha256:014d1b1c6",
       "nvd:nvd-raw-sha256:018bd03f8",
+      "nvd:nvd-raw-sha256:01c786386",
       "nvd:nvd-raw-sha256:03d903b2f",
       "nvd:nvd-raw-sha256:040805232",
       "nvd:nvd-raw-sha256:04647d4c2",
@@ -1240,6 +1247,7 @@
       "nvd:nvd-raw-sha256:9c9a2c2f7",
       "nvd:nvd-raw-sha256:9d7189358",
       "nvd:nvd-raw-sha256:9fbd09c3e",
+      "nvd:nvd-raw-sha256:9ff17a38d",
       "nvd:nvd-raw-sha256:a31a6e25d",
       "nvd:nvd-raw-sha256:a38a5a182",
       "nvd:nvd-raw-sha256:a73ab91e2",
@@ -1469,6 +1477,7 @@
       "pypi:https://pypi.org/project/appwrite/24.4.0/",
       "pypi:https://pypi.org/project/arbi/1.37.0/",
       "pypi:https://pypi.org/project/arcae/0.4.0a15/",
+      "pypi:https://pypi.org/project/archilens/0.9.0/",
       "pypi:https://pypi.org/project/arctis-sound-manager/1.6.1/",
       "pypi:https://pypi.org/project/arduino-installer/3.0.0/",
       "pypi:https://pypi.org/project/argtoolbox/1.2.0/",
@@ -1640,6 +1649,7 @@
       "pypi:https://pypi.org/project/code-analysis-client/1.6.207/",
       "pypi:https://pypi.org/project/code-coordinator/0.5.524/",
       "pypi:https://pypi.org/project/code-coordinator/0.5.575/",
+      "pypi:https://pypi.org/project/code-coordinator/0.5.666/",
       "pypi:https://pypi.org/project/code-standards/8.2.9/",
       "pypi:https://pypi.org/project/codemie-mcp-assistants/0.1.663/",
       "pypi:https://pypi.org/project/codemie-mcp-datasources/0.1.663/",
@@ -1820,6 +1830,7 @@
       "pypi:https://pypi.org/project/esp-matter-mfg-tool/1.0.28/",
       "pypi:https://pypi.org/project/esp32-installer/3.0.0/",
       "pypi:https://pypi.org/project/estrellio-logging-lib/0.1.0/",
+      "pypi:https://pypi.org/project/etude-sdk/0.2.6/",
       "pypi:https://pypi.org/project/euredact/0.5.1/",
       "pypi:https://pypi.org/project/evaluatorq/1.73.3/",
       "pypi:https://pypi.org/project/evalwarden/0.8.0/",
@@ -2681,6 +2692,13 @@
       "pypi:https://pypi.org/project/rmic-guard/0.3.0/",
       "pypi:https://pypi.org/project/roadgen/0.7.0/",
       "pypi:https://pypi.org/project/roadmodel/0.2.48/",
+      "pypi:https://pypi.org/project/robotcode-modifiers/2.8.0.dev677/",
+      "pypi:https://pypi.org/project/robotcode-plugin/2.8.0.dev677/",
+      "pypi:https://pypi.org/project/robotcode-repl-server/2.8.0.dev677/",
+      "pypi:https://pypi.org/project/robotcode-repl/2.8.0.dev677/",
+      "pypi:https://pypi.org/project/robotcode-robot/2.8.0.dev677/",
+      "pypi:https://pypi.org/project/robotcode-runner/2.8.0.dev677/",
+      "pypi:https://pypi.org/project/robotcode/2.8.0.dev677/",
       "pypi:https://pypi.org/project/roboto/0.61.0/",
       "pypi:https://pypi.org/project/robovast-client/2.2.1/",
       "pypi:https://pypi.org/project/robovast-cluster/2.2.1/",
@@ -2968,6 +2986,7 @@
       "pypi:https://pypi.org/project/turbo-quant-memory/0.33.1/",
       "pypi:https://pypi.org/project/turbojev/0.29.2/",
       "pypi:https://pypi.org/project/turingdb/3.0.1/",
+      "pypi:https://pypi.org/project/tvlogo-monster/0.0.1/",
       "pypi:https://pypi.org/project/txt2ebook/0.1.214/",
       "pypi:https://pypi.org/project/typed-gguf/0.3.0/",
       "pypi:https://pypi.org/project/typelib/0.3.4/",
@@ -3271,6 +3290,9 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/ci41350823",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/ci41351407",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/ci41351423",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/ci41351951",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/ci41351959",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/ci41351967",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/hv75042912",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/hv75042917",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/hv75043447",
@@ -3365,6 +3387,8 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/nc75453111",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/nc75453636",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/nc75453646",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/nc75454431",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/nc75454441",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/nm60506453",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/nm60628491",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/nn00924700",
@@ -3386,6 +3410,7 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/pr71536653",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/pr71536748",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/pr71537338",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/pr71537573",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/se60628511",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/tx2026ssjxpx",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/tx2026swcvdc",
@@ -3458,6 +3483,10 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us6000u48b",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4hp",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4hr",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4q8",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4qm",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4qp",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4qq",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us7000tj1k",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/us7000tj1s",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uu80157846",
@@ -3506,33 +3535,33 @@
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-10-24T21:05:21Z",
+      "last_scan": "2026-10-25T04:59:43Z",
       "last_status": "scanned",
-      "scans": 228
+      "scans": 230
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-10-24T21:05:21Z",
+      "last_scan": "2026-10-25T04:59:43Z",
       "last_status": "scanned",
-      "scans": 232
+      "scans": 234
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-10-24T21:05:21Z",
+      "last_scan": "2026-10-25T04:59:43Z",
       "last_status": "scanned",
-      "scans": 220
+      "scans": 222
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-10-24T21:05:21Z",
+      "last_scan": "2026-10-25T04:59:43Z",
       "last_status": "scanned",
-      "scans": 221
+      "scans": 223
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-10-24T21:05:21Z",
+      "last_scan": "2026-10-25T04:59:43Z",
       "last_status": "scanned",
-      "scans": 228
+      "scans": 230
     }
   }
 }
