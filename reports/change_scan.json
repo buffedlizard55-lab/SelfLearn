@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-27T12:38:14Z",
+  "generated_at": "2026-10-27T22:31:33Z",
   "items_new": 13,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-596642d28191",
+  "run_id": "run-f490c292936b",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-26..2026-10-27 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-26..2026-10-27 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 2,
+      "items_new": 3,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,20 +77,28 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: tollbench/toll-harness\nThe record for tollb",
-          "identifier": "https://github.com/tollbench/toll-harness",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: nmcitra/ktp-rfc\nThe record for nmcitra/ktp-",
+          "identifier": "https://github.com/nmcitra/ktp-rfc",
           "published_at": "2026-10-27",
           "source_id": "github",
-          "title": "tollbench/toll-harness",
-          "url": "https://github.com/tollbench/toll-harness"
+          "title": "nmcitra/ktp-rfc",
+          "url": "https://github.com/nmcitra/ktp-rfc"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: MohammadFayasKhan/LpuUmsAgent\nThe record fo",
-          "identifier": "https://github.com/MohammadFayasKhan/LpuUmsAgent",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: UnderMyBed/bitburner-agent\nThe record for U",
+          "identifier": "https://github.com/UnderMyBed/bitburner-agent",
           "published_at": "2026-10-27",
           "source_id": "github",
-          "title": "MohammadFayasKhan/LpuUmsAgent",
-          "url": "https://github.com/MohammadFayasKhan/LpuUmsAgent"
+          "title": "UnderMyBed/bitburner-agent",
+          "url": "https://github.com/UnderMyBed/bitburner-agent"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: sotirisagapitoskalafatas-commits/Hlektrismo",
+          "identifier": "https://github.com/sotirisagapitoskalafatas-commits/Hlektrismos.gr-crm",
+          "published_at": "2026-10-27",
+          "source_id": "github",
+          "title": "sotirisagapitoskalafatas-commits/Hlektrismos.gr-crm",
+          "url": "https://github.com/sotirisagapitoskalafatas-commits/Hlektrismos.gr-crm"
         }
       ],
       "request_params": {
@@ -121,8 +129,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-27T12:38:15.893\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:b977db260",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-27T22:31:34.689\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:94e36b4e3",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -147,9 +155,9 @@
       }
     },
     {
-      "detail": "10 item(s) returned; 0 published before the window 2026-10-26..2026-10-27 and dropped; 0 carried no readable date and were kept; 10 not seen by this engine before.",
+      "detail": "10 item(s) returned; 0 published before the window 2026-10-26..2026-10-27 and dropped; 0 carried no readable date and were kept; 9 not seen by this engine before.",
       "docs_url": "https://docs.pypi.org/api/feeds/",
-      "items_new": 10,
+      "items_new": 9,
       "items_out_of_window": 0,
       "items_returned": 10,
       "items_seen": 10,
@@ -158,43 +166,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/vamp-forticheck/1.3.0/",
+          "identifier": "https://pypi.org/project/dissect-util/3.25.dev15/",
           "published_at": "2026-10-27",
           "source_id": "pypi",
-          "title": "vamp-forticheck 1.3.0",
-          "url": "https://pypi.org/project/vamp-forticheck/1.3.0/"
+          "title": "dissect.util 3.25.dev15",
+          "url": "https://pypi.org/project/dissect-util/3.25.dev15/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/opensandbox-code-interpreter/1.2.0/",
+          "identifier": "https://pypi.org/project/win-llmtop/0.3.1/",
           "published_at": "2026-10-27",
           "source_id": "pypi",
-          "title": "opensandbox-code-interpreter 1.2.0",
-          "url": "https://pypi.org/project/opensandbox-code-interpreter/1.2.0/"
+          "title": "win-llmtop 0.3.1",
+          "url": "https://pypi.org/project/win-llmtop/0.3.1/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/ocelescope-module-ocpn-editor/0.10.7/",
+          "identifier": "https://pypi.org/project/dkist-processing-cryonirsp/4.2.0/",
           "published_at": "2026-10-27",
           "source_id": "pypi",
-          "title": "ocelescope-module-ocpn-editor 0.10.7",
-          "url": "https://pypi.org/project/ocelescope-module-ocpn-editor/0.10.7/"
+          "title": "dkist-processing-cryonirsp 4.2.0",
+          "url": "https://pypi.org/project/dkist-processing-cryonirsp/4.2.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/opensandbox/1.2.0/",
+          "identifier": "https://pypi.org/project/myna-lang/0.4.2/",
           "published_at": "2026-10-27",
           "source_id": "pypi",
-          "title": "opensandbox 1.2.0",
-          "url": "https://pypi.org/project/opensandbox/1.2.0/"
+          "title": "myna-lang 0.4.2",
+          "url": "https://pypi.org/project/myna-lang/0.4.2/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/qwenpaw/2.3.0b1/",
+          "identifier": "https://pypi.org/project/sdr-grader/1.6.0/",
           "published_at": "2026-10-27",
           "source_id": "pypi",
-          "title": "qwenpaw 2.3.0b1",
-          "url": "https://pypi.org/project/qwenpaw/2.3.0b1/"
+          "title": "sdr-grader 1.6.0",
+          "url": "https://pypi.org/project/sdr-grader/1.6.0/"
         }
       ],
       "request_params": {},
