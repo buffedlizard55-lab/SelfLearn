@@ -1,0 +1,23 @@
+{
+  "bytes_read": 58968,
+  "content_hash": "sha256:047d212e7688c10ade05b9eb58b726158deee031ebbe2db23ae1aec7c85f18ea",
+  "evidence_class": "primary_source",
+  "evidence_class_label": "Original data, official API response, official document or dataset.",
+  "evidence_id": "ev-1ce99f539cbc",
+  "evidence_rank": 3,
+  "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: virattt/dexter\nThe record for virattt/dexter reports: pushed_at 2026-09-23T19:56:36Z, stargazers_count 27716, forks_count 3420.\nThe record for virattt/dexter repor",
+  "http_status": 200,
+  "is_fixture": false,
+  "is_live": true,
+  "license": "Repository content carries each repository's own licence",
+  "notes": "Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+  "published_at": "2026-09-23",
+  "publisher": "GitHub, Inc. (Microsoft)",
+  "response_sha256": "sha256:42902cf8b75d992249dd5deca5a252ee3d22530824e67bd38e6645fda465892d",
+  "retrieved_at": "2026-10-27T12:38:05Z",
+  "source_id": "github",
+  "source_name": "GitHub REST API",
+  "text": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: virattt/dexter\nThe record for virattt/dexter reports: pushed_at 2026-09-23T19:56:36Z, stargazers_count 27716, forks_count 3420.\nThe record for virattt/dexter reports: language TypeScript, open_issues_count 106.\nThe record for virattt/dexter states in its own description: An autonomous agent for deep financial research\nSource note: Repository metadata is the maintainers' own artefact. Repository activity is an adoption signal, not proof of correctness.",
+  "title": "virattt/dexter",
+  "url": "https://github.com/virattt/dexter"
+}

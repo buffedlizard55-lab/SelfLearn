@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-27T05:34:30Z",
+  "generated_at": "2026-10-27T12:38:14Z",
   "items_new": 13,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-1d7bf6d5d41f",
+  "run_id": "run-596642d28191",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -77,20 +77,20 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: explorercosmic7-arch/autonomous-edge-agent-",
-          "identifier": "https://github.com/explorercosmic7-arch/autonomous-edge-agent-economy",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: tollbench/toll-harness\nThe record for tollb",
+          "identifier": "https://github.com/tollbench/toll-harness",
           "published_at": "2026-10-27",
           "source_id": "github",
-          "title": "explorercosmic7-arch/autonomous-edge-agent-economy",
-          "url": "https://github.com/explorercosmic7-arch/autonomous-edge-agent-economy"
+          "title": "tollbench/toll-harness",
+          "url": "https://github.com/tollbench/toll-harness"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Rafi0496/Autonomous-AI-Data-Analyst-Agent\nT",
-          "identifier": "https://github.com/Rafi0496/Autonomous-AI-Data-Analyst-Agent",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: MohammadFayasKhan/LpuUmsAgent\nThe record fo",
+          "identifier": "https://github.com/MohammadFayasKhan/LpuUmsAgent",
           "published_at": "2026-10-27",
           "source_id": "github",
-          "title": "Rafi0496/Autonomous-AI-Data-Analyst-Agent",
-          "url": "https://github.com/Rafi0496/Autonomous-AI-Data-Analyst-Agent"
+          "title": "MohammadFayasKhan/LpuUmsAgent",
+          "url": "https://github.com/MohammadFayasKhan/LpuUmsAgent"
         }
       ],
       "request_params": {
@@ -121,8 +121,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-27T05:34:32.431\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:f96f63a5e",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-27T12:38:15.893\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:b977db260",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -158,43 +158,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/girder-homepage/5.0.21.dev2/",
-          "published_at": "2026-10-26",
+          "identifier": "https://pypi.org/project/vamp-forticheck/1.3.0/",
+          "published_at": "2026-10-27",
           "source_id": "pypi",
-          "title": "girder-homepage 5.0.21.dev2",
-          "url": "https://pypi.org/project/girder-homepage/5.0.21.dev2/"
+          "title": "vamp-forticheck 1.3.0",
+          "url": "https://pypi.org/project/vamp-forticheck/1.3.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/girder-hashsum-download/5.0.21.dev2/",
-          "published_at": "2026-10-26",
+          "identifier": "https://pypi.org/project/opensandbox-code-interpreter/1.2.0/",
+          "published_at": "2026-10-27",
           "source_id": "pypi",
-          "title": "girder-hashsum-download 5.0.21.dev2",
-          "url": "https://pypi.org/project/girder-hashsum-download/5.0.21.dev2/"
+          "title": "opensandbox-code-interpreter 1.2.0",
+          "url": "https://pypi.org/project/opensandbox-code-interpreter/1.2.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/databrowser/1.1.9/",
-          "published_at": "2026-10-26",
+          "identifier": "https://pypi.org/project/ocelescope-module-ocpn-editor/0.10.7/",
+          "published_at": "2026-10-27",
           "source_id": "pypi",
-          "title": "databrowser 1.1.9",
-          "url": "https://pypi.org/project/databrowser/1.1.9/"
+          "title": "ocelescope-module-ocpn-editor 0.10.7",
+          "url": "https://pypi.org/project/ocelescope-module-ocpn-editor/0.10.7/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/databrowser/1.1.8/",
-          "published_at": "2026-10-26",
+          "identifier": "https://pypi.org/project/opensandbox/1.2.0/",
+          "published_at": "2026-10-27",
           "source_id": "pypi",
-          "title": "databrowser 1.1.8",
-          "url": "https://pypi.org/project/databrowser/1.1.8/"
+          "title": "opensandbox 1.2.0",
+          "url": "https://pypi.org/project/opensandbox/1.2.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/a13n-stream-protocol/0.21.0/",
-          "published_at": "2026-10-26",
+          "identifier": "https://pypi.org/project/qwenpaw/2.3.0b1/",
+          "published_at": "2026-10-27",
           "source_id": "pypi",
-          "title": "a13n-stream-protocol 0.21.0",
-          "url": "https://pypi.org/project/a13n-stream-protocol/0.21.0/"
+          "title": "qwenpaw 2.3.0b1",
+          "url": "https://pypi.org/project/qwenpaw/2.3.0b1/"
         }
       ],
       "request_params": {},
