@@ -1,15 +1,14 @@
 {
   "by_status": {
     "policy_refused": 1,
-    "scanned": 4,
-    "unreachable": 1
+    "scanned": 5
   },
-  "generated_at": "2026-10-28T13:21:41Z",
+  "generated_at": "2026-10-28T22:58:04Z",
   "items_new": 6,
   "items_out_of_window": 5,
-  "items_returned": 25,
-  "items_seen": 20,
-  "run_id": "run-39c8eebd1be7",
+  "items_returned": 26,
+  "items_seen": 21,
+  "run_id": "run-88fbdaea2929",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -68,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-27..2026-10-28 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-27..2026-10-28 and dropped; 0 carried no readable date and were kept; 2 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 3,
+      "items_new": 2,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -78,28 +77,20 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: HivemindOS-Agents/hivepunk-1071\nThe record ",
-          "identifier": "https://github.com/HivemindOS-Agents/hivepunk-1071",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: HivemindOS-Agents/hivepunk-632\nThe record f",
+          "identifier": "https://github.com/HivemindOS-Agents/hivepunk-632",
           "published_at": "2026-10-28",
           "source_id": "github",
-          "title": "HivemindOS-Agents/hivepunk-1071",
-          "url": "https://github.com/HivemindOS-Agents/hivepunk-1071"
+          "title": "HivemindOS-Agents/hivepunk-632",
+          "url": "https://github.com/HivemindOS-Agents/hivepunk-632"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: wheelerhubbell/whp-sentinel-template\nThe re",
-          "identifier": "https://github.com/wheelerhubbell/whp-sentinel-template",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: saurabh-bhagat-stack/owlforge\nThe record fo",
+          "identifier": "https://github.com/saurabh-bhagat-stack/owlforge",
           "published_at": "2026-10-28",
           "source_id": "github",
-          "title": "wheelerhubbell/whp-sentinel-template",
-          "url": "https://github.com/wheelerhubbell/whp-sentinel-template"
-        },
-        {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Sameer769dev/CrisisGrid\nThe record for Same",
-          "identifier": "https://github.com/Sameer769dev/CrisisGrid",
-          "published_at": "2026-10-28",
-          "source_id": "github",
-          "title": "Sameer769dev/CrisisGrid",
-          "url": "https://github.com/Sameer769dev/CrisisGrid"
+          "title": "saurabh-bhagat-stack/owlforge",
+          "url": "https://github.com/saurabh-bhagat-stack/owlforge"
         }
       ],
       "request_params": {
@@ -120,15 +111,24 @@
       }
     },
     {
-      "detail": "all 3 attempts failed for https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=autonomous+agent&lastModStartDate=2026-10-27T00%3A00%3A00.000%2B00%3A00&lastModEndDate=2026-10-28T00%3A00%3A00.000%2B00%3A00&resultsPerPage=5: HTTP 503 for https://services.nvd.nist.gov/rest/json/cves/2.0?keywor",
+      "detail": "1 item(s) returned; 0 published before the window 2026-10-27..2026-10-28 and dropped; 1 carried no readable date and were kept; 1 not seen by this engine before.",
       "docs_url": "https://nvd.nist.gov/developers/vulnerabilities",
-      "items_new": 0,
+      "items_new": 1,
       "items_out_of_window": 0,
-      "items_returned": 0,
-      "items_seen": 0,
-      "items_undated": 0,
+      "items_returned": 1,
+      "items_seen": 1,
+      "items_undated": 1,
       "mechanism": "CVE records last modified inside an explicit window",
-      "new_items": [],
+      "new_items": [
+        {
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-28T22:58:05.589\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:11ced2f5c",
+          "published_at": null,
+          "source_id": "nvd",
+          "title": "NIST National Vulnerability Database API response",
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0"
+        }
+      ],
       "request_params": {
         "keywordSearch": "autonomous agent",
         "lastModEndDate": "2026-10-28T00:00:00.000+00:00",
@@ -138,7 +138,7 @@
       "request_url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
       "source_id": "nvd",
       "source_name": "NIST National Vulnerability Database API",
-      "status": "unreachable",
+      "status": "scanned",
       "window": {
         "days": 1,
         "first_scan": false,
@@ -158,27 +158,27 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/uel-gopro/0.1.1/",
+          "identifier": "https://pypi.org/project/searchlibrium/0.0.265/",
           "published_at": "2026-10-28",
           "source_id": "pypi",
-          "title": "uel-gopro 0.1.1",
-          "url": "https://pypi.org/project/uel-gopro/0.1.1/"
+          "title": "SearchLibrium 0.0.265",
+          "url": "https://pypi.org/project/searchlibrium/0.0.265/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/youeduc-sdk-messaging/0.11.3/",
+          "identifier": "https://pypi.org/project/crypts-and-commits/0.3.0/",
           "published_at": "2026-10-28",
           "source_id": "pypi",
-          "title": "youeduc-sdk-messaging 0.11.3",
-          "url": "https://pypi.org/project/youeduc-sdk-messaging/0.11.3/"
+          "title": "crypts-and-commits 0.3.0",
+          "url": "https://pypi.org/project/crypts-and-commits/0.3.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/simpleaudit-studio/0.5.22/",
+          "identifier": "https://pypi.org/project/ansys-sherlock-core/2.1.5/",
           "published_at": "2026-10-28",
           "source_id": "pypi",
-          "title": "simpleaudit-studio 0.5.22",
-          "url": "https://pypi.org/project/simpleaudit-studio/0.5.22/"
+          "title": "ansys-sherlock-core 2.1.5",
+          "url": "https://pypi.org/project/ansys-sherlock-core/2.1.5/"
         }
       ],
       "request_params": {},
@@ -223,6 +223,6 @@
     }
   ],
   "sources_attempted": 6,
-  "sources_scanned": 4,
+  "sources_scanned": 5,
   "window_days": 7
 }

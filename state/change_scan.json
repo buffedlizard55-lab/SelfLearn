@@ -447,6 +447,7 @@
       "github:https://github.com/Himanshu90909/sentinelx-nexus",
       "github:https://github.com/HivemindOS-Agents/hivepunk-1071",
       "github:https://github.com/HivemindOS-Agents/hivepunk-547",
+      "github:https://github.com/HivemindOS-Agents/hivepunk-632",
       "github:https://github.com/HuseyinAts/kiro2",
       "github:https://github.com/IamDev29/ai-research-agent",
       "github:https://github.com/Iliegabri6556/ContinuousClaudeV4.7",
@@ -750,6 +751,8 @@
       "github:https://github.com/bsalsa2/varn",
       "github:https://github.com/buildcwnelson/financio",
       "github:https://github.com/c1t1zen1/markgitup-research-desk",
+      "github:https://github.com/cambridgetcg/castle-of-words",
+      "github:https://github.com/carlkjoels/selvra-analysis",
       "github:https://github.com/chainstart/openlabs",
       "github:https://github.com/chair-amrit/trustworthy-agentic-ai",
       "github:https://github.com/chenhaiyan123/ai-auto-explorer",
@@ -1087,6 +1090,7 @@
       "github:https://github.com/sanishstha/titan",
       "github:https://github.com/sashakolpakov/math_gkm",
       "github:https://github.com/satkasatchik45-bit/agentsatka-bot",
+      "github:https://github.com/saurabh-bhagat-stack/owlforge",
       "github:https://github.com/saurabhNibble/multi-agent-research",
       "github:https://github.com/sauvik95/alpha-research-terminal",
       "github:https://github.com/scaleresearch/hypothesisloop",
@@ -1203,6 +1207,7 @@
       "github:https://github.com/zariffromlatif/life-forge",
       "github:https://github.com/zeikar/hyperclaude",
       "github:https://github.com/zeroclaw-labs/zeroclaw",
+      "github:https://github.com/zhengzhenghao007/AutoResearch-Agent",
       "github:https://github.com/zhex0121/unsw-battlecode-portfolio",
       "github:https://github.com/znzsofficial/neko-life",
       "github:https://github.com/zongxin1993/OnlyAlpha",
@@ -1223,6 +1228,7 @@
       "nvd:nvd-raw-sha256:0d950a465",
       "nvd:nvd-raw-sha256:109eb2787",
       "nvd:nvd-raw-sha256:118c44bad",
+      "nvd:nvd-raw-sha256:11ced2f5c",
       "nvd:nvd-raw-sha256:1210379bf",
       "nvd:nvd-raw-sha256:129195ac0",
       "nvd:nvd-raw-sha256:157fb3104",
@@ -1330,6 +1336,7 @@
       "nvd:nvd-raw-sha256:8a2f9a4d3",
       "nvd:nvd-raw-sha256:8bbbdfcf7",
       "nvd:nvd-raw-sha256:8be3b20c3",
+      "nvd:nvd-raw-sha256:8d2526e86",
       "nvd:nvd-raw-sha256:8ee752678",
       "nvd:nvd-raw-sha256:914e70bc0",
       "nvd:nvd-raw-sha256:919e3be27",
@@ -1587,6 +1594,7 @@
       "pypi:https://pypi.org/project/ankor/0.5.311/",
       "pypi:https://pypi.org/project/anlordabliterator/1.2.0.post1/",
       "pypi:https://pypi.org/project/anneal/0.10.0/",
+      "pypi:https://pypi.org/project/ansys-sherlock-core/2.1.5/",
       "pypi:https://pypi.org/project/ant-connect-py/2.0.12rc321/",
       "pypi:https://pypi.org/project/ant-connect-py/2.0.12rc384/",
       "pypi:https://pypi.org/project/antares-legacy-gems-converter/0.4.0/",
@@ -1841,6 +1849,7 @@
       "pypi:https://pypi.org/project/crawlora-reddit/0.1.1/",
       "pypi:https://pypi.org/project/crimsonland/0.19.2/",
       "pypi:https://pypi.org/project/crunch-cli/13.0.1/",
+      "pypi:https://pypi.org/project/crypts-and-commits/0.3.0/",
       "pypi:https://pypi.org/project/crystalline/0.2.4/",
       "pypi:https://pypi.org/project/cs-models/0.0.975/",
       "pypi:https://pypi.org/project/csim/4.0.1/",
@@ -2061,6 +2070,7 @@
       "pypi:https://pypi.org/project/flufl-bounce/6.0.0/",
       "pypi:https://pypi.org/project/fluidattacks-core-aio/13.1.0/",
       "pypi:https://pypi.org/project/fluidattacks-core-git/12.2.4/",
+      "pypi:https://pypi.org/project/fluidattacks-core-git/19.0.1/",
       "pypi:https://pypi.org/project/flyteplugins-omlx/0.0.0a0/",
       "pypi:https://pypi.org/project/fmu-settings-cli/1.3.0/",
       "pypi:https://pypi.org/project/footbridge/1.0.12/",
@@ -2214,6 +2224,7 @@
       "pypi:https://pypi.org/project/inillucent/2.5.3/",
       "pypi:https://pypi.org/project/inklet/4.4.1/",
       "pypi:https://pypi.org/project/inps/1.21/",
+      "pypi:https://pypi.org/project/inspect-ranges/0.2.2/",
       "pypi:https://pypi.org/project/insta-shop-decoder/0.1.0/",
       "pypi:https://pypi.org/project/instance-repo/1.3.5.dev1/",
       "pypi:https://pypi.org/project/inteligenciartificial/0.0.8/",
@@ -2241,6 +2252,7 @@
       "pypi:https://pypi.org/project/jcmsuite-data-tree/7.4.2/",
       "pypi:https://pypi.org/project/jcmsuite-notebooks/7.4.2/",
       "pypi:https://pypi.org/project/jcmsuite/7.4.2/",
+      "pypi:https://pypi.org/project/jcvi/1.6.8/",
       "pypi:https://pypi.org/project/jellyfin-media-organizer/0.3.1/",
       "pypi:https://pypi.org/project/jevbrief/0.2.0/",
       "pypi:https://pypi.org/project/jevfilter/0.2.0/",
@@ -2340,6 +2352,7 @@
       "pypi:https://pypi.org/project/lingling/2.1.20.post4/",
       "pypi:https://pypi.org/project/linkapy/1.10.0/",
       "pypi:https://pypi.org/project/litellm-algenta/0.1.4/",
+      "pypi:https://pypi.org/project/litellm-core/1.106.6/",
       "pypi:https://pypi.org/project/litert-cli/0.2.1/",
       "pypi:https://pypi.org/project/litert-converter/0.5.0.dev20261006/",
       "pypi:https://pypi.org/project/litewriter/0.3.1/",
@@ -2483,6 +2496,7 @@
       "pypi:https://pypi.org/project/model-dispatcher/0.6.3/",
       "pypi:https://pypi.org/project/modelparams/0.0.49/",
       "pypi:https://pypi.org/project/modelroom/0.1.0/",
+      "pypi:https://pypi.org/project/modenv-rc/0.0.4/",
       "pypi:https://pypi.org/project/moderator/0.0.1rc1/",
       "pypi:https://pypi.org/project/modern-di-aiogram/4.2.0/",
       "pypi:https://pypi.org/project/modern-di-aiohttp/4.2.0/",
@@ -2514,6 +2528,7 @@
       "pypi:https://pypi.org/project/mudfish/0.2.1/",
       "pypi:https://pypi.org/project/mukimov/0.1.5/",
       "pypi:https://pypi.org/project/muku-core/1.20261011.4/",
+      "pypi:https://pypi.org/project/mun-feas-ga-data/0.4.1/",
       "pypi:https://pypi.org/project/murmur-dictation/0.2.0/",
       "pypi:https://pypi.org/project/musicpipeline/1.1.0/",
       "pypi:https://pypi.org/project/my-latex-document/1.0.0/",
@@ -2578,6 +2593,7 @@
       "pypi:https://pypi.org/project/normalizer-tr/0.6.0/",
       "pypi:https://pypi.org/project/norns-sdk/0.8.2/",
       "pypi:https://pypi.org/project/not1mm/26.10.27/",
+      "pypi:https://pypi.org/project/notebooklm-mindmap-extractor/0.1.0/",
       "pypi:https://pypi.org/project/noust/3.1.13/",
       "pypi:https://pypi.org/project/nova-data-mcp/0.5.4/",
       "pypi:https://pypi.org/project/npc-sessions/0.0.290/",
@@ -2721,6 +2737,8 @@
       "pypi:https://pypi.org/project/piot-fixture-zzz-python-sdist/0.0.1792471654/",
       "pypi:https://pypi.org/project/piot-fixture-zzz-python/0.0.1792471652/",
       "pypi:https://pypi.org/project/pipdash/1.1.4/",
+      "pypi:https://pypi.org/project/pivot-tui/0.5.21/",
+      "pypi:https://pypi.org/project/pivot/0.5.21/",
       "pypi:https://pypi.org/project/pixelazer-tl/1.0.3/",
       "pypi:https://pypi.org/project/pkpdsim/0.2.0/",
       "pypi:https://pypi.org/project/placo/0.10.2/",
@@ -2738,6 +2756,7 @@
       "pypi:https://pypi.org/project/pmcfetch/0.1.0/",
       "pypi:https://pypi.org/project/pocketsynth/0.2.2/",
       "pypi:https://pypi.org/project/podcast-maker-ldxs/0.41.1/",
+      "pypi:https://pypi.org/project/polar2wgs84/1.1.1/",
       "pypi:https://pypi.org/project/polars-genson/0.7.8/",
       "pypi:https://pypi.org/project/policyengine-household-analytics/0.33.1/",
       "pypi:https://pypi.org/project/policyengine-household-api/0.33.1/",
@@ -3009,6 +3028,7 @@
       "pypi:https://pypi.org/project/sdmxlib/0.74.0/",
       "pypi:https://pypi.org/project/sdr-grader/1.6.0/",
       "pypi:https://pypi.org/project/sdv/1.38.4.dev0/",
+      "pypi:https://pypi.org/project/searchlibrium/0.0.265/",
       "pypi:https://pypi.org/project/secator/0.45.0/",
       "pypi:https://pypi.org/project/seekr-hatchery/0.65.0/",
       "pypi:https://pypi.org/project/seeplot/0.1.0/",
@@ -3829,6 +3849,8 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uu80161801",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uu80161871",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uu80161881",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uu80161971",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uu80161976",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714107521",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714108171",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714108191",
@@ -3855,39 +3877,40 @@
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714122182",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714122812",
       "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714124632",
-      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714127852"
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714127852",
+      "usgs_earthquake:https://earthquake.usgs.gov/earthquakes/eventpage/uw714130621"
     ]
   },
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-10-28T13:21:41Z",
+      "last_scan": "2026-10-28T22:58:04Z",
       "last_status": "scanned",
-      "scans": 252
+      "scans": 254
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-10-28T13:21:41Z",
+      "last_scan": "2026-10-28T22:58:04Z",
       "last_status": "scanned",
-      "scans": 256
+      "scans": 258
     },
     "nvd": {
       "last_items": 1,
-      "last_scan": "2026-10-28T06:07:19Z",
+      "last_scan": "2026-10-28T22:58:04Z",
       "last_status": "scanned",
-      "scans": 242
+      "scans": 244
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-10-28T13:21:41Z",
+      "last_scan": "2026-10-28T22:58:04Z",
       "last_status": "scanned",
-      "scans": 245
+      "scans": 247
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-10-28T13:21:41Z",
+      "last_scan": "2026-10-28T22:58:04Z",
       "last_status": "scanned",
-      "scans": 252
+      "scans": 254
     }
   }
 }
