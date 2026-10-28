@@ -445,6 +445,7 @@
       "github:https://github.com/HariomAutomation/nova-ide",
       "github:https://github.com/HillClimbBench/hillclimbbench.github.io",
       "github:https://github.com/Himanshu90909/sentinelx-nexus",
+      "github:https://github.com/HivemindOS-Agents/hivepunk-1071",
       "github:https://github.com/HivemindOS-Agents/hivepunk-547",
       "github:https://github.com/HuseyinAts/kiro2",
       "github:https://github.com/IamDev29/ai-research-agent",
@@ -571,6 +572,7 @@
       "github:https://github.com/Saieshwar5/ayati-v1",
       "github:https://github.com/SakkarinKt/janus-chrysalis",
       "github:https://github.com/SamarthDhage07/BearBull",
+      "github:https://github.com/Sameer769dev/CrisisGrid",
       "github:https://github.com/Sandeep-Hipparagi/forge",
       "github:https://github.com/SandeshBhat15/opencode-agent-swarm",
       "github:https://github.com/Saran-0715/Autonomous-AI-Research-Agent",
@@ -822,6 +824,7 @@
       "github:https://github.com/flyoung588/flyoung588",
       "github:https://github.com/fmogensen/ASF",
       "github:https://github.com/forumevi/hermes-self-healing-context",
+      "github:https://github.com/frankbueltge/machine-attention",
       "github:https://github.com/frankbueltge/studio",
       "github:https://github.com/fullsend-ai/fullsend",
       "github:https://github.com/garyohosu/AI-Watering-Hole",
@@ -1177,6 +1180,7 @@
       "github:https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
       "github:https://github.com/wassname/pi-goals",
       "github:https://github.com/westland/MexicoConsumerPulse",
+      "github:https://github.com/wheelerhubbell/whp-sentinel-template",
       "github:https://github.com/whoff77/shorky",
       "github:https://github.com/williacj/rigger",
       "github:https://github.com/willyfh/hidden-consensus-loud-disagreement",
@@ -1727,6 +1731,7 @@
       "pypi:https://pypi.org/project/calendardataviz/0.4.2/",
       "pypi:https://pypi.org/project/call-ai-metrics/0.1.0/",
       "pypi:https://pypi.org/project/camber-toolkit/0.99.0/",
+      "pypi:https://pypi.org/project/campus-auth/1.6.0/",
       "pypi:https://pypi.org/project/camunda-orchestration-sdk/11.0.0.dev2/",
       "pypi:https://pypi.org/project/capt-hook/12.86.0/",
       "pypi:https://pypi.org/project/capt-hook/12.91.2/",
@@ -2004,6 +2009,7 @@
       "pypi:https://pypi.org/project/extapps/0.6.0/",
       "pypi:https://pypi.org/project/extended-json-schema-validator/0.16.1/",
       "pypi:https://pypi.org/project/ezdwg/0.16.2/",
+      "pypi:https://pypi.org/project/ezdwg/0.17.2/",
       "pypi:https://pypi.org/project/faberon/0.2.2/",
       "pypi:https://pypi.org/project/factreel/0.1.1/",
       "pypi:https://pypi.org/project/factur-x/7.0/",
@@ -2084,6 +2090,7 @@
       "pypi:https://pypi.org/project/fyos-installer/0.1.3/",
       "pypi:https://pypi.org/project/galaga/2.0.0b3/",
       "pypi:https://pypi.org/project/gangmu-rules/2026.10.11/",
+      "pypi:https://pypi.org/project/gbc-scene-forge/0.3.3/",
       "pypi:https://pypi.org/project/gcube-cli/0.5.0/",
       "pypi:https://pypi.org/project/gedcomkit/0.1.18/",
       "pypi:https://pypi.org/project/gempy-engine/2026.2.0a5/",
@@ -2450,6 +2457,9 @@
       "pypi:https://pypi.org/project/mesh2cad/0.11.0/",
       "pypi:https://pypi.org/project/methodaws/0.5.0/",
       "pypi:https://pypi.org/project/methodwebscan/0.31.0/",
+      "pypi:https://pypi.org/project/metrana-logging-engine/0.13.0/",
+      "pypi:https://pypi.org/project/metrana-protobuf/0.8.0/",
+      "pypi:https://pypi.org/project/metrana/1.13.0/",
       "pypi:https://pypi.org/project/mhcgnomes/3.64.4/",
       "pypi:https://pypi.org/project/microcycler/0.1.20/",
       "pypi:https://pypi.org/project/mimo-asr-vllm/0.1.0/",
@@ -2488,6 +2498,7 @@
       "pypi:https://pypi.org/project/mojolearn/0.8.37/",
       "pypi:https://pypi.org/project/moles-tools/0.0.37/",
       "pypi:https://pypi.org/project/monaco/0.23.0/",
+      "pypi:https://pypi.org/project/monkeybot-cli/0.12.0/",
       "pypi:https://pypi.org/project/monosmith/1.79.0/",
       "pypi:https://pypi.org/project/montycat-mcp/1.1.6/",
       "pypi:https://pypi.org/project/moruna/0.2.1/",
@@ -3041,6 +3052,7 @@
       "pypi:https://pypi.org/project/simpleaible/1.2.0/",
       "pypi:https://pypi.org/project/simpleapps-com-augur-api/2026.9.4/",
       "pypi:https://pypi.org/project/simpleapps-com-augur-mcp/2026.9.4/",
+      "pypi:https://pypi.org/project/simpleaudit-studio/0.5.22/",
       "pypi:https://pypi.org/project/simplepyble/1.2.0/",
       "pypi:https://pypi.org/project/simulsi/0.8.0/",
       "pypi:https://pypi.org/project/sinapse/0.3.3/",
@@ -3253,6 +3265,7 @@
       "pypi:https://pypi.org/project/tzzb/0.2.7/",
       "pypi:https://pypi.org/project/uacp-interop/0.9.0/",
       "pypi:https://pypi.org/project/ucbc/0.1.2/",
+      "pypi:https://pypi.org/project/uel-gopro/0.1.1/",
       "pypi:https://pypi.org/project/uf/0.1.9/",
       "pypi:https://pypi.org/project/ui-foundation-backend/4.27.0/",
       "pypi:https://pypi.org/project/uiml/0.2.3/",
@@ -3266,7 +3279,9 @@
       "pypi:https://pypi.org/project/unswbc/1.2.11/",
       "pypi:https://pypi.org/project/unvibecode/0.3.11/",
       "pypi:https://pypi.org/project/upgini/1.2.169a4313.dev1/",
+      "pypi:https://pypi.org/project/uptonica/0.3.1/",
       "pypi:https://pypi.org/project/urgap/3.6.3/",
+      "pypi:https://pypi.org/project/urllib3-future/2.25.905/",
       "pypi:https://pypi.org/project/urlpipe/0.3.0/",
       "pypi:https://pypi.org/project/urun-cli/0.7.4/",
       "pypi:https://pypi.org/project/useshards/0.1.1/",
@@ -3278,6 +3293,7 @@
       "pypi:https://pypi.org/project/varcode/10.18.4/",
       "pypi:https://pypi.org/project/vasp-step/2026.9.27/",
       "pypi:https://pypi.org/project/vaxrank/3.46.7/",
+      "pypi:https://pypi.org/project/vdjtools/5.3.2/",
       "pypi:https://pypi.org/project/vedit-mcp/0.3.0/",
       "pypi:https://pypi.org/project/vegaml/0.12.0/",
       "pypi:https://pypi.org/project/vegaml/0.13.0/",
@@ -3369,6 +3385,7 @@
       "pypi:https://pypi.org/project/yandex-cli/0.38.0/",
       "pypi:https://pypi.org/project/yang2sdk/2026.10.16/",
       "pypi:https://pypi.org/project/yirifi-ops-auth-client/3.8.1/",
+      "pypi:https://pypi.org/project/youeduc-sdk-messaging/0.11.3/",
       "pypi:https://pypi.org/project/youeduc-sdk-messaging/0.8.0/",
       "pypi:https://pypi.org/project/zalf-django-geonode-mapstore-client/5.0.1.post42/",
       "pypi:https://pypi.org/project/zapd/1.1.6/",
@@ -3844,15 +3861,15 @@
   "sources": {
     "crossref": {
       "last_items": 5,
-      "last_scan": "2026-10-28T06:07:19Z",
+      "last_scan": "2026-10-28T13:21:41Z",
       "last_status": "scanned",
-      "scans": 250
+      "scans": 252
     },
     "github": {
       "last_items": 5,
-      "last_scan": "2026-10-28T06:07:19Z",
+      "last_scan": "2026-10-28T13:21:41Z",
       "last_status": "scanned",
-      "scans": 254
+      "scans": 256
     },
     "nvd": {
       "last_items": 1,
@@ -3862,15 +3879,15 @@
     },
     "pypi": {
       "last_items": 10,
-      "last_scan": "2026-10-28T06:07:19Z",
+      "last_scan": "2026-10-28T13:21:41Z",
       "last_status": "scanned",
-      "scans": 243
+      "scans": 245
     },
     "usgs_earthquake": {
       "last_items": 5,
-      "last_scan": "2026-10-28T06:07:19Z",
+      "last_scan": "2026-10-28T13:21:41Z",
       "last_status": "scanned",
-      "scans": 250
+      "scans": 252
     }
   }
 }

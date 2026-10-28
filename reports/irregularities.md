@@ -1,12 +1,12 @@
 # Irregularities for review
 
-Generated: 2026-10-28T06:09:20Z
+Generated: 2026-10-28T13:23:51Z
 
 This file is produced by the audit stage. It lists everything the engine could not
 reconcile on its own. Nothing here is a conclusion; each entry is a request for a human
 decision, with the evidence needed to make it.
 
-**Totals (open)** - error: 0, warning: 18, info: 144; resolved by a reviewer: 8 (error: 1, warning: 0, info: 7).
+**Totals (open)** - error: 0, warning: 19, info: 145; resolved by a reviewer: 8 (error: 1, warning: 0, info: 7).
 
 ## Stage: audit
 
@@ -118,6 +118,14 @@ decision, with the evidence needed to make it.
 - **suggested action:** Re-run the scan from a host with egress to this source.
 - **detected:** 2026-09-22T00:22:28Z
 
+### [WARNING] Change scan could not reach nvd
+
+- **id:** `irr-bd24c9d629cd`
+- **topic:** n/a
+- **detail:** all 3 attempts failed for https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=autonomous+agent&lastModStartDate=2026-10-27T00%3A00%3A00.000%2B00%3A00&lastModEndDate=2026-10-28T00%3A00%3A00.000%2B00%3A00&resultsPerPage=5: HTTP 503 for https://services.nvd.nist.gov/rest/. The window 2026-10-27..2026-10-28 was not polled, so items published in it will appear as new on a later run rather than being missed.
+- **suggested action:** Re-run the scan from a host with egress to this source.
+- **detected:** 2026-10-28T13:21:49Z
+
 ### [WARNING] Change scan could not reach usgs_earthquake
 
 - **id:** `irr-b9fce9a77ea5`
@@ -142,7 +150,7 @@ decision, with the evidence needed to make it.
 - **link:** <https://export.arxiv.org/robots.txt>
 - **detail:** https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: . The window 2026-10-21..2026-10-28 was not polled for this source.
 - **suggested action:** Register a route the operator's own rules permit, or leave the source unscanned.
-- **detected:** 2026-10-28T06:07:19Z
+- **detected:** 2026-10-28T13:21:41Z
 
 ### [WARNING] Change scan for github returned HTTP 403
 
@@ -171,7 +179,7 @@ decision, with the evidence needed to make it.
 - **link:** <https://export.arxiv.org/robots.txt>
 - **detail:** robots.txt rule 'Disallow: /' disallows /api/query; https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules 
 - **suggested action:** Read the operator's robots.txt and API documentation; the engine obeys RFC 9309 and does not work around a disallow rule. If the operator documents the route for API consumers, a reviewer can register a route the operator's own rules permit.
-- **detected:** 2026-10-28T06:07:13Z
+- **detected:** 2026-10-28T13:21:32Z
 
 ## Stage: audit
 
@@ -221,7 +229,7 @@ decision, with the evidence needed to make it.
 - **topic:** n/a
 - **detail:** 134 claim(s) currently carry a supersession reason. A superseded claim is one a later cycle no longer produces. It remains in the library with the reason recorded on it, and is not published as a current finding.
 - **suggested action:** Nothing to do unless a reviewer believes a retired statement was correct.
-- **detected:** 2026-10-28T06:09:20Z
+- **detected:** 2026-10-28T13:23:51Z
 
 ## Stage: change_scan
 
@@ -810,6 +818,14 @@ decision, with the evidence needed to make it.
 - **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
 - **suggested action:** Review the retired statements section on the affected topic pages.
 - **detected:** 2026-09-23T00:46:12Z
+
+### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
+
+- **id:** `irr-6c6a71b56070`
+- **topic:** n/a
+- **detail:** These records quote a claim that a later cycle no longer produces. They stay in the library with the reason recorded on each, and are excluded from the competing answers, criticisms and open questions on the published pages.
+- **suggested action:** Review the retired statements section on the affected topic pages.
+- **detected:** 2026-10-28T13:21:49Z
 
 ### [INFO] 0 brief(s), 0 criticism(s) and 3 open question(s) withdrawn with their retired claims
 
