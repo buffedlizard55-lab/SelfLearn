@@ -3,12 +3,12 @@
     "policy_refused": 1,
     "scanned": 5
   },
-  "generated_at": "2026-10-29T06:13:50Z",
-  "items_new": 14,
+  "generated_at": "2026-10-29T13:24:10Z",
+  "items_new": 15,
   "items_out_of_window": 5,
   "items_returned": 26,
   "items_seen": 21,
-  "run_id": "run-15b6a33bd5c9",
+  "run_id": "run-5fdde0cfb375",
   "scans": [
     {
       "detail": "https://export.arxiv.org/robots.txt answered HTTP 200 with content-type text/html; charset=utf-8, not the text/plain that RFC 9309 2.3 requires. The body was parsed anyway: whatever rules it contains are followed, and if it contains none, no rules apply. disallow rule 'Disallow: /' is the most speci",
@@ -67,9 +67,9 @@
       }
     },
     {
-      "detail": "5 item(s) returned; 0 published before the window 2026-10-28..2026-10-29 and dropped; 0 carried no readable date and were kept; 3 not seen by this engine before.",
+      "detail": "5 item(s) returned; 0 published before the window 2026-10-28..2026-10-29 and dropped; 0 carried no readable date and were kept; 4 not seen by this engine before.",
       "docs_url": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories",
-      "items_new": 3,
+      "items_new": 4,
       "items_out_of_window": 0,
       "items_returned": 5,
       "items_seen": 5,
@@ -77,28 +77,36 @@
       "mechanism": "Repositories pushed to on or after the given date",
       "new_items": [
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: lulaxiao97-create/prediction-arena\nThe reco",
-          "identifier": "https://github.com/lulaxiao97-create/prediction-arena",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: LilityV/multai-ai-agent-arsenal\nThe record ",
+          "identifier": "https://github.com/LilityV/multai-ai-agent-arsenal",
           "published_at": "2026-10-29",
           "source_id": "github",
-          "title": "lulaxiao97-create/prediction-arena",
-          "url": "https://github.com/lulaxiao97-create/prediction-arena"
+          "title": "LilityV/multai-ai-agent-arsenal",
+          "url": "https://github.com/LilityV/multai-ai-agent-arsenal"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: SebSilent/Droso\nThe record for SebSilent/Dr",
-          "identifier": "https://github.com/SebSilent/Droso",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: biteon-ai/biteon-ai-tools\nThe record for bi",
+          "identifier": "https://github.com/biteon-ai/biteon-ai-tools",
           "published_at": "2026-10-29",
           "source_id": "github",
-          "title": "SebSilent/Droso",
-          "url": "https://github.com/SebSilent/Droso"
+          "title": "biteon-ai/biteon-ai-tools",
+          "url": "https://github.com/biteon-ai/biteon-ai-tools"
         },
         {
-          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: Sprinkled-cpu/ai-competitor-watch\nThe recor",
-          "identifier": "https://github.com/Sprinkled-cpu/ai-competitor-watch",
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: TeeVee998/Synapse-Hub\nThe record for TeeVee",
+          "identifier": "https://github.com/TeeVee998/Synapse-Hub",
           "published_at": "2026-10-29",
           "source_id": "github",
-          "title": "Sprinkled-cpu/ai-competitor-watch",
-          "url": "https://github.com/Sprinkled-cpu/ai-competitor-watch"
+          "title": "TeeVee998/Synapse-Hub",
+          "url": "https://github.com/TeeVee998/Synapse-Hub"
+        },
+        {
+          "excerpt": "Source: GitHub REST API (https://api.github.com)\nEvery sentence below names the record it describes. Values are copied from the response without change; field labels are the adapter's own rendering of the response's field names.\nRecord: josephsenior/Grinta-Coding-Agent\nThe record",
+          "identifier": "https://github.com/josephsenior/Grinta-Coding-Agent",
+          "published_at": "2026-10-29",
+          "source_id": "github",
+          "title": "josephsenior/Grinta-Coding-Agent",
+          "url": "https://github.com/josephsenior/Grinta-Coding-Agent"
         }
       ],
       "request_params": {
@@ -129,8 +137,8 @@
       "mechanism": "CVE records last modified inside an explicit window",
       "new_items": [
         {
-          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-29T06:13:51.843\ntotalResults = 0\nversion = 2.0",
-          "identifier": "nvd-raw-sha256:bd0aeeb5d",
+          "excerpt": "NIST National Vulnerability Database API response for https://services.nvd.nist.gov/rest/json/cves/2.0\nformat = NVD_CVE\nresultsPerPage = 0\nstartIndex = 0\ntimestamp = 2026-10-29T13:24:12.416\ntotalResults = 0\nversion = 2.0",
+          "identifier": "nvd-raw-sha256:9561d6a0f",
           "published_at": null,
           "source_id": "nvd",
           "title": "NIST National Vulnerability Database API response",
@@ -166,43 +174,43 @@
       "new_items": [
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/vention-sim-grpc-py-sdk/0.1.27.dev4082784636301/",
+          "identifier": "https://pypi.org/project/knnopt/1.0.2/",
           "published_at": "2026-10-29",
           "source_id": "pypi",
-          "title": "vention-sim-grpc-py-sdk 0.1.27.dev4082784636301",
-          "url": "https://pypi.org/project/vention-sim-grpc-py-sdk/0.1.27.dev4082784636301/"
+          "title": "knnopt 1.0.2",
+          "url": "https://pypi.org/project/knnopt/1.0.2/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/iota-mcp/0.4.1/",
+          "identifier": "https://pypi.org/project/polivor/0.2.0/",
           "published_at": "2026-10-29",
           "source_id": "pypi",
-          "title": "iota-mcp 0.4.1",
-          "url": "https://pypi.org/project/iota-mcp/0.4.1/"
+          "title": "polivor 0.2.0",
+          "url": "https://pypi.org/project/polivor/0.2.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/archivebox/0.9.78rc25/",
+          "identifier": "https://pypi.org/project/fhempy/2.12.1/",
           "published_at": "2026-10-29",
           "source_id": "pypi",
-          "title": "archivebox 0.9.78rc25",
-          "url": "https://pypi.org/project/archivebox/0.9.78rc25/"
+          "title": "fhempy 2.12.1",
+          "url": "https://pypi.org/project/fhempy/2.12.1/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/ym-handcalcs/0.2.0/",
+          "identifier": "https://pypi.org/project/aws-cats/1.0.0/",
           "published_at": "2026-10-29",
           "source_id": "pypi",
-          "title": "ym-handcalcs 0.2.0",
-          "url": "https://pypi.org/project/ym-handcalcs/0.2.0/"
+          "title": "aws-cats 1.0.0",
+          "url": "https://pypi.org/project/aws-cats/1.0.0/"
         },
         {
           "excerpt": "Feed description as published by the operator: Recent updates to the Python Package Index\nSource: PyPI RSS Feeds (newest packages and latest updates) (https://pypi.org)\nEvery sentence below names the record it describes. Values are copied from the response without change; field l",
-          "identifier": "https://pypi.org/project/capabilities-contract/0.36.0/",
+          "identifier": "https://pypi.org/project/pulumi-akamai/12.2.0a1793279499/",
           "published_at": "2026-10-29",
           "source_id": "pypi",
-          "title": "capabilities-contract 0.36.0",
-          "url": "https://pypi.org/project/capabilities-contract/0.36.0/"
+          "title": "pulumi-akamai 12.2.0a1793279499",
+          "url": "https://pypi.org/project/pulumi-akamai/12.2.0a1793279499/"
         }
       ],
       "request_params": {},
